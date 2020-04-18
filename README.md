@@ -1,2 +1,1 @@
-# LEGO-Mindstorms
-LEGO Mindstorms
+# LEGO Mindstorms
