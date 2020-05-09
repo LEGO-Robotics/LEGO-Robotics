@@ -1,0 +1,5 @@
+ev3.displayImage(named: .pinchRight)
+ev3.move(forRotations: 2, leftPort: .b, rightPort: .c, leftPower: 75, rightPower: 75)
+ev3.motorOn(forRotations: 3, on:.a, withPower: 75)
+ev3.move(forRotations: 2, leftPort: .b, rightPort: . c, leftPower: -75, rightPower: -75)
+ev3.playSound(file: .fanfare, atVolume: 60, withStyle: .waitForCompletion)
