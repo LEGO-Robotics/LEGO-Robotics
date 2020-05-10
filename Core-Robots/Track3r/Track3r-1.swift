@@ -18,7 +18,7 @@ func backward(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
 }
 
 ev3.displayImage(named: .pinchRight)
-forward(nRotations: 2, power: 75)
+forward(nRotations: 2, power: 75, brake: true)
 ev3.motorOn(forRotations: 3, on: .a, withPower: 75)
-backward(nRotations: 2, power: 75)
+backward(nRotations: 2, power: 75, brake: true)
 ev3.playSound(file: .fanfare, atVolume: 60, withStyle: .waitForCompletion)
