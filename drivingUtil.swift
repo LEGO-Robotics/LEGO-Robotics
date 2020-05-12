@@ -1,5 +1,5 @@
-let leftWheelPort: OutputPort = .c
-let rightWheelPort: OutputPort = .b
+let leftWheelPort: OutputPort = .b
+let rightWheelPort: OutputPort = .c
 
 func startForward(power: Float = 100) {
     ev3.move(
@@ -32,7 +32,7 @@ func backward(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
 func startLeft(power: Float = 100) {
     ev3.move(
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: power, rightPower: -power)
+        leftPower: -power, rightPower: power)
 }
 
 func left(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
@@ -46,38 +46,24 @@ func left(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
 func startRight(power: Float = 100) {
     ev3.move(
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: -power, rightPower: power)
+        leftPower: power, rightPower: -power)
 }
 
 func right(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
     ev3.move(
         forRotations: nRotations,
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: -power, rightPower: power,
+        leftPower: power, rightPower: -power,
         brakeAtEnd: brake)
 }
 
 func startForwardLeft(power: Float = 100) {
     ev3.move(
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: power, rightPower: 0)
-}
-
-func forwardLeft(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
-    ev3.move(
-        forRotations: nRotations,
-        leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: power, rightPower: 0,
-        brakeAtEnd: brake)
-}
-
-func startForwardRight(power: Float = 100) {
-    ev3.move(
-        leftPort: leftWheelPort, rightPort: rightWheelPort,
         leftPower: 0, rightPower: power)
 }
 
-func forwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
+func forwardLeft(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
     ev3.move(
         forRotations: nRotations,
         leftPort: leftWheelPort, rightPort: rightWheelPort,
@@ -85,27 +71,27 @@ func forwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = false
         brakeAtEnd: brake)
 }
 
-func startBackwardLeft(power: Float = 100) {
+func startForwardRight(power: Float = 100) {
     ev3.move(
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: -power, rightPower: 0)
+        leftPower: power, rightPower: 0)
 }
 
-func backwardLeft(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
+func forwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
     ev3.move(
         forRotations: nRotations,
         leftPort: leftWheelPort, rightPort: rightWheelPort,
-        leftPower: -power, rightPower: 0,
+        leftPower: power, rightPower: 0,
         brakeAtEnd: brake)
 }
 
-func startBackwardRight(power: Float = 100) {
+func startBackwardLeft(power: Float = 100) {
     ev3.move(
         leftPort: leftWheelPort, rightPort: rightWheelPort,
         leftPower: 0, rightPower: -power)
 }
 
-func backwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
+func backwardLeft(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
     ev3.move(
         forRotations: nRotations,
         leftPort: leftWheelPort, rightPort: rightWheelPort,
@@ -113,8 +99,31 @@ func backwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = fals
         brakeAtEnd: brake)
 }
 
+func startBackwardRight(power: Float = 100) {
+    ev3.move(
+        leftPort: leftWheelPort, rightPort: rightWheelPort,
+        leftPower: -power, rightPower: 0)
+}
+
+func backwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
+    ev3.move(
+        forRotations: nRotations,
+        leftPort: leftWheelPort, rightPort: rightWheelPort,
+        leftPower: -power, rightPower: 0,
+        brakeAtEnd: brake)
+}
+
 
 // test drive
+startForward()
+startBackward()
+startLeft()
+startRight()
+startForwardLeft()
+startBackwardLeft()
+startForwardRight()
+startBackwardRight()
+ 
 forward()
 backward()
 left()
