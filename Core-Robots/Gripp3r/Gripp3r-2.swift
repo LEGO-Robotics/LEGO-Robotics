@@ -112,3 +112,12 @@ func backwardRight(nRotations: Float = 1, power: Float = 100, brake: Bool = fals
         leftPower: 0, rightPower: -power,
         brakeAtEnd: brake)
 }
+
+ev3.motorOn(forSeconds: 1, on: .a, withPower: -50)
+forward(nRotations: 3, power: 75, brake: true)
+ev3.playSound(file: .snap, atVolume: 100, withStyle: .playOnce)
+ev3.motorOn(forSeconds: 1, on: .a, withPower: 50)
+right(nRotations: 2.5, power: 75, brake: true)
+forward(nRotations: 3, power: 75, brake: true)
+ev3.motorOn(on: .a, withPower: -50)
+ev3.playSound(file: .snap, atVolume: 100, withStyle: .playOnce)
