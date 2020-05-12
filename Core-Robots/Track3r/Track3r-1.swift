@@ -1,5 +1,5 @@
-let leftWheelPort: OutputPort = .c
-let rightWheelPort: OutputPort = .b
+let leftWheelPort: OutputPort = .b
+let rightWheelPort: OutputPort = .c
 
 func forward(nRotations: Float = 1, power: Float = 100, brake: Bool = false) {
     ev3.move(
