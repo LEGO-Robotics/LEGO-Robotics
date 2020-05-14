@@ -2,6 +2,7 @@
 
 Python API References:
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
+- https://sites.google.com/site/ev3devpython
 - https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf
 
 Swift API References:
