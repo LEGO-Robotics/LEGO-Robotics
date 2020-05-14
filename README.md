@@ -18,3 +18,7 @@ Python PyBricks API References:
 Swift API References:
 - https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
 - https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3
+
+Others' Projects:
+- https://www.ev3dev.org/projects
+- https://github.com/pybricks/pybricks-projects
