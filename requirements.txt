@@ -1,2 +1,4 @@
 PyBricks-Stubs >= 0.0.6
 Python-EV3Dev2 >= 2.1.0
+
+# BluPants >= 1.0.0
