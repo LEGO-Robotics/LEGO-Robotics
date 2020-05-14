@@ -13,7 +13,7 @@ Python EV3Dev2 API References:
 
 Python PyBricks API References:
 - https://github.com/pybricks/pybricks-api
-- https://docs.pybricks.com/ 
+- https://docs.pybricks.com
 
 Swift API References:
 - https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
