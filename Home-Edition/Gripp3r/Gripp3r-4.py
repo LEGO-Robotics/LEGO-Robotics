@@ -8,15 +8,15 @@ from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-SPEAKER = Sound()
-
 TANK_DRIVE = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
 STEER_DRIVE = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
 
 IR_SENSOR = InfraredSensor(INPUT_4)
 
+SPEAKER = Sound()
 
-def drive_by_beacon(channel: int = 1, speed: float = 100):
+
+def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
     if IR_SENSOR.top_left(channel) and IR_SENSOR.top_right(channel):
         TANK_DRIVE.on(
             left_speed=speed,
@@ -62,6 +62,6 @@ def drive_by_beacon(channel: int = 1, speed: float = 100):
 
 
 while True:
-    drive_by_beacon(
+    drive_by_ir_beacon(
         channel=1,
         speed=100)

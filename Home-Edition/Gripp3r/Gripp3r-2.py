@@ -6,10 +6,10 @@ from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-SPEAKER = Sound()
-
 TANK_DRIVE = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
 STEER_DRIVE = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+
+SPEAKER = Sound()
 
 
 MEDIUM_MOTOR.on_for_seconds(
