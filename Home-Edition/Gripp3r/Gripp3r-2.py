@@ -6,8 +6,8 @@ from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-TANK_DRIVE = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
-STEER_DRIVE = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
 
 SPEAKER = Sound()
 
@@ -18,7 +18,7 @@ MEDIUM_MOTOR.on_for_seconds(
     brake=True,
     block=True)
 
-TANK_DRIVE.on_for_rotations(
+TANK_DRIVER.on_for_rotations(
     left_speed=75,
     right_speed=75,
     rotations=3,
@@ -36,14 +36,14 @@ MEDIUM_MOTOR.on_for_seconds(
     brake=True,
     block=True)
  
-STEER_DRIVE.on_for_degrees(
+STEER_DRIVER.on_for_degrees(
     steering=100,
     speed=75,
     degrees=850,
     brake=True,
     block=True)
 
-TANK_DRIVE.on_for_rotations(
+TANK_DRIVER.on_for_rotations(
     left_speed=75,
     right_speed=75,
     rotations=3,

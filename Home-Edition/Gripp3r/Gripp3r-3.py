@@ -8,8 +8,8 @@ from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-TANK_DRIVE = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
-STEER_DRIVE = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
 
 IR_SENSOR = InfraredSensor(INPUT_4)
 
@@ -23,11 +23,11 @@ MEDIUM_MOTOR.on_for_seconds(
     block=True)
 
 while IR_SENSOR.proximity >= 25:
-    TANK_DRIVE.on(
+    TANK_DRIVER.on(
         left_speed=75,
         right_speed=75)
 
-TANK_DRIVE.off(brake=True)
+TANK_DRIVER.off(brake=True)
         
 SPEAKER.play_file(
     wav_file='/home/robot/LEGO-Mindstorms/sounds/Airbrake.wav',
@@ -40,7 +40,7 @@ MEDIUM_MOTOR.on_for_seconds(
     brake=True,
     block=True)
 
-STEER_DRIVE.on_for_degrees(
+STEER_DRIVER.on_for_degrees(
     steering=100,
     speed=75,
     degrees=850,
@@ -48,11 +48,11 @@ STEER_DRIVE.on_for_degrees(
     block=True)
 
 while IR_SENSOR.proximity >= 25:
-    TANK_DRIVE.on(
+    TANK_DRIVER.on(
         left_speed=75,
         right_speed=75)
 
-TANK_DRIVE.off(brake=True)
+TANK_DRIVER.off(brake=True)
 
 MEDIUM_MOTOR.on(
     speed=-50,
