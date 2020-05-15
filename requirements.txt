@@ -8,4 +8,3 @@ Python-EV3Dev >= 1.2.0
 
 # misc
 # BluPants >= 1.0.0
-Rope >= 0.17.0   # automatic code refactoring
