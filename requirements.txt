@@ -1,4 +1,4 @@
-git+https://github.com/pybricks/pybricks-api
+git+https://GitHub.com/PyBricks/PyBricks-API
 # PyBricks-Stubs >= 0.0.6   # to use official PyBricks dev version above
 Python-EV3Dev2 >= 2.1.0
 
