@@ -11,9 +11,32 @@ MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
 SPEAKER = Sound()
 
 
-MEDIUM_MOTOR.on_for_seconds(speed=-50, seconds=1, brake=True, block=True)
-SPEAKER.play_file(wav_file='/home/robot/LEGO-Mindstorms/sounds/Airbrake.wav', volume=100, play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
-MEDIUM_MOTOR.on_for_seconds(speed=50, seconds=1, brake=True, block=True)
+MEDIUM_MOTOR.on_for_seconds(
+    speed=-50,
+    seconds=1,
+    brake=True,
+    block=True)
+
+SPEAKER.play_file(
+    wav_file='/home/robot/LEGO-Mindstorms/sounds/Airbrake.wav',
+    volume=100,
+    play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+MEDIUM_MOTOR.on_for_seconds(
+    speed=50,
+    seconds=1,
+    brake=True,
+    block=True)
+
 sleep(1)
-SPEAKER.play_file(wav_file='/home/robot/LEGO-Mindstorms/sounds/Air release.wav', volume=100, play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
-MEDIUM_MOTOR.on_for_seconds(speed=-50, seconds=1, brake=True, block=True)
+
+SPEAKER.play_file(
+    wav_file='/home/robot/LEGO-Mindstorms/sounds/Air release.wav',
+    volume=100,
+    play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+MEDIUM_MOTOR.on_for_seconds(
+    speed=-50,
+    seconds=1,
+    brake=True,
+    block=True)
