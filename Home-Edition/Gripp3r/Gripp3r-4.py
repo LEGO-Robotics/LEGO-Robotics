@@ -22,9 +22,46 @@ def drive_by_beacon(channel: int = 1, speed: float = 100):
             left_speed=speed,
             right_speed=speed)
     
+    elif IR_SENSOR.bottom_left(channel) and IR_SENSOR.bottom_right(channel):
+        TANK_DRIVE.on(
+            left_speed=-speed,
+            right_speed=-speed)
+
+    elif IR_SENSOR.top_left(channel) and IR_SENSOR.bottom_left(channel):
+        STEER_DRIVE.on(
+            steering=-100,
+            speed=speed)
+
+    elif IR_SENSOR.top_right(channel) and IR_SENSOR.bottom_right(channel):
+        STEER_DRIVE.on(
+            steering=100,
+            speed=speed)
+
+    elif IR_SENSOR.top_left(channel):
+        STEER_DRIVE.on(
+            steering=-50,
+            speed=speed)
+
+    elif IR_SENSOR.top_right(channel):
+        STEER_DRIVE.on(
+            steering=50,
+            speed=speed)
+
+    elif IR_SENSOR.bottom_left(channel):
+        TANK_DRIVE.on(
+            left_speed=0,
+            right_speed=-speed)
+
+    elif IR_SENSOR.bottom_right(channel):
+        TANK_DRIVE.on(
+            left_speed=-speed,
+            right_speed=0)
+
     else:
         TANK_DRIVE.off(brake=False)
 
 
 while True:
-    drive_by_beacon()
+    drive_by_beacon(
+        channel=1,
+        speed=100)
