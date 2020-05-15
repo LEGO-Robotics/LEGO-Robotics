@@ -1,15 +1,19 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import MediumMotor, MoveSteering, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
-STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
+                       right_motor_port=OUTPUT_C,
+                       motor_class=LargeMotor)
+STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
+                            right_motor_port=OUTPUT_C,
+                            motor_class=LargeMotor)
 
 IR_SENSOR = InfraredSensor(INPUT_4)
 
