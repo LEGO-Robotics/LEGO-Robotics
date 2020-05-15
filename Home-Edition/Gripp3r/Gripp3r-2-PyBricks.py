@@ -1,11 +1,14 @@
 #!/usr/bin/env pybricks-micropython
 
 
+from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Port, Stop
 from pybricks.robotics import DriveBase
 
+
+EV3_BRICK = EV3Brick()
 
 MEDIUM_MOTOR = Motor(Port.A)
 TWO_WHEEL_DRIVER = DriveBase(left_motor=Port.B,
@@ -22,7 +25,7 @@ MEDIUM_MOTOR.run_time(
 
 TWO_WHEEL_DRIVER   # TODO
 
-SoundFile.AIRBRAKE   # TODO
+EV3_BRICK.speaker.play_file(SoundFile.AIRBRAKE)
 
 MEDIUM_MOTOR.run_time(
     speed=50,
@@ -36,4 +39,4 @@ TWO_WHEEL_DRIVER   # TODO
 
 MEDIUM_MOTOR.run(speed=-50)
 
-SoundFile.AIR_RELEASE   # TODO
+EV3_BRICK.speaker.play_file(SoundFile.AIR_RELEASE)
