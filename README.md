@@ -26,3 +26,28 @@ Swift References:
 Others' Projects:
 - https://www.ev3dev.org/projects
 - https://github.com/pybricks/pybricks-projects
+
+
+## LEGO Mindstorms Software & Materials
+
+[Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
+- Desktop Software
+  - [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite)
+  - [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite) 
+- [EV3 Mindstorms Firmware](https://ev3manager.education.lego.com) 
+- EV3 Programmer Apps:
+  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-ev3-programmer/id1039354955)
+  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.ev3programmer)
+- Robot Commander Apps:
+  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-robot-commander/id681786521)
+  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.robotcommander)
+- _Fix the Factory_ Game Apps:
+  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-fix-factory/id671493323)
+  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory) 
+- [Building Instructions](https://www.lego.com/en-us/themes/mindstorms/buildarobot)
+- [User Guide](https://www.lego.com/cdn/cs/set/assets/bltbef4d6ce0f40363c/LMSUser_Guide_LEGO_MINDSTORMS_EV3_11_Tablet_ENUS.pdf)
+
+[Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
+- [Desktop Software](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
+- [eLearning](https://elearning.legoeducation.com)
+- [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
