@@ -56,9 +56,10 @@ Others' Projects:
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
-  - _Design Engineering Projects_ Apps
-    - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_DEP-full-setup_1.4.2_en-US_OSX.dmg)
-  - Science Curriculum Apps
-    - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SCIENCE-full-setup_1.4.2_en-US_OSX.dmg)
-  - Space Challenge Curriculum Apps
-    - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
+  - Curriculum Activity Packs (downloadable in Education Edition Desktop Software)
+    - _Design Engineering Process/Projects (DEP)_ 
+      - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_DEP-full-setup_1.4.2_en-US_OSX.dmg)
+    - Science/Engineering Lab
+      - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SCIENCE-full-setup_1.4.2_en-US_OSX.dmg)
+    - Space Challenge Curriculum Activity Packs
+      - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
