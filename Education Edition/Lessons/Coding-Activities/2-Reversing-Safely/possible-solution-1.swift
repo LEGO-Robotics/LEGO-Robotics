@@ -1,0 +1,6 @@
+ev3.move (left Port: .b, rightPort: .c, leftPower: 50, rightPower: 50)
+ev3.waitForTouch(on: .one)
+ev3.stopMove(leftPort : .b, rightPort : .c)
+ev3.waitFor(seconds: 1)
+ev3.brickLightOn(With Color: .orange, in Mode: .flashing)
+ev3.move(forSeconds : 2, leftPort: .b, rightPort: .c, leftPower: -50, rightPower: -50)

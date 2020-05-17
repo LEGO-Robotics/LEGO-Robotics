@@ -104,6 +104,12 @@ Others' Projects:
       - [Make a Pick-and-Place Robot](https://education.lego.com/en-us/lessons/ev3-cim/make-a-pick-and-place-robot)
       - [Make a Sorting Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-sorting-machine)
     
+    - [Coding Activities](https://education.lego.com/en-us/lessons/mindstorms-ev3)
+      - [Autonomous Parking](https://education.lego.com/en-us/lessons/mindstorms-ev3/autonomous-parking)
+      - [Reversing Safely](https://education.lego.com/en-us/lessons/mindstorms-ev3/reversing-safely)
+      - [Automatic Headlights](https://education.lego.com/en-us/lessons/mindstorms-ev3/automatic-headlights)
+      - [Line Detection](https://education.lego.com/en-us/lessons/mindstorms-ev3/line-detection)
+    
     - [Real-World Vehicles](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles)
       - [Make a Speed-Control System](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/speed-control-system)
       - [Make an Autonomous Robotic Explorer](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/make-an-autonomous-robotics-explorer)
