@@ -91,6 +91,9 @@ Others' Projects:
     - [Return the Rock Samples](https://education.lego.com/en-us/lessons/ev3-space-challenge/6-return-the-rock-samples)
     - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
     - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
+
+  - [Science](https://education.lego.com/en-us/lessons/ev3-science)
+    - [Acceleration of Gravity](https://education.lego.com/en-us/lessons/ev3-science/acceleration-of-gravity)
     
   - [Space Training](https://education.lego.com/en-us/lessons/ev3-space)
     - [Turn Using Sensors](https://education.lego.com/en-us/lessons/ev3-space/turn-using-sensor)
