@@ -64,7 +64,7 @@ Others' Projects:
 
 - [eLearning](https://elearning.legoeducation.com)
 
-- [Lessons](https://education.lego.com/en-us/lessons)
+- [Lessons](https://education.lego.com/en-us/lessons?rows=100)
 
   - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
     - [Moves and Turns](https://education.lego.com/en-us/lessons/ev3-robot-trainer/1-moves-and-turns)
