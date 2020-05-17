@@ -92,6 +92,9 @@ Others' Projects:
     - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
     - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
     
+  - [Space Training](https://education.lego.com/en-us/lessons/ev3-space)
+    - [Turn Using Sensors](https://education.lego.com/en-us/lessons/ev3-space/turn-using-sensor)
+    
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
