@@ -8,7 +8,7 @@ while true {
         ev3.motorOn(forSeconds: 1, on: .d, withPower: 100)
         ev3.motorOn(on: .a, withPower: 100)
         ev3.motorOn(on: .b, withPower: -100)
-        ev3.motorOn(forSeconds: 1, on: .d, withPower: -100)
+        ev3.motorOn(forSeconds: 1, on: .d, withPower: -30)
         ev3.waitFor(seconds: 2)
         ev3.motorOn(forSeconds: 1, on: .a, withPower: -100)
         ev3.waitFor(seconds: 1)
