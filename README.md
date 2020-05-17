@@ -71,6 +71,10 @@ Others' Projects:
     - [Robot Educator Tutorials](https://education.lego.com/en-us/lessons/ev3-tutorials)
       - [Basic Configuring Blocks](https://education.lego.com/en-us/lessons/ev3-tutorials/basics-configuring-blocks)
       - [Curved Move](https://education.lego.com/en-us/lessons/ev3-tutorials/curved-move)
+      - [Move Objects](https://education.lego.com/en-us/lessons/ev3-tutorials/move-object)
+      - [Stop at Line](https://education.lego.com/en-us/lessons/ev3-tutorials/stop-at-line)
+      - [Straight Move](https://education.lego.com/en-us/lessons/ev3-tutorials/straight-move)
+      - [Switch](https://education.lego.com/en-us/lessons/ev3-tutorials/switch)
 
     - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
       - [Moves and Turns](https://education.lego.com/en-us/lessons/ev3-robot-trainer/1-moves-and-turns)
