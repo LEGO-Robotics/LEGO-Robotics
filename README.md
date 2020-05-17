@@ -57,13 +57,16 @@ Others' Projects:
   - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
   - [Engineering Lab](https://education.lego.com/en-us/lessons/ev3-engineering-lab)
   - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
+    - [Get Ready to Go to Mars](https://education.lego.com/en-us/lessons/ev3-space-challenge/1-get-ready-to-go-to-mars)
+    - [Activate Communications](https://education.lego.com/en-us/lessons/ev3-space-challenge/2-activate-communications)
+      - [Building Instructions](https://le-www-live-s.legocdn.com/sc/media/files/support/mindstorms-ev3/building-instructions/space/45570_digit_mod18-79839c7ed6956d25e38fd4709797d1b6.pdf)
     - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
       - [Building Instructions](https://le-www-live-s.legocdn.com/sc/media/files/support/mindstorms-ev3/building-instructions/space/45570_digit_mod23-8599b06888e7a0dc814a5c37980ce40f.pdf)
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
   - Curriculum Activity Packs (downloadable in Education Edition Desktop Software)
-    - _Design Engineering Process/Projects (DEP / Robot Trainer)_ 
+    - Design Engineering Process/Projects (DEP) / Robot Trainer 
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_DEP-full-setup_1.4.2_en-US_OSX.dmg)
     - Science/Engineering Lab
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SCIENCE-full-setup_1.4.2_en-US_OSX.dmg)
