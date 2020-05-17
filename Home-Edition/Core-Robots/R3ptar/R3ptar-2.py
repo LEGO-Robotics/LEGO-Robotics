@@ -11,7 +11,9 @@ from time import sleep
 
 LARGE_MOTOR = LargeMotor(OUTPUT_D)
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+
 IR_SENSOR = InfraredSensor(INPUT_4)
+
 SPEAKER = Sound()
 
 
