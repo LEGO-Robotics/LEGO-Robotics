@@ -104,6 +104,11 @@ Others' Projects:
     - [Make a Pick-and-Place Robot](https://education.lego.com/en-us/lessons/ev3-cim/make-a-pick-and-place-robot)
     - [Make a Sorting Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-sorting-machine)
     
+  - [Real-World Vehicles](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles)
+    - [Make a Speed-Control System](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/speed-control-system)
+    - [Make an Autonomous Robotic Explorer](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/make-an-autonomous-robotics-explorer)
+    - [Make a Driverless Car](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/make-a-driverless-car)
+    
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
