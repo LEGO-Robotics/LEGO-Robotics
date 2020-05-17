@@ -64,7 +64,7 @@ Others' Projects:
 
 - [eLearning](https://elearning.legoeducation.com)
 
-- [Lessons](https://education.lego.com/en-us/lessons?rows=100)
+- [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
 
   - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
     - [Moves and Turns](https://education.lego.com/en-us/lessons/ev3-robot-trainer/1-moves-and-turns)
@@ -97,6 +97,12 @@ Others' Projects:
     
   - [Space Training](https://education.lego.com/en-us/lessons/ev3-space)
     - [Turn Using Sensors](https://education.lego.com/en-us/lessons/ev3-space/turn-using-sensor)
+    
+  - [Computer Integrated Manufacturing](https://education.lego.com/en-us/lessons/ev3-cim)
+    - [Make a CNC Drawing Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-cnc-drawing-machine)
+    - [Make a Factory Conveyor](https://education.lego.com/en-us/lessons/ev3-cim/make-a-factory-conveyor)
+    - [Make a Pick-and-Place Robot](https://education.lego.com/en-us/lessons/ev3-cim/make-a-pick-and-place-robot)
+    - [Make a Sorting Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-sorting-machine)
     
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
