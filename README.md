@@ -54,13 +54,16 @@ Others' Projects:
   - [microSD Image (version 1.0.0 (OLD))](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
 - [eLearning](https://elearning.legoeducation.com)
 - [Lessons](https://education.lego.com/en-us/lessons)
+  - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
+  - [Engineering Lab](https://education.lego.com/en-us/lessons/ev3-engineering-lab)
+  - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
   - Curriculum Activity Packs (downloadable in Education Edition Desktop Software)
-    - _Design Engineering Process/Projects (DEP)_ 
+    - _Design Engineering Process/Projects (DEP / Robot Trainer)_ 
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_DEP-full-setup_1.4.2_en-US_OSX.dmg)
     - Science/Engineering Lab
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SCIENCE-full-setup_1.4.2_en-US_OSX.dmg)
-    - Space Challenge Curriculum Activity Packs
+    - Space Challenge
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
