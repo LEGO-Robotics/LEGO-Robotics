@@ -13,12 +13,13 @@ LARGE_MOTOR.on(
     brake=False,
     block=False)
 
-for i in range(3):   # MUST NOT have spaces between commands within a func/loop in MICROPYTHON
+for i in range(3):
     MEDIUM_MOTOR.on_for_seconds(
         speed=10,
         seconds=1,
         brake=False,
         block=True)
+
     MEDIUM_MOTOR.on_for_seconds(
         speed=-10,
         seconds=1,
