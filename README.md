@@ -31,29 +31,41 @@ Others' Projects:
 ## LEGO Mindstorms Software & Materials
 
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
+
 - Desktop Software
   - [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite)
-  - [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite) 
-- [EV3 Mindstorms Firmware](https://ev3manager.education.lego.com) 
+  - [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite)
+  
+- [EV3 Mindstorms Firmware](https://ev3manager.education.lego.com)
+
 - EV3 Programmer Apps
   - [iOS](https://apps.apple.com/us/app/lego-mindstorms-ev3-programmer/id1039354955)
   - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.ev3programmer)
+  
 - Robot Commander Apps
   - [iOS](https://apps.apple.com/us/app/lego-mindstorms-robot-commander/id681786521)
   - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.robotcommander)
+  
 - _Fix the Factory_ Game Apps
   - [iOS](https://apps.apple.com/us/app/lego-mindstorms-fix-factory/id671493323)
-  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory) 
+  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory)
+   
 - [Building Instructions](https://www.lego.com/en-us/themes/mindstorms/buildarobot)
 - [User Guide](https://www.lego.com/cdn/cs/set/assets/bltbef4d6ce0f40363c/LMSUser_Guide_LEGO_MINDSTORMS_EV3_11_Tablet_ENUS.pdf)
 
+
 [Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
+
 - [Desktop Software](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
+
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
   - [Getting Started with EV3 MicroPython (version 1.0.0 (OLD))](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
   - [microSD Image (version 1.0.0 (OLD))](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
+
 - [eLearning](https://elearning.legoeducation.com)
+
 - [Lessons](https://education.lego.com/en-us/lessons)
+
   - [Robot Trainer](https://education.lego.com/en-us/lessons/ev3-robot-trainer)
     - [Moves and Turns](https://education.lego.com/en-us/lessons/ev3-robot-trainer/1-moves-and-turns)
     - [Objects and Obstacles](https://education.lego.com/en-us/lessons/ev3-robot-trainer/2-objects-and-obstacles)
@@ -61,7 +73,15 @@ Others' Projects:
     - [Colors and Lines](https://education.lego.com/en-us/lessons/ev3-robot-trainer/4-colors-and-lines)
     - [Angles and Patterns](https://education.lego.com/en-us/lessons/ev3-robot-trainer/5-angles-and-patterns)
     - [Factory Robot](https://education.lego.com/en-us/lessons/ev3-robot-trainer/6-the-factory-robot)
+    
   - [Engineering Lab](https://education.lego.com/en-us/lessons/ev3-engineering-lab)
+    - [Trial and Error](https://education.lego.com/en-us/lessons/ev3-engineering-lab/1-trial-and-error)
+    - [First Gear](https://education.lego.com/en-us/lessons/ev3-engineering-lab/2-first-gear)
+    - [Shifting Gears](https://education.lego.com/en-us/lessons/ev3-engineering-lab/3-shifting-gears)
+    - [Sliding Down a Slope](https://education.lego.com/en-us/lessons/ev3-engineering-lab/4-sliding-down-a-slope)
+    - [Free Falling](https://education.lego.com/en-us/lessons/ev3-engineering-lab/5-free-falling)
+    - [Drive Up a Slope](https://education.lego.com/en-us/lessons/ev3-engineering-lab/6-drive-up-a-slope)
+    
   - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
     - [Get Ready to Go to Mars](https://education.lego.com/en-us/lessons/ev3-space-challenge/1-get-ready-to-go-to-mars)
     - [Activate Communications](https://education.lego.com/en-us/lessons/ev3-space-challenge/2-activate-communications)
@@ -71,6 +91,7 @@ Others' Projects:
     - [Return the Rock Samples](https://education.lego.com/en-us/lessons/ev3-space-challenge/6-return-the-rock-samples)
     - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
     - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
+    
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
