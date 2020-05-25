@@ -34,7 +34,7 @@ LARGE_MOTOR.on_for_seconds(
     brake=True)
 
 LARGE_MOTOR.on_for_seconds(
-    speed=40,
+    speed=100,   # 40 too weak
     seconds=1,
     block=True,
     brake=True)
