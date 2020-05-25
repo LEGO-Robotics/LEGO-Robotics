@@ -7,7 +7,7 @@ from ev3dev2.sensor.lego import InfraredSensor, TouchSensor
 from ev3dev2.sound import Sound
 
 import sys
-sys.path.append('/home/robot/LEGO-Mindstorms')
+sys.path.append('/home/robot')
 
 from util.drive_util import IRBeaconDriver
 

@@ -44,7 +44,7 @@ while True:
         TAIL_MOTOR.off(brake=True)
 
         SPEAKER.play_file(
-            wav_file='/home/robot/LEGO-Mindstorms/sounds/Snake hiss.wav',
+            wav_file='/home/robot/sounds/Snake hiss.wav',
             volume=100,
             play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 

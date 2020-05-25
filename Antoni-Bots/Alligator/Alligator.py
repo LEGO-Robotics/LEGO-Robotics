@@ -97,7 +97,7 @@ while True:
     if TOUCH_SENSOR.is_pressed:
         for i in range(3):
             SPEAKER.play_file(
-                wav_file='/home/robot/LEGO-Mindstorms/sounds/Okey-dokey.wav',
+                wav_file='/home/robot/sounds/Okey-dokey.wav',
                 volume=100,
                 play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
