@@ -37,13 +37,13 @@ class IRBeaconDriver:
                 right_speed=-speed)
     
         elif self.ir_sensor.top_left(self.ir_beacon_channel) and \
-                self.ir_sensor.bottom_left(self.ir_beacon_channel):
+                self.ir_sensor.bottom_right(self.ir_beacon_channel):
             self.steer_driver.on(
                 steering=-100,
                 speed=speed)
     
         elif self.ir_sensor.top_right(self.ir_beacon_channel) and \
-                self.ir_sensor.bottom_right(self.ir_beacon_channel):
+                self.ir_sensor.bottom_left(self.ir_beacon_channel):
             self.steer_driver.on(
                 steering=100,
                 speed=speed)
