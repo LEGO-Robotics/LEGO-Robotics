@@ -30,7 +30,7 @@ TANK_DRIVER.on_for_rotations(
     block=True)
 
 SPEAKER.play_file(
-    wav_file='/home/robot/sounds/Airbrake.wav',
+    wav_file='/home/robot/sound/Airbrake.wav',
     volume=100,
     play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
@@ -60,6 +60,6 @@ MEDIUM_MOTOR.on(
     block=False)
 
 SPEAKER.play_file(
-    wav_file='/home/robot/sounds/Air release.wav',
+    wav_file='/home/robot/sound/Air release.wav',
     volume=100,
     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)

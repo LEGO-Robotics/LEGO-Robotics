@@ -20,7 +20,7 @@ SPEAKER = Sound()
 while True:
     if IR_SENSOR.proximity < 30:   # no InfraredSensor.wait_for_proximity(...) yet
         SPEAKER.play_file(
-            wav_file='/home/robot/sounds/Snake hiss.wav',
+            wav_file='/home/robot/sound/Snake hiss.wav',
             volume=100,
             play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
@@ -45,7 +45,7 @@ while True:
         block=True)
 
     SPEAKER.play_file(
-        wav_file='/home/robot/sounds/Snake rattle.wav',
+        wav_file='/home/robot/sound/Snake rattle.wav',
         volume=100,
         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 

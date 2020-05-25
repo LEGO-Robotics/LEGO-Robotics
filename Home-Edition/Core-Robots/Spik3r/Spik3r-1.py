@@ -23,7 +23,7 @@ LARGE_MOTOR.on_for_degrees(
     block=True)
 
 SPEAKER.play_file(
-    wav_file='/home/robot/sounds/Blip 3.wav',
+    wav_file='/home/robot/sound/Blip 3.wav',
     volume=100,
     play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
