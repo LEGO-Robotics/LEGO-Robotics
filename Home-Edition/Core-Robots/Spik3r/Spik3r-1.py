@@ -25,7 +25,7 @@ LARGE_MOTOR.on_for_degrees(
 SPEAKER.play_file(
     wav_file='/home/robot/sound/Blip 3.wav',
     volume=100,
-    play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 LARGE_MOTOR.on_for_seconds(
     speed=-100,
