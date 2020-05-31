@@ -2,9 +2,9 @@
 
 
 from ev3dev2.motor import MediumMotor, LargeMotor, OUTPUT_B, OUTPUT_A, OUTPUT_D
-from ev3dev2.sound import Sound
-from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sensor import INPUT_4
+from ev3dev2.sensor.lego import InfraredSensor
+from ev3dev2.sound import Sound
 
 from time import sleep
 
@@ -93,6 +93,9 @@ for i in range(3):
         seconds=1,
         block=True,
         brake=True)
+
+    # to avoid jerking
+    sleep(1)
 
 GO_MOTOR.on(
     speed=100,
