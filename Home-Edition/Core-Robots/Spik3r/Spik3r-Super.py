@@ -22,7 +22,7 @@ SPEAKER = Sound()
 
 def sting_if_see_something():
     if INFRARED_SENSOR.proximity <= 30:
-        for i in range(3):
+        for i in range(2):
             STING_MOTOR.on_for_degrees(
                 speed=-75,
                 degrees=220,
@@ -49,6 +49,30 @@ def sting_if_see_something():
             sleep(1)
 
 
+def be_noisy_to_people():
+    if COLOR_SENSOR.reflected_light_intensity > 30:
+        for i in range(4):
+            SPEAKER.play_file(
+                wav_file='/home/robot/sound/Blip 2.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+            
+
+def pinch_if_touched():
+    if TOUCH_SENSOR.is_pressed:
+        MEDIUM_MOTOR.on_for_seconds(
+            speed=50,
+            seconds=1,
+            brake=True,
+            block=True)
+
+        MEDIUM_MOTOR.on_for_seconds(
+            speed=-50,
+            seconds=0.3,
+            brake=True,
+            block=True)
+
+
 def drive_by_ir_beacon(channel=1):
     if INFRARED_SENSOR.top_left(channel=channel) and INFRARED_SENSOR.top_right(channel=channel):
         GO_MOTOR.on(
@@ -68,5 +92,6 @@ def drive_by_ir_beacon(channel=1):
 
 while True:
     drive_by_ir_beacon(channel=1)
-    
+    be_noisy_to_people()
     sting_if_see_something()
+    pinch_if_touched()
