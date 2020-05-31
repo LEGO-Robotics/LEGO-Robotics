@@ -32,8 +32,7 @@ def sting_if_see_something():
             SPEAKER.play_file(
                 wav_file='/home/robot/sound/Blip 1.wav',
                 volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)SPEAKER = Sound()
-
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
             STING_MOTOR.on_for_seconds(
                 speed=-100,
