@@ -1,9 +1,11 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
+# (MicroPython does not yet support Display as of May 2020)
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
+from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
 import os
@@ -24,6 +26,7 @@ IR_BEACON_DRIVER = IRBeaconDriver(left_motor_port=OUTPUT_B,
 
 IR_SENSOR = InfraredSensor(INPUT_4)
 
+SCREEN = Display()
 SPEAKER = Sound()
 
 
@@ -82,11 +85,20 @@ def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
 
 def shoot_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
     if IR_SENSOR.beacon(channel=channel):
+        SCREEN.image_filename(
+            filename='/home/robot/image/Pinch middle.bmp',
+            clear_screen=True)
+
         MEDIUM_MOTOR.on_for_degrees(
             speed=speed,
             degrees=1000,   # about 3 rotations for 1 shot
             block=True,
             brake=True)
+
+        SPEAKER.play_file(
+            wav_file='/home/robot/sound/Laughing 1.wav',
+            volume=100,
+            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
         while IR_SENSOR.beacon(channel=channel):
             pass
