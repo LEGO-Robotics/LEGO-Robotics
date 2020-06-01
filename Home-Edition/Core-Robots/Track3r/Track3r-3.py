@@ -64,7 +64,7 @@ for i in range(2):
 
     STEER_DRIVER.on_for_rotations(
         steering=35,
-        speed=25,
+        speed=75,
         rotations=-3,
         brake=True,
         block=True)
