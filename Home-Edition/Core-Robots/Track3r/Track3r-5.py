@@ -70,10 +70,10 @@ def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
         TANK_DRIVER.off(brake=False)
 
 
-def hit_objects_by_ir_beacon():
-    if IR_SENSOR.beacon(channel=1):
+def hit_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
+    if IR_SENSOR.beacon(channel=channel):
         MEDIUM_MOTOR.on(
-            speed=100,
+            speed=speed,
             block=False,
             brake=False)
 
@@ -86,4 +86,6 @@ while True:
         channel=1,
         speed=100)
 
-    hit_objects_by_ir_beacon()
+    hit_objects_by_ir_beacon(
+        channel=1,
+        speed=100)
