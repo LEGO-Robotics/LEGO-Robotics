@@ -3,7 +3,6 @@
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_4
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
