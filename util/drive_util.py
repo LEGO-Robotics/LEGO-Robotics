@@ -1,3 +1,6 @@
+__all__ = 'IRBeaconDriver',
+
+
 from ev3dev2.motor import LargeMotor, MoveSteering, MoveTank, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
@@ -26,47 +29,56 @@ class IRBeaconDriver:
     def drive(self, speed: float = 100):
         if self.ir_sensor.top_left(self.ir_beacon_channel) and \
                 self.ir_sensor.top_right(self.ir_beacon_channel):
+            # go forward
             self.tank_driver.on(
                 left_speed=speed,
                 right_speed=speed)
     
         elif self.ir_sensor.bottom_left(self.ir_beacon_channel) and \
                 self.ir_sensor.bottom_right(self.ir_beacon_channel):
+            # go backward
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=-speed)
     
         elif self.ir_sensor.top_left(self.ir_beacon_channel) and \
                 self.ir_sensor.bottom_right(self.ir_beacon_channel):
+            # turn around left
             self.steer_driver.on(
                 steering=-100,
                 speed=speed)
     
         elif self.ir_sensor.top_right(self.ir_beacon_channel) and \
                 self.ir_sensor.bottom_left(self.ir_beacon_channel):
+            # turn around right
             self.steer_driver.on(
                 steering=100,
                 speed=speed)
     
         elif self.ir_sensor.top_left(self.ir_beacon_channel):
+            # turn left forward
             self.steer_driver.on(
                 steering=-50,
                 speed=speed)
     
         elif self.ir_sensor.top_right(self.ir_beacon_channel):
+            # turn right forward
             self.steer_driver.on(
                 steering=50,
                 speed=speed)
     
         elif self.ir_sensor.bottom_left(self.ir_beacon_channel):
+            # turn left backward
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=-speed)
     
         elif self.ir_sensor.bottom_right(self.ir_beacon_channel):
+            # turn right backward
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=0)
     
         else:
+            # stop moving
             self.tank_driver.off(brake=False)
