@@ -85,10 +85,10 @@ def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
 
 
 while True:
-    drive_by_ir_beacon(
-        channel=1,
-        speed=100)
     IR_BEACON_DRIVER.drive(speed=100)
+    # drive_by_ir_beacon(
+    #     channel=1,
+    #     speed=100)
 
     if IR_SENSOR.beacon(channel=1):
         if TOUCH_SENSOR.is_pressed:
