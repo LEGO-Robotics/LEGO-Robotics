@@ -83,7 +83,7 @@ def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
 is_grabbing = False
 
 
-def grab_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
+def grab_or_release_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
     global is_grabbing
 
     if IR_SENSOR.beacon(channel=channel):
@@ -123,6 +123,6 @@ while True:
     #     channel=1,
     #     speed=100)
 
-    grab_objects_by_ir_beacon(
+    grab_or_release_objects_by_ir_beacon(
         channel=1,
         speed=100)
