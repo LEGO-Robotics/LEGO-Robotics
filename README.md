@@ -5,12 +5,13 @@ EV3Dev2 References:
 
 Python EV3Dev2 References:
 - https://github.com/ev3dev/ev3dev-lang-python
+  - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
 - https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
 - https://sites.google.com/site/ev3devpython
-  - [images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) 
-  - [sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
+  - [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) 
+  - [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
 
 (DEPRECATED) Python EV3Dev(1) References:
 - https://sites.google.com/site/ev3python
