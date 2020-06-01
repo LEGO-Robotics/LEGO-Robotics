@@ -6,11 +6,21 @@ from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sound import Sound
 
+import os
+import sys
+sys.path.append(os.path.expanduser('~'))
+from util.drive_util import IRBeaconDriver
+
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
+IR_BEACON_DRIVER = IRBeaconDriver(left_motor_port=OUTPUT_B,
+                                  right_motor_port=OUTPUT_C,
+                                  motor_class=LargeMotor,
+                                  ir_sensor_port=INPUT_4,
+                                  ir_beacon_channel=1)
 
 IR_SENSOR = InfraredSensor(INPUT_4)
 
@@ -82,9 +92,10 @@ def hit_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
 
 
 while True:
-    drive_by_ir_beacon(
-        channel=1,
-        speed=100)
+    IR_BEACON_DRIVER.drive(speed=100)
+    # drive_by_ir_beacon(
+    #     channel=1,
+    #     speed=100)
 
     hit_objects_by_ir_beacon(
         channel=1,

@@ -97,6 +97,9 @@ def shoot_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
 
 while True:
     IR_BEACON_DRIVER.drive(speed=100)
+    # drive_by_ir_beacon(
+    #     channel=1,
+    #     speed=100)
 
     shoot_objects_by_ir_beacon(
         channel=1,

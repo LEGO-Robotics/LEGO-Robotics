@@ -6,9 +6,9 @@ from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor, TouchSensor
 from ev3dev2.sound import Sound
 
+import os
 import sys
-sys.path.append('/home/robot')
-
+sys.path.append(os.path.expanduser('~'))
 from util.drive_util import IRBeaconDriver
 
 
@@ -88,6 +88,7 @@ while True:
     drive_by_ir_beacon(
         channel=1,
         speed=100)
+    IR_BEACON_DRIVER.drive(speed=100)
 
     if IR_SENSOR.beacon(channel=1):
         if TOUCH_SENSOR.is_pressed:
