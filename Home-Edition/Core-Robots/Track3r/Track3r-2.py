@@ -84,7 +84,7 @@ def shoot_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
     if IR_SENSOR.beacon(channel=channel):
         MEDIUM_MOTOR.on_for_degrees(
             speed=speed,
-            degrees=1000,
+            degrees=1000,   # about 3 rotations for 1 shot
             block=True,
             brake=True)
 
