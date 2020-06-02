@@ -1,0 +1,5 @@
+func detectObject() {
+
+}
+
+detectObject()
