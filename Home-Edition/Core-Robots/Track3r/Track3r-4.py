@@ -8,6 +8,8 @@ from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
+from time import sleep
+
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
@@ -37,6 +39,7 @@ while True:
 
         STEER_DRIVER.on_for_degrees(
             steering=-100,
+            speed=75,
             degrees=1000,
             brake=True,
             block=True)
@@ -67,3 +70,28 @@ while True:
             filename='/home/robot/image/Crazy 1.bmp',
             clear_screen=True)
         
+        TANK_DRIVER.on(
+            left_speed=100,
+            right_speed=100)
+
+        MEDIUM_MOTOR.on_for_seconds(
+            speed=75,
+            seconds=0.1,
+            block=True,
+            brake=True)
+
+        sleep(0.1)
+
+        SCREEN.image_filename(
+            filename='/home/robot/image/Crazy 2.bmp',
+            clear_screen=True)
+ 
+        STEER_DRIVER.on(
+            steering=50,
+            speed=75)
+
+        MEDIUM_MOTOR.on_for_seconds(
+            speed=-10,
+            seconds=0.2,
+            brake=False,
+            block=True)
