@@ -161,4 +161,6 @@ Others' Projects:
     - Space Challenge
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
 
+- [Building Ideas](https://education.lego.com/en-us/resources/building%20ideas)
+
 - [MakeCode](https://makecode.mindstorms.com) by LEGO & Microsoft
