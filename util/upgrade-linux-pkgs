@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+
+# ref https://www.ev3dev.org/docs/tutorials/upgrading-ev3dev
+
+sudo apt update
+sudo apt upgrade
