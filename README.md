@@ -1,5 +1,8 @@
 # LEGO Mindstorms
 
+
+## API References
+
 EV3Dev2 References:
 - https://www.ev3dev.org
 
@@ -31,7 +34,7 @@ Others' Projects:
 - https://github.com/pybricks/pybricks-projects
 
 
-## LEGO Mindstorms Software & Materials
+## Official LEGO Mindstorms Software & Materials
 
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
 
@@ -164,3 +167,13 @@ Others' Projects:
 - [Building Ideas](https://education.lego.com/en-us/resources/building%20ideas)
 
 - [MakeCode](https://makecode.mindstorms.com) by LEGO & Microsoft
+
+
+## Other Educational Resources
+
+A Posteriori
+- https://www.aposteriori.com.sg
+
+EV3DevSim Simulator (by A Posteriori)
+- https://github.com/QuirkyCort/ev3dev-sim
+- https://www.aposteriori.com.sg/Ev3devSim/index.html
