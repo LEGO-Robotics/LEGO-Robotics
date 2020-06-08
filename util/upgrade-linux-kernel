@@ -4,4 +4,4 @@
 # ref https://www.ev3dev.org/docs/tutorials/upgrading-ev3dev
 
 sudo apt update
-sudo apt install linux-image-ev3dev-ev3
+sudo apt upgrade linux-image-ev3dev-ev3
