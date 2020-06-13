@@ -26,4 +26,4 @@ def zigzag(for_seconds: int):
             block=True)
 
 
-zigzag(for_seconds=30)
+zigzag(for_seconds=15)
