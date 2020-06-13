@@ -1,10 +1,12 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import LargeMotor, OUTPUT_B, OUTPUT_C, MoveTank
+from ev3dev2.motor import LargeMotor, MoveTank, OUTPUT_B, OUTPUT_C
 
 
-TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C)
+TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
+                       right_motor_port=OUTPUT_C,
+                       motor_class=LargeMotor)
 
 
 def zigzag(for_seconds: int):
