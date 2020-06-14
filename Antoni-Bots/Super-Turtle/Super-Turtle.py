@@ -10,11 +10,11 @@ from ev3dev2.sound import Sound
 class SuperTurtle:
     def __init__(
             self,
-            left_leg_motor_port=OUTPUT_B,
-            right_leg_motor_port=OUTPUT_C,
-            shooting_motor_port=OUTPUT_A,
-            ir_sensor_port=INPUT_4,
-            touch_sensor_port=INPUT_1):
+            left_leg_motor_port: str = OUTPUT_B,
+            right_leg_motor_port: str = OUTPUT_C,
+            shooting_motor_port: str = OUTPUT_A,
+            ir_sensor_port: str = INPUT_4,
+            touch_sensor_port: str = INPUT_1):
         self.tank_driver = MoveTank(left_motor_port=left_leg_motor_port,
                                     right_motor_port=right_leg_motor_port,
                                     motor_class=LargeMotor)
@@ -144,10 +144,10 @@ class SuperTurtle:
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
-    def run_if_chased(self, speed: float = 100, n_steps: int = 3):
+    def run_if_chased(self, speed: float = 100, how_many_steps: int = 3):
         if self.touch_sensor.is_pressed:
             # go forward
-            for i in range(n_steps):
+            for i in range(how_many_steps):
                 self.tank_driver.on_for_seconds(
                     left_speed=-speed,
                     right_speed=0,
@@ -180,4 +180,6 @@ while True:
 
     SUPER_TURTLE.seek_the_fruit(distance=10)
 
-    SUPER_TURTLE.run_if_chased(speed=100)
+    SUPER_TURTLE.run_if_chased(
+        speed=100,
+        how_many_steps=3)
