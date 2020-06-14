@@ -7,160 +7,177 @@ from ev3dev2.sensor.lego import InfraredSensor, TouchSensor
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
-                       right_motor_port=OUTPUT_C,
-                       motor_class=LargeMotor)
+class SuperTurtle:
+    def __init__(
+            self,
+            left_leg_motor_port=OUTPUT_B,
+            right_leg_motor_port=OUTPUT_C,
+            shooting_motor_port=OUTPUT_A,
+            ir_sensor_port=INPUT_4,
+            touch_sensor_port=INPUT_1):
+        self.tank_driver = MoveTank(left_motor_port=left_leg_motor_port,
+                                    right_motor_port=right_leg_motor_port,
+                                    motor_class=LargeMotor)
 
-IR_SENSOR = InfraredSensor(INPUT_4)
-TOUCH_SENSOR = TouchSensor(INPUT_1)
+        self.shooting_motor = MediumMotor(shooting_motor_port)
 
-SPEAKER = Sound()
+        self.ir_sensor = InfraredSensor(ir_sensor_port)
 
+        self.touch_sensor = TouchSensor(touch_sensor_port)
 
-def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
-    if IR_SENSOR.top_left(channel) and IR_SENSOR.top_right(channel):
-        # go forward
-        TANK_DRIVER.on_for_seconds(
-            left_speed=-speed,
-            right_speed=0,
-            seconds=1,
-            brake=True,
-            block=True)
-
-        TANK_DRIVER.on_for_seconds(
-            left_speed=0,
-            right_speed=-speed,
-            seconds=1,
-            brake=True,
-            block=True)
-
-    elif IR_SENSOR.bottom_left(channel) and IR_SENSOR.bottom_right(channel):
-        # go backward
-        TANK_DRIVER.on_for_seconds(
-            left_speed=speed,
-            right_speed=0,
-            seconds=1,
-            brake=True,
-            block=True)
-
-        TANK_DRIVER.on_for_seconds(
-            left_speed=0,
-            right_speed=speed,
-            seconds=1,
-            brake=True,
-            block=True)
-
-    elif IR_SENSOR.top_left(channel) and IR_SENSOR.bottom_right(channel):
-        # turn around left
-        TANK_DRIVER.on_for_seconds(
-            left_speed=0,
-            right_speed=-speed,
-            seconds=1,
-            brake=True,
-            block=True)
-
-        TANK_DRIVER.on_for_seconds(
-            left_speed=speed,
-            right_speed=0,
-            seconds=1,
-            brake=True,
-            block=True)
-
-    elif IR_SENSOR.top_right(channel) and IR_SENSOR.bottom_left(channel):
-        # turn around right
-        TANK_DRIVER.on_for_seconds(
-            left_speed=-speed,
-            right_speed=0,
-            seconds=1,
-            brake=True,
-            block=True)
-
-        TANK_DRIVER.on_for_seconds(
-            left_speed=0,
-            right_speed=speed,
-            seconds=1,
-            brake=True,
-            block=True)
-
-    elif IR_SENSOR.top_left(channel):
-        # turn left
-        TANK_DRIVER.on(
-            left_speed=0,
-            right_speed=-speed)
-
-    elif IR_SENSOR.top_right(channel):
-        # turn right
-        TANK_DRIVER.on(
-            left_speed=-speed,
-            right_speed=0)
-
-    elif IR_SENSOR.bottom_left(channel):
-        # left backward
-        TANK_DRIVER.on(
-            left_speed=0,
-            right_speed=speed)
-
-    elif IR_SENSOR.bottom_right(channel):
-        # right backward
-        TANK_DRIVER.on(
-            left_speed=speed,
-            right_speed=0)
-
-    else:
-        TANK_DRIVER.off(brake=False)
+        self.speaker = Sound()
 
 
-def shoot_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
-    if IR_SENSOR.beacon(channel=channel):
-        MEDIUM_MOTOR.on_for_rotations(
-            speed=speed,
-            rotations=3,
-            block=True,
-            brake=True)
-
-        while IR_SENSOR.beacon(channel=channel):
-            pass
-
-    else:
-        MEDIUM_MOTOR.off(brake=False)
-
-
-def seek_the_fruit(distance: float = 20):
-    if IR_SENSOR.proximity <= distance:
-        SPEAKER.play_file(
-            wav_file='/home/robot/sound/Fanfare.wav',
-            volume=100,
-            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-
-def run_if_chased(speed: float = 100):
-    if TOUCH_SENSOR.is_pressed:
-        # go forward
-        for i in range(3):
-            TANK_DRIVER.on_for_seconds(
+    def drive_by_ir_beacon(self, channel: int = 1, speed: float = 100):
+        if self.ir_sensor.top_left(channel) and self.ir_sensor.top_right(channel):
+            # go forward
+            self.tank_driver.on_for_seconds(
                 left_speed=-speed,
                 right_speed=0,
                 seconds=1,
                 brake=True,
                 block=True)
 
-            TANK_DRIVER.on_for_seconds(
+            self.tank_driver.on_for_seconds(
                 left_speed=0,
                 right_speed=-speed,
                 seconds=1,
                 brake=True,
                 block=True)
 
+        elif self.ir_sensor.bottom_left(channel) and self.ir_sensor.bottom_right(channel):
+            # go backward
+            self.tank_driver.on_for_seconds(
+                left_speed=speed,
+                right_speed=0,
+                seconds=1,
+                brake=True,
+                block=True)
+
+            self.tank_driver.on_for_seconds(
+                left_speed=0,
+                right_speed=speed,
+                seconds=1,
+                brake=True,
+                block=True)
+
+        elif self.ir_sensor.top_left(channel) and self.ir_sensor.bottom_right(channel):
+            # turn around left
+            self.tank_driver.on_for_seconds(
+                left_speed=0,
+                right_speed=-speed,
+                seconds=1,
+                brake=True,
+                block=True)
+
+            self.tank_driver.on_for_seconds(
+                left_speed=speed,
+                right_speed=0,
+                seconds=1,
+                brake=True,
+                block=True)
+
+        elif self.ir_sensor.top_right(channel) and self.ir_sensor.bottom_left(channel):
+            # turn around right
+            self.tank_driver.on_for_seconds(
+                left_speed=-speed,
+                right_speed=0,
+                seconds=1,
+                brake=True,
+                block=True)
+
+            self.tank_driver.on_for_seconds(
+                left_speed=0,
+                right_speed=speed,
+                seconds=1,
+                brake=True,
+                block=True)
+
+        elif self.ir_sensor.top_left(channel):
+            # turn left
+            self.tank_driver.on(
+                left_speed=0,
+                right_speed=-speed)
+
+        elif self.ir_sensor.top_right(channel):
+            # turn right
+            self.tank_driver.on(
+                left_speed=-speed,
+                right_speed=0)
+
+        elif self.ir_sensor.bottom_left(channel):
+            # left backward
+            self.tank_driver.on(
+                left_speed=0,
+                right_speed=speed)
+
+        elif self.ir_sensor.bottom_right(channel):
+            # right backward
+            self.tank_driver.on(
+                left_speed=speed,
+                right_speed=0)
+
+        else:
+            self.tank_driver.off(brake=False)
+
+
+    def shoot_objects_by_ir_beacon(self, channel: int = 1, speed: float = 1):
+        if self.ir_sensor.beacon(channel=channel):
+            self.shooting_motor.on_for_rotations(
+                speed=speed,
+                rotations=6,
+                block=True,
+                brake=True)
+
+            while self.ir_sensor.beacon(channel=channel):
+                pass
+
+        else:
+            self.shooting_motor.off(brake=False)
+
+
+    def seek_the_fruit(self, distance: float = 10):
+        if self.ir_sensor.proximity <= distance:
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Fanfare.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+
+    def run_if_chased(self, speed: float = 100, n_steps: int = 3):
+        if self.touch_sensor.is_pressed:
+            # go forward
+            for i in range(n_steps):
+                self.tank_driver.on_for_seconds(
+                    left_speed=-speed,
+                    right_speed=0,
+                    seconds=1,
+                    brake=True,
+                    block=True)
+
+                self.tank_driver.on_for_seconds(
+                    left_speed=0,
+                    right_speed=-speed,
+                    seconds=1,
+                    brake=True,
+                    block=True)
+
+
+SUPER_TURTLE = SuperTurtle(left_leg_motor_port=OUTPUT_B,
+                           right_leg_motor_port=OUTPUT_C,
+                           shooting_motor_port=OUTPUT_A,
+                           ir_sensor_port=INPUT_4,
+                           touch_sensor_port=INPUT_1)
+
 while True:
-    drive_by_ir_beacon(
+    SUPER_TURTLE.drive_by_ir_beacon(
         channel=1,
         speed=100)
 
-    shoot_objects_by_ir_beacon(
+    SUPER_TURTLE.shoot_objects_by_ir_beacon(
         channel=1,
         speed=100)
 
-    seek_the_fruit(distance=20)
+    SUPER_TURTLE.seek_the_fruit(distance=10)
 
-    run_if_chased(speed=100)
+    SUPER_TURTLE.run_if_chased(speed=100)
