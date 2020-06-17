@@ -28,6 +28,7 @@ class SuperTurtle:
         self.speaker = Sound()
 
 
+    # def is func
     def drive_by_ir_beacon(self, channel: int = 1, speed: float = 100):
         if self.ir_sensor.top_left(channel) and self.ir_sensor.top_right(channel):
             # go forward
@@ -121,6 +122,7 @@ class SuperTurtle:
             self.tank_driver.off(brake=False)
 
 
+    # that is shooting
     def shoot_objects_by_ir_beacon(self, channel: int = 1, speed: float = 1):
         if self.ir_sensor.beacon(channel=channel):
             self.shooting_motor.on_for_rotations(
