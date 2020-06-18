@@ -57,7 +57,10 @@ Others' Projects:
   - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory)
    
 - [Building Instructions](https://www.lego.com/en-us/themes/mindstorms/buildarobot)
+
 - [User Guide](https://www.lego.com/cdn/cs/set/assets/bltbef4d6ce0f40363c/LMSUser_Guide_LEGO_MINDSTORMS_EV3_11_Tablet_ENUS.pdf)
+
+- [Retail Version Online Help](https://ev3-help-online.api.education.lego.com/Retail/en-us/index.html)
 
 
 [Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
@@ -165,6 +168,8 @@ Others' Projects:
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
 
 - [Building Ideas](https://education.lego.com/en-us/resources/building%20ideas)
+
+- [Education Version Online Help](https://ev3-help-online.api.education.lego.com/Education/en-us/index.html)
 
 - [MakeCode](https://makecode.mindstorms.com) by LEGO & Microsoft
 
