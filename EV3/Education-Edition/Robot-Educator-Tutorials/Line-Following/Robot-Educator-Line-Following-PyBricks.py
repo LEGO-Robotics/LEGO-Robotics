@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 
 """
 Example LEGO® MINDSTORMS® EV3 Robot Educator Color Sensor Down Program
