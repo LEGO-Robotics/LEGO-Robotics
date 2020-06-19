@@ -170,6 +170,15 @@ Others' Projects:
       - [Broken](https://education.lego.com/en-us/lessons/spike-invention-squad/broken)
       - [Design for Someone](https://education.lego.com/en-us/lessons/spike-invention-squad/design-for-someone)
 
+    - [Life Hacks](https://education.lego.com/en-us/lessons/spike-life-hacks)
+      - [Break Dance](https://education.lego.com/en-us/lessons/spike-life-hacks/break-dance)
+      - [Repeat 5 Times](https://education.lego.com/en-us/lessons/spike-life-hacks/repeat-5-times)
+      - [Rain or Shine](https://education.lego.com/en-us/lessons/spike-life-hacks/rain-or-shine)
+      - [Wind Speed](https://education.lego.com/en-us/lessons/spike-life-hacks/wind-speed)
+      - [Veggie Love](https://education.lego.com/en-us/lessons/spike-life-hacks/veggie-love)
+      - [Brain Game](https://education.lego.com/en-us/lessons/spike-life-hacks/brain-game)
+      - [The Coach](https://education.lego.com/en-us/lessons/spike-life-hacks/the-coach)
+
     - [Extra Resources](https://education.lego.com/en-us/lessons/spike-extra-resources)
       - [Getting Started](https://education.lego.com/en-us/lessons/spike-extra-resources/getting-started)
       - [Pass the Brick](https://education.lego.com/en-us/lessons/spike-extra-resources/pass-the-brick)
