@@ -3,6 +3,14 @@
 
 ## API References
 
+Python PyBricks References:
+- https://github.com/pybricks/pybricks-api
+- https://pybricks.github.io/ev3-micropython
+  - [Outdated Version 1.0.0](https://docs.pybricks.com)
+- https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf
+  - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
+- https://github.com/drewwhis/pybricks-stubs
+
 EV3Dev2 References:
 - https://www.ev3dev.org
 
@@ -18,14 +26,6 @@ Python EV3Dev2 References:
 
 (DEPRECATED) Python EV3Dev(1) References:
 - https://sites.google.com/site/ev3python
-
-Python PyBricks References:
-- https://github.com/pybricks/pybricks-api
-- https://pybricks.github.io/ev3-micropython
-  - [Outdated Version 1.0.0](https://docs.pybricks.com)
-- https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf
-  - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
-- https://github.com/drewwhis/pybricks-stubs
 
 Swift References:
 - https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
