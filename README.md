@@ -3,7 +3,7 @@
 
 ## API References
 
-Python PyBricks References:
+PyBricks References:
 - https://github.com/pybricks/pybricks-api
 - https://pybricks.github.io/ev3-micropython
   - [Outdated Version 1.0.0](https://docs.pybricks.com)
@@ -11,7 +11,7 @@ Python PyBricks References:
   - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
 - https://github.com/drewwhis/pybricks-stubs
 
-EV3Dev2 References:
+EV3Dev References:
 - https://www.ev3dev.org
 
 Python EV3Dev2 References:
@@ -32,8 +32,8 @@ Swift References:
 - https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3
 
 Others' Projects:
-- https://www.ev3dev.org/projects
 - https://github.com/pybricks/pybricks-projects
+- https://www.ev3dev.org/projects
 
 
 ## Official LEGO Mindstorms Software & Materials
