@@ -6,7 +6,7 @@
 PyBricks References:
 - https://github.com/pybricks/pybricks-api
 - https://pybricks.github.io/ev3-micropython
-  - [Outdated Version 1.0.0](https://docs.pybricks.com)
+  - https://docs.pybricks.com (Outdated Version 1.0.0)
 - https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf
   - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
 - https://github.com/drewwhis/pybricks-stubs
@@ -70,9 +70,9 @@ Others' Projects:
 - [Desktop Software](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
 
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
-  - [Getting Started with EV3 MicroPython (Version 2.0.0)](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
+  - [Getting Started with EV3 MicroPython](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
      - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
-  - [microSD Image (Version 2.0.0)](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
+  - [microSD Image](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
     - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
 
 - [eLearning](https://elearning.legoeducation.com)
