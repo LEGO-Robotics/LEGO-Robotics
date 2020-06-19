@@ -1,6 +1,9 @@
 #!/usr/bin/env micropython
 
 
+# TODO: multiprocess/parallel programming
+
+
 from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_D
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor

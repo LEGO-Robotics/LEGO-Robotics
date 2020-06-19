@@ -2,6 +2,9 @@
 # (Display not yet working in MicroPython as of June 2020)
 
 
+# TODO: multiprocess/parallel programming
+
+
 from ev3dev2.motor import LargeMotor, MoveSteering, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor.lego import TouchSensor
 from ev3dev2.sensor import INPUT_1
