@@ -179,6 +179,16 @@ Others' Projects:
       - [Brain Game](https://education.lego.com/en-us/lessons/spike-life-hacks/brain-game)
       - [The Coach](https://education.lego.com/en-us/lessons/spike-life-hacks/the-coach)
 
+    - [Competition-Ready](https://education.lego.com/en-us/lessons/spike-competition-ready)
+      - [Training Camp 1: Driving Around](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-1-driving-around)
+      - [Training Camp 2: Playing with Objects](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-2-playing-with-objects)
+      - [Training Camp 3: Reacting to Lines](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-3-react-to-lines#lesson-plan)
+      - [Assemling an Advanced Driving Base](https://education.lego.com/en-us/lessons/spike-competition-ready/assembling-an-advanced-driving-base)
+      - [My Code, Our Program](https://education.lego.com/en-us/lessons/spike-competition-ready/my-code-our-program)
+      - [Time for an Upgrade](https://education.lego.com/en-us/lessons/spike-competition-ready/time-for-an-upgrade)
+      - [Mission-Ready](https://education.lego.com/en-us/lessons/spike-competition-ready/mission-ready)
+      - [The Crane Mission](https://education.lego.com/en-us/lessons/spike-competition-ready/the-crane-mission)
+
     - [Extra Resources](https://education.lego.com/en-us/lessons/spike-extra-resources)
       - [Getting Started](https://education.lego.com/en-us/lessons/spike-extra-resources/getting-started)
       - [Pass the Brick](https://education.lego.com/en-us/lessons/spike-extra-resources/pass-the-brick)
