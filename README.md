@@ -163,6 +163,13 @@ Others' Projects:
       - [Keep It Really Safe](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/keep-it-really-safe)
       - [Automate It!](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/automate-it)
 
+    - [Invention Squad](https://education.lego.com/en-us/lessons/spike-invention-squad)
+      - [Help!](https://education.lego.com/en-us/lessons/spike-invention-squad/help)
+      - [Hopper Race](https://education.lego.com/en-us/lessons/spike-invention-squad/hopper-race)
+      - [Super Cleanup](https://education.lego.com/en-us/lessons/spike-invention-squad/super-cleanup)
+      - [Broken](https://education.lego.com/en-us/lessons/spike-invention-squad/broken)
+      - [Design for Someone](https://education.lego.com/en-us/lessons/spike-invention-squad/design-for-someone)
+
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
