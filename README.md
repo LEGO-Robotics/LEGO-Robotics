@@ -75,7 +75,7 @@ Others' Projects:
 
 - [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
 
-  - [Lessons using the Education Core Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Core+Set)
+  - [Lessons using the EV3 Education Core Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Core+Set)
   
     - [Robot Educator Tutorials](https://education.lego.com/en-us/lessons/ev3-tutorials)
       - [Basic Configuring Blocks](https://education.lego.com/en-us/lessons/ev3-tutorials/basics-configuring-blocks)
@@ -145,7 +145,7 @@ Others' Projects:
       - [Make a Puppet](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-puppet)
       - [Make a Security Gadget](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-security-gadget)
     
-  - [Lessons using the Space Challenge Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Space+Challenge+Set)
+  - [Lessons using the EV3 Space Challenge Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Space+Challenge+Set)
     - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
       - [Get Ready to Go to Mars](https://education.lego.com/en-us/lessons/ev3-space-challenge/1-get-ready-to-go-to-mars)
       - [Activate Communications](https://education.lego.com/en-us/lessons/ev3-space-challenge/2-activate-communications)
@@ -155,6 +155,50 @@ Others' Projects:
       - [Return the Rock Samples](https://education.lego.com/en-us/lessons/ev3-space-challenge/6-return-the-rock-samples)
       - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
       - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
+
+  - [Lessons using the SPIKE Prime Set](https://education.lego.com/en-us/lessons?rows=100&products=LEGO%C2%AE+Education+SPIKE%E2%84%A2+Prime+Set)
+
+    - [Kickstart a Business](https://education.lego.com/en-us/lessons/spike-kickstart-a-business)
+      - [Place Your Order](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/place-your-order)
+      - [Out of Order](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/out-of-order)
+      - [Track Your Packages](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/track-your-packages)
+      - [Keep It Safe](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/keep-it-safe)
+      - [Keep It Really Safe](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/keep-it-really-safe)
+      - [Automate It!](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/automate-it)
+
+    - [Invention Squad](https://education.lego.com/en-us/lessons/spike-invention-squad)
+      - [Help!](https://education.lego.com/en-us/lessons/spike-invention-squad/help)
+      - [Hopper Race](https://education.lego.com/en-us/lessons/spike-invention-squad/hopper-race)
+      - [Super Cleanup](https://education.lego.com/en-us/lessons/spike-invention-squad/super-cleanup)
+      - [Broken](https://education.lego.com/en-us/lessons/spike-invention-squad/broken)
+      - [Design for Someone](https://education.lego.com/en-us/lessons/spike-invention-squad/design-for-someone)
+
+    - [Life Hacks](https://education.lego.com/en-us/lessons/spike-life-hacks)
+      - [Break Dance](https://education.lego.com/en-us/lessons/spike-life-hacks/break-dance)
+      - [Repeat 5 Times](https://education.lego.com/en-us/lessons/spike-life-hacks/repeat-5-times)
+      - [Rain or Shine](https://education.lego.com/en-us/lessons/spike-life-hacks/rain-or-shine)
+      - [Wind Speed](https://education.lego.com/en-us/lessons/spike-life-hacks/wind-speed)
+      - [Veggie Love](https://education.lego.com/en-us/lessons/spike-life-hacks/veggie-love)
+      - [Brain Game](https://education.lego.com/en-us/lessons/spike-life-hacks/brain-game)
+      - [The Coach](https://education.lego.com/en-us/lessons/spike-life-hacks/the-coach)
+
+    - [Competition-Ready](https://education.lego.com/en-us/lessons/spike-competition-ready)
+      - [Training Camp 1: Driving Around](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-1-driving-around)
+      - [Training Camp 2: Playing with Objects](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-2-playing-with-objects)
+      - [Training Camp 3: Reacting to Lines](https://education.lego.com/en-us/lessons/spike-competition-ready/training-camp-3-react-to-lines#lesson-plan)
+      - [Assemling an Advanced Driving Base](https://education.lego.com/en-us/lessons/spike-competition-ready/assembling-an-advanced-driving-base)
+      - [My Code, Our Program](https://education.lego.com/en-us/lessons/spike-competition-ready/my-code-our-program)
+      - [Time for an Upgrade](https://education.lego.com/en-us/lessons/spike-competition-ready/time-for-an-upgrade)
+      - [Mission-Ready](https://education.lego.com/en-us/lessons/spike-competition-ready/mission-ready)
+      - [The Crane Mission](https://education.lego.com/en-us/lessons/spike-competition-ready/the-crane-mission)
+
+    - [Extra Resources](https://education.lego.com/en-us/lessons/spike-extra-resources)
+      - [Getting Started](https://education.lego.com/en-us/lessons/spike-extra-resources/getting-started)
+      - [Pass the Brick](https://education.lego.com/en-us/lessons/spike-extra-resources/pass-the-brick)
+      - [Ideas, the LEGO Way](https://education.lego.com/en-us/lessons/spike-extra-resources/ideas-the-lego-way)
+      - [What Is This?](https://education.lego.com/en-us/lessons/spike-extra-resources/what-is-this)
+      - [Going the Distance](https://education.lego.com/en-us/lessons/spike-extra-resources/going-the-distance)
+      - [Goal!](https://education.lego.com/en-us/lessons/spike-extra-resources/goal)
 
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
