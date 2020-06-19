@@ -54,16 +54,12 @@ def run_away_from_dark():
             if time() % 3 < 1.5:
                 TANK_DRIVER.on(
                     left_speed=50,
-                    right_speed=100,
-                    brake=False,
-                    block=False)
+                    right_speed=100)
 
             else:
                 TANK_DRIVER.on(
                     left_speed=100,
-                    right_speed=50,
-                    brake=False,
-                    block=False)
+                    right_speed=50)
 
             SCREEN.image_filename(
                 filename='/home/robot/image/Awake.bmp',
