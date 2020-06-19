@@ -72,7 +72,7 @@ Others' Projects:
 
 - [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
 
-  - [Lessons using the Education Core Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Core+Set)
+  - [Lessons using the EV3 Education Core Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Core+Set)
   
     - [Robot Educator Tutorials](https://education.lego.com/en-us/lessons/ev3-tutorials)
       - [Basic Configuring Blocks](https://education.lego.com/en-us/lessons/ev3-tutorials/basics-configuring-blocks)
@@ -142,7 +142,7 @@ Others' Projects:
       - [Make a Puppet](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-puppet)
       - [Make a Security Gadget](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-security-gadget)
     
-  - [Lessons using the Space Challenge Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Space+Challenge+Set)
+  - [Lessons using the EV3 Space Challenge Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Space+Challenge+Set)
     - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
       - [Get Ready to Go to Mars](https://education.lego.com/en-us/lessons/ev3-space-challenge/1-get-ready-to-go-to-mars)
       - [Activate Communications](https://education.lego.com/en-us/lessons/ev3-space-challenge/2-activate-communications)
@@ -152,6 +152,16 @@ Others' Projects:
       - [Return the Rock Samples](https://education.lego.com/en-us/lessons/ev3-space-challenge/6-return-the-rock-samples)
       - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
       - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
+
+  - [Lessons using the SPIKE Prime Set](https://education.lego.com/en-us/lessons?rows=100&products=LEGO%C2%AE+Education+SPIKE%E2%84%A2+Prime+Set)
+
+    - [Kickstart a Business](https://education.lego.com/en-us/lessons/spike-kickstart-a-business)
+      - [Place Your Order](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/place-your-order)
+      - [Out of Order](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/out-of-order)
+      - [Track Your Packages](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/track-your-packages)
+      - [Keep It Safe](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/keep-it-safe)
+      - [Keep It Really Safe](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/keep-it-really-safe)
+      - [Automate It!](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/automate-it)
 
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
