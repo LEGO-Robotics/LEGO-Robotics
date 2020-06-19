@@ -21,8 +21,8 @@ Python EV3Dev2 References:
 
 Python PyBricks References:
 - https://github.com/pybricks/pybricks-api
-- https://docs.pybricks.com
 - https://pybricks.github.io/ev3-micropython
+  - [Outdated Version 1.0.0](https://docs.pybricks.com)
 - https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf
   - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
 - https://github.com/drewwhis/pybricks-stubs
