@@ -170,6 +170,14 @@ Others' Projects:
       - [Broken](https://education.lego.com/en-us/lessons/spike-invention-squad/broken)
       - [Design for Someone](https://education.lego.com/en-us/lessons/spike-invention-squad/design-for-someone)
 
+    - [Extra Resources](https://education.lego.com/en-us/lessons/spike-extra-resources)
+      - [Getting Started](https://education.lego.com/en-us/lessons/spike-extra-resources/getting-started)
+      - [Pass the Brick](https://education.lego.com/en-us/lessons/spike-extra-resources/pass-the-brick)
+      - [Ideas, the LEGO Way](https://education.lego.com/en-us/lessons/spike-extra-resources/ideas-the-lego-way)
+      - [What Is This?](https://education.lego.com/en-us/lessons/spike-extra-resources/what-is-this)
+      - [Going the Distance](https://education.lego.com/en-us/lessons/spike-extra-resources/going-the-distance)
+      - [Goal!](https://education.lego.com/en-us/lessons/spike-extra-resources/goal)
+
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
   - [Coding Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_Coding-activities_2.0_en-US.pdf)
