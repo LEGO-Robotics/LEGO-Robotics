@@ -25,8 +25,9 @@ class IRBeaconDriver:
         
         self.ir_sensor = InfraredSensor(ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
-        
-    def drive(self, speed: float = 100):
+    
+
+    def drive_once_by_ir_beacon(self, speed: float = 100):
         if self.ir_sensor.top_left(self.ir_beacon_channel) and \
                 self.ir_sensor.top_right(self.ir_beacon_channel):
             # go forward
@@ -82,3 +83,8 @@ class IRBeaconDriver:
         else:
             # stop moving
             self.tank_driver.off(brake=False)
+
+    # this method must be used in a parallel process in order not to block other operations
+    def keep_driving_by_ir_beacon(self, speed: float = 100):
+        while True:
+            self.drive_once_by_ir_beacon(speed=speed)
