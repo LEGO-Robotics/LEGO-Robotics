@@ -25,7 +25,11 @@ class IRBeaconDriverMixin:
         self.ir_sensor = InfraredSensor(ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
-    def drive_by_ir_beacon(self, speed: float = 100, turn_rate: float = 100):
+    def drive_by_ir_beacon(
+            self,
+            speed: float = 100,     # mm/s
+            turn_rate: float = 90   # rotational speed deg/s
+        ):
         ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
         # forward
@@ -103,28 +107,32 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
             ir_sensor_port=ir_sensor_port,
             ir_beacon_channel=ir_beacon_channel)
         
-        self.shooting_motor = Motor(shooting_motor_port)
+        self.shooting_motor = Motor(port=shooting_motor_port,
+                                    positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(touch_sensor_port)
         self.color_sensor = ColorSensor(color_sensor_port)
 
     def shoot_if_touched(self):
+        N_ROTATIONS_PER_SHOT = 3
+        ROTATIONAL_DEGREES_PER_SHOT = N_ROTATIONS_PER_SHOT * 360
+
         if self.touch_sensor.pressed():
             if self.color_sensor.ambient() < 15:
-                self.speaker.play_file(filename='/home/robot/sound/Up.wav')
+                self.speaker.play_file(file='/home/robot/sound/Up.wav')
 
                 self.shooting_motor.run_angle(
-                    speed=100,
-                    rotation_angle=3 * 360,
+                    speed=2 * ROTATIONAL_DEGREES_PER_SHOT,   # shoot quickly in half a second
+                    rotation_angle=ROTATIONAL_DEGREES_PER_SHOT,
                     then=Stop.HOLD,
                     wait=True)
 
             else:
-                self.speaker.play_file(filename='/home/robot/sound/Down.wav')
+                self.speaker.play_file(file='/home/robot/sound/Down.wav')
 
                 self.shooting_motor.run_angle(
-                    speed=100,
-                    rotations=3 * 360,
+                    speed=2 * ROTATIONAL_DEGREES_PER_SHOT,   # shoot quickly in half a second
+                    rotation_angle=-ROTATIONAL_DEGREES_PER_SHOT,
                     then=Stop.HOLD,
                     wait=True)
 
