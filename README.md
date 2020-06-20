@@ -40,7 +40,7 @@ Others' Projects:
 
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
 
-- Desktop Software
+- [Desktop Software](https://www.lego.com/en-us/themes/mindstorms/downloads)
   - [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite)
   - [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite)
   
