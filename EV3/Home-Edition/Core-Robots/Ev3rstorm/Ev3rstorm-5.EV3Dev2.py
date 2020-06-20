@@ -144,12 +144,13 @@ class Ev3rstorm(IRBeaconDriver):
         Process(target=self.shoot_when_touched).start()
 
 
-EV3RSTORM = Ev3rstorm(left_leg_motor_port=OUTPUT_B,
-                      right_leg_motor_port=OUTPUT_C,
-                      shooting_motor_port=OUTPUT_A,
-                      touch_sensor_port=INPUT_1,
-                      color_sensor_port=INPUT_3,
-                      ir_sensor_port=INPUT_4,
-                      ir_beacon_channel=1)
+if __name__ == "__main__":
+    EV3RSTORM = Ev3rstorm(left_leg_motor_port=OUTPUT_B,
+                        right_leg_motor_port=OUTPUT_C,
+                        shooting_motor_port=OUTPUT_A,
+                        touch_sensor_port=INPUT_1,
+                        color_sensor_port=INPUT_3,
+                        ir_sensor_port=INPUT_4,
+                        ir_beacon_channel=1)
 
-EV3RSTORM.main()
+    EV3RSTORM.main()
