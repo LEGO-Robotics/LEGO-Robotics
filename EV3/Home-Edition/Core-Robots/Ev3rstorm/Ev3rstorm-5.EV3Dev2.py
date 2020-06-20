@@ -5,8 +5,8 @@
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
-from ev3dev2.sound import Sound
 from ev3dev2.display import Display
+from ev3dev2.sound import Sound
 
 
 class Ev3rstorm:
