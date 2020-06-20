@@ -8,10 +8,15 @@ from ev3dev2.sensor.lego import ColorSensor, InfraredSensor, TouchSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
+import os
+import sys
+sys.path.append(os.path.expanduser('~'))
+from util.drive_util import IRBeaconDriver
+
 from multiprocessing import Process
 
 
-class Ev3rstorm:
+class Ev3rstorm(IRBeaconDriver):
     def __init__(
             self,
             left_leg_motor_port: str = OUTPUT_B,
@@ -21,17 +26,24 @@ class Ev3rstorm:
             color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4,
             ir_beacon_channel: int = 1):
-        self.tank_driver = MoveTank(left_motor_port=left_leg_motor_port,
-                                    right_motor_port=right_leg_motor_port,
-                                    motor_class=LargeMotor)
+        super().__init__(
+            left_motor_port=left_leg_motor_port,
+            right_motor_port=right_leg_motor_port,
+            motor_class=LargeMotor,
+            ir_sensor_port=ir_sensor_port,
+            ir_beacon_channel=ir_beacon_channel)
+
+        # self.tank_driver = MoveTank(left_motor_port=left_leg_motor_port,
+        #                             right_motor_port=right_leg_motor_port,
+        #                             motor_class=LargeMotor)
+        
+        # self.ir_sensor = InfraredSensor(ir_sensor_port)
+        # self.ir_beacon_channel = ir_beacon_channel
 
         self.shooting_motor = MediumMotor(shooting_motor_port)
 
         self.touch_sensor = TouchSensor(touch_sensor_port)
         self.color_sensor = ColorSensor(color_sensor_port)
-
-        self.ir_sensor = InfraredSensor(ir_sensor_port)
-        self.ir_beacon_channel = ir_beacon_channel
 
         self.screen = Display()
         self.speaker = Sound()
@@ -125,6 +137,12 @@ class Ev3rstorm:
                     brake=True,
                     block=True)
 
+    def main(self):
+        Process(target=self.keep_driving_by_ir_beacon).start()
+        # Process(target=EV3RSTORM.drive_by_ir_beacon).start()
+
+        Process(target=self.shoot_when_touched).start()
+
 
 EV3RSTORM = Ev3rstorm(left_leg_motor_port=OUTPUT_B,
                       right_leg_motor_port=OUTPUT_C,
@@ -134,5 +152,4 @@ EV3RSTORM = Ev3rstorm(left_leg_motor_port=OUTPUT_B,
                       ir_sensor_port=INPUT_4,
                       ir_beacon_channel=1)
 
-Process(target=EV3RSTORM.drive_by_ir_beacon).start()
-Process(target=EV3RSTORM.shoot_when_touched).start()
+EV3RSTORM.main()
