@@ -7,8 +7,6 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import ImageFile
 from pybricks.parameters import Button, Direction, Port, Stop
 
-from multiprocessing import Process
-
 
 class IRBeaconDriverMixin:
     def __init__(
@@ -110,14 +108,8 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
         self.touch_sensor = TouchSensor(touch_sensor_port)
         self.color_sensor = ColorSensor(color_sensor_port)
 
-    # following method must be used in a parallel process in order not to block other operations
-    def shoot_whenever_touched(self):
-        while True:
-            
-            # wait for TouchSensor being press
-            while not self.touch_sensor.pressed():
-                pass
-
+    def shoot_if_touched(self):
+        if self.touch_sensor.pressed():
             if self.color_sensor.ambient() < 15:
                 self.speaker.play_file(filename='/home/robot/sound/Up.wav')
 
@@ -140,8 +132,7 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
     def main(self):
         while True:
             self.drive_by_ir_beacon()
-            # Process(target=self.keep_driving_by_ir_beacon).start()
-            # Process(target=self.shoot_whenever_touched).start()
+            self.shoot_if_touched()
 
 
 if __name__ == '__main__':
