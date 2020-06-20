@@ -1,4 +1,4 @@
-__all__ = 'IRBeaconDriver',
+__all__ = 'IRBeaconDriverMixin',
 
 
 from ev3dev2.motor import LargeMotor, MoveSteering, MoveTank, OUTPUT_B, OUTPUT_C
@@ -6,7 +6,7 @@ from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 
 
-class IRBeaconDriver:
+class IRBeaconDriverMixin:
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C, motor_class=LargeMotor,
