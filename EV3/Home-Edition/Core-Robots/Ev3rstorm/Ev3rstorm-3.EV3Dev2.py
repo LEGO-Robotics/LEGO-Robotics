@@ -3,7 +3,7 @@
 
 
 from ev3dev2.motor import LargeMotor, MoveTank, OUTPUT_B, OUTPUT_C, MediumMotor, OUTPUT_A
-from ev3dev2.sensor import INPUT_1, INPUT_2
+from ev3dev2.sensor import INPUT_1, INPUT_3
 from ev3dev2.sensor.lego import ColorSensor, TouchSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
@@ -18,11 +18,11 @@ TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
 
 MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
 
-COLOR_SENSOR = ColorSensor(INPUT_2)
 TOUCH_SENSOR = TouchSensor(INPUT_1)
+COLOR_SENSOR = ColorSensor(INPUT_3)
 
-SPEAKER = Sound()
 SCREEN = Display()
+SPEAKER = Sound()
 
 
 def run_away_from_dark():
