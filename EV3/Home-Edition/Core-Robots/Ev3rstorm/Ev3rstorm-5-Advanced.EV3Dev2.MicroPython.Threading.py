@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+#!/usr/bin/env micropython
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import ColorSensor, InfraredSensor, TouchSensor
-from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
 from threading import Thread
@@ -32,16 +30,11 @@ class Ev3rstorm(IRBeaconDriverMixin):
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.screen = Display()
         self.speaker = Sound()
 
 
     # following method must be used in a parallel process in order not to block other operations
     def blast_bazooka_whenever_touched(self):
-        self.screen.image_filename(
-            filename='/home/robot/image/Target.bmp',
-            clear_screen=True)
-
         while True:
             self.touch_sensor.wait_for_bump()
 
@@ -71,14 +64,12 @@ class Ev3rstorm(IRBeaconDriverMixin):
 
 
     def main(self):
-        Thread(
-            target=self.blast_bazooka_whenever_touched,
-            daemon=True) \
-        .start()
+        # MicroPython: no daemon
+        Thread(target=self.blast_bazooka_whenever_touched).start()
 
         self.keep_driving_by_ir_beacon()
 
-        
+
 if __name__ == '__main__':
     EV3RSTORM = Ev3rstorm(left_foot_motor_port=OUTPUT_B, right_foot_motor_port=OUTPUT_C,
                           bazooka_blast_motor_port=OUTPUT_A,

@@ -43,7 +43,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
             clear_screen=True)
 
         while True:
-            self.touch_sensor.wait_for_pressed()
+            self.touch_sensor.wait_for_bump()
 
             if self.color_sensor.ambient_light_intensity < 5:
                 self.speaker.play_file(

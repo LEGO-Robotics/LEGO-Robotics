@@ -36,7 +36,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
     # following method must be used in a parallel process in order not to block other operations
     def blast_bazooka_whenever_touched(self):
         while True:
-            self.touch_sensor.wait_for_pressed()
+            self.touch_sensor.wait_for_bump()
 
             if self.color_sensor.ambient_light_intensity < 5:
                 self.speaker.play_file(

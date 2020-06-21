@@ -117,6 +117,8 @@ class Ev3rstorm:
                     rotations=3,
                     brake=True,
                     block=True)
+
+            self.touch_sensor.wait_for_released()
  
     
     def main(self):
