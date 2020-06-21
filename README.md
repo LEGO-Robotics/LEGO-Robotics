@@ -11,6 +11,7 @@ PyBricks References:
   - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
 - https://github.com/drewwhis/pybricks-stubs
 - https://code.pybricks.com
+- PyBricks Roadmap: https://github.com/pybricks/support/issues/29
 
 EV3Dev References:
 - https://www.ev3dev.org
