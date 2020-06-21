@@ -4,8 +4,8 @@
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
-from ev3dev2.sound import Sound
 from ev3dev2.led import Leds
+from ev3dev2.sound import Sound
 
 
 class Ev3rstorm:
@@ -25,16 +25,13 @@ class Ev3rstorm:
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-
         self.ir_beacon_channel = ir_beacon_channel
 
+        self.leds = Leds()
         self.speaker = Sound()
-
-        self.leds = Leds()        
 
 
     def drive_by_ir_beacon(self, speed: float = 100):
