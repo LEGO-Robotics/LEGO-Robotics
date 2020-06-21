@@ -135,6 +135,11 @@ class Ev3rstorm:
                     brake=True,
                     block=True)
 
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Laughing 1.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
             else:
                 self.speaker.play_file(
                     wav_file='/home/robot/sound/Down.wav',
@@ -146,6 +151,11 @@ class Ev3rstorm:
                     rotations=3,
                     brake=True,
                     block=True)
+
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Laughing 2.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
             self.touch_sensor.wait_for_released()
  
