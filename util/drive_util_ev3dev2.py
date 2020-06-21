@@ -23,7 +23,7 @@ class IRBeaconDriverMixin:
                 right_motor_port=right_motor_port,
                 motor_class=motor_class)
         
-        self.ir_sensor = InfraredSensor(adress=ir_sensor_port)
+        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
 
