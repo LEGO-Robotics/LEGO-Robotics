@@ -9,13 +9,11 @@ from pybricks.parameters import Button, Direction, Port
 class IRBeaconDriverMixin:
     def __init__(
             self,
+            wheel_diameter: float, axle_track: float,   # both in milimeters
             left_motor_port: Port = Port.B,
             right_motor_port: Port = Port.C,
             ir_sensor_port: Port = Port.S4,
-            ir_beacon_channel: int = 1,
-            wheel_diameter: float = 50,   # mm
-            axle_track: float = 100       # mm
-        ):
+            ir_beacon_channel: int = 1):
         self.driver = DriveBase(left_motor=Motor(port=left_motor_port,
                                                  positive_direction=Direction.CLOCKWISE),
                                 right_motor=Motor(port=right_motor_port,
@@ -23,7 +21,7 @@ class IRBeaconDriverMixin:
                                 wheel_diameter=wheel_diameter,
                                 axle_track=axle_track)
 
-        self.ir_sensor = InfraredSensor(ir_sensor_port)
+        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
     def drive_by_ir_beacon(
@@ -81,6 +79,6 @@ class IRBeaconDriverMixin:
                 speed=-speed,
                 turn_rate=-turn_rate)
 
-        # stop
+        # otherwise stop
         else:
             self.driver.stop()
