@@ -13,7 +13,7 @@ class Ev3rstorm:
             self,
             left_foot_motor_port: str = OUTPUT_B,
             right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1,
             color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4,
@@ -22,7 +22,7 @@ class Ev3rstorm:
                                     right_motor_port=right_foot_motor_port,
                                     motor_class=LargeMotor)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
@@ -121,7 +121,7 @@ class Ev3rstorm:
             self.leds.all_off()
 
 
-    def shoot_when_touched(self):
+    def blast_bazooka_if_touched(self):
         if self.touch_sensor.is_pressed:
             if self.color_sensor.ambient_light_intensity < 5:
                 self.speaker.play_file(
@@ -129,7 +129,7 @@ class Ev3rstorm:
                     volume=100,
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
+                self.bazooka_blast_motor.on_for_rotations(
                     speed=100,
                     rotations=-3,
                     brake=True,
@@ -141,11 +141,13 @@ class Ev3rstorm:
                     volume=100,
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
+                self.bazooka_blast_motor.on_for_rotations(
                     speed=100,
                     rotations=3,
                     brake=True,
                     block=True)
+
+            self.touch_sensor.wait_for_released()
  
     
     def main(self):
@@ -154,7 +156,7 @@ class Ev3rstorm:
             
             self.detect_object_by_ir_sensor()
 
-            self.shoot_when_touched()
+            self.blast_bazooka_if_touched()
 
 
 if __name__ == '__main__':
