@@ -27,7 +27,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
             left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port, motor_class=LargeMotor,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
-        self.shooting_motor = MediumMotor(address=bazooka_blast_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -51,7 +51,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
                     volume=100,
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
+                self.bazooka_blast_motor.on_for_rotations(
                     speed=100,
                     rotations=-3,
                     brake=True,
@@ -63,7 +63,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
                     volume=100,
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
+                self.bazooka_blast_motor.on_for_rotations(
                     speed=100,
                     rotations=3,
                     brake=True,
