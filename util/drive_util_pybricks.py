@@ -24,7 +24,7 @@ class IRBeaconDriverMixin:
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
             turn_rate: float = 90   # rotational speed deg/s
@@ -82,3 +82,14 @@ class IRBeaconDriverMixin:
         # otherwise stop
         else:
             self.driver.stop()
+
+    # this method must be used in a parallel process in order not to block other operations
+    def keep_driving_by_ir_beacon(
+            self,
+            speed: float = 100,     # mm/s
+            turn_rate: float = 90   # rotational speed deg/s
+        ):
+        while True:
+            self.drive_once_by_ir_beacon(
+                speed=speed,
+                turn_rate=turn_rate)
