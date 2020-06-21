@@ -39,54 +39,55 @@ class Ev3rstorm:
 
 
     def drive_by_ir_beacon(self, speed: float = 100):
+        # forward
         if self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.top_right(self.ir_beacon_channel):
-            # go forward
             self.tank_driver.on(
                 left_speed=speed,
                 right_speed=speed)
 
+        # backward
         elif self.ir_sensor.bottom_left(self.ir_beacon_channel) and self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            # go backward
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=-speed)
 
+        # turn left on the spot
         elif self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            # turn around left
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=speed)
 
+        # turn right on the spot
         elif self.ir_sensor.top_right(self.ir_beacon_channel) and self.ir_sensor.bottom_left(self.ir_beacon_channel):
-            # turn around right
             self.tank_driver.on(
                 left_speed=speed,
                 right_speed=-speed)
 
+        # turn left forward
         elif self.ir_sensor.top_left(self.ir_beacon_channel):
-            # turn left
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=speed)
 
+        # turn right forward
         elif self.ir_sensor.top_right(self.ir_beacon_channel):
-            # turn right
             self.tank_driver.on(
                 left_speed=speed,
                 right_speed=0)
 
+        # turn left backward
         elif self.ir_sensor.bottom_left(self.ir_beacon_channel):
-            # left backward
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=-speed)
 
+        # turn right backward
         elif self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            # right backward
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=0)
 
+        # otherwise stop
         else:
             self.tank_driver.off(brake=False)
 
