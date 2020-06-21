@@ -45,7 +45,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
         while True:
             self.touch_sensor.wait_for_pressed()
 
-            if self.color_sensor.ambient_light_intensity < 15:
+            if self.color_sensor.ambient_light_intensity < 5:
                 self.speaker.play_file(
                     wav_file='/home/robot/sound/Up.wav',
                     volume=100,
@@ -71,11 +71,14 @@ class Ev3rstorm(IRBeaconDriverMixin):
 
 
     def main(self):
-        Process(target=self.keep_driving_by_ir_beacon).start()
+        Process(
+            target=self.blast_bazooka_whenever_touched,
+            daemon=True) \
+        .start()
 
-        Process(target=self.blast_bazooka_whenever_touched).start()
+        self.keep_driving_by_ir_beacon()
 
-
+        
 if __name__ == '__main__':
     EV3RSTORM = Ev3rstorm(left_foot_motor_port=OUTPUT_B, right_foot_motor_port=OUTPUT_C,
                           bazooka_blast_motor_port=OUTPUT_A,
