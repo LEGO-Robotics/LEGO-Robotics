@@ -16,13 +16,10 @@ from ev3dev2.sound import Sound
 class Ev3rstorm:
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             bazooka_blast_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
-            color_sensor_port: str = INPUT_3,
-            ir_sensor_port: str = INPUT_4,
-            ir_beacon_channel: int = 1):
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
                                     right_motor_port=right_foot_motor_port,
                                     motor_class=LargeMotor)
