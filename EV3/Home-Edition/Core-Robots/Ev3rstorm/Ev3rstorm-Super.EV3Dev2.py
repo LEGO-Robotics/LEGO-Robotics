@@ -5,6 +5,7 @@ from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B,
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.sound import Sound
+from ev3dev2.led import Leds
 
 
 class Ev3rstorm:
@@ -32,6 +33,8 @@ class Ev3rstorm:
         self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
+
+        self.leds = Leds()        
 
 
     def drive_by_ir_beacon(self, speed: float = 100):
@@ -88,9 +91,39 @@ class Ev3rstorm:
             self.tank_driver.off(brake=False)
 
 
+    def detect_object_by_ir_sensor(self):
+        if self.ir_sensor.proximity < 25: 
+            self.leds.animate_police_lights(
+                color1='ORANGE',
+                color2='RED',
+                group1='LEFT',
+                group2='RIGHT',
+                sleeptime=0.5,
+                duration=5,
+                block=False)
+            
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Object.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+            self.speaker.play_file(                                  
+                wav_file='/home/robot/sound/Detected.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Error alarm.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+        else:
+            self.leds.all_off()
+
+
     def shoot_when_touched(self):
         if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity <= 15:
+            if self.color_sensor.ambient_light_intensity < 5:
                 self.speaker.play_file(
                     wav_file='/home/robot/sound/Up.wav',
                     volume=100,
@@ -119,6 +152,8 @@ class Ev3rstorm:
         while True:
             self.drive_by_ir_beacon()
             
+            self.detect_object_by_ir_sensor()
+
             self.shoot_when_touched()
 
 
