@@ -127,7 +127,7 @@ class Ev3rstorm(EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
     
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_by_ir_beacon(speed=1000)
             
             self.shoot_when_touched()
 
