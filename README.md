@@ -3,15 +3,27 @@
 
 ## API References
 
+
 PyBricks References:
-- https://github.com/pybricks/pybricks-api
+
 - https://pybricks.github.io/ev3-micropython
   - https://docs.pybricks.com (Outdated Version 1.0.0)
+
 - [Getting started with LEGO® MINDSTORMS® Education EV3 MicroPython Version 2.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
   - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
+
+- https://github.com/pybricks
+  - https://github.com/pybricks/pybricks-api
+  - https://github.com/pybricks/pybricks-code
+    - https://code.pybricks.com Web IDE
+  - https://github.com/pybricks/pybricksdev
+  - https://github.com/pybricks/pybricks-micropython
+  - https://github.com/pybricks/pybricks-projects
+  - https://github.com/pybricks/support/issues
+    - Roadmap: https://github.com/pybricks/support/issues/29
+
 - https://github.com/drewwhis/pybricks-stubs
-- https://code.pybricks.com
-- PyBricks Roadmap: https://github.com/pybricks/support/issues/29
+
 
 EV3Dev References:
 - https://www.ev3dev.org
@@ -29,13 +41,16 @@ Python EV3Dev2 References:
 (DEPRECATED) Python EV3Dev(1) References:
 - https://sites.google.com/site/ev3python
 
+
+MicroPython References:
+- https://github.com/micropython
+  - https://github.com/micropython/micropython
+  - https://github.com/micropython/micropython-lib
+
+
 Swift References:
 - https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
 - https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3
-
-Others' Projects:
-- https://github.com/pybricks/pybricks-projects
-- https://www.ev3dev.org/projects
 
 
 ## Official LEGO Mindstorms Software & Materials
@@ -229,6 +244,25 @@ Others' Projects:
 A Posteriori
 - https://www.aposteriori.com.sg
 
+
 EV3DevSim Simulator (by A Posteriori)
 - https://github.com/QuirkyCort/ev3dev-sim
 - https://www.aposteriori.com.sg/Ev3devSim/index.html
+
+
+Coppelia Robotics (CoppeliaSim simulator)
+- https://www.coppeliarobotics.com
+
+
+HiTechnic
+
+
+MindSensors
+
+
+Others' Projects:
+- https://www.ev3dev.org/projects
+
+
+Interesting Discussion Threads:
+- [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16)
