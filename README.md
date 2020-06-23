@@ -20,7 +20,11 @@ PyBricks References:
   - https://github.com/pybricks/pybricks-micropython
   - https://github.com/pybricks/pybricks-projects
   - https://github.com/pybricks/support/issues
-    - Roadmap: https://github.com/pybricks/support/issues/29
+    - [Roadmap](https://github.com/pybricks/support/issues/29)
+    - Interesting Discussion Threads:
+      - [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16)
+      - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
+      - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
 - https://github.com/drewwhis/pybricks-stubs
 
@@ -241,6 +245,7 @@ Swift References:
 
 ## Other Educational Resources
 
+
 A Posteriori
 - https://www.aposteriori.com.sg
 
@@ -254,15 +259,31 @@ Coppelia Robotics (CoppeliaSim simulator)
 - https://www.coppeliarobotics.com
 
 
+Beagle Bone
+
+
+Dexter Industries Brick Pi
+
+
+FatCatLab EVB
+
+
 HiTechnic
 
 
-MindSensors
+Mindsensors PiStorms
+
+
+Robot Square (Laurens Valk):
+- http://robotsquare.com
+
+
+VexIQ
+
+
+Virtual Robotics Toolkit
+- https://www.virtualroboticstoolkit.com
 
 
 Others' Projects:
 - https://www.ev3dev.org/projects
-
-
-Interesting Discussion Threads:
-- [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16)
