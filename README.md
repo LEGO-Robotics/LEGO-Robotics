@@ -64,6 +64,7 @@ Swift References:
 
 ## Official LEGO Mindstorms Software & Materials
 
+
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
 
 - [Desktop Software](https://www.lego.com/en-us/themes/mindstorms/downloads)
@@ -240,6 +241,8 @@ Swift References:
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SCIENCE-full-setup_1.4.2_en-US_OSX.dmg)
     - Space Challenge
       - [iOS](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_SPACE-full-setup_1.4.2_en-US_OSX.dmg)
+
+- [Building Instructions & Program Descriptions](https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions)
 
 - [Building Ideas](https://education.lego.com/en-us/resources/building%20ideas)
 
