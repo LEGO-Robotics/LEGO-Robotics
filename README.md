@@ -254,6 +254,9 @@ Swift References:
 ## Other Educational Resources
 
 
+[LEGO Education YouTube Channel](https://www.youtube.com/channel/UC2RjB15PI3IsXCDifNGTG9w)
+
+
 A Posteriori
 - https://www.aposteriori.com.sg
 
