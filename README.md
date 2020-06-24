@@ -302,7 +302,9 @@ Others' Projects:
 
 
 LEGO Mindstorms NXT Software:
-- https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
+- [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite)
+- [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+- also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
 
 [LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
