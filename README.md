@@ -37,7 +37,6 @@ EV3Dev References:
 Python EV3Dev2 References:
 - https://github.com/ev3dev/ev3dev-lang-python
   - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
-    - [Outdated EV3Dev1 programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
 - https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
@@ -45,9 +44,11 @@ Python EV3Dev2 References:
   - [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) 
   - [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
 
-(DEPRECATED) Python EV3Dev(1) References:
+(DEPRECATED) Python EV3Dev1 References:
 - https://sites.google.com/site/ev3python
 - https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
+- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie
+- https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
 
 
 MicroPython References:
