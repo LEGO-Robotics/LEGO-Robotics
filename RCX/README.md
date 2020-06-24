@@ -1,10 +1,10 @@
 # LEGO® MINDSTORMS® Robotics Invention System
 
-LEGO® MINDSTORMS® Robotics Invention System 1.0
+LEGO® MINDSTORMS® Robotics Invention System 1.0 (9719)
 
-LEGO® MINDSTORMS® Robotics Invention System 1.5
+LEGO® MINDSTORMS® Robotics Invention System 1.5 (9747)
 
-LEGO® MINDSTORMS® Robotics Invention System 2.0
+LEGO® MINDSTORMS® Robotics Invention System 2.0 (3804)
 
 
 The RCX is NOT easily programmable with Python
