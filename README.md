@@ -255,6 +255,7 @@ Swift References:
 
 
 [LEGO Education YouTube Channel](https://www.youtube.com/channel/UC2RjB15PI3IsXCDifNGTG9w)
+- [Programming with LEGO Education Mindstorms EV3](https://www.youtube.com/playlist?list=PLXNn7QnqlNpjcIie_4j-I70NepPsT6ekK)
 
 
 A Posteriori
