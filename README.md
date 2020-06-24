@@ -303,3 +303,6 @@ Others' Projects:
 
 LEGO Mindstorms NXT Software:
 - https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
+
+
+[LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
