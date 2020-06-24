@@ -295,3 +295,7 @@ Virtual Robotics Toolkit
 
 Others' Projects:
 - https://www.ev3dev.org/projects
+
+
+LEGO Mindstorms NXT Software:
+- https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
