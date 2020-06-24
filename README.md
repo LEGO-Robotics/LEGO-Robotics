@@ -46,6 +46,7 @@ Python EV3Dev2 References:
 
 (DEPRECATED) Python EV3Dev(1) References:
 - https://sites.google.com/site/ev3python
+- https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
 
 
 MicroPython References:
