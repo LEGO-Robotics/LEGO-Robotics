@@ -4,4 +4,6 @@
 
 [LEGO MINDSTORMS® Education EV3: Expansion Set (45560)](https://education.lego.com/en-us/products/lego-mindstorms-education-ev3-expansion-set/45560)
 
+[LEGO® MINDSTORMS® Education EV3: Homeschool Combo Pack (5003480)](https://education.lego.com/en-us/products/lego-mindstorms-education-ev3-homeschool-combo-pack/5003480)
+
 [LEGO® MINDSTORMS® Education EV3: Space Challenge Set(45570)](https://education.lego.com/en-us/products/lego-mindstorms-education-ev3-space-challenge-set/45570#product)
