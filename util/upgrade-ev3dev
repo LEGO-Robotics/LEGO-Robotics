@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+sudo apt-get update
+sudo apt-get install --only-upgrade micropython-ev3dev python3-ev3dev
+sudo apt-get install --only-upgrade micropython-ev3dev2 python3-ev3dev2  
