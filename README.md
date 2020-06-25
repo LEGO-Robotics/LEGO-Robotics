@@ -137,6 +137,7 @@ GitHub Projects:
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 - [Philip Taylor ("G33kDude")](https://github.com/G33kDude/pyev3)
+- [Laurens Valk](https://github.com/laurensvalk)
 - [Sanjay Seshan](https://github.com/sanjayseshan/ev3-projects)
 
 [A Posteriori](https://www.aposteriori.com.sg)
