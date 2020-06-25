@@ -107,8 +107,6 @@ Swift References:
 - [eLearning](https://elearning.legoeducation.com)
 
 - [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
-
-  - [Lessons using the EV3 Education Core Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Core+Set)
   
     - [Robot Educator Tutorials](https://education.lego.com/en-us/lessons/ev3-tutorials)
       - [Basic Configuring Blocks](https://education.lego.com/en-us/lessons/ev3-tutorials/basics-configuring-blocks)
@@ -162,11 +160,6 @@ Swift References:
       - [Make a Pick-and-Place Robot](https://education.lego.com/en-us/lessons/ev3-cim/make-a-pick-and-place-robot)
       - [Make a Sorting Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-sorting-machine)
     
-    - [Coding Activities](https://education.lego.com/en-us/lessons/mindstorms-ev3)
-      - [Autonomous Parking](https://education.lego.com/en-us/lessons/mindstorms-ev3/autonomous-parking)
-      - [Reversing Safely](https://education.lego.com/en-us/lessons/mindstorms-ev3/reversing-safely)
-      - [Automatic Headlights](https://education.lego.com/en-us/lessons/mindstorms-ev3/automatic-headlights)
-      - [Line Detection](https://education.lego.com/en-us/lessons/mindstorms-ev3/line-detection)
     
     - [Real-World Vehicles](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles)
       - [Make a Speed-Control System](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/speed-control-system)
@@ -177,8 +170,8 @@ Swift References:
       - [Make a Sound Machine](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-sound-machine)
       - [Make a Puppet](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-puppet)
       - [Make a Security Gadget](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-security-gadget)
+
     
-  - [Lessons using the EV3 Space Challenge Set](https://education.lego.com/en-us/lessonsfilter?Products=LEGO%c2%ae+MINDSTORMS%c2%ae+Education+EV3+Space+Challenge+Set)
     - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
       - [Get Ready to Go to Mars](https://education.lego.com/en-us/lessons/ev3-space-challenge/1-get-ready-to-go-to-mars)
       - [Activate Communications](https://education.lego.com/en-us/lessons/ev3-space-challenge/2-activate-communications)
@@ -189,7 +182,6 @@ Swift References:
       - [Secure the Power Supply](https://education.lego.com/en-us/lessons/ev3-space-challenge/7-secure-the-power-supply)
       - [Initiate Launch](https://education.lego.com/en-us/lessons/ev3-space-challenge/8-initiate-launch)
 
-  - [Lessons using the SPIKE Prime Set](https://education.lego.com/en-us/lessons?rows=100&products=LEGO%C2%AE+Education+SPIKE%E2%84%A2+Prime+Set)
 
     - [Kickstart a Business](https://education.lego.com/en-us/lessons/spike-kickstart-a-business)
       - [Place Your Order](https://education.lego.com/en-us/lessons/spike-kickstart-a-business/place-your-order)
