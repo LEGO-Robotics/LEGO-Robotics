@@ -138,17 +138,6 @@ Swift References:
     
     - [Space Training](https://education.lego.com/en-us/lessons/ev3-space)
       - [Turn Using Sensors](https://education.lego.com/en-us/lessons/ev3-space/turn-using-sensor)
-    
-    
-    - [Real-World Vehicles](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles)
-      - [Make a Speed-Control System](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/speed-control-system)
-      - [Make an Autonomous Robotic Explorer](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/make-an-autonomous-robotics-explorer)
-      - [Make a Driverless Car](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/make-a-driverless-car)
-      
-    - [MAKER Middle School](https://education.lego.com/en-us/lessons/maker-middleschool)
-      - [Make a Sound Machine](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-sound-machine)
-      - [Make a Puppet](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-puppet)
-      - [Make a Security Gadget](https://education.lego.com/en-us/lessons/maker-middleschool/make-a-security-gadget)
 
     
     - [Space Challenge](https://education.lego.com/en-us/lessons/ev3-space-challenge)
