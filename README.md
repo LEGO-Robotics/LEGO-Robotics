@@ -132,13 +132,15 @@ LEGO Mindstorms NXT Software:
 - [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
-GitHub Projects:
+GitHub Community:
 - [Anton Vanhoucke](https://github.com/antonvh)
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 - [Philip Taylor ("G33kDude")](https://github.com/G33kDude/pyev3)
 - [Laurens Valk](https://github.com/laurensvalk)
-- [Sanjay Seshan](https://github.com/sanjayseshan/ev3-projects)
+- [Sanjay Seshan](http://sanjay.seshan.org)
+  - https://github.com/sanjayseshan/ev3-projects
+  - https://github.com/sanjayseshan/spikeprime-samples
 
 [A Posteriori](https://www.aposteriori.com.sg)
 - EV3DevSim Simulator:
@@ -163,6 +165,9 @@ GitHub Projects:
 - Brick Pi
 
 [Droids Robotics](http://www.droidsrobotics.org)
+
+[EV3 Lessons](http://ev3lessons.com)
+- https://github.com/ev3lessons
 
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
