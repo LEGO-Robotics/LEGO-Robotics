@@ -132,10 +132,25 @@ LEGO Mindstorms NXT Software:
 - [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
+GitHub Projects:
+- [Anton Vanhoucke](https://github.com/antonvh)
+- [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
+- [Droids Robotics](https://github.com/droidsrobotics/projects)
+- [Philip Taylor ("G33kDude")](https://github.com/G33kDude/pyev3)
+- [Sanjay Seshan](https://github.com/sanjayseshan/ev3-projects)
+
 [A Posteriori](https://www.aposteriori.com.sg)
 - EV3DevSim Simulator:
   - https://github.com/QuirkyCort/ev3dev-sim
   - https://www.aposteriori.com.sg/Ev3devSim/index.html
+
+[Anton's Mindstorms](https://antonsmindstorms.com) (Anton Vanhoucke)
+
+[Blockly](https://developers.google.com/blockly)
+
+[BluPants](https://blupants.com)
+- [Documentation](https://blupants.org/help)
+- https://github.com/blupants/blupants
 
 [Coppelia Robotics](https://www.coppeliarobotics.com)
 - CoppeliaSim simulator
@@ -146,14 +161,23 @@ LEGO Mindstorms NXT Software:
 [Dexter Industries](https://www.dexterindustries.com)
 - Brick Pi
 
+[Droids Robotics](http://www.droidsrobotics.org)
+
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
+[MindBoards](https://github.com/mindboards)
 
 [Modern Robotics](https://modernroboticsinc.com)
 - [HiTechnic](https://www.hitechnic.com)
 
 [MindSensors](http://www.mindsensors.com)
 - PiStorms
+
+[Raspberry Pi](https://www.raspberrypi.org)
+
+[Robot Operating System (ROS)](https://www.ros.org)
+- http://wiki.ros.org/Robots/EV3
+- http://wiki.ros.org/Robots/NXT
 
 [Robot Square](http://robotsquare.com) (Laurens Valk)
 
