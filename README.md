@@ -33,6 +33,7 @@ PyBricks References:
 
 EV3Dev References:
 - https://www.ev3dev.org
+  - [Projects](https://www.ev3dev.org/projects)
 
 Python EV3Dev2 References:
 - https://github.com/ev3dev/ev3dev-lang-python
@@ -118,59 +119,44 @@ Swift References:
 - [MakeCode](https://makecode.mindstorms.com) by LEGO & Microsoft
 
 
-## Other Educational Resources
-
-
 [LEGO Education YouTube Channel](https://www.youtube.com/channel/UC2RjB15PI3IsXCDifNGTG9w)
 - [Programming with LEGO Education Mindstorms EV3](https://www.youtube.com/playlist?list=PLXNn7QnqlNpjcIie_4j-I70NepPsT6ekK)
 
 
-A Posteriori
-- https://www.aposteriori.com.sg
+## Other Educational Resources
 
-
-EV3DevSim Simulator (by A Posteriori)
-- https://github.com/QuirkyCort/ev3dev-sim
-- https://www.aposteriori.com.sg/Ev3devSim/index.html
-
-
-Coppelia Robotics (CoppeliaSim simulator)
-- https://www.coppeliarobotics.com
-
-
-Beagle Bone
-
-
-Dexter Industries Brick Pi
-
-
-FatCatLab EVB
-
-
-HiTechnic
-
-
-Mindsensors PiStorms
-
-
-Robot Square (Laurens Valk):
-- http://robotsquare.com
-
-
-VexIQ
-
-
-Virtual Robotics Toolkit
-- https://www.virtualroboticstoolkit.com
-
-
-Others' Projects:
-- https://www.ev3dev.org/projects
-
+[LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
 
 LEGO Mindstorms NXT Software:
 - [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
+[A Posteriori](https://www.aposteriori.com.sg)
+- EV3DevSim Simulator:
+  - https://github.com/QuirkyCort/ev3dev-sim
+  - https://www.aposteriori.com.sg/Ev3devSim/index.html
 
-[LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
+[Coppelia Robotics](https://www.coppeliarobotics.com)
+- CoppeliaSim simulator
+
+[Beagle Board](https://beagleboard.org)
+- [Beagle Bone AI](https://beagleboard.org/bone)
+
+[Dexter Industries](https://www.dexterindustries.com)
+- Brick Pi
+
+[FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
+
+
+[Modern Robotics](https://modernroboticsinc.com)
+- [HiTechnic](https://www.hitechnic.com)
+
+[MindSensors](http://www.mindsensors.com)
+- PiStorms
+
+[Robot Square](http://robotsquare.com) (Laurens Valk)
+
+[VexRobotics](https://www.vexrobotics.com)
+- [VexIQ](https://www.vexrobotics.com/vexiq)
+
+[Virtual Robotics Toolkit](https://www.virtualroboticstoolkit.com)
