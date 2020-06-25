@@ -67,23 +67,15 @@ Swift References:
 
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
 
-- [Desktop Software](https://www.lego.com/en-us/themes/mindstorms/downloads)
-  - [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite)
-  - [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite)
+- [Desktop Software](https://www.lego.com/en-us/themes/mindstorms/downloads): [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite) | [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite)
   
 - [EV3 Mindstorms Firmware](https://ev3manager.education.lego.com)
 
-- EV3 Programmer Apps
-  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-ev3-programmer/id1039354955)
-  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.ev3programmer)
+- EV3 Programmer Apps: [iOS](https://apps.apple.com/us/app/lego-mindstorms-ev3-programmer/id1039354955) | [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.ev3programmer)
   
-- Robot Commander Apps
-  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-robot-commander/id681786521)
-  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.robotcommander)
+- Robot Commander Apps: [iOS](https://apps.apple.com/us/app/lego-mindstorms-robot-commander/id681786521) | [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.robotcommander)
   
-- _Fix the Factory_ Game Apps
-  - [iOS](https://apps.apple.com/us/app/lego-mindstorms-fix-factory/id671493323)
-  - [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory)
+- _Fix the Factory_ Game Apps: [iOS](https://apps.apple.com/us/app/lego-mindstorms-fix-factory/id671493323) | [Android](https://play.google.com/store/apps/details?id=com.lego.mindstorms.fixthefactory)
    
 - [Building Instructions](https://www.lego.com/en-us/themes/mindstorms/buildarobot)
 
@@ -94,9 +86,7 @@ Swift References:
 
 [Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
 
-- Desktop Software
-  - [EV3 Classroom](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
-  - [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software)
+- Desktop Software: [EV3 Classroom](https://education.lego.com/en-us/downloads/mindstorms-ev3/software) | [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software)
 
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
   - [Getting Started with EV3 MicroPython](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
@@ -179,8 +169,7 @@ Others' Projects:
 
 
 LEGO Mindstorms NXT Software:
-- [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite)
-- [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+- [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
 
