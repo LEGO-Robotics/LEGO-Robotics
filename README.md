@@ -94,7 +94,9 @@ Swift References:
 
 [Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
 
-- [Desktop Software](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
+- Desktop Software
+  - [EV3 Classroom](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
+  - [SPIKE Prime](https://education.lego.com/en-us/downloads/spike-prime/software)
 
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
   - [Getting Started with EV3 MicroPython](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
