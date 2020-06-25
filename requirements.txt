@@ -9,5 +9,5 @@ Python-EV3Dev >= 1.2.0
 NXT-Python >= 2.2.2
 NXT-Python2 >= 2.2.2
 
-# misc
-# BluPants >= 1.0.0
+# auto-refactoring
+Rope >= 0.17.0
