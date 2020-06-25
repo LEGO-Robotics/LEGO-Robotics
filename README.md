@@ -134,13 +134,31 @@ LEGO Mindstorms NXT Software
 
 GitHub Community
 - [Anton Vanhoucke](https://github.com/antonvh)
+
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
+
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
+
 - [Philip Taylor](https://github.com/G33kDude/pyev3) ("G33kDude")
+
 - [Laurens Valk](https://github.com/laurensvalk)
-- [Sanjay Seshan](http://sanjay.seshan.org)
-  - https://github.com/sanjayseshan/ev3-projects
-  - https://github.com/sanjayseshan/spikeprime-samples
+
+- [Seshan Brothers (Sanjay & Arvind Seshan)](http://brothers.seshan.org)
+  - [EV3 Lessons](http://ev3lessons.com)
+    - https://github.com/ev3lessons
+    - https://github.com/ev3lessons/archive
+    - https://github.com/ev3lessons/ev3lessons-classic
+    - https://github.com/ev3lessons/ev3lessons-old
+    - https://github.com/ev3lessons/ev3lessons-future
+  - [FLL Tutorials](http://FLLTutorials.com)
+    - https://github.com/ev3lessons/FLL-Tutorials
+  - [Prime Lessons](http://primelessons.org)
+    - https://github.com/ev3lessons/primelessons
+  - (https://github.com/seshanbrothers)
+    - https://github.com/seshanbrothers/projects
+  - [Sanjay Seshan](http://sanjay.seshan.org)
+    - https://github.com/sanjayseshan/ev3-projects
+    - https://github.com/sanjayseshan/spikeprime-samples
 
 [A Posteriori](https://www.aposteriori.com.sg)
 - EV3DevSim Simulator
@@ -176,14 +194,10 @@ GitHub Community
 [MindSensors](http://www.mindsensors.com)
 - PiStorms
 
-[Sanjay & Arvind Seshan]
-- [Sanjay Seshan](http://sanjay.seshan.org)
-- [FLL Tutorials](http://FLLTutorials.com)
-- [EV3 Lessons](http://ev3lessons.com)
-  - https://github.com/ev3lessons
-- [Prime Lessons](http://primelessons.org)
-
 [Raspberry Pi](https://www.raspberrypi.org)
+
+[Robot Mak3rs](http://www.robotmak3rs.com)
+- https://github.com/robotmak3rs
 
 [Robot Operating System (ROS)](https://www.ros.org)
 - http://wiki.ros.org/Robots/EV3
