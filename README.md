@@ -33,17 +33,18 @@ PyBricks References:
 
 EV3Dev References:
 - https://www.ev3dev.org
+  - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
   - [Projects](https://www.ev3dev.org/projects)
 
 Python EV3Dev2 References:
 - https://github.com/ev3dev/ev3dev-lang-python
   - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
+    - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
 - https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
-- https://sites.google.com/site/ev3devpython
-  - [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) 
-  - [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
+- https://sites.google.com/site/ev3devpython:
+  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
 
 (DEPRECATED) Python EV3Dev1 References:
 - https://sites.google.com/site/ev3python
@@ -97,7 +98,7 @@ Swift References:
 
 - [eLearning](https://elearning.legoeducation.com)
 
-- [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
+- [Lessons](https://education.lego.com/en-us/lessons?rows=100) (330 as of June 2020)
 
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
