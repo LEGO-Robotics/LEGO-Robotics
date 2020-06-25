@@ -33,17 +33,18 @@ PyBricks References:
 
 EV3Dev References:
 - https://www.ev3dev.org
+  - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
   - [Projects](https://www.ev3dev.org/projects)
 
 Python EV3Dev2 References:
 - https://github.com/ev3dev/ev3dev-lang-python
   - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
+    - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
 - https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
-- https://sites.google.com/site/ev3devpython
-  - [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) 
-  - [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
+- https://sites.google.com/site/ev3devpython:
+  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
 
 (DEPRECATED) Python EV3Dev1 References:
 - https://sites.google.com/site/ev3python
@@ -97,7 +98,7 @@ Swift References:
 
 - [eLearning](https://elearning.legoeducation.com)
 
-- [Lessons](https://education.lego.com/en-us/lessons?rows=100) (319 as of May 2020)
+- [Lessons](https://education.lego.com/en-us/lessons?rows=100) (330 as of June 2020)
 
 - [Curriculum](https://education.lego.com/en-us/downloads/mindstorms-ev3/curriculum)
   - [Maker Activities](https://le-www-live-s.legocdn.com/downloads/LME-EV3/LME-EV3_MAKER_1.0_en-US.pdf)
@@ -131,10 +132,25 @@ LEGO Mindstorms NXT Software:
 - [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
+GitHub Projects:
+- [Anton Vanhoucke](https://github.com/antonvh)
+- [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
+- [Droids Robotics](https://github.com/droidsrobotics/projects)
+- [Philip Taylor ("G33kDude")](https://github.com/G33kDude/pyev3)
+- [Sanjay Seshan](https://github.com/sanjayseshan/ev3-projects)
+
 [A Posteriori](https://www.aposteriori.com.sg)
 - EV3DevSim Simulator:
   - https://github.com/QuirkyCort/ev3dev-sim
   - https://www.aposteriori.com.sg/Ev3devSim/index.html
+
+[Anton's Mindstorms](https://antonsmindstorms.com) (Anton Vanhoucke)
+
+[Blockly](https://developers.google.com/blockly)
+
+[BluPants](https://blupants.com)
+- [Documentation](https://blupants.org/help)
+- https://github.com/blupants/blupants
 
 [Coppelia Robotics](https://www.coppeliarobotics.com)
 - CoppeliaSim simulator
@@ -145,14 +161,23 @@ LEGO Mindstorms NXT Software:
 [Dexter Industries](https://www.dexterindustries.com)
 - Brick Pi
 
+[Droids Robotics](http://www.droidsrobotics.org)
+
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
+[MindBoards](https://github.com/mindboards)
 
 [Modern Robotics](https://modernroboticsinc.com)
 - [HiTechnic](https://www.hitechnic.com)
 
 [MindSensors](http://www.mindsensors.com)
 - PiStorms
+
+[Raspberry Pi](https://www.raspberrypi.org)
+
+[Robot Operating System (ROS)](https://www.ros.org)
+- http://wiki.ros.org/Robots/EV3
+- http://wiki.ros.org/Robots/NXT
 
 [Robot Square](http://robotsquare.com) (Laurens Valk)
 

@@ -1,1 +1,132 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
+
+
+from ev3dev import ev3
+
+import random
+from time import time
+
+
+random.seed(time())
+
+
+class Ev3rstorm:
+    def __init__(self):
+        self.lm = ev3.LargeMotor('outB')
+        self.rm = ev3.LargeMotor('outC')
+        self.mm = ev3.MediumMotor()
+
+        self.ir = ev3.InfraredSensor()
+        self.ts = ev3.TouchSensor()
+        self.cs = ev3.ColorSensor()
+
+        self.screen = ev3.Screen()
+
+        assert self.lm.connected
+        assert self.rm.connected
+        assert self.mm.connected
+
+        assert self.ir.connected
+        assert self.ts.connected
+        assert self.cs.connected
+
+        # Reset the motors
+        for m in (self.lm, self.rm, self.mm):
+            m.reset()
+            m.position = 0
+            m.stop_action = 'brake'
+
+        self.draw_face()
+    
+
+    def draw_face(self):
+        w,h = self.screen.shape
+        y = h // 2
+
+        eye_xrad = 20
+        eye_yrad = 30
+
+        pup_xrad = 10
+        pup_yrad = 10
+
+        def draw_eye(x):
+            self.screen.draw.ellipse((x-eye_xrad, y-eye_yrad, x+eye_xrad, y+eye_yrad))
+            self.screen.draw.ellipse((x-pup_xrad, y-pup_yrad, x+pup_xrad, y+pup_yrad), fill='black')
+
+        draw_eye(w//3)
+        draw_eye(2*w//3)
+
+        self.screen.update()
+
+
+    def shoot(self, direction='up'):
+        """
+        Shot a ball in the specified direction (valid choices are 'up' and 'down')
+        """
+        self.mm.run_to_rel_pos(speed_sp=900, position_sp=(-1080 if direction == 'up' else 1080))
+        
+        while 'running' in self.mm.state:
+            time.sleep(0.1)
+
+
+    def rc_loop(self):
+        """
+        Enter the remote control loop.
+        RC buttons on channel 1 control the robot movement,
+        channel 2 is for shooting things.
+        The loop ends when the touch sensor is pressed.
+        """
+
+        def roll(motor, led_group, speed):
+            """
+            Generate remote control event handler. It rolls given motor into
+            given direction (1 for forward, -1 for backward). When motor rolls
+            forward, the given led group flashes green, when backward -- red.
+            When motor stops, the leds are turned off.
+            The on_press function has signature required by RemoteControl
+            class.  It takes boolean state parameter; True when button is
+            pressed, False otherwise.
+            """
+            def on_press(state):
+                if state:
+                    # Roll when button is pressed
+                    motor.run_forever(speed_sp=speed)
+                    ev3.Leds.set_color(led_group,
+                            ev3.Leds.GREEN if speed > 0 else ev3.Leds.RED)
+                else:
+                    # Stop otherwise
+                    motor.stop()
+                    ev3.Leds.set_color(led_group, ev3.Leds.BLACK)
+
+            return on_press
+
+        rc1 = ev3.RemoteControl(self.ir, 1)
+        rc1.on_red_up    = roll(self.lm, ev3.Leds.LEFT,   900)
+        rc1.on_red_down  = roll(self.lm, ev3.Leds.LEFT,  -900)
+        rc1.on_blue_up   = roll(self.rm, ev3.Leds.RIGHT,  900)
+        rc1.on_blue_down = roll(self.rm, ev3.Leds.RIGHT, -900)
+
+
+        def shoot(direction):
+            def on_press(state):
+                if state: self.shoot(direction)
+            return on_press
+
+        rc2 = ev3.RemoteControl(self.ir, 2)
+        rc2.on_red_up    = shoot('up')
+        rc2.on_blue_up   = shoot('up')
+        rc2.on_red_down  = shoot('down')
+        rc2.on_blue_down = shoot('down')
+
+        # Now that the event handlers are assigned,
+        # lets enter the processing loop:
+        while not self.ts.is_pressed:
+            rc1.process()
+            rc2.process()
+            time.sleep(0.1)
+
+
+if __name__ == '__main__':
+    EV3RSTORM = Ev3rstorm()
+
+    EV3RSTORM.rc_loop()
