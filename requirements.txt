@@ -6,6 +6,8 @@ RPyC >= 4.1.5
 
 # deprecated
 Python-EV3Dev >= 1.2.0
+NXT-Python >= 2.2.2
+NXT-Python2 >= 2.2.2
 
 # misc
 # BluPants >= 1.0.0
