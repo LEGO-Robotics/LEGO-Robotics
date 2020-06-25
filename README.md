@@ -133,17 +133,11 @@ LEGO Mindstorms NXT Software
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
 GitHub Community
-- [Anton Vanhoucke](https://github.com/antonvh)
-
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 
-- [Philip Taylor](https://github.com/G33kDude/pyev3) ("G33kDude")
-
-- [Laurens Valk](https://github.com/laurensvalk)
-
-- [Seshan Brothers (Sanjay & Arvind Seshan)](http://brothers.seshan.org)
+- [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
   - [EV3 Lessons](http://ev3lessons.com)
     - https://github.com/ev3lessons
     - https://github.com/ev3lessons/archive
@@ -154,11 +148,17 @@ GitHub Community
     - https://github.com/ev3lessons/FLL-Tutorials
   - [Prime Lessons](http://primelessons.org)
     - https://github.com/ev3lessons/primelessons
-  - (https://github.com/seshanbrothers)
+  - https://github.com/seshanbrothers
     - https://github.com/seshanbrothers/projects
   - [Sanjay Seshan](http://sanjay.seshan.org)
     - https://github.com/sanjayseshan/ev3-projects
     - https://github.com/sanjayseshan/spikeprime-samples
+
+  - [Philip Taylor](https://github.com/G33kDude/pyev3)
+
+  - [Laurens Valk](https://github.com/laurensvalk)
+
+  - [Anton Vanhoucke](https://github.com/antonvh)
 
 [A Posteriori](https://www.aposteriori.com.sg)
 - EV3DevSim Simulator
