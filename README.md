@@ -4,7 +4,7 @@
 ## API References
 
 
-PyBricks References:
+PyBricks References
 
 - https://pybricks.github.io/ev3-micropython
   - https://docs.pybricks.com (Outdated Version 1.0.0)
@@ -21,7 +21,7 @@ PyBricks References:
   - https://github.com/pybricks/pybricks-projects
   - https://github.com/pybricks/support/issues
     - [Roadmap](https://github.com/pybricks/support/issues/29)
-    - Interesting Discussion Threads:
+    - Interesting Discussion Threads
       - [PyBricks: Data Logging & Analysis](https://github.com/pybricks/support/issues/7)
       - [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16): lots of perspective from FIRST LEGO League / Robotics Challenge / Tech Challenge
       - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
@@ -31,12 +31,12 @@ PyBricks References:
 - https://github.com/drewwhis/pybricks-stubs
 
 
-EV3Dev References:
+EV3Dev References
 - https://www.ev3dev.org
   - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
   - [Projects](https://www.ev3dev.org/projects)
 
-Python EV3Dev2 References:
+Python EV3Dev2 References
 - https://github.com/ev3dev/ev3dev-lang-python
   - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
     - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
@@ -46,20 +46,20 @@ Python EV3Dev2 References:
 - https://sites.google.com/site/ev3devpython:
   - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
 
-(DEPRECATED) Python EV3Dev1 References:
+(DEPRECATED) Python EV3Dev1 References
 - https://sites.google.com/site/ev3python
 - https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
 - https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie
 - https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
 
 
-MicroPython References:
+MicroPython References
 - https://github.com/micropython
   - https://github.com/micropython/micropython
   - https://github.com/micropython/micropython-lib
 
 
-Swift References:
+Swift References
 - https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
 - https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3
 
@@ -128,22 +128,22 @@ Swift References:
 
 [LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
 
-LEGO Mindstorms NXT Software:
+LEGO Mindstorms NXT Software
 - [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
-GitHub Community:
+GitHub Community
 - [Anton Vanhoucke](https://github.com/antonvh)
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
-- [Philip Taylor ("G33kDude")](https://github.com/G33kDude/pyev3)
+- [Philip Taylor](https://github.com/G33kDude/pyev3) ("G33kDude")
 - [Laurens Valk](https://github.com/laurensvalk)
 - [Sanjay Seshan](http://sanjay.seshan.org)
   - https://github.com/sanjayseshan/ev3-projects
   - https://github.com/sanjayseshan/spikeprime-samples
 
 [A Posteriori](https://www.aposteriori.com.sg)
-- EV3DevSim Simulator:
+- EV3DevSim Simulator
   - https://github.com/QuirkyCort/ev3dev-sim
   - https://www.aposteriori.com.sg/Ev3devSim/index.html
 
@@ -166,9 +166,6 @@ GitHub Community:
 
 [Droids Robotics](http://www.droidsrobotics.org)
 
-[EV3 Lessons](http://ev3lessons.com)
-- https://github.com/ev3lessons
-
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
 [MindBoards](https://github.com/mindboards)
@@ -178,6 +175,13 @@ GitHub Community:
 
 [MindSensors](http://www.mindsensors.com)
 - PiStorms
+
+[Sanjay & Arvind Seshan]
+- [Sanjay Seshan](http://sanjay.seshan.org)
+- [FLL Tutorials](http://FLLTutorials.com)
+- [EV3 Lessons](http://ev3lessons.com)
+  - https://github.com/ev3lessons
+- [Prime Lessons](http://primelessons.org)
 
 [Raspberry Pi](https://www.raspberrypi.org)
 
