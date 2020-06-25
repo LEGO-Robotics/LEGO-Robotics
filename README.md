@@ -154,12 +154,6 @@ Swift References:
     - [Space Training](https://education.lego.com/en-us/lessons/ev3-space)
       - [Turn Using Sensors](https://education.lego.com/en-us/lessons/ev3-space/turn-using-sensor)
     
-    - [Computer Integrated Manufacturing](https://education.lego.com/en-us/lessons/ev3-cim)
-      - [Make a CNC Drawing Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-cnc-drawing-machine)
-      - [Make a Factory Conveyor](https://education.lego.com/en-us/lessons/ev3-cim/make-a-factory-conveyor)
-      - [Make a Pick-and-Place Robot](https://education.lego.com/en-us/lessons/ev3-cim/make-a-pick-and-place-robot)
-      - [Make a Sorting Machine](https://education.lego.com/en-us/lessons/ev3-cim/make-a-sorting-machine)
-    
     
     - [Real-World Vehicles](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles)
       - [Make a Speed-Control System](https://education.lego.com/en-us/lessons/ev3-real-world-vehicles/speed-control-system)
