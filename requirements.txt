@@ -5,6 +5,7 @@ Python-EV3Dev2 >= 2.1.0
 RPyC >= 4.1.5
 
 # deprecated
+EV3DevLight >= 0.1.5
 Python-EV3Dev >= 1.2.0
 NXT-Python >= 2.2.2
 NXT-Python2 >= 2.2.2
