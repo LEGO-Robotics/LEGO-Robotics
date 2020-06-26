@@ -8,9 +8,9 @@
 from ev3dev2.motor import LargeMotor, MoveSteering, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor.lego import TouchSensor
 from ev3dev2.sensor import INPUT_1
-from ev3dev2.sound import Sound
-from ev3dev2.led import Leds
 from ev3dev2.display import Display
+from ev3dev2.led import Leds
+from ev3dev2.sound import Sound
 
 
 STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
@@ -19,9 +19,9 @@ STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
 
 TOUCH_SENSOR = TouchSensor(INPUT_1)
 
+LEDS = Leds()
 SPEAKER = Sound()
 SCREEN = Display()
-LEDS = Leds()
 
 
 while True:
@@ -30,13 +30,13 @@ while True:
         clear_screen=True)
 
     LEDS.set_color(
-        group='LEFT',
-        color='ORANGE',
+        group=Leds.LEFT,
+        color=Leds.ORANGE,
         pct=1)
 
     LEDS.set_color(
-        group='RIGHT',
-        color='ORANGE',
+        group=Leds.RIGHT,
+        color=Leds.ORANGE,
         pct=1)
 
     while not TOUCH_SENSOR.is_pressed:
@@ -64,10 +64,10 @@ while True:
         clear_screen=True)
 
     LEDS.animate_police_lights(
-        color1='GREEN',
-        color2='RED',
-        group1='LEFT',
-        group2='RIGHT',
+        color1=Leds.GREEN,
+        color2=Leds.RED,
+        group1=Leds.LEFT,
+        group2=Leds.RIGHT,
         sleeptime=0.5,
         duration=5,
         block=True)

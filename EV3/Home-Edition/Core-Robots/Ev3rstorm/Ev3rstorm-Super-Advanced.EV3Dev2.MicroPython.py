@@ -36,10 +36,10 @@ class Ev3rstorm(IRBeaconDriverMixin):
     def detect_object_by_ir_sensor(self):
         if self.ir_sensor.proximity < 25: 
             self.leds.animate_police_lights(
-                color1='ORANGE',
-                color2='RED',
-                group1='LEFT',
-                group2='RIGHT',
+                color1=Leds.ORANGE,
+                color2=Leds.RED,
+                group1=Leds.LEFT,
+                group2=Leds.RIGHT,
                 sleeptime=0.5,
                 duration=5,
                 block=False)

@@ -36,10 +36,11 @@ class Ev3rstorm:
 
         self.speaker = Sound()
 
+
     def seek_wheeler(self):
         self.leds.animate_rainbow(
-            group1='LEFT',
-            group2='RIGHT',
+            group1=Leds.LEFT,
+            group2=Leds.RIGHT,
             increment_by=0.1,
             sleeptime=0.5,
             duration=5,
@@ -54,8 +55,8 @@ class Ev3rstorm:
                 self.tank_driver.off(brake=True)
 
                 self.leds.animate_rainbow(
-                    group1='LEFT',
-                    group2='RIGHT',
+                    group1=Leds.LEFT,
+                    group2=Leds.RIGHT,
                     increment_by=0.1,
                     sleeptime=0.5,
                     duration=5,

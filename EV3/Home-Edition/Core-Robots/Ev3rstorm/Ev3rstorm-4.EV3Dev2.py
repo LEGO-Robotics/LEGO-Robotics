@@ -29,10 +29,10 @@ while True:
         TANK_DRIVER.off(brake=True)
 
         LEDS.animate_police_lights(
-            color1='ORANGE',
-            color2='RED',
-            group1='LEFT',
-            group2='RIGHT',
+            color1=Leds.ORANGE,
+            color2=Leds.RED,
+            group1=Leds.LEFT,
+            group2=Leds.RIGHT,
             sleeptime=0.5,
             duration=5,
             block=True)
@@ -94,10 +94,10 @@ while True:
 
     else:
         LEDS.animate_police_lights(
-            color1='YELLOW',
-            color2='GREEN',
-            group1='LEFT',
-            group2='RIGHT',
+            color1=Leds.YELLOW,
+            color2=Leds.GREEN,
+            group1=Leds.LEFT,
+            group2=Leds.RIGHT,
             sleeptime=0.5,
             duration=5,
             block=True)
