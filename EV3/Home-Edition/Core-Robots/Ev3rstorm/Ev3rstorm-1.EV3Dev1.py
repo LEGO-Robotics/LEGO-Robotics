@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 
-from ev3dev.ev3 import LargeMotor, OUTPUT_B, OUTPUT_C, Screen
+from ev3dev.ev3 import (
+    LargeMotor, OUTPUT_B, OUTPUT_C,
+    Screen
+)
 
 from PIL import Image
 
