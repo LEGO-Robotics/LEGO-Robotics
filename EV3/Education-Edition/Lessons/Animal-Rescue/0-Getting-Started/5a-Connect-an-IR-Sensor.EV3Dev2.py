@@ -8,8 +8,8 @@ from ev3dev2.sensor import INPUT_4
 from time import sleep
 
 
-LARGE_MOTOR = LargeMotor(OUTPUT_B)
-IR_SENSOR = InfraredSensor(INPUT_4)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_B)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 
 while True:

@@ -14,11 +14,11 @@ TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
-TOUCH_SENSOR = TouchSensor(INPUT_1)
-COLOR_SENSOR = ColorSensor(INPUT_3)
-IR_SENSOR = InfraredSensor(INPUT_4)
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
+COLOR_SENSOR = ColorSensor(address=INPUT_3)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 LEDS = Leds()
 SPEAKER = Sound()

@@ -9,20 +9,20 @@ from ev3dev2.sound import Sound
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util import IRBeaconDriver
+from util.drive_util_ev3dev2 import IRBeaconDriverMixin
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
-IR_BEACON_DRIVER = IRBeaconDriver(left_motor_port=OUTPUT_B,
-                                  right_motor_port=OUTPUT_C,
-                                  motor_class=LargeMotor,
-                                  ir_sensor_port=INPUT_4,
-                                  ir_beacon_channel=1)
+IR_BEACON_DRIVER = IRBeaconDriverMixin(left_motor_port=OUTPUT_B,
+                                       right_motor_port=OUTPUT_C,
+                                       motor_class=LargeMotor,
+                                       ir_sensor_port=INPUT_4,
+                                       ir_beacon_channel=1)
 
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 

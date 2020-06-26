@@ -6,9 +6,9 @@ from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sensor import INPUT_4
 
 
-LARGE_MOTOR = LargeMotor(OUTPUT_B)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_B)
 
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 
 while True:

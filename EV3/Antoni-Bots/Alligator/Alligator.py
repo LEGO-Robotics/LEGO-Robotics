@@ -2,12 +2,12 @@
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_1, INPUT_4, INPUT_3
+from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor, TouchSensor, ColorSensor
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
@@ -15,9 +15,9 @@ STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
                             right_motor_port=OUTPUT_C,
                             motor_class=LargeMotor)
 
-TOUCH_SENSOR = TouchSensor(INPUT_1)
-IR_SENSOR = InfraredSensor(INPUT_4)
-COLOR_SENSOR = ColorSensor(INPUT_3)
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
+COLOR_SENSOR = ColorSensor(address=INPUT_3)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 

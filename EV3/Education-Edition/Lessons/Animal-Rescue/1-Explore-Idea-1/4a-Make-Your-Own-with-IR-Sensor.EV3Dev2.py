@@ -6,7 +6,7 @@ from ev3dev2.sensor import INPUT_4
 from ev3dev2.sound import Sound
 
 
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 SPEAKER = Sound()
 
 

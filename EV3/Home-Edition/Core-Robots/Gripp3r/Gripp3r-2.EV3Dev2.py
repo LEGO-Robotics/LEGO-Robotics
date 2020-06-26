@@ -5,7 +5,7 @@ from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, MoveTank, OUTPU
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)

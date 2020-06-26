@@ -6,7 +6,7 @@ from ev3dev2.motor import LargeMotor, OUTPUT_B
 from time import sleep
 
 
-LARGE_MOTOR = LargeMotor(OUTPUT_B)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_B)
 
 
 def step_leg():

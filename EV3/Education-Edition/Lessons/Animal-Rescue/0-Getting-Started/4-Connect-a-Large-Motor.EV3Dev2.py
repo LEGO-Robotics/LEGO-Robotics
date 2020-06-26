@@ -4,7 +4,7 @@
 from ev3dev2.motor import LargeMotor, OUTPUT_B
 
 
-LARGE_MOTOR = LargeMotor(OUTPUT_B)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_B)
 
 
 LARGE_MOTOR.on_for_seconds(

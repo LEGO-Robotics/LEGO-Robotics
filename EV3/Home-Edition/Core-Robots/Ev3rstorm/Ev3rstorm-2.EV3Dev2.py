@@ -17,7 +17,7 @@ STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
                             right_motor_port=OUTPUT_C,
                             motor_class=LargeMotor)
 
-TOUCH_SENSOR = TouchSensor(INPUT_1)
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
 
 LEDS = Leds()
 SPEAKER = Sound()

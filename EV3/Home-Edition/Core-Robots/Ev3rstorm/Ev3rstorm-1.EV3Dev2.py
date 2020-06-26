@@ -9,10 +9,9 @@ from ev3dev2.display import Display
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
-
-STEER_DRIVER =  MoveSteering(left_motor_port=OUTPUT_B,
-                             right_motor_port=OUTPUT_C,
-                             motor_class=LargeMotor)
+STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
+                            right_motor_port=OUTPUT_C,
+                            motor_class=LargeMotor)
 
 SCREEN = Display()
 

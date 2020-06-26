@@ -29,7 +29,7 @@ class IRBeaconDriverMixin:
                                 wheel_diameter=wheel_diameter,
                                 axle_track=axle_track)
 
-        self.ir_sensor = InfraredSensor(ir_sensor_port)
+        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
     
