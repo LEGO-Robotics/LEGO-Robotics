@@ -188,7 +188,12 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
 
         while True:
             self.drive_by_ir_beacon()
-            self.detect_object_by_ir_sensor()
+
+            # DON'T use IR Sensor in 2 different modes in the same program / loop
+            # - https://github.com/pybricks/support/issues/62
+            # - https://github.com/ev3dev/ev3dev/issues/1401
+            # self.detect_object_by_ir_sensor()
+            
             self.blast_bazooka_if_touched()
 
 
