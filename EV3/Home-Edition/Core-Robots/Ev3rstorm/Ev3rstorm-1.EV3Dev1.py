@@ -20,12 +20,11 @@ LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=900,
     stop_action=LargeMotor.STOP_ACTION_BRAKE)
-LEFT_FOOT_MOTOR.wait_while('running')
-    
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=900,
     stop_action=LargeMotor.STOP_ACTION_BRAKE)
+LEFT_FOOT_MOTOR.wait_while('running')
 RIGHT_FOOT_MOTOR.wait_while('running')
 
 SCREEN.image.paste(
@@ -46,11 +45,11 @@ LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=900,
     stop_action=LargeMotor.STOP_ACTION_BRAKE)
-LEFT_FOOT_MOTOR.wait_while('running')
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=900,
     stop_action=LargeMotor.STOP_ACTION_BRAKE)
+LEFT_FOOT_MOTOR.wait_while('running')
 RIGHT_FOOT_MOTOR.wait_while('running')
 
 SCREEN.image.paste(
