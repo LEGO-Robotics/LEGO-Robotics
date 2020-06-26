@@ -128,8 +128,7 @@ Swift References
 
 [LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
 
-LEGO Mindstorms NXT Software
-- [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
 GitHub Community
