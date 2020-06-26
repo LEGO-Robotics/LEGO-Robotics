@@ -2,7 +2,7 @@
 
 
 from ev3dev.ev3 import (
-    LargeMotor, OUTPUT_B, OUTPUT_C,
+    Motor, LargeMotor, OUTPUT_B, OUTPUT_C,
     Screen
 )
 
@@ -22,13 +22,13 @@ SCREEN.image.paste(
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
+    stop_action=Motor.STOP_ACTION_BRAKE)
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
-LEFT_FOOT_MOTOR.wait_while('running')
-RIGHT_FOOT_MOTOR.wait_while('running')
+    stop_action=Motor.STOP_ACTION_BRAKE)
+LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
+RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Middle left.bmp'),
@@ -37,8 +37,8 @@ SCREEN.image.paste(
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
-LEFT_FOOT_MOTOR.wait_while('running')
+    stop_action=Motor.STOP_ACTION_BRAKE)
+LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Neutral.bmp'),
@@ -47,13 +47,13 @@ SCREEN.image.paste(
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
+    stop_action=Motor.STOP_ACTION_BRAKE)
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
-LEFT_FOOT_MOTOR.wait_while('running')
-RIGHT_FOOT_MOTOR.wait_while('running')
+    stop_action=Motor.STOP_ACTION_BRAKE)
+LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
+RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Middle right.bmp'),
@@ -62,5 +62,5 @@ SCREEN.image.paste(
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
     speed_sp=750,
-    stop_action=LargeMotor.STOP_ACTION_BRAKE)
-RIGHT_FOOT_MOTOR.wait_while('running')
+    stop_action=Motor.STOP_ACTION_BRAKE)
+RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
