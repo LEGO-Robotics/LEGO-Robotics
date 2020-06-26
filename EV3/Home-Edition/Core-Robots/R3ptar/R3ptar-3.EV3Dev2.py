@@ -11,11 +11,11 @@ from random import randint
 from time import sleep
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-CHEST_MOTOR = LargeMotor(OUTPUT_D)
-TAIL_MOTOR = LargeMotor(OUTPUT_B)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
+CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
+TAIL_MOTOR = LargeMotor(address=OUTPUT_B)
 
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 LIGHTS = Leds()
 SPEAKER = Sound()

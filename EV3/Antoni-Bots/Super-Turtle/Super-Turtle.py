@@ -2,7 +2,7 @@
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_4, INPUT_1
+from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor, TouchSensor
 from ev3dev2.sound import Sound
 
@@ -10,27 +10,26 @@ from ev3dev2.sound import Sound
 class SuperTurtle:
     def __init__(
             self,
-            left_leg_motor_port: str = OUTPUT_B,
-            right_leg_motor_port: str = OUTPUT_C,
+            left_leg_motor_port: str = OUTPUT_B, right_leg_motor_port: str = OUTPUT_C,
             shooting_motor_port: str = OUTPUT_A,
-            ir_sensor_port: str = INPUT_4,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             touch_sensor_port: str = INPUT_1):
         self.tank_driver = MoveTank(left_motor_port=left_leg_motor_port,
                                     right_motor_port=right_leg_motor_port,
                                     motor_class=LargeMotor)
 
-        self.shooting_motor = MediumMotor(shooting_motor_port)
+        self.shooting_motor = MediumMotor(address=shooting_motor_port)
 
-        self.ir_sensor = InfraredSensor(ir_sensor_port)
+        self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
-        self.touch_sensor = TouchSensor(touch_sensor_port)
+        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
 
 
-    # def is func
     def drive_by_ir_beacon(self, channel: int = 1, speed: float = 100):
-        if self.ir_sensor.top_left(channel) and self.ir_sensor.top_right(channel):
+        if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             # go forward
             self.tank_driver.on_for_seconds(
                 left_speed=-speed,
@@ -46,7 +45,7 @@ class SuperTurtle:
                 brake=True,
                 block=True)
 
-        elif self.ir_sensor.bottom_left(channel) and self.ir_sensor.bottom_right(channel):
+        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
             # go backward
             self.tank_driver.on_for_seconds(
                 left_speed=speed,
@@ -62,7 +61,7 @@ class SuperTurtle:
                 brake=True,
                 block=True)
 
-        elif self.ir_sensor.top_left(channel) and self.ir_sensor.bottom_right(channel):
+        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel) and self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
             # turn around left
             self.tank_driver.on_for_seconds(
                 left_speed=0,
@@ -78,7 +77,7 @@ class SuperTurtle:
                 brake=True,
                 block=True)
 
-        elif self.ir_sensor.top_right(channel) and self.ir_sensor.bottom_left(channel):
+        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel) and self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
             # turn around right
             self.tank_driver.on_for_seconds(
                 left_speed=-speed,
@@ -94,25 +93,25 @@ class SuperTurtle:
                 brake=True,
                 block=True)
 
-        elif self.ir_sensor.top_left(channel):
+        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel):
             # turn left
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=-speed)
 
-        elif self.ir_sensor.top_right(channel):
+        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             # turn right
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=0)
 
-        elif self.ir_sensor.bottom_left(channel):
+        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
             # left backward
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=speed)
 
-        elif self.ir_sensor.bottom_right(channel):
+        elif self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
             # right backward
             self.tank_driver.on(
                 left_speed=speed,
@@ -122,7 +121,6 @@ class SuperTurtle:
             self.tank_driver.off(brake=False)
 
 
-    # that is shooting
     def shoot_objects_by_ir_beacon(self, channel: int = 1, speed: float = 1):
         if self.ir_sensor.beacon(channel=channel):
             self.shooting_motor.on_for_rotations(

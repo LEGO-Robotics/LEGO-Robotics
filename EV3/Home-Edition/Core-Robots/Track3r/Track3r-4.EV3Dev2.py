@@ -11,7 +11,7 @@ from ev3dev2.sound import Sound
 from time import sleep
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
@@ -19,7 +19,7 @@ STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
                             right_motor_port=OUTPUT_C,
                             motor_class=LargeMotor)
                         
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SCREEN = Display()
 SPEAKER = Sound()

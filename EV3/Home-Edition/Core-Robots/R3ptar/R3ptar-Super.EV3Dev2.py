@@ -7,13 +7,13 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.sound import Sound
 
 
-CHEST_MOTOR = LargeMotor(OUTPUT_D)
-TAIL_MOTOR = LargeMotor(OUTPUT_B)
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
+TAIL_MOTOR = LargeMotor(address=OUTPUT_B)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
-TOUCH_SENSOR = TouchSensor(INPUT_1)
-COLOR_SENSOR = ColorSensor(INPUT_2)
-IR_SENSOR = InfraredSensor(INPUT_4)
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
+COLOR_SENSOR = ColorSensor(address=INPUT_2)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 

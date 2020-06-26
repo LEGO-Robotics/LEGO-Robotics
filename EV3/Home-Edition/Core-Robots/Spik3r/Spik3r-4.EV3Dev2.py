@@ -7,11 +7,11 @@ from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-STING_MOTOR = LargeMotor(OUTPUT_D)
-GO_MOTOR = LargeMotor(OUTPUT_B)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
+STING_MOTOR = LargeMotor(address=OUTPUT_D)
+GO_MOTOR = LargeMotor(address=OUTPUT_B)
 
-INFRARED_SENSOR = InfraredSensor(INPUT_4)
+INFRARED_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 

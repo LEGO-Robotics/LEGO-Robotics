@@ -10,7 +10,7 @@ from pybricks.robotics import DriveBase
 
 EV3_BRICK = EV3Brick()
 
-MEDIUM_MOTOR = Motor(Port.A)
+MEDIUM_MOTOR = Motor(port=Port.A)
 TWO_WHEEL_DRIVER = DriveBase(left_motor=Port.B,
                              right_motor=Port.C,
                              wheel_diameter=None,  # TODO

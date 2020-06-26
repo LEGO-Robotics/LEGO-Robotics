@@ -41,9 +41,9 @@ class Rubiks(object):
 
     def __init__(self):
         self.shutdown = False
-        self.flipper = LargeMotor(OUTPUT_A)
-        self.turntable = LargeMotor(OUTPUT_B)
-        self.colorarm = MediumMotor(OUTPUT_C)
+        self.flipper = LargeMotor(address=OUTPUT_A)
+        self.turntable = LargeMotor(address=OUTPUT_B)
+        self.colorarm = MediumMotor(address=OUTPUT_C)
         self.color_sensor = ColorSensor()
         self.color_sensor.mode = self.color_sensor.MODE_RGB_RAW
         self.infrared_sensor = InfraredSensor()

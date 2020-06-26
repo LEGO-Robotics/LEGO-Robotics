@@ -5,8 +5,8 @@ from ev3dev2.motor import MediumMotor, LargeMotor, OUTPUT_B, OUTPUT_A
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
-LARGE_MOTOR = LargeMotor(OUTPUT_B)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_B)
 
 SPEAKER = Sound()
 

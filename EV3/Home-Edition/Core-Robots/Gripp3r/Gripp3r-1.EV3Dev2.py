@@ -7,7 +7,7 @@ from ev3dev2.sound import Sound
 from time import sleep
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 SPEAKER = Sound()
 
 

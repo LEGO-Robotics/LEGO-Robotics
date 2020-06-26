@@ -12,10 +12,10 @@ from ev3dev2.sound import Sound
 from time import sleep
 
 
-LARGE_MOTOR = LargeMotor(OUTPUT_D)
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+LARGE_MOTOR = LargeMotor(address=OUTPUT_D)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
-IR_SENSOR = InfraredSensor(INPUT_4)
+IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 

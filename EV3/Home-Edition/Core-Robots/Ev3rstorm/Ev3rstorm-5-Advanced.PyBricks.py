@@ -29,7 +29,8 @@ class IRBeaconDriverMixin:
                                 wheel_diameter=wheel_diameter,
                                 axle_track=axle_track)
 
-        self.ir_sensor = InfraredSensor(ir_sensor_port)
+        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
+
         self.ir_beacon_channel = ir_beacon_channel
     
     
@@ -114,6 +115,7 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
                                          positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
+
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
     
@@ -153,9 +155,11 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
 
         while True:
             self.drive_by_ir_beacon()
+
             self.blast_bazooka_if_touched()
 
 
 if __name__ == '__main__':
     EV3RSTORM = Ev3rstorm()
+
     EV3RSTORM.main()

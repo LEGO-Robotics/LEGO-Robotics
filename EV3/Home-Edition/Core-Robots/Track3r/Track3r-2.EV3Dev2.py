@@ -7,7 +7,7 @@ from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
                             right_motor_port=OUTPUT_C,
                             motor_class=LargeMotor)

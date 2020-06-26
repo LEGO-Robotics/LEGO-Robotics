@@ -2,7 +2,7 @@
 # (Display not yet working in MicroPython as of June 2020)
 
 
-from ev3dev2.motor import LargeMotor, MoveTank, OUTPUT_B, OUTPUT_C, MediumMotor, OUTPUT_A
+from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3
 from ev3dev2.sensor.lego import ColorSensor, TouchSensor
 from ev3dev2.display import Display
@@ -16,10 +16,10 @@ TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
 
-MEDIUM_MOTOR = MediumMotor(OUTPUT_A)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
-TOUCH_SENSOR = TouchSensor(INPUT_1)
-COLOR_SENSOR = ColorSensor(INPUT_3)
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
+COLOR_SENSOR = ColorSensor(address=INPUT_3)
 
 SCREEN = Display()
 SPEAKER = Sound()
@@ -82,4 +82,5 @@ def laugh_when_touched():
 
 
 Process(target=run_away_from_dark).start()
+
 Process(target=laugh_when_touched).start()
