@@ -66,7 +66,7 @@ def roll(motor, led_group, direction):
         if state:
             # Roll when button is pressed
             motor.run_forever(speed_sp=600*direction)
-            leds.set_color(led_group, 'GREEN')
+            leds.set_color(led_group, Leds.GREEN)
         else:
             # Stop otherwise
             motor.stop(stop_action='brake')
@@ -93,8 +93,8 @@ while not button.any():
             motor.stop(stop_action='brake')
 
         # Turn red lights on
-        for light in ('LEFT', 'RIGHT'):
-            leds.set_color(light, 'RED')
+        for light in (Leds.LEFT, Leds.RIGHT):
+            leds.set_color(light, Leds.RED)
 
         # Run both motors backwards for 0.5 seconds
         for motor in (lmotor, rmotor):

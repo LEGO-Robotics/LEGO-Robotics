@@ -15,7 +15,7 @@ while IR_SENSOR.proximity >= 30:
     pass
 
 LEDS.animate_flash(
-    color='RED',
+    color=Leds.RED,
     sleeptime=0.5,
     duration=2.0,
     block=True)

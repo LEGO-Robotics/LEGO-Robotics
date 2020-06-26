@@ -13,7 +13,7 @@ LEDS = Leds()
 
 def detect_object(
         distance: float = 30,
-        flashing_color: str = 'RED',
+        flashing_color = Leds.RED,
         flashing_duration: float = 2):
     if IR_SENSOR.proximity <= distance:
         LEDS.animate_flash(
@@ -29,5 +29,5 @@ def detect_object(
 while True:
     detect_object(
         distance=10,
-        flashing_color='AMBER',
+        flashing_color=Leds.AMBER,
         flashing_duration=4.2)

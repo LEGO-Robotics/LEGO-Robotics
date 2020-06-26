@@ -30,13 +30,13 @@ CHEST_MOTOR.on_for_seconds(
 while True:
     if IR_SENSOR.proximity < 30:
         LIGHTS.set_color(
-            group='LEFT',
-            color='RED',
+            group=Leds.LEFT,
+            color=Leds.RED,
             pct=1)
 
         LIGHTS.set_color(
-            group='RIGHT',
-            color='RED',
+            group=Leds.RIGHT,
+            color=Leds.RED,
             pct=1)
 
         MEDIUM_MOTOR.off(brake=True)
@@ -82,8 +82,8 @@ while True:
 
     else:
         LIGHTS.animate_flash(
-            color='ORANGE',
-            groups=('LEFT', 'RIGHT'),
+            color=Leds.ORANGE,
+            groups=(Leds.LEFT, Leds.RIGHT),
             block=False)
 
         TAIL_MOTOR.on(

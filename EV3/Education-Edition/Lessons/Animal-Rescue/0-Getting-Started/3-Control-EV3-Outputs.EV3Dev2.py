@@ -23,8 +23,8 @@ SCREEN.image_filename(
     clear_screen=True)
 
 LEDS.animate_flash(
-    color='RED',
-    groups=('LEFT', 'RIGHT'),
+    color=Leds.RED,
+    groups=(Leds.LEFT, Leds.RIGHT),
     sleeptime=0.5,
     duration=5,
     block=True)

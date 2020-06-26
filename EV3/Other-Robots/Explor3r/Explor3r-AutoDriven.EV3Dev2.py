@@ -72,8 +72,8 @@ def backup():
     # Turn backup lights on:
     leds = Leds()
 
-    for light in ('LEFT', 'RIGHT'):
-        leds.set_color(light, 'RED')
+    for light in (Leds.LEFT, Leds.RIGHT):
+        leds.set_color(light, Leds.RED)
 
     # Stop both motors and reverse for 1.5 seconds.
     # `run-timed` command will return immediately, so we will have to wait
@@ -88,8 +88,8 @@ def backup():
         sleep(0.1)
 
     # Turn backup lights off:
-    for light in ('LEFT', 'RIGHT'):
-        leds.set_color(light, 'GREEN')
+    for light in (Leds.LEFT, Leds.RIGHT):
+        leds.set_color(light, Leds.GREEN)
 
 
 def turn():
