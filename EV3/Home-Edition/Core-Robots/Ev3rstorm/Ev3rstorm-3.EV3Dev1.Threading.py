@@ -29,6 +29,7 @@ def run_away_whenever_dark():
             SCREEN.image.paste(
                 im=Image.open('/home/robot/image/Middle left.bmp'),
                 box=(0, 0))
+            SCREEN.update()
 
             LEFT_FOOT_MOTOR.run_timed(
                 speed_sp=-800,
@@ -47,6 +48,7 @@ def run_away_whenever_dark():
             SCREEN.image.paste(
                 im=Image.open('/home/robot/image/Middle right.bmp'),
                 box=(0, 0))
+            SCREEN.update()
 
             LEFT_FOOT_MOTOR.run_timed(
                 speed_sp=-1000,
@@ -76,6 +78,7 @@ def run_away_whenever_dark():
             SCREEN.image.paste(
                 im=Image.open('/home/robot/image/Awake.bmp'),
                 box=(0, 0))
+            SCREEN.update()
 
 
 def laugh_whenever_touched():

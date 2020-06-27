@@ -24,6 +24,7 @@ while True:
     SCREEN.image.paste(
         im=Image.open('/home/robot/image/ZZZ.bmp'),
         box=(0, 0))
+    SCREEN.update()
 
     LEDS.set_color(
         group=Leds.LEFT,
@@ -40,6 +41,7 @@ while True:
     SCREEN.image.paste(
         im=Image.open('/home/robot/image/Winking.bmp'),
         box=(0, 0))
+    SCREEN.update()
         
     SPEAKER.play(wav_file='/home/robot/sound/Activate.wav').wait()
     SPEAKER.play(wav_file='/home/robot/sound/EV3.wav').wait()
@@ -47,6 +49,7 @@ while True:
     SCREEN.image.paste(
         im=Image.open('/home/robot/image/Neutral.bmp'),
         box=(0, 0))
+    SCREEN.update()
 
     LEDS.set_color(
         group=Leds.LEFT,
@@ -75,5 +78,6 @@ while True:
     SCREEN.image.paste(
         im=Image.open('/home/robot/image/Tired middle.bmp'),
         box=(0, 0))
+    SCREEN.update()
 
     SPEAKER.play(wav_file='/home/robot/sound/Goodbye.wav').wait()
