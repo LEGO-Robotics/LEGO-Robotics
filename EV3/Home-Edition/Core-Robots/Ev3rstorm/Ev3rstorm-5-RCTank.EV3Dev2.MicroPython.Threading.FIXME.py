@@ -67,7 +67,7 @@ class Ev3rstorm(RemoteControlledTank):
         Thread(target=self.shoot_whenever_touched).start()
 
         super().main()   # RemoteControlledTank.main()
-        # FIXME:
+        # FIXME
         # ERROR:ev3dev2.control.rc_tank:'InfraredSensor' object has no attribute '_state'
         # Traceback (most recent call last):
         # File "ev3dev2/control/rc_tank.py", line 40, in main

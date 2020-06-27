@@ -72,6 +72,7 @@ class Ev3rstorm(RemoteControlledTank):
             clear_screen=True)
         self.screen.update()
     
+        # FIXME: following process must stop when program exits
         Process(target=self.shoot_whenever_touched,
                 daemon=True).start()
 
