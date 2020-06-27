@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+# (Display not yet working in MicroPython as of 2020)
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
@@ -31,6 +31,7 @@ def run_away_whenever_dark():
             SCREEN.image_filename(
                 filename='/home/robot/image/Middle left.bmp',
                 clear_screen=True)
+            SCREEN.update()
 
             TANK_DRIVER.on_for_seconds(
                 left_speed=-80,
@@ -42,6 +43,7 @@ def run_away_whenever_dark():
             SCREEN.image_filename(
                 filename='/home/robot/image/Middle right.bmp',
                 clear_screen=True)
+            SCREEN.update()
 
             TANK_DRIVER.on_for_seconds(
                 left_speed=-100,
@@ -64,6 +66,7 @@ def run_away_whenever_dark():
             SCREEN.image_filename(
                 filename='/home/robot/image/Awake.bmp',
                 clear_screen=True)
+            SCREEN.update()
 
 
 def laugh_whenever_touched():

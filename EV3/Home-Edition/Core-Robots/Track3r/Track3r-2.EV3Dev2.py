@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (MicroPython does not yet support Display as of May 2020)
+# (MicroPython does not yet support Display as of 2020)
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, OUTPUT_A, OUTPUT_B, OUTPUT_C
@@ -19,6 +19,7 @@ SPEAKER = Sound()
 SCREEN.image_filename(
     filename='/home/robot/image/Pinch right.bmp',
     clear_screen=True)
+SCREEN.update()
 
 STEER_DRIVER.on_for_degrees(
     steering=-100,
@@ -36,6 +37,7 @@ MEDIUM_MOTOR.on_for_rotations(
 SCREEN.image_filename(
     filename='/home/robot/image/Pinch left.bmp',
     clear_screen=True)
+SCREEN.update()
 
 STEER_DRIVER.on_for_degrees(
     steering=100,
@@ -53,6 +55,7 @@ MEDIUM_MOTOR.on_for_rotations(
 SCREEN.image_filename(
     filename='/home/robot/image/Pinch middle.bmp',
     clear_screen=True)
+SCREEN.update()
 
 STEER_DRIVER.on_for_degrees(
     steering=-100,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (MicroPython does not yet support Display as of May 2020)
+# (MicroPython does not yet support Display as of 2020)
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
@@ -88,6 +88,7 @@ def shoot_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
         SCREEN.image_filename(
             filename='/home/robot/image/Pinch middle.bmp',
             clear_screen=True)
+        SCREEN.update()
 
         MEDIUM_MOTOR.on_for_degrees(
             speed=speed,

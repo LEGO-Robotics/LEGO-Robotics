@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+# (Display not yet working in MicroPython as of 2020)
 
 
 # TODO: fix LEDs bug
@@ -168,6 +168,7 @@ class Ev3rstorm:
         self.screen.image_filename(
             filename='/home/robot/image/Target.bmp',
             clear_screen=True)
+        self.screen.update()
 
         while True:
             self.drive_by_ir_beacon()

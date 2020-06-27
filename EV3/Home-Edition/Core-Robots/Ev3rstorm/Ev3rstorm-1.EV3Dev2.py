@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+# (Display not yet working in MicroPython as of 2020)
 
 
 from ev3dev2.motor import LargeMotor, OUTPUT_B, OUTPUT_C, MoveSteering, MoveTank
@@ -19,6 +19,7 @@ SCREEN = Display()
 SCREEN.image_filename(
     filename='/home/robot/image/Neutral.bmp',
     clear_screen=True)
+SCREEN.update()
 
 TANK_DRIVER.on_for_rotations(
     left_speed=75,
@@ -30,6 +31,7 @@ TANK_DRIVER.on_for_rotations(
 SCREEN.image_filename(
     filename='/home/robot/image/Middle left.bmp',
     clear_screen=True)
+SCREEN.update()
 
 STEER_DRIVER.on_for_rotations(
     steering=50,
@@ -41,6 +43,7 @@ STEER_DRIVER.on_for_rotations(
 SCREEN.image_filename(
     filename='/home/robot/image/Neutral.bmp',
     clear_screen=True)
+SCREEN.update()
 
 TANK_DRIVER.on_for_rotations(
     left_speed=75,
@@ -52,6 +55,7 @@ TANK_DRIVER.on_for_rotations(
 SCREEN.image_filename(
     filename='/home/robot/image/Middle right.bmp',
     clear_screen=True)
+SCREEN.update()
 
 STEER_DRIVER.on_for_rotations(
     steering=-50,

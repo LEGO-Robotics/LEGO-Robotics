@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (MicroPython does not yet support Display as of May 2020)
+# (MicroPython does not yet support Display as of 2020)
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, MoveSteering, OUTPUT_A, OUTPUT_B, OUTPUT_C
@@ -36,6 +36,7 @@ while True:
         SCREEN.image_filename(
             filename='/home/robot/image/Pinch right.bmp',
             clear_screen=True)
+        SCREEN.update()
 
         STEER_DRIVER.on_for_degrees(
             steering=-100,
@@ -47,6 +48,7 @@ while True:
         SCREEN.image_filename(
             filename='/home/robot/image/Angry.bmp',
             clear_screen=True)
+        SCREEN.update()
       
         MEDIUM_MOTOR.on_for_seconds(
             seconds=0.3,
@@ -69,6 +71,7 @@ while True:
         SCREEN.image_filename(
             filename='/home/robot/image/Crazy 1.bmp',
             clear_screen=True)
+        SCREEN.update()
         
         TANK_DRIVER.on(
             left_speed=100,
@@ -85,6 +88,7 @@ while True:
         SCREEN.image_filename(
             filename='/home/robot/image/Crazy 2.bmp',
             clear_screen=True)
+        SCREEN.update()
  
         STEER_DRIVER.on(
             steering=50,
