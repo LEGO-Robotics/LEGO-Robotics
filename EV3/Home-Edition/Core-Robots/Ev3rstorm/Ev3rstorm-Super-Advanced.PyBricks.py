@@ -157,7 +157,7 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
         MEDIUM_MOTOR_ROTATIONAL_DEGREES_PER_BLAST = MEDIUM_MOTOR_N_ROTATIONS_PER_BLAST * 360
 
         if self.touch_sensor.pressed():
-            if self.color_sensor.ambient() < 15:
+            if self.color_sensor.ambient() < 5:   # 15 not dark enough
                 self.speaker.play_file(file=SoundFile.UP)
 
                 self.bazooka_blast_motor.run_angle(
@@ -204,4 +204,5 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
 
 if __name__ == '__main__':
     EV3RSTORM = Ev3rstorm()
+    
     EV3RSTORM.main()

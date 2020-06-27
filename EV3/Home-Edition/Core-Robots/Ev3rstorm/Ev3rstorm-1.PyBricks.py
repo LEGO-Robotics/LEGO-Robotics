@@ -21,24 +21,32 @@ DRIVER = DriveBase(left_motor=LEFT_MOTOR,
                    wheel_diameter=WHEEL_DIAMETER,
                    axle_track=AXLE_TRACK)
 DRIVER.settings(
-    straight_speed=300,
+    straight_speed=300,   # milimeters per second
     straight_acceleration=300,
-    turn_rate=90,
+    turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
 
 BRICK.screen.load_image(ImageFile.NEUTRAL)
 
-DRIVER.straight(distance=300)
+DRIVER.straight(
+    distance=300   # milimeters
+)
 
 BRICK.screen.load_image(ImageFile.MIDDLE_LEFT)
 
-DRIVER.turn(angle=90)
+DRIVER.turn(
+    angle=90   # degrees
+)
 
 BRICK.screen.load_image(ImageFile.NEUTRAL)
 
-DRIVER.straight(distance=300)
+DRIVER.straight(
+    distance=300   # milimeters
+)
 
 BRICK.screen.load_image(ImageFile.MIDDLE_RIGHT)
 
-DRIVER.turn(angle=-90)
+DRIVER.turn(
+    angle=-90   # degrees
+)

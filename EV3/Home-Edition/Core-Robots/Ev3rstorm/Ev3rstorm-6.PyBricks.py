@@ -24,9 +24,9 @@ DRIVER = DriveBase(left_motor=LEFT_MOTOR,
                    wheel_diameter=WHEEL_DIAMETER,
                    axle_track=AXLE_TRACK)
 DRIVER.settings(
-    straight_speed=300,
+    straight_speed=300,   # milimeters per second
     straight_acceleration=300,
-    turn_rate=90,
+    turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
 IR_SENSOR = InfraredSensor(port=Port.S4)
@@ -36,7 +36,7 @@ while True:
     BRICK.light.on(color=Color.ORANGE)
 
     if Button.BEACON in IR_SENSOR.buttons(channel=1):
-        # TODO: fix to make it work
+        # FIXME: make it work
 
         distance, heading = IR_SENSOR.beacon(channel=1)
         heading_difference = heading - (-3)
@@ -48,8 +48,8 @@ while True:
             BRICK.light.on(color=Color.RED)
 
             MEDIUM_MOTOR.run_angle(
-                speed=1000,
-                rotation_angle=6 * 360,
+                speed=1000,   # degrees per second
+                rotation_angle=6 * 360,   # degrees
                 then=Stop.HOLD,
                 wait=True)
 

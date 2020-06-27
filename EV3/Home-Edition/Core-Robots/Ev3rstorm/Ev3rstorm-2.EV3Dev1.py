@@ -62,13 +62,13 @@ while True:
 
     LEFT_FOOT_MOTOR.run_to_rel_pos(
         position_sp=360,   # degrees
-        speed_sp=750,
+        speed_sp=750,   # degrees per second
         stop_action=Motor.STOP_ACTION_BRAKE)
     LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
     
     RIGHT_FOOT_MOTOR.run_to_rel_pos(
         position_sp=360,   # degrees
-        speed_sp=750,
+        speed_sp=750,   # degrees per second
         stop_action=Motor.STOP_ACTION_BRAKE)
     RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 

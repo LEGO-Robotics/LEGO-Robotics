@@ -21,9 +21,9 @@ DRIVER = DriveBase(left_motor=LEFT_MOTOR,
                    wheel_diameter=WHEEL_DIAMETER,
                    axle_track=AXLE_TRACK)
 DRIVER.settings(
-    straight_speed=300,
+    straight_speed=300,   # milimeters per second
     straight_acceleration=300,
-    turn_rate=90,
+    turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
 TOUCH_SENSOR = TouchSensor(port=Port.S1)
@@ -47,9 +47,13 @@ while True:
     
     BRICK.light.on(color=Color.GREEN)    
 
-    DRIVER.turn(angle=100)
+    DRIVER.turn(
+        angle=90   # degrees
+    )
 
-    DRIVER.turn(angle=-100)
+    DRIVER.turn(
+        angle=-90   # degrees
+    )
 
     while not TOUCH_SENSOR.pressed():
         pass

@@ -29,9 +29,9 @@ class Ev3rstorm(EV3Brick):
                                 wheel_diameter=self.WHEEL_DIAMETER,
                                 axle_track=self.AXLE_TRACK)
         self.driver.settings(
-            straight_speed=300,
+            straight_speed=300,   # milimeters per second
             straight_acceleration=300,
-            turn_rate=90,
+            turn_rate=90,   # degrees per second
             turn_acceleration=90)
 
         self.shooting_motor = Motor(port=shooting_motor_port, 
@@ -46,56 +46,67 @@ class Ev3rstorm(EV3Brick):
         self.ir_beacon_channel = ir_beacon_channel
 
 
-    def drive_by_ir_beacon(self, speed: float = 100):
+    def drive_by_ir_beacon(
+            self,
+            speed: float = 360   # milimeters per second
+        ):
         ir_beacon_buttons_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
         # forward
         if ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
             self.driver.drive(
                 speed=speed,
-                turn_rate=0)
+                turn_rate=0   # degrees per second
+            )
 
         # backward
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
             self.driver.drive(
                 speed=-speed,
-                turn_rate=0)
+                turn_rate=0   # degrees per second
+            )
 
         # turn left on the spot
         elif ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_DOWN}:
             self.driver.drive(
                 speed=0,
-                turn_rate=-90)
+                turn_rate=-90   # degrees per second
+            )
 
         # turn right on the spot
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN, Button.RIGHT_UP}:
             self.driver.drive(
                 speed=0,
-                turn_rate=90)
+                turn_rate=90   # degrees per second
+            )
 
         # turn left forward
         elif ir_beacon_buttons_pressed == {Button.LEFT_UP}:
             self.driver.drive(
                 speed=speed,
-                turn_rate=-90)
+                turn_rate=-90   # degrees per second
+            )
 
         # turn right forward
         elif ir_beacon_buttons_pressed == {Button.RIGHT_UP}:
             self.driver.drive(
                 speed=speed,
-                turn_rate=90)
+                turn_rate=90   # degrees per second
+            )
 
         # turn left backward
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN}:
             self.driver.drive(
                 speed=-speed,
-                turn_rate=90)
+                turn_rate=90   # degrees per second
+            )
 
         # turn right backward
         elif ir_beacon_buttons_pressed == {Button.RIGHT_DOWN}:
             self.driver.drive(
                 speed=-speed,
-                turn_rate=-90)
+                turn_rate=-90   # degrees per second
+            )
 
         # otherwise stop
         else:
@@ -104,12 +115,12 @@ class Ev3rstorm(EV3Brick):
 
     def shoot_when_touched(self):
         if self.touch_sensor.pressed():
-            if self.color_sensor.ambient() <= 5:
+            if self.color_sensor.ambient() <= 5:   # 15 not dark enough
                 self.speaker.play_file(file=SoundFile.UP)
                     
                 self.shooting_motor.run_angle(
-                    speed=1000,
-                    rotation_angle=-3 * 360,
+                    speed=1000,   # degrees per second
+                    rotation_angle=-3 * 360,   # degrees
                     then=Stop.HOLD,
                     wait=True)
 
@@ -117,8 +128,8 @@ class Ev3rstorm(EV3Brick):
                 self.speaker.play_file(file=SoundFile.DOWN)
                     
                 self.shooting_motor.run_angle(
-                    speed=1000,
-                    rotation_angle=3 * 360,
+                    speed=1000,   # degrees per second
+                    rotation_angle=3 * 360,   # degrees
                     then=Stop.HOLD,
                     wait=True)
  
@@ -127,7 +138,9 @@ class Ev3rstorm(EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
     
         while True:
-            self.drive_by_ir_beacon(speed=1000)
+            self.drive_by_ir_beacon(
+                speed=1000   # milimeters per second
+            )
             
             self.shoot_when_touched()
 

@@ -38,28 +38,32 @@ while True:
         SPEAKER.play(wav_file='/home/robot/sound/Detected.wav').wait()
         SPEAKER.play(wav_file='/home/robot/sound/Error alarm.wav').wait()
 
-        MEDIUM_MOTOR.run_forever(speed_sp=1000)
+        MEDIUM_MOTOR.run_forever(
+            speed_sp=1000   # degrees per second
+        )
 
         LEFT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=360,
-            speed_sp=1000,
+            position_sp=360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         RIGHT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=360,
-            speed_sp=800,
+            position_sp=360,   # degrees
+            speed_sp=800,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
-        MEDIUM_MOTOR.run_forever(speed_sp=-1000)
+        MEDIUM_MOTOR.run_forever(
+            speed_sp=-1000   # degrees per second
+        )
 
         LEFT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=-360,
-            speed_sp=1000,
+            position_sp=-360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         RIGHT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=-360,
-            speed_sp=800,
+            position_sp=-360,   # degrees
+            speed_sp=800,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
@@ -67,21 +71,21 @@ while True:
         MEDIUM_MOTOR.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         LEFT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=720,
-            speed_sp=1000,
+            position_sp=2 * 360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         RIGHT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=-720,
-            speed_sp=1000,
+            position_sp=-2 * 360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
         RIGHT_FOOT_MOTOR.run_to_rel_pos(
-            position_sp=360,
-            speed_sp=1000,
+            position_sp=360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
-        RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
+        RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING) 
 
     else:
         LEDS.set_color(
@@ -94,9 +98,17 @@ while True:
             pct=1)
 
         if time() % 3 < 1.5:
-            LEFT_FOOT_MOTOR.run_forever(speed_sp=500)
-            RIGHT_FOOT_MOTOR.run_forever(speed_sp=1000)
+            LEFT_FOOT_MOTOR.run_forever(
+                speed_sp=500   # degrees per second
+            )
+            RIGHT_FOOT_MOTOR.run_forever(
+                speed_sp=1000   # degrees per second
+            )
 
         else:
-            LEFT_FOOT_MOTOR.run_forever(speed_sp=1000)
-            RIGHT_FOOT_MOTOR.run_forever(speed_sp=500)
+            LEFT_FOOT_MOTOR.run_forever(
+                speed_sp=1000   # degrees per second
+            )
+            RIGHT_FOOT_MOTOR.run_forever(
+                speed_sp=500   # degrees per second
+            )

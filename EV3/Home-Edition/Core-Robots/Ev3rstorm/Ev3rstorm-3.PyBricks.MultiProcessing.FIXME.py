@@ -27,9 +27,9 @@ DRIVER = DriveBase(left_motor=LEFT_MOTOR,
                    wheel_diameter=WHEEL_DIAMETER,
                    axle_track=AXLE_TRACK)
 DRIVER.settings(
-    straight_speed=300,
+    straight_speed=300,   # milimeters per second
     straight_acceleration=300,
-    turn_rate=90,
+    turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
 TOUCH_SENSOR = TouchSensor(port=Port.S1)
@@ -42,22 +42,28 @@ def run_away_whenever_dark():
         if COLOR_SENSOR.ambient() < 5:   # 15 not dark enough
             BRICK.screen.load_image(ImageFile.MIDDLE_LEFT)
 
-            DRIVER.straight(distance=-100)
+            DRIVER.straight(
+                distance=-100   # milimeters
+            )
 
             BRICK.screen.load_image(ImageFile.MIDDLE_RIGHT)
 
-            DRIVER.turn(angle=-135)
+            DRIVER.turn(
+                angle=-135   # degrees
+            )
 
         else:
             if time() % 3 < 1.5:
                 DRIVER.drive(
-                    speed=100,
-                    turn_rate=-30)
+                    speed=360,   # degrees per second
+                    turn_rate=-30   # degrees per second
+                )
 
             else:
                 DRIVER.drive(
-                    speed=100,
-                    turn_rate=30)
+                    speed=360,   # degrees per second
+                    turn_rate=30   # degrees per second
+                )
 
             BRICK.screen.load_image(ImageFile.AWAKE)
 
@@ -68,8 +74,8 @@ def laugh_whenever_touched():
             BRICK.speaker.play_file(file=SoundFile.LAUGHING_2)
 
             MEDIUM_MOTOR.run_angle(
-                speed=1000,
-                rotation_angle=6 * 360,
+                speed=1000,   # degrees per second
+                rotation_angle=6 * 360,   # degrees
                 then=Stop.HOLD,
                 wait=True)
 

@@ -38,7 +38,7 @@ class Ev3rstorm(IRBeaconDriverMixin):
         while True:
             self.touch_sensor.wait_for_bump()
 
-            if self.color_sensor.ambient_light_intensity < 5:
+            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
                 self.speaker.play_file(
                     wav_file='/home/robot/sound/Up.wav',
                     volume=100,

@@ -30,12 +30,12 @@ while True:
         SCREEN.update()
 
         LEFT_FOOT_MOTOR.run_timed(
-            speed_sp=-800,
-            time_sp=1500,
+            speed_sp=-800,   # degrees per second
+            time_sp=1500,   # miliseconds
             stop_action=Motor.STOP_ACTION_BRAKE)
         RIGHT_FOOT_MOTOR.run_timed(
-            speed_sp=-1000,
-            time_sp=1500,
+            speed_sp=-1000,   # degrees per second
+            time_sp=1500,   # miliseconds
             stop_action=Motor.STOP_ACTION_BRAKE)
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
@@ -46,24 +46,32 @@ while True:
         SCREEN.update()
 
         LEFT_FOOT_MOTOR.run_timed(
-            speed_sp=-1000,
-            time_sp=1500,
+            speed_sp=-1000,   # degrees per second
+            time_sp=1500,   # miliseconds
             stop_action=Motor.STOP_ACTION_BRAKE)
         RIGHT_FOOT_MOTOR.run_timed(
-            speed_sp=1000,
-            time_sp=1500,
+            speed_sp=1000,   # degrees per second
+            time_sp=1500,   # miliseconds
             stop_action=Motor.STOP_ACTION_BRAKE)
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
     else:
         if time() % 3 < 1.5:
-            LEFT_FOOT_MOTOR.run_forever(speed_sp=500)
-            RIGHT_FOOT_MOTOR.run_forever(speed_sp=1000)
+            LEFT_FOOT_MOTOR.run_forever(
+                speed_sp=500   # degrees per second
+            )
+            RIGHT_FOOT_MOTOR.run_forever(
+                speed_sp=1000   # degrees per second
+            )
 
         else:
-            LEFT_FOOT_MOTOR.run_forever(speed_sp=1000)
-            RIGHT_FOOT_MOTOR.run_forever(speed_sp=500)
+            LEFT_FOOT_MOTOR.run_forever(
+                speed_sp=1000   # degrees per second
+            )
+            RIGHT_FOOT_MOTOR.run_forever(
+                speed_sp=500   # degrees per second
+            )
 
         SCREEN.image.paste(
             im=Image.open('/home/robot/image/Awake.bmp'),
@@ -74,6 +82,6 @@ while True:
         SPEAKER.play(wav_file='/home/robot/sound/Laughing 1.wav').wait()
 
         MEDIUM_MOTOR.run_to_rel_pos(
-            position_sp=6 * 360,
-            speed_sp=1000,
+            position_sp=6 * 360,   # degrees
+            speed_sp=1000,   # degrees per second
             stop_action=Motor.STOP_ACTION_BRAKE)
