@@ -62,6 +62,7 @@ while True:
         speed_sp=750,
         stop_action=Motor.STOP_ACTION_BRAKE)
     LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
+    
     RIGHT_FOOT_MOTOR.run_to_rel_pos(
         position_sp=360,   # degrees
         speed_sp=750,
