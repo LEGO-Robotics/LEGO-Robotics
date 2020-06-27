@@ -36,33 +36,34 @@ class Ev3rstorm(RemoteControlledTank):
         self.speaker = Sound()
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity <= 5:
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Up.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+    def shoot_whenever_touched(self):
+        while True:
+            if self.touch_sensor.is_pressed:
+                if self.color_sensor.ambient_light_intensity <= 5:
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Up.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=-3,
-                    brake=True,
-                    block=True)
+                    self.shooting_motor.on_for_rotations(
+                        speed=100,
+                        rotations=-3,
+                        brake=True,
+                        block=True)
 
-            else:
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Down.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+                else:
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Down.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=3,
-                    brake=True,
-                    block=True)
+                    self.shooting_motor.on_for_rotations(
+                        speed=100,
+                        rotations=3,
+                        brake=True,
+                        block=True)
 
-            self.touch_sensor.wait_for_released()
+                self.touch_sensor.wait_for_released()
  
     
     def main(self):
@@ -71,7 +72,7 @@ class Ev3rstorm(RemoteControlledTank):
             clear_screen=True)
         self.screen.update()
     
-        Thread(target=self.shoot_when_touched,
+        Thread(target=self.shoot_whenever_touched,
                daemon=True).start()
 
         super().main()   # RemoteControlledTank.main()
