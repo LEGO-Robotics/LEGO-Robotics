@@ -1,9 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 
 
-# TODO: multiprocess/parallel programming (not yet supported in PyBricks)
-
-
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, ColorSensor
 from pybricks.robotics import DriveBase
@@ -40,7 +37,7 @@ COLOR_SENSOR = ColorSensor(port=Port.S3)
 
 
 while True:
-    if COLOR_SENSOR.ambient() < 5:
+    if COLOR_SENSOR.ambient() < 5:   # 15 not dark enough
         BRICK.screen.load_image(ImageFile.MIDDLE_LEFT)
 
         DRIVER.straight(distance=-100)
