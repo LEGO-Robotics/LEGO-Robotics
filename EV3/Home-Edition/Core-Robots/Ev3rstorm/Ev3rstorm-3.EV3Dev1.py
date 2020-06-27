@@ -15,8 +15,8 @@ LEFT_FOOT_MOTOR = LargeMotor(address=OUTPUT_B)
 RIGHT_FOOT_MOTOR = LargeMotor(address=OUTPUT_C)
 MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
-COLOR_SENSOR = ColorSensor(address=INPUT_3)
 TOUCH_SENSOR = TouchSensor(address=INPUT_1)
+COLOR_SENSOR = ColorSensor(address=INPUT_3)
 
 SCREEN = Screen()
 SPEAKER = Sound()
@@ -32,14 +32,11 @@ while True:
             speed_sp=-800,
             time_sp=1500,
             stop_action=Motor.STOP_ACTION_BRAKE)
-
         RIGHT_FOOT_MOTOR.run_timed(
             speed_sp=-1000,
             time_sp=1500,
             stop_action=Motor.STOP_ACTION_BRAKE)
-
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
-
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
         SCREEN.image.paste(
@@ -50,26 +47,21 @@ while True:
             speed_sp=-1000,
             time_sp=1500,
             stop_action=Motor.STOP_ACTION_BRAKE)
-
         RIGHT_FOOT_MOTOR.run_timed(
             speed_sp=1000,
             time_sp=1500,
             stop_action=Motor.STOP_ACTION_BRAKE)
-
         LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
-
         RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
     else:
         if time() % 3 < 1.5:
             LEFT_FOOT_MOTOR.run_forever(speed_sp=500)
-
             RIGHT_FOOT_MOTOR.run_forever(speed_sp=1000)
 
         else:
             LEFT_FOOT_MOTOR.run_forever(speed_sp=1000)
-
-            RIGHT_FOOT_MOTOR.run_forever(speed_sp=500)             
+            RIGHT_FOOT_MOTOR.run_forever(speed_sp=500)
 
         SCREEN.image.paste(
             im=Image.open('/home/robot/image/Awake.bmp'),
