@@ -27,6 +27,7 @@ while True:
         SCREEN.image.paste(
             im=Image.open('/home/robot/image/Middle left.bmp'),
             box=(0, 0))
+        SCREEN.update()
 
         LEFT_FOOT_MOTOR.run_timed(
             speed_sp=-800,
@@ -42,6 +43,7 @@ while True:
         SCREEN.image.paste(
             im=Image.open('/home/robot/image/Middle right.bmp'),
             box=(0, 0))
+        SCREEN.update()
 
         LEFT_FOOT_MOTOR.run_timed(
             speed_sp=-1000,
@@ -66,6 +68,7 @@ while True:
         SCREEN.image.paste(
             im=Image.open('/home/robot/image/Awake.bmp'),
             box=(0, 0))
+        SCREEN.update()
 
     if TOUCH_SENSOR.is_pressed:
         SPEAKER.play(wav_file='/home/robot/sound/Laughing 1.wav').wait()

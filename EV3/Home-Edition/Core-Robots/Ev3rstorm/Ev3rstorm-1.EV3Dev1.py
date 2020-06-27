@@ -18,6 +18,7 @@ SCREEN = Screen()
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Neutral.bmp'),
     box=(0, 0))
+SCREEN.update()
 
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
@@ -33,6 +34,7 @@ RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Middle left.bmp'),
     box=(0, 0))
+SCREEN.update()
     
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
@@ -43,6 +45,7 @@ LEFT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Neutral.bmp'),
     box=(0, 0))
+SCREEN.update()
 
 LEFT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
@@ -58,6 +61,7 @@ RIGHT_FOOT_MOTOR.wait_while(Motor.STATE_RUNNING)
 SCREEN.image.paste(
     im=Image.open('/home/robot/image/Middle right.bmp'),
     box=(0, 0))
+SCREEN.update()
     
 RIGHT_FOOT_MOTOR.run_to_rel_pos(
     position_sp=5 * 360,   # degrees
