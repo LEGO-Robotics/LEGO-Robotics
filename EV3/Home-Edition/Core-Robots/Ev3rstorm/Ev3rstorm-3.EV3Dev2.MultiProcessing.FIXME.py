@@ -25,9 +25,9 @@ SCREEN = Display()
 SPEAKER = Sound()
 
 
-def run_away_from_dark():
+def run_away_whenever_dark():
     while True:
-        if COLOR_SENSOR.ambient_light_intensity < 15:
+        if COLOR_SENSOR.ambient_light_intensity < 5:   # 15 not dark enough
             SCREEN.image_filename(
                 filename='/home/robot/image/Middle left.bmp',
                 clear_screen=True)
@@ -66,7 +66,7 @@ def run_away_from_dark():
                 clear_screen=True)
 
 
-def laugh_when_touched():
+def laugh_whenever_touched():
     while True:
         if TOUCH_SENSOR.is_pressed:
             SPEAKER.play_file(
@@ -81,6 +81,7 @@ def laugh_when_touched():
                 block=True)
 
 
-Process(target=run_away_from_dark).start()
+Process(target=run_away_whenever_dark,
+        daemon=True).start()
 
-Process(target=laugh_when_touched).start()
+laugh_whenever_touched()
