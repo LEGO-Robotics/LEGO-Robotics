@@ -67,6 +67,12 @@ class Ev3rstorm(RemoteControlledTank):
         Thread(target=self.shoot_whenever_touched).start()
 
         super().main()   # RemoteControlledTank.main()
+        # FIXME:
+        # ERROR:ev3dev2.control.rc_tank:'InfraredSensor' object has no attribute '_state'
+        # Traceback (most recent call last):
+        # File "ev3dev2/control/rc_tank.py", line 40, in main
+        # File "ev3dev2/sensor/lego.py", line 959, in process
+        # AttributeError: 'InfraredSensor' object has no attribute '_state'
         
 
 if __name__ == '__main__':
