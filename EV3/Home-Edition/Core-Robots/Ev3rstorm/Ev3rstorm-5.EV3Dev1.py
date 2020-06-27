@@ -100,7 +100,7 @@ class Ev3rstorm:
                     position_sp=3 * 360,   # degrees
                     stop_action=Motor.STOP_ACTION_HOLD)
 
-            while not self.touch_sensor.is_pressed:
+            while self.touch_sensor.is_pressed:
                 pass
 
 
