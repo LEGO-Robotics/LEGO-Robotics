@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+#!/usr/bin/env micropython
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3
 from ev3dev2.sensor.lego import ColorSensor, TouchSensor
-from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
 from multiprocessing import Process
@@ -21,27 +19,18 @@ MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 TOUCH_SENSOR = TouchSensor(address=INPUT_1)
 COLOR_SENSOR = ColorSensor(address=INPUT_3)
 
-SCREEN = Display()
 SPEAKER = Sound()
 
 
 def run_away_whenever_dark():
     while True:
         if COLOR_SENSOR.ambient_light_intensity < 5:   # 15 not dark enough
-            SCREEN.image_filename(
-                filename='/home/robot/image/Middle left.bmp',
-                clear_screen=True)
-
             TANK_DRIVER.on_for_seconds(
                 left_speed=-80,
                 right_speed=-100,
                 seconds=1.5,
                 brake=True,
                 block=True)
-
-            SCREEN.image_filename(
-                filename='/home/robot/image/Middle right.bmp',
-                clear_screen=True)
 
             TANK_DRIVER.on_for_seconds(
                 left_speed=-100,
@@ -61,10 +50,6 @@ def run_away_whenever_dark():
                     left_speed=100,
                     right_speed=50)
 
-            SCREEN.image_filename(
-                filename='/home/robot/image/Awake.bmp',
-                clear_screen=True)
-
 
 def laugh_whenever_touched():
     while True:
@@ -82,7 +67,6 @@ def laugh_whenever_touched():
 
 
 # FIXME: this process must stop when main program exits
-Process(target=run_away_whenever_dark,
-        daemon=True).start()
+Process(target=run_away_whenever_dark).start()
 
 laugh_whenever_touched()
