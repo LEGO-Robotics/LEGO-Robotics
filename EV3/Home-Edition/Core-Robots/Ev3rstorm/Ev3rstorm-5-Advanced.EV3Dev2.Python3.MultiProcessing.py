@@ -13,10 +13,10 @@ from multiprocessing import Process
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util_ev3dev2 import IRBeaconDriverMixin
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTankDriverMixin
 
 
-class Ev3rstorm(IRBeaconDriverMixin):
+class Ev3rstorm(IRBeaconRemoteControlledTankDriverMixin):
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,

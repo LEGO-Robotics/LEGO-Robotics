@@ -10,10 +10,10 @@ from pybricks.parameters import Button, Direction, Port, Stop
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))   # TODO: AttributeError: 'module' object has no attribute 'path'
-# from util.drive_util_pybricks import IRBeaconDriverMixin
+# from util.drive_util_pybricks import IRBeaconRemoteControlledTankDriverMixin
 
 
-class IRBeaconDriverMixin:
+class IRBeaconRemoteControlledTankDriverMixin:
     """
     This reusable mixin provides the capability of driving a robot with a Driving Base by the IR beacon
     """
@@ -94,7 +94,7 @@ class IRBeaconDriverMixin:
             self.driver.stop()
 
 
-class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
+class Ev3rstorm(EV3Brick, IRBeaconRemoteControlledTankDriverMixin):
     WHEEL_DIAMETER = 26   # milimeters
     AXLE_TRACK = 102      # milimeters
 
@@ -105,7 +105,7 @@ class Ev3rstorm(EV3Brick, IRBeaconDriverMixin):
             bazooka_blast_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        IRBeaconDriverMixin.__init__(
+        IRBeaconRemoteControlledTankDriverMixin.__init__(
             self,
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_leg_motor_port, right_motor_port=right_leg_motor_port,
