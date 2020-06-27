@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (Display not yet working in MicroPython as of June 2020)
+# (Display not yet working in MicroPython as of 2020)
 
 
 # TODO: multiprocess/parallel programming
@@ -28,6 +28,7 @@ while True:
     SCREEN.image_filename(
         filename='/home/robot/image/ZZZ.bmp',
         clear_screen=True)
+    SCREEN.update()
 
     LEDS.set_color(
         group=Leds.LEFT,
@@ -48,6 +49,7 @@ while True:
     SCREEN.image_filename(
         filename='/home/robot/image/Winking.bmp',
         clear_screen=True)
+    SCREEN.update()
         
     SPEAKER.play_file(
         wav_file='/home/robot/sound/Activate.wav',
@@ -62,6 +64,7 @@ while True:
     SCREEN.image_filename(
         filename='/home/robot/image/Neutral.bmp',
         clear_screen=True)
+    SCREEN.update()
 
     LEDS.animate_police_lights(
         color1=Leds.GREEN,
@@ -91,6 +94,7 @@ while True:
     SCREEN.image_filename(
         filename='/home/robot/image/Tired middle.bmp',
         clear_screen=True)
+    SCREEN.update()
 
     SPEAKER.play_file(
         wav_file='/home/robot/sound/Goodbye.wav',
