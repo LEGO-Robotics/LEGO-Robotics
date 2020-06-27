@@ -94,7 +94,7 @@ class Ev3rstorm:
 
     def shoot_when_touched(self):
         if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity <= 5:
+            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
                 self.speaker.play_file(
                     wav_file='/home/robot/sound/Up.wav',
                     volume=100,

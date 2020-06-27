@@ -115,7 +115,7 @@ class Ev3rstorm(EV3Brick):
 
     def shoot_when_touched(self):
         if self.touch_sensor.pressed():
-            if self.color_sensor.ambient() <= 5:   # 15 not dark enough
+            if self.color_sensor.ambient() < 5:   # 15 not dark enough
                 self.speaker.play_file(file=SoundFile.UP)
                     
                 self.shooting_motor.run_angle(
