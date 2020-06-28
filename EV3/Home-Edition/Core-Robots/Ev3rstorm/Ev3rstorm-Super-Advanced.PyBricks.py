@@ -104,7 +104,7 @@ class IRBeaconRemoteControlledTank:
                 turn_rate=turn_rate)
 
 
-class Ev3rstorm(EV3Brick, IRBeaconRemoteControlledTank):
+class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
     WHEEL_DIAMETER = 26   # milimeters
     AXLE_TRACK = 102      # milimeters
 
