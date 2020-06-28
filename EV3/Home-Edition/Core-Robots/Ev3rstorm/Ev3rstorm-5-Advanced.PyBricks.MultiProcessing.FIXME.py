@@ -41,7 +41,7 @@ class IRBeaconRemoteControlledTank:
     
     def drive_once_by_ir_beacon(
             self,
-            speed: float = 100,     # mm/s
+            speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
         ):
         ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
@@ -100,7 +100,7 @@ class IRBeaconRemoteControlledTank:
 
     def keep_driving_by_ir_beacon(
             self,
-            speed: float = 100,     # mm/s
+            speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
         ):
         while True:
