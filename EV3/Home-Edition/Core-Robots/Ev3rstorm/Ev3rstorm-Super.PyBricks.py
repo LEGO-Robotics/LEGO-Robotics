@@ -157,14 +157,16 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
                 self.speaker.play_file(file=SoundFile.LAUGHING_2)
 
 
-    def main(self):
+    def main(self,
+             driving_speed: float = 1000   # mm/s
+            ):
         """
         Ev3rstorm's main program performing various capabilities
         """
         self.screen.load_image(ImageFile.TARGET)
 
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=driving_speed)
 
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
