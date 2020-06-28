@@ -10,10 +10,8 @@ class IRBeaconRemoteControlledTank:
     def __init__(
             self,
             wheel_diameter: float, axle_track: float,   # both in milimeters
-            left_motor_port: Port = Port.B,
-            right_motor_port: Port = Port.C,
-            ir_sensor_port: Port = Port.S4,
-            ir_beacon_channel: int = 1):
+            left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
                                                      positive_direction=Direction.CLOCKWISE),
                                     right_motor=Motor(port=right_motor_port,

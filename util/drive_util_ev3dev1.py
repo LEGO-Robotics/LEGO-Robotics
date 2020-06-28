@@ -10,10 +10,8 @@ from ev3dev.ev3 import (
 class IRBeaconRemoteControlledTank:
     def __init__(
             self,
-            left_motor_port: str = OUTPUT_B,
-            right_motor_port: str = OUTPUT_C,
-            ir_sensor_port: str = INPUT_4,
-            ir_beacon_channel: int = 1):
+            left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.left_motor = LargeMotor(address=left_motor_port)
         self.right_motor = LargeMotor(address=right_motor_port)
 
