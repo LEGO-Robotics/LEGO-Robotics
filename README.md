@@ -132,6 +132,8 @@ LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/m
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
 GitHub Community
+- [LEGO](https://github.com/LEGO)
+
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 
 - [Droids Robotics](https://github.com/droidsrobotics/projects)

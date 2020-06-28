@@ -21,11 +21,11 @@ RIGHT_MOTOR = Motor(port=Port.C,
                     positive_direction=Direction.CLOCKWISE)
 WHEEL_DIAMETER = 26
 AXLE_TRACK = 102
-DRIVER = DriveBase(left_motor=LEFT_MOTOR,
-                   right_motor=RIGHT_MOTOR,
-                   wheel_diameter=WHEEL_DIAMETER,
-                   axle_track=AXLE_TRACK)
-DRIVER.settings(
+DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
+                       right_motor=RIGHT_MOTOR,
+                       wheel_diameter=WHEEL_DIAMETER,
+                       axle_track=AXLE_TRACK)
+DRIVE_BASE.settings(
     straight_speed=300,   # milimeters per second
     straight_acceleration=300,
     turn_rate=90,   # degrees per second
@@ -36,7 +36,7 @@ IR_SENSOR = InfraredSensor(port=Port.S4)
 
 while True:
     if IR_SENSOR.distance() < 25:
-        DRIVER.stop()
+        DRIVE_BASE.stop()
 
         BRICK.light.on(color=Color.RED)
 
@@ -48,7 +48,7 @@ while True:
             speed=1000   # degrees per second
         )
 
-        DRIVER.straight(
+        DRIVE_BASE.straight(
             distance=100   # milimeters
         )
 
@@ -56,17 +56,17 @@ while True:
             speed=-1000   # degrees per second
         )
 
-        DRIVER.straight(
+        DRIVE_BASE.straight(
             distance=-100   # milimeters
         )
 
         MEDIUM_MOTOR.hold()
 
-        DRIVER.turn(
+        DRIVE_BASE.turn(
             angle=135   # degrees
         )
 
-        DRIVER.turn(
+        DRIVE_BASE.turn(
             angle=-30   # degrees
         )
 
@@ -74,13 +74,13 @@ while True:
         BRICK.light.on(color=Color.GREEN)
 
         if time() % 3 < 1.5:
-            DRIVER.drive(
+            DRIVE_BASE.drive(
                 speed=360,   # degrees per second
                 turn_rate=-30   # degrees per second
             )
 
         else:
-            DRIVER.drive(
+            DRIVE_BASE.drive(
                 speed=360,   # degrees per second
                 turn_rate=30   # degrees per second
             )

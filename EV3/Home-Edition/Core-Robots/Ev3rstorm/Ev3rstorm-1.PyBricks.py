@@ -16,11 +16,11 @@ RIGHT_MOTOR = Motor(port=Port.C,
                     positive_direction=Direction.CLOCKWISE)
 WHEEL_DIAMETER = 26
 AXLE_TRACK = 102
-DRIVER = DriveBase(left_motor=LEFT_MOTOR,
-                   right_motor=RIGHT_MOTOR,
-                   wheel_diameter=WHEEL_DIAMETER,
-                   axle_track=AXLE_TRACK)
-DRIVER.settings(
+DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
+                       right_motor=RIGHT_MOTOR,
+                       wheel_diameter=WHEEL_DIAMETER,
+                       axle_track=AXLE_TRACK)
+DRIVE_BASE.settings(
     straight_speed=300,   # milimeters per second
     straight_acceleration=300,
     turn_rate=90,   # degrees per second
@@ -29,24 +29,24 @@ DRIVER.settings(
 
 BRICK.screen.load_image(ImageFile.NEUTRAL)
 
-DRIVER.straight(
+DRIVE_BASE.straight(
     distance=300   # milimeters
 )
 
 BRICK.screen.load_image(ImageFile.MIDDLE_LEFT)
 
-DRIVER.turn(
+DRIVE_BASE.turn(
     angle=90   # degrees
 )
 
 BRICK.screen.load_image(ImageFile.NEUTRAL)
 
-DRIVER.straight(
+DRIVE_BASE.straight(
     distance=300   # milimeters
 )
 
 BRICK.screen.load_image(ImageFile.MIDDLE_RIGHT)
 
-DRIVER.turn(
+DRIVE_BASE.turn(
     angle=-90   # degrees
 )

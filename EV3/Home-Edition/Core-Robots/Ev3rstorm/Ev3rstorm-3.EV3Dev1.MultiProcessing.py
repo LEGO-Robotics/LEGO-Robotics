@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 
+# MUST END PROGRAM BY EV3 BRICK'S BACK BUTTON
+
+
 from ev3dev.ev3 import (
     Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, ColorSensor, INPUT_1, INPUT_3,
@@ -92,7 +95,6 @@ def laugh_whenever_touched():
                 stop_action=Motor.STOP_ACTION_BRAKE)
 
 
-# FIXME: this process must stop when main program exits
 Process(target=run_away_whenever_dark,
         daemon=True).start()
 

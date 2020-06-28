@@ -10,26 +10,24 @@ class IRBeaconRemoteControlledTank:
     def __init__(
             self,
             wheel_diameter: float, axle_track: float,   # both in milimeters
-            left_motor_port: Port = Port.B,
-            right_motor_port: Port = Port.C,
-            ir_sensor_port: Port = Port.S4,
-            ir_beacon_channel: int = 1):
+            left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
                                                      positive_direction=Direction.CLOCKWISE),
                                     right_motor=Motor(port=right_motor_port,
-                                                     positive_direction=Direction.CLOCKWISE),
+                                                      positive_direction=Direction.CLOCKWISE),
                                     wheel_diameter=wheel_diameter,
                                     axle_track=axle_track)
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
-        self.ir_beacon_channel = ir_beacon_channel
+        self.tank_drive_ir_beacon_channel = ir_beacon_channel
     
     def drive_once_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
             turn_rate: float = 90   # rotational speed deg/s
         ):
-        ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
+        ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.tank_drive_ir_beacon_channel))
 
         # forward
         if ir_beacon_button_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
@@ -83,7 +81,7 @@ class IRBeaconRemoteControlledTank:
         else:
             self.drive_base.stop()
 
-    # this method must be used in a parallel process in order not to block other operations
+    # this method must be used in a parallel process/thread in order not to block other operations
     def keep_driving_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
