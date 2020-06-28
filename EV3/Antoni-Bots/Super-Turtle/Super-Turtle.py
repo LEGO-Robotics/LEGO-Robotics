@@ -28,7 +28,7 @@ class SuperTurtle:
         self.speaker = Sound()
 
 
-    def drive_by_ir_beacon(self, channel: int = 1, speed: float = 100):
+    def drive_once_by_ir_beacon(self, channel: int = 1, speed: float = 100):
         if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             # go forward
             self.tank_driver.on_for_seconds(
@@ -170,7 +170,7 @@ SUPER_TURTLE = SuperTurtle(left_leg_motor_port=OUTPUT_B,
                            touch_sensor_port=INPUT_1)
 
 while True:
-    SUPER_TURTLE.drive_by_ir_beacon(
+    SUPER_TURTLE.drive_once_by_ir_beacon(
         channel=1,
         speed=100)
 
