@@ -32,10 +32,9 @@ class IRBeaconRemoteControlledTank:
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
-    
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
-            speed: float = 100,     # mm/s
+            speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
         ):
         ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
@@ -92,14 +91,13 @@ class IRBeaconRemoteControlledTank:
         else:
             self.drive_base.stop()
 
-
     def keep_driving_by_ir_beacon(
             self,
-            speed: float = 100,     # mm/s
+            speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
         ):
         while True:
-            self.drive_by_ir_beacon(
+            self.drive_once_by_ir_beacon(
                 speed=speed,
                 turn_rate=turn_rate)
 
@@ -115,8 +113,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
             bazooka_blast_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        IRBeaconRemoteControlledTank.__init__(
-            self,
+        super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_leg_motor_port, right_motor_port=right_leg_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
@@ -142,7 +139,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         else:
             self.light.off()
 
-    
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
             self.detect_object_by_ir_sensor()
@@ -179,7 +175,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
 
                 self.speaker.play_file(file=SoundFile.LAUGHING_2)
 
-
     def blast_bazooka_whenever_touched(self):
         while True:
             self.blast_bazooka_if_touched()
@@ -192,7 +187,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
 
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
 
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
