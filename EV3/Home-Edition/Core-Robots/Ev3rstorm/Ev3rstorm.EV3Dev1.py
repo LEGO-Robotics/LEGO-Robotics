@@ -92,7 +92,7 @@ class Ev3rstorm:
 
 
     def rc_loop(self,
-                driving_speed: float = 900   # degrees per second
+                driving_speed: float = 1000   # degrees per second
                ):
         """
         Enter the remote control loop.

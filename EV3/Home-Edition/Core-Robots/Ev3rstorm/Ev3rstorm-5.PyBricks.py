@@ -135,7 +135,7 @@ class Ev3rstorm(EV3Brick):
  
 
     def main(self,
-             driving_speed: float = 900   # mm/s
+             driving_speed: float = 1000   # mm/s
             ):
         self.screen.load_image(ImageFile.TARGET)
     
