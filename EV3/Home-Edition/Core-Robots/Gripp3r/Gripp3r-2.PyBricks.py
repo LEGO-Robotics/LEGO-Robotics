@@ -11,10 +11,10 @@ from pybricks.robotics import DriveBase
 EV3_BRICK = EV3Brick()
 
 MEDIUM_MOTOR = Motor(port=Port.A)
-TWO_WHEEL_DRIVER = DriveBase(left_motor=Port.B,
-                             right_motor=Port.C,
-                             wheel_diameter=None,  # TODO
-                             axle_track=None)
+DRIVE_BASE = DriveBase(left_motor=Port.B,
+                       right_motor=Port.C,
+                       wheel_diameter=None,  # TODO
+                       axle_track=None)
 
 
 MEDIUM_MOTOR.run_time(
@@ -23,7 +23,7 @@ MEDIUM_MOTOR.run_time(
     then=Stop.BRAKE,
     wait=True)
 
-TWO_WHEEL_DRIVER   # TODO
+DRIVE_BASE   # TODO
 
 EV3_BRICK.speaker.play_file(SoundFile.AIRBRAKE)
 
@@ -33,9 +33,9 @@ MEDIUM_MOTOR.run_time(
     then=Stop.BRAKE,
     wait=True)
 
-TWO_WHEEL_DRIVER   # TODO
+DRIVE_BASE   # TODO
 
-TWO_WHEEL_DRIVER   # TODO
+DRIVE_BASE   # TODO
 
 MEDIUM_MOTOR.run(speed=-50)
 

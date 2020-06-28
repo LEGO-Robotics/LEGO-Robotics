@@ -19,11 +19,11 @@ RIGHT_MOTOR = Motor(port=Port.C,
                     positive_direction=Direction.CLOCKWISE)
 WHEEL_DIAMETER = 26
 AXLE_TRACK = 102
-DRIVER = DriveBase(left_motor=LEFT_MOTOR,
-                   right_motor=RIGHT_MOTOR,
-                   wheel_diameter=WHEEL_DIAMETER,
-                   axle_track=AXLE_TRACK)
-DRIVER.settings(
+DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
+                       right_motor=RIGHT_MOTOR,
+                       wheel_diameter=WHEEL_DIAMETER,
+                       axle_track=AXLE_TRACK)
+DRIVE_BASE.settings(
     straight_speed=300,   # milimeters per second
     straight_acceleration=300,
     turn_rate=90,   # degrees per second
@@ -43,7 +43,7 @@ while True:
         proximity_difference = distance - 70
 
         if (heading_difference == 0) and (proximity_difference == 0):
-            DRIVER.stop()
+            DRIVE_BASE.stop()
 
             BRICK.light.on(color=Color.RED)
 
@@ -56,8 +56,8 @@ while True:
             BRICK.speaker.play_file(file=SoundFile.LAUGHING_2)
 
         else:
-            DRIVER.turn(angle=heading_difference)
-            DRIVER.straight(distance=proximity_difference)
+            DRIVE_BASE.turn(angle=heading_difference)
+            DRIVE_BASE.straight(distance=proximity_difference)
 
     else:
-        DRIVER.stop()
+        DRIVE_BASE.stop()

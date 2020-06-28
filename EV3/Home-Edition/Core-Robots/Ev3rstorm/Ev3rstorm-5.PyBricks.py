@@ -22,13 +22,13 @@ class Ev3rstorm(EV3Brick):
             color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4,
             ir_beacon_channel: int = 1):
-        self.driver = DriveBase(left_motor=Motor(port=left_foot_motor_port,
-                                                 positive_direction=Direction.CLOCKWISE),
-                                right_motor=Motor(port=right_foot_motor_port,
-                                                  positive_direction=Direction.CLOCKWISE),
-                                wheel_diameter=self.WHEEL_DIAMETER,
-                                axle_track=self.AXLE_TRACK)
-        self.driver.settings(
+        self.drive_base = DriveBase(left_motor=Motor(port=left_foot_motor_port,
+                                                     positive_direction=Direction.CLOCKWISE),
+                                    right_motor=Motor(port=right_foot_motor_port,
+                                                      positive_direction=Direction.CLOCKWISE),
+                                    wheel_diameter=self.WHEEL_DIAMETER,
+                                    axle_track=self.AXLE_TRACK)
+        self.drive_base.settings(
             straight_speed=300,   # milimeters per second
             straight_acceleration=300,
             turn_rate=90,   # degrees per second
@@ -54,63 +54,63 @@ class Ev3rstorm(EV3Brick):
 
         # forward
         if ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=speed,
                 turn_rate=0   # degrees per second
             )
 
         # backward
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=-speed,
                 turn_rate=0   # degrees per second
             )
 
         # turn left on the spot
         elif ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_DOWN}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=0,
                 turn_rate=-90   # degrees per second
             )
 
         # turn right on the spot
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN, Button.RIGHT_UP}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=0,
                 turn_rate=90   # degrees per second
             )
 
         # turn left forward
         elif ir_beacon_buttons_pressed == {Button.LEFT_UP}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=speed,
                 turn_rate=-90   # degrees per second
             )
 
         # turn right forward
         elif ir_beacon_buttons_pressed == {Button.RIGHT_UP}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=speed,
                 turn_rate=90   # degrees per second
             )
 
         # turn left backward
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=-speed,
                 turn_rate=90   # degrees per second
             )
 
         # turn right backward
         elif ir_beacon_buttons_pressed == {Button.RIGHT_DOWN}:
-            self.driver.drive(
+            self.drive_base.drive(
                 speed=-speed,
                 turn_rate=-90   # degrees per second
             )
 
         # otherwise stop
         else:
-            self.driver.stop()
+            self.drive_base.stop()
 
 
     def shoot_when_touched(self):
