@@ -65,7 +65,7 @@ class IRBeaconRemoteControlledTank:
             self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
 
     # this method must be used in a parallel process/thread in order not to block other operations
-    def keep_driving_by_ir_beacon
+    def keep_driving_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
         ):
