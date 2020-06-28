@@ -48,7 +48,7 @@ class Ev3rstorm(EV3Brick):
 
     def drive_once_by_ir_beacon(
             self,
-            speed: float = 360   # milimeters per second
+            speed: float = 1000   # milimeters per second
         ):
         ir_beacon_buttons_pressed = set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
