@@ -15,7 +15,7 @@ class IRBeaconRemoteControlledTank:
         self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
                                                      positive_direction=Direction.CLOCKWISE),
                                     right_motor=Motor(port=right_motor_port,
-                                                     positive_direction=Direction.CLOCKWISE),
+                                                      positive_direction=Direction.CLOCKWISE),
                                     wheel_diameter=wheel_diameter,
                                     axle_track=axle_track)
 
