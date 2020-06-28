@@ -2,9 +2,6 @@
 # (Display not yet working in MicroPython as of 2020)
 
 
-# TODO: fix LEDs bug
-
-
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
@@ -27,21 +24,17 @@ class Ev3rstorm:
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-
         self.ir_beacon_channel = ir_beacon_channel
 
         self.leds = Leds()
-
         self.speaker = Sound()
-        
         self.screen = Display()
 
 
-    def drive_by_ir_beacon(self, speed: float = 100):
+    def drive_once_by_ir_beacon(self, speed: float = 100):
         # forward
         if self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.top_right(self.ir_beacon_channel):
             self.tank_driver.on(
@@ -171,7 +164,7 @@ class Ev3rstorm:
         self.screen.update()
 
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
             
             self.detect_object_by_ir_sensor()
 
