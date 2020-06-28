@@ -157,14 +157,14 @@ class Ev3rstorm:
             self.touch_sensor.wait_for_released()
  
     
-    def main(self):
+    def main(self, driving_speed: float = 100):
         self.screen.image_filename(
             filename='/home/robot/image/Target.bmp',
             clear_screen=True)
         self.screen.update()
 
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=driving_speed)
             
             self.detect_object_by_ir_sensor()
 
