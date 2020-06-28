@@ -72,10 +72,8 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
 
 
     def main(self):
-        Thread(
-            target=self.blast_bazooka_whenever_touched,
-            daemon=True) \
-        .start()
+        Thread(target=self.blast_bazooka_whenever_touched,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 

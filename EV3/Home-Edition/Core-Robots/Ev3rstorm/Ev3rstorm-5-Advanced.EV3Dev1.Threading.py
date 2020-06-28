@@ -68,7 +68,8 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
     
-        Thread(target=self.shoot_whenever_touched).start()
+        Thread(target=self.shoot_whenever_touched,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 
