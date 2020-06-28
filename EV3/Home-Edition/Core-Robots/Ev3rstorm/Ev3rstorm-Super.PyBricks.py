@@ -27,8 +27,7 @@ class IRBeaconRemoteControlledTank:
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
-    
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
             turn_rate: float = 90   # rotational speed deg/s
@@ -86,7 +85,6 @@ class IRBeaconRemoteControlledTank:
         # otherwise stop
         else:
             self.drive_base.stop()
-
     
     def keep_driving_by_ir_beacon(
             self,
@@ -94,7 +92,7 @@ class IRBeaconRemoteControlledTank:
             turn_rate: float = 90   # rotational speed deg/s
         ):
         while True:
-            self.drive_by_ir_beacon(
+            self.drive_once_by_ir_beacon(
                 speed=speed,
                 turn_rate=turn_rate)
 
@@ -136,7 +134,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         else:
             self.light.off()
 
-    
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
             self.detect_object_by_ir_sensor()
@@ -173,7 +170,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
 
                 self.speaker.play_file(file=SoundFile.LAUGHING_2)
 
-
     def blast_bazooka_whenever_touched(self):
         while True:
             self.blast_bazooka_if_touched()
@@ -186,7 +182,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
 
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
 
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
