@@ -12,10 +12,10 @@ from threading import Thread
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTankDriverMixin
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
-class Ev3rstorm(IRBeaconRemoteControlledTankDriverMixin):
+class Ev3rstorm(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,

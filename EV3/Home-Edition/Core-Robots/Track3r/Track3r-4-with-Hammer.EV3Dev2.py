@@ -11,7 +11,7 @@ from ev3dev2.sound import Sound
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTankDriverMixin
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
 MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
@@ -19,7 +19,7 @@ TANK_DRIVER = MoveTank(left_motor_port=OUTPUT_B,
                        right_motor_port=OUTPUT_C,
                        motor_class=LargeMotor)
 IR_BEACON_DRIVER = \
-    IRBeaconRemoteControlledTankDriverMixin(
+    IRBeaconRemoteControlledTank(
         left_motor_port=OUTPUT_B,
         right_motor_port=OUTPUT_C,
         motor_class=LargeMotor,

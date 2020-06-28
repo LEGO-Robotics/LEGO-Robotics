@@ -1,4 +1,4 @@
-__all__ = 'IRBeaconRemoteControlledTankDriverMixin',
+__all__ = 'IRBeaconRemoteControlledTank',
 
 
 from pybricks.ev3devices import Motor, InfraredSensor
@@ -6,7 +6,7 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Direction, Port
 
 
-class IRBeaconRemoteControlledTankDriverMixin:
+class IRBeaconRemoteControlledTank:
     def __init__(
             self,
             wheel_diameter: float, axle_track: float,   # both in milimeters
