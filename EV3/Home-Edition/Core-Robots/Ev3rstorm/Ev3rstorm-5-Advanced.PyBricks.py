@@ -146,14 +146,16 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
                     wait=True)
 
 
-    def main(self):
+    def main(self,
+             driving_speed: float = 900   # mm/s
+            ):
         """
         Ev3rstorm's main program performing various capabilities
         """
         self.screen.load_image(ImageFile.TARGET)
 
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_by_ir_beacon(speed=driving_speed)
 
             self.blast_bazooka_if_touched()
 

@@ -134,13 +134,13 @@ class Ev3rstorm(EV3Brick):
                     wait=True)
  
 
-    def main(self):
+    def main(self,
+             driving_speed: float = 900   # mm/s
+            ):
         self.screen.load_image(ImageFile.TARGET)
     
         while True:
-            self.drive_by_ir_beacon(
-                speed=1000   # milimeters per second
-            )
+            self.drive_by_ir_beacon(speed=driving_speed)
             
             self.shoot_when_touched()
 
