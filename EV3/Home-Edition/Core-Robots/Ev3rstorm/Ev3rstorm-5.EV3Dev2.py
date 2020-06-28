@@ -26,15 +26,12 @@ class Ev3rstorm:
         self.shooting_motor = MediumMotor(address=shooting_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-
         self.ir_beacon_channel = ir_beacon_channel
 
         self.screen = Display()
-
         self.speaker = Sound()
 
 
