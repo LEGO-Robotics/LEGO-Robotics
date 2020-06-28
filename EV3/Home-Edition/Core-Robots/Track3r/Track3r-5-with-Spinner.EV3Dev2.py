@@ -29,7 +29,7 @@ IR_SENSOR = InfraredSensor(address=INPUT_4)
 SPEAKER = Sound()
 
 
-def drive_by_ir_beacon(channel: int = 1, speed: float = 100):
+def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
     if IR_SENSOR.top_left(channel) and IR_SENSOR.top_right(channel):
         # go forward
         TANK_DRIVER.on(
@@ -95,7 +95,7 @@ def hit_objects_by_ir_beacon(channel: int = 1, speed: float = 1):
 
 while True:
     IR_BEACON_DRIVER.drive(speed=100)
-    # drive_by_ir_beacon(
+    # drive_once_by_ir_beacon(
     #     channel=1,
     #     speed=100)
 

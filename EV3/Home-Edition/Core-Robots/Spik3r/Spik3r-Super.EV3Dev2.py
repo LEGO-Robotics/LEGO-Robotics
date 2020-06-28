@@ -73,7 +73,7 @@ def pinch_if_touched():
             block=True)
 
 
-def drive_by_ir_beacon(channel=1):
+def drive_once_by_ir_beacon(channel=1):
     if INFRARED_SENSOR.top_left(channel=channel) and INFRARED_SENSOR.top_right(channel=channel):
         GO_MOTOR.on(
             speed=91,
@@ -91,7 +91,7 @@ def drive_by_ir_beacon(channel=1):
 
 
 while True:
-    drive_by_ir_beacon(channel=1)
+    drive_once_by_ir_beacon(channel=1)
     be_noisy_to_people()
     sting_if_see_something()
     pinch_if_touched()

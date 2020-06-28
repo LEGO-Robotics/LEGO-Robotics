@@ -46,7 +46,7 @@ class Ev3rstorm(EV3Brick):
         self.ir_beacon_channel = ir_beacon_channel
 
 
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 360   # milimeters per second
         ):
@@ -140,7 +140,7 @@ class Ev3rstorm(EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
     
         while True:
-            self.drive_by_ir_beacon(speed=driving_speed)
+            self.drive_once_by_ir_beacon(speed=driving_speed)
             
             self.shoot_when_touched()
 

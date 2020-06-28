@@ -34,7 +34,7 @@ class IRBeaconRemoteControlledTank:
         self.ir_beacon_channel = ir_beacon_channel
     
     
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
             turn_rate: float = 90   # rotational speed deg/s
@@ -155,7 +155,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         self.screen.load_image(ImageFile.TARGET)
 
         while True:
-            self.drive_by_ir_beacon(speed=driving_speed)
+            self.drive_once_by_ir_beacon(speed=driving_speed)
 
             self.blast_bazooka_if_touched()
 

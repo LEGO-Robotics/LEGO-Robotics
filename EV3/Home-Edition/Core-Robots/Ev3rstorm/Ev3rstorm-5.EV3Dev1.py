@@ -36,7 +36,7 @@ class Ev3rstorm:
         self.speaker = Sound()
 
 
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
         ):
@@ -109,7 +109,7 @@ class Ev3rstorm:
         self.screen.update()
     
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
             
             self.shoot_when_touched()
 

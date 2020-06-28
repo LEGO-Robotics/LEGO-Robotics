@@ -38,7 +38,7 @@ class Ev3rstorm:
         self.speaker = Sound()
 
 
-    def drive_by_ir_beacon(self, speed: float = 100):
+    def drive_once_by_ir_beacon(self, speed: float = 100):
         # forward
         if self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.top_right(self.ir_beacon_channel):
             self.tank_driver.on(
@@ -128,7 +128,7 @@ class Ev3rstorm:
         self.screen.update()
     
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
             
             self.shoot_when_touched()
 
