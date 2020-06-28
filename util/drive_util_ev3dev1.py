@@ -21,7 +21,7 @@ class IRBeaconRemoteControlledTank:
         self.tank_drive_remote_control = RemoteControl(sensor=self.ir_sensor,
                                                        channel=ir_beacon_channel)
 
-    def drive_by_ir_beacon(
+    def drive_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
         ):

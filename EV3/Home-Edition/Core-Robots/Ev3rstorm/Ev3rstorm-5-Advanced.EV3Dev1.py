@@ -67,7 +67,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
         self.screen.update()
     
         while True:
-            self.drive_by_ir_beacon()
+            self.drive_once_by_ir_beacon()
             
             self.shoot_when_touched()
 
