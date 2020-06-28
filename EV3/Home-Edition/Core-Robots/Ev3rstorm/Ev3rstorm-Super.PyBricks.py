@@ -85,16 +85,6 @@ class IRBeaconRemoteControlledTank:
         # otherwise stop
         else:
             self.drive_base.stop()
-    
-    def keep_driving_by_ir_beacon(
-            self,
-            speed: float = 100,     # mm/s
-            turn_rate: float = 90   # rotational speed deg/s
-        ):
-        while True:
-            self.drive_once_by_ir_beacon(
-                speed=speed,
-                turn_rate=turn_rate)
 
 
 class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
@@ -134,10 +124,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         else:
             self.light.off()
 
-    def keep_detecting_objects_by_ir_sensor(self):
-        while True:
-            self.detect_object_by_ir_sensor()
-
 
     def blast_bazooka_if_touched(self):
         """
@@ -169,10 +155,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
                     wait=True)
 
                 self.speaker.play_file(file=SoundFile.LAUGHING_2)
-
-    def blast_bazooka_whenever_touched(self):
-        while True:
-            self.blast_bazooka_if_touched()
 
 
     def main(self):
