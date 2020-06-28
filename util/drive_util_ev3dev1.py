@@ -1,3 +1,6 @@
+__all__ = 'IRBeaconRemoteControlledTank',
+
+
 from ev3dev.ev3 import (
     Motor, LargeMotor, OUTPUT_B, OUTPUT_C,
     InfraredSensor, RemoteControl, INPUT_4
