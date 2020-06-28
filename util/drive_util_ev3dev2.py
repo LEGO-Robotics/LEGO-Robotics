@@ -24,58 +24,58 @@ class IRBeaconRemoteControlledTank:
                 motor_class=motor_class)
         
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-        self.ir_beacon_channel = ir_beacon_channel
+        self.tank_drive_ir_beacon_channel = ir_beacon_channel
     
 
     def drive_once_by_ir_beacon(self, speed: float = 100):
         # forward
-        if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
-                self.ir_sensor.top_right(channel=self.ir_beacon_channel):
+        if self.ir_sensor.top_left(channel=self.tank_drive_ir_beacon_channel) and \
+                self.ir_sensor.top_right(channel=self.tank_drive_ir_beacon_channel):
             self.tank_driver.on(
                 left_speed=speed,
                 right_speed=speed)
     
         # backward
-        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and \
-                self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.bottom_left(channel=self.tank_drive_ir_beacon_channel) and \
+                self.ir_sensor.bottom_right(channel=self.tank_drive_ir_beacon_channel):
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=-speed)
     
         # turn left on the spot
-        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
-                self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.top_left(channel=self.tank_drive_ir_beacon_channel) and \
+                self.ir_sensor.bottom_right(channel=self.tank_drive_ir_beacon_channel):
             self.steer_driver.on(
                 steering=-100,
                 speed=speed)
     
         # turn right on the spot
-        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel) and \
-                self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.top_right(channel=self.tank_drive_ir_beacon_channel) and \
+                self.ir_sensor.bottom_left(channel=self.tank_drive_ir_beacon_channel):
             self.steer_driver.on(
                 steering=100,
                 speed=speed)
     
         # turn left forward
-        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.top_left(channel=self.tank_drive_ir_beacon_channel):
             self.steer_driver.on(
                 steering=-50,
                 speed=speed)
     
         # turn right forward
-        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.top_right(channel=self.tank_drive_ir_beacon_channel):
             self.steer_driver.on(
                 steering=50,
                 speed=speed)
     
         # turn left backward
-        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.bottom_left(channel=self.tank_drive_ir_beacon_channel):
             self.tank_driver.on(
                 left_speed=0,
                 right_speed=-speed)
     
         # turn right backward
-        elif self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
+        elif self.ir_sensor.bottom_right(channel=self.tank_drive_ir_beacon_channel):
             self.tank_driver.on(
                 left_speed=-speed,
                 right_speed=0)
