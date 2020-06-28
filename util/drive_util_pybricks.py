@@ -83,7 +83,7 @@ class IRBeaconRemoteControlledTank:
         else:
             self.drive_base.stop()
 
-    # this method must be used in a parallel process in order not to block other operations
+    # this method must be used in a parallel process/thread in order not to block other operations
     def keep_driving_by_ir_beacon(
             self,
             speed: float = 100,     # mm/s
