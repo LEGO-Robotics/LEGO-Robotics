@@ -8,7 +8,7 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
-from threading import Thread
+from multiprocessing import Process
 
 
 class Ev3rstorm:
@@ -131,8 +131,8 @@ class Ev3rstorm:
             clear_screen=True)
         self.screen.update()
     
-        Thread(target=self.shoot_whenever_touched,
-               daemon=True).start()
+        Process(target=self.shoot_whenever_touched,
+                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 
