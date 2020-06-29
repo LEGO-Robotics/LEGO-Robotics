@@ -114,29 +114,26 @@ class Ev3rstorm(EV3Brick):
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.pressed():
-            if self.color_sensor.ambient() < 5:   # 15 not dark enough
-                self.speaker.play_file(file=SoundFile.UP)
-                    
-                self.shooting_motor.run_angle(
-                    speed=1000,   # degrees per second
-                    rotation_angle=-3 * 360,   # degrees
-                    then=Stop.HOLD,
-                    wait=True)
-
-            else:
-                self.speaker.play_file(file=SoundFile.DOWN)
-                    
-                self.shooting_motor.run_angle(
-                    speed=1000,   # degrees per second
-                    rotation_angle=3 * 360,   # degrees
-                    then=Stop.HOLD,
-                    wait=True)
-
     def shoot_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
+            if self.touch_sensor.pressed():
+                if self.color_sensor.ambient() < 5:   # 15 not dark enough
+                    self.speaker.play_file(file=SoundFile.UP)
+                        
+                    self.shooting_motor.run_angle(
+                        speed=1000,   # degrees per second
+                        rotation_angle=-3 * 360,   # degrees
+                        then=Stop.HOLD,
+                        wait=True)
+
+                else:
+                    self.speaker.play_file(file=SoundFile.DOWN)
+                        
+                    self.shooting_motor.run_angle(
+                        speed=1000,   # degrees per second
+                        rotation_angle=3 * 360,   # degrees
+                        then=Stop.HOLD,
+                        wait=True)
         
 
     def main(self,

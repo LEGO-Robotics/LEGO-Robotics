@@ -89,37 +89,34 @@ class Ev3rstorm:
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Up.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=-3,
-                    brake=True,
-                    block=True)
-
-            else:
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Down.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=3,
-                    brake=True,
-                    block=True)
-
-            self.touch_sensor.wait_for_released()
-
     def shoot_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
+            if self.touch_sensor.is_pressed:
+                if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Up.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.shooting_motor.on_for_rotations(
+                        speed=100,
+                        rotations=-3,
+                        brake=True,
+                        block=True)
+
+                else:
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Down.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.shooting_motor.on_for_rotations(
+                        speed=100,
+                        rotations=3,
+                        brake=True,
+                        block=True)
+
+                self.touch_sensor.wait_for_released()
         
  
     def main(self, driving_speed: float = 100):

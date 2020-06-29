@@ -102,9 +102,9 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
             self.touch_sensor.wait_for_released()
  
     
-    def main(self):
+    def main(self, driving_speed: float = 100):
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=driving_speed)
             
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62

@@ -34,54 +34,48 @@ class Ev3rstorm(RemoteControlledTank):
         self.speaker = Sound()
 
 
-    def detect_object_by_ir_sensor(self):
-        if self.ir_sensor.proximity < 25: 
-            self.leds.set_color(
-                group=Leds.LEFT,
-                color=Leds.RED,
-                pct=1)
-            self.leds.set_color(
-                group=Leds.RIGHT,
-                color=Leds.RED,
-                pct=1)
-            
-            self.speaker.play(wav_file='/home/robot/sound/Object.wav').wait()
-            self.speaker.play(wav_file='/home/robot/sound/Detected.wav').wait()
-            self.speaker.play(wav_file='/home/robot/sound/Error alarm.wav').wait()
-
-        else:
-            self.leds.all_off()
-
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
-            self.detect_object_by_ir_sensor()
-            
-
-    def shoot_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
-                self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
-
-                self.shooting_motor.run_to_rel_pos(
-                    speed_sp=1000,   # degrees per second
-                    position_sp=-3 * 360,   # degrees
-                    stop_action=Motor.STOP_ACTION_HOLD)
+            if self.ir_sensor.proximity < 25: 
+                self.leds.set_color(
+                    group=Leds.LEFT,
+                    color=Leds.RED,
+                    pct=1)
+                self.leds.set_color(
+                    group=Leds.RIGHT,
+                    color=Leds.RED,
+                    pct=1)
+                
+                self.speaker.play(wav_file='/home/robot/sound/Object.wav').wait()
+                self.speaker.play(wav_file='/home/robot/sound/Detected.wav').wait()
+                self.speaker.play(wav_file='/home/robot/sound/Error alarm.wav').wait()
 
             else:
-                self.speaker.play(wav_file='/home/robot/sound/Down.wav').wait()
-
-                self.shooting_motor.run_to_rel_pos(
-                    speed_sp=1000,   # degrees per second
-                    position_sp=3 * 360,   # degrees
-                    stop_action=Motor.STOP_ACTION_HOLD)
-
-            while self.touch_sensor.is_pressed:
-                pass
+                self.leds.all_off()
+            
 
     def shoot_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
+            if self.touch_sensor.is_pressed:
+                if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
+                    self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
 
+                    self.shooting_motor.run_to_rel_pos(
+                        speed_sp=1000,   # degrees per second
+                        position_sp=-3 * 360,   # degrees
+                        stop_action=Motor.STOP_ACTION_HOLD)
+
+                else:
+                    self.speaker.play(wav_file='/home/robot/sound/Down.wav').wait()
+
+                    self.shooting_motor.run_to_rel_pos(
+                        speed_sp=1000,   # degrees per second
+                        position_sp=3 * 360,   # degrees
+                        stop_action=Motor.STOP_ACTION_HOLD)
+
+                while self.touch_sensor.is_pressed:
+                    pass
+        
 
     def main(self):
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))

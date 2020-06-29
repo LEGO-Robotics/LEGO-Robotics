@@ -34,6 +34,7 @@ while True:
 
     BRICK.light.on(color=Color.ORANGE)
 
+    # TODO: parallel process/thread
     while not TOUCH_SENSOR.pressed():
         BRICK.speaker.play_file(SoundFile.SNORING)
 

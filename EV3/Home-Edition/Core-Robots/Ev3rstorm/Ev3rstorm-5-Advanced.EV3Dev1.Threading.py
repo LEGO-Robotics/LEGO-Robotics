@@ -19,18 +19,13 @@ from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 class Ev3rstorm(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             shooting_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
-            color_sensor_port: str = INPUT_3,
-            ir_sensor_port: str = INPUT_4,
-            ir_beacon_channel: int = 1):
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
-            left_motor_port=left_foot_motor_port,
-            right_motor_port=right_foot_motor_port,
-            ir_sensor_port=ir_sensor_port,
-            ir_beacon_channel=ir_beacon_channel)
+            left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port,
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.shooting_motor = MediumMotor(address=shooting_motor_port)
 
@@ -64,14 +59,16 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
                     pass
 
 
-    def main(self):
+    def main(self,
+             driving_speed: float = 1000   # degrees per second
+            ):
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
     
         Thread(target=self.shoot_whenever_touched,
                daemon=True).start()
 
-        self.keep_driving_by_ir_beacon()
+        self.keep_driving_by_ir_beacon(speed=driving_speed)
 
 
 if __name__ == '__main__':

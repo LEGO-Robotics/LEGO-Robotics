@@ -32,7 +32,6 @@ DRIVE_BASE.settings(
     turn_acceleration=90)
 
 TOUCH_SENSOR = TouchSensor(port=Port.S1)
-
 COLOR_SENSOR = ColorSensor(port=Port.S3)
 
 

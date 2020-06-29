@@ -34,38 +34,35 @@ class Ev3rstorm(RemoteControlledTank):
         self.speaker = Sound()
 
 
-    def detect_object_by_ir_sensor(self):
-        if self.ir_sensor.proximity < 25: 
-            self.leds.animate_police_lights(
-                color1=Leds.ORANGE,
-                color2=Leds.RED,
-                group1=Leds.LEFT,
-                group2=Leds.RIGHT,
-                sleeptime=0.5,
-                duration=5,
-                block=False)
-            
-            self.speaker.play_file(
-                wav_file='/home/robot/sound/Object.wav',
-                volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-            self.speaker.play_file(                                  
-                wav_file='/home/robot/sound/Detected.wav',
-                volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-            self.speaker.play_file(
-                wav_file='/home/robot/sound/Error alarm.wav',
-                volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-        else:
-            self.leds.all_off()
-
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
-            self.detect_object_by_ir_sensor()
+            if self.ir_sensor.proximity < 25: 
+                self.leds.animate_police_lights(
+                    color1=Leds.ORANGE,
+                    color2=Leds.RED,
+                    group1=Leds.LEFT,
+                    group2=Leds.RIGHT,
+                    sleeptime=0.5,
+                    duration=5,
+                    block=False)
+                
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Object.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                self.speaker.play_file(                                  
+                    wav_file='/home/robot/sound/Detected.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Error alarm.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+            else:
+                self.leds.all_off()
 
 
     def shoot_whenever_touched(self):

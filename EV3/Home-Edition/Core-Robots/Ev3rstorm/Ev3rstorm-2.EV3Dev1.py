@@ -35,6 +35,7 @@ while True:
         color=Leds.ORANGE,
         pct=1)
 
+    # TODO: parallel process/thread
     while not TOUCH_SENSOR.is_pressed:
         SPEAKER.play(wav_file='/home/robot/sound/Snoring.wav').wait()
 

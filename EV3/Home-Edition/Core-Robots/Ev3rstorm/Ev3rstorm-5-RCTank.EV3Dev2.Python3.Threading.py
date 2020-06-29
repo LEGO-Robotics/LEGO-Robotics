@@ -15,11 +15,9 @@ from threading import Thread
 class Ev3rstorm(RemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             shooting_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
-            color_sensor_port: str = INPUT_3,
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_beacon_channel: int = 1):
         super().__init__(
             left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port,

@@ -101,12 +101,14 @@ class Ev3rstorm:
                 pass
 
 
-    def main(self):
+    def main(self,
+             driving_speed: float = 1000   # degrees per second
+            ):
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
     
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=driving_speed)
             
             self.shoot_when_touched()
 

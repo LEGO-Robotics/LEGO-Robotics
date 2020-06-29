@@ -32,7 +32,6 @@ class IRBeaconRemoteControlledTank:
                                     axle_track=axle_track)
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
-
         self.ir_beacon_channel = ir_beacon_channel
     
     
@@ -126,7 +125,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
                                          positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
-
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
     
