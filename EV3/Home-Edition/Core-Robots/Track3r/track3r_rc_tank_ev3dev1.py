@@ -9,11 +9,6 @@ from ev3dev.helper import RemoteControlledTank
 
 
 class Track3r(RemoteControlledTank):
-    """
-    Base class for all Track3r variations.
-    The only difference in the child classes are in how the medium motor is handled.
-    To enable the medium motor toggle the beacon button on the EV3 remote.
-    """
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
