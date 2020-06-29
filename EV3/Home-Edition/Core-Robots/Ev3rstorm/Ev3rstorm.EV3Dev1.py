@@ -17,14 +17,14 @@ class Ev3rstorm:
     def __init__(
             self,
             left_foot_track_motor_port: str = OUTPUT_B, right_foot_track_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4,
             driving_ir_beacon_channel: int = 1, shooting_ir_beacon_channel: int = 2):
         self.left_foot_track_motor = LargeMotor(address=left_foot_track_motor_port)
         self.right_foot_track_motor = LargeMotor(address=right_foot_track_motor_port)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.driving_remote_control = RemoteControl(sensor=self.ir_sensor,
@@ -40,14 +40,14 @@ class Ev3rstorm:
 
         assert self.left_foot_track_motor.connected
         assert self.right_foot_track_motor.connected
-        assert self.shooting_motor.connected
+        assert self.bazooka_blast_motor.connected
 
         assert self.ir_sensor.connected
         assert self.touch_sensor.connected
         assert self.color_sensor.connected
 
         # reset the motors
-        for motor in (self.left_foot_track_motor, self.right_foot_track_motor, self.shooting_motor):
+        for motor in (self.left_foot_track_motor, self.right_foot_track_motor, self.bazooka_blast_motor):
             motor.reset()
             motor.position = 0
             motor.stop_action = Motor.STOP_ACTION_BRAKE
@@ -84,11 +84,11 @@ class Ev3rstorm:
         """
         Shot a ball in the specified direction (valid choices are 'up' and 'down')
         """
-        self.shooting_motor.run_to_rel_pos(
+        self.bazooka_blast_motor.run_to_rel_pos(
             speed_sp=900,   # degrees per second
             position_sp=-3 * 360 if direction == 'up' else 3 * 360,   # degrees
             stop_action=Motor.STOP_ACTION_BRAKE)
-        self.shooting_motor.wait_while(Motor.STATE_RUNNING)
+        self.bazooka_blast_motor.wait_while(Motor.STATE_RUNNING)
 
 
     def rc_loop(self,

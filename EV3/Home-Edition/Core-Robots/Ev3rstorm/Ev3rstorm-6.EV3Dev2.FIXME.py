@@ -12,13 +12,13 @@ class Ev3rstorm:
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
                                     right_motor_port=right_foot_motor_port,
                                     motor_class=LargeMotor)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
@@ -52,7 +52,7 @@ class Ev3rstorm:
                     duration=5,
                     block=True)
 
-                self.shooting_motor.on_for_rotations(
+                self.bazooka_blast_motor.on_for_rotations(
                     speed=100,
                     rotations=3,
                     brake=True,

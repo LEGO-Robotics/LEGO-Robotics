@@ -15,14 +15,14 @@ class Ev3rstorm:
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
                                     right_motor_port=right_foot_motor_port,
                                     motor_class=LargeMotor)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -92,38 +92,35 @@ class Ev3rstorm:
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Up.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=-3,
-                    brake=True,
-                    block=True)
-
-            else:
-                self.speaker.play_file(
-                    wav_file='/home/robot/sound/Down.wav',
-                    volume=100,
-                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
-
-                self.shooting_motor.on_for_rotations(
-                    speed=100,
-                    rotations=3,
-                    brake=True,
-                    block=True)
-
-            self.touch_sensor.wait_for_released()
-
-    def shoot_whenever_touched(self):
+    def blast_bazooka_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
-        
+            if self.touch_sensor.is_pressed:
+                if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Up.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.bazooka_blast_motor.on_for_rotations(
+                        speed=100,
+                        rotations=-3,
+                        brake=True,
+                        block=True)
+
+                else:
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Down.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.bazooka_blast_motor.on_for_rotations(
+                        speed=100,
+                        rotations=3,
+                        brake=True,
+                        block=True)
+
+                self.touch_sensor.wait_for_released()
+            
  
     def main(self, driving_speed: float = 100):
         self.screen.image_filename(
@@ -131,7 +128,7 @@ class Ev3rstorm:
             clear_screen=True)
         self.screen.update()
     
-        Process(target=self.shoot_whenever_touched,
+        Process(target=self.blast_bazooka_whenever_touched,
                 daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)

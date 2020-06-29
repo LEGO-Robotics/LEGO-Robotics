@@ -36,7 +36,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
         self.speaker = Sound()
 
 
-    # following method must be used in a parallel process in order not to block other operations
     def blast_bazooka_whenever_touched(self):
         self.screen.image_filename(
             filename='/home/robot/image/Target.bmp',
@@ -71,17 +70,14 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
                     block=True)
 
 
-    def main(self):
+    def main(self, driving_speed: float = 100):
         Thread(target=self.blast_bazooka_whenever_touched,
                daemon=True).start()
 
-        self.keep_driving_by_ir_beacon()
+        self.keep_driving_by_ir_beacon(speed=driving_speed)
 
         
 if __name__ == '__main__':
-    EV3RSTORM = Ev3rstorm(left_foot_motor_port=OUTPUT_B, right_foot_motor_port=OUTPUT_C,
-                          bazooka_blast_motor_port=OUTPUT_A,
-                          touch_sensor_port=INPUT_1, color_sensor_port=INPUT_3,
-                          ir_sensor_port=INPUT_4, ir_beacon_channel=1)
+    EV3RSTORM = Ev3rstorm()
 
     EV3RSTORM.main()

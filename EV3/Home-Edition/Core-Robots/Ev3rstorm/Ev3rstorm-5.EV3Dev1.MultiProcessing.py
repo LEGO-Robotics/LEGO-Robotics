@@ -15,13 +15,13 @@ class Ev3rstorm:
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.left_foot_motor = LargeMotor(address=left_foot_motor_port)
         self.right_foot_motor = LargeMotor(address=right_foot_motor_port)
         
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -87,31 +87,28 @@ class Ev3rstorm:
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
-                self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
-
-                self.shooting_motor.run_to_rel_pos(
-                    speed_sp=1000,   # degrees per second
-                    position_sp=-3 * 360,   # degrees
-                    stop_action=Motor.STOP_ACTION_HOLD)
-
-            else:
-                self.speaker.play(wav_file='/home/robot/sound/Down.wav').wait()
-
-                self.shooting_motor.run_to_rel_pos(
-                    speed_sp=1000,   # degrees per second
-                    position_sp=3 * 360,   # degrees
-                    stop_action=Motor.STOP_ACTION_HOLD)
-
-            while self.touch_sensor.is_pressed:
-                pass
-
-    def shoot_whenever_touched(self):
+    def blast_bazooka_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
-    
+            if self.touch_sensor.is_pressed:
+                if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
+                    self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
+
+                    self.bazooka_blast_motor.run_to_rel_pos(
+                        speed_sp=1000,   # degrees per second
+                        position_sp=-3 * 360,   # degrees
+                        stop_action=Motor.STOP_ACTION_HOLD)
+
+                else:
+                    self.speaker.play(wav_file='/home/robot/sound/Down.wav').wait()
+
+                    self.bazooka_blast_motor.run_to_rel_pos(
+                        speed_sp=1000,   # degrees per second
+                        position_sp=3 * 360,   # degrees
+                        stop_action=Motor.STOP_ACTION_HOLD)
+
+                while self.touch_sensor.is_pressed:
+                    pass
+                
 
     def main(self,
              driving_speed: float = 1000   # degrees per second
@@ -119,7 +116,8 @@ class Ev3rstorm:
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
     
-        Process(target=self.shoot_whenever_touched).start()
+        Process(target=self.blast_bazooka_whenever_touched,
+                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 

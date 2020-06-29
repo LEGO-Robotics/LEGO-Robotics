@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-# MUST END PROGRAM BY EV3 BRICK'S BACK BUTTON
+# *** must end program by EV3 Brick's Back button (and not through VSCode) ***
 
 
 from ev3dev.ev3 import (

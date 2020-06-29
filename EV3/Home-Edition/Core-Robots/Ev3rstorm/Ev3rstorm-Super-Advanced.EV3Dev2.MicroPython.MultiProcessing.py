@@ -35,7 +35,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
         self.speaker = Sound()
 
 
-    # following method must be used in a parallel process in order not to block other operations
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
             if self.ir_sensor.proximity < 25: 
@@ -67,7 +66,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
                 self.leds.all_off()
 
 
-    # following method must be used in a parallel process in order not to block other operations
     def blast_bazooka_whenever_touched(self):
         while True:
             if self.touch_sensor.is_pressed:
@@ -108,7 +106,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
                 self.touch_sensor.wait_for_released()
  
     
-    def main(self):
+    def main(self, driving_speed: float = 100):
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
         # - https://github.com/ev3dev/ev3dev/issues/1401
@@ -116,7 +114,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
 
         Process(target=self.blast_bazooka_whenever_touched).start()
 
-        self.keep_driving_by_ir_beacon()
+        self.keep_driving_by_ir_beacon(speed=driving_speed)
 
 
 if __name__ == '__main__':

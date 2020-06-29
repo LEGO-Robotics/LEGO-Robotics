@@ -1,9 +1,6 @@
 #!/usr/bin/env micropython
 
 
-# TODO: multiprocess/parallel programming
-
-
 from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_D
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
@@ -21,7 +18,7 @@ SPEAKER = Sound()
 
 
 while True:
-    if IR_SENSOR.proximity < 30:   # no InfraredSensor.wait_for_proximity(...) yet
+    if IR_SENSOR.proximity < 30:
         SPEAKER.play_file(
             wav_file='/home/robot/sound/Snake hiss.wav',
             volume=100,
@@ -40,7 +37,6 @@ while True:
             brake=True,
             block=True)
 
-    # do 2nd process SEQUENTIALLY for now
     MEDIUM_MOTOR.on_for_seconds(
         speed=10,
         seconds=1,

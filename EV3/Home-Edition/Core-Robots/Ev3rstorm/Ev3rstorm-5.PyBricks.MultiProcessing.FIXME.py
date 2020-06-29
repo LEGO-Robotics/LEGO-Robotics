@@ -18,7 +18,7 @@ class Ev3rstorm(EV3Brick):
     def __init__(
             self,
             left_foot_motor_port: Port = Port.B, right_foot_motor_port: Port = Port.C,
-            shooting_motor_port: Port = Port.A,
+            bazooka_blast_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         self.drive_base = DriveBase(left_motor=Motor(port=left_foot_motor_port,
@@ -33,8 +33,8 @@ class Ev3rstorm(EV3Brick):
             turn_rate=90,   # degrees per second
             turn_acceleration=90)
 
-        self.shooting_motor = Motor(port=shooting_motor_port, 
-                                    positive_direction=Direction.CLOCKWISE)
+        self.bazooka_blast_motor = Motor(port=bazooka_blast_motor_port, 
+                                         positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
         self.color_sensor = ColorSensor(port=color_sensor_port)
@@ -114,29 +114,26 @@ class Ev3rstorm(EV3Brick):
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_when_touched(self):
-        if self.touch_sensor.pressed():
-            if self.color_sensor.ambient() < 5:   # 15 not dark enough
-                self.speaker.play_file(file=SoundFile.UP)
-                    
-                self.shooting_motor.run_angle(
-                    speed=1000,   # degrees per second
-                    rotation_angle=-3 * 360,   # degrees
-                    then=Stop.HOLD,
-                    wait=True)
-
-            else:
-                self.speaker.play_file(file=SoundFile.DOWN)
-                    
-                self.shooting_motor.run_angle(
-                    speed=1000,   # degrees per second
-                    rotation_angle=3 * 360,   # degrees
-                    then=Stop.HOLD,
-                    wait=True)
-
-    def shoot_whenever_touched(self):
+    def blast_bazooka_whenever_touched(self):
         while True:
-            self.shoot_when_touched()
+            if self.touch_sensor.pressed():
+                if self.color_sensor.ambient() < 5:   # 15 not dark enough
+                    self.speaker.play_file(file=SoundFile.UP)
+                        
+                    self.bazooka_blast_motor.run_angle(
+                        speed=1000,   # degrees per second
+                        rotation_angle=-3 * 360,   # degrees
+                        then=Stop.HOLD,
+                        wait=True)
+
+                else:
+                    self.speaker.play_file(file=SoundFile.DOWN)
+                        
+                    self.bazooka_blast_motor.run_angle(
+                        speed=1000,   # degrees per second
+                        rotation_angle=3 * 360,   # degrees
+                        then=Stop.HOLD,
+                        wait=True)
         
 
     def main(self,
@@ -144,7 +141,7 @@ class Ev3rstorm(EV3Brick):
             ):
         self.screen.load_image(ImageFile.TARGET)
     
-        Process(target=self.shoot_whenever_touched).start()
+        Process(target=self.blast_bazooka_whenever_touched).start()
         # OSError: [Errno 5] EIO: 
         # Unexpected hardware input/output error with a motor or sensor:
         # --> Try unplugging the sensor or motor and plug it back in again.

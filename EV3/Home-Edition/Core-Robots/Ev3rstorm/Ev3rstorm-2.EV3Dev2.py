@@ -2,9 +2,6 @@
 # (Display not yet working in MicroPython as of 2020)
 
 
-# TODO: multiprocess/parallel programming
-
-
 from ev3dev2.motor import LargeMotor, MoveSteering, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor.lego import TouchSensor
 from ev3dev2.sensor import INPUT_1
@@ -40,6 +37,7 @@ while True:
         color=Leds.ORANGE,
         pct=1)
 
+    # TODO: parallel process/thread
     while not TOUCH_SENSOR.is_pressed:
         SPEAKER.play_file(
             wav_file='/home/robot/sound/Snoring.wav',

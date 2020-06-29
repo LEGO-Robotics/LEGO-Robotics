@@ -1,1 +1,1 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3

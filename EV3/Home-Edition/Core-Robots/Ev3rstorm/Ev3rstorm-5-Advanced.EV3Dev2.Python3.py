@@ -17,13 +17,10 @@ from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 class Ev3rstorm(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             bazooka_blast_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
-            color_sensor_port: str = INPUT_3,
-            ir_sensor_port: str = INPUT_4,
-            ir_beacon_channel: int = 1):
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
             left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port, motor_class=LargeMotor,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
@@ -66,14 +63,14 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
             self.touch_sensor.wait_for_released()
  
     
-    def main(self):
+    def main(self, driving_speed: float = 100):
         self.screen.image_filename(
             filename='/home/robot/image/Target.bmp',
             clear_screen=True)
         self.screen.update()
     
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=driving_speed)
             
             self.blast_bazooka_if_touched()
 
