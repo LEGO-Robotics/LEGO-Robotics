@@ -11,7 +11,7 @@ from ev3dev.ev3 import (
 LEFT_FOOT_MOTOR = LargeMotor(address=OUTPUT_B)
 RIGHT_FOOT_MOTOR = LargeMotor(address=OUTPUT_C)
 
-SHOOTING_MOTOR = MediumMotor(address=OUTPUT_A)
+BAZOOKA_BLAST_MOTOR = MediumMotor(address=OUTPUT_A)
 
 IR_SENSOR = InfraredSensor(address=INPUT_4)
 REMOTE_CONTROL = RemoteControl(sensor=IR_SENSOR,
@@ -51,7 +51,7 @@ while True:
                 color=Leds.RED,
                 pct=1)
 
-            SHOOTING_MOTOR.run_to_rel_pos(
+            BAZOOKA_BLAST_MOTOR.run_to_rel_pos(
                 speed_sp=1000,   # degrees per second
                 position_sp=3 * 360,   # degrees
                 stop_action=Motor.STOP_ACTION_HOLD)

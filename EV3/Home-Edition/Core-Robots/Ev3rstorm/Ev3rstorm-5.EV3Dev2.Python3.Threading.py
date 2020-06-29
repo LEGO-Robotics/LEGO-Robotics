@@ -15,14 +15,14 @@ class Ev3rstorm:
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
                                     right_motor_port=right_foot_motor_port,
                                     motor_class=LargeMotor)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -92,7 +92,7 @@ class Ev3rstorm:
             self.drive_once_by_ir_beacon(speed=speed)
 
 
-    def shoot_whenever_touched(self):
+    def blast_bazooka_whenever_touched(self):
         while True:
             if self.touch_sensor.is_pressed:
                 if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
@@ -101,7 +101,7 @@ class Ev3rstorm:
                         volume=100,
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                    self.shooting_motor.on_for_rotations(
+                    self.bazooka_blast_motor.on_for_rotations(
                         speed=100,
                         rotations=-3,
                         brake=True,
@@ -113,7 +113,7 @@ class Ev3rstorm:
                         volume=100,
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                    self.shooting_motor.on_for_rotations(
+                    self.bazooka_blast_motor.on_for_rotations(
                         speed=100,
                         rotations=3,
                         brake=True,
@@ -128,7 +128,7 @@ class Ev3rstorm:
             clear_screen=True)
         self.screen.update()
     
-        Thread(target=self.shoot_whenever_touched,
+        Thread(target=self.blast_bazooka_whenever_touched,
                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)

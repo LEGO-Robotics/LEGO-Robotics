@@ -19,7 +19,7 @@ class Ev3rstorm(RemoteControlledTank):
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            shooting_motor_port: str = OUTPUT_A,
+            bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_beacon_channel: int = 1):
         super().__init__(
@@ -28,7 +28,7 @@ class Ev3rstorm(RemoteControlledTank):
             speed=1000,
             channel=ir_beacon_channel)
 
-        self.shooting_motor = MediumMotor(address=shooting_motor_port)
+        self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -37,7 +37,7 @@ class Ev3rstorm(RemoteControlledTank):
         self.speaker = Sound()
 
 
-    def shoot_whenever_touched(self):
+    def blast_bazooka_whenever_touched(self):
         while True:
             if self.touch_sensor.is_pressed:
                 if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
@@ -46,7 +46,7 @@ class Ev3rstorm(RemoteControlledTank):
                         volume=100,
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                    self.shooting_motor.on_for_rotations(
+                    self.bazooka_blast_motor.on_for_rotations(
                         speed=100,
                         rotations=-3,
                         brake=True,
@@ -58,7 +58,7 @@ class Ev3rstorm(RemoteControlledTank):
                         volume=100,
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-                    self.shooting_motor.on_for_rotations(
+                    self.bazooka_blast_motor.on_for_rotations(
                         speed=100,
                         rotations=3,
                         brake=True,
@@ -73,7 +73,7 @@ class Ev3rstorm(RemoteControlledTank):
             clear_screen=True)
         self.screen.update()
     
-        Process(target=self.shoot_whenever_touched,
+        Process(target=self.blast_bazooka_whenever_touched,
                 daemon=True).start()
 
         super().main()   # RemoteControlledTank.main()
