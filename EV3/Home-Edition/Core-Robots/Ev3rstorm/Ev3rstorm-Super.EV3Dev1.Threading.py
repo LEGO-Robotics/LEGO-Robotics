@@ -142,10 +142,10 @@ class Ev3rstorm:
             ):
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
-    
-        Thread(target=self.shoot_whenever_touched).start()
 
         Thread(target=self.keep_detecting_objects_by_ir_sensor).start()
+
+        Thread(target=self.shoot_whenever_touched).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 
