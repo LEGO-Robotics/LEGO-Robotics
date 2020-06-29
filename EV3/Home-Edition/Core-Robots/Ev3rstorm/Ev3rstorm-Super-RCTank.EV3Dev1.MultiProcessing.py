@@ -3,7 +3,7 @@
 
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, ColorSensor, INPUT_1, INPUT_3, INPUT_4, 
+    TouchSensor, ColorSensor, InfraredSensor, INPUT_1, INPUT_3, INPUT_4, 
     Leds, Screen, Sound
 )
 from ev3dev.helper import RemoteControlledTank
@@ -17,7 +17,8 @@ class Ev3rstorm(RemoteControlledTank):
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             shooting_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3):
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
             left_motor=left_foot_motor_port, right_motor=right_foot_motor_port,
             polarity='normal')
@@ -26,6 +27,7 @@ class Ev3rstorm(RemoteControlledTank):
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
+        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
 
         self.leds = Leds()
         self.screen = Screen()
