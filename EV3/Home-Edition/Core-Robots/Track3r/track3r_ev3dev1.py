@@ -4,7 +4,7 @@
 __all__ = 'Track3r',
 
 
-from ev3dev.ev3 import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D
+from ev3dev.ev3 import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev.helper import RemoteControlledTank
 
 
@@ -20,10 +20,9 @@ class Track3r(RemoteControlledTank):
             medium_motor_port: str = OUTPUT_A):
         super().__init__(
             left_motor=left_motor_port, right_motor=right_motor_port,
-            polarity='inversed')
+            polarity='normal')
             
         self.medium_motor = MediumMotor(address=medium_motor_port)
-        self.medium_motor.reset()
 
 
 if __name__ == '__main__':
