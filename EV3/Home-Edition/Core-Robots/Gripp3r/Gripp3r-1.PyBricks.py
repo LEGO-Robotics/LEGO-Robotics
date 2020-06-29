@@ -13,26 +13,3 @@ EV3_BRICK = EV3Brick()
 MEDIUM_MOTOR = Motor(port=Port.A)
 
 
-MEDIUM_MOTOR.run_time(
-    speed=-50,
-    time=1,
-    then=Stop.BRAKE,
-    wait=True)
-
-EV3_BRICK.speaker.play_file(SoundFile.AIRBRAKE)
-
-MEDIUM_MOTOR.run_time(
-    speed=50,
-    time=1,
-    then=Stop.BRAKE,
-    wait=True)
-
-sleep(1)
-
-EV3_BRICK.speaker.play_file(SoundFile.AIR_RELEASE)
-
-MEDIUM_MOTOR.run_time(
-    speed=-50,
-    time=1,
-    then=Stop.BRAKE,
-    wait=True)
