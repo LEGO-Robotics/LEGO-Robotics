@@ -128,7 +128,10 @@ class Ev3rstorm:
         self.screen.update()
 
         while True:
-            self.detect_object_by_ir_sensor()
+            # DON'T use IR Sensor in 2 different modes in the same program / loop
+            # - https://github.com/pybricks/support/issues/62
+            # - https://github.com/ev3dev/ev3dev/issues/1401
+            # self.detect_object_by_ir_sensor()
 
             self.shoot_when_touched()
 

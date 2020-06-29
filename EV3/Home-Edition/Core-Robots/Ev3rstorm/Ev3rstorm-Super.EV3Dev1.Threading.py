@@ -143,7 +143,10 @@ class Ev3rstorm:
         self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
         self.screen.update()
 
-        Thread(target=self.keep_detecting_objects_by_ir_sensor).start()
+        # DON'T use IR Sensor in 2 different modes in the same program / loop
+        # - https://github.com/pybricks/support/issues/62
+        # - https://github.com/ev3dev/ev3dev/issues/1401
+        # Thread(target=self.keep_detecting_objects_by_ir_sensor).start()
 
         Thread(target=self.shoot_whenever_touched).start()
 

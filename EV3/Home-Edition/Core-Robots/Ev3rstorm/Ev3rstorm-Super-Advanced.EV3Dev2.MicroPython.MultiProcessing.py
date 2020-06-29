@@ -109,7 +109,10 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
  
     
     def main(self):
-        Process(target=self.keep_detecting_objects_by_ir_sensor).start()
+        # DON'T use IR Sensor in 2 different modes in the same program / loop
+        # - https://github.com/pybricks/support/issues/62
+        # - https://github.com/ev3dev/ev3dev/issues/1401
+        # Process(target=self.keep_detecting_objects_by_ir_sensor).start()
 
         Process(target=self.blast_bazooka_whenever_touched).start()
 
