@@ -15,13 +15,10 @@ class Ev3rstorm(EV3Brick):
 
     def __init__(
             self,
-            left_foot_motor_port: Port = Port.B,
-            right_foot_motor_port: Port = Port.C,
+            left_foot_motor_port: Port = Port.B, right_foot_motor_port: Port = Port.C,
             shooting_motor_port: Port = Port.A,
-            touch_sensor_port: Port = Port.S1,
-            color_sensor_port: Port = Port.S3,
-            ir_sensor_port: Port = Port.S4,
-            ir_beacon_channel: int = 1):
+            touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         self.drive_base = DriveBase(left_motor=Motor(port=left_foot_motor_port,
                                                      positive_direction=Direction.CLOCKWISE),
                                     right_motor=Motor(port=right_foot_motor_port,

@@ -13,13 +13,10 @@ from PIL import Image
 class Ev3rstorm:
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             shooting_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
-            color_sensor_port: str = INPUT_3,
-            ir_sensor_port: str = INPUT_4,
-            ir_beacon_channel: int = 1):
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.left_foot_motor = LargeMotor(address=left_foot_motor_port)
         self.right_foot_motor = LargeMotor(address=right_foot_motor_port)
         
