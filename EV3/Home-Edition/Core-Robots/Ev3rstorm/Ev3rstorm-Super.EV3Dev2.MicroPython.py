@@ -7,6 +7,8 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
+from random import randint
+
 
 class Ev3rstorm:
     def __init__(
@@ -152,6 +154,16 @@ class Ev3rstorm:
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
             self.touch_sensor.wait_for_released()
+            
+
+    def dance_if_ir_beacon_pressed(self):
+        while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            self.tank_driver.on_for_seconds(
+                left_speed=randint(-100, 100),
+                right_speed=randint(-100, 100),
+                seconds=1,
+                brake=False,
+                block=True)
  
     
     def main(self, driving_speed: float = 100):
@@ -164,6 +176,8 @@ class Ev3rstorm:
             # self.detect_object_by_ir_sensor()
 
             self.blast_bazooka_if_touched()
+
+            self.dance_if_ir_beacon_pressed()
 
 
 if __name__ == '__main__':
