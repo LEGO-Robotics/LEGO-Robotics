@@ -7,6 +7,8 @@ from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
+from random import randint
+
 
 class Ev3rstorm(EV3Brick):
     WHEEL_DIAMETER = 26   # milimeters
@@ -96,6 +98,11 @@ class Ev3rstorm(EV3Brick):
             self.drive_base.stop()
 
     
+    def dance_if_ir_beacon_pressed(self):
+        while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            self.drive_base.turn(angle=randint(-360, 360))
+            
+
     def detect_object_by_ir_sensor(self):
         if self.ir_sensor.distance() < 25:
             self.light.on(color=Color.RED)
@@ -142,6 +149,8 @@ class Ev3rstorm(EV3Brick):
 
         while True:
             self.drive_once_by_ir_beacon(speed=driving_speed)
+
+            self.dance_if_ir_beacon_pressed()
 
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
