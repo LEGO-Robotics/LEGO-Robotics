@@ -8,6 +8,5 @@ PyBricks
 
 EV3Dev
 - [LEGO EV3 UART sensors return stale values after mode switch](https://github.com/ev3dev/ev3dev/issues/1401)
-- [`ValueError: invalid literal for int() with base 10: ''` when using InfraredSensor in Threading](https://github.com/ev3dev/ev3dev-lang-python/issues/746)
 - [Sometimes not all child processes are ended by `conrun-kill`](https://github.com/ev3dev/ev3dev/issues/1422)
-  - Example: [Difference between stopping the program with EV3 Brick's physical Back/Stop button vs. stopping by VSCode stop button](https://github.com/ev3dev/vscode-ev3dev-browser/issues/103)
+- [`ValueError: invalid literal for int() with base 10: ''` when using InfraredSensor in Threading](https://github.com/ev3dev/ev3dev-lang-python/issues/746)
