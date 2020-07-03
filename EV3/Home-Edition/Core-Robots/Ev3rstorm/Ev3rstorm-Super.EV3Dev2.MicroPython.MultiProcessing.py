@@ -94,6 +94,17 @@ class Ev3rstorm:
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
+    
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.tank_driver.on_for_seconds(
+                    left_speed=randint(-100, 100),
+                    right_speed=randint(-100, 100),
+                    seconds=1,
+                    brake=False,
+                    block=True)
+    
 
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
@@ -164,28 +175,17 @@ class Ev3rstorm:
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
                 self.touch_sensor.wait_for_released()
- 
-    
-    def dance_whenever_ir_beacon_pressed(self):
-        while True:
-            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
-                self.tank_driver.on_for_seconds(
-                    left_speed=randint(-100, 100),
-                    right_speed=randint(-100, 100),
-                    seconds=1,
-                    brake=False,
-                    block=True)
 
       
     def main(self, driving_speed: float = 100):
+        Process(target=self.dance_whenever_ir_beacon_pressed).start()
+
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
         # - https://github.com/ev3dev/ev3dev/issues/1401
         # Process(target=self.keep_detecting_objects_by_ir_sensor).start()
 
         Process(target=self.blast_bazooka_whenever_touched).start()
-
-        Process(target=self.dance_whenever_ir_beacon_pressed).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 
