@@ -97,6 +97,9 @@ class IRBeaconRemoteControlledTank:
 
 
 if __name__ == '__main__':
-    IR_BEACON_REMOTE_CONTROLLED_TANK = IRBeaconRemoteControlledTank()
+    IR_BEACON_REMOTE_CONTROLLED_TANK = \
+        IRBeaconRemoteControlledTank(
+            wheel_diameter=33,
+            axle_track=99)
 
     IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
