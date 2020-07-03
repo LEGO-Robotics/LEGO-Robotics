@@ -8,7 +8,7 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Direction, Port, Stop
 
 import sys
-sys.path.append('/home/robot'))
+sys.path.append('/home/robot')
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 

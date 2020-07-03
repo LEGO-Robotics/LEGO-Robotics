@@ -2,9 +2,6 @@
 # (Display not yet working in MicroPython as of 2020)
 
 
-# *** must end program by EV3 Brick's Back button (and not through VSCode) ***
-
-
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3
 from ev3dev2.sensor.lego import ColorSensor, TouchSensor

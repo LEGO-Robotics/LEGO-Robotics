@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 
-# *** must end program by EV3 Brick's Back button (and not through VSCode) ***
-
-
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, ColorSensor, INPUT_1, INPUT_3, INPUT_4,

@@ -2,7 +2,7 @@
 # (Display not yet working in MicroPython as of 2020)
 
 
-# *** must end program by EV3 Brick's Back button (and not through VSCode) ***
+
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
