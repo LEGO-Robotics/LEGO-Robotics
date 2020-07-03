@@ -7,6 +7,8 @@ from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
+from random import randint
+
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))   # TODO: AttributeError: 'module' object has no attribute 'path'
@@ -139,6 +141,14 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         else:
             self.light.off()
 
+    
+    def dance_if_ir_beacon_pressed(self):
+        """
+        Ev3rstorm dances by turning by random angles on the spot when the Beacon button is pressed
+        """
+        while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            self.drive_base.turn(angle=randint(-360, 360))
+
 
     def blast_bazooka_if_touched(self):
         """
@@ -182,6 +192,8 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
 
         while True:
             self.drive_once_by_ir_beacon(speed=driving_speed)
+
+            self.dance_if_ir_beacon_pressed()
 
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62

@@ -4,6 +4,7 @@ PyBricks
 - [EV3 Color Sensor Mode Switch Latency](https://github.com/pybricks/support/issues/14)
 - [Delay between different Infrared Sensor modes](https://github.com/pybricks/support/issues/62)
 - [OSError when using MultiProcessing in PyBricks](https://github.com/pybricks/support/issues/80)
+- [Doesn't pybricks have sys.path that can be extended by sys.path.append(...)?](https://github.com/pybricks/support/issues/81)
 
 EV3Dev
 - [LEGO EV3 UART sensors return stale values after mode switch](https://github.com/ev3dev/ev3dev/issues/1401)

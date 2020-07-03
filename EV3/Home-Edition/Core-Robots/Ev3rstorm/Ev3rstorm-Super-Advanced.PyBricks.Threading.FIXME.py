@@ -7,6 +7,7 @@ from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
+from random import randint
 from threading import Thread
 
 # import os
@@ -127,6 +128,12 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
     
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                self.drive_base.turn(angle=randint(-360, 360))
+
+    
     def keep_detecting_objects_by_ir_sensor(self):
         """
         Ev3rstorm reacts by turning his LEDs red and speaking when his IR Sensor detects an object in front
@@ -183,6 +190,9 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         Ev3rstorm's main program performing various capabilities
         """
         self.screen.load_image(ImageFile.TARGET)
+
+        # FIXME: following thread seems to fail to run
+        Thread(target=self.dance_whenever_ir_beacon_pressed).start()
 
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
