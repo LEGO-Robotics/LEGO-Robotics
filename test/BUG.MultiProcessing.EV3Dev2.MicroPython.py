@@ -1,6 +1,9 @@
 #!/usr/bin/env micropython
 
 
+# BUG: https://github.com/ev3dev/ev3dev/issues/1422
+
+
 from ev3dev2.motor import MediumMotor, OUTPUT_A
 from ev3dev2.sensor import INPUT_1
 from ev3dev2.sensor.lego import TouchSensor
@@ -23,8 +26,6 @@ def motor_on_when_touched():
 
 
 Process(target=motor_on_when_touched).start()
-# *** BUG as of 2020 ***
-# process still alive after program ended through VSCode
 
 
 while True:
