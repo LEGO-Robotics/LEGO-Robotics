@@ -56,7 +56,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
         """
         Ev3rstorm dances by turning by random angles on the spot when the Beacon button is pressed
         """
-        while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+        while Button.BEACON in self.ir_sensor.buttons(channel=self.tank_drive_ir_beacon_channel):
             self.drive_base.turn(angle=randint(-360, 360))
 
 

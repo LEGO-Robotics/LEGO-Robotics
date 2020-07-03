@@ -41,7 +41,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
     
     def dance_whenever_ir_beacon_pressed(self):
         while True:
-            while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            while Button.BEACON in self.ir_sensor.buttons(channel=self.tank_drive_ir_beacon_channel):
                 self.drive_base.turn(angle=randint(-360, 360))
 
     
