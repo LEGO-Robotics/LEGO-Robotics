@@ -15,99 +15,43 @@ from ev3dev2.sound import Sound
 from multiprocessing import Process
 from random import randint
 
+import os
+import sys
+sys.path.append(os.path.expanduser('~'))
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
-class Ev3rstorm:
+
+class Ev3rstorm(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
             bazooka_blast_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
-        self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
-                                    right_motor_port=right_foot_motor_port,
-                                    motor_class=LargeMotor)
+        super().__init__(
+            left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port, motor_class=LargeMotor,
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-        self.ir_beacon_channel = ir_beacon_channel
-
         self.leds = Leds()
         self.speaker = Sound()
         self.screen = Display()
 
-
-    def drive_once_by_ir_beacon(self, speed: float = 100):
-        # forward
-        if self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.top_right(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=speed,
-                right_speed=speed)
-
-        # backward
-        elif self.ir_sensor.bottom_left(self.ir_beacon_channel) and self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=-speed,
-                right_speed=-speed)
-
-        # turn left on the spot
-        elif self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=-speed,
-                right_speed=speed)
-
-        # turn right on the spot
-        elif self.ir_sensor.top_right(self.ir_beacon_channel) and self.ir_sensor.bottom_left(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=speed,
-                right_speed=-speed)
-
-        # turn left forward
-        elif self.ir_sensor.top_left(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=0,
-                right_speed=speed)
-
-        # turn right forward
-        elif self.ir_sensor.top_right(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=speed,
-                right_speed=0)
-
-        # turn left backward
-        elif self.ir_sensor.bottom_left(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=0,
-                right_speed=-speed)
-
-        # turn right backward
-        elif self.ir_sensor.bottom_right(self.ir_beacon_channel):
-            self.tank_driver.on(
-                left_speed=-speed,
-                right_speed=0)
-
-        # otherwise stop
-        else:
-            self.tank_driver.off(brake=False)
-
-    def keep_driving_by_ir_beacon(self, speed: float = 100):
-        while True:
-            self.drive_once_by_ir_beacon(speed=speed)
-
     
     def dance_whenever_ir_beacon_pressed(self):
         while True:
-            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            while self.ir_sensor.beacon(channel=self.tank_drive_ir_beacon_channel):
                 self.tank_driver.on_for_seconds(
                     left_speed=randint(-100, 100),
                     right_speed=randint(-100, 100),
                     seconds=1,
                     brake=False,
                     block=True)
-                    
+
 
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
@@ -178,7 +122,7 @@ class Ev3rstorm:
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
                 self.touch_sensor.wait_for_released()
-        
+
     
     def main(self, driving_speed: float = 100):
         self.screen.image_filename(
