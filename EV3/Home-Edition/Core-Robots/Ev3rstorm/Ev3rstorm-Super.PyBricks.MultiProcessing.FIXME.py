@@ -1,6 +1,9 @@
 #!/usr/bin/env pybricks-micropython
 
 
+# *** FIXME: PyBricks program using MultiProcessing freezes ***
+
+
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
 from pybricks.media.ev3dev import ImageFile, SoundFile
