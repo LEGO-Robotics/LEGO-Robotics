@@ -12,7 +12,7 @@ from pybricks.experimental import run_parallel
 from random import randint
 
 import sys
-sys.path.append(os.path.expanduser('/home/robot'))
+sys.path.append('/home/robot')
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 

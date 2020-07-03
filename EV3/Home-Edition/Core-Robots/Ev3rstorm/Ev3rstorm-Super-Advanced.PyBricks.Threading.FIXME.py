@@ -11,7 +11,7 @@ from random import randint
 from threading import Thread
 
 import sys
-sys.path.append(os.path.expanduser('/home/robot'))
+sys.path.append('/home/robot')
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 
