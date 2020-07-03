@@ -7,6 +7,7 @@ from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
+from random import randint
 from threading import Thread
 
 
@@ -108,6 +109,12 @@ class Ev3rstorm(EV3Brick):
                 turn_rate=turn_rate)
 
     
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                self.drive_base.turn(angle=randint(-360, 360))
+
+    
     def keep_detecting_objects_by_ir_sensor(self):
         while True:
             if self.ir_sensor.distance() < 25:
@@ -153,6 +160,9 @@ class Ev3rstorm(EV3Brick):
              driving_speed: float = 1000   # mm/s
             ):
         self.screen.load_image(ImageFile.TARGET)
+
+        # FIXME: following thread seems to fail to run
+        Thread(target=self.dance_whenever_ir_beacon_pressed).start()
 
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
