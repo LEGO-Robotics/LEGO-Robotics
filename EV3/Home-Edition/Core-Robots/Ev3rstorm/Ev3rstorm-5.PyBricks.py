@@ -108,7 +108,7 @@ class Ev3rstorm(EV3Brick):
             self.drive_base.stop()
 
 
-    def blast_bazooka_when_touched(self):
+    def blast_bazooka_if_touched(self):
         if self.touch_sensor.pressed():
             if self.color_sensor.ambient() < 5:   # 15 not dark enough
                 self.speaker.play_file(file=SoundFile.UP)
@@ -137,7 +137,7 @@ class Ev3rstorm(EV3Brick):
         while True:
             self.drive_once_by_ir_beacon(speed=driving_speed)
             
-            self.blast_bazooka_when_touched()
+            self.blast_bazooka_if_touched()
 
 
 if __name__ == '__main__':

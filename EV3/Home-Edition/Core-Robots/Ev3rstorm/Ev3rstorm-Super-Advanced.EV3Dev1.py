@@ -55,7 +55,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
             self.leds.all_off()
 
 
-    def blast_bazooka_when_touched(self):
+    def blast_bazooka_if_touched(self):
         if self.touch_sensor.is_pressed:
             if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
                 self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
@@ -89,7 +89,7 @@ class Ev3rstorm(IRBeaconRemoteControlledTank):
             # - https://github.com/ev3dev/ev3dev/issues/1401
             # self.detect_object_by_ir_sensor()
 
-            self.blast_bazooka_when_touched()
+            self.blast_bazooka_if_touched()
 
             self.drive_once_by_ir_beacon(speed=driving_speed)
 
