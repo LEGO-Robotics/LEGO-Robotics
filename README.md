@@ -6,6 +6,8 @@
 
 PyBricks References
 
+- https://pybricks.com
+
 - https://pybricks.github.io/ev3-micropython
   - https://docs.pybricks.com (Outdated Version 1.0.0)
 
