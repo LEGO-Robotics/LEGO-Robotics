@@ -81,6 +81,20 @@ class Ev3rstorm:
             self.right_foot_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
 
 
+    def dance_if_ir_beacon_pressed(self):
+        while self.remote_control.beacon:
+            self.left_foot_motor.run_timed(
+                speed_sp=randint(-1000, 1000),
+                time_sp=1000,
+                stop_action=Motor.STOP_ACTION_COAST)
+            self.right_foot_motor.run_timed(
+                speed_sp=randint(-1000, 1000),
+                time_sp=1000,
+                stop_action=Motor.STOP_ACTION_COAST)
+            self.left_foot_motor.wait_while(Motor.STATE_RUNNING)
+            self.right_foot_motor.wait_while(Motor.STATE_RUNNING)    
+
+
     def detect_object_by_ir_sensor(self):
         if self.ir_sensor.proximity < 25: 
             self.leds.set_color(
@@ -100,7 +114,7 @@ class Ev3rstorm:
             self.leds.all_off()
 
 
-    def blast_bazooka_when_touched(self):
+    def blast_bazooka_if_touched(self):
         if self.touch_sensor.is_pressed:
             if self.color_sensor.ambient_light_intensity < 5:   # 15 not dark enough
                 self.speaker.play(wav_file='/home/robot/sound/Up.wav').wait()
@@ -119,21 +133,7 @@ class Ev3rstorm:
                     stop_action=Motor.STOP_ACTION_HOLD)
 
             while self.touch_sensor.is_pressed:
-                pass
-
-
-    def dance_if_ir_beacon_pressed(self):
-        while self.remote_control.beacon:
-            self.left_foot_motor.run_timed(
-                speed_sp=randint(-1000, 1000),
-                time_sp=1000,
-                stop_action=Motor.STOP_ACTION_COAST)
-            self.right_foot_motor.run_timed(
-                speed_sp=randint(-1000, 1000),
-                time_sp=1000,
-                stop_action=Motor.STOP_ACTION_COAST)
-            self.left_foot_motor.wait_while(Motor.STATE_RUNNING)
-            self.right_foot_motor.wait_while(Motor.STATE_RUNNING)            
+                pass        
 
 
     def main(self,
@@ -145,14 +145,14 @@ class Ev3rstorm:
         while True:
             self.drive_once_by_ir_beacon(speed=driving_speed)
 
+            self.dance_if_ir_beacon_pressed()
+
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
             # - https://github.com/ev3dev/ev3dev/issues/1401
             # self.detect_object_by_ir_sensor()
 
-            self.blast_bazooka_when_touched()
-
-            self.dance_if_ir_beacon_pressed()
+            self.blast_bazooka_if_touched()
 
 
 if __name__ == '__main__':
