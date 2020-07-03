@@ -3,8 +3,8 @@
 
 
 from ev3dev2.motor import LargeMotor, MoveSteering, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor.lego import TouchSensor
 from ev3dev2.sensor import INPUT_1
+from ev3dev2.sensor.lego import TouchSensor
 from ev3dev2.display import Display
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
