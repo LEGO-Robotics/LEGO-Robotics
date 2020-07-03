@@ -1,6 +1,9 @@
 #!/usr/bin/env micropython
 
 
+# *** must end program by EV3 Brick's Back button (and not through VSCode) ***
+
+
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
@@ -8,6 +11,7 @@ from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
 from multiprocessing import Process
+from random import randint
 
 
 class Ev3rstorm:
@@ -162,6 +166,17 @@ class Ev3rstorm:
                 self.touch_sensor.wait_for_released()
  
     
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.tank_driver.on_for_seconds(
+                    left_speed=randint(-100, 100),
+                    right_speed=randint(-100, 100),
+                    seconds=1,
+                    brake=False,
+                    block=True)
+
+      
     def main(self, driving_speed: float = 100):
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
@@ -169,6 +184,8 @@ class Ev3rstorm:
         # Process(target=self.keep_detecting_objects_by_ir_sensor).start()
 
         Process(target=self.blast_bazooka_whenever_touched).start()
+
+        Process(target=self.dance_whenever_ir_beacon_pressed).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 
