@@ -10,25 +10,34 @@ from pybricks.parameters import Button, Color, Direction, Port, Stop
 from multiprocessing import Process
 
 
-class IRBeaconRemoteControlledTank:
-    """
-    This reusable mixin provides the capability of driving a robot with a Driving Base by the IR beacon
-    """
+class Ev3rstorm(EV3Brick):
+    WHEEL_DIAMETER = 26   # milimeters
+    AXLE_TRACK = 102      # milimeters
+
+
     def __init__(
             self,
-            wheel_diameter: float, axle_track: float,   # both in milimeters
-            left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
+            left_foot_motor_port: Port = Port.B, right_foot_motor_port: Port = Port.C,
+            bazooka_blast_motor_port: Port = Port.A,
+            touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
+        self.drive_base = DriveBase(left_motor=Motor(port=left_foot_motor_port,
                                                      positive_direction=Direction.CLOCKWISE),
-                                    right_motor=Motor(port=right_motor_port,
+                                    right_motor=Motor(port=right_foot_motor_port,
                                                       positive_direction=Direction.CLOCKWISE),
-                                    wheel_diameter=wheel_diameter,
-                                    axle_track=axle_track)
+                                    wheel_diameter=self.WHEEL_DIAMETER,
+                                    axle_track=self.AXLE_TRACK)
+        
+        self.bazooka_blast_motor = Motor(port=bazooka_blast_motor_port,
+                                         positive_direction=Direction.CLOCKWISE)
+
+        self.touch_sensor = TouchSensor(port=touch_sensor_port)
+        self.color_sensor = ColorSensor(port=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
     
+
     def drive_once_by_ir_beacon(
             self,
             speed: float = 1000,    # mm/s
@@ -98,35 +107,8 @@ class IRBeaconRemoteControlledTank:
                 speed=speed,
                 turn_rate=turn_rate)
 
-
-class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
-    WHEEL_DIAMETER = 26   # milimeters
-    AXLE_TRACK = 102      # milimeters
-
-
-    def __init__(
-            self,
-            left_leg_motor_port: Port = Port.B, right_leg_motor_port: Port = Port.C,
-            bazooka_blast_motor_port: Port = Port.A,
-            touch_sensor_port: Port = Port.S1, color_sensor_port: Port = Port.S3,
-            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        super().__init__(
-            wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
-            left_motor_port=left_leg_motor_port, right_motor_port=right_leg_motor_port,
-            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
-        
-        self.bazooka_blast_motor = Motor(port=bazooka_blast_motor_port,
-                                         positive_direction=Direction.CLOCKWISE)
-
-        self.touch_sensor = TouchSensor(port=touch_sensor_port)
-        self.color_sensor = ColorSensor(port=color_sensor_port)
-
     
     def keep_detecting_objects_by_ir_sensor(self):
-        """
-        Ev3rstorm reacts by turning his LEDs red and speaking when his IR Sensor detects an object in front
-        (inspiration from LEGO Mindstorms EV3 Home Edition: Ev3rstorm: Tutorial #4)
-        """
         while True:
             if self.ir_sensor.distance() < 25:
                 self.light.on(color=Color.RED)
@@ -139,10 +121,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
 
 
     def blast_bazooka_whenever_touched(self):
-        """
-        Ev3rstorm blasts his bazooka when his Touch Sensor is pressed
-        (inspiration from LEGO Mindstorms EV3 Home Edition: Ev3rstorm: Tutorial #5)
-        """
         MEDIUM_MOTOR_N_ROTATIONS_PER_BLAST = 3
         MEDIUM_MOTOR_ROTATIONAL_DEGREES_PER_BLAST = MEDIUM_MOTOR_N_ROTATIONS_PER_BLAST * 360
 
@@ -174,9 +152,6 @@ class Ev3rstorm(IRBeaconRemoteControlledTank, EV3Brick):
     def main(self,
              driving_speed: float = 1000   # mm/s
             ):
-        """
-        Ev3rstorm's main program performing various capabilities
-        """
         self.screen.load_image(ImageFile.TARGET)
 
         # DON'T use IR Sensor in 2 different modes in the same program / loop
