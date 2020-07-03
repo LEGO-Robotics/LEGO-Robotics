@@ -1,3 +1,6 @@
+#!/usr/bin/env micropython
+
+
 __all__ = 'IRBeaconRemoteControlledTank',
 
 
@@ -87,3 +90,9 @@ class IRBeaconRemoteControlledTank:
     def keep_driving_by_ir_beacon(self, speed: float = 100):
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
+
+
+if __name__ == '__main__':
+    IR_BEACON_REMOTE_CONTROLLED_TANK = IRBeaconRemoteControlledTank()
+
+    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()

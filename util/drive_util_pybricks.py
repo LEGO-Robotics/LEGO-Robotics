@@ -1,3 +1,6 @@
+#!/usr/bin/env pybricks-micropython
+
+
 __all__ = 'IRBeaconRemoteControlledTank',
 
 
@@ -91,3 +94,9 @@ class IRBeaconRemoteControlledTank:
             self.drive_once_by_ir_beacon(
                 speed=speed,
                 turn_rate=turn_rate)
+
+
+if __name__ == '__main__':
+    IR_BEACON_REMOTE_CONTROLLED_TANK = IRBeaconRemoteControlledTank()
+
+    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
