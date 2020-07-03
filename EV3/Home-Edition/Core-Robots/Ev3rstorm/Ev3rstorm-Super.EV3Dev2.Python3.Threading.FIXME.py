@@ -9,6 +9,7 @@ from ev3dev2.display import Display
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
+from random import randint
 from threading import Thread
 
 
@@ -163,6 +164,17 @@ class Ev3rstorm:
                         play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
                 self.touch_sensor.wait_for_released()
+
+    
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.tank_driver.on_for_seconds(
+                    left_speed=randint(-100, 100),
+                    right_speed=randint(-100, 100),
+                    seconds=1,
+                    brake=False,
+                    block=True)
         
     
     def main(self, driving_speed: float = 100):
@@ -178,6 +190,26 @@ class Ev3rstorm:
         #        daemon=True).start()
 
         Thread(target=self.blast_bazooka_whenever_touched,
+               daemon=True).start()
+
+        # FIXME
+        # Traceback (most recent call last):
+        # File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+        #   self.run()
+        # File "/usr/lib/python3.5/threading.py", line 862, in run
+        #   self._target(*self._args, **self._kwargs)
+        # File "/home/robot/Ev3rstorm/Ev3rstorm-Super.EV3Dev2.Python3.Threading.py", line 170, in dance_whenever_ir_beacon_pressed
+        #   while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+        # File "/usr/lib/python3/dist-packages/ev3dev2/sensor/lego.py", line 909, in beacon
+        #   return 'beacon' in self.buttons_pressed(channel)
+        # File "/usr/lib/python3/dist-packages/ev3dev2/sensor/lego.py", line 919, in buttons_pressed
+        #   return self._BUTTON_VALUES.get(self.value(channel), [])
+        # File "/usr/lib/python3/dist-packages/ev3dev2/sensor/__init__.py", line 203, in value
+        #   self._value[n], value = self.get_attr_int(self._value[n], 'value' + str(n))
+        # File "/usr/lib/python3/dist-packages/ev3dev2/__init__.py", line 307, in get_attr_int
+        #   return attribute, int(value)
+        # ValueError: invalid literal for int() with base 10: ''
+        Thread(target=self.dance_whenever_ir_beacon_pressed,
                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
