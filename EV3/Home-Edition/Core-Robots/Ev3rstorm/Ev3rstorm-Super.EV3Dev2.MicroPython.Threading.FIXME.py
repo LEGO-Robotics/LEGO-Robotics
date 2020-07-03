@@ -7,6 +7,7 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
+from random import randint
 from threading import Thread
 
 
@@ -162,6 +163,17 @@ class Ev3rstorm:
                 self.touch_sensor.wait_for_released()
  
     
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.tank_driver.on_for_seconds(
+                    left_speed=randint(-100, 100),
+                    right_speed=randint(-100, 100),
+                    seconds=1,
+                    brake=False,
+                    block=True)
+
+      
     def main(self, driving_speed: float = 100):
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
@@ -169,6 +181,17 @@ class Ev3rstorm:
         # Thread(target=self.keep_detecting_objects_by_ir_sensor).start()
 
         Thread(target=self.blast_bazooka_whenever_touched).start()
+
+        # FIXME
+        # Unhandled exception in thread started by <bound_method b6bbfd60 <Thread object at b6bbe450>.<function run at 0xb6bb4a20>>
+        # Traceback (most recent call last):
+        #   File "threading/threading.py", line 15, in run
+        #   File "ev3dev2/sensor/lego.py", line 885, in top_left
+        #   File "ev3dev2/sensor/lego.py", line 919, in buttons_pressed
+        #   File "ev3dev2/sensor/__init__.py", line 203, in value
+        #   File "ev3dev2/__init__.py", line 307, in get_attr_int
+        # ValueError: invalid syntax for integer with base 10: ''
+        Thread(target=self.dance_whenever_ir_beacon_pressed).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
 
