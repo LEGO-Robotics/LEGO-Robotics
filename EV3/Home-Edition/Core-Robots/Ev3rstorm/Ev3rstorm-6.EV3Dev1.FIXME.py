@@ -55,11 +55,12 @@ while True:
                 speed_sp=1000,   # degrees per second
                 position_sp=3 * 360,   # degrees
                 stop_action=Motor.STOP_ACTION_HOLD)
+            BAZOOKA_BLAST_MOTOR.wait_while(Motor.STATE_RUNNING)
 
             SPEAKER.play(wav_file='/home/robot/sound/Laughing 2.wav').wait()
 
         else:
-            # TODO: fix to make it work
+            # TODO
             ...
 
     else:

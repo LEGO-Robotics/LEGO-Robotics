@@ -10,9 +10,6 @@ from pybricks.parameters import Button, Color, Direction, Port, Stop
 
 BRICK = EV3Brick()
 
-MEDIUM_MOTOR = Motor(port=Port.A, 
-                     positive_direction=Direction.CLOCKWISE)
-
 LEFT_MOTOR = Motor(port=Port.B,
                    positive_direction=Direction.CLOCKWISE)
 RIGHT_MOTOR = Motor(port=Port.C,
@@ -28,6 +25,9 @@ DRIVE_BASE.settings(
     straight_acceleration=300,
     turn_rate=90,   # degrees per second
     turn_acceleration=90)
+
+MEDIUM_MOTOR = Motor(port=Port.A, 
+                     positive_direction=Direction.CLOCKWISE)
 
 IR_SENSOR = InfraredSensor(port=Port.S4)
 

@@ -64,7 +64,7 @@ class Ev3rstorm:
                     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
             else:
-                # TODO: fix to make it work
+                # FIXME: make it work
                 self.tank_driver.on(
                     left_speed=max(min((3 * proximity_difference + 4 * heading_difference) / 5, 100), -100),
                     right_speed=max(min((3 * proximity_difference - 4 * heading_difference) / 5, 100), -100))
