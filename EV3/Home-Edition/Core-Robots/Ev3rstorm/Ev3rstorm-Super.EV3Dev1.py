@@ -8,6 +8,7 @@ from ev3dev.ev3 import (
 )
 
 from PIL import Image
+from random import randint
 
 
 class Ev3rstorm:
@@ -121,6 +122,20 @@ class Ev3rstorm:
                 pass
 
 
+    def dance_if_ir_beacon_pressed(self):
+        while self.remote_control.beacon():
+            self.left_foot_motor.run_timed(
+                speed_sp=randint(-1000, 1000),
+                time_sp=1000,
+                stop_action=Motor.STOP_ACTION_COAST)
+            self.right_foot_motor.run_timed(
+                speed_sp=randint(-1000, 1000),
+                time_sp=1000,
+                stop_action=Motor.STOP_ACTION_COAST)
+            self.left_foot_motor.wait_while(Motor.STATE_RUNNING)
+            self.right_foot_motor.wait_while(Motor.STATE_RUNNING)            
+
+
     def main(self,
              driving_speed: float = 1000   # degrees per second
             ):
@@ -128,6 +143,8 @@ class Ev3rstorm:
         self.screen.update()
 
         while True:
+            self.drive_once_by_ir_beacon(speed=driving_speed)
+
             # DON'T use IR Sensor in 2 different modes in the same program / loop
             # - https://github.com/pybricks/support/issues/62
             # - https://github.com/ev3dev/ev3dev/issues/1401
@@ -135,7 +152,7 @@ class Ev3rstorm:
 
             self.blast_bazooka_when_touched()
 
-            self.drive_once_by_ir_beacon(speed=driving_speed)
+            self.dance_if_ir_beacon_pressed()
 
 
 if __name__ == '__main__':
