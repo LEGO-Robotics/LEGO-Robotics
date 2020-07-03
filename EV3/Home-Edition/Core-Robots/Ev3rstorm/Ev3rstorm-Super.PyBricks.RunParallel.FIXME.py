@@ -10,7 +10,6 @@ from pybricks.parameters import Button, Color, Direction, Port, Stop
 from pybricks.experimental import run_parallel
 
 from random import randint
-from threading import Thread
 
 
 class Ev3rstorm(EV3Brick):
