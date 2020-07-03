@@ -123,7 +123,7 @@ class Ev3rstorm:
 
 
     def dance_if_ir_beacon_pressed(self):
-        while self.remote_control.beacon():
+        while self.remote_control.beacon:
             self.left_foot_motor.run_timed(
                 speed_sp=randint(-1000, 1000),
                 time_sp=1000,
