@@ -1,13 +1,14 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_1, INPUT_3
+from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.control.rc_tank import RemoteControlledTank
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
+from random import randint
 from threading import Thread
 
 
@@ -24,14 +25,31 @@ class Ev3rstorm(RemoteControlledTank):
             speed=1000,
             channel=ir_beacon_channel)
 
+        self.tank_driver = MoveTank(left_motor_port=left_foot_motor_port,
+                                    right_motor_port=right_foot_motor_port,
+                                    motor_class=LargeMotor)
+
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
+
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.leds = Leds()
         self.speaker = Sound()
+
+
+    def dance_whenever_ir_beacon_pressed(self):
+        while True:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.tank_driver.on_for_seconds(
+                    left_speed=randint(-100, 100),
+                    right_speed=randint(-100, 100),
+                    seconds=1,
+                    brake=False,
+                    block=True)
     
 
     def keep_detecting_objects_by_ir_sensor(self):
@@ -96,6 +114,8 @@ class Ev3rstorm(RemoteControlledTank):
  
     
     def main(self):
+        Thread(target=self.dance_whenever_ir_beacon_pressed).start()
+
         # DON'T use IR Sensor in 2 different modes in the same program / loop
         # - https://github.com/pybricks/support/issues/62
         # - https://github.com/ev3dev/ev3dev/issues/1401
