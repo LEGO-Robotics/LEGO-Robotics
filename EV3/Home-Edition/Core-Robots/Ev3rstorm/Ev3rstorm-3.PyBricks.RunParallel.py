@@ -82,4 +82,4 @@ def laugh_whenever_touched():
 
 run_parallel(
     run_away_whenever_dark,
-    laugh_whenever_touched
+    laugh_whenever_touched)
