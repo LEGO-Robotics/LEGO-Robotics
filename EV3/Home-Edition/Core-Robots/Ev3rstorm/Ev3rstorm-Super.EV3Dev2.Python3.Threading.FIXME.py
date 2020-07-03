@@ -183,15 +183,6 @@ class Ev3rstorm:
             clear_screen=True)
         self.screen.update()
 
-        # DON'T use IR Sensor in 2 different modes in the same program / loop
-        # - https://github.com/pybricks/support/issues/62
-        # - https://github.com/ev3dev/ev3dev/issues/1401
-        # Thread(target=self.keep_detecting_objects_by_ir_sensor,
-        #        daemon=True).start()
-
-        Thread(target=self.blast_bazooka_whenever_touched,
-               daemon=True).start()
-
         # FIXME
         # Traceback (most recent call last):
         # File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
@@ -210,6 +201,15 @@ class Ev3rstorm:
         #   return attribute, int(value)
         # ValueError: invalid literal for int() with base 10: ''
         Thread(target=self.dance_whenever_ir_beacon_pressed,
+               daemon=True).start()
+
+        # DON'T use IR Sensor in 2 different modes in the same program / loop
+        # - https://github.com/pybricks/support/issues/62
+        # - https://github.com/ev3dev/ev3dev/issues/1401
+        # Thread(target=self.keep_detecting_objects_by_ir_sensor,
+        #        daemon=True).start()
+
+        Thread(target=self.blast_bazooka_whenever_touched,
                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=driving_speed)
