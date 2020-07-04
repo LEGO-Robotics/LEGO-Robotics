@@ -201,6 +201,8 @@ GitHub Community
 
 [Raspberry Pi](https://www.raspberrypi.org)
 
+[Robo Manuals](https://robomanuals.com)
+
 [Robot Mak3rs](http://www.robotmak3rs.com)
 - https://github.com/robotmak3rs
 
