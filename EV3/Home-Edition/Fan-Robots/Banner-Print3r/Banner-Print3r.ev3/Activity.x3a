@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <GuidedHelp xmlns="http://www.ni.com/GuidedHelp.xsd">
+            <Slides>
+                <Slide GuidedHelpSize="Full" SlideName="" NextButtonEnabled="True" OnSlideChanged="" TemplateID="Full">
+                    <SimpleData UniqueID="RichTextTitle" Version="0" UserEditable="False" WideControl="False">
+                        <Text />
+                    </SimpleData>
+                    <SimpleData UniqueID="Image" Version="0" ImageFileName="EV3-BM_8_PRINT3R.png" UserEditable="False" CreatedByMediaControl="False" WideControl="False" />
+                    <Children>
+                        <Slide GuidedHelpSize="Large" SlideName="" OnSlideChanged="" TemplateID="Full">
+                            <SimpleData UniqueID="RichTextTitle" Version="0" UserEditable="False" WideControl="False">
+                                <Text />
+                            </SimpleData>
+                            <SimpleData UniqueID="Empty" Version="0" />
+                            <Children />
+                        </Slide>
+                    </Children>
+                </Slide>
+                <Slide GuidedHelpSize="Full" SlideName="" NextButtonEnabled="True" OnSlideChanged="" TemplateID="Full">
+                    <SimpleData UniqueID="RichTextTitle" Version="0" UserEditable="False" WideControl="False">
+                        <Text><RichTextDocument fontsize="12" fontfamily="Portable User Interface" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p /></RichTextDocument></Text>
+                    </SimpleData>
+                    <SimpleData UniqueID="BuildInstructions" Version="0" ImageKey0="PLOTT3R_01.png" ImageKey1="PLOTT3R_02.png" ImageKey2="PLOTT3R_03.png" ImageKey3="PLOTT3R_04.png" ImageKey4="PLOTT3R_05.png" ImageKey5="PLOTT3R_06.png" ImageKey6="PLOTT3R_07.png" ImageKey7="PLOTT3R_08.png" ImageKey8="PLOTT3R_09.png" ImageKey9="PLOTT3R_10.png" ImageKey10="PLOTT3R_11.png" ImageKey11="PLOTT3R_12.png" ImageKey12="PLOTT3R_13.png" ImageKey13="PLOTT3R_14.png" ImageKey14="PLOTT3R_15.png" ImageKey15="PLOTT3R_16.png" ImageKey16="PLOTT3R_17.png" ImageKey17="PLOTT3R_18.png" ImageKey18="PLOTT3R_19.png" ImageKey19="PLOTT3R_20.png" ImageKey20="PLOTT3R_21.png" ImageKey21="PLOTT3R_22.png" ImageKey22="PLOTT3R_23.png" ImageKey23="PLOTT3R_24.png" ImageKey24="PLOTT3R_25.png" ImageKey25="PLOTT3R_26.png" ImageKey26="PLOTT3R_27.png" ImageKey27="PLOTT3R_28.png" ImageKey28="PLOTT3R_29.png" ImageKey29="PLOTT3R_30.png" ImageKey30="PLOTT3R_31.png" ImageKey31="PLOTT3R_32.png" ImageKey32="PLOTT3R_33.png" ImageKey33="PLOTT3R_34.png" ImageKey34="PLOTT3R_35.png" ImageKey35="PLOTT3R_36.png" ImageKey36="PLOTT3R_37.png" ImageKey37="PLOTT3R_38.png" ImageKey38="PLOTT3R_39.png" ImageKey39="PLOTT3R_40.png" ImageKey40="PLOTT3R_41.png" ImageKey41="PLOTT3R_42.png" ImageKey42="PLOTT3R_43.png" ImageKey43="PLOTT3R_44.png" ImageKey44="PLOTT3R_45.png" ImageKey45="PLOTT3R_46.png" ImageKey46="PLOTT3R_47.png" ImageKey47="PLOTT3R_48.png" ImageKey48="PLOTT3R_49.png" ImageKey49="PLOTT3R_50.png" ImageKey50="PLOTT3R_51.png" ImageKey51="PLOTT3R_52.png" ImageKey52="PLOTT3R_53.png" ImageKey53="PLOTT3R_54.png" ImageKey54="PLOTT3R_55.png" ImageKey55="PLOTT3R_56.png" ImageKey56="PLOTT3R_57.png" ImageKey57="PLOTT3R_58.png" WideControl="False" />
+                    <Children>
+                        <Slide GuidedHelpSize="Large" SlideName="" OnSlideChanged="" TemplateID="Full">
+                            <SimpleData UniqueID="RichTextTitle" Version="0" UserEditable="False" WideControl="False">
+                                <Text />
+                            </SimpleData>
+                            <SimpleData UniqueID="RichText" Version="0" UserEditable="False" WideControl="False">
+                                <Text><RichTextDocument fontsize="12" fontfamily="Portable User Interface" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd" /></Text>
+                            </SimpleData>
+                            <Children />
+                        </Slide>
+                    </Children>
+                </Slide>
+            </Slides>
+            <MediaDictionary />
+        </GuidedHelp>
+    </Namespace>
+</SourceFile>
