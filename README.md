@@ -189,6 +189,7 @@ GitHub Community
 
 [Dexter Industries](https://www.dexterindustries.com)
 - Brick Pi
+- [GitHub](https://github.com/DexterInd)
 
 [Droids Robotics](http://www.droidsrobotics.org)
 
