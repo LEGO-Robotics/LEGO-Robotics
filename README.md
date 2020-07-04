@@ -138,6 +138,8 @@ GitHub Community
 
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 
+- [Roland Blochberger](https://github.com/robl0377)
+
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 
 - [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
