@@ -7,3 +7,7 @@
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/blt18fd6ecf0dc4d30f/BANNER_PRINT3R.pdf)
 
 [Program](https://drive.google.com/file/d/0BwSmKAWpoilXUGxub0QzTnhaVHc/edit)
+
+Blogs
+- https://thegeekhomestead.com/2016/12/16/lego-mindstorms-banner-print3r-bot
+- https://constructingkids.com/2014/01/16/how-to-build-a-lego-printer
