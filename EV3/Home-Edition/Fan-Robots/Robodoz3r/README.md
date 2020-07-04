@@ -6,4 +6,7 @@
 
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/bltfef825595f55768c/ROBODOZ3R.pdf)
 
+[Robo Manual](https://robomanuals.com/product/robodoz3r)
+- [Program](https://drive.google.com/file/d/1dKKeHFjBGxJR4hZm0S22BAI9wuK6H8NM/view)
+
 [YouTube](https://www.youtube.com/watch?v=wUMGIOuW7So)

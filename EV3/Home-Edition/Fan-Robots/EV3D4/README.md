@@ -6,4 +6,7 @@
 
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/blt9d825847cfab5c16/EV3D4.pdf)
 
+[Robo Manual](https://robomanuals.com/product/ev3d4)
+- [Program](https://drive.google.com/file/d/1-nND6uCkFq-8FF3BPM7zuCv_91zzgC6t/view)
+
 [YouTube](https://www.youtube.com/watch?v=rtmRZpR0lNA)

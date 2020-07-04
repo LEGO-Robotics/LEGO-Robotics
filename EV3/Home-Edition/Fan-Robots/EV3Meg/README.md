@@ -6,4 +6,7 @@
 
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/bltc79715c0087bf480/EV3MEG.pdf)
 
+[Robo Manual](https://robomanuals.com/product/ev3meg)
+- [Program](https://drive.google.com/file/d/1VF1GiYVpMpGQ1t8yFqbnMXUGbKCMelpo/view)
+
 [YouTube](https://www.youtube.com/watch?v=ghl531YIAXE)

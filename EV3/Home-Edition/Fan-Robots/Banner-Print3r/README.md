@@ -6,7 +6,10 @@
 
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/blt18fd6ecf0dc4d30f/BANNER_PRINT3R.pdf)
 
-[Program](https://drive.google.com/file/d/0BwSmKAWpoilXUGxub0QzTnhaVHc/edit)
+[Robo Manual](https://robomanuals.com/product/banner-print3r)
+- [Program](https://drive.google.com/file/d/1YnNISnC9n-BjFpJ5fKx9zGbN985WMjUK/view)
+
+[Other Program](https://drive.google.com/file/d/0BwSmKAWpoilXUGxub0QzTnhaVHc/edit)
 
 [YouTube](https://www.youtube.com/watch?v=1LN1aF3uWss)
 
