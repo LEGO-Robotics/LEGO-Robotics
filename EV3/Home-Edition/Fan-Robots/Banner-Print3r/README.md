@@ -8,6 +8,8 @@
 
 [Program](https://drive.google.com/file/d/0BwSmKAWpoilXUGxub0QzTnhaVHc/edit)
 
+[YouTube](https://www.youtube.com/watch?v=1LN1aF3uWss)
+
 Blogs
 - https://thegeekhomestead.com/2016/12/16/lego-mindstorms-banner-print3r-bot
 - https://constructingkids.com/2014/01/16/how-to-build-a-lego-printer
