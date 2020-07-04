@@ -138,6 +138,8 @@ GitHub Community
 
 - [Christophe Avenel](https://github.com/cavenel/ev3dev_examples)
 
+- [Roland Blochberger](https://github.com/robl0377)
+
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 
 - [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
@@ -198,6 +200,8 @@ GitHub Community
 - PiStorms
 
 [Raspberry Pi](https://www.raspberrypi.org)
+
+[Robo Manuals](https://robomanuals.com)
 
 [Robot Mak3rs](http://www.robotmak3rs.com)
 - https://github.com/robotmak3rs
