@@ -178,6 +178,9 @@ GitHub Community
 - [Documentation](https://blupants.org/help)
 - https://github.com/blupants/blupants
 
+[Builder Dude 35](https://builderdude35.com) (Kyle Markland)
+- [YouTube Channel](https://www.youtube.com/c/Builderdude35)
+
 [Coppelia Robotics](https://www.coppeliarobotics.com)
 - CoppeliaSim simulator
 
