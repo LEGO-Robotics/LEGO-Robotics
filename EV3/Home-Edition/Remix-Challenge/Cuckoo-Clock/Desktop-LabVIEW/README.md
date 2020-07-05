@@ -11,7 +11,7 @@ Remix your 31313 LEGO® MINDSTORMS® EV3 set with the 42052 LEGO Technic Heavy L
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>1) Remove the synchronization cogwheel. 2) Set the clock to 12:00 and then reattach the synchronization cogwheel. 3) Turn the red minute hand to set the clock to the current time.</p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font></p><p><font size="12">You can change the color of the light emitted by the Color Sensor by changing the mode of the </font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/ColorSensor.html#Mode_MeasureColor">Color Sensor</a></u></font><font size="12"> Blocks.</font></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font><font size="12">You can change the color of the light emitted by the Color Sensor by changing the mode of the </font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/ColorSensor.html#Mode_MeasureColor">Color Sensor</a></u></font><font size="12"> Blocks.</font></p></ActivityCopyPaste>
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p></font><b>CuckooClock 02: Cuckoo Bird</b></p></ActivityCopyPaste>
@@ -20,7 +20,7 @@ Remix your 31313 LEGO® MINDSTORMS® EV3 set with the 42052 LEGO Technic Heavy L
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Move your hand in front of the Infrared Sensor to trigger a random cuckoo behavior. Sometimes you will need to move your hand away before the cuckoo comes out!</p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font></p><p><font size="12">By changing the “</font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Random.html#PercentTrue">Probability of True</a></u></font><font size="12">” input on the first Random Block, you can change the likelihood of having to remove your hand from the Infrared Sensor before triggering a behavior.</font></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font><font size="12">By changing the “</font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Random.html#PercentTrue">Probability of True</a></u></font><font size="12">” input on the first Random Block, you can change the likelihood of having to remove your hand from the Infrared Sensor before triggering a behavior.</font></p></ActivityCopyPaste>
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p></font><b>CuckooClock 03: Alarm Action</b></p></ActivityCopyPaste>
@@ -33,7 +33,7 @@ Remix your 31313 LEGO® MINDSTORMS® EV3 set with the 42052 LEGO Technic Heavy L
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Does the hammer hit the activation switch on the alarm vehicle?</b> If not, make sure the hammer rests on the activation switch before running the program and then try again.</p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font></p><p><font size="12">You can change which sound is played by changing the “</font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Sound.html#Mode_File">File Name</a></u></font><font size="12">” input on the Sound Block.</font></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font><font size="12">You can change which sound is played by changing the “</font><font size="12" color="#808080"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Sound.html#Mode_File">File Name</a></u></font><font size="12">” input on the Sound Block.</font></p></ActivityCopyPaste>
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p></font><b>CuckooClock 04: Cuckoo Clock</b></p></ActivityCopyPaste>
@@ -46,4 +46,4 @@ Remix your 31313 LEGO® MINDSTORMS® EV3 set with the 42052 LEGO Technic Heavy L
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Does the clock show the correct time?</b> If not, make sure the white hour hand is synchronized to the red minute hand. See mission 01 for further instructions.</p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"> </font></p><p><font size="12">You can change how the cuckoo sounds and moves by opening the “</font><font size="12" color="#D01012"><u><a action="ShowPaletteItem:MyBlockPolyGroup_80169500-4BF0-48B5-A440-0E53A1BACD44_Cuckoo.ev3p">Cuckoo</a></u></font><font size="12">” My Block.</font></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font><font size="12">You can change how the cuckoo sounds and moves by opening the “</font><font size="12" color="#D01012"><u><a action="ShowPaletteItem:MyBlockPolyGroup_80169500-4BF0-48B5-A440-0E53A1BACD44_Cuckoo.ev3p">Cuckoo</a></u></font><font size="12">” My Block.</font></p></ActivityCopyPaste>
