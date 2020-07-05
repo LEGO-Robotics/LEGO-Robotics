@@ -169,6 +169,8 @@ GitHub Community
 - EV3DevSim Simulator
   - https://github.com/QuirkyCort/ev3dev-sim
   - https://www.aposteriori.com.sg/Ev3devSim/index.html
+- [Gears Simulator](https://gears.aposteriori.com.sg)
+  - https://github.com/QuirkyCort/gears
 
 [Anton's Mindstorms](https://antonsmindstorms.com) (Anton Vanhoucke)
 
