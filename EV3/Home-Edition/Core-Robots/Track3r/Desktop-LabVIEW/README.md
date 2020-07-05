@@ -54,7 +54,7 @@ TRACK3R is easy to create & command, and has a lot of tools. Use the Bi-Blade Bl
 
 <b>Does TRACK3R turn around to hit the object?</b> If not, make sure the <font color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Move.html#Mode_Degrees">Degrees</a></u></font> input on the Move Steering block inside the true case of the Switch block is set to <b>1000</b>.</p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b></p> <font size="12">You can change the proximity at which TRACK3R will react to objects by changing the </font><font size="12" color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/CaseSelector.html#TestingASensorThreshold">Threshold Value</a></u></font><font size="12"> input on the Switch block.</font></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="12">You can change the proximity at which TRACK3R will react to objects by changing the </font><font size="12" color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/CaseSelector.html#TestingASensorThreshold">Threshold Value</a></u></font><font size="12"> input on the Switch block.</font></p></ActivityCopyPaste>
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>TRACK3R 05: Time Trial</b></p></ActivityCopyPaste>
