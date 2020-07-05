@@ -61,7 +61,7 @@ EV3RSTORM moves around in tracked skates and can attack with its Spinning Tri-Bl
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="12">You can change the proximity at which EV3RSTORM will react to objects by changing the </font><font size="12" color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/CaseSelector.html#TestingASensorThreshold">Threshold Value</a></u></font><font size="12"> input on the Switch block.</font></p></ActivityCopyPaste>
 
 
-# <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>EV3RSTORM 05: Command and Blast</b></p></ActivityCopyPaste>
+## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>EV3RSTORM 05: Command and Blast</b></p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will control EV3RSTORM remotely with the Infrared Beacon and shoot with the Blasting Bazooka using the Touch Sensor and the Color Sensor.</b></p></ActivityCopyPaste>
 
