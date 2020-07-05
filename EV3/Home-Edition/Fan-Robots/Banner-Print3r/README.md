@@ -12,6 +12,7 @@
 [Other Program](https://drive.google.com/file/d/0BwSmKAWpoilXUGxub0QzTnhaVHc/edit)
 
 [YouTube](https://www.youtube.com/watch?v=1LN1aF3uWss)
+- [German]](http://youtu.be/pLoWsHVbQbM)
 
 Blogs
 - https://thegeekhomestead.com/2016/12/16/lego-mindstorms-banner-print3r-bot
