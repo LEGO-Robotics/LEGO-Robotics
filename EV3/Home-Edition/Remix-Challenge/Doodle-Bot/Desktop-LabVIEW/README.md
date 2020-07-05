@@ -31,7 +31,7 @@ Combine your LEGO® MINDSTORMS® EV3 set (31313) with the LEGO Technic Extreme A
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="6"></font><font size="12">The facial expressions are controlled by the position of the connector pegs in the gray beams that rotate inside the head. Try changing their placement to create different facial expressions.</font></p></ActivityCopyPaste>
 
 
-# <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p></font><b>DoodleBot 03: Self-Portrait</b></p></ActivityCopyPaste>
+## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p></font><b>DoodleBot 03: Self-Portrait</b></p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will program the model to draw a self-portrait using lines, rectangles, and circles.</b></p></ActivityCopyPaste>
 
