@@ -4,8 +4,8 @@
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
-from ev3dev2.led import Leds
 from ev3dev2.display import Display
+from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
 
@@ -17,7 +17,8 @@ class Kraz33Mov3r:
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.tank_driver = MoveTank(left_motor_port=back_foot_motor_port,
-                                    right_motor_port=front_foot_motor_port)
+                                    right_motor_port=front_foot_motor_port,
+                                    motor_class=LargeMotor)
             
         self.gear_motor = MediumMotor(address=gear_motor_port)
 
@@ -28,8 +29,8 @@ class Kraz33Mov3r:
         self.ir_beacon_channel = ir_beacon_channel
 
         self.leds = Leds()
-        self.speaker = Sound()
         self.screen = Display()
+        self.speaker = Sound()
 
 
     def drive_once_by_ir_beacon(self, speed: float = 100):
