@@ -35,7 +35,7 @@ class Kraz33Mov3r:
 
     def drive_once_by_ir_beacon(self, speed: float = 100):
         # forward
-        if self.ir_sensor.top_left(self.ir_beacon_channel) and self.ir_sensor.top_right(self.ir_beacon_channel):
+        if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             self.tank_driver.on_for_rotations(
                 left_speed=speed,
                 right_speed=-speed,
@@ -44,7 +44,7 @@ class Kraz33Mov3r:
                 block=True)
 
         # backward
-        elif self.ir_sensor.bottom_left(self.ir_beacon_channel) and self.ir_sensor.bottom_right(self.ir_beacon_channel):
+        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
             self.tank_driver.on_for_rotations(
                 left_speed=-speed,
                 right_speed=speed,
@@ -53,7 +53,7 @@ class Kraz33Mov3r:
                 block=True)
 
         # move crazily
-        elif self.ir_sensor.beacon(self.ir_beacon_channel):
+        elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
             self.tank_driver.on_for_rotations(
                 left_speed=-speed / 9,
                 right_speed=-speed / 9,
