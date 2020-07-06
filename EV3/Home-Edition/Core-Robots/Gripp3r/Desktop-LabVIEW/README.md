@@ -2,6 +2,9 @@
 
 
 GRIPP3R is a strong robot that can lift and carry heavy things with its Grasping Grippers. Control it remotely to make it pick up what you want!
+- __Remote Command__: Using the Infrared Sensor, GRIPP3R can receive commands remotely so you can let it lift what you want.
+- __Grasping Grippers__: GRIPP3R can lift almost anything that comes into its Grasping Grippers.
+- __Sturdy Tracks__: These tracks ensure GRIPP3R drives steadily while carrying heavy loads. 
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>GRIPP3R 01: Grasping It</b></p></ActivityCopyPaste>

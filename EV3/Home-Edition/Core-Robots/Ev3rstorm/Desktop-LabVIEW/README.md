@@ -1,6 +1,9 @@
 # EV3RSTORM
 
 EV3RSTORM moves around in tracked skates and can attack with its Spinning Tri-Blade or Blasting Bazooka. He can detect objects, follow the Infrared Beacon and receive commands remotely.
+- __Seek or Command__: The Infrared Sensor gives EV3RSTORM the ability to detect objects, follow the Infrared Beacon or receive commands remotely.
+- __Move How You Want__: These tracked skates enable EV3RSTORM to walk, drive or skate.
+- __Aim and Shoot__: With his Blasting Bazooka, EV3RSTORM can shoot upwards or straight, depending on the distance to the target.
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>EV3RSTORM 01: Driving and Turning</b></p></ActivityCopyPaste>

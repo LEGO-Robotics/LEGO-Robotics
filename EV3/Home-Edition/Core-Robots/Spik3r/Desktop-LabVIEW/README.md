@@ -1,6 +1,9 @@
 # SPIK3R
 
 SPIK3R is a complex robot that crawls and turns in search for targets. It can attack with its Crushing Claws, or shoot with its Lightning Tail.
+- __Lightning Tail__: Powered by a Large Motor, its Lightning Tail can shoot at targets far away.
+- __Search for Targets__: With the Infrared Sensor it can detect objects and the Infrared Beacon.
+- __Agile Turning__: SPIK3R can turn around quickly to search for enemies to attack.
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>SPIK3R 01: Lightning Tail</b></p></ActivityCopyPaste>

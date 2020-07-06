@@ -1,6 +1,9 @@
 # R3PTAR
 
 R3PTAR is a tall, long and powerful robot. It moves like a real snake and can strike with its Fearsome Fangs when it detects something.
+- __Detect Objects__: With the Infrared Sensor, R3PTAR can detect objects in front of it.
+- __Strike!__: Using the powerful Large Motor, R3PTAR can strike with its Fearsome Fangs at lightning speed.
+- __Slither__: Combining a Large Motor for moving forward and a Medium Motor for steering, R3PTAR can slither like a real snake.
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>R3PTAR 01: Slither like a Snake</b></p></ActivityCopyPaste>

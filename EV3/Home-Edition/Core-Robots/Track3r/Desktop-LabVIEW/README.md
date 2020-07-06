@@ -1,6 +1,9 @@
 # TRACK3R
 
 TRACK3R is easy to create & command, and has a lot of tools. Use the Bi-Blade Blender, Blasting Bazooka, Gripping Claw and Heavy Hammer to complete different missions on the Mission Pad.
+- __Remote Command__: TRACK3R has an Infrared Sensor on the back, so you can control it remotely and it can detect objects coming from behind.
+- __Use Tools__: TRACK3R has 4 interchangeable tools you can use to accomplish different tasks.
+- __Sturdy Tracks__: With these sturdy tracks powered by the Large Motors, it is no problem to maneuver on difficult terrain.
 
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>TRACK3R 01: Blend It with Precision</b></p></ActivityCopyPaste>
