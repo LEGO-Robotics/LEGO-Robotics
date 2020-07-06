@@ -10,3 +10,5 @@
 - [Program](https://drive.google.com/file/d/1P0wvE2urvn9tI3aenBrgF6M89YkXE034/view)
 
 [YouTube](https://www.youtube.com/watch?v=7AkfAOSCwPU)
+
+![](El3ctric-Guitar.jpg)

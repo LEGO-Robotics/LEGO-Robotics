@@ -10,3 +10,5 @@
 - [Program](https://drive.google.com/file/d/1FaDnl3nShd-hhJEx_6ifOqo7hPQ-Sqs7/view)
 
 [YouTube](https://www.youtube.com/watch?v=3Rtb21QFJeo)
+
+![](Rac3-Truck.jpg)

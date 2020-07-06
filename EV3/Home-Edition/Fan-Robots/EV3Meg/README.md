@@ -11,3 +11,5 @@
 
 [YouTube](https://www.youtube.com/watch?v=ghl531YIAXE)
 - also [this](https://www.lego.com/en-us/kids/videos/mindstorms/ev3meg-robot-maker-studio-9fc5afbb31b543089feb711ca3a3d60d)
+
+![](EV3Meg.jpg)
