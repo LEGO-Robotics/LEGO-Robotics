@@ -36,7 +36,7 @@ EV3RSTORM moves around in tracked skates and can attack with its Spinning Tri-Bl
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>EV3RSTORM 03: Stay Out of the Dark</b></p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will make clever use of the Color Sensor so EV3RSTORM stays out of the dark and attacks with the Spinning Triblade using the Touch Sensor.</b></p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will make clever use of the Color Sensor so EV3RSTORM stays out of the dark and attacks with the Spinning Tri-Blade using the Touch Sensor.</b></p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place EV3RSTORM on a smooth surface.</p></ActivityCopyPaste>
 
