@@ -60,6 +60,8 @@ SPIK3R is a complex robot that crawls and turns in search for targets. It can at
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>SPIK3R 05: Catch That Bug</b></p></ActivityCopyPaste>
 
+In this mission, you'll hunt the Bug and take it out with a long-range shot before moving in to finish the job with the Crushing Claws.
+
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place SPIK3R and the Bug on a smooth surface.</p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Press the Beacon Mode button on the Infrared Beacon.</p></ActivityCopyPaste>
