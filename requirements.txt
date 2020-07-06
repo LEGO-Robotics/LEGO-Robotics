@@ -1,5 +1,5 @@
 PyBricks >= 2.0.0
-# PyBricks-Stubs >= 2.0.2   # to use official PyBricks dev version above
+# PyBricks-Stubs >= 2.0.2   # use official PyBricks above
 Python-EV3Dev2 >= 2.1.0
 
 # deprecated
