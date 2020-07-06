@@ -17,3 +17,5 @@
 Blogs
 - https://thegeekhomestead.com/2016/12/16/lego-mindstorms-banner-print3r-bot
 - https://constructingkids.com/2014/01/16/how-to-build-a-lego-printer
+
+![](Banner-Print3r.jpg)
