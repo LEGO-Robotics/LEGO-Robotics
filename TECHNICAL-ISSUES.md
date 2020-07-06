@@ -9,3 +9,6 @@ EV3Dev
 - [LEGO EV3 UART sensors return stale values after mode switch](https://github.com/ev3dev/ev3dev/issues/1401)
 - [Sometimes not all child processes are ended by `conrun-kill`](https://github.com/ev3dev/ev3dev/issues/1422)
 - [`ValueError: invalid literal for int() with base 10: ''` when using InfraredSensor in Threading](https://github.com/ev3dev/ev3dev-lang-python/issues/746)
+  - similar: [GyroSensor angle for GYRO-ANG sometimes returns empty string instead of integer](https://github.com/ev3dev/ev3dev/issues/1269)
+  - related: [Device objects not thread safe](https://github.com/ev3dev/ev3dev-lang-python/issues/704)
+  - possibly related: [sensors stop working](https://github.com/ev3dev/ev3dev/issues/1083)

@@ -169,6 +169,8 @@ GitHub Community
 - EV3DevSim Simulator
   - https://github.com/QuirkyCort/ev3dev-sim
   - https://www.aposteriori.com.sg/Ev3devSim/index.html
+- [Gears Simulator](https://gears.aposteriori.com.sg)
+  - https://github.com/QuirkyCort/gears
 
 [Anton's Mindstorms](https://antonsmindstorms.com) (Anton Vanhoucke)
 
@@ -178,6 +180,9 @@ GitHub Community
 - [Documentation](https://blupants.org/help)
 - https://github.com/blupants/blupants
 
+[Builder Dude 35](https://builderdude35.com) (Kyle Markland)
+- [YouTube Channel](https://www.youtube.com/c/Builderdude35)
+
 [Coppelia Robotics](https://www.coppeliarobotics.com)
 - CoppeliaSim simulator
 
@@ -186,6 +191,7 @@ GitHub Community
 
 [Dexter Industries](https://www.dexterindustries.com)
 - Brick Pi
+- [GitHub](https://github.com/DexterInd)
 
 [Droids Robotics](http://www.droidsrobotics.org)
 
