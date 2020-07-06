@@ -11,7 +11,7 @@ GRIPP3R is a strong robot that can lift and carry heavy things with its Grasping
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will practice using the Grasping Grippers.</b></p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place the Grasping Grippers on a smooth surface</p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place the Grasping Grippers on a smooth surface.</p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Do the Grasping Grippers move?</b> If not, make sure the mode of the first Medium Motor block is set to <font color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/MediumMotor.html#Mode_Time">On for Seconds</a></u></font>.
 
@@ -24,7 +24,7 @@ GRIPP3R is a strong robot that can lift and carry heavy things with its Grasping
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will drive, pick up the Tire Stack, turn around and put it down again.</b></p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place GRIPP3R on a smooth surface. Place the Tire Stack a short distance in front of GRIPP3R. </p></ActivityCopyPaste>
+<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>Place GRIPP3R on a smooth surface. Place the Tire Stack a short distance in front of GRIPP3R.</p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Does GRIPP3R pick up the Tire Stack?</b> If not, make sure the Tire Stack is placed at the right distance.
 
