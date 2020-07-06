@@ -49,7 +49,7 @@ R3PTAR is a tall, long and powerful robot. It moves like a real snake and can st
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Tip:</b> <font size="12">You can change how fast R3PTAR turns by changing the </font><font size="12" color="#666666"><u><a action="OpenWebsite:ev3help\://blocks/LEGO/Random.html#Mode_Numeric">Lower Bound and Upper Bound</a></u></font><font size="12"> inputs on the Random block.</font></p></ActivityCopyPaste>
 
 
-## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>R3PTAR 04: Take Control </b></p></ActivityCopyPaste>
+## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><font size="6"></font><b>R3PTAR 04: Take Control</b></p></ActivityCopyPaste>
 
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>In this mission, you will use the Infrared Beacon to control R3PTAR remotely.</b></p></ActivityCopyPaste>
 
