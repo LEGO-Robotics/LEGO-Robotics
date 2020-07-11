@@ -29,47 +29,47 @@ class Kraz33Mov3r:
     def drive_once_by_ir_beacon(self, speed: float = 100):
         # forward
         if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and self.ir_sensor.top_right(channel=self.ir_beacon_channel):
-            self.tank_driver.on_for_rotations(
+            self.tank_driver.on_for_seconds(
                 left_speed=speed,
                 right_speed=-speed,
-                rotations=3,
-                brake=True,
+                seconds=1,
+                brake=False,
                 block=True)
 
         # backward
         elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
-            self.tank_driver.on_for_rotations(
+            self.tank_driver.on_for_seconds(
                 left_speed=-speed,
                 right_speed=speed,
-                rotations=3,
-                brake=True,
+                seconds=1,
+                brake=False,
                 block=True)
 
         # move crazily
         elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
-            self.tank_driver.on_for_rotations(
-                left_speed=-speed / 9,
-                right_speed=-speed / 9,
-                rotations=3,
-                brake=True,
+            self.tank_driver.on_for_seconds(
+                left_speed=-speed / 3,
+                right_speed=-speed / 3,
+                seconds=1,
+                brake=False,
                 block=True)
 
 
-    def back_if_touched(self):
+    def back_if_touched(self, speed: float = 100):
         if self.touch_sensor.is_pressed:
             self.tank_driver.on_for_seconds(
-                left_speed=-100,
-                right_speed=100,
-                seconds=2,
-                brake=True,
+                left_speed=-speed,
+                right_speed=speed,
+                seconds=1,
+                brake=False,
                 block=True)
                 
 
-    def main(self):
+    def main(self, speed: float = 100):
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=speed)
             
-            self.back_if_touched()
+            self.back_if_touched(speed=speed)
 
 
 if __name__ == '__main__':
