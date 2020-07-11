@@ -34,6 +34,7 @@ def press_ir_button_to_turn_motor():
 
 Process(target=touch_to_turn_motor).start()
 # *** BUG as of 2020 ***
+# *** as soon as the Touch Sensor is pressed ***
 # OSError: [Errno 5] EIO: 
 # Unexpected hardware input/output error with a motor or sensor:
 # --> Try unplugging the sensor or motor and plug it back in again.
