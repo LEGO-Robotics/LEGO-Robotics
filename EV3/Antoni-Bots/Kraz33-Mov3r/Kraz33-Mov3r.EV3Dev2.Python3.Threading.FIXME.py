@@ -1,4 +1,4 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
@@ -80,20 +80,10 @@ class Kraz33Mov3r:
                 
 
     def main(self):
-        # FIXME: when this thread is activated, the program encounters OSError after a while:
-        # Traceback (most recent call last):
-        #   File "/home/robot/Kraz33-Mov3r/Kraz33-Mov3r.EV3Dev2.MicroPython.Threading.FIXME.py", line 92, in <module>
-        #   File "/home/robot/Kraz33-Mov3r/Kraz33-Mov3r.EV3Dev2.MicroPython.Threading.FIXME.py", line 86, in main
-        #   File "/home/robot/Kraz33-Mov3r/Kraz33-Mov3r.EV3Dev2.MicroPython.Threading.FIXME.py", line 68, in keep_driving_by_ir_beacon
-        #   File "/home/robot/Kraz33-Mov3r/Kraz33-Mov3r.EV3Dev2.MicroPython.Threading.FIXME.py", line 43, in drive_once_by_ir_beacon
-        #   File "ev3dev2/motor.py", line 1957, in on_for_rotations
-        #   File "ev3dev2/motor.py", line 1945, in on_for_degrees
-        #   File "ev3dev2/motor.py", line 1803, in _block
-        #   File "ev3dev2/motor.py", line 1787, in wait_until_not_moving
-        #   File "ev3dev2/motor.py", line 928, in     wait_until_not_moving
-        #   File "ev3dev2/motor.py", line 908, in wait
-        # OSError: 4
-        Thread(target=self.back_whenever_touched).start()
+        # FIXME: RuntimeError: concurrent poll() invocation
+        # if the 2 threads command the Motors at the same time
+        Thread(target=self.back_whenever_touched,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 
