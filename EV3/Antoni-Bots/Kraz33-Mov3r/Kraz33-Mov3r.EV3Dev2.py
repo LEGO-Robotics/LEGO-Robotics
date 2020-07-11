@@ -22,7 +22,7 @@ class Kraz33Mov3r:
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.ir_sensor = InfraredSensor(address=INPUT_4)
+        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
 
