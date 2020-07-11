@@ -108,7 +108,7 @@ class Kraz33Mov3r:
             ):
         Thread(target=self.back_whenever_touched).start()    
 
-        self.keep_driving_by_ir_beacon()
+        self.keep_driving_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':

@@ -116,7 +116,7 @@ class Kraz33Mov3r:
         #     the line number given in the 'Traceback' above.
         # --> Try rebooting the hub/brick if the problem persists.
 
-        self.keep_driving_by_ir_beacon()
+        self.keep_driving_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
