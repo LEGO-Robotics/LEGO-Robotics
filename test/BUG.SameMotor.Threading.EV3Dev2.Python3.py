@@ -37,3 +37,18 @@ Thread(target=touch_to_turn_motor,
        daemon=True).start()
 
 press_ir_button_to_turn_motor()
+
+# *** BUG as of 2020 ***
+# *** as soon as both Touch Sensor and an IR button are pressed ***
+# Traceback (most recent call last):
+#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.Python3.py", line 39, in <module>
+#     press_ir_button_to_turn_motor()
+#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.Python3.py", line 33, in press_ir_button_to_turn_motor
+#     block=True)
+#   File "/usr/lib/python3/dist-packages/ev3dev2/motor.py", line 1048, in on_for_seconds
+#     self.wait_until_not_moving()
+#   File "/usr/lib/python3/dist-packages/ev3dev2/motor.py", line 928, in wait_until_not_moving
+#     return self.wait(lambda state: self.STATE_RUNNING not in state or self.STATE_STALLED in state, timeout)
+#   File "/usr/lib/python3/dist-packages/ev3dev2/motor.py", line 908, in wait
+#     self._poll.poll(poll_tm)
+# RuntimeError: concurrent poll() invocation

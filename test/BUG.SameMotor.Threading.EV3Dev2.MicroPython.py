@@ -36,3 +36,12 @@ def press_ir_button_to_turn_motor():
 Thread(target=touch_to_turn_motor).start()
 
 press_ir_button_to_turn_motor()
+# *** BUG as of 2020 ***
+# *** just the presence of the above parallel Thread makes this main thread crash ***
+# Traceback (most recent call last):
+#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.MicroPython.py", line 38, in <module>
+#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.MicroPython.py", line 29, in press_ir_button_to_turn_motor
+#   File "ev3dev2/motor.py", line 1048, in on_for_seconds
+#   File "ev3dev2/motor.py", line 928, in wait_until_not_moving
+#   File "ev3dev2/motor.py", line 908, in wait
+# OSError: 4
