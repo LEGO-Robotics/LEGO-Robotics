@@ -63,10 +63,10 @@ class Kraz33Mov3r:
                 brake=True,
                 block=True)
 
-
     def keep_driving_by_ir_beacon(self):
         while True: 
             self.drive_once_by_ir_beacon(speed=100)
+
 
     def back_whenever_touched(self):
         while True:
