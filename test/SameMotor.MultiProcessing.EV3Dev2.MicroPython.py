@@ -40,5 +40,5 @@ Process(target=touch_to_turn_motor_clockwise).start()
 
 press_any_ir_remote_button_to_turn_motor_counterclockwise()
 
-# observation: both processes run successfully BUT WITH mutual blocking
-# i.e. 1 process CANNOT interrupt the other process's Motor movement mid-stream
+# observation: both processes run successfully WITH mutual blocking
+# i.e. 1 process CANNOT interrupt/reverse the other process's Motor movement mid-stream
