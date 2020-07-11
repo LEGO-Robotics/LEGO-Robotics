@@ -6,6 +6,7 @@ from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
+
 from random import randint
 from threading import Thread
 from time import sleep
@@ -63,23 +64,28 @@ class Kraz33Mov3r:
                 block=True)
 
 
-    def back_if_touched(self):
-        if self.touch_sensor.is_pressed:
-            self.tank_driver.on_for_seconds(
-                left_speed=-100,
-                right_speed=100,
-                seconds=2,
-                brake=True,
-                block=True)
+    def keep_driving_by_ir_beacon(self):
+        while True: 
+            self.drive_once_by_ir_beacon(speed=100)
+
+    def back_whenever_touched(self):
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.tank_driver.on_for_seconds(
+                    left_speed=-100,
+                    right_speed=100,
+                    seconds=2,
+                    brake=True,
+                    block=True)
                 
 
     def main(self):
-        while True:
-            self.drive_once_by_ir_beacon()
-            
-            self.back_if_touched()
+        # FIXME: when this thread is activated, the program encounters OSError after a while
+        Thread(target=self.back_whenever_touched).start()
 
+        self.keep_driving_by_ir_beacon()
 
+ 
 if __name__ =='__main__':
     KRAZ33_MOV3R = Kraz33Mov3r()
     
