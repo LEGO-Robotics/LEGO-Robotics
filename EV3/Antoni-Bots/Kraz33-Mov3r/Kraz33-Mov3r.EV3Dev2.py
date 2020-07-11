@@ -80,7 +80,7 @@ class Kraz33Mov3r:
             self.back_if_touched()
 
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     KRAZ33_MOV3R = Kraz33Mov3r()
     
     KRAZ33_MOV3R.main()

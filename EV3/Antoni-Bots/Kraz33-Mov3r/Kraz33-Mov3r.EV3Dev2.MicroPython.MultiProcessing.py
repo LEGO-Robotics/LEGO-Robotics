@@ -85,7 +85,7 @@ class Kraz33Mov3r:
         self.keep_driving_by_ir_beacon()
 
  
-if __name__ =='__main__':
+if __name__ == '__main__':
     KRAZ33_MOV3R = Kraz33Mov3r()
     
     KRAZ33_MOV3R.main()
