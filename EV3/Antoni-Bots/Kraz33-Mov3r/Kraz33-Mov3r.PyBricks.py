@@ -36,13 +36,13 @@ class Kraz33Mov3r:
         if ir_beacons_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
             self.front_foot_motor.run_time(
                 speed=speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=False)
 
             self.back_foot_motor.run_time(
                 speed=speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=True)
 
@@ -50,13 +50,13 @@ class Kraz33Mov3r:
         elif ir_beacons_pressed == {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
             self.front_foot_motor.run_time(
                 speed=-speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=False)
 
             self.back_foot_motor.run_time(
                 speed=-speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=True)
 
@@ -64,13 +64,13 @@ class Kraz33Mov3r:
         elif ir_beacons_pressed == {Button.BEACON}:
             self.front_foot_motor.run_time(
                 speed=speed / 3,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=False)
 
             self.back_foot_motor.run_time(
                 speed=-speed / 3,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=True)
 
@@ -82,13 +82,13 @@ class Kraz33Mov3r:
         if self.touch_sensor.pressed():
             self.front_foot_motor.run_time(
                 speed=-speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=False)
 
             self.back_foot_motor.run_time(
                 speed=-speed,
-                time=2000,   # ms
+                time=1000,   # ms
                 then=Stop.COAST,
                 wait=True)
 
