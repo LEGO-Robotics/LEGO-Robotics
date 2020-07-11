@@ -35,11 +35,11 @@ class Kraz33Mov3r:
         if self.remote_control.red_up and self.remote_control.blue_up:
             self.front_foot_motor.run_timed(
                  speed_sp=speed,
-                 time_sp=2000,   # ms
+                 time_sp=1000,   # ms
                  stop_action=Motor.STOP_ACTION_COAST)
             self.back_foot_motor.run_timed(
                 speed_sp=-speed,
-                time_sp=2000,   # ms
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
             self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
             self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
@@ -48,11 +48,11 @@ class Kraz33Mov3r:
         elif self.remote_control.red_down and self.remote_control.blue_down:
             self.front_foot_motor.run_timed(
                 speed_sp=-speed,
-                time_sp=2000,   # ms
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
             self.back_foot_motor.run_timed(
                 speed_sp=speed,
-                time_sp=2000,   # ms
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
             self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
             self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
@@ -60,12 +60,12 @@ class Kraz33Mov3r:
         # move crazily
         elif self.remote_control.beacon:
             self.front_foot_motor.run_timed(
-                speed_sp=speed / 9,
-                time_sp=2000,   # ms
+                speed_sp=speed / 3,
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
             self.back_foot_motor.run_timed(
-                speed_sp=speed / 9,
-                time_sp=2000,   # ms
+                speed_sp=speed / 3,
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
             self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
             self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
@@ -78,21 +78,24 @@ class Kraz33Mov3r:
         if self.touch_sensor.is_pressed:
            self.front_foot_motor.run_timed(
                 speed_sp=-speed,
-                time_sp=2000,   # ms
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
            self.back_foot_motor.run_timed(
                 speed_sp=speed,
-                time_sp=2000,   # ms
+                time_sp=1000,   # ms
                 stop_action=Motor.STOP_ACTION_COAST)
            self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
            self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
             
 
-    def main(self):
+    def main(
+            self,
+            speed: float = 1000   # deg/s
+        ):
         while True:
-            self.drive_once_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=speed)
             
-            self.back_if_touched()
+            self.back_if_touched(speed=speed)
 
 
 if __name__ == '__main__':
