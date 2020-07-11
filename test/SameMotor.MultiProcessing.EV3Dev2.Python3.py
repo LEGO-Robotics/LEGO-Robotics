@@ -16,7 +16,7 @@ IR_SENSOR = InfraredSensor(address=INPUT_4)
 MOTOR = MediumMotor(address=OUTPUT_A)
 
 
-def touch_to_turn_motor():
+def touch_to_turn_motor_clockwise():
     while True:
         if TOUCH_SENSOR.is_pressed:
             MOTOR.on_for_seconds(
@@ -26,7 +26,7 @@ def touch_to_turn_motor():
                 block=True)
 
 
-def press_ir_button_to_turn_motor():
+def press_any_ir_remote_button_to_turn_motor_counterclockwise():
     while True:
         if IR_SENSOR.buttons_pressed(channel=1):
             MOTOR.on_for_seconds(
@@ -36,7 +36,10 @@ def press_ir_button_to_turn_motor():
                 block=True)
 
 
-Process(target=touch_to_turn_motor,
+Process(target=touch_to_turn_motor_clockwise,
         daemon=True).start()
 
-press_ir_button_to_turn_motor()
+press_any_ir_remote_button_to_turn_motor_counterclockwise()
+
+# observation: both processes run successfully BUT WITH mutual blocking
+# i.e. 1 process CANNOT interrupt the other process's Motor movement mid-stream

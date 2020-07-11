@@ -12,7 +12,7 @@ IR_SENSOR = InfraredSensor(port=Port.S4)
 MOTOR = Motor(port=Port.A)
 
 
-def touch_to_turn_motor():
+def touch_to_turn_motor_clockwise():
     while True:
         if TOUCH_SENSOR.pressed():
             MOTOR.run_time(
@@ -22,7 +22,7 @@ def touch_to_turn_motor():
                 wait=True)
 
 
-def press_ir_button_to_turn_motor():
+def press_any_ir_remote_button_to_turn_motor_counterclockwise():
     while True:
         if IR_SENSOR.buttons(channel=1):
             MOTOR.run_time(
@@ -33,5 +33,8 @@ def press_ir_button_to_turn_motor():
 
 
 run_parallel(
-    touch_to_turn_motor,
-    press_ir_button_to_turn_motor)
+    touch_to_turn_motor_clockwise,
+    press_any_ir_remote_button_to_turn_motor_counterclockwise)
+
+# observation: both threads run successfully BUT WITH mutual blocking
+# i.e. 1 thread CANNOT interrupt the other thread's Motor movement mid-stream

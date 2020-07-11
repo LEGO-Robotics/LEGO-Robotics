@@ -13,7 +13,7 @@ IR_SENSOR = InfraredSensor(address=INPUT_4)
 MOTOR = MediumMotor(address=OUTPUT_A)
 
 
-def touch_to_turn_motor():
+def touch_to_turn_motor_clockwise():
     while True:
         if TOUCH_SENSOR.is_pressed:
             MOTOR.on_for_seconds(
@@ -23,7 +23,7 @@ def touch_to_turn_motor():
                 block=True)
 
 
-def press_ir_button_to_turn_motor():
+def press_any_ir_remote_button_to_turn_motor_counterclockwise():
     while True:
         if IR_SENSOR.buttons_pressed(channel=1):
             MOTOR.on_for_seconds(
@@ -33,17 +33,17 @@ def press_ir_button_to_turn_motor():
                 block=True)
 
 
-Thread(target=touch_to_turn_motor,
+Thread(target=touch_to_turn_motor_clockwise,
        daemon=True).start()
 
-press_ir_button_to_turn_motor()
+press_any_ir_remote_button_to_turn_motor_counterclockwise()
 
 # *** BUG as of 2020 ***
 # *** as soon as both Touch Sensor and an IR button are pressed ***
 # Traceback (most recent call last):
 #   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.Python3.py", line 39, in <module>
-#     press_ir_button_to_turn_motor()
-#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.Python3.py", line 33, in press_ir_button_to_turn_motor
+#     press_any_ir_remote_button_to_turn_motor_counterclockwise()
+#   File "/home/robot/test/BUG.SameMotor.Threading.EV3Dev2.Python3.py", line 33, in press_any_ir_remote_button_to_turn_motor_counterclockwise
 #     block=True)
 #   File "/usr/lib/python3/dist-packages/ev3dev2/motor.py", line 1048, in on_for_seconds
 #     self.wait_until_not_moving()

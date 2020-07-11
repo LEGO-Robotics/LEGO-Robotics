@@ -12,7 +12,7 @@ REMOTE_CONTROL = RemoteControl(sensor=InfraredSensor(address=INPUT_4),
 MOTOR = MediumMotor(address=OUTPUT_A)
 
 
-def touch_to_turn_motor():
+def touch_to_turn_motor_clockwise():
     while True:
         if TOUCH_SENSOR.is_pressed:
             MOTOR.run_timed(
@@ -21,7 +21,7 @@ def touch_to_turn_motor():
                 stop_action=MediumMotor.STOP_ACTION_HOLD)
 
 
-def press_ir_button_to_turn_motor():
+def press_any_ir_remote_button_to_turn_motor_counterclockwise():
     while True:
         if REMOTE_CONTROL.buttons_pressed:
             MOTOR.run_timed(
@@ -30,7 +30,10 @@ def press_ir_button_to_turn_motor():
                 stop_action=MediumMotor.STOP_ACTION_HOLD)
 
 
-Thread(target=touch_to_turn_motor,
+Thread(target=touch_to_turn_motor_clockwise,
        daemon=True).start()
 
-press_ir_button_to_turn_motor()
+press_any_ir_remote_button_to_turn_motor_counterclockwise()
+
+# observation: both threads run successfully WITHOUT mutual blocking
+# i.e. 1 thread CAN interrupt the other thread's Motor movement mid-stream
