@@ -4,12 +4,8 @@
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
-from ev3dev2.led import Leds
-from ev3dev2.sound import Sound
 
 from multiprocessing import Process
-from random import randint
-from time import sleep
 
 
 class Kraz33Mov3r:
@@ -30,9 +26,6 @@ class Kraz33Mov3r:
 
         self.ir_sensor = InfraredSensor(address=INPUT_4)
         self.ir_beacon_channel = ir_beacon_channel
-
-        self.leds = Leds()
-        self.speaker = Sound()
 
 
     def drive_once_by_ir_beacon(self, speed: float = 100):
