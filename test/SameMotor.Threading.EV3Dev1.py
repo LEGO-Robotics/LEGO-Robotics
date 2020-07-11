@@ -36,4 +36,4 @@ Thread(target=touch_to_turn_motor_clockwise,
 press_any_ir_remote_button_to_turn_motor_counterclockwise()
 
 # observation: both threads run successfully WITHOUT mutual blocking
-# i.e. 1 thread CAN interrupt the other thread's Motor movement mid-stream
+# i.e. 1 thread CAN interrupt/reverse the other thread's Motor movement mid-stream
