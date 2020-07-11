@@ -34,9 +34,9 @@ class Kraz33Mov3r:
         # forward
         if self.remote_control.red_up and self.remote_control.blue_up:
             self.front_foot_motor.run_timed(
-                 speed_sp=speed,
-                 time_sp=1000,   # ms
-                 stop_action=Motor.STOP_ACTION_COAST)
+                speed_sp=speed,
+                time_sp=1000,   # ms
+                stop_action=Motor.STOP_ACTION_COAST)
             self.back_foot_motor.run_timed(
                 speed_sp=-speed,
                 time_sp=1000,   # ms
@@ -88,10 +88,9 @@ class Kraz33Mov3r:
            self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
             
 
-    def main(
-            self,
-            speed: float = 1000   # deg/s
-        ):
+    def main(self,
+             speed: float = 1000   # deg/s
+            ):
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
             
