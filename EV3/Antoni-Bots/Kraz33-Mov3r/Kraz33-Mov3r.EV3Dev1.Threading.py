@@ -98,10 +98,12 @@ class Kraz33Mov3r:
                 self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
                     
 
-    def main(self):
-        Thread(target=self.drive_once_by_ir_beacon).start()
-
-        self.back_whenever_touched()
+    def main(self,
+             speed: float = 1000   # deg/s
+            ):
+        Thread(target=self.back_whenever_touched).start()
+            
+        self.keep_driving_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
