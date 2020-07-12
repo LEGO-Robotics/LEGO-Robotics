@@ -47,12 +47,20 @@ class Kraz33Hors3:
 
         # move crazily
         elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            self.gear_motor.on(
+                speed=speed,
+                brake=False,
+                block=False)
+
             self.tank_driver.on_for_seconds(
                 left_speed=-speed / 3,
                 right_speed=-speed / 3,
                 seconds=1,
                 brake=False,
                 block=True)
+
+        else:
+            self.gear_motor.off(brake=False)
 
 
     def back_if_touched(self, speed: float = 100):

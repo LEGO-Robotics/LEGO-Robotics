@@ -59,6 +59,8 @@ class Kraz33Hors3:
                        
         # move crazily
         elif self.remote_control.beacon:
+            self.gear_motor.run_forever(speed_sp=speed)
+
             self.front_foot_motor.run_timed(
                 speed_sp=speed / 3,
                 time_sp=1000,   # ms
@@ -69,6 +71,9 @@ class Kraz33Hors3:
                 stop_action=Motor.STOP_ACTION_COAST)
             self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
             self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            self.gear_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
             
 
     def back_if_touched(

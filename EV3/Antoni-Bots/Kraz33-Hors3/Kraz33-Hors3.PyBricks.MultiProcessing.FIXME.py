@@ -64,6 +64,8 @@ class Kraz33Hors3:
 
         # move crazily
         elif ir_beacons_pressed == {Button.BEACON}:
+            self.gear_motor.run(speed=speed)
+
             self.front_foot_motor.run_time(
                 speed=speed / 3,
                 time=1000,   # ms
@@ -75,6 +77,9 @@ class Kraz33Hors3:
                 time=1000,   # ms
                 then=Stop.COAST,
                 wait=True)
+        
+        else:
+            self.gear_motor.stop()
 
     def keep_driving_by_ir_beacon(
             self,
