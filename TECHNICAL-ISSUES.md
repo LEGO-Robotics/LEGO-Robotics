@@ -12,3 +12,5 @@ EV3Dev
   - similar: [GyroSensor angle for GYRO-ANG sometimes returns empty string instead of integer](https://github.com/ev3dev/ev3dev/issues/1269)
   - related: [Device objects not thread safe](https://github.com/ev3dev/ev3dev-lang-python/issues/704)
   - possibly related: [sensors stop working](https://github.com/ev3dev/ev3dev/issues/1083)
+- [Threading error when 2 Threads may control the same Motor. Errors encountered in EV3Dev2 with different error messages on MicroPython vs Python3. No such errors encountered in EV3Dev(1) and PyBricks.](https://github.com/ev3dev/ev3dev-lang-python/issues/750)
+  - related: [OSError exception [Errno 4] EINTR when running motors in EV3](https://github.com/ev3dev/ev3dev-lang-python/issues/727)
