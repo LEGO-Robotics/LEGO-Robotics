@@ -5,8 +5,10 @@ from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B,
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 
+from multiprocessing import Process
 
-class Kraz33Mov3r:
+
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: str = OUTPUT_B, front_foot_motor_port: str = OUTPUT_C,
@@ -54,25 +56,29 @@ class Kraz33Mov3r:
                 brake=False,
                 block=True)
 
+    def keep_driving_by_ir_beacon(self, speed: float = 100):
+        while True: 
+            self.drive_once_by_ir_beacon(speed=speed)
 
-    def back_if_touched(self, speed: float = 100):
-        if self.touch_sensor.is_pressed:
-            self.tank_driver.on_for_seconds(
-                left_speed=-speed,
-                right_speed=speed,
-                seconds=1,
-                brake=False,
-                block=True)
+
+    def back_whenever_touched(self, speed: float = 100):
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.tank_driver.on_for_seconds(
+                    left_speed=-speed,
+                    right_speed=speed,
+                    seconds=1,
+                    brake=False,
+                    block=True)
                 
 
-    def main(self, speed: float = 100):
-        while True:
-            self.drive_once_by_ir_beacon(speed=speed)
-            
-            self.back_if_touched(speed=speed)
+    def main(self):
+        Process(target=self.back_whenever_touched).start()
 
+        self.keep_driving_by_ir_beacon()
 
+ 
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()

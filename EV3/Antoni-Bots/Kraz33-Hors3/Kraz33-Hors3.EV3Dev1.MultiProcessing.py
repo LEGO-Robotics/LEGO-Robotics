@@ -6,8 +6,10 @@ from ev3dev.ev3 import (
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4
 )
 
+from multiprocessing import Process
 
-class Kraz33Mov3r:
+
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: str = OUTPUT_C, front_foot_motor_port: str = OUTPUT_B,
@@ -69,35 +71,42 @@ class Kraz33Mov3r:
                 stop_action=Motor.STOP_ACTION_COAST)
             self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
             self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
-            
 
-    def back_if_touched(
+    def keep_driving_by_ir_beacon(
             self,
             speed: float = 1000   # deg/s
         ):
-        if self.touch_sensor.is_pressed:
-           self.front_foot_motor.run_timed(
-                speed_sp=-speed,
-                time_sp=1000,   # ms
-                stop_action=Motor.STOP_ACTION_COAST)
-           self.back_foot_motor.run_timed(
-                speed_sp=speed,
-                time_sp=1000,   # ms
-                stop_action=Motor.STOP_ACTION_COAST)
-           self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
-           self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
-            
+        while True: 
+            self.drive_once_by_ir_beacon(speed=speed)
+
+        
+    def back_whenever_touched(
+            self,
+            speed: float = 1000   # deg/s
+        ):
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.front_foot_motor.run_timed(
+                    speed_sp=-speed,
+                    time_sp=1000,   # ms
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.back_foot_motor.run_timed(
+                    speed_sp=speed,
+                    time_sp=1000,   # ms
+                    stop_action=Motor.STOP_ACTION_COAST) 
+                self.front_foot_motor.wait_while(Motor.STATE_RUNNING)
+                self.back_foot_motor.wait_while(Motor.STATE_RUNNING)
+                    
 
     def main(self,
              speed: float = 1000   # deg/s
             ):
-        while True:
-            self.drive_once_by_ir_beacon(speed=speed)
+        Process(target=self.back_whenever_touched).start()
             
-            self.back_if_touched(speed=speed)
+        self.keep_driving_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()

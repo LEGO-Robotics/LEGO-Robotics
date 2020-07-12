@@ -4,10 +4,8 @@
 from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
 from pybricks.parameters import Button, Direction, Port, Stop
 
-from threading import Thread
 
-
-class Kraz33Mov3r:
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: Port = Port.C, front_foot_motor_port: Port = Port.B,
@@ -76,42 +74,35 @@ class Kraz33Mov3r:
                 then=Stop.COAST,
                 wait=True)
 
-    def keep_driving_by_ir_beacon(
+
+    def back_if_touched(
             self,
             speed: float = 1000   # deg/s
         ):
-        while True: 
-            self.drive_once_by_ir_beacon(speed=speed)
+        if self.touch_sensor.pressed():
+            self.front_foot_motor.run_time(
+                speed=-speed,
+                time=1000,   # ms
+                then=Stop.COAST,
+                wait=False)
 
-
-    def back_whenever_touched(
-            self,
-            speed: float = 1000   # deg/s
-        ):
-        while True:
-            if self.touch_sensor.pressed():
-                self.front_foot_motor.run_time(
-                    speed=-speed,
-                    time=1000,   # ms
-                    then=Stop.COAST,
-                    wait=False)
-
-                self.back_foot_motor.run_time(
-                    speed=-speed,
-                    time=1000,   # ms
-                    then=Stop.COAST,
-                    wait=True)
+            self.back_foot_motor.run_time(
+                speed=-speed,
+                time=1000,   # ms
+                then=Stop.COAST,
+                wait=True)
 
 
     def main(self,
              speed: float = 1000   # deg/s
             ):
-        Thread(target=self.back_whenever_touched).start()    
-
-        self.keep_driving_by_ir_beacon(speed=speed)
+        while True:
+            self.drive_once_by_ir_beacon(speed=speed)
+            
+            self.back_if_touched(speed=speed)
 
 
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()

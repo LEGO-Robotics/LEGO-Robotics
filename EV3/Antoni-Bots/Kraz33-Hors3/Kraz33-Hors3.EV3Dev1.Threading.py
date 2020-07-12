@@ -9,7 +9,7 @@ from ev3dev.ev3 import (
 from threading import Thread
 
 
-class Kraz33Mov3r:
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: str = OUTPUT_C, front_foot_motor_port: str = OUTPUT_B,
@@ -107,6 +107,6 @@ class Kraz33Mov3r:
 
 
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()

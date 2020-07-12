@@ -1,14 +1,14 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 
-from multiprocessing import Process
+from threading import Thread
 
 
-class Kraz33Mov3r:
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: str = OUTPUT_B, front_foot_motor_port: str = OUTPUT_C,
@@ -73,12 +73,15 @@ class Kraz33Mov3r:
                 
 
     def main(self):
-        Process(target=self.back_whenever_touched).start()
+        # FIXME: RuntimeError: concurrent poll() invocation
+        # if the 2 threads command the Motors at the same time
+        Thread(target=self.back_whenever_touched,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 
  
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()

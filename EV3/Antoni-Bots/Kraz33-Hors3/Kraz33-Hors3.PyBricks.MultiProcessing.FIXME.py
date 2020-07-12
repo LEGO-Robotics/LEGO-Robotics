@@ -7,7 +7,7 @@ from pybricks.parameters import Button, Direction, Port, Stop
 from multiprocessing import Process
 
 
-class Kraz33Mov3r:
+class Kraz33Hors3:
     def __init__(
             self,
             back_foot_motor_port: Port = Port.C, front_foot_motor_port: Port = Port.B,
@@ -120,6 +120,6 @@ class Kraz33Mov3r:
 
 
 if __name__ == '__main__':
-    KRAZ33_MOV3R = Kraz33Mov3r()
+    KRAZ33_HORS3 = Kraz33Hors3()
     
-    KRAZ33_MOV3R.main()
+    KRAZ33_HORS3.main()
