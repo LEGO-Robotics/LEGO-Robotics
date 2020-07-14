@@ -4,7 +4,11 @@
 __all__ = 'Track3r',
 
 
-from ev3dev.ev3 import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, INPUT_4 
+from ev3dev.ev3 import (
+    MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
+    INPUT_4,
+    Screen, Sound
+)
 
 import os
 import sys
@@ -23,6 +27,9 @@ class Track3r(IRBeaconRemoteControlledTank):
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.medium_motor = MediumMotor(address=medium_motor_port)
+
+        self.screen = Screen()
+        self.speaker = Sound()
 
 
 if __name__ == '__main__':

@@ -4,6 +4,7 @@
 __all__ = 'Track3r',
 
 
+from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
 from pybricks.parameters import Port
 
@@ -13,7 +14,7 @@ sys.path.append('/home/robot')
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 
-class Track3r(IRBeaconRemoteControlledTank):
+class Track3r(IRBeaconRemoteControlledTank, EV3Brick):
     WHEEL_DIAMETER = 26
     AXLE_TRACK = 140
 
