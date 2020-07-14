@@ -132,6 +132,3 @@ dmypy.json
 # IntelliJ IDEA / PyCharm
 .idea/
 *.iml
-
-# Visual Studio Code
-.vscode/
