@@ -6,9 +6,9 @@ __all__ = 'Track3r',
 
 from ev3dev2.motor import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
+from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
-
 
 import os
 import sys
@@ -27,6 +27,8 @@ class Track3r(IRBeaconRemoteControlledTank):
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.medium_motor = MediumMotor(address=medium_motor_port)
+
+        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
 
         self.screen = Display(desc='Display')
         self.speaker = Sound()

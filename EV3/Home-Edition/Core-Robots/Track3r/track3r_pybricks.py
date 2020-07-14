@@ -5,8 +5,8 @@ __all__ = 'Track3r',
 
 
 from pybricks.hubs import EV3Brick
-from pybricks.ev3devices import Motor
-from pybricks.parameters import Port
+from pybricks.ev3devices import Motor, InfraredSensor
+from pybricks.parameters import Direction, Port
 
 import os
 import sys
@@ -28,7 +28,10 @@ class Track3r(IRBeaconRemoteControlledTank, EV3Brick):
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
-        self.medium_motor = Motor(port=medium_motor_port)
+        self.medium_motor = Motor(port=medium_motor_port,
+                                  positive_direction=Direction.CLOCKWISE)
+
+        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
 
 
 if __name__ == '__main__':
