@@ -2,12 +2,6 @@
 # (MicroPython does not yet support Display as of 2020)
 
 
-from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_4
-from ev3dev2.sensor.lego import InfraredSensor
-from ev3dev2.display import Display
-from ev3dev2.sound import Sound
-
 from track3r_ev3dev2 import Track3r
 
 
