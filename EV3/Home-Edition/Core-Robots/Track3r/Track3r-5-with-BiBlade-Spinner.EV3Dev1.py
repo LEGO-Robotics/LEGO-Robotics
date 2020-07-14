@@ -4,7 +4,7 @@
 from track3r_ev3dev1 import Track3r
 
 
-class Track3rWithSpinner(Track3r):
+class Track3rWithBiBladeSpinner(Track3r):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -25,6 +25,6 @@ class Track3rWithSpinner(Track3r):
 
     
 if __name__ == '__main__':
-    TRACK3R_WITH_SPINNER = Track3rWithSpinner()
+    TRACK3R_WITH_BIBLADE_SPINNER = Track3rWithBiBladeSpinner()
 
-    TRACK3R_WITH_SPINNER.main()
+    TRACK3R_WITH_BIBLADE_SPINNER.main()
