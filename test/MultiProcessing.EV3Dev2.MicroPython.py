@@ -1,9 +1,6 @@
 #!/usr/bin/env micropython
 
 
-# BUG: https://github.com/ev3dev/ev3dev/issues/1422
-
-
 from ev3dev2.motor import MediumMotor, OUTPUT_A
 from ev3dev2.sensor import INPUT_1
 from ev3dev2.sensor.lego import TouchSensor

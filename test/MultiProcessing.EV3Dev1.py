@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 
-# BUG: https://github.com/ev3dev/ev3dev/issues/1422
-
-
 from ev3dev.ev3 import TouchSensor, INPUT_1, MediumMotor, OUTPUT_A
 
 from multiprocessing import Process
