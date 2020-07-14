@@ -3,6 +3,3 @@
 
 
 # skipped because I don't have a LEGO Mindstorms EV3 mat
-
-
-# TODO: multiprocess/parallel programming
