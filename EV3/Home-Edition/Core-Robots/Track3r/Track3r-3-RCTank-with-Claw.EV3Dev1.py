@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 
-from track3r_ev3dev1 import Track3r
+from track3r_rc_tank_ev3dev1 import Track3r
 
 
-class Track3rWithBallShooter(Track3r):
+class Track3rWithClaw(Track3r):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -13,20 +13,22 @@ class Track3rWithBallShooter(Track3r):
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             medium_motor_port=medium_motor_port)
 
-        self.remote.on_beacon = self.fire_ball
+        self.remote.on_beacon = self.move_claw
 
 
-    def fire_ball(self, state):
+    def move_claw(self, state):
         if state:
             self.medium_motor.run_to_rel_pos(
-                speed_sp=400,
-                position_sp=3 * 360)
+                speed_sp=200,
+                position_sp=-75)
 
         else:
-            self.medium_motor.stop()
+            self.medium_motor.run_to_rel_pos(
+                speed_sp=200,
+                position_sp=75)
 
 
 if __name__ == '__main__':
-    TRACK3R_WITH_BALL_SHOOTER = Track3rWithBallShooter()
+    TRACK3R_WITH_CLAW = Track3rWithClaw()
 
-    TRACK3R_WITH_BALL_SHOOTER.main()
+    TRACK3R_WITH_CLAW.main()
