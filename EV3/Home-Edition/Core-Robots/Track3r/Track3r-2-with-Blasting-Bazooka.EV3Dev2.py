@@ -37,15 +37,13 @@ class Track3rWithBlastingBazooka(Track3r):
             self.medium_motor.off(brake=True)
 
 
-    def main(self):
+    def main(self, speed: float = 100):
         while True:
-            self.drive_once_by_ir_beacon(
-                channel=1,
-                speed=100)
+            self.drive_once_by_ir_beacon(speed=speed)
 
             self.blast_bazooka_by_ir_beacon(
                 channel=1,
-                speed=100)
+                speed=speed)
 
 
 if __name__ == "__main__":
