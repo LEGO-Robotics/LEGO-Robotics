@@ -2,6 +2,5 @@
   "ev3devBrowser.download.exclude": "**/*.ev3*",
   "ev3devBrowser.download.include": "**/*.py",
 
-  "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "python.linting.enabled": false
 }
