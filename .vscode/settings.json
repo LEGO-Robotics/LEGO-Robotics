@@ -1,6 +1,8 @@
 {
   "ev3devBrowser.download.exclude": "{**/Desktop*/**,**/*LabVIEW/**,**/__pycache__/**,**/README*,**/*.ev3*,**/*.swift}",
   "ev3devBrowser.download.include": "**/*.py",
+  
+  "git.ignoreLimitWarning": true,
 
   "python.linting.enabled": false
 }
