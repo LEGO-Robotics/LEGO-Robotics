@@ -1,4 +1,5 @@
 {
+  "ev3devBrowser.download.exclude": "**/__pycache__/**",
   "ev3devBrowser.download.include": "**/*.py",
   
   "python.linting.enabled": false
