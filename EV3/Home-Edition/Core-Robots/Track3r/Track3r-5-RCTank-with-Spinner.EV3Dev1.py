@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 
+from ev3dev.ev3 import OUTPUT_A, OUTPUT_B, OUTPUT_C
+
 from track3r_rc_tank_ev3dev1 import Track3r
 
 
