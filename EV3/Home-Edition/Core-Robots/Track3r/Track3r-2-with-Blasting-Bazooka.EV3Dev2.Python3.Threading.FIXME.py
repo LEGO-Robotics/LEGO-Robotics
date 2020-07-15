@@ -42,6 +42,9 @@ class Track3rWithBlastingBazooka(Track3r):
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
+        # FIXME: ValueError: invalid literal for int() with base 10: ''
+        # when 2 threads access the same Motor
+
 
 if __name__ == "__main__":
     TRACKER_WITH_BLASTING_BAZOOKA = Track3rWithBlastingBazooka()
