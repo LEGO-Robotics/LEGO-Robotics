@@ -32,6 +32,7 @@ class Track3r(IRBeaconRemoteControlledTank, EV3Brick):
                                   positive_direction=Direction.CLOCKWISE)
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
 
 if __name__ == '__main__':
