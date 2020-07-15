@@ -10,11 +10,6 @@ from track3r_ev3dev2 import Track3r
 class Track3rWithBlastingBazooka(Track3r):
     def blast_bazooka_by_ir_beacon(self, channel: int = 1, speed: float = 100):
         if self.ir_sensor.beacon(channel=channel):
-            self.screen.image_filename(
-                filename='/home/robot/image/Pinch middle.bmp',
-                clear_screen=True)
-            self.screen.update()
-
             self.medium_motor.on_for_rotations(
                 speed=speed,
                 rotations=3,   # about 3 rotations for 1 shot
@@ -34,6 +29,11 @@ class Track3rWithBlastingBazooka(Track3r):
 
 
     def main(self, speed: float = 100):
+        self.screen.image_filename(
+            filename='/home/robot/image/Pinch middle.bmp',
+            clear_screen=True)
+        self.screen.update()
+
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
