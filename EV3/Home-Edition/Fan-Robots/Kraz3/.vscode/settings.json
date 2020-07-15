@@ -1,3 +1,7 @@
 {
-  "ev3devBrowser.download.exclude": "**/*.ev3*"
+  "ev3devBrowser.download.exclude": "**/*.ev3*",
+  "ev3devBrowser.download.include": "**/*.py",
+  
+  "python.linting.enabled": false,
+  "python.pythonPath": "/usr/local/bin/python3"
 }
