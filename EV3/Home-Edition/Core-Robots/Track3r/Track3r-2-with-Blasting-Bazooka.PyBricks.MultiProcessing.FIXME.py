@@ -4,7 +4,7 @@
 from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.parameters import Button, Stop
 
-from threading import Thread
+from multiprocessing import Process
 
 from track3r_pybricks import Track3r
 
@@ -36,9 +36,18 @@ class Track3rWithBlastingBazooka(Track3r):
             ):
         self.screen.load_image(ImageFile.PINCHED_MIDDLE)
         
-        Thread(target=self.blast_bazooka_by_ir_beacon).start()
+        Process(target=self.blast_bazooka_by_ir_beacon).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
+
+        # FIXME:
+        # OSError: [Errno 5] EIO: 
+        # Unexpected hardware input/output error with a motor or sensor:
+        # --> Try unplugging the sensor or motor and plug it back in again.
+        # --> To see which sensor or motor is causing the problem,
+        #     check the line in your script that matches
+        #     the line number given in the 'Traceback' above.
+        # --> Try rebooting the hub/brick if the problem persists.
 
 
 if __name__ == "__main__":
