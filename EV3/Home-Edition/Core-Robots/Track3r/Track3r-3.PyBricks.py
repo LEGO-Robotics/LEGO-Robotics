@@ -26,8 +26,8 @@ DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
                        wheel_diameter=WHEEL_DIAMETER,
                        axle_track=AXLE_TRACK)
 DRIVE_BASE.settings(
-    straight_speed=250,   # milimeters per second
-    straight_acceleration=250,
+    straight_speed=750,   # milimeters per second
+    straight_acceleration=750,
     turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
@@ -35,10 +35,9 @@ DRIVE_BASE.settings(
 MEDIUM_MOTOR.run(speed=-1000)
 
 for i in range(2):
-    DRIVE_BASE.straight(distance=2)
+    DRIVE_BASE.straight(distance=200)
 
-    MEDIUM_MOTOR.run(speed=-1000)
-
+    MEDIUM_MOTOR.run(speed=1000)
 
     BRICK.speaker.play_file(file=SoundFile.AIRBRAKE)
 
@@ -47,8 +46,6 @@ for i in range(2):
     DRIVE_BASE.turn(angle=35)
 
     MEDIUM_MOTOR.run(speed=-1000)
-
-    MEDIUM_MOTOR.stop()
     
     BRICK.speaker.play_file(file=SoundFile.AIR_RELEASE)
 
@@ -56,6 +53,6 @@ for i in range(2):
 
     DRIVE_BASE.turn(angle=-35)
 
-DRIVE_BASE.straight(distance=-4)
+DRIVE_BASE.straight(distance=-400)
 
 BRICK.speaker.play_file(file=SoundFile.CHEERING)
