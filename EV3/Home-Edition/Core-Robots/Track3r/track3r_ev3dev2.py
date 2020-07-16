@@ -29,6 +29,7 @@ class Track3r(IRBeaconRemoteControlledTank):
         self.medium_motor = MediumMotor(address=medium_motor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.screen = Display(desc='Display')
         self.speaker = Sound()
