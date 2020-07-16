@@ -41,7 +41,7 @@ class Track3rWithBlastingBazooka(Track3r):
             self.blast_bazooka_by_ir_beacon)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     TRACKER_WITH_BLASTING_BAZOOKA = Track3rWithBlastingBazooka()
 
     TRACKER_WITH_BLASTING_BAZOOKA.main()

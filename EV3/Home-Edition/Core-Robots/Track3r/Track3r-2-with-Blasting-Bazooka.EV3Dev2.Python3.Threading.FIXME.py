@@ -46,7 +46,7 @@ class Track3rWithBlastingBazooka(Track3r):
         # when 2 threads access the same Motor
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     TRACKER_WITH_BLASTING_BAZOOKA = Track3rWithBlastingBazooka()
 
     TRACKER_WITH_BLASTING_BAZOOKA.main()

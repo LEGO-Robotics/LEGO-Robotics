@@ -42,7 +42,7 @@ class Track3rWithBlastingBazooka(Track3r):
                 speed=speed)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     TRACKER_WITH_BLASTING_BAZOOKA = Track3rWithBlastingBazooka()
 
     TRACKER_WITH_BLASTING_BAZOOKA.main()
