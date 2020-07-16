@@ -20,12 +20,11 @@ class Track3rWithBallShooter(Track3r):
 
     def fire_ball(self, state):
         if state:
-            self.medium_motor.run_to_rel_pos(
-                speed_sp=400,
-                position_sp=3 * 360)
-
-        else:
-            self.medium_motor.stop()
+            self.medium_motor.on_for_rotations(
+                speed=1000,
+                rotations=3,
+                brake=True,
+                block=True)
 
 
 if __name__ == '__main__':
