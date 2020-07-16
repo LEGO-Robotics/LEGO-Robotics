@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# (MicroPython does not yet support Display as of 2020)
 
 
 from ev3dev2.sound import Sound
