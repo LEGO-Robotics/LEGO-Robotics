@@ -46,7 +46,8 @@ class Track3rWithGrippingClaw(Track3r):
 
 
     def main(self, speed: float = 100):
-        Thread(target=self.grip_or_release_claw_by_ir_beacon).start()
+        Thread(target=self.grip_or_release_claw_by_ir_beacon,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
