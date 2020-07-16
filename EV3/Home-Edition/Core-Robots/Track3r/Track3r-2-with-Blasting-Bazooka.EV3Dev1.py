@@ -25,9 +25,6 @@ class Track3rWithBlastingBazooka(Track3r):
             while self.remote_control.beacon:
                 pass
 
-        else:
-            self.medium_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-
 
     def main(self, 
              speed: float = 1000   # degrees per second

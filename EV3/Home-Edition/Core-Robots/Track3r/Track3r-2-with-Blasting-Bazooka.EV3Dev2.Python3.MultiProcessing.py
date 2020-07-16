@@ -27,9 +27,6 @@ class Track3rWithBlastingBazooka(Track3r):
                 while self.ir_sensor.beacon(channel=channel):
                     pass
 
-            else:
-                self.medium_motor.off(brake=True)
-
 
     def main(self, speed: float = 100):
         self.screen.image_filename(

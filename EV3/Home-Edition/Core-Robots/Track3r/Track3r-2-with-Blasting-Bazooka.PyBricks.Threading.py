@@ -27,9 +27,6 @@ class Track3rWithBlastingBazooka(Track3r):
                 while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
                     pass
 
-            else:
-                self.medium_motor.stop()
-
 
     def main(self, 
              speed: float = 1000   # degrees per second
