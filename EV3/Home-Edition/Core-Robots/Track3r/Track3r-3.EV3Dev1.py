@@ -3,7 +3,7 @@
 
 from ev3dev.ev3 import (
     Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-     Sound
+    Sound
 )
 
 from time import sleep
@@ -17,7 +17,6 @@ SPEAKER = Sound()
 
 
 MEDIUM_MOTOR.run_forever(speed_sp=-1000)
-MEDIUM_MOTOR.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
 for i in range(2):
     LEFT_MOTOR.run_to_rel_pos(
@@ -46,7 +45,6 @@ for i in range(2):
     MEDIUM_MOTOR.run_forever(speed_sp=-1000)
 
     SPEAKER.play(wav_file='/home/robot/sound/Air release.wav').wait()
-   
 
     sleep(0.5)
 
