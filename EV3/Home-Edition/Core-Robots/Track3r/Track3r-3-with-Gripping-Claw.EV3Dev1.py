@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 
-from ev3dev.ev3 import Sound
-
 from track3r_ev3dev1 import Track3r
 
 
