@@ -24,15 +24,15 @@ DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
                        wheel_diameter=WHEEL_DIAMETER,
                        axle_track=AXLE_TRACK)
 DRIVE_BASE.settings(
-    straight_speed=300,   # milimeters per second
-    straight_acceleration=300,
+    straight_speed=750,   # milimeters per second
+    straight_acceleration=750,
     turn_rate=90,   # degrees per second
     turn_acceleration=90)
 
 
 BRICK.screen.load_image(ImageFile.PINCHED_LEFT)
 
-DRIVE_BASE.straight(distance=100)
+DRIVE_BASE.straight(distance=200)
 
 MEDIUM_MOTOR.run_angle(
     speed=750,
@@ -40,6 +40,6 @@ MEDIUM_MOTOR.run_angle(
     then=Stop.COAST,
     wait=True)
 
-DRIVE_BASE.straight(distance=-100)
+DRIVE_BASE.straight(distance=-200)
 
 BRICK.speaker.play_file(file=SoundFile.FANFARE)
