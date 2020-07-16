@@ -10,12 +10,12 @@ from track3r_ev3dev2 import Track3r
 
 
 class Track3rWithGrippingClaw(Track3r):
-    is_grabbing = False
+    is_gripping = False
     
     def grip_or_release_claw_by_ir_beacon(self, speed: float = 100):
         while True:
             if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
-                if self.is_grabbing:
+                if self.is_gripping:
                     self.medium_motor.on(
                         speed=-speed,
                         block=False,
@@ -26,7 +26,7 @@ class Track3rWithGrippingClaw(Track3r):
                         volume=100,
                         play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
-                    self.is_grabbing = False
+                    self.is_gripping = False
 
                 else:
                     self.medium_motor.on(
@@ -39,7 +39,7 @@ class Track3rWithGrippingClaw(Track3r):
                         volume=100,
                         play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
-                    self.is_grabbing = True
+                    self.is_gripping = True
 
                 while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                     pass
