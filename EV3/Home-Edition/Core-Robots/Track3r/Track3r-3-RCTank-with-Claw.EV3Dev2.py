@@ -20,14 +20,18 @@ class Track3rWithClaw(Track3r):
 
     def move_claw(self, state):
         if state:
-            self.medium_motor.run_to_rel_pos(
-                speed_sp=200,
-                position_sp=-75)
+            self.medium_motor.on_for_degrees(
+                speed=200,
+                degrees=-75,
+                brake=False,
+                block=False)
 
         else:
-            self.medium_motor.run_to_rel_pos(
-                speed_sp=200,
-                position_sp=75)
+            self.medium_motor.on_for_degrees(
+                speed=200,
+                degrees=75,
+                brake=False,
+                block=False)
 
 
 if __name__ == '__main__':
