@@ -74,8 +74,8 @@ while True:
         SCREEN.update()
         
         TANK_DRIVER.on(
-            left_speed=100,
-            right_speed=100)
+            left_speed=75,
+            right_speed=75)
 
         MEDIUM_MOTOR.on_for_seconds(
             speed=75,
@@ -95,7 +95,7 @@ while True:
             speed=75)
 
         MEDIUM_MOTOR.on_for_seconds(
-            speed=-10,
+            speed=-30,   # -10 too soft
             seconds=0.2,
             brake=False,
             block=True)
