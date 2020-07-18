@@ -54,6 +54,8 @@ class Track3rWithHeavyHammer(Track3r):
     def main(self,
              speed: float = 1000   # deg/s
             ):
+        # FIXME: need MultiProcessing/Threading for smoother run
+
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
