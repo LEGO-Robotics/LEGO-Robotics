@@ -19,14 +19,14 @@ class Track3rWithHeavyHammer(Track3r):
             
                 self.medium_motor.run_timed(
                     speed_sp=1000,   # deg/s
-                    time_sp=0.3 * 1000,   # ms 
+                    time_sp=1000,   # ms 
                     stop_action=Motor.STOP_ACTION_HOLD)
                 self.medium_motor.wait_while(Motor.STATE_RUNNING)
 
                 self.speaker.play(wav_file='/home/robot/sound/Laughing 2.wav').wait()
 
                 self.medium_motor.run_timed(
-                    speed_sp=-200,   # deg/s
+                    speed_sp=-1000,   # deg/s
                     time_sp=1000,   # ms 
                     stop_action=Motor.STOP_ACTION_HOLD)
                 self.medium_motor.wait_while(Motor.STATE_RUNNING)
@@ -36,7 +36,7 @@ class Track3rWithHeavyHammer(Track3r):
                 self.screen.update()
 
                 self.medium_motor.run_timed(
-                    speed_sp=750,   # deg/s
+                    speed_sp=500,   # deg/s
                     time_sp=0.1 * 1000,   # ms 
                     stop_action=Motor.STOP_ACTION_HOLD)
                 self.medium_motor.wait_while(Motor.STATE_RUNNING)
@@ -47,8 +47,8 @@ class Track3rWithHeavyHammer(Track3r):
                 self.screen.update()
 
                 self.medium_motor.run_timed(
-                    speed_sp=-300,   # deg/s (-100 too soft)
-                    time_sp=0.2 * 1000,   # ms 
+                    speed_sp=-500,   # deg/s (-100 too soft)
+                    time_sp=0.1 * 1000,   # ms 
                     stop_action=Motor.STOP_ACTION_COAST)
                 self.medium_motor.wait_while(Motor.STATE_RUNNING)
 
@@ -56,6 +56,12 @@ class Track3rWithHeavyHammer(Track3r):
     def main(self,
              speed: float = 1000   # deg/s
             ):
+        self.medium_motor.run_timed(
+            speed_sp=-200,   # deg/s
+            time_sp=1000,   # ms 
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.medium_motor.wait_while(Motor.STATE_RUNNING)
+
         Process(target=self.hammer_by_ir_beacon,
                 daemon=True).start()
 
