@@ -54,8 +54,13 @@ class Track3rWithHeavyHammer(Track3r):
     def main(self,
              speed: float = 1000   # deg/s
             ):
-        # FIXME: need MultiProcessing/Threading for smoother run
+        self.medium_motor.run_timed(
+            speed_sp=-200,   # deg/s
+            time_sp=1000,   # ms 
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.medium_motor.wait_while(Motor.STATE_RUNNING)
 
+        # FIXME: need MultiProcessing/Threading for smoother run
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
