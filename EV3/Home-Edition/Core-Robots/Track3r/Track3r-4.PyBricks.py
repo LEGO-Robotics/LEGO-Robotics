@@ -50,14 +50,14 @@ while True:
 
         MEDIUM_MOTOR.run_time(
             speed=1000,   # deg/s
-            time=0.3 * 1000,   # ms
+            time=1000,   # ms
             then=Stop.HOLD,
             wait=True)
 
         BRICK.speaker.play_file(file=SoundFile.LAUGHING_2)
 
         MEDIUM_MOTOR.run_time(
-            speed=-200,   # deg/s
+            speed=-1000,   # deg/s
             time=1000,   # ms
             then=Stop.HOLD,
             wait=True)
@@ -70,8 +70,8 @@ while True:
             turn_rate=0)
 
         MEDIUM_MOTOR.run_time(
-            speed=750,
-            time=0.1 * 1000,
+            speed=1000,   # deg/s
+            time=0.3 * 1000,   # ms
             then=Stop.HOLD,
             wait=True)
 
@@ -84,7 +84,7 @@ while True:
             turn_rate=500)
 
         MEDIUM_MOTOR.run_time(
-            speed=-300,   # deg/s
-            time=0.2 * 1000,   # ms
+            speed=-1000,   # deg/s
+            time=0.3 * 1000,   # ms
             then=Stop.COAST,
             wait=True)
