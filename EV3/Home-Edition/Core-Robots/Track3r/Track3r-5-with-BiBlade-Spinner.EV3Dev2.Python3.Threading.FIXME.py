@@ -26,6 +26,9 @@ class Track3rWithBiBladeSpinner(Track3r):
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
+        # FIXME: ValueError: invalid literal for int() with base 10: '9\n9'
+        # when multiple Threads access the same Sensor
+
             
 if __name__ == '__main__':
     TRACKER_WITH_BIBLADE_SPINNER = Track3rWithBiBladeSpinner()
