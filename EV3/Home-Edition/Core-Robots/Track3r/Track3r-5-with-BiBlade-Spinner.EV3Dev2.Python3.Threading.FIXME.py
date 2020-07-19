@@ -2,7 +2,7 @@
 # (MicroPython does not yet support Display as of May 2020)
 
 
-from multiprocessing import Process
+from threading import Thread
 
 from track3r_ev3dev2 import Track3r
 
@@ -21,8 +21,8 @@ class Track3rWithBiBladeSpinner(Track3r):
 
 
     def main(self, speed: float = 100):
-        Process(target=self.spin_blade_by_ir_beacon,
-                daemon=True).start()
+        Thread(target=self.spin_blade_by_ir_beacon,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
