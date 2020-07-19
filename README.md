@@ -21,6 +21,7 @@ PyBricks References
   - https://github.com/pybricks/pybricksdev
   - https://github.com/pybricks/pybricks-micropython
   - https://github.com/pybricks/pybricks-projects
+    - [Discussion on Sharing PyBricks Projects](https://github.com/pybricks/support/issues/94)
   - https://github.com/pybricks/support/issues
     - [Roadmap](https://github.com/pybricks/support/issues/29)
     - Interesting Discussion Threads
