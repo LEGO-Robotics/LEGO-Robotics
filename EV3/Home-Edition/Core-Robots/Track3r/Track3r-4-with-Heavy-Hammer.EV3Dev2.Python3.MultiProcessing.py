@@ -69,7 +69,8 @@ class Track3rWithHeavyHammer(Track3r):
             block=True,
             brake=True)
 
-        Process(target=self.hammer_by_ir_beacon).start() 
+        Process(target=self.hammer_by_ir_beacon,
+                daemon=True).start() 
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
