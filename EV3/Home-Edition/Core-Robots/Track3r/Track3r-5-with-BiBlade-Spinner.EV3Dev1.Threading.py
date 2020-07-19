@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 
-
 from ev3dev.ev3 import Motor
+
+from threading import Thread
 
 from track3r_ev3dev1 import Track3r
 
-from threading import Thread
 
 class Track3rWithBiBladeSpinner(Track3r):
     def spin_blade_by_ir_beacon(
@@ -23,7 +23,8 @@ class Track3rWithBiBladeSpinner(Track3r):
     def main(self,
              speed: float = 1000   # deg/s
             ):
-        Thread(target=self.spin_blade_by_ir_beacon).start()
+        Thread(target=self.spin_blade_by_ir_beacon,
+               daemon=True).start()
             
         self.keep_driving_by_ir_beacon(speed=speed)
 

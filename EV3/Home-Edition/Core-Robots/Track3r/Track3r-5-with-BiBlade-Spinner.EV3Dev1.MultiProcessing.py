@@ -3,9 +3,10 @@
 
 from ev3dev.ev3 import Motor
 
+from multiprocessing import Process
+
 from track3r_ev3dev1 import Track3r
 
-from multiprocessing import Process
 
 class Track3rWithBiBladeSpinner(Track3r):
     def spin_blade_by_ir_beacon(
@@ -22,7 +23,8 @@ class Track3rWithBiBladeSpinner(Track3r):
     def main(self,
              speed: float = 1000   # deg/s
             ):
-        Process(target=self.spin_blade_by_ir_beacon).start()
+        Process(target=self.spin_blade_by_ir_beacon,
+                daemon=True).start()
             
         self.keep_driving_by_ir_beacon(speed=speed)
 
