@@ -127,6 +127,8 @@ class Sweep3r():
 
             self.spin_when_see_smothing(speed_sp=speed_sp)
 
+            self.hammer_by_ir_beacon()
+
 
 if __name__ == '__main__':
     SWEEP3R = Sweep3r()
