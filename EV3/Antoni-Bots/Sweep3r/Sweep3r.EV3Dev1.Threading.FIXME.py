@@ -7,8 +7,8 @@ from ev3dev.ev3 import (
     Screen, Sound
 )
 
-from threading import Thread
 from PIL import Image
+from threading import Thread
 
 import os
 import sys
@@ -85,7 +85,7 @@ class Sweep3r(IRBeaconRemoteControlledTank):
                daemon=True).start()
 
         Thread(target=self.drill,
-               daemon=True).start() 
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
