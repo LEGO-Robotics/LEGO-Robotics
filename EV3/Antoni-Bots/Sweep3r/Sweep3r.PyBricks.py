@@ -37,10 +37,10 @@ class Sweep3r(IRBeaconRemoteControlledTank, EV3Brick):
         self.ir_beacon_channel = ir_beacon_channel
 
 
-    def drill(self, speed: float = 1000):
+    def drill(self):
         if Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
             self.medium_motor.run_angle(
-                speed=speed,
+                speed=1000,
                 rotation_angle=2 * 360,
                 then=Stop.HOLD,
                 wait=True)
@@ -66,7 +66,7 @@ class Sweep3r(IRBeaconRemoteControlledTank, EV3Brick):
 
             self.move_when_see_smothing()
 
-            self.drill(speed=speed)
+            self.drill()
 
 
 if __name__ == '__main__':
