@@ -62,11 +62,10 @@ class IRBeaconRemoteControlledTank:
         elif self.tank_drive_remote_control.blue_down:
             self.left_motor.run_forever(speed_sp=-speed)
 
-        # DISABLING BELOW TO AVOID CONFLICTS
         # otherwise stop
-        # else:
-        #     self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
-        #     self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+        else:
+            self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+            self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
 
     # this method must be used in a parallel process/thread in order not to block other operations
     def keep_driving_by_ir_beacon(
