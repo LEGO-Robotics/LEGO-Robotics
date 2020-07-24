@@ -80,9 +80,10 @@ class IRBeaconRemoteControlledTank:
                 speed=-speed,
                 turn_rate=-turn_rate)
 
+        # DISABLING BELOW TO AVOID CONFLICTS
         # otherwise stop
-        else:
-            self.drive_base.stop()
+        # else:
+        #     self.drive_base.stop()
 
     # this method must be used in a parallel process/thread in order not to block other operations
     def keep_driving_by_ir_beacon(

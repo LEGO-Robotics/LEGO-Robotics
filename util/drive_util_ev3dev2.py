@@ -82,9 +82,10 @@ class IRBeaconRemoteControlledTank:
                 left_speed=-speed,
                 right_speed=0)
     
+        # DISABLING BELOW TO AVOID CONFLICTS
         # otherwise stop
-        else:
-            self.tank_driver.off(brake=False)
+        # else:
+        #     self.tank_driver.off(brake=False)
 
     # this method must be used in a parallel process/thread in order not to block other operations
     def keep_driving_by_ir_beacon(self, speed: float = 100):
