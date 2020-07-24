@@ -9,16 +9,22 @@ from ev3dev.ev3 import (
 
 from PIL import Image
 
+import os
+import sys
+sys.path.append(os.path.expanduser('~'))
+from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
-class Sweep3r():
+
+class Sweep3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            right_foot_motor_port: str = OUTPUT_C, left_foot_motor_port: str = OUTPUT_B,
+            right_motor_port: str = OUTPUT_C, left_motor_port: str = OUTPUT_B,
             medium_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
-        self.right_foot_motor = LargeMotor(address=right_foot_motor_port)
-        self.left_foot_motor = LargeMotor(address=left_foot_motor_port)
+        super().__init__(
+            left_motor_port=left_motor_port, right_motor_port=right_motor_port,
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.medium_motor = MediumMotor(address=medium_motor_port)
 
@@ -26,108 +32,56 @@ class Sweep3r():
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.screen = Screen()
-
         self.speaker = Sound()
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.remote_control = RemoteControl(sensor=self.ir_sensor,
                                             channel=ir_beacon_channel)
 
-    def drive_once_by_ir_beacon(
-                self,
-                speed: float = 1000   # degrees per second
-            ):
-            # forward
-            if self.remote_control.red_up and self.remote_control.blue_up:
-                self.left_foot_motor.run_forever(speed_sp=speed)
-                self.right_foot_motor.run_forever(speed_sp=speed)
-
-            # backward
-            elif self.remote_control.red_down and self.remote_control.blue_down:
-                self.left_foot_motor.run_forever(speed_sp=-speed)
-                self.right_foot_motor.run_forever(speed_sp=-speed)
-
-            # turn left on the spot
-            elif self.remote_control.red_up and self.remote_control.blue_down:
-                self.left_foot_motor.run_forever(speed_sp=-speed)
-                self.right_foot_motor.run_forever(speed_sp=speed)
-
-            # turn right on the spot
-            elif self.remote_control.red_down and self.remote_control.blue_up:
-                self.left_foot_motor.run_forever(speed_sp=speed)
-                self.right_foot_motor.run_forever(speed_sp=-speed)
-
-            # turn left forward
-            elif self.remote_control.red_up:
-                self.right_foot_motor.run_forever(speed_sp=speed)
-
-            # turn right forward
-            elif self.remote_control.blue_up:
-                self.left_foot_motor.run_forever(speed_sp=speed)
-
-            # turn left backward
-            elif self.remote_control.red_down:
-                self.right_foot_motor.run_forever(speed_sp=-speed)
-
-            # turn right backward
-            elif self.remote_control.blue_down:
-                self.left_foot_motor.run_forever(speed_sp=-speed)
-
-            # otherwise stop
-            else:
-                self.left_foot_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
-                self.right_foot_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
-
-
-    def hammer_by_ir_beacon(self):
+    
+    def drill(self):
         if self.remote_control.beacon:
-            self.screen.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
-            self.screen.update()
-            
             self.medium_motor.run_timed(
                 speed_sp=1000,   # deg/s
                 time_sp=0.3 * 1000,   # ms 
                 stop_action=Motor.STOP_ACTION_HOLD)
             self.medium_motor.wait_while(Motor.STATE_RUNNING)
 
-            self.speaker.play(wav_file='/home/robot/sound/Laughing 2.wav').wait()
 
-            self.medium_motor.run_timed(
-                speed_sp=-200,   # deg/s
-                time_sp=1000,   # ms 
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.medium_motor.wait_while(Motor.STATE_RUNNING)
-
-    def move_when_touched(self, speed_sp: str = 1000):    
+    def move_when_touched(self, speed: str = 1000):    
         if self.touch_sensor.is_pressed:
-           self.right_foot_motor.run_timed(
+           self.right_motor.run_timed(
                time_sp=1000,
-               speed_sp=speed_sp)
+               speed_sp=speed,
+               stop_action=Motor.STOP_ACTION_BRAKE)
 
-           self.right_foot_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+           self.right_motor.wait_while(Motor.STATE_RUNNING)
 
-    def spin_when_see_smothing(self, speed_sp: str = 1000):
-        if self.color_sensor.reflected_light_intensity < 3:
-            self.left_foot_motor.run_timed(
+
+    def move_when_see_smothing(self, speed: str = 1000):
+        if self.color_sensor.reflected_light_intensity > 30:
+            self.left_motor.run_timed(
                 time_sp=1000,
-                speed_sp=speed_sp)
+                speed_sp=speed,
+                stop_action=Motor.STOP_ACTION_BRAKE)
 
-        self.left_foot_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
-                      
+            self.left_motor.wait_while(Motor.STATE_RUNNING)
+       
+                     
     def main(self,
-             speed_sp: float = 1000   # degrees per second
+             speed: float = 1000   # degrees per second
             ):
-        self.screen.image.paste(im=Image.open('/home/robot/image/Target.bmp'))
+        self.screen.image.paste(im=Image.open('/home/robot/image/Pinch middle.bmp'))
         self.screen.update()
     
         while True:
-            self.drive_once_by_ir_beacon(speed=speed_sp)
+            self.drive_once_by_ir_beacon(speed=speed)
 
-            self.move_when_touched(speed_sp=speed_sp)
+            self.move_when_touched(speed=speed)
 
-            self.spin_when_see_smothing(speed_sp=speed_sp)
+            self.move_when_see_smothing(speed=speed)
 
-            self.hammer_by_ir_beacon()
+            self.drill()
 
 
 if __name__ == '__main__':
