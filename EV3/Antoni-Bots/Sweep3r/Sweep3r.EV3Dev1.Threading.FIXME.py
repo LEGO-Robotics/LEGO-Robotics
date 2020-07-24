@@ -89,6 +89,8 @@ class Sweep3r(IRBeaconRemoteControlledTank):
 
         self.keep_driving_by_ir_beacon(speed=speed)
 
+        # FIXME: multiple Threads control Large Motors conflictingly
+
 
 if __name__ == '__main__':
     SWEEP3R = Sweep3r()
