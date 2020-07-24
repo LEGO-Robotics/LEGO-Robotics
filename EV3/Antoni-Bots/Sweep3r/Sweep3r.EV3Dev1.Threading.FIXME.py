@@ -7,6 +7,7 @@ from ev3dev.ev3 import (
     Screen, Sound
 )
 
+from threading import Thread
 from PIL import Image
 
 import os
@@ -40,32 +41,35 @@ class Sweep3r(IRBeaconRemoteControlledTank):
 
     
     def drill(self):
-        if self.remote_control.beacon:
-            self.medium_motor.run_timed(
-                speed_sp=1000,   # deg/s
-                time_sp=0.3 * 1000,   # ms 
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.medium_motor.wait_while(Motor.STATE_RUNNING)
+        while True:
+            if self.remote_control.beacon:
+                self.medium_motor.run_timed(
+                    speed_sp=1000,   # deg/s
+                    time_sp=0.3 * 1000,   # ms 
+                    stop_action=Motor.STOP_ACTION_HOLD)
+                self.medium_motor.wait_while(Motor.STATE_RUNNING)
 
 
-    def move_when_touched(self):    
-        if self.touch_sensor.is_pressed:
-           self.right_motor.run_timed(
-               time_sp=1000,
-               speed_sp=1000,
-               stop_action=Motor.STOP_ACTION_BRAKE)
+    def move_when_touched(self):
+        while True:    
+            if self.touch_sensor.is_pressed:
+                self.right_motor.run_timed(
+                    time_sp=1000,
+                    speed_sp=1000,
+                    stop_action=Motor.STOP_ACTION_BRAKE)
 
-           self.right_motor.wait_while(Motor.STATE_RUNNING)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
 
 
     def move_when_see_smothing(self):
-        if self.color_sensor.reflected_light_intensity > 30:
-            self.left_motor.run_timed(
-                time_sp=1000,
-                speed_sp=1000,
-                stop_action=Motor.STOP_ACTION_BRAKE)
+        while True:
+            if self.color_sensor.reflected_light_intensity > 30:
+                self.left_motor.run_timed(
+                    time_sp=1000,
+                    speed_sp=1000,
+                    stop_action=Motor.STOP_ACTION_BRAKE)
 
-            self.left_motor.wait_while(Motor.STATE_RUNNING)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
        
                      
     def main(self,
@@ -74,14 +78,16 @@ class Sweep3r(IRBeaconRemoteControlledTank):
         self.screen.image.paste(im=Image.open('/home/robot/image/Pinch middle.bmp'))
         self.screen.update()
     
-        while True:
-            self.drive_once_by_ir_beacon(speed=speed)
+        Thread(target=self.move_when_touched,
+               daemon=True).start() 
 
-            self.move_when_touched()
+        Thread(target=self.move_when_see_smothing,
+               daemon=True).start()
 
-            self.move_when_see_smothing()
+        Thread(target=self.drill,
+               daemon=True).start() 
 
-            self.drill()
+        self.keep_driving_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
