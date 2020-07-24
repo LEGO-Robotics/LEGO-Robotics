@@ -76,11 +76,14 @@ class Sweep3r(IRBeaconRemoteControlledTank):
             clear_screen=True)
         self.screen.update()
 
-        Thread(target=self.move_when_touched).start() 
+        Thread(target=self.move_when_touched,
+               daemon=True).start() 
 
-        Thread(target=self.move_when_see_smothing).start()
+        Thread(target=self.move_when_see_smothing,
+               daemon=True).start()
 
-        Thread(target=self.drill).start()
+        Thread(target=self.drill,
+               daemon=True).start()
        
         self.keep_driving_by_ir_beacon(speed=speed)
 
