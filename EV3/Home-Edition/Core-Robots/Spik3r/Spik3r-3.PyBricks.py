@@ -3,45 +3,42 @@
 
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
-from pybricks.parameters import Stop, Direction, Port
 from pybricks.media.ev3dev import SoundFile
+from pybricks.parameters import Direction, Port, Stop
 
 
 BRICK = EV3Brick()
 
-STING_MOTOR = Motor(port=Port.D,
-                    positive_direction=Direction.CLOCKWISE)
-                
-GO_MOTOR = Motor(port=Port.B,   
-                 positive_direction=Direction.CLOCKWISE)
-
 MEDIUM_MOTOR = Motor(port=Port.A,
                      positive_direction=Direction.CLOCKWISE)
 
+GO_MOTOR = Motor(port=Port.B,   
+                 positive_direction=Direction.CLOCKWISE)
+
 
 MEDIUM_MOTOR.run_time(
-    speed=400,
+    speed=500,
     time=1000,
     then=Stop.HOLD,
     wait=True)
 
 MEDIUM_MOTOR.run_time(
-    speed=-400,
-    time=0.3000,
+    speed=-500,
+    time=0.3 * 1000,
     then=Stop.HOLD,
     wait=True)
 
 for i in range(2):
-    for i in range(3):
+    for p in range(3):
         MEDIUM_MOTOR.run_time(
             speed=750,
-            time=0.2000,
+            time=0.2 * 1000,
             then=Stop.HOLD,
             wait=True)
 
         MEDIUM_MOTOR.run_time(
             speed=-750,
-            time=0.2000,
+            time=0.2 * 1000,
             then=Stop.HOLD,
             wait=True)
 
@@ -55,7 +52,7 @@ for i in range(2):
 
     GO_MOTOR.run_angle(
         speed=1000,
-        rotation_angle=-3 * 360,
+        rotation_angle=-2 * 360,
         then=Stop.HOLD,
         wait=True)
 
