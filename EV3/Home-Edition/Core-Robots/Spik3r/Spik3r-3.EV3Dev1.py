@@ -2,18 +2,16 @@
 
 
 from ev3dev.ev3 import (
-    Motor, LargeMotor, MediumMotor, OUTPUT_B, OUTPUT_D, OUTPUT_A,
+    Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B,
     Sound
 )
 
 
-STING_MOTOR = LargeMotor(address=OUTPUT_D)
+MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
 GO_MOTOR = LargeMotor(address=OUTPUT_B)
 
 SPEAKER = Sound()
-
-MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
 
 
 MEDIUM_MOTOR.run_timed(
@@ -29,7 +27,7 @@ MEDIUM_MOTOR.run_timed(
 MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 for i in range(2):
-    for i in range(3):
+    for p in range(3):
         MEDIUM_MOTOR.run_timed(
             speed_sp=750,
             time_sp=0.2 * 1000,
