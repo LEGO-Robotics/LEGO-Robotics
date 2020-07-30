@@ -3,8 +3,8 @@
 
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
-from pybricks.parameters import Stop, Direction, Port
 from pybricks.media.ev3dev import SoundFile
+from pybricks.parameters import Direction, Port, Stop
 
 
 BRICK = EV3Brick()
