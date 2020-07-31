@@ -46,7 +46,7 @@ SPEAKER.play_file(
     volume=100,
     play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-while INFRARED_SENSOR.proximity >= 30:
+while (INFRARED_SENSOR.distance(channel=1) is None) or (INFRARED_SENSOR.distance(channel=1) >= 30):
     pass
 
 while INFRARED_SENSOR.heading(channel=1) <= 5:
