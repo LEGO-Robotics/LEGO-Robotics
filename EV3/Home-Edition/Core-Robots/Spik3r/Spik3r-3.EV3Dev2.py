@@ -25,7 +25,7 @@ MEDIUM_MOTOR.on_for_seconds(
 
 
 for i in range(2):
-    for l in range(3):
+    for j in range(3):
         MEDIUM_MOTOR.on_for_seconds(
             speed=75,
             seconds=0.2,

@@ -99,7 +99,7 @@ for i in range(3):
         block=True)
 
     STING_MOTOR.on_for_seconds(
-        speed=100,
+        speed=40,
         seconds=1,
         block=True,
         brake=True)
