@@ -36,7 +36,7 @@ class Spik3r(EV3Brick):
                 speed=-750,
                 rotation_angle=220,
                 then=Stop.HOLD,
-                wait=True)
+                wait=False)
 
             self.speaker.play_file(file=SoundFile.EV3)
 
