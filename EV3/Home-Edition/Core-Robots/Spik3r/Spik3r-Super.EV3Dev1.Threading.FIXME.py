@@ -119,6 +119,7 @@ class Spik3r:
         self.dis.update()
 
         # FIXME: ValueError: invalid literal for int() with base 10: ''
+        # when multiple threads access the same Sensor
         Thread(target=self.pinch_if_touched,
                daemon=True).start()
 
