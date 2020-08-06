@@ -114,6 +114,7 @@ class Spik3r:
         self.dis.update()
 
         while True:
+            # FIXME: .sting_by_ir_beacon hangs after a while
             self.drive_once_by_ir_beacon()
             self.be_noisy_to_people()
             self.sting_by_ir_beacon()
