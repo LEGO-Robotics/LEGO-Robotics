@@ -43,9 +43,7 @@ GO_MOTOR.run_forever(speed_sp=-500)
 
 SPEAKER.play(wav_file='/home/robot/sound/Blip 2.wav').wait()
 
-assert BEACON_SEEKER.distance > -128
-
-while BEACON_SEEKER.distance >= 30:
+while (BEACON_SEEKER.distance <= -128) or (BEACON_SEEKER.distance >= 30):
     pass
 
 while BEACON_SEEKER.heading <= 5:

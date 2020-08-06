@@ -8,7 +8,7 @@ from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
 
-class Spik3r():
+class Spik3r:
     def __init__(
             self,
             sting_motor_port: str = OUTPUT_D, go_motor_port: str = OUTPUT_B,
@@ -86,7 +86,7 @@ class Spik3r():
         if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
                 self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             self.go_motor.on(
-                speed=75,
+                speed=91,
                 block=False,
                 brake=False)
 
