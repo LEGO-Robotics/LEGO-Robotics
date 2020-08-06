@@ -105,6 +105,14 @@ class Spik3r(EV3Brick):
             self.pinch_if_touched,
             self.keep_driving_by_ir_beacon)
 
+        # FIXME: .be_noisy_to_people
+        # Unhandled exception in thread started by <closure <function wrapper at 0xb5e7a5b0> at b5e7a5c0, n_closed=4 <cell b5e7a570 {3031507872, 3031471008, 3031434144}> <cell b5e7a580 <lock>> <cell b5e7a5a0 {}> <cell 4d3ee8 False> >
+        # Traceback (most recent call last):
+        #   File "pybricks/experimental.py", line 80, in wrapper
+        #   File "pybricks/experimental.py", line 72, in wrapper
+        #   File "pybricks/experimental.py", line 70, in wrapper
+        # TypeError: unsupported type for __hash__: 'bound_method'
+
 
 if __name__ == '__main__':
     SPIK3R = Spik3r()
