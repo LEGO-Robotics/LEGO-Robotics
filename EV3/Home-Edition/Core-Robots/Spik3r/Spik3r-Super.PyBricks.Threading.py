@@ -104,6 +104,7 @@ class Spik3r(EV3Brick):
         Thread(target=self.pinch_if_touched).start()   
         self.keep_driving_by_ir_beacon()
 
+
 if __name__ == '__main__':
     SPIK3R = Spik3r()
 
