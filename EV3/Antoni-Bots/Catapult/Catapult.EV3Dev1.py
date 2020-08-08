@@ -18,15 +18,15 @@ from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 class Catapult(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
-            pult_motor_port: str = OUTPUT_A,
+            left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
+            catapult_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
-            left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port,
+            left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
         
-        self.pult_motor = MediumMotor(address=pult_motor_port)
+        self.catapult_motor = MediumMotor(address=catapult_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -53,17 +53,17 @@ class Catapult(IRBeaconRemoteControlledTank):
 
     def throw_by_ir_beacon(self):
         if self.beacon.beacon:
-            self.pult_motor.run_to_rel_pos(
+            self.catapult_motor.run_to_rel_pos(
                 speed_sp=1000,
                 position_sp=-150,
                 stop_action=Motor.STOP_ACTION_HOLD)
-            self.pult_motor.wait_while(Motor.STATE_RUNNING)
+            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
 
-            self.pult_motor.run_to_rel_pos(
+            self.catapult_motor.run_to_rel_pos(
                 speed_sp=1000,
                 position_sp=150,
                 stop_action=Motor.STOP_ACTION_HOLD)
-            self.pult_motor.wait_while(Motor.STATE_RUNNING)
+            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
 
             while self.beacon.beacon:
                 pass
