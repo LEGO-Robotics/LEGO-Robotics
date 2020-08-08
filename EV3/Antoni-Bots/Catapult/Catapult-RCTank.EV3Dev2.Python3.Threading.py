@@ -36,40 +36,43 @@ class Catapult(RemoteControlledTank):
 
     
     def scan_colors(self):
-        if self.color_sensor.color == ColorSensor.COLOR_YELLOW:
-            pass
+        while True:
+            if self.color_sensor.color == ColorSensor.COLOR_YELLOW:
+                pass
 
-        elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
-            self.speaker.play_file(
-                wav_file='/home/robot/sound/Good.wav',
-                volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+            elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Good.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
     def make_noise_when_touched(self):
-        if self.touch_sensor.is_pressed:
-           self.speaker.play_file(
-                wav_file='/home/robot/sound/Ouch.wav',
-                volume=100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.speaker.play_file(
+                    wav_file='/home/robot/sound/Ouch.wav',
+                    volume=100,
+                    play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
     def throw_by_ir_beacon(self):
-        if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
-            self.catapult_motor.on_for_degrees(
-                speed=-100,
-                degrees=150,
-                brake=True,
-                block=True)
+        while True:
+            if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.catapult_motor.on_for_degrees(
+                    speed=-100,
+                    degrees=150,
+                    brake=True,
+                    block=True)
 
-            self.catapult_motor.on_for_degrees(
-                speed=100,
-                degrees=150,
-                brake=True,
-                block=True)
+                self.catapult_motor.on_for_degrees(
+                    speed=100,
+                    degrees=150,
+                    brake=True,
+                    block=True)
 
-            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
-                pass
+                while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                    pass
 
 
     def main(self):

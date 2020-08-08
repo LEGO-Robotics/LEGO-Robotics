@@ -48,7 +48,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
     def make_noise_when_touched(self):
         if self.touch_sensor.is_pressed:
-           self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
 
 
     def throw_by_ir_beacon(self):

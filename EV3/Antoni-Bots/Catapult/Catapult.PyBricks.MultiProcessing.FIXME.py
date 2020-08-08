@@ -6,6 +6,8 @@ from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
+from multiprocessing import Process
+
 import os
 import sys
 sys.path.append('/home/robot')
@@ -39,47 +41,57 @@ class Catapult(IRBeaconRemoteControlledTank, EV3Brick):
 
     
     def scan_colors(self):
-        if self.color_sensor.color() == Color.YELLOW:
-            pass
+        while True:
+            if self.color_sensor.color() == Color.YELLOW:
+                pass
 
-        elif self.color_sensor.color() == Color.WHITE:
-            self.speaker.play_file(file=SoundFile.GOOD)
+            elif self.color_sensor.color() == Color.WHITE:
+                self.speaker.play_file(file=SoundFile.GOOD)
 
 
     def make_noise_when_touched(self):
-        if self.touch_sensor.pressed():
-            self.speaker.play_file(file=SoundFile.OUCH)
+        while True:
+            if self.touch_sensor.pressed():
+                self.speaker.play_file(file=SoundFile.OUCH)
 
 
     def throw_by_ir_beacon(self):
-        if Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
-            self.catapult_motor.run_angle(
-                speed=3500,
-                rotation_angle=-150,
-                then=Stop.HOLD,
-                wait=True)
+        while True:
+            if Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                self.catapult_motor.run_angle(
+                    speed=3500,
+                    rotation_angle=-150,
+                    then=Stop.HOLD,
+                    wait=True)
 
-            self.catapult_motor.run_angle(
-                speed=3500,
-                rotation_angle=150,
-                then=Stop.HOLD,
-                wait=True)
+                self.catapult_motor.run_angle(
+                    speed=3500,
+                    rotation_angle=150,
+                    then=Stop.HOLD,
+                    wait=True)
 
-            while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
-                pass
+                while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                    pass
 
 
     def main(self):
         self.speaker.play_file(file=SoundFile.YES)
              
-        while True:
-            self.drive_once_by_ir_beacon(speed=1000)
-            
-            self.make_noise_when_touched()
+        Process(target=self.make_noise_when_touched).start()
 
-            self.throw_by_ir_beacon()
+        Process(target=self.throw_by_ir_beacon).start()
 
-            self.scan_colors()
+        Process(target=self.scan_colors).start()
+        
+        self.keep_driving_by_ir_beacon(speed=1000)
+
+        # FIXME: OSError: [Errno 5] EIO: 
+        # Unexpected hardware input/output error with a motor or sensor:
+        # --> Try unplugging the sensor or motor and plug it back in again.
+        # --> To see which sensor or motor is causing the problem,
+        #     check the line in your script that matches
+        #     the line number given in the 'Traceback' above.
+        # --> Try rebooting the hub/brick if the problem persists.
 
 
 if __name__ == '__main__':
