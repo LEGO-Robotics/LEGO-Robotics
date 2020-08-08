@@ -29,6 +29,7 @@ class Catapult(IRBeaconRemoteControlledTank):
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
 
@@ -53,7 +54,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
 
     def throw_by_ir_beacon(self):
-        if self.ir_sensor.beacon:
+        if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
             self.catapult_motor.on_for_degrees(
                 speed=-100,
                 degrees=150,
@@ -66,7 +67,7 @@ class Catapult(IRBeaconRemoteControlledTank):
                 brake=True,
                 block=True)
 
-            while self.ir_sensor.beacon:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                 pass
 
 
