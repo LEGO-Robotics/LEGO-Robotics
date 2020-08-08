@@ -4,7 +4,7 @@
 from ev3dev.ev3 import (
     Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4, 
-    Screen, Sound
+    Sound
 )
 
 from PIL import Image
@@ -35,7 +35,6 @@ class Catapult(IRBeaconRemoteControlledTank):
         self.beacon = RemoteControl(sensor=self.ir_sensor,
                                     channel=1)
 
-        self.screen = Screen()
         self.speaker = Sound()
 
 
