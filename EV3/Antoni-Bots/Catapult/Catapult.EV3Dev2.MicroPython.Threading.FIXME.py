@@ -90,7 +90,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
         self.keep_driving_by_ir_beacon(speed=100)
 
-        # FIXME: ValueError: invalid literal for int() with base 10: ''
+        # FIXME: ValueError: invalid syntax for integer with base 10: ''
         # when multiple Threads access the same InfraredSensor
 
 
