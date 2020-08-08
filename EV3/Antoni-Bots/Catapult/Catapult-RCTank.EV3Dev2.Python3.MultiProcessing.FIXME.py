@@ -87,7 +87,7 @@ class Catapult(RemoteControlledTank):
         Process(target=self.scan_colors,
                 daemon=True).start()
 
-        super().main()
+        super().main()   # RemoteControlledTank.main()
 
 
 if __name__ == '__main__':

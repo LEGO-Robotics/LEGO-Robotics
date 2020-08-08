@@ -8,7 +8,7 @@ from ev3dev2.sound import Sound
 
 from ev3dev2.control.rc_tank import RemoteControlledTank
 
-from multiprocessing import Process
+from threading import Thread
 
 
 class Catapult(RemoteControlledTank):
@@ -78,16 +78,16 @@ class Catapult(RemoteControlledTank):
             volume=100,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
              
-        Process(target=self.make_noise_when_touched,
-                daemon=True).start()
+        Thread(target=self.make_noise_when_touched,
+               daemon=True).start()
 
-        Process(target=self.throw_by_ir_beacon,
-                daemon=True).start()
+        Thread(target=self.throw_by_ir_beacon,
+               daemon=True).start()
 
-        Process(target=self.scan_colors,
-                daemon=True).start()
+        Thread(target=self.scan_colors,
+               daemon=True).start()
 
-        super().main()
+        super().main()   # RemoteControlledTank.main()
 
 
 if __name__ == '__main__':

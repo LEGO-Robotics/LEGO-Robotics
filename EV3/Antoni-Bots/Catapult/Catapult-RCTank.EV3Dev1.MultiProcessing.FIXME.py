@@ -8,8 +8,8 @@ from ev3dev.ev3 import (
 )
 from ev3dev.helper import RemoteControlledTank
 
+from multiprocessing import Process
 from PIL import Image
-from threading import Thread
 
 
 class Catapult(RemoteControlledTank):
@@ -69,16 +69,16 @@ class Catapult(RemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        Thread(target=self.make_noise_when_touched,
-               daemon=True).start()
+        Process(target=self.make_noise_when_touched,
+                daemon=True).start()
 
-        Thread(target=self.throw_by_ir_beacon,
-               daemon=True).start()
+        Process(target=self.throw_by_ir_beacon,
+                daemon=True).start()
 
-        Thread(target=self.scan_colors,
-               daemon=True).start()
+        Process(target=self.scan_colors,
+                daemon=True).start()
 
-        super().main()
+        super().main()   # RemoteControlledTank.main()
 
 
 if __name__ == '__main__':
