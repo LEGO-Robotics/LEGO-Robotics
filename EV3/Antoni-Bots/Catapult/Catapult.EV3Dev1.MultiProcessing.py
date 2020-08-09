@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 
-#!/usr/bin/env python3
-
-
 from ev3dev.ev3 import (
     Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4, 
