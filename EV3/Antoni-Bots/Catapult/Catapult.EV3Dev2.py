@@ -1,18 +1,15 @@
-#!/usr/bin/env python3
+#!/usr/bin/env micropython
 
 
-from ev3dev.ev3 import (
-    Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4, 
-    Sound
-)
-
-from PIL import Image
+from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
+from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
+from ev3dev2.sound import Sound
 
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
 class Catapult(IRBeaconRemoteControlledTank):
@@ -32,48 +29,56 @@ class Catapult(IRBeaconRemoteControlledTank):
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-        self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=1)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
 
-
+    
     def scan_colors(self):
         if self.color_sensor.color == ColorSensor.COLOR_YELLOW:
             pass
-        
+
         elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
-            self.speaker.play(wav_file='/home/robot/sound/Good.wav').wait()
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Good.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
     def make_noise_when_touched(self):
         if self.touch_sensor.is_pressed:
-            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Ouch.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
     def throw_by_ir_beacon(self):
-        if self.beacon.beacon:
-            self.catapult_motor.run_to_rel_pos(
-                speed_sp=1000,
-                position_sp=-150,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
+        if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            self.catapult_motor.on_for_degrees(
+                speed=-100,
+                degrees=150,
+                brake=True,
+                block=True)
 
-            self.catapult_motor.run_to_rel_pos(
-                speed_sp=1000,
-                position_sp=150,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
+            self.catapult_motor.on_for_degrees(
+                speed=100,
+                degrees=150,
+                brake=True,
+                block=True)
 
-            while self.beacon.beacon:
+            while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                 pass
 
 
     def main(self):
-        self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
-
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Yes.wav',
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+             
         while True:
-            self.drive_once_by_ir_beacon(speed=1000)
+            self.drive_once_by_ir_beacon(speed=100)
             
             self.make_noise_when_touched()
 
