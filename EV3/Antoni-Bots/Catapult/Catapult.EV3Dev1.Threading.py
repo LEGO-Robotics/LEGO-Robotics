@@ -34,7 +34,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=1)
+                                    channel=ir_beacon_channel)
 
         self.speaker = Sound()
 
@@ -76,11 +76,14 @@ class Catapult(IRBeaconRemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        Thread(target=self.make_noise_when_touched).start()    
+        Thread(target=self.make_noise_when_touched,
+               daemon=True).start()    
 
-        Thread(target=self.throw_by_ir_beacon).start()
+        Thread(target=self.throw_by_ir_beacon,
+               daemon=True).start()
 
-        Thread(target=self.scan_colors).start()
+        Thread(target=self.scan_colors,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=1000)
 

@@ -33,7 +33,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=1)
+                                    channel=ir_beacon_channel)
 
         self.speaker = Sound()
 

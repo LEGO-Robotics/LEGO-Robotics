@@ -7,8 +7,8 @@ from ev3dev.ev3 import (
     Sound
 )
 
-from PIL import Image
 from multiprocessing import Process
+from PIL import Image
 
 import os
 import sys
@@ -34,7 +34,7 @@ class Catapult(IRBeaconRemoteControlledTank):
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=1)
+                                    channel=ir_beacon_channel)
 
         self.speaker = Sound()
 
@@ -76,11 +76,14 @@ class Catapult(IRBeaconRemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        Process(target=self.make_noise_when_touched).start()    
+        Process(target=self.make_noise_when_touched,
+                daemon=True).start()    
 
-        Process(target=self.throw_by_ir_beacon).start()
+        Process(target=self.throw_by_ir_beacon,
+                daemon=True).start()
 
-        Process(target=self.scan_colors).start()
+        Process(target=self.scan_colors,
+                daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=1000)
 
