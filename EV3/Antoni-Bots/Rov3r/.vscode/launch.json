@@ -5,7 +5,7 @@
       "name": "Download and Run",
       "type": "ev3devBrowser",
       "request": "launch",
-      "program": "/home/robot/${workspaceRootFolderName}/Gear-Spinn3r.PyBricks.RunParallel.py",
+      "program": "/home/robot/${workspaceRootFolderName}/Rov3r.PyBricks.RunParallel.py",
       "interactiveTerminal": true
     }
   ]

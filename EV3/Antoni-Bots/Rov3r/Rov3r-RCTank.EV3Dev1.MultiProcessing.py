@@ -8,11 +8,11 @@ from ev3dev.ev3 import (
 )
 from ev3dev.helper import RemoteControlledTank
 
+from multiprocessing import Process
 from PIL import Image
-from threading import Thread
 
 
-class GearSpinn3r(RemoteControlledTank):
+class Rov3r(RemoteControlledTank):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -63,19 +63,19 @@ class GearSpinn3r(RemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        Thread(target=self.make_noise_when_seeing_black,
-               daemon=True).start()
+        Process(target=self.make_noise_when_seeing_black,
+                daemon=True).start()
         
-        Thread(target=self.spin_gears,
-               daemon=True).start()
+        Process(target=self.spin_gears,
+                daemon=True).start()
 
-        Thread(target=self.change_screen_when_touched,
-               daemon=True).start()    
+        Process(target=self.change_screen_when_touched,
+                daemon=True).start()    
 
         super().main()   # RemoteControlledTank.main()
 
 
 if __name__ == '__main__':
-    GEAR_SPINN3R = GearSpinn3r()
+    ROV3R = Rov3r()
 
-    GEAR_SPINN3R.main()
+    ROV3R.main()

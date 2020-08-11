@@ -6,13 +6,16 @@ from ev3dev.ev3 import (
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
     Sound, Screen
 )
-from ev3dev.helper import RemoteControlledTank
 
-from multiprocessing import Process
 from PIL import Image
 
+import os
+import sys
+sys.path.append(os.path.expanduser('~'))
+from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
-class GearSpinn3r(RemoteControlledTank):
+
+class Rov3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -20,8 +23,8 @@ class GearSpinn3r(RemoteControlledTank):
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
-            left_motor=left_motor_port, right_motor=right_motor_port,
-            polarity='normal')
+            left_motor_port=left_motor_port, right_motor_port=right_motor_port,
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.gear_motor = MediumMotor(address=gear_motor_port)
 
@@ -37,45 +40,41 @@ class GearSpinn3r(RemoteControlledTank):
 
 
     def spin_gears(self, speed: float = 1000):
-        while True:
-            if self.beacon.beacon:
-                self.gear_motor.run_forever(speed_sp=speed)
+        if self.beacon.beacon:
+            self.gear_motor.run_forever(speed_sp=speed)
 
-            else:
-                self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        else:
+            self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
 
     def change_screen_when_touched(self):
-        while True:
-            if self.touch_sensor.is_pressed:
-                self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
-            else:
-                self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+        if self.touch_sensor.is_pressed:
+            self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
             self.dis.update()
 
 
     def make_noise_when_seeing_black(self):
-        while True:
-            if self.color_sensor.color == ColorSensor.COLOR_BLACK:
-                self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+        if self.color_sensor.color == ColorSensor.COLOR_BLACK:
+            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
 
 
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        Process(target=self.make_noise_when_seeing_black,
-                daemon=True).start()
-        
-        Process(target=self.spin_gears,
-                daemon=True).start()
+        while True:
+            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+            self.dis.update()
 
-        Process(target=self.change_screen_when_touched,
-                daemon=True).start()    
+            self.drive_once_by_ir_beacon(speed=1000)
 
-        super().main()   # RemoteControlledTank.main()
+            self.make_noise_when_seeing_black()
+
+            self.spin_gears(speed=1000)
+
+            self.change_screen_when_touched()
 
 
 if __name__ == '__main__':
-    GEAR_SPINN3R = GearSpinn3r()
+    ROV3R = Rov3r()
 
-    GEAR_SPINN3R.main()
+    ROV3R.main()
