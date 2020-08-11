@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 
 
-from ev3dev.ev3 import (
-    Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
-    Sound, Screen
-)
+from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
+from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
+from ev3dev2.display import Display
+from ev3dev2.sound import Sound
 
-from PIL import Image
+
 
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
-from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
+from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
 class Rov3r(IRBeaconRemoteControlledTank):
@@ -32,48 +32,61 @@ class Rov3r(IRBeaconRemoteControlledTank):
         self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
-        self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=ir_beacon_channel)
 
         self.speaker = Sound()
-        self.dis = Screen()
+        self.dis = Display(desc='Display')
 
 
-    def spin_gears(self, speed: float = 1000):
-        if self.beacon.beacon:
-            self.gear_motor.run_forever(speed_sp=speed)
+    def spin_gears(self, speed: float = 100):
+        if self.ir_sensor.beacon(channel=1):
+            self.gear_motor.on(
+                speed=speed,
+                block=True,
+                brake=True)
 
         else:
-            self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+            self.gear_motor.off(brake=True)
 
 
     def change_screen_when_touched(self):
         if self.touch_sensor.is_pressed:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
+            self.dis.image_filename(
+                filename='/home/robot/image/Angry.bmp',
+                clear_screen=True)
             self.dis.update()
 
         else:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+            self.dis.image_filename(
+                filename='/home/robot/image/Fire.bmp',
+                clear_screen=True)
             self.dis.update()
 
 
     def make_noise_when_seeing_black(self):
         if self.color_sensor.color == ColorSensor.COLOR_BLACK:
-            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Ouch.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
     def main(self):
-        self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Yes.wav',
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
         while True:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+            self.dis.image_filename(
+                filename='/home/robot/image/Fire.bmp',
+                clear_screen=True)
             self.dis.update()
 
-            self.drive_once_by_ir_beacon(speed=1000)
+            self.drive_once_by_ir_beacon(speed=100)
 
             self.make_noise_when_seeing_black()
 
-            self.spin_gears(speed=1000)
+            self.spin_gears(speed=100)
 
             self.change_screen_when_touched()
 

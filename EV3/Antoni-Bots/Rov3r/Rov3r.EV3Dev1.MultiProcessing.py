@@ -8,6 +8,7 @@ from ev3dev.ev3 import (
 )
 
 from PIL import Image
+from multiprocessing import Process
 
 import os
 import sys
@@ -40,42 +41,42 @@ class Rov3r(IRBeaconRemoteControlledTank):
 
 
     def spin_gears(self, speed: float = 1000):
-        if self.beacon.beacon:
-            self.gear_motor.run_forever(speed_sp=speed)
+        while True:
+            if self.beacon.beacon:
+                self.gear_motor.run_forever(speed_sp=speed)
 
-        else:
-            self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+            else:
+                self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
 
     def change_screen_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
-            self.dis.update()
-
-        else:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
-            self.dis.update()
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
+                self.dis.update()
 
 
     def make_noise_when_seeing_black(self):
-        if self.color_sensor.color == ColorSensor.COLOR_BLACK:
-            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+        while True:
+            if self.color_sensor.color == ColorSensor.COLOR_BLACK:
+                self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
 
 
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        while True:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
-            self.dis.update()
+       
+        self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+        self.dis.update()
 
-            self.drive_once_by_ir_beacon(speed=1000)
+        Process(target=self.make_noise_when_seeing_black).start()
 
-            self.make_noise_when_seeing_black()
+        Process(target=self.spin_gears).start()
 
-            self.spin_gears(speed=1000)
+        Process(target=self.change_screen_when_touched).start()
 
-            self.change_screen_when_touched()
+        self.keep_driving_by_ir_beacon()
+
 
 
 if __name__ == '__main__':
