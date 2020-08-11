@@ -41,8 +41,8 @@ class Rov3r(IRBeaconRemoteControlledTank):
         if self.ir_sensor.beacon(channel=1):
             self.gear_motor.on(
                 speed=speed,
-                block=True,
-                brake=True)
+                block=False,
+                brake=False)
 
         else:
             self.gear_motor.off(brake=True)
