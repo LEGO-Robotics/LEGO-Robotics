@@ -28,7 +28,7 @@ class Rov3r(IRBeaconRemoteControlledTank, EV3Brick):
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
         
         self.gear_motor = Motor(port=gear_motor_port,
-                                    positive_direction=Direction.CLOCKWISE)
+                                positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
         self.color_sensor = ColorSensor(port=color_sensor_port)
@@ -62,8 +62,6 @@ class Rov3r(IRBeaconRemoteControlledTank, EV3Brick):
         self.speaker.play_file(file=SoundFile.YES)
 
         while True:
-            self.screen.load_image(ImageFile.FORWARD)
-
             self.drive_once_by_ir_beacon(speed=1000)
 
             self.make_noise_when_seeing_black()
