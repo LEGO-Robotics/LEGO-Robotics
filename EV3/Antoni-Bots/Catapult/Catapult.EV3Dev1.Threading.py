@@ -8,6 +8,7 @@ from ev3dev.ev3 import (
 )
 
 from PIL import Image
+from threading import Thread
 
 import os
 import sys
@@ -39,47 +40,52 @@ class Catapult(IRBeaconRemoteControlledTank):
 
 
     def scan_colors(self):
-        if self.color_sensor.color == ColorSensor.COLOR_YELLOW:
-            pass
+        while True:
+            if self.color_sensor.color == ColorSensor.COLOR_YELLOW:
+                pass
         
-        elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
-            self.speaker.play(wav_file='/home/robot/sound/Good.wav').wait()
+            elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
+                self.speaker.play(wav_file='/home/robot/sound/Good.wav').wait()
 
 
     def make_noise_when_touched(self):
-        if self.touch_sensor.is_pressed:
-            self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
+        while True:
+            if self.touch_sensor.is_pressed:
+                self.speaker.play(wav_file='/home/robot/sound/Ouch.wav').wait()
 
 
     def throw_by_ir_beacon(self):
-        if self.beacon.beacon:
-            self.catapult_motor.run_to_rel_pos(
-                speed_sp=1000,
-                position_sp=-150,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
+        while True:
+            if self.beacon.beacon:
+                self.catapult_motor.run_to_rel_pos(
+                    speed_sp=1000,
+                    position_sp=-150,
+                    stop_action=Motor.STOP_ACTION_HOLD)
+                self.catapult_motor.wait_while(Motor.STATE_RUNNING)
 
-            self.catapult_motor.run_to_rel_pos(
-                speed_sp=1000,
-                position_sp=150,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.catapult_motor.wait_while(Motor.STATE_RUNNING)
+                self.catapult_motor.run_to_rel_pos(
+                    speed_sp=1000,
+                    position_sp=150,
+                    stop_action=Motor.STOP_ACTION_HOLD)
+                self.catapult_motor.wait_while(Motor.STATE_RUNNING)
 
-            while self.beacon.beacon:
-                pass
+                while self.beacon.beacon:
+                    pass
 
 
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-        while True:
-            self.drive_once_by_ir_beacon(speed=1000)
-            
-            self.make_noise_when_touched()
+        Thread(target=self.make_noise_when_touched,
+               daemon=True).start()    
 
-            self.throw_by_ir_beacon()
+        Thread(target=self.throw_by_ir_beacon,
+               daemon=True).start()
 
-            self.scan_colors()
+        Thread(target=self.scan_colors,
+               daemon=True).start()
+
+        self.keep_driving_by_ir_beacon(speed=1000)
 
 
 if __name__ == '__main__':

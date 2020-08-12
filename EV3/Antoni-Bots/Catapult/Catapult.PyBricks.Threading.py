@@ -6,7 +6,7 @@ from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
-from multiprocessing import Process
+from threading import Thread
 
 import os
 import sys
@@ -75,22 +75,14 @@ class Catapult(IRBeaconRemoteControlledTank, EV3Brick):
 
     def main(self):
         self.speaker.play_file(file=SoundFile.YES)
-             
-        Process(target=self.make_noise_when_touched).start()
-
-        Process(target=self.throw_by_ir_beacon).start()
-
-        Process(target=self.scan_colors).start()
         
-        self.keep_driving_by_ir_beacon(speed=1000)
+        Thread(target=self.scan_colors).start()
+            
+        Thread(target=self.make_noise_when_touched).start()
 
-        # FIXME: OSError: [Errno 5] EIO: 
-        # Unexpected hardware input/output error with a motor or sensor:
-        # --> Try unplugging the sensor or motor and plug it back in again.
-        # --> To see which sensor or motor is causing the problem,
-        #     check the line in your script that matches
-        #     the line number given in the 'Traceback' above.
-        # --> Try rebooting the hub/brick if the problem persists.
+        Thread(target=self.throw_by_ir_beacon).start()
+
+        self.keep_driving_by_ir_beacon()
 
 
 if __name__ == '__main__':
