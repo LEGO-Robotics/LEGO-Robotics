@@ -54,6 +54,10 @@ class Rov3r(IRBeaconRemoteControlledTank):
             if self.touch_sensor.is_pressed:
                 self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
                 self.dis.update()
+            
+            else:
+                self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+                self.dis.update()
 
 
     def make_noise_when_seeing_black(self):
@@ -65,15 +69,14 @@ class Rov3r(IRBeaconRemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-       
-        self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
-        self.dis.update()
+        Thread(target=self.make_noise_when_seeing_black,
+               daemon=True).start()
 
-        Thread(target=self.make_noise_when_seeing_black).start()
+        Thread(target=self.spin_gears,
+               daemon=True).start()
 
-        Thread(target=self.spin_gears).start()
-
-        Thread(target=self.change_screen_when_touched).start()
+        Thread(target=self.change_screen_when_touched,
+               daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 

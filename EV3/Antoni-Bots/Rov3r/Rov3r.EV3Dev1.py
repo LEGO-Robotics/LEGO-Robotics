@@ -66,9 +66,6 @@ class Rov3r(IRBeaconRemoteControlledTank):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
         while True:
-            self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
-            self.dis.update()
-
             self.drive_once_by_ir_beacon(speed=1000)
 
             self.make_noise_when_seeing_black()

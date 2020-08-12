@@ -55,6 +55,10 @@ class Rov3r(IRBeaconRemoteControlledTank):
                 self.dis.image.paste(im=Image.open('/home/robot/image/Angry.bmp'))
                 self.dis.update()
 
+            else:
+                self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
+                self.dis.update()
+
 
     def make_noise_when_seeing_black(self):
         while True:
@@ -65,15 +69,14 @@ class Rov3r(IRBeaconRemoteControlledTank):
     def main(self):
         self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
 
-       
-        self.dis.image.paste(im=Image.open('/home/robot/image/Fire.bmp'))
-        self.dis.update()
+        Process(target=self.make_noise_when_seeing_black,
+                daemon=True).start()
 
-        Process(target=self.make_noise_when_seeing_black).start()
+        Process(target=self.spin_gears,
+                daemon=True).start()
 
-        Process(target=self.spin_gears).start()
-
-        Process(target=self.change_screen_when_touched).start()
+        Process(target=self.change_screen_when_touched,
+                daemon=True).start()
 
         self.keep_driving_by_ir_beacon()
 
