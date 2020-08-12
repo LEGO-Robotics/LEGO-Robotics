@@ -7,8 +7,6 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
-
-
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
@@ -77,11 +75,6 @@ class Rov3r(IRBeaconRemoteControlledTank):
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
         while True:
-            self.dis.image_filename(
-                filename='/home/robot/image/Fire.bmp',
-                clear_screen=True)
-            self.dis.update()
-
             self.drive_once_by_ir_beacon(speed=100)
 
             self.make_noise_when_seeing_black()
