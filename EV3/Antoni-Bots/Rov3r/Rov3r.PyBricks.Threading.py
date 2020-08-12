@@ -3,7 +3,7 @@
 
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
-from pybricks.media.ev3dev import SoundFile,ImageFile
+from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
 from threading import Thread
@@ -79,6 +79,3 @@ if __name__ == '__main__':
     ROV3R = Rov3r()
 
     ROV3R.main()
-
-
-
