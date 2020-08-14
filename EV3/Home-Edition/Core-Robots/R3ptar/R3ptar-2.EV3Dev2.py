@@ -17,7 +17,28 @@ IR_SENSOR = InfraredSensor(address=INPUT_4)
 SPEAKER = Sound()
 
 
-while True:
+def rattle():
+    MEDIUM_MOTOR.on_for_seconds(
+        speed=10,
+        seconds=1,
+        brake=False,
+        block=True)
+
+    SPEAKER.play_file(
+        wav_file='/home/robot/sound/Snake rattle.wav',
+        volume=50,
+        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+    MEDIUM_MOTOR.on_for_seconds(
+        speed=-10,
+        seconds=1,
+        brake=False,
+        block=True)
+
+    sleep(1)
+
+
+def scare_people():
     if IR_SENSOR.proximity < 30:
         SPEAKER.play_file(
             wav_file='/home/robot/sound/Snake hiss.wav',
@@ -37,21 +58,8 @@ while True:
             brake=True,
             block=True)
 
-    MEDIUM_MOTOR.on_for_seconds(
-        speed=10,
-        seconds=1,
-        brake=False,
-        block=True)
 
-    SPEAKER.play_file(
-        wav_file='/home/robot/sound/Snake rattle.wav',
-        volume=100,
-        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+while True:
+    scare_people()
 
-    MEDIUM_MOTOR.on_for_seconds(
-        speed=-10,
-        seconds=1,
-        brake=False,
-        block=True)
-
-    sleep(1)
+    rattle()
