@@ -197,6 +197,8 @@ GitHub Community
 
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
+[Melbourne High School Robotics EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
+
 [MindBoards](https://github.com/mindboards)
 
 [Modern Robotics](https://modernroboticsinc.com)
