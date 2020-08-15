@@ -8,7 +8,6 @@ from ev3dev.ev3 import(
 ) 
    
 from multiprocessing import Process
-
 from time import sleep
 
 

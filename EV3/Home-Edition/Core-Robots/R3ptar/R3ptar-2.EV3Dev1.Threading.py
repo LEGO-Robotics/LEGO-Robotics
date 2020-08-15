@@ -8,7 +8,6 @@ from ev3dev.ev3 import(
 ) 
    
 from threading import Thread
-
 from time import sleep
 
 
