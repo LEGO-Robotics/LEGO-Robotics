@@ -5,3 +5,8 @@
 > Control R3PTAR with your smart phone or tablet with the free Robot commander app.
 
 [Building Instructions](https://www.lego.com/cdn/cs/set/assets/bltfa9d17de847b8936/31313_R3PTAR_2016.pdf)
+
+
+## Note
+
+When running parallel Processes / Threads, don't play sounds at the same time because it would make the Brick busy and might crash a Process / Thread.
