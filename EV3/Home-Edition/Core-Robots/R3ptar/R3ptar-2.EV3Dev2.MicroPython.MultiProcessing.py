@@ -44,11 +44,6 @@ def rattle():
 def scare_people():
     while True:
         if IR_SENSOR.proximity < 30:
-            SPEAKER.play_file(
-                wav_file='/home/robot/sound/Snake hiss.wav',
-                volume=100,
-                play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
-
             LARGE_MOTOR.on_for_seconds(
                 speed=100,
                 seconds=1,
