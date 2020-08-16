@@ -20,4 +20,4 @@ RPyC >= 4.1.5
 Rope >= 0.17.0
 
 # Simulators
-EV3Sim >= 1.0.8
+EV3Sim >= 1.0.9
