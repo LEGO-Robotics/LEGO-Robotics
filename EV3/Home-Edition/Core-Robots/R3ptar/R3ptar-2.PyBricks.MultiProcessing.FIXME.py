@@ -6,8 +6,7 @@ from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Direction, Port, Stop  
 
-from pybricks.experimental import run_parallel
-
+from multiprocessing import Process
 from time import sleep
 
 
@@ -57,6 +56,18 @@ def scare_people():
                 wait=True)
 
 
-run_parallel(
-    scare_people,
-    rattle)
+Process(target=scare_people).start()
+
+rattle()
+
+# FIXME: OSError: [Errno 5] EIO: 
+# Unexpected hardware input/output error with a motor or sensor:
+# --> Try unplugging the sensor or motor and plug it back in again.
+# --> To see which sensor or motor is causing the problem,
+#     check the line in your script that matches
+#     the line number given in the 'Traceback' above.
+# --> Try rebooting the hub/brick if the problem persists.
+#
+# OR
+#
+# scare_people() Process dies / becomes non-responsive

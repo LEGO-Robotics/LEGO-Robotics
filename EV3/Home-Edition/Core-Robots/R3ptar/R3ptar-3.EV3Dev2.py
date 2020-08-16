@@ -1,7 +1,7 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import MediumMotor, LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_D
+from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_D
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.led import Leds
@@ -12,8 +12,8 @@ from time import sleep
 
 
 MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
-CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
 TAIL_MOTOR = LargeMotor(address=OUTPUT_B)
+CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
 
 IR_SENSOR = InfraredSensor(address=INPUT_4)
 
@@ -92,7 +92,7 @@ while True:
             block=False)
 
         MEDIUM_MOTOR.on_for_seconds(
-            speed=randint(-30,30),
+            speed=randint(-30, 30),
             seconds=0.2,
             brake=False,
             block=True)
