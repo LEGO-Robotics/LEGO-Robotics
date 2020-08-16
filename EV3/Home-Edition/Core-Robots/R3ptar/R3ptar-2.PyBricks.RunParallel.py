@@ -7,6 +7,7 @@ from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Direction, Port, Stop  
 
 from pybricks.experimental import run_parallel
+
 from time import sleep
 
 
@@ -58,5 +59,4 @@ def scare_people():
 
 run_parallel(
     scare_people,
-    rattle
-)
+    rattle)
