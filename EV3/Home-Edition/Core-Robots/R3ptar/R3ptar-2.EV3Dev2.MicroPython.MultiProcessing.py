@@ -6,9 +6,8 @@ from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sound import Sound
 
-from time import sleep
-
 from multiprocessing import Process
+from time import sleep
 
 
 LARGE_MOTOR = LargeMotor(address=OUTPUT_D)
