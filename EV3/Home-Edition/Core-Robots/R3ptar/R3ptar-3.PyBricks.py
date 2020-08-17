@@ -4,87 +4,73 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
-from pybricks.parameters import Direction, Port, Stop
+from pybricks.parameters import Color, Direction, Port, Stop
 
 from random import randint
 from time import sleep
 
 
-MEDIUM_MOTOR = Motor(port=Port.A)
-TAIL_MOTOR = Motor(port=Port.B)
-CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
+BRICK = EV3Brick()
 
-IR_SENSOR = InfraredSensor(address=INPUT_4)
+MEDIUM_MOTOR = Motor(port=Port.A,
+                     positive_direction=Direction.CLOCKWISE)
+TAIL_MOTOR = Motor(port=Port.B,
+                   positive_direction=Direction.CLOCKWISE)
+CHEST_MOTOR = Motor(port=Port.D,
+                    positive_direction=Direction.CLOCKWISE)
 
-LIGHTS = Leds()
-SPEAKER = Sound()
+IR_SENSOR = InfraredSensor(port=Port.S4)
 
 
-CHEST_MOTOR.run_timed(
-    speed_sp=-300,
-    time_sp=1000,
-    stop_action=Motor.STOP_ACTION_BRAKE)
-CHEST_MOTOR.wait_while(Motor.STATE_RUNNING) 
+CHEST_MOTOR.run_time(
+    speed=-300,
+    time=1000,
+    then=Stop.HOLD,
+    wait=True)
 
 while True:
-    if IR_SENSOR.proximity < 30:
-        LIGHTS.set_color(
-            group=Leds.LEFT,
-            color=Leds.RED,
-            pct=1)
+    if IR_SENSOR.distance() < 30:
+        BRICK.light.on(color=Color.RED)
 
-        LIGHTS.set_color(
-            group=Leds.RIGHT,
-            color=Leds.RED,
-            pct=1)
+        MEDIUM_MOTOR.stop()
 
-        MEDIUM_MOTOR.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        TAIL_MOTOR.stop()
 
-        TAIL_MOTOR.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        BRICK.speaker.play_file(file=SoundFile.SNAKE_HISS)
 
-        SPEAKER.play(wav_file='/home/robot/sound/Snake hiss.wav')
+        CHEST_MOTOR.run_time(
+            speed=1000,
+            time=1000,
+            then=Stop.HOLD,
+            wait=True)
 
-        CHEST_MOTOR.run_timed(
-            speed_sp=1000,
-            time_sp=1000,
-            stop_action=Motor.STOP_ACTION_BRAKE)
-        CHEST_MOTOR.wait_while(Motor.STATE_RUNNING)
+        MEDIUM_MOTOR.run(speed=1000)
 
-        MEDIUM_MOTOR.run_forever(speed_sp=1000)
+        TAIL_MOTOR.run(speed=-1000)
 
-        TAIL_MOTOR.run_forever(speed_sp=-1000)
-
-        CHEST_MOTOR.run_timed(
-            speed_sp=-300,
-            time_sp=1000,
-            stop_action=Motor.STOP_ACTION_BRAKE)
-        CHEST_MOTOR.wait_while(Motor.STATE_RUNNING)
+        CHEST_MOTOR.run_time(
+            speed=-300,
+            time=1000,
+            then=Stop.HOLD,
+            wait=True)
 
         sleep(2)
 
-        MEDIUM_MOTOR.run_timed(
-            speed_sp=-1000,
-            time_sp=1000,
-            stop_action=Motor.STOP_ACTION_HOLD)
-        MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
+        MEDIUM_MOTOR.run_time(
+            speed=-1000,
+            time=1000,
+            then=Stop.HOLD,
+            wait=True)
 
         sleep(1)
 
     else:
-        LIGHTS.set_color(
-            group=Leds.LEFT,
-            color=Leds.ORANGE,
-            pct=1)
+        BRICK.light.on(color=Color.ORANGE)
 
-        LIGHTS.set_color(
-            group=Leds.RIGHT,
-            color=Leds.ORANGE,
-            pct=1)
+        TAIL_MOTOR.run(speed=1000)
 
-        TAIL_MOTOR.run_forever(speed_sp=1000)
-
-        MEDIUM_MOTOR.run_timed(
-            speed_sp=randint(-30, 30),
-            time_sp=0.2 * 1000,
-            stop_action=Motor.STOP_ACTION_HOLD)
-        MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
+        MEDIUM_MOTOR.run_time(
+            speed=randint(-30, 30),
+            time=0.2 * 1000,
+            then=Stop.COAST,
+            wait=True) 
