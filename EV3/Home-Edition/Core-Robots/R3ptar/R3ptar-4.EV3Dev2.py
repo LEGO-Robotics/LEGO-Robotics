@@ -75,6 +75,7 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
 
     else:
         MEDIUM_MOTOR.off(brake=True)
+        
         TAIL_MOTOR.off(brake=False)
 
 
