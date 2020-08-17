@@ -40,12 +40,12 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 1000):
         TAIL_MOTOR.run_forever(speed_sp=speed)
 
     elif beacon.red_down:
-        MEDIUM_MOTOR.on(speed=-500)
+        MEDIUM_MOTOR.run_forever(speed_sp=-500)
 
-        TAIL_MOTOR.on(speed=-speed)
+        TAIL_MOTOR.run_forever(speed_sp=-speed)
 
     elif beacon.blue_down:
-        MEDIUM_MOTOR.on(speed=500)
+        MEDIUM_MOTOR.run_forever(speed_sp=500)
 
         TAIL_MOTOR.run_forever(speed_sp=-speed)
 
