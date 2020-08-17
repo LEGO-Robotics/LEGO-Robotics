@@ -8,8 +8,8 @@ from ev3dev2.sound import Sound
 
 
 MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
-CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
 TAIL_MOTOR = LargeMotor(address=OUTPUT_B)
+CHEST_MOTOR = LargeMotor(address=OUTPUT_D)
 
 IR_SENSOR = InfraredSensor(address=INPUT_4)
 
@@ -17,21 +17,21 @@ SPEAKER = Sound()
 
 
 def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
-    if IR_SENSOR.top_left(channel) and IR_SENSOR.top_right(channel):
+    if IR_SENSOR.top_left(channel=channel) and IR_SENSOR.top_right(channel=channel):
         TAIL_MOTOR.on(
             speed=speed,
             brake=False,
             block=False)
 
-    elif IR_SENSOR.bottom_left(channel) and IR_SENSOR.bottom_right(channel):
+    elif IR_SENSOR.bottom_left(channel=channel) and IR_SENSOR.bottom_right(channel=channel):
         TAIL_MOTOR.on(
             speed=-speed,
             brake=False,
             block=False)
 
-    elif IR_SENSOR.top_left(channel):
+    elif IR_SENSOR.top_left(channel=channel):
         MEDIUM_MOTOR.on(
-            speed=-10,
+            speed=-50,
             brake=False,
             block=False)
 
@@ -40,9 +40,9 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
             brake=False,
             block=False)
 
-    elif IR_SENSOR.top_right(channel):
+    elif IR_SENSOR.top_right(channel=channel):
         MEDIUM_MOTOR.on(
-            speed=10,
+            speed=50,
             brake=False,
             block=False)
 
@@ -51,9 +51,9 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
             brake=False,
             block=False)
 
-    elif IR_SENSOR.bottom_left(channel):
+    elif IR_SENSOR.bottom_left(channel=channel):
         MEDIUM_MOTOR.on(
-            speed=-10,
+            speed=-50,
             brake=False,
             block=False)
 
@@ -62,9 +62,9 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
             brake=False,
             block=False)
 
-    elif IR_SENSOR.bottom_right(channel):
+    elif IR_SENSOR.bottom_right(channel=channel):
         MEDIUM_MOTOR.on(
-            speed=10,
+            speed=50,
             brake=False,
             block=False)
 
@@ -79,7 +79,7 @@ def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
 
 
 def bite_by_ir_beacon(channel: int = 1, speed: float = 100):
-    if IR_SENSOR.beacon(channel):
+    if IR_SENSOR.beacon(channel=channel):
         CHEST_MOTOR.on_for_seconds(
             speed=speed,
             seconds=1,
@@ -92,7 +92,7 @@ def bite_by_ir_beacon(channel: int = 1, speed: float = 100):
             play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
         CHEST_MOTOR.on_for_seconds(
-            speed=-speed,
+            speed=-30,
             seconds=1,
             brake=True,
             block=True)
@@ -100,6 +100,12 @@ def bite_by_ir_beacon(channel: int = 1, speed: float = 100):
         while IR_SENSOR.beacon(channel=1):
             pass
 
+
+CHEST_MOTOR.on_for_seconds(
+    speed=-30,
+    seconds=1,
+    brake=True,
+    block=True)
 
 while True:
     drive_once_by_ir_beacon(
