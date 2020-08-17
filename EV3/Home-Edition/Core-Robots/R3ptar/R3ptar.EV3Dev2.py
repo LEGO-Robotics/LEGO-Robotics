@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 
 
+# original: https://github.com/ev3dev/ev3dev-lang-python-demo/blob/stretch/robots/R3PTAR/r3ptar.py
+
+
+from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_D
+from ev3dev2.sensor import INPUT_4
+from ev3dev2.sensor.lego import InfraredSensor
+from ev3dev2.sound import Sound
+
 import logging
 import signal
 import sys
-from ev3dev2.motor import OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D, MediumMotor, LargeMotor
-from ev3dev2.sensor.lego import InfraredSensor
-from ev3dev2.sound import Sound
 from threading import Thread, Event
 from time import sleep
 
@@ -36,11 +41,17 @@ class MonitorRemoteControl(Thread):
                 log.info('%s: shutdown_event is set' % self)
                 break
 
-            #log.info("proximity: %s" % self.parent.remote.proximity)
+            # log.info("proximity: %s" % self.parent.remote.proximity)
             if self.parent.remote.proximity < 30:
-                self.parent.speaker.play('snake-hiss.wav', Sound.PLAY_NO_WAIT_FOR_COMPLETE)
-                self.parent.strike_motor.on_for_seconds(speed=STRIKE_SPEED_PCT, seconds=0.5)
-                self.parent.strike_motor.on_for_seconds(speed=(STRIKE_SPEED_PCT * -1), seconds=0.5)
+                self.parent.speaker.play_file(
+                    '/home/robot/sound/Snake hiss.wav',
+                    Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+                self.parent.strike_motor.on_for_seconds(
+                    speed=STRIKE_SPEED_PCT,
+                    seconds=0.5)
+                self.parent.strike_motor.on_for_seconds(
+                    speed=-STRIKE_SPEED_PCT,
+                    seconds=0.5)
 
             self.parent.remote.process()
             sleep(0.01)
@@ -51,6 +62,7 @@ class R3ptar:
                  drive_motor_port=OUTPUT_B,
                  strike_motor_port=OUTPUT_D,
                  steer_motor_port=OUTPUT_A,
+                 ir_sensor_port=INPUT_4,
                  drive_speed_pct=60):
 
         self.drive_motor = LargeMotor(drive_motor_port)
@@ -59,7 +71,7 @@ class R3ptar:
         self.speaker = Sound()
         STEER_SPEED_PCT = 30
 
-        self.remote = InfraredSensor()
+        self.remote = InfraredSensor(address=ir_sensor_port)
         self.remote.on_channel1_top_left = self.make_move(self.drive_motor, drive_speed_pct)
         self.remote.on_channel1_bottom_left = self.make_move(self.drive_motor, drive_speed_pct * -1)
         self.remote.on_channel1_top_right = self.make_move(self.steer_motor, STEER_SPEED_PCT)
@@ -82,7 +94,6 @@ class R3ptar:
         return move
 
     def shutdown_robot(self):
-
         if self.shutdown_event.is_set():
             return
 
