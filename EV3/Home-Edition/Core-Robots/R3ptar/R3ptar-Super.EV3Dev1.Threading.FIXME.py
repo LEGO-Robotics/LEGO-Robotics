@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
 
+#!/usr/bin/env python3
+
+
 from ev3dev.ev3 import (
     Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_D, 
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
     Sound
 )
 
-from multiprocessing import Process
+from threading import Thread
 
 
 class R3ptar:
@@ -129,16 +132,19 @@ class R3ptar:
 
 
     def main(self, speed: float = 1000):
-        Process(target=self.bite_by_ir_beacon,
+        Thread(target=self.bite_by_ir_beacon,
                 daemon=True).start()
 
-        Process(target=self.bite_if_touched,
+        Thread(target=self.bite_if_touched,
                 daemon=True).start()
                 
-        Process(target=self.run_away_if_chased,
+        Thread(target=self.run_away_if_chased,
                 daemon=True).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
+
+        # FIXME: ValueError: invalid literal for int() with base 10: ''
+        # when multiple threads access the same InfraredSensor
 
 
 if __name__ == '__main__':
