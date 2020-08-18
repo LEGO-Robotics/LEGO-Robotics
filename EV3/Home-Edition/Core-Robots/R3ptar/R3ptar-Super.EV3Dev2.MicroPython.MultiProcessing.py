@@ -165,13 +165,14 @@ class R3ptar:
 
 
     def main(self, speed: float = 100):
-        Process(target=self.bite_by_ir_beacon)    
+        Process(target=self.bite_by_ir_beacon).start()    
 
-        Process(target=self.bite_if_touched()).start()    
+        Process(target=self.bite_if_touched).start()    
                 
         Process(target=self.run_away_if_chased).start()
 
         self.keep_driving_by_ir_beacon(speed=speed)
+
 
 if __name__ == '__main__':
     R3PTAR = R3ptar()
