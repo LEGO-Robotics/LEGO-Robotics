@@ -25,8 +25,7 @@ class R3ptar:
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=1)
-        self.ir_beacon_channel = ir_beacon_channel
+                                    channel=ir_beacon_channel)
 
         self.noise = Sound()
 
