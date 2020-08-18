@@ -108,7 +108,7 @@ class R3ptar:
 
     def bite_if_touched(self):
         if self.touch_sensor.is_pressed:
-            self.noise.play(wav_file='/home/robot/sound/Snake hiss.wav').wait()
+            self.noise.play(wav_file='/home/robot/sound/Snake hiss.wav')
 
             self.scare_motor.run_timed(
                 speed_sp=1000,
