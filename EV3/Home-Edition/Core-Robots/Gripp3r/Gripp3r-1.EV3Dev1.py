@@ -19,7 +19,6 @@ MEDIUM_MOTOR.run_timed(
     stop_action=Motor.STOP_ACTION_BRAKE)
 MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
 
-
 SPEAKER.play(wav_file='/home/robot/sound/Airbrake.wav')
 
 MEDIUM_MOTOR.run_timed(
