@@ -40,11 +40,11 @@ MEDIUM_MOTOR.run_timed(
 MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
  
 LEFT_MOTOR.run_to_rel_pos(
-    position_sp=2000,   
+    position_sp=1000,   
     speed_sp=750,   
     stop_action=Motor.STOP_ACTION_BRAKE)
 RIGHT_MOTOR.run_to_rel_pos(
-    position_sp=-2000,   
+    position_sp=-1000,   
     speed_sp=750,   
     stop_action=Motor.STOP_ACTION_BRAKE)
 LEFT_MOTOR.wait_while(Motor.STATE_RUNNING)
