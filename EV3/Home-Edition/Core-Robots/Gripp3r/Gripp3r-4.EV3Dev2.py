@@ -2,8 +2,8 @@
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, MoveSteering, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-from ev3dev2.sensor import INPUT_4
-from ev3dev2.sensor.lego import InfraredSensor, TouchSensor
+from ev3dev2.sensor import INPUT_1, INPUT_4 
+from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
 from ev3dev2.sound import Sound
 
 
@@ -15,12 +15,14 @@ STEER_DRIVER = MoveSteering(left_motor_port=OUTPUT_B,
                             right_motor_port=OUTPUT_C,
                             motor_class=LargeMotor)
 
+TOUCH_SENSOR = TouchSensor(address=INPUT_1)
 IR_SENSOR = InfraredSensor(address=INPUT_4)
 
 SPEAKER = Sound()
 
+
 def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
-    if IR_SENSOR.top_right(channel=channel) and IR_SENSOR.top_right(channel=channel):
+    if IR_SENSOR.top_left(channel=channel) and IR_SENSOR.top_right(channel=channel):
         # go forward
         TANK_DRIVER.on(
             left_speed=speed,
