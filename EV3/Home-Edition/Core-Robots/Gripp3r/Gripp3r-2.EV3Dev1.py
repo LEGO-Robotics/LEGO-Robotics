@@ -43,7 +43,12 @@ LEFT_MOTOR.run_to_rel_pos(
     position_sp=2000,   
     speed_sp=750,   
     stop_action=Motor.STOP_ACTION_BRAKE)
+RIGHT_MOTOR.run_to_rel_pos(
+    position_sp=-2000,   
+    speed_sp=750,   
+    stop_action=Motor.STOP_ACTION_BRAKE)
 LEFT_MOTOR.wait_while(Motor.STATE_RUNNING)
+RIGHT_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 LEFT_MOTOR.run_to_rel_pos(
     position_sp=3 * 360,   
