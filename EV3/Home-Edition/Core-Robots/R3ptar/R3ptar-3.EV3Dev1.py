@@ -87,5 +87,5 @@ while True:
         MEDIUM_MOTOR.run_timed(
             speed_sp=randint(-30, 30),
             time_sp=0.2 * 1000,
-            stop_action=Motor.STOP_ACTION_HOLD)
+            stop_action=Motor.STOP_ACTION_COAST)
         MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
