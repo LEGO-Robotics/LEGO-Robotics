@@ -19,7 +19,7 @@ RIGHT_MOTOR = Motor(port=Port.C,
                     positive_direction=Direction.CLOCKWISE)
 DRIVE_BASE = DriveBase(left_motor=LEFT_MOTOR,
                        right_motor=RIGHT_MOTOR,
-                       wheel_diameter=102,
+                       wheel_diameter=26,
                        axle_track=115)
 DRIVE_BASE.settings(
     straight_speed=750,   # milimeters per second
