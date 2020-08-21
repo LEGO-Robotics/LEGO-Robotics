@@ -19,49 +19,49 @@ SPEAKER = Sound()
 
 
 def drive_once_by_ir_beacon(channel: int = 1, speed: float = 100):
-    if IR_SENSOR.top_left(channel) and IR_SENSOR.top_right(channel):
+    if IR_SENSOR.top_left(channel=channel) and IR_SENSOR.top_right(channel=channel):
         # go forward
         TANK_DRIVER.on(
             left_speed=speed,
             right_speed=speed)
     
-    elif IR_SENSOR.bottom_left(channel) and IR_SENSOR.bottom_right(channel):
+    elif IR_SENSOR.bottom_left(channel=channel) and IR_SENSOR.bottom_right(channel=channel):
         # go backward
         TANK_DRIVER.on(
             left_speed=-speed,
             right_speed=-speed)
 
-    elif IR_SENSOR.top_left(channel) and IR_SENSOR.bottom_right(channel):
+    elif IR_SENSOR.top_left(channel=channel) and IR_SENSOR.bottom_right(channel=channel):
         # turn around left
         TANK_DRIVER.on(
             left_speed=-speed,
             right_speed=speed)
 
-    elif IR_SENSOR.top_right(channel) and IR_SENSOR.bottom_left(channel):
+    elif IR_SENSOR.top_right(channel=channel) and IR_SENSOR.bottom_left(channel=channel):
         # turn around right
         TANK_DRIVER.on(
             left_speed=speed,
             right_speed=-speed)
 
-    elif IR_SENSOR.top_left(channel):
+    elif IR_SENSOR.top_left(channel=channel):
         # turn left
         TANK_DRIVER.on(
             left_speed=0,
             right_speed=speed)
 
-    elif IR_SENSOR.top_right(channel):
+    elif IR_SENSOR.top_right(channel=channel):
         # turn right
         TANK_DRIVER.on(
             left_speed=speed,
             right_speed=0)
 
-    elif IR_SENSOR.bottom_left(channel):
+    elif IR_SENSOR.bottom_left(channel=channel):
         # left backward
         TANK_DRIVER.on(
             left_speed=0,
             right_speed=-speed)
 
-    elif IR_SENSOR.bottom_right(channel):
+    elif IR_SENSOR.bottom_right(channel=channel):
         # right backward
         TANK_DRIVER.on(
             left_speed=-speed,
