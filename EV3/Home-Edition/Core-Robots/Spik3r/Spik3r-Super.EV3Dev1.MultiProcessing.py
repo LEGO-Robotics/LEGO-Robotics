@@ -2,13 +2,13 @@
 
 
 from ev3dev.ev3 import( 
-    Motor, OUTPUT_A, OUTPUT_B, OUTPUT_D,
+    Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_D,
     TouchSensor, ColorSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
     Screen, Sound
 )
 
+from multiprocessing import Process
 from PIL import Image
-from threading import Thread
 
 
 class Spik3r:
@@ -18,9 +18,9 @@ class Spik3r:
             claw_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
-        self.sting_motor = Motor(address=sting_motor_port)
-        self.go_motor = Motor(address=go_motor_port)
-        self.claw_motor = Motor(address=claw_motor_port)
+        self.sting_motor = LargeMotor(address=sting_motor_port)
+        self.go_motor = LargeMotor(address=go_motor_port)
+        self.claw_motor = MediumMotor(address=claw_motor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
@@ -118,17 +118,16 @@ class Spik3r:
         self.dis.image.paste(im=Image.open('/home/robot/image/Evil.bmp'))
         self.dis.update()
 
-        # FIXME: ValueError: invalid literal for int() with base 10: '' or '9\n9'
-        # when multiple threads access the same Sensor
-        Thread(target=self.pinch_if_touched,
-               daemon=True).start()
+        # FIXME: .sting_by_ir_beacon stops responding after a while
+        Process(target=self.pinch_if_touched,
+                daemon=True).start()
 
-        Thread(target=self.be_noisy_to_people,
-               daemon=True).start()
+        Process(target=self.be_noisy_to_people,
+                daemon=True).start()
 
-        Thread(target=self.sting_by_ir_beacon,
-               daemon=True).start()
-        
+        Process(target=self.sting_by_ir_beacon,
+                daemon=True).start()
+
         self.keep_driving_by_ir_beacon() 
 
 
