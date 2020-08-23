@@ -111,7 +111,8 @@ class Gripp3r:
             stop_action=Motor.STOP_ACTION_BRAKE)
         self.grip_motor.wait_while(Motor.STATE_RUNNING)
 
-        Thread(target=self.grip_or_release_by_ir_beacon).start()   
+        Thread(target=self.grip_or_release_by_ir_beacon,
+               daemon=True).start()
         
         self.keep_driving_by_ir_beacon(speed=speed)
 
