@@ -33,64 +33,6 @@ class Gripp3r(IRBeaconRemoteControlledTank):
         self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
-        
-
-    def keep_driving_by_ir_beacon(self, speed: float = 100):
-        while True:
-            if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
-                    self.ir_sensor.top_right(channel=self.ir_beacon_channel):
-                # go forward
-                self.tank_driver.on(
-                    left_speed=speed,
-                    right_speed=speed)
-            
-            elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and \
-                    self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
-                # go backward
-                self.tank_driver.on(
-                    left_speed=-speed,
-                    right_speed=-speed)
-
-            elif self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
-                    self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
-                # turn around left
-                self.tank_driver.on(
-                    left_speed=-speed,
-                    right_speed=speed)
-
-            elif self.ir_sensor.top_right(channel=self.ir_beacon_channel) and \
-                    self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
-                # turn around right
-                self.tank_driver.on(
-                    left_speed=speed,
-                    right_speed=-speed)
-
-            elif self.ir_sensor.top_left(channel=self.ir_beacon_channel):
-                # turn left
-                self.tank_driver.on(
-                    left_speed=0,
-                    right_speed=speed)
-
-            elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
-                # turn right
-                self.tank_driver.on(
-                    left_speed=speed,
-                    right_speed=0)
-
-            elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
-                # left backward
-                self.tank_driver.on(
-                    left_speed=0,
-                    right_speed=-speed)
-
-            elif self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
-                # right backward
-                self.tank_driver.on(
-                    left_speed=-speed,
-                    right_speed=0)
-
-            else:
-                self.tank_driver.off(brake=False)
 
 
     def grip_or_release_by_ir_beacon(self, speed: float = 50):
