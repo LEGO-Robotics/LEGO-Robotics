@@ -15,6 +15,9 @@ EV3Dev
   - related: [OSError exception [Errno 4] EINTR when running motors in EV3](https://github.com/ev3dev/ev3dev-lang-python/issues/727)
     - related: [MicroPython: implement PEP 475](https://github.com/micropython/micropython/pull/5723)
 
+MicroPython
+- [Multiple-Inheritance Issues](https://github.com/micropython/micropython/search?q=%22multiple+inheritance%22&state=open&type=Issues)
+
 
 ## Resolved
 
