@@ -17,8 +17,15 @@ AdaFruit-AMPy >= 1.0.7
 RPyC >= 4.1.5
 
 # Linting & Refactoring
-Flake8 >= 3.8.3
 PyLint >= 2.6.0
+Flake8 >= 3.8.3
+MyPy >= 0.782
+PyDocStyle >= 5.1.0
+PyCodeStyle >= 2.6.0
+# Prospector >= 1.3.0
+    # *** prospector 1.3.0 depends on pylint==2.5.2 ***
+Pylama >= 7.7.1
+Bandit >= 1.6.2
 Rope >= 0.17.0
 
 # Simulators
