@@ -17,6 +17,7 @@ EV3Dev
 
 MicroPython
 - [Multiple-Inheritance Issues](https://github.com/micropython/micropython/search?q=%22multiple+inheritance%22&state=open&type=Issues)
+  - [Differences vs. CPython](https://docs.micropython.org/en/latest/genrst/core_language.html#classes)
 
 
 ## Resolved
