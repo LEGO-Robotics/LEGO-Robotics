@@ -16,7 +16,9 @@ PyLGBst >= 1.2.0
 AdaFruit-AMPy >= 1.0.7
 RPyC >= 4.1.5
 
-# Auto-Refactoring
+# Linting & Refactoring
+Flake8 >= 3.8.3
+PyLint >= 2.6.0
 Rope >= 0.17.0
 
 # Simulators
