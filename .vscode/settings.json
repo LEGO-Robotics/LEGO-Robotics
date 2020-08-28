@@ -1,8 +1,21 @@
 {
+  "debug.openDebug": "neverOpen",
+
+  "editor.rulers": [79],
+
   "ev3devBrowser.download.exclude": "{**/Desktop*/**,**/*LabVIEW/**,**/__pycache__/**,**/README*,**/*.ev3*,**/*.swift}",
   "ev3devBrowser.download.include": "**/*.py",
   
+  "files.eol": "\n",
+
   "git.ignoreLimitWarning": true,
 
-  "python.linting.enabled": false
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pydocstyleEnabled": false,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylamaEnabled": true,
+  "python.linting.banditEnabled": false
 }
