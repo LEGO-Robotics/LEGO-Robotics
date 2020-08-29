@@ -15,7 +15,7 @@ sys.path.append(os.path.expanduser('~'))
 from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
 
-class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
+class CuriosityRov3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -41,11 +41,11 @@ class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
         self.noise = Sound()
 
     
-    def spin_fan(self, speed: 1000):
+    def spin_fan(self, speed: float = 1000):
         if self.color_sensor.reflected_light_intensity > 20:
             self.medium_motor.run_forever(speed_sp=speed)
 
-        elif self.color_sensor.reflected_light_intensity < 20:
+        else:
             self.medium_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
             
@@ -73,8 +73,6 @@ class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
             
 
 if __name__ == '__main__':
-    CURIOSITY_ROV3R = Curiosity_Rov3r()
+    CURIOSITY_ROV3R = CuriosityRov3r()
 
     CURIOSITY_ROV3R.main()
-
-
