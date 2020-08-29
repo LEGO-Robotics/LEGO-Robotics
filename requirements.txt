@@ -29,4 +29,4 @@ Bandit >= 1.6.2
 Rope >= 0.17.0
 
 # Simulators
-EV3Sim >= 1.1.0
+EV3Sim >= 1.2.0
