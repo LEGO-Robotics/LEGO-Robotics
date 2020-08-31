@@ -7,14 +7,13 @@ from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
 
-
 import os
 import sys
 sys.path.append(os.path.expanduser('~'))
 from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
-class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
+class CuriosityRov3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -34,20 +33,20 @@ class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
         self.ir_beacon_channel = ir_beacon_channel
 
         self.dis = Display()
-
         self.noise = Sound()
 
     
-    def spin_fan(self, speed: 1000):
+    def spin_fan(self, speed: float = 100):
         if self.color_sensor.reflected_light_intensity > 20:
             self.medium_motor.on(
                 speed=speed,
-                brake=True,
-                block=True)
+                brake=False,
+                block=False)
 
-        elif self.color_sensor.reflected_light_intensity < 20:
+        else:
             self.medium_motor.off(brake=True)
             
+
     def say_when_touched(self):
         if self.touch_sensor.is_pressed:
             self.dis.image_filename(
@@ -60,14 +59,14 @@ class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
                 volume=100,
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-            self.medium_motor.run_time(
-                speed_sp=-500,
-                time_sp=3000,
-                stop_action=Motor.STOP_ACTION_BRAKE)
-            self.medium_motor.wait_while(Motor.STATE_RUNNING)
+            self.medium_motor.on_for_seconds(
+                speed=-50,
+                seconds=3,
+                brake=True,
+                block=True)
 
 
-    def main(self, speed: float = 1000):
+    def main(self, speed: float = 100):
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
@@ -77,8 +76,6 @@ class Curiosity_Rov3r(IRBeaconRemoteControlledTank):
             
 
 if __name__ == '__main__':
-    CURIOSITY_ROV3R = Curiosity_Rov3r()
+    CURIOSITY_ROV3R = CuriosityRov3r()
 
     CURIOSITY_ROV3R.main()
-
-
