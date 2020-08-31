@@ -37,7 +37,6 @@ class CuriosityRov3r(IRBeaconRemoteControlledTank):
                                     channel=ir_beacon_channel)
 
         self.dis = Screen()
-
         self.noise = Sound()
 
     
