@@ -13,7 +13,7 @@ from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 
 class CuriosityRov3r(IRBeaconRemoteControlledTank, EV3Brick):
-    WHEEL_DIAMETER = 20   # milimeters
+    WHEEL_DIAMETER = 35   # milimeters
     AXLE_TRACK = 130      # milimeters
 
 
