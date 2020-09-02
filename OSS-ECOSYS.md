@@ -35,7 +35,34 @@
   - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
-## [EV3Dev]
+
+## [EV3Dev](https://github.com/ev3dev)
+
+[Website](https://www.ev3dev.org)
+- [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
+- [Projects](https://www.ev3dev.org/projects)
+
+
+
+Python EV3Dev2 References
+- https://github.com/ev3dev/ev3dev-lang-python
+  - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
+    - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
+- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
+- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
+- https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
+- https://sites.google.com/site/ev3devpython
+  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
+
+(DEPRECATED) Python EV3Dev1 References
+- https://sites.google.com/site/ev3python
+- https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
+- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie
+- https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
+
+[Brick Manager](https://github.com/ev3dev/brickman)
+
+[EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
 
 
 ## [MicroPython](https://github.com/micropython)
@@ -52,6 +79,12 @@
 [EV3Dev Examples](https://github.com/cavenel/ev3dev_examples)
 
 [EV3 Print3rBot](https://github.com/cavenel/ev3-print3rbot)
+
+
+### [Bits Dream](https://github.com/BitsDream)
+
+[EV3 Swift Playground](https://github.com/BitsDream/EV3-Playground)
+- [API Documentation](https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf)
 
 
 - [Roland Blochberger](https://github.com/robl0377)
@@ -85,3 +118,14 @@
   - [Laurens Valk](https://github.com/laurensvalk)
 
   - [Anton Vanhoucke](https://github.com/antonvh)
+
+### [Li Ruo Shi](https://github.com/iceboundrock)
+
+[EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
+
+
+### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
+
+[PyBricks Stubs](https://github.com/drewwhis/pybricks-stubs)
+
+[Alabama FIRST LEGO League](https://github.com/drewwhis/alabama-first-lego-league)

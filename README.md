@@ -3,40 +3,13 @@
 
 ## API References
 
-
-
-
-- https://github.com/drewwhis/pybricks-stubs
-
-
-EV3Dev References
-- https://www.ev3dev.org
-  - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
-  - [Projects](https://www.ev3dev.org/projects)
-
-Python EV3Dev2 References
-- https://github.com/ev3dev/ev3dev-lang-python
-  - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
-    - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
-- https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
-- https://sites.google.com/site/ev3devpython
-  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
-
-(DEPRECATED) Python EV3Dev1 References
-- https://sites.google.com/site/ev3python
-- https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie
-- https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
+Refer to [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
 
 
 
 
 
-Swift References
-- https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf
-- https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3
+
 
 
 ## Official LEGO Mindstorms Software & Materials
