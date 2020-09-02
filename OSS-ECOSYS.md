@@ -42,23 +42,14 @@
 - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
 - [Projects](https://www.ev3dev.org/projects)
 
+[Documentation](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev)
+- [PDF](https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf)
+- [Outdated EV3Dev1 Documentation](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie)
 
-
-Python EV3Dev2 References
-- https://github.com/ev3dev/ev3dev-lang-python
-  - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
-    - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/spec.html
-- https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf
-- https://sites.google.com/site/ev3devpython
-  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech) 
-
-(DEPRECATED) Python EV3Dev1 References
-- https://sites.google.com/site/ev3python
-- https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
-- https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie
-- https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
+[EV3Dev Python](https://github.com/ev3dev/ev3dev-lang-python)
+- Outdated EV3Dev1: https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
+- [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
+  - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
 
 [Brick Manager](https://github.com/ev3dev/brickman)
 
@@ -122,6 +113,14 @@ Python EV3Dev2 References
 ### [Li Ruo Shi](https://github.com/iceboundrock)
 
 [EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
+
+
+### Nigel Ward
+
+[EV3Dev Python Website](https://sites.google.com/site/ev3devpython) based on EV3Dev2
+  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
+
+(DEPRECATED) [EV3 Python Website](- https://sites.google.com/site/ev3python) based on EV3Dev1
 
 
 ### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
