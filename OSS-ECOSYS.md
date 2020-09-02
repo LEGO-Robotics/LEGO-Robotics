@@ -4,12 +4,12 @@
 ## Major Organizations
 
 
-## [LEGO](https://github.com/LEGO)
+### [LEGO](https://github.com/LEGO)
 
 [LEGO BLE Wireless Protocol Documentation](https://github.com/LEGO/lego-ble-wireless-protocol-docs)
 
 
-## [PyBricks](https://github.com/pybricks)
+### [PyBricks](https://github.com/pybricks)
 
 [Website](https://pybricks.com)
 - [Web-based IDE](https://code.pybricks.com)
@@ -36,7 +36,7 @@
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
 
-## [EV3Dev](https://github.com/ev3dev)
+### [EV3Dev](https://github.com/ev3dev)
 
 [Website](https://www.ev3dev.org)
 - [Programming Languages](https://www.ev3dev.org/docs/programming-languages)
@@ -53,13 +53,21 @@
 
 [Brick Manager](https://github.com/ev3dev/brickman)
 
+[EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
+
 [EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
 
 
-## [MicroPython](https://github.com/micropython)
+### [MicroPython](https://github.com/micropython)
 
 [MicroPython](https://github.com/micropython/micropython)
 [MicroPython Lib](https://github.com/micropython/micropython-lib)
+
+
+### [MindBoards](https://github.com/mindboards)
+
+[EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
+
 
 
 ## Persons and Small Organizations
@@ -89,9 +97,20 @@
 
 ### [Roland Blochberger](https://github.com/robl0377)
 
-### [Droids Robotics](https://github.com/droidsrobotics/projects)
+[Le2LeJosEv3](https://github.com/robl0377/Le2LeJosEv3)
+- [Ev3rStorm](https://github.com/robl0377/Le2LeJosEv3-Ev3rStorm)
+- [Gripp3r](https://github.com/robl0377/Le2LeJosEv3-Gripp3r)
+- [El3ctric Guitar](https://github.com/robl0377/Le2LeJosEv3-El3ctricGuitar)
+- [Ev3Meg](https://github.com/robl0377/Le2LeJosEv3-Ev3Meg)
+- [RoboDoz3r](https://github.com/robl0377/Le2LeJosEv3-RoboDoz3r)
+- [Wack3m](https://github.com/robl0377/Le2LeJosEv3-Wack3m)
+- [Color Sorter](ttps://github.com/robl0377/Le2LeJosEv3-ColorSorter)
+- [Elephant](https://github.com/robl0377/Le2LeJosEv3-Elephant)
+- [Puppy](https://github.com/robl0377/Le2LeJosEv3-Puppy)
+- [Znap](https://github.com/robl0377/Le2LeJosEv3-Znap)
 
-### [Melbourne High School Robotics EV3 Simulator](https://github.com/MelbourneHighSchoolRobotic)
+
+### [Melbourne High School Robotics](https://github.com/MelbourneHighSchoolRobotics)
 
 [EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
 
@@ -118,6 +137,10 @@ https://github.com/seshanbrothers/projects
 - https://github.com/sanjayseshan/ev3-projects
 - https://github.com/sanjayseshan/spikeprime-samples
 
+[Droids Robotics](https://github.com/droidsrobotics)
+
+[Projects](https://github.com/droidsrobotics/projects)
+
 
 ### [Philip Taylor](https://github.com/G33kDude/pyev3)
 
@@ -140,7 +163,7 @@ https://github.com/seshanbrothers/projects
 [EV3Dev Python Website](https://sites.google.com/site/ev3devpython) based on EV3Dev2
   - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
 
-(DEPRECATED) [EV3 Python Website](- https://sites.google.com/site/ev3python) based on EV3Dev1
+(DEPRECATED) [EV3 Python Website](https://sites.google.com/site/ev3python) based on EV3Dev1
 
 
 ### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
