@@ -140,7 +140,7 @@ GitHub Community
 
 - [Droids Robotics](https://github.com/droidsrobotics/projects)
 
-- [Ryan Au](https://github.com/auryan898)
+- [Ryan B. Au](https://github.com/auryan898)
   - [EV3-Comm-Wrapper](https://github.com/auryan898/EV3-Comm-Wrapper)
   - [NXT-Python2](https://github.com/auryan898/nxt-python2)
   - [NXT-Python-Tools](https://github.com/auryan898/nxt-python-tools)
