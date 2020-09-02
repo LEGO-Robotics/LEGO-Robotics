@@ -6,12 +6,6 @@
 Refer to [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
 
 
-
-
-
-
-
-
 ## Official LEGO Mindstorms Software & Materials
 
 
@@ -112,7 +106,7 @@ LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/m
 
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
-[Melbourne High School Robotics EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
+
 
 [MindBoards](https://github.com/mindboards)
 
@@ -132,8 +126,6 @@ LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/m
 [Robot Operating System (ROS)](https://www.ros.org)
 - http://wiki.ros.org/Robots/EV3
 - http://wiki.ros.org/Robots/NXT
-
-[Robot Square](http://robotsquare.com) (Laurens Valk)
 
 [VexRobotics](https://www.vexrobotics.com)
 - [VexIQ](https://www.vexrobotics.com/vexiq)

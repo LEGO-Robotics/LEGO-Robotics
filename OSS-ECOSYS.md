@@ -1,7 +1,7 @@
 # LEGO Mindstorms Open-Source Software (OSS) Community/Ecosystem
 
 
-## Organizations
+## Major Organizations
 
 
 ## [LEGO](https://github.com/LEGO)
@@ -62,7 +62,7 @@
 [MicroPython Lib](https://github.com/micropython/micropython-lib)
 
 
-## Persons
+## Persons and Small Organizations
 
 
 ### [Ryan B. Au](https://github.com/auryan898)
@@ -91,6 +91,11 @@
 
 ### [Droids Robotics](https://github.com/droidsrobotics/projects)
 
+### [Melbourne High School Robotics EV3 Simulator](https://github.com/MelbourneHighSchoolRobotic)
+
+[EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
+
+
 ### [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
 
 [EV3 Lessons](http://ev3lessons.com)
@@ -118,6 +123,8 @@ https://github.com/seshanbrothers/projects
 
 
 ### [Laurens Valk](https://github.com/laurensvalk)
+
+[Robot Square](http://robotsquare.com)
 
 
 ### [Anton van Houcke](https://github.com/antonvh)
