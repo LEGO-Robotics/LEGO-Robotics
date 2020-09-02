@@ -4,28 +4,7 @@
 ## API References
 
 
-PyBricks References
 
-- https://pybricks.com
-
-- https://docs.pybricks.com
-
-- https://github.com/pybricks
-  - https://github.com/pybricks/pybricks-api
-  - https://github.com/pybricks/pybricks-code
-    - https://code.pybricks.com Web IDE
-  - https://github.com/pybricks/pybricksdev
-  - https://github.com/pybricks/pybricks-micropython
-  - https://github.com/pybricks/pybricks-projects
-    - [Discussion on Sharing PyBricks Projects](https://github.com/pybricks/support/issues/94)
-  - https://github.com/pybricks/support/issues
-    - [Roadmap](https://github.com/pybricks/support/issues/29)
-    - Interesting Discussion Threads
-      - [PyBricks: Data Logging & Analysis](https://github.com/pybricks/support/issues/7)
-      - [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16): lots of perspective from FIRST LEGO League / Robotics Challenge / Tech Challenge
-      - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
-      - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
-      - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
 - https://github.com/drewwhis/pybricks-stubs
 
@@ -52,10 +31,7 @@ Python EV3Dev2 References
 - https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie Outdated EV3Dev1 programs
 
 
-MicroPython References
-- https://github.com/micropython
-  - https://github.com/micropython/micropython
-  - https://github.com/micropython/micropython-lib
+
 
 
 Swift References
