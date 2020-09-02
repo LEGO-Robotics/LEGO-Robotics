@@ -65,6 +65,15 @@
 ## Persons
 
 
+### [Ryan B. Au](https://github.com/auryan898)
+
+[EV3 Comm Wrapper](https://github.com/auryan898/EV3-Comm-Wrapper)
+
+[NXT Python2](https://github.com/auryan898/nxt-python2)
+
+[NXT Python Tools](https://github.com/auryan898/nxt-python-tools)
+
+
 ### [Christophe Avenel](https://github.com/cavenel)
 
 [EV3Dev Examples](https://github.com/cavenel/ev3dev_examples)
@@ -78,37 +87,41 @@
 - [API Documentation](https://github.com/BitsDream/EV3-Playground/blob/master/Documentation/EV3%20Command%20Reference%20EN.pdf)
 
 
-- [Roland Blochberger](https://github.com/robl0377)
+### [Roland Blochberger](https://github.com/robl0377)
 
-- [Droids Robotics](https://github.com/droidsrobotics/projects)
+### [Droids Robotics](https://github.com/droidsrobotics/projects)
 
-- [Ryan B. Au](https://github.com/auryan898)
-  - [EV3-Comm-Wrapper](https://github.com/auryan898/EV3-Comm-Wrapper)
-  - [NXT-Python2](https://github.com/auryan898/nxt-python2)
-  - [NXT-Python-Tools](https://github.com/auryan898/nxt-python-tools)
+### [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
 
-- [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
-  - [EV3 Lessons](http://ev3lessons.com)
-    - https://github.com/ev3lessons
-    - https://github.com/ev3lessons/archive
-    - https://github.com/ev3lessons/ev3lessons-classic
-    - https://github.com/ev3lessons/ev3lessons-old
-    - https://github.com/ev3lessons/ev3lessons-future
-  - [FLL Tutorials](http://FLLTutorials.com)
-    - https://github.com/ev3lessons/FLL-Tutorials
-  - [Prime Lessons](http://primelessons.org)
-    - https://github.com/ev3lessons/primelessons
-  - https://github.com/seshanbrothers
-    - https://github.com/seshanbrothers/projects
-  - [Sanjay Seshan](http://sanjay.seshan.org)
-    - https://github.com/sanjayseshan/ev3-projects
-    - https://github.com/sanjayseshan/spikeprime-samples
+[EV3 Lessons](http://ev3lessons.com)
+- https://github.com/ev3lessons
+- https://github.com/ev3lessons/archive
+- https://github.com/ev3lessons/ev3lessons-classic
+- https://github.com/ev3lessons/ev3lessons-old
+- https://github.com/ev3lessons/ev3lessons-future
 
-  - [Philip Taylor](https://github.com/G33kDude/pyev3)
+[FLL Tutorials](http://FLLTutorials.com)
+- https://github.com/ev3lessons/FLL-Tutorials
 
-  - [Laurens Valk](https://github.com/laurensvalk)
+[Prime Lessons](http://primelessons.org)
+- https://github.com/ev3lessons/primelessons
 
-  - [Anton Vanhoucke](https://github.com/antonvh)
+https://github.com/seshanbrothers
+https://github.com/seshanbrothers/projects
+
+[Sanjay Seshan](http://sanjay.seshan.org)
+- https://github.com/sanjayseshan/ev3-projects
+- https://github.com/sanjayseshan/spikeprime-samples
+
+
+### [Philip Taylor](https://github.com/G33kDude/pyev3)
+
+
+### [Laurens Valk](https://github.com/laurensvalk)
+
+
+### [Anton van Houcke](https://github.com/antonvh)
+
 
 ### [Li Ruo Shi](https://github.com/iceboundrock)
 
