@@ -69,6 +69,8 @@
 [EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
 
 
+### [Dexter Industries](https://github.com/DexterInd)
+
 
 ## Persons and Small Organizations
 
@@ -137,7 +139,7 @@ https://github.com/seshanbrothers/projects
 - https://github.com/sanjayseshan/ev3-projects
 - https://github.com/sanjayseshan/spikeprime-samples
 
-[Droids Robotics](https://github.com/droidsrobotics)
+#### [Droids Robotics](http://www.droidsrobotics.org)
 
 [Projects](https://github.com/droidsrobotics/projects)
 
@@ -151,6 +153,8 @@ https://github.com/seshanbrothers/projects
 
 
 ### [Anton van Houcke](https://github.com/antonvh)
+
+[Anton's Mindstorms Website](https://antonsmindstorms.com)
 
 
 ### [Li Ruo Shi](https://github.com/iceboundrock)

@@ -1,9 +1,7 @@
 # LEGO Mindstorms
 
 
-## API References
-
-Refer to [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
+## [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
 
 
 ## Official LEGO Mindstorms Software & Materials
@@ -81,8 +79,6 @@ LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/m
 - [Gears Simulator](https://gears.aposteriori.com.sg)
   - https://github.com/QuirkyCort/gears
 
-[Anton's Mindstorms](https://antonsmindstorms.com) (Anton Vanhoucke)
-
 [Blockly](https://developers.google.com/blockly)
 
 [BluPants](https://blupants.com)
@@ -100,15 +96,8 @@ LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/m
 
 [Dexter Industries](https://www.dexterindustries.com)
 - Brick Pi
-- [GitHub](https://github.com/DexterInd)
-
-[Droids Robotics](http://www.droidsrobotics.org)
 
 [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
-
-
-
-[MindBoards](https://github.com/mindboards)
 
 [Modern Robotics](https://modernroboticsinc.com)
 - [HiTechnic](https://www.hitechnic.com)
