@@ -35,6 +35,8 @@
   - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
+  [PyBricks Technical Info](https://github.com/pybricks/technical-info)
+
 
 ### [EV3Dev](https://github.com/ev3dev)
 
@@ -119,6 +121,15 @@
 - [Elephant](https://github.com/robl0377/Le2LeJosEv3-Elephant)
 - [Puppy](https://github.com/robl0377/Le2LeJosEv3-Puppy)
 - [Znap](https://github.com/robl0377/Le2LeJosEv3-Znap)
+
+
+### [GianCann](https://github.com/GianCann)
+
+[AFOL Train System (ATS)](https://github.com/GianCann/ATS)
+
+[ATS Powered-Up Web API](https://github.com/GianCann/ats-poweredup-webapi)
+
+[SPIKE Prime Hub](https://github.com/GianCann/SpikePrimeHub)
 
 
 ### Kyle Markland
