@@ -75,7 +75,10 @@
 [EV3 Sources](https://github.com/mindboards/ev3sources)
 - [Extended](https://github.com/mindboards/ev3sources-xtended)
 
-[EV3Dev Kernel]
+[EV3Dev Kernel](https://github.com/mindboards/ev3dev-kernel)
+- now https://github.com/ev3dev/ev3dev-kernel
+
+[EV3Dev Modules](https://github.com/mindboards/ev3dev-modules)
 - now https://github.com/ev3dev/ev3dev-kernel
 
 [EV3Dev Root FS](https://github.com/mindboards/ev3dev-rootfs)
