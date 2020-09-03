@@ -57,6 +57,8 @@
 
 [Brickstrap](https://github.com/ev3dev/brickstrap)
 
+[Build Scripts](https://github.com/ev3dev/ev3dev-buildscripts)
+
 [EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
 
 [EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
@@ -68,16 +70,23 @@
 [LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
 
+#### [MindBoards](https://github.com/mindboards)
+
+[EV3 Sources](https://github.com/mindboards/ev3sources)
+- [Extended](https://github.com/mindboards/ev3sources-xtended)
+
+[EV3Dev Kernel]
+- now https://github.com/ev3dev/ev3dev-kernel
+
+[EV3Dev Root FS](https://github.com/mindboards/ev3dev-rootfs)
+- now https://github.com/ev3dev/ev3dev-buildscripts
+
+
 ### [MicroPython](https://github.com/micropython)
 
 [MicroPython](https://github.com/micropython/micropython)
 
 [MicroPython Lib](https://github.com/micropython/micropython-lib)
-
-
-### [MindBoards](https://github.com/mindboards)
-
-[EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
 
 
 ### [Dexter Industries](https://github.com/DexterInd)
@@ -121,6 +130,13 @@
 - [Elephant](https://github.com/robl0377/Le2LeJosEv3-Elephant)
 - [Puppy](https://github.com/robl0377/Le2LeJosEv3-Puppy)
 - [Znap](https://github.com/robl0377/Le2LeJosEv3-Znap)
+
+
+### [Shea Bunge](https://github.com/sheabunge)
+
+[LeJOS EV3 Projects](https://github.com/sheabunge/lejos-ev3-projects)
+
+[Not eXactly C (NXC) Library](https://github.com/sheabunge/nxc-lib)
 
 
 ### [GianCann](https://github.com/GianCann)
