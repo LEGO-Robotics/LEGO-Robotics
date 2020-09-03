@@ -98,7 +98,9 @@
 ## Persons and Small Organizations
 
 
-### [Jimmy Asyraf](https://github.com/jimmyasyraf)
+### [Hazimi "Jimmy" Asyraf](https://github.com/jimmyasyraf)
+
+[Website](https://hazimiasyraf.com)
 
 [Congkak Robot](https://github.com/jimmyasyraf/congkak-robot)
 
@@ -117,17 +119,6 @@
 [EV3Dev Examples](https://github.com/cavenel/ev3dev_examples)
 
 [EV3 Print3rBot](https://github.com/cavenel/ev3-print3rbot)
-
-
-### [Quirky Cort](https://github.com/QuirkyCort)
-
-[A Posteriori Website](https://www.aposteriori.com.sg)
-
-[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
-- https://www.aposteriori.com.sg/Ev3devSim/index.html
-
-[Generic Educational Robotics Simulator (GEAR)](https://github.com/QuirkyCort/gears)
-- https://gears.aposteriori.com.sg
 
 
 ### [Bits Dream](https://github.com/BitsDream)
@@ -157,6 +148,8 @@
 
 [Not eXactly C (NXC) Library](https://github.com/sheabunge/nxc-lib)
 
+[NXT Lock Code](https://github.com/sheabunge/LockCode)
+
 
 ### [GianCann](https://github.com/GianCann)
 
@@ -165,6 +158,17 @@
 [ATS Powered-Up Web API](https://github.com/GianCann/ats-poweredup-webapi)
 
 [SPIKE Prime Hub](https://github.com/GianCann/SpikePrimeHub)
+
+
+### [Quirky Cort](https://github.com/QuirkyCort)
+
+[A Posteriori Website](https://www.aposteriori.com.sg)
+
+[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
+- https://www.aposteriori.com.sg/Ev3devSim/index.html
+
+[Generic Educational Robotics Simulator (GEAR)](https://github.com/QuirkyCort/gears)
+- https://gears.aposteriori.com.sg
 
 
 ### [Anton van Houcke](https://github.com/antonvh)
@@ -176,6 +180,30 @@
 [BrickPi FPV](https://github.com/antonvh/brickpi_fpv)
 
 [BrickPi PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
+
+
+### [Stavros Korokithakis](https://github.com/skorokithakis)
+
+[Website](https://www.stavros.io)
+
+[NXT Python](https://github.com/skorokithakis/nxt-python)
+
+
+### Douglas "Doug" P. Lau (DPLau@Comcast.net)
+
+NXT_Python (2007)
+
+
+### [Elvin Luff](https://github.com/Eelviny)
+
+[Website](https://eelviny.me)
+
+[NXT Python](https://github.com/eelviny/nxt-python)
+- [Wiki](https://github.com/eelviny/nxt-python/wiki)
+
+[NXT Python Examples](https://github.com/Eelviny/nxt-python-examples)
+
+[Motor Control](https://github.com/Eelviny/MotorControl)
 
 
 ### Kyle Markland
@@ -261,10 +289,15 @@
 [EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
 
 
+### Marcus Wanner (MarcusW@Cox.net)
+
+NXT-Python (work ended in 2013)
+
+
 ### Nigel Ward
 
 [EV3Dev Python Website](https://sites.google.com/site/ev3devpython) based on EV3Dev2
-  - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
+- Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
 
 (DEPRECATED) [EV3 Python Website](https://sites.google.com/site/ev3python) based on EV3Dev1
 
