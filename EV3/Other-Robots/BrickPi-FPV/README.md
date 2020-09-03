@@ -1,1 +1,1 @@
-# [BrickPi-FPV](https://github.com/antonvh/brickpi_fpv)
+# [BrickPi FPV](https://github.com/antonvh/brickpi_fpv)
