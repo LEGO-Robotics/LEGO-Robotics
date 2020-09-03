@@ -70,6 +70,19 @@
 [LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
 
+#### [EV3Dev Python Tools](https://github.com/ev3dev-python-tools)
+
+[EV3Dev Cmd](https://github.com/ev3dev-python-tools/ev3devcmd)
+
+[EV3Dev Logging](https://github.com/ev3dev-python-tools/ev3devlogging)
+
+[EV3Dev RPyC](https://github.com/ev3dev-python-tools/ev3devrpyc)
+
+[EV3Dev2 Simulator](https://github.com/ev3dev-python-tools/ev3dev2simulator)
+
+[Thonny-EV3Dev](https://github.com/ev3dev-python-tools/thonny-ev3dev)
+
+
 #### [MindBoards](https://github.com/mindboards)
 
 [EV3 Sources](https://github.com/mindboards/ev3sources)
@@ -160,6 +173,18 @@
 [SPIKE Prime Hub](https://github.com/GianCann/SpikePrimeHub)
 
 
+### [David "Dave" G. Churchill](https://github.com/dgchurchill)
+
+[NXT Python](https://github.com/dgchurchill/nxt-python)
+
+[LEGO NXT Remote](https://github.com/dgchurchill/legonxtremote)
+
+
+### [Jason R. Coombs](https://github.com/jaraco)
+
+[JaRaCo.NXT](https://github.com/jaraco/jaraco.nxt)
+
+
 ### [Quirky Cort](https://github.com/QuirkyCort)
 
 [A Posteriori Website](https://www.aposteriori.com.sg)
@@ -189,9 +214,21 @@
 [NXT Python](https://github.com/skorokithakis/nxt-python)
 
 
+### [Vitaly Kravtsov](https://github.com/in4lio)
+
+[EV3-C](https://github.com/in4lio/ev3-c)
+
+[EV3Dev-C](https://github.com/in4lio/ev3dev-c)
+
+
 ### Douglas "Doug" P. Lau (DPLau@Comcast.net)
 
 NXT_Python (2007)
+
+
+### [Richard Lewis](https://github.com/richrd)
+
+[NXT Python](https://github.com/richrd/nxt-python)
 
 
 ### [Elvin Luff](https://github.com/Eelviny)
@@ -224,6 +261,11 @@ NXT_Python (2007)
 [2017 RoboCup Richard State](https://github.com/MelbourneHighSchoolRobotics/2017-RoboCup-Richard-State)
 
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
+
+
+### [Andrey Pokhilko](https://github.com/undera)
+
+[Python LEGO Boost](https://github.com/undera/pylgbst)
 
 
 ### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
@@ -281,6 +323,9 @@ NXT_Python (2007)
 
 [Robot Square](http://robotsquare.com)
 
+[EV3Dev Light](https://github.com/laurensvalk/ev3devlight)
+- [Examples](https://github.com/laurensvalk/ev3devlight-examples)
+
 [Ball Bot](https://github.com/laurensvalk/ballbot)
 
 
@@ -289,7 +334,7 @@ NXT_Python (2007)
 [EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
 
 
-### Marcus Wanner (MarcusW@Cox.net)
+### Marcus Wanner (Marcus@Wanners.net / MarcusW@Cox.net)
 
 NXT-Python (work ended in 2013)
 
