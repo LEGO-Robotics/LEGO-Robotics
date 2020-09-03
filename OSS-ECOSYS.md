@@ -221,6 +221,8 @@
 [Generic Educational Robotics Simulator (GEAR)](https://github.com/QuirkyCort/gears)
 - https://gears.aposteriori.com.sg
 
+[EV3Dev Lang Python Fast](https://github.com/QuirkyCort/ev3dev-lang-python-fast)
+
 
 ### [Ian T. Daniher](https://github.com/itdaniher)
 
