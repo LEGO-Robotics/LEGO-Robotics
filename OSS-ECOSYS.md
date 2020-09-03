@@ -53,9 +53,17 @@
 
 [Brick Manager](https://github.com/ev3dev/brickman)
 
+[Brickstrap](https://github.com/ev3dev/brickstrap)
+
 [EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
 
 [EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
+
+[EV3Dev Lang](https://github.com/ev3dev/ev3dev-lang)
+
+[EV3Dev GitHub.IO](https://github.com/ev3dev/ev3dev.github.io)
+
+[LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
 
 ### [MicroPython](https://github.com/micropython)
@@ -116,6 +124,14 @@
 
 [EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
 
+[2018 RoboCup Code](https://github.com/MelbourneHighSchoolRobotics/2018-RoboCup-Code)
+
+[2016 RoboCup CI Peter Robot Code](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-Peter-Robot-Code)
+
+[2017 RoboCup Richard State](https://github.com/MelbourneHighSchoolRobotics/2017-RoboCup-Richard-State)
+
+[2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
+
 
 ### [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
 
@@ -144,7 +160,11 @@ https://github.com/seshanbrothers/projects
 [Projects](https://github.com/droidsrobotics/projects)
 
 
-### [Philip Taylor](https://github.com/G33kDude/pyev3)
+### [Philip Taylor](https://github.com/G33kDude)
+
+[Py EV3]https://github.com/G33kDude/pyev3
+
+[TreeV3](https://github.com/G33kDude/TreeV3)
 
 
 ### [Laurens Valk](https://github.com/laurensvalk)
