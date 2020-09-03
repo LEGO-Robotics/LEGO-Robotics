@@ -67,7 +67,8 @@
 
 [EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
 - [Beagle Board Kernel](https://github.com/ev3dev/bb.org-kernel)
--[Raspberry Pi Kernel](https://github.com/ev3dev/rpi-kernel)
+- [FatCatLab EVB Kernel](https://github.com/ev3dev/fatcatlab-evb-kernel)
+- [Raspberry Pi Kernel](https://github.com/ev3dev/rpi-kernel)
 
 [EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
 
@@ -82,8 +83,6 @@
 [LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
 [VSCode EV3Dev Browser](https://github.com/ev3dev/vscode-ev3dev-browser)
-
-
 
 
 #### [MindBoards](https://github.com/mindboards)
