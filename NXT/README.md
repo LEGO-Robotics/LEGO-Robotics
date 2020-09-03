@@ -5,3 +5,5 @@
 [LEGO Mindstorms NXT Education (2006, #9797)](https://www.lego.com/en-us/service/buildinginstructions/9797)
 
 [LEGO Mindstorms NXT 2.0 (2009, #8547)](https://www.lego.com/en-us/service/buildinginstructions/8547)
+
+LEGO Mindstorms Education Resource Set (#9648 / #9695)

@@ -70,8 +70,12 @@
 
 ### NXT
 
-LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
-- also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
+NXT Retail Edition Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+
+[NXT Education Edition Software](https://education.lego.com/en-us/downloads/retiredproducts/nxt/software)
+
+[NXT Programs](http://www.nxtprograms.com)
+- [Projects for EV3](http://www.nxtprograms.com/index3.html)
 
 
 ## Other Educational Resources
