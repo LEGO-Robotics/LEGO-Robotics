@@ -151,6 +151,17 @@
 [SPIKE Prime Hub](https://github.com/GianCann/SpikePrimeHub)
 
 
+### [Anton van Houcke](https://github.com/antonvh)
+
+[Anton's Mindstorms Website](https://antonsmindstorms.com)
+
+[3nsor Plotter](https://github.com/antonvh/3nsor-plotter)
+
+[BrickPi FPV](https://github.com/antonvh/brickpi_fpv)
+
+[BrickPi PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
+
+
 ### Kyle Markland
 
 [Builder Dude 35 Website](https://builderdude35.com)
@@ -237,10 +248,7 @@
 
 [Robot Square](http://robotsquare.com)
 
-
-### [Anton van Houcke](https://github.com/antonvh)
-
-[Anton's Mindstorms Website](https://antonsmindstorms.com)
+[Ball Bot](https://github.com/laurensvalk/ballbot)
 
 
 ### [Li Ruo Shi](https://github.com/iceboundrock)

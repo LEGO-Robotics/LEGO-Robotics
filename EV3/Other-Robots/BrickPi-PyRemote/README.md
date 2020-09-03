@@ -1,1 +1,1 @@
-# [BrickPi-PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
+# [BrickPi PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
