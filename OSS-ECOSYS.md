@@ -48,39 +48,42 @@
 - [PDF](https://buildmedia.readthedocs.org/media/pdf/python-ev3dev/latest/python-ev3dev.pdf)
 - [Outdated EV3Dev1 Documentation](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-jessie)
 
-[EV3Dev Python](https://github.com/ev3dev/ev3dev-lang-python)
+[EV3Dev Meta Repo](https://github.com/ev3dev/ev3dev)
+
+[EV3Dev Lang Python](https://github.com/ev3dev/ev3dev-lang-python)
 - Outdated EV3Dev1: https://github.com/ev3dev/ev3dev-lang-python/tree/ev3dev-jessie or https://github.com/ev3dev/ev3dev-lang-python/tree/1.2.0
 - [Demo Programs](https://github.com/ev3dev/ev3dev-lang-python-demo)
   - [Outdated EV3Dev1 Programs](https://github.com/ev3dev/ev3dev-lang-python-demo/tree/jessie)
 
+[Brick Daemon](https://github.com/ev3dev/brickd)
+
 [Brick Manager](https://github.com/ev3dev/brickman)
+
+[Brick Run](https://github.com/ev3dev/brickrun)
 
 [Brickstrap](https://github.com/ev3dev/brickstrap)
 
 [Build Scripts](https://github.com/ev3dev/ev3dev-buildscripts)
 
 [EV3Dev Kernel](https://github.com/ev3dev/ev3dev-kernel)
+- [Beagle Board Kernel](https://github.com/ev3dev/bb.org-kernel)
+-[Raspberry Pi Kernel](https://github.com/ev3dev/rpi-kernel)
 
 [EV3Dev Kit](https://github.com/ev3dev/ev3devKit)
 
 [EV3Dev Lang](https://github.com/ev3dev/ev3dev-lang)
 
+[EV3Dev Mocks](https://github.com/ev3dev/ev3dev-mocks)
+
 [EV3Dev GitHub.IO](https://github.com/ev3dev/ev3dev.github.io)
+
+[EV3Dev Media](https://github.com/ev3dev/ev3dev-media)
 
 [LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
+[VSCode EV3Dev Browser](https://github.com/ev3dev/vscode-ev3dev-browser)
 
-#### [EV3Dev Python Tools](https://github.com/ev3dev-python-tools)
 
-[EV3Dev Cmd](https://github.com/ev3dev-python-tools/ev3devcmd)
-
-[EV3Dev Logging](https://github.com/ev3dev-python-tools/ev3devlogging)
-
-[EV3Dev RPyC](https://github.com/ev3dev-python-tools/ev3devrpyc)
-
-[EV3Dev2 Simulator](https://github.com/ev3dev-python-tools/ev3dev2simulator)
-
-[Thonny-EV3Dev](https://github.com/ev3dev-python-tools/thonny-ev3dev)
 
 
 #### [MindBoards](https://github.com/mindboards)
@@ -105,7 +108,12 @@
 [MicroPython Lib](https://github.com/micropython/micropython-lib)
 
 
+### [AdaFruit](https://github.com/adafruit)
+
+
 ### [Dexter Industries](https://github.com/DexterInd)
+
+[BrickPi](https://github.com/DexterInd/BrickPi)
 
 
 ## Persons and Small Organizations
@@ -134,6 +142,11 @@
 [EV3 Print3rBot](https://github.com/cavenel/ev3-print3rbot)
 
 
+### [Guillaume Binet](https://github.com/gbin)
+
+[WeDo](https://github.com/gbin/WeDoMore)
+
+
 ### [Bits Dream](https://github.com/BitsDream)
 
 [EV3 Swift Playground](https://github.com/BitsDream/EV3-Playground)
@@ -153,6 +166,20 @@
 - [Elephant](https://github.com/robl0377/Le2LeJosEv3-Elephant)
 - [Puppy](https://github.com/robl0377/Le2LeJosEv3-Puppy)
 - [Znap](https://github.com/robl0377/Le2LeJosEv3-Znap)
+
+
+### [BlockExt](https://github.com/blockext)
+
+[BlockExt Mindstorms NXT](https://github.com/blockext/mindstorms-nxt)
+
+
+### [Klutzy Bubbles](https://github.com/KlutzyBubbles)
+
+[LEGO MicroPython Extension](https://github.com/KlutzyBubbles/lego-micropython-extension)
+
+[LEGO MicroPython Skeleton](https://github.com/KlutzyBubbles/lego-micropython-skeleton)
+
+[LEGO MicroPython Docs](https://github.com/KlutzyBubbles/lego-micropython-docs)
 
 
 ### [Shea Bunge](https://github.com/sheabunge)
@@ -196,6 +223,11 @@
 - https://gears.aposteriori.com.sg
 
 
+### [Ian T. Daniher](https://github.com/itdaniher)
+
+[WeDo](https://github.com/itdaniher/WeDoMore)
+
+
 ### [Anton van Houcke](https://github.com/antonvh)
 
 [Anton's Mindstorms Website](https://antonsmindstorms.com)
@@ -221,6 +253,18 @@
 [EV3Dev-C](https://github.com/in4lio/ev3dev-c)
 
 
+#### [Harco Kuppens](https://github.com/harcokuppens)
+
+[EV3Dev Context]
+
+[EV3Dev Python Tools](https://github.com/ev3dev-python-tools)
+- [EV3Dev Cmd](https://github.com/ev3dev-python-tools/ev3devcmd)
+- [EV3Dev Logging](https://github.com/ev3dev-python-tools/ev3devlogging)
+- [EV3Dev RPyC](https://github.com/ev3dev-python-tools/ev3devrpyc)
+- [EV3Dev2 Simulator](https://github.com/ev3dev-python-tools/ev3dev2simulator)
+- [Thonny-EV3Dev](https://github.com/ev3dev-python-tools/thonny-ev3dev)
+
+
 ### Douglas "Doug" P. Lau (DPLau@Comcast.net)
 
 NXT_Python (2007)
@@ -229,6 +273,11 @@ NXT_Python (2007)
 ### [Richard Lewis](https://github.com/richrd)
 
 [NXT Python](https://github.com/richrd/nxt-python)
+
+
+### [Li Ruo Shi](https://github.com/iceboundrock)
+
+[EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
 
 
 ### [Elvin Luff](https://github.com/Eelviny)
@@ -261,6 +310,11 @@ NXT_Python (2007)
 [2017 RoboCup Richard State](https://github.com/MelbourneHighSchoolRobotics/2017-RoboCup-Richard-State)
 
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
+
+
+### [Janno Peterson](https://github.com/jannopet)
+
+[LEGO WeDo 2.0 Python SDK](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK)
 
 
 ### [Andrey Pokhilko](https://github.com/undera)
@@ -329,9 +383,14 @@ NXT_Python (2007)
 [Ball Bot](https://github.com/laurensvalk/ballbot)
 
 
-### [Li Ruo Shi](https://github.com/iceboundrock)
+### [Virantha](https://github.com/virantha)
 
-[EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
+[BrickNil](https://github.com/virantha/bricknil)
+
+
+### [vladDotH](https://github.com/vladDotH)
+
+[Py EV3](https://github.com/vladDotH/pyEV3)
 
 
 ### Marcus Wanner (Marcus@Wanners.net / MarcusW@Cox.net)
@@ -345,6 +404,11 @@ NXT-Python (work ended in 2013)
 - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
 
 (DEPRECATED) [EV3 Python Website](https://sites.google.com/site/ev3python) based on EV3Dev1
+
+
+### [Charles Weir](https://github.com/charlesweir)
+
+[Brick Python](https://github.com/charlesweir/BrickPython)
 
 
 ### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
