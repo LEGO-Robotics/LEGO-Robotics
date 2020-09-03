@@ -69,6 +69,7 @@
 ### [MicroPython](https://github.com/micropython)
 
 [MicroPython](https://github.com/micropython/micropython)
+
 [MicroPython Lib](https://github.com/micropython/micropython-lib)
 
 
@@ -120,6 +121,13 @@
 - [Znap](https://github.com/robl0377/Le2LeJosEv3-Znap)
 
 
+### Kyle Markland
+
+[Builder Dude 35 Website](https://builderdude35.com)
+
+[YouTube Channel](https://www.youtube.com/c/Builderdude35)
+
+
 ### [Melbourne High School Robotics](https://github.com/MelbourneHighSchoolRobotics)
 
 [EV3 Simulator](https://github.com/MelbourneHighSchoolRobotics/ev3sim)
@@ -133,31 +141,59 @@
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
 
 
-### [Seshan Brothers](http://brothers.seshan.org) (Sanjay & Arvind Seshan)
+### [Quirky Cort](https://github.com/QuirkyCort)
 
-[EV3 Lessons](http://ev3lessons.com)
-- https://github.com/ev3lessons
-- https://github.com/ev3lessons/archive
-- https://github.com/ev3lessons/ev3lessons-classic
-- https://github.com/ev3lessons/ev3lessons-old
-- https://github.com/ev3lessons/ev3lessons-future
+[A Posteriori Website](https://www.aposteriori.com.sg)
 
-[FLL Tutorials](http://FLLTutorials.com)
-- https://github.com/ev3lessons/FLL-Tutorials
+[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
+- https://www.aposteriori.com.sg/Ev3devSim/index.html
 
-[Prime Lessons](http://primelessons.org)
-- https://github.com/ev3lessons/primelessons
+[Generic Educational Robotics Simulator (GEAR)](https://github.com/QuirkyCort/gears)
+- https://gears.aposteriori.com.sg
 
-https://github.com/seshanbrothers
-https://github.com/seshanbrothers/projects
 
-[Sanjay Seshan](http://sanjay.seshan.org)
-- https://github.com/sanjayseshan/ev3-projects
-- https://github.com/sanjayseshan/spikeprime-samples
+### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
+
+[Website](http://brothers.seshan.org)
+
+[Projects](https://github.com/seshanbrothers/projects)
+
+
+#### [Sanjay Seshan](https://github.com/sanjayseshan)
+
+[Website](http://sanjay.seshan.org)
+
+[EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
+
+[SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
+
 
 #### [Droids Robotics](http://www.droidsrobotics.org)
 
 [Projects](https://github.com/droidsrobotics/projects)
+
+
+#### [EV3 Lessons](https://github.com/ev3lessons)
+
+[Website](http://ev3lessons.com)
+
+[Archive](https://github.com/ev3lessons/archive)
+
+[Classic](https://github.com/ev3lessons/ev3lessons-classic)
+
+[Old](https://github.com/ev3lessons/ev3lessons-old)
+
+[Future](https://github.com/ev3lessons/ev3lessons-future)
+
+
+#### [FLL Tutorials](https://github.com/ev3lessons/FLL-Tutorials)
+
+[Website](http://FLLTutorials.com)
+
+
+#### [Prime Lessons](https://github.com/ev3lessons/primelessons)
+
+[Website](http://primelessons.org)
 
 
 ### [Philip Taylor](https://github.com/G33kDude)

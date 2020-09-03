@@ -72,21 +72,11 @@
 LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
 - also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
 
-[A Posteriori](https://www.aposteriori.com.sg)
-- EV3DevSim Simulator
-  - https://github.com/QuirkyCort/ev3dev-sim
-  - https://www.aposteriori.com.sg/Ev3devSim/index.html
-- [Gears Simulator](https://gears.aposteriori.com.sg)
-  - https://github.com/QuirkyCort/gears
-
 [Blockly](https://developers.google.com/blockly)
 
 [BluPants](https://blupants.com)
 - [Documentation](https://blupants.org/help)
 - https://github.com/blupants/blupants
-
-[Builder Dude 35](https://builderdude35.com) (Kyle Markland)
-- [YouTube Channel](https://www.youtube.com/c/Builderdude35)
 
 [Coppelia Robotics](https://www.coppeliarobotics.com)
 - CoppeliaSim simulator
