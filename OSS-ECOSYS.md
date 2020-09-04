@@ -352,33 +352,6 @@ NXT_Python (2007)
 [Projects](https://github.com/seshanbrothers/projects)
 
 
-#### [Sanjay Seshan](https://github.com/sanjayseshan)
-
-[Website](http://sanjay.seshan.org)
-
-[EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
-
-[SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
-
-
-#### [Droids Robotics](http://www.droidsrobotics.org)
-
-[Website](http://www.droidsrobotics.org)
-
-[FIRST Robotics Challenge (FRC) Tutorials](https://github.com/droidsrobotics/FRC-Tutorials)
-
-[FIRST Tech Challenge (FTC) Tutorials](https://github.com/droidsrobotics/FTC-Tutorials)
-
-[2020 FRC Beta](https://github.com/droidsrobotics/2020.FRC-Beta)
-
-[2019 FRC Off-Season](https://github.com/droidsrobotics/FRC-2019-offseason)
-
-[2019 FRC Off-Season, tracking](https://github.com/droidsrobotics/FRC-tracking-2019-offseason)
-
-[Projects](https://github.com/droidsrobotics/projects)
-- [Deprecated Pix3l Plott3r](https://github.com/droidsrobotics/ev3dev)
-
-
 #### [EV3 Lessons](https://github.com/ev3lessons)
 
 [Website](http://ev3lessons.com)
@@ -400,6 +373,33 @@ NXT_Python (2007)
 #### [Prime Lessons](https://github.com/ev3lessons/primelessons)
 
 [Website](http://primelessons.org)
+
+
+#### [Droids Robotics](https://github.com/droidsrobotics)
+
+[Website](http://www.droidsrobotics.org)
+
+[FIRST Robotics Challenge (FRC) Tutorials](https://github.com/droidsrobotics/FRC-Tutorials)
+
+[FIRST Tech Challenge (FTC) Tutorials](https://github.com/droidsrobotics/FTC-Tutorials)
+
+[2020 FRC Beta](https://github.com/droidsrobotics/2020.FRC-Beta)
+
+[2019 FRC Off-Season](https://github.com/droidsrobotics/FRC-2019-offseason)
+
+[2019 FRC Off-Season, tracking](https://github.com/droidsrobotics/FRC-tracking-2019-offseason)
+
+[Projects](https://github.com/droidsrobotics/projects)
+- [Deprecated Pix3l Plott3r](https://github.com/droidsrobotics/ev3dev)
+
+
+#### [Sanjay Seshan](https://github.com/sanjayseshan)
+
+[Website](http://sanjay.seshan.org)
+
+[EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
+
+[SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
 
 
 ### [Xander Soldaat](https://github.com/botbench)
