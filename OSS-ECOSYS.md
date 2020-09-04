@@ -330,6 +330,11 @@ NXT_Python (2007)
 [NXT Programs](http://nxtprograms.com)
 
 
+### [Brian Peek](https://github.com/BrianPeek)
+
+[LEGO EV3](https://github.com/BrianPeek/legoev3)
+
+
 ### [Janno Peterson](https://github.com/jannopet)
 
 [LEGO WeDo 2.0 Python SDK](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK)
