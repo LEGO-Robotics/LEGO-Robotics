@@ -129,6 +129,11 @@
 ## Persons and Small Organizations
 
 
+### [Artificial Agents and Artificial Intelligence Research Group @ DISIM.UnivAQ](https://github.com/AAAI-DISIM-UnivAQ)
+
+[ROS2 EV3Dev](https://github.com/AAAI-DISIM-UnivAQ/ros2-ev3dev)
+
+
 ### [Hazimi "Jimmy" Asyraf](https://github.com/jimmyasyraf)
 
 [Website](https://hazimiasyraf.com)
@@ -479,6 +484,8 @@ NXT-Python (work ended in 2013)
 - Notes on [Images](https://sites.google.com/site/ev3python/learn_ev3_python/screen/bmp-image-collection) & [Sounds](https://sites.google.com/site/ev3python/learn_ev3_python/loudspeaker_speech)
 
 (DEPRECATED) [EV3 Python Website](https://sites.google.com/site/ev3python) based on EV3Dev1
+
+[YouTube Channel](https://www.youtube.com/channel/UCFFMF2NluuCvTYYThPDG1Bw)
 
 
 ### [Charles Weir](https://github.com/charlesweir)
