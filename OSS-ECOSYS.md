@@ -313,6 +313,11 @@ NXT_Python (2007)
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
 
 
+### [David "Dave" Parker]
+
+[NXT Programs](http://nxtprograms.com)
+
+
 ### [Janno Peterson](https://github.com/jannopet)
 
 [LEGO WeDo 2.0 Python SDK](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK)
