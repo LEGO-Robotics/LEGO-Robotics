@@ -130,6 +130,7 @@
 [EV3 Comm Wrapper](https://github.com/auryan898/EV3-Comm-Wrapper)
 
 [NXT Python2](https://github.com/auryan898/nxt-python2)
+- Minimal changes vs. EV3Dev NXT Python
 
 [NXT Python Tools](https://github.com/auryan898/nxt-python-tools)
 
@@ -207,6 +208,8 @@
 ### [David "Dave" G. Churchill](https://github.com/dgchurchill)
 
 [NXT Python](https://github.com/dgchurchill/nxt-python)
+- Very old, work stopped in 2013
+  - last maintainer commit: "Prelimiary raw device file support thanks to Dave Churchill. Issue 49 marcus@wanners.net <marcus@wanners.net@40e99d30-ef16-11dd-9d1d-173cc1d06e3c> Feb 2, 2013 at 8:19 AM"
 
 [LEGO NXT Remote](https://github.com/dgchurchill/legonxtremote)
 
@@ -250,6 +253,8 @@
 [Website](https://www.stavros.io)
 
 [NXT Python](https://github.com/skorokithakis/nxt-python)
+- Very old, work stopped in 2010
+  - last maintainer commmit: "Changed lightblueglue.py to GPL v3, like the rest of the project. marcusw@cox.net <marcusw@cox.net> Jan 14, 2010 at 11:27 AM"
 
 
 ### [Vitaly Kravtsov](https://github.com/in4lio)
@@ -279,6 +284,8 @@ NXT_Python (2007)
 ### [Richard Lewis](https://github.com/richrd)
 
 [NXT Python](https://github.com/richrd/nxt-python)
+- Very old, work stopped in 2013
+  - last maintainer commit: "Added .desktop for nxt-filer, fixes issue 52. marcus@wanners.net <marcus@wanners.net@40e99d30-ef16-11dd-9d1d-173cc1d06e3c> Apr 9, 2013 at 9:02 AM"
 
 
 ### [Li Ruo Shi](https://github.com/iceboundrock)
