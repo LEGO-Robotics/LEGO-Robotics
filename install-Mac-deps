@@ -4,3 +4,4 @@
 brew install SDL
 
 python3 -m pip install -r requirements.txt --upgrade --user --use-feature=2020-resolver
+python3 -m pip install -r requirements-Mac.txt --upgrade --user --use-feature=2020-resolver
