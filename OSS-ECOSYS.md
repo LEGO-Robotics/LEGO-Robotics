@@ -363,7 +363,20 @@ NXT_Python (2007)
 
 #### [Droids Robotics](http://www.droidsrobotics.org)
 
+[Website](http://www.droidsrobotics.org)
+
+[FIRST Robotics Challenge (FRC) Tutorials](https://github.com/droidsrobotics/FRC-Tutorials)
+
+[FIRST Tech Challenge (FTC) Tutorials](https://github.com/droidsrobotics/FTC-Tutorials)
+
+[2020 FRC Beta](https://github.com/droidsrobotics/2020.FRC-Beta)
+
+[2019 FRC Off-Season](https://github.com/droidsrobotics/FRC-2019-offseason)
+
+[2019 FRC Off-Season, tracking](https://github.com/droidsrobotics/FRC-tracking-2019-offseason)
+
 [Projects](https://github.com/droidsrobotics/projects)
+- [Deprecated Pix3l Plott3r](https://github.com/droidsrobotics/ev3dev)
 
 
 #### [EV3 Lessons](https://github.com/ev3lessons)
