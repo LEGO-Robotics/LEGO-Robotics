@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+
+python3 -m pip install -r requirements.txt --upgrade --user --use-feature=2020-resolver
