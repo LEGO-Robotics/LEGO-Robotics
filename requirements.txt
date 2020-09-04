@@ -1,3 +1,5 @@
+# EV3
+# ---
 PyBricks >= 2.0.0
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
 Python-EV3Dev2 >= 2.1.0
@@ -14,18 +16,39 @@ Thonny-EV3Dev >= 1.0.4
 # EV3DevLight >= 0.1.5   # installation error
 Python-EV3Dev >= 1.2.0
 
-# LEGO Mindstorms NXT
-NXT-Python >= 2.2.2
-NXT-Python2 >= 2.2.2
+# Simulators
+EV3Sim >= 1.2.1
+
+# misc
+EV3-Python >= 0.0.1
+# EV3Dev-C >= 1.0rc2   # installation error
+# LEGO-MicroPython-Extension >= 0.2.1.dev2019110502
+# LEGO-MicroPython-Skeleton >= 0.1.9.2019103111
+
+
+# NXT
+# ---
+git+https://GitHub.com/EV3Dev/NXT-Python
+# NXT-Python >= 2.2.2
+# NXT-Python2 >= 2.2.2
 # NXT-Python-Tools >= 1.0.1   # invalid old syntax
-# NXTurtle >= 1.0.4.dev-20110105   # invalid old syntax
+
+# PyBluez >= 0.23   # for Linux
+git+https://GitHub.com/0-1-0/LightBlue-0.4
+git+http://git.ni.fr.eu.org/pyfantom.git
+PyUSB >= 1.0.2
+
 BlockExt-Mindstorms-NXT >= 0.2
 # BrickPython >= 0.4   # installation error
 KLego >= 0.98.2.6
 JaRaCo.NXT >= 2.0
 # Scratch-NXT-Extension >= 0.0.5   # ERROR: No matching distribution found for lightblue
 
-# LEGO Non-Mindstorms Programming
+# NXTurtle >= 1.0.4.dev-20110105   # invalid old syntax
+
+
+# Non-Mindstorms
+# --------------
 BrickNil >= 0.9.3
 PyLGBst >= 1.2.0
 WeDo2 >= 1.1.1
@@ -36,7 +59,7 @@ BrickPi-Python >= 1.0
 
 # Networking
 AdaFruit-AMPy >= 1.0.7
-RPyC >= 4.1.5
+RPyC == 4.1.2   # required by EV3Dev Python Tools
 
 # Linting & Refactoring
 PyLint >= 2.6.0
@@ -50,11 +73,3 @@ Pylama >= 7.7.1
 Bandit >= 1.6.2
 Rope >= 0.17.0
 
-# Simulators
-EV3Sim >= 1.2.1
-
-# misc
-EV3-Python >= 0.0.1
-# EV3Dev-C >= 1.0rc2   # installation error
-# LEGO-MicroPython-Extension >= 0.2.1.dev2019110502
-# LEGO-MicroPython-Skeleton >= 0.1.9.2019103111
