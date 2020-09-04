@@ -33,8 +33,6 @@ git+https://GitHub.com/EV3Dev/NXT-Python
 # NXT-Python2 >= 2.2.2
 # NXT-Python-Tools >= 1.0.1   # invalid old syntax
 
-# PyBluez >= 0.23   # for Linux
-git+https://GitHub.com/0-1-0/LightBlue-0.4
 git+http://git.ni.fr.eu.org/pyfantom.git
 PyUSB >= 1.0.2
 
