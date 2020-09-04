@@ -384,6 +384,12 @@ NXT_Python (2007)
 [Website](http://primelessons.org)
 
 
+### [Xander Soldaat](https://github.com/botbench)
+
+[BotBench Website](http://botbench.com)
+- [Comparing the NXT and EV3 bricks](http://botbench.com/blog/2013/01/08/comparing-the-nxt-and-ev3-bricks)
+
+
 ### [Philip Taylor](https://github.com/G33kDude)
 
 [Py EV3]https://github.com/G33kDude/pyev3
@@ -394,6 +400,8 @@ NXT_Python (2007)
 ### [Laurens Valk](https://github.com/laurensvalk)
 
 [Robot Square](http://robotsquare.com)
+- [EV3 and NXT: Difference and Compatibility](http://robotsquare.com/2013/07/16/ev3-nxt-compatibility)
+
 
 [EV3Dev Light](https://github.com/laurensvalk/ev3devlight)
 - [Examples](https://github.com/laurensvalk/ev3devlight-examples)
