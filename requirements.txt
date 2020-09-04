@@ -70,4 +70,3 @@ PyCodeStyle >= 2.6.0
 Pylama >= 7.7.1
 Bandit >= 1.6.2
 Rope >= 0.17.0
-
