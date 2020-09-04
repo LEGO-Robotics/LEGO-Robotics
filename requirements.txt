@@ -24,6 +24,10 @@ BlockExt-Mindstorms-NXT >= 0.2
 KLego >= 0.98.2.6
 JaRaCo.NXT >= 2.0
 # Scratch-NXT-Extension >= 0.0.5   # ERROR: No matching distribution found for lightblue
+# PyBluez >= 0.23   # installation error
+# LightBlue   # not found  
+# PyFantom   # not found
+PyUSB >= 1.0.2
 
 # LEGO Non-Mindstorms Programming
 BrickNil >= 0.9.3
