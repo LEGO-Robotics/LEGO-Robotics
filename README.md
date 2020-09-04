@@ -7,6 +7,13 @@
 ## Official LEGO Mindstorms Software & Materials
 
 
+### SPIKE Prime
+
+- Desktop Software: [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software)
+
+
+### EV3
+
 [Home Edition](https://www.lego.com/en-us/themes/mindstorms/downloads)
 
 - [Desktop Software](https://www.lego.com/en-us/themes/mindstorms/downloads): [macOS](https://go.api.education.lego.com/v1/lms-scratch-retail#nourlrewrite) | [PC](https://go.api.education.lego.com/v1/lms-ev3_en-us_win32#nourlrewrite)
@@ -28,7 +35,7 @@
 
 [Education Edition](https://education.lego.com/en-us/downloads/mindstorms-ev3)
 
-- Desktop Software: [EV3 Classroom](https://education.lego.com/en-us/downloads/mindstorms-ev3/software) | [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software)
+- Desktop Software: [EV3 Classroom](https://education.lego.com/en-us/downloads/mindstorms-ev3/software)
 
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
   - [Getting started with LEGO® MINDSTORMS® Education EV3 MicroPython Version 2.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
@@ -61,16 +68,22 @@
 - [MakeCode](https://makecode.mindstorms.com) by LEGO & Microsoft
 
 
-[LEGO Education YouTube Channel](https://www.youtube.com/channel/UC2RjB15PI3IsXCDifNGTG9w)
-- [Programming with LEGO Education Mindstorms EV3](https://www.youtube.com/playlist?list=PLXNn7QnqlNpjcIie_4j-I70NepPsT6ekK)
+### NXT
+
+NXT Retail Edition Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+
+[NXT Education Edition Software](https://education.lego.com/en-us/downloads/retiredproducts/nxt/software)
+
+[NXT Programs](http://www.nxtprograms.com)
+- [Projects for EV3](http://www.nxtprograms.com/index3.html)
 
 
 ## Other Educational Resources
 
-[LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
+[LEGO Education YouTube Channel](https://www.youtube.com/channel/UC2RjB15PI3IsXCDifNGTG9w)
+- [Programming with LEGO Education Mindstorms EV3](https://www.youtube.com/playlist?list=PLXNn7QnqlNpjcIie_4j-I70NepPsT6ekK)
 
-LEGO Mindstorms NXT Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
-- also: https://education.lego.com/en-us/downloads/retiredproducts/nxt/software
+[LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
 
 [Blockly](https://developers.google.com/blockly)
 

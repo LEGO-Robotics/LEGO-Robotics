@@ -221,6 +221,8 @@
 [Generic Educational Robotics Simulator (GEAR)](https://github.com/QuirkyCort/gears)
 - https://gears.aposteriori.com.sg
 
+[EV3Dev Lang Python Fast](https://github.com/QuirkyCort/ev3dev-lang-python-fast)
+
 
 ### [Ian T. Daniher](https://github.com/itdaniher)
 
@@ -309,6 +311,11 @@ NXT_Python (2007)
 [2017 RoboCup Richard State](https://github.com/MelbourneHighSchoolRobotics/2017-RoboCup-Richard-State)
 
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
+
+
+### [David "Dave" Parker]
+
+[NXT Programs](http://nxtprograms.com)
 
 
 ### [Janno Peterson](https://github.com/jannopet)
