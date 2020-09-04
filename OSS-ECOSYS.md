@@ -109,10 +109,21 @@
 
 ### [AdaFruit](https://github.com/adafruit)
 
+[AdaFruit Web IDE](https://github.com/adafruit/Adafruit-WebIDE)
+
 
 ### [Dexter Industries](https://github.com/DexterInd)
 
 [BrickPi](https://github.com/DexterInd/BrickPi)
+- [BrickPi C](https://github.com/DexterInd/BrickPi_C)
+- [BrickPi Python](https://github.com/DexterInd/BrickPi_Python)
+- [BrickPi Scratch](https://github.com/TheVinhLuong102/BrickPi_Scratch)
+
+[EV3 Dexter Industries Sensors](https://github.com/DexterInd/EV3_Dexter_Industries_Sensors)
+
+[Dexter Industries LEGO NXT](https://github.com/DexterInd/DI_LEGO_NXT)
+
+[Dexter Ed: Teaching materials for Dexter Industries Robots](https://github.com/DexterInd/DexterEd)
 
 
 ## Persons and Small Organizations
@@ -343,6 +354,11 @@ NXT_Python (2007)
 ### [Andrey Pokhilko](https://github.com/undera)
 
 [Python LEGO Boost](https://github.com/undera/pylgbst)
+
+
+### [Matthew Richardson](https://github.com/mattallen37)
+
+[BrickPi Dev](https://github.com/mattallen37/BrickPiDev)
 
 
 ### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
