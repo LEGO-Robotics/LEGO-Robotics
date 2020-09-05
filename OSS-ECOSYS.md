@@ -109,13 +109,32 @@
 
 ### [AdaFruit](https://github.com/adafruit)
 
+[AdaFruit Web IDE](https://github.com/adafruit/Adafruit-WebIDE)
+
 
 ### [Dexter Industries](https://github.com/DexterInd)
 
 [BrickPi](https://github.com/DexterInd/BrickPi)
+- [BrickPi C](https://github.com/DexterInd/BrickPi_C)
+- [BrickPi Python](https://github.com/DexterInd/BrickPi_Python)
+- [BrickPi Scratch](https://github.com/TheVinhLuong102/BrickPi_Scratch)
+
+[EV3 Dexter Industries Sensors](https://github.com/DexterInd/EV3_Dexter_Industries_Sensors)
+
+[Dexter Industries LEGO NXT](https://github.com/DexterInd/DI_LEGO_NXT)
+
+[Dexter Ed: Teaching materials for Dexter Industries Robots](https://github.com/DexterInd/DexterEd)
+
+
+### [SparkFun](https://github.com/sparkfun)
 
 
 ## Persons and Small Organizations
+
+
+### [Artificial Agents and Artificial Intelligence Research Group @ DISIM.UnivAQ](https://github.com/AAAI-DISIM-UnivAQ)
+
+[ROS2 EV3Dev](https://github.com/AAAI-DISIM-UnivAQ/ros2-ev3dev)
 
 
 ### [Hazimi "Jimmy" Asyraf](https://github.com/jimmyasyraf)
@@ -345,25 +364,21 @@ NXT_Python (2007)
 [Python LEGO Boost](https://github.com/undera/pylgbst)
 
 
+### [Matthew Richardson](https://github.com/mattallen37)
+
+[BrickPi Dev](https://github.com/mattallen37/BrickPiDev)
+
+
+### [Agnese Salutari](https://github.com/agnsal)
+
+[Blocks Bot](https://github.com/agnsal/BlocksBot)
+
+
 ### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
 
 [Website](http://brothers.seshan.org)
 
 [Projects](https://github.com/seshanbrothers/projects)
-
-
-#### [Sanjay Seshan](https://github.com/sanjayseshan)
-
-[Website](http://sanjay.seshan.org)
-
-[EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
-
-[SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
-
-
-#### [Droids Robotics](http://www.droidsrobotics.org)
-
-[Projects](https://github.com/droidsrobotics/projects)
 
 
 #### [EV3 Lessons](https://github.com/ev3lessons)
@@ -389,6 +404,33 @@ NXT_Python (2007)
 [Website](http://primelessons.org)
 
 
+#### [Droids Robotics](https://github.com/droidsrobotics)
+
+[Website](http://www.droidsrobotics.org)
+
+[FIRST Robotics Challenge (FRC) Tutorials](https://github.com/droidsrobotics/FRC-Tutorials)
+
+[FIRST Tech Challenge (FTC) Tutorials](https://github.com/droidsrobotics/FTC-Tutorials)
+
+[2020 FRC Beta](https://github.com/droidsrobotics/2020.FRC-Beta)
+
+[2019 FRC Off-Season](https://github.com/droidsrobotics/FRC-2019-offseason)
+
+[2019 FRC Off-Season, tracking](https://github.com/droidsrobotics/FRC-tracking-2019-offseason)
+
+[Projects](https://github.com/droidsrobotics/projects)
+- [Deprecated Pix3l Plott3r](https://github.com/droidsrobotics/ev3dev)
+
+
+#### [Sanjay Seshan](https://github.com/sanjayseshan)
+
+[Website](http://sanjay.seshan.org)
+
+[EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
+
+[SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
+
+
 ### [Xander Soldaat](https://github.com/botbench)
 
 [BotBench Website](http://botbench.com)
@@ -405,7 +447,17 @@ NXT_Python (2007)
 ### [Laurens Valk](https://github.com/laurensvalk)
 
 [Robot Square](http://robotsquare.com)
+
 - [EV3 and NXT: Difference and Compatibility](http://robotsquare.com/2013/07/16/ev3-nxt-compatibility)
+
+- Tutorials
+  - EV3
+    - [General](http://robotsquare.com/category/tutorials/ev3-general)
+    - [Building](http://robotsquare.com/category/tutorials/ev3-building-tutorials)
+
+  - NXT
+    - [Building](http://robotsquare.com/category/tutorials/building-tutorials)
+    - [Programming](http://robotsquare.com/category/tutorials/programming-tutorials)
 
 
 [EV3Dev Light](https://github.com/laurensvalk/ev3devlight)
@@ -441,6 +493,8 @@ NXT-Python (work ended in 2013)
 
 (DEPRECATED) [EV3 Python Website](https://sites.google.com/site/ev3python) based on EV3Dev1
 
+[YouTube Channel](https://www.youtube.com/channel/UCFFMF2NluuCvTYYThPDG1Bw)
+
 
 ### [Charles Weir](https://github.com/charlesweir)
 
@@ -452,3 +506,8 @@ NXT-Python (work ended in 2013)
 [PyBricks Stubs](https://github.com/drewwhis/pybricks-stubs)
 
 [Alabama FIRST LEGO League](https://github.com/drewwhis/alabama-first-lego-league)
+
+
+### [Mustafa Yumurtaci]
+
+[EV3 Prothonics](https://github.com/mstfymrtc/ev3-prothonics)

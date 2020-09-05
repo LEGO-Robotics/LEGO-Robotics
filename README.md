@@ -70,7 +70,9 @@
 
 ### NXT
 
-NXT Retail Edition Software: [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+[NXT Retail Edition Software](https://www.lego.com/en-us/themes/mindstorms/downloads): [Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip#nourlrewrite) | [PC](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip#nourlrewrite)
+- [Firmware](https://www.lego.com/cdn/cs/set/assets/blt3502cca1438605b8/Firmware131_Download1.zip)
+- [Fantom Driver](https://www.lego.com/cdn/cs/set/assets/bltea140e66e32fadf0/NXT_Fantom_Drivers_v120.zip)
 
 [NXT Education Edition Software](https://education.lego.com/en-us/downloads/retiredproducts/nxt/software)
 
