@@ -126,6 +126,9 @@
 [Dexter Ed: Teaching materials for Dexter Industries Robots](https://github.com/DexterInd/DexterEd)
 
 
+### [SparkFun](https://github.com/sparkfun)
+
+
 ## Persons and Small Organizations
 
 
@@ -366,6 +369,11 @@ NXT_Python (2007)
 [BrickPi Dev](https://github.com/mattallen37/BrickPiDev)
 
 
+### [Agnese Salutari](https://github.com/agnsal)
+
+[Blocks Bot](https://github.com/agnsal/BlocksBot)
+
+
 ### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
 
 [Website](http://brothers.seshan.org)
@@ -498,3 +506,8 @@ NXT-Python (work ended in 2013)
 [PyBricks Stubs](https://github.com/drewwhis/pybricks-stubs)
 
 [Alabama FIRST LEGO League](https://github.com/drewwhis/alabama-first-lego-league)
+
+
+### [Mustafa Yumurtaci]
+
+[EV3 Prothonics](https://github.com/mstfymrtc/ev3-prothonics)
