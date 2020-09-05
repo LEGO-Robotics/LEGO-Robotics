@@ -87,6 +87,8 @@
 
 [LEGO Building Instructions](https://www.lego.com/en-us/service/buildinginstructions)
 
+[Excellent blog on EV3 migration from LabVIEW to Scratch](https://medium.com/@dongliang/the-future-of-lego-mindstorms-ev3-programming-1921c2be8131)
+
 [Blockly](https://developers.google.com/blockly)
 
 [BluPants](https://blupants.com)
