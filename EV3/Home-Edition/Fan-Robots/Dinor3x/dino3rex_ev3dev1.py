@@ -33,3 +33,42 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                                     channel=ir_beacon_channel)
 
         self.speaker = Sound()
+
+    def calibrate_legs(self):
+        self.left_motor.run_forever(speed_sp=100)
+        self.right_motor.run_forever(speed_sp=200)
+
+        while self.touch_sensor.is_pressed:
+            pass
+
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+
+        self.left_motor.run_forever(speed_sp=400)
+
+        while not self.touch_sensor.is_pressed:
+            pass
+
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+
+        self.left_motor.run_to_rel_pos(
+            position_sp=-0.2 * 360,
+            speed_sp=500,
+            stop_action=Motor.STOP_ACTION_BRAKE)
+        self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.right_motor.run_forever(speed_sp=400)
+
+        while not self.touch_sensor.is_pressed:
+            pass
+
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+
+        self.right_motor.run_to_rel_pos(
+            position_sp=-0.2 * 360,
+            speed_sp=500,
+            stop_action=Motor.STOP_ACTION_BRAKE)
+        self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.left_motor.reset()
+        self.right_motor.reset()
