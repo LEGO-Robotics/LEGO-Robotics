@@ -20,6 +20,10 @@ class IRBeaconRemoteControlledTank:
                 left_motor_port=left_motor_port,
                 right_motor_port=right_motor_port,
                 motor_class=motor_class)
+
+        self.left_motor = self.tank_driver.left_motor
+        self.right_motor = self.tank_driver.right_motor
+
         self.steer_driver = \
             MoveSteering(
                 left_motor_port=left_motor_port,

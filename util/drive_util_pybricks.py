@@ -15,10 +15,14 @@ class IRBeaconRemoteControlledTank:
             wheel_diameter: float, axle_track: float,   # both in milimeters
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
-                                                     positive_direction=Direction.CLOCKWISE),
-                                    right_motor=Motor(port=right_motor_port,
-                                                      positive_direction=Direction.CLOCKWISE),
+        self.left_motor = Motor(port=left_motor_port,
+                                positive_direction=Direction.CLOCKWISE)
+
+        self.right_motor = Motor(port=left_motor_port,
+                                 positive_direction=Direction.CLOCKWISE)
+
+        self.drive_base = DriveBase(left_motor=self.left_motor,
+                                    right_motor=self.right_motor,
                                     wheel_diameter=wheel_diameter,
                                     axle_track=axle_track)
 
