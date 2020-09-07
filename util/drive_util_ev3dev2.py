@@ -15,14 +15,17 @@ class IRBeaconRemoteControlledTank:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C, motor_class=LargeMotor,
             ir_sensor_port: str = INPUT_4,   # ref: sites.google.com/site/ev3devpython/learn_ev3_python/using-sensors
             ir_beacon_channel: int = 1):
+        self.left_motor = LargeMotor(address=left_motor_port)
+        self.right_motor = LargeMotor(address=right_motor_port)
+        
         self.tank_driver = \
             MoveTank(
                 left_motor_port=left_motor_port,
                 right_motor_port=right_motor_port,
                 motor_class=motor_class)
 
-        self.left_motor = self.tank_driver.left_motor
-        self.right_motor = self.tank_driver.right_motor
+        # self.left_motor = self.tank_driver.left_motor
+        # self.right_motor = self.tank_driver.right_motor
 
         self.steer_driver = \
             MoveSteering(
