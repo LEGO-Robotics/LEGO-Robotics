@@ -2,14 +2,14 @@
 
 
 from ev3dev.ev3 import (
-    Motor, LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
+    Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
+    TouchSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_4,
     Sound
 )
 
-import os
-import sys
-sys.path.append(os.path.expanduser('~'))
+# import os
+# import sys
+# sys.path.append(os.path.expanduser('~'))
 from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
 

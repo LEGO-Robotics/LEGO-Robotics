@@ -1,9 +1,7 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import (
-    LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
-)
+from ev3dev2.motor import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
 from ev3dev2.sound import Sound
@@ -30,6 +28,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
+        self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
 
