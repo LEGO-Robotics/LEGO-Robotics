@@ -3,7 +3,7 @@
 
 from ev3dev.ev3 import Motor
 
-from dino3rex_ev3dev1 import Dinor3x
+from dinor3x_ev3dev1 import Dinor3x
 
 
 DINOR3X = Dinor3x()
