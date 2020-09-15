@@ -89,41 +89,8 @@
 
 [Excellent blog on EV3 migration from LabVIEW to Scratch](https://medium.com/@dongliang/the-future-of-lego-mindstorms-ev3-programming-1921c2be8131)
 
-[Blockly](https://developers.google.com/blockly)
-
 [BluPants](https://blupants.com)
 - [Documentation](https://blupants.org/help)
 - https://github.com/blupants/blupants
 
-[Coppelia Robotics](https://www.coppeliarobotics.com)
-- CoppeliaSim simulator
-
-[Beagle Board](https://beagleboard.org)
-- [Beagle Bone AI](https://beagleboard.org/bone)
-
-[Dexter Industries](https://www.dexterindustries.com)
-- Brick Pi
-
-[FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
-
-[Modern Robotics](https://modernroboticsinc.com)
-- [HiTechnic](https://www.hitechnic.com)
-
-[MindSensors](http://www.mindsensors.com)
-- PiStorms
-
-[Raspberry Pi](https://www.raspberrypi.org)
-
 [Robo Manuals](https://robomanuals.com)
-
-[Robot Mak3rs](http://www.robotmak3rs.com)
-- https://github.com/robotmak3rs
-
-[Robot Operating System (ROS)](https://www.ros.org)
-- http://wiki.ros.org/Robots/EV3
-- http://wiki.ros.org/Robots/NXT
-
-[VexRobotics](https://www.vexrobotics.com)
-- [VexIQ](https://www.vexrobotics.com/vexiq)
-
-[Virtual Robotics Toolkit](https://www.virtualroboticstoolkit.com)

@@ -114,6 +114,8 @@
 
 ### [Dexter Industries](https://github.com/DexterInd)
 
+[Website](https://www.dexterindustries.com)
+
 [BrickPi](https://github.com/DexterInd/BrickPi)
 - [BrickPi C](https://github.com/DexterInd/BrickPi_C)
 - [BrickPi Python](https://github.com/DexterInd/BrickPi_Python)
@@ -124,6 +126,33 @@
 [Dexter Industries LEGO NXT](https://github.com/DexterInd/DI_LEGO_NXT)
 
 [Dexter Ed: Teaching materials for Dexter Industries Robots](https://github.com/DexterInd/DexterEd)
+
+
+### [Modern Robotics](https://modernroboticsinc.com)
+- [HiTechnic](https://www.hitechnic.com)
+
+
+### [MindSensors](https://github.com/mindsensors)
+
+[Website](http://www.mindsensors.com)
+
+[NXT Cam 5](https://github.com/mindsensors/NXTCam5)
+- [NXT Cam View 5](https://github.com/mindsensors/NXTCamView5)
+
+[PiStorms](https://github.com/mindsensors/PiStorms)
+
+[SPIKE Prime](https://github.com/mindsensors/SPIKEPrime)
+
+
+### [Robot Operating System (ROS)](https://github.com/ros)
+
+[Version 2 GitHub](https://github.com/ros2)
+
+[Website](https://www.ros.org)
+
+Wiki
+- http://wiki.ros.org/Robots/EV3
+- http://wiki.ros.org/Robots/NXT
 
 
 ### [SparkFun](https://github.com/sparkfun)
@@ -256,6 +285,9 @@
 [WeDo](https://github.com/itdaniher/WeDoMore)
 
 
+### [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
+
+
 ### [Anton van Houcke](https://github.com/antonvh)
 
 [Anton's Mindstorms Website](https://antonsmindstorms.com)
@@ -367,6 +399,11 @@ NXT_Python (2007)
 ### [Matthew Richardson](https://github.com/mattallen37)
 
 [BrickPi Dev](https://github.com/mattallen37/BrickPiDev)
+
+
+### [Robot Mak3rs](https://github.com/robotmak3rs)
+
+[Website](http://www.robotmak3rs.com)
 
 
 ### [Agnese Salutari](https://github.com/agnsal)
