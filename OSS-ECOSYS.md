@@ -476,9 +476,16 @@ NXT_Python (2007)
 
 ### [Philip Taylor](https://github.com/G33kDude)
 
-[Py EV3]https://github.com/G33kDude/pyev3
+[Py EV3](https://github.com/G33kDude/pyev3)
 
 [TreeV3](https://github.com/G33kDude/TreeV3)
+
+
+### Tomas Technic
+
+[Website](https://tomastechnic.com)
+
+[YouTube](https://www.youtube.com/c/TomasTECHNIC)
 
 
 ### [Laurens Valk](https://github.com/laurensvalk)
