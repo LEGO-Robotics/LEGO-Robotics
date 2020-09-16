@@ -6,6 +6,9 @@ from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
 from ev3dev2.sound import Sound
 
+from time import sleep
+
+
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -70,3 +73,35 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.left_motor.reset()
         self.right_motor.reset()
+
+    def roar(self):
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/T-rex roar',
+            volume=100,
+            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+        self.jaw_motor.on_for_degrees(
+            speed=40,
+            degrees=-60,
+            block=True,
+            brake=True)
+
+        for i in range(12):
+            self.jaw_motor.on_for_seconds(
+                speed=-40,
+                seconds=0.05,
+                block=True,
+                brake=True)
+
+            self.jaw_motor.on_for_seconds(
+                speed=40,
+                seconds=0.05,
+                block=True,
+                brake=True)
+
+        self.jaw_motor.on(
+            speed=20,
+            brake=False,
+            block=False)
+
+        sleep(0.5)
