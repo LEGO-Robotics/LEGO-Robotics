@@ -16,9 +16,7 @@ DINOR3X.jaw_motor.on(
     speed=20,
     block=False,
     brake=False)
-
 sleep(1)
-
 DINOR3X.jaw_motor.off(brake=True)
 
 while True:

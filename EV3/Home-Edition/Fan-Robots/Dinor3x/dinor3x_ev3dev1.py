@@ -98,5 +98,4 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
         self.jaw_motor.run_forever(speed_sp=200)
-
         sleep(0.5)

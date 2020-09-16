@@ -102,5 +102,4 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             speed=20,
             brake=False,
             block=False)
-
         sleep(0.5)
