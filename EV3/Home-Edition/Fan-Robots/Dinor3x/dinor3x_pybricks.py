@@ -6,6 +6,8 @@ from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port, Stop
 
+from time import sleep
+
 
 class Dinor3x(EV3Brick):
     def __init__(
@@ -62,3 +64,29 @@ class Dinor3x(EV3Brick):
             speed=500,
             then=Stop.HOLD,
             wait=True)
+
+    def roar(self):
+        self.speaker.play_file(file=SoundFile.T_REX_ROAR)
+
+        self.jaw_motor.run_angle(
+            speed=400,
+            rotation_angle=-60,
+            then=Stop.BRAKE,
+            wait=True)
+
+        for i in range(12):
+            self.jaw_motor.run_time(
+                speed=-400,
+                time=0.05 * 1000,
+                then=Stop.BRAKE,
+                wait=True)
+
+            self.jaw_motor.run_time(
+                speed=400,
+                time=0.05 * 1000,
+                then=Stop.BRAKE,
+                wait=True)
+
+        self.jaw_motor.run(speed=200)
+
+        sleep(0.5)
