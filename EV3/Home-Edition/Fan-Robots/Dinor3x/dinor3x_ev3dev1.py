@@ -75,6 +75,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.left_motor.reset()
         self.right_motor.reset()
 
+    # FIXME: jaw doesn't close
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
 
