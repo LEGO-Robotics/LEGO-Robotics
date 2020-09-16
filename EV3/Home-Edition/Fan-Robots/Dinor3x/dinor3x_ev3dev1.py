@@ -7,6 +7,8 @@ from ev3dev.ev3 import (
     Sound
 )
 
+from time import sleep
+
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -72,3 +74,29 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.left_motor.reset()
         self.right_motor.reset()
+
+    def roar(self):
+        self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
+
+        self.jaw_motor.run_to_rel_pos(
+            speed_sp=400,
+            position_sp=-60,
+            stop_action=Motor.STOP_ACTION_BRAKE)
+        self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+
+        for i in range(12):
+            self.jaw_motor.run_timed(
+                speed_sp=-400,
+                time_sp=0.05 * 1000,
+                stop_action=Motor.STOP_ACTION_BRAKE)
+            self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.jaw_motor.run_timed(
+                speed_sp=400,
+                time_sp=0.05 * 1000,
+                stop_action=Motor.STOP_ACTION_BRAKE)
+            self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.jaw_motor.run_forever(speed_sp=200)
+
+        sleep(0.5)

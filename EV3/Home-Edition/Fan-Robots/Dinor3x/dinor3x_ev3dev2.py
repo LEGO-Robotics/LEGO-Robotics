@@ -8,7 +8,6 @@ from ev3dev2.sound import Sound
 
 from time import sleep
 
-
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -76,7 +75,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def roar(self):
         self.speaker.play_file(
-            wav_file='/home/robot/sound/T-rex roar',
+            wav_file='/home/robot/sound/T-rex roar.wav',
             volume=100,
             play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
