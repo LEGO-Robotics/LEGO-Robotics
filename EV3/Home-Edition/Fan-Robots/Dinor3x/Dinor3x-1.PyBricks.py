@@ -1,7 +1,10 @@
 #!/usr/bin/env pybricks-micropython
 
+
 from pybricks.parameters import Stop
+
 from dinor3x_pybricks import Dinor3x
+
 
 DINOR3X = Dinor3x()
 

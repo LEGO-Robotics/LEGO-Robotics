@@ -39,15 +39,13 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             left_speed=10,
             right_speed=20)
 
-        while self.touch_sensor.is_pressed:
-            pass
+        self.touch_sensor.wait_for_released()
 
         self.tank_driver.off(brake=True)
 
         self.left_motor.on(speed=40)
 
-        while not self.touch_sensor.is_pressed:
-            pass
+        self.touch_sensor.wait_for_pressed()
 
         self.left_motor.off(brake=True)
 
@@ -59,8 +57,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.right_motor.on(speed=40)
 
-        while not self.touch_sensor.is_pressed:
-            pass
+        self.touch_sensor.wait_for_pressed()
 
         self.right_motor.off(brake=True)
 
