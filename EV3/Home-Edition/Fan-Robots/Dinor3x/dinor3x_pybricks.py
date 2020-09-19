@@ -120,7 +120,9 @@ class Dinor3x(EV3Brick):
         """
         ...
 
-    # MY BLOCKS
+    # TRANSLATED FROM EV3-G MY BLOCKS
+    # -------------------------------
+
     def leg_adjust(
             self,
             cyclic_degrees: float,
@@ -139,7 +141,7 @@ class Dinor3x(EV3Brick):
 
     def turn(self, speed: float = 400, n_steps: int = 1):
         ...
-    
+
     def walk(self, speed: float = 400):
         ...
 
