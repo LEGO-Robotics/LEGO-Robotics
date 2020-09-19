@@ -33,13 +33,4 @@ while True:
 
     Thread(target=DINOR3X.roar).start()
 
-    DINOR3X.left_motor.run_angle(
-        speed=750,
-        rotation_angle=3 * 360,
-        then=Stop.BRAKE,
-        wait=False)
-    DINOR3X.right_motor.run_angle(
-        speed=750,
-        rotation_angle=3 * 360,
-        then=Stop.BRAKE,
-        wait=True)
+    DINOR3X.run_away()
