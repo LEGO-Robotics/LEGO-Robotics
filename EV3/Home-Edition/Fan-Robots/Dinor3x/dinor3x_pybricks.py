@@ -89,3 +89,15 @@ class Dinor3x(EV3Brick):
 
         self.jaw_motor.run(speed=200)
         sleep(0.5)
+
+    def run_away(self):
+        self.left_motor.run_angle(
+            speed=750,
+            rotation_angle=3 * 360,
+            then=Stop.BRAKE,
+            wait=False)
+        self.right_motor.run_angle(
+            speed=750,
+            rotation_angle=3 * 360,
+            then=Stop.BRAKE,
+            wait=True)
