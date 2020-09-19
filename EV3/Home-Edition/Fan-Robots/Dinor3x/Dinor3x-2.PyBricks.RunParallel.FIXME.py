@@ -30,6 +30,7 @@ while True:
     DINOR3X.left_motor.stop()
     DINOR3X.right_motor.stop()
 
+    # FIXME: TypeError: unsupported type for __hash__: 'bound_method'
     run_parallel(
         DINOR3X.roar,
         DINOR3X.run_away)
