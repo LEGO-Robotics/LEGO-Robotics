@@ -8,6 +8,8 @@ from pybricks.parameters import Button, Direction, Port, Stop
 
 from time import sleep
 
+from util import cyclic_position_offset
+
 
 class Dinor3x(EV3Brick):
     """
@@ -119,10 +121,6 @@ class Dinor3x(EV3Brick):
         ...
 
     # MY BLOCKS
-    def cyclic_pos(self, rotation_sensor: float, cyclic_degrees: float):
-        cyclic_offset = ...
-        return cyclic_offset
-
     def leg_adjust(
             self,
             cyclic_degrees: float,
