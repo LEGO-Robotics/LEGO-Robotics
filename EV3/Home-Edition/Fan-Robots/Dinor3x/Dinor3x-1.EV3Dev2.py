@@ -17,3 +17,5 @@ while True:
         seconds=5,
         brake=True,
         block=True)
+
+    # TODO: terminate by Brick buttons

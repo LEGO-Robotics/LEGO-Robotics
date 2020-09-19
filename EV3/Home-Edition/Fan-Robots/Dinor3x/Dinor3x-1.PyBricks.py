@@ -19,3 +19,5 @@ while True:
         time=5000,
         then=Stop.BRAKE,
         wait=True)
+
+    # TODO: terminate by Brick buttons

@@ -23,3 +23,5 @@ while True:
         stop_action=Motor.STOP_ACTION_BRAKE)
     DINOR3X.left_motor.wait_while(Motor.STATE_RUNNING)
     DINOR3X.right_motor.wait_while(Motor.STATE_RUNNING)
+
+    # TODO: terminate by Brick buttons
