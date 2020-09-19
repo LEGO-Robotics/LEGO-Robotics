@@ -28,13 +28,15 @@ class IRBeaconRemoteControlledTank:
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.tank_drive_ir_beacon_channel = ir_beacon_channel
-    
+
     def drive_once_by_ir_beacon(
             self,
             speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
-        ):
-        ir_beacon_button_pressed = set(self.ir_sensor.buttons(channel=self.tank_drive_ir_beacon_channel))
+            ):
+        ir_beacon_button_pressed = \
+            set(self.ir_sensor.buttons(
+                    channel=self.tank_drive_ir_beacon_channel))
 
         # forward
         if ir_beacon_button_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
@@ -88,12 +90,13 @@ class IRBeaconRemoteControlledTank:
         else:
             self.drive_base.stop()
 
-    # this method must be used in a parallel process/thread in order not to block other operations
+    # this method must be used in a parallel process/thread
+    # in order not to block other operations
     def keep_driving_by_ir_beacon(
             self,
             speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
-        ):
+            ):
         while True:
             self.drive_once_by_ir_beacon(
                 speed=speed,
