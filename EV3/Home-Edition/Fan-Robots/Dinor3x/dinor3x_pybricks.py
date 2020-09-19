@@ -71,24 +71,25 @@ class Dinor3x(EV3Brick):
         self.jaw_motor.run_angle(
             speed=400,
             rotation_angle=-60,
-            then=Stop.BRAKE,
+            then=Stop.HOLD,
             wait=True)
 
+        # FIXME: jaw doesn't close
         for i in range(12):
             self.jaw_motor.run_time(
                 speed=-400,
                 time=0.05 * 1000,
-                then=Stop.BRAKE,
+                then=Stop.HOLD,
                 wait=True)
 
             self.jaw_motor.run_time(
                 speed=400,
                 time=0.05 * 1000,
-                then=Stop.BRAKE,
+                then=Stop.HOLD,
                 wait=True)
 
         self.jaw_motor.run(speed=200)
-        
+
         sleep(0.5)
 
     def run_away(self):
