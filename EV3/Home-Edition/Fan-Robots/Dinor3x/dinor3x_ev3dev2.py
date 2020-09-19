@@ -4,6 +4,7 @@
 from ev3dev2.motor import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
+from ev3dev2.button import Button
 from ev3dev2.sound import Sound
 
 from time import sleep
@@ -32,6 +33,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
+        self.button = Button()
         self.speaker = Sound()
 
     def calibrate_legs(self):

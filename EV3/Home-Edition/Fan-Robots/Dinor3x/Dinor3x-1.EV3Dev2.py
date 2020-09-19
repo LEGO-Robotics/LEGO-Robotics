@@ -7,7 +7,7 @@ from dinor3x_ev3dev2 import Dinor3x
 DINOR3X = Dinor3x()
 
 
-while True:
+while DINOR3X.button.any():
     # recalibrate legs every 5 seconds so that the legs don't get too tired
     DINOR3X.calibrate_legs()
 
@@ -17,5 +17,3 @@ while True:
         seconds=5,
         brake=True,
         block=True)
-
-    # TODO: terminate by Brick buttons

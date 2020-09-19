@@ -4,7 +4,7 @@
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_4,
-    Sound
+    Button, Sound
 )
 
 from time import sleep
@@ -34,6 +34,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.beacon = RemoteControl(sensor=self.ir_sensor,
                                     channel=ir_beacon_channel)
 
+        self.button = Button()
         self.speaker = Sound()
 
     def calibrate_legs(self):
