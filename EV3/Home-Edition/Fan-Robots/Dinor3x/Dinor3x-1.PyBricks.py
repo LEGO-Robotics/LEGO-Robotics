@@ -18,7 +18,6 @@ while not {Button.LEFT, Button.RIGHT,
         time=5000,
         then=Stop.BRAKE,
         wait=False)
-
     DINOR3X.right_motor.run_time(
         speed=-400,
         time=5000,
