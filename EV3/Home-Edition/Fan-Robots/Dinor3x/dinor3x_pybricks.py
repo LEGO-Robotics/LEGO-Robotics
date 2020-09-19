@@ -117,3 +117,33 @@ class Dinor3x(EV3Brick):
         Dinor3x Mission 02 Challenge: make it jump
         """
         ...
+
+    # MY BLOCKS
+    def cyclic_pos(self, rotation_sensor: float, cyclic_degrees: float):
+        cyclic_offset = ...
+        return cyclic_offset
+
+    def leg_adjust(
+            self,
+            cyclic_degrees: float,
+            speed: float = 400,
+            leg_offset_percent: float = 0,
+            mirrored_adjust: bool = False,
+            brake: bool = True):
+        ...
+
+    def leg_to_pos(
+            self,
+            speed: float = 400,
+            b_position: float = 0,
+            c_position: float = 0):
+        ...
+
+    def turn(self, speed: float = 400, n_steps: int = 1):
+        ...
+    
+    def walk(self, speed: float = 400):
+        ...
+
+    def walk_steps(self, speed: float = 400, n_steps: int = 1):
+        ...
