@@ -88,6 +88,7 @@ class Dinor3x(EV3Brick):
                 wait=True)
 
         self.jaw_motor.run(speed=200)
+        
         sleep(0.5)
 
     def run_away(self):

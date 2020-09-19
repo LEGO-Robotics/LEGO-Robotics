@@ -16,6 +16,9 @@ from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
 
 class Dinor3x(IRBeaconRemoteControlledTank):
+    # https://sites.google.com/site/ev3python/learn_ev3_python/using-motors
+    MEDIUM_MOTOR_POWER_FACTOR = 1.4
+
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -76,28 +79,30 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.left_motor.reset()
         self.right_motor.reset()
 
-    # FIXME: jaw doesn't close
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
 
         self.jaw_motor.run_to_rel_pos(
-            speed_sp=400,
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
             position_sp=-60,
             stop_action=Motor.STOP_ACTION_BRAKE)
         self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
+        # FIXME: jaw keeps opening wider and wider and doesn't close
         for i in range(12):
             self.jaw_motor.run_timed(
-                speed_sp=-400,
+                speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
                 time_sp=0.05 * 1000,
                 stop_action=Motor.STOP_ACTION_BRAKE)
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
             self.jaw_motor.run_timed(
-                speed_sp=400,
+                speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
                 time_sp=0.05 * 1000,
                 stop_action=Motor.STOP_ACTION_BRAKE)
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
-        self.jaw_motor.run_forever(speed_sp=200)
+        self.jaw_motor.run_forever(
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
+
         sleep(0.5)
