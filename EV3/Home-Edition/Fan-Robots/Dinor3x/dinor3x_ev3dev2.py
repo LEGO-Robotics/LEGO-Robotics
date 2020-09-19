@@ -14,8 +14,18 @@ from time import sleep
 # sys.path.append(os.path.expanduser('~'))
 from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
+from util import cyclic_position_offset
+
 
 class Dinor3x(IRBeaconRemoteControlledTank):
+    """
+    Challenges:
+    - Can you make DINOR3X remote controlled with the IR-Beacon?
+    - Can you attach a colorsensor to DINOR3X, and make it behave differently
+        depending on which color is in front of the sensor
+        (red = walk fast, white = walk slow, etc.)?
+    """
+    
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -103,3 +113,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             block=False)
 
         sleep(0.5)
+
+    def jump(self):
+        """
+        Dinor3x Mission 02 Challenge: make it jump
+        """
+        ...
