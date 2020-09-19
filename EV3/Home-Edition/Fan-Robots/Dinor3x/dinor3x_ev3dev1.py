@@ -16,6 +16,14 @@ from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
 
 class Dinor3x(IRBeaconRemoteControlledTank):
+    """
+    Challenges:
+    - Can you make DINOR3X remote controlled with the IR-Beacon?
+    - Can you attach a colorsensor to DINOR3X, and make it behave differently
+        depending on which color is in front of the sensor
+        (red = walk fast, white = walk slow, etc.)?
+    """
+
     # https://sites.google.com/site/ev3python/learn_ev3_python/using-motors
     MEDIUM_MOTOR_POWER_FACTOR = 1.4
 
@@ -106,3 +114,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
 
         sleep(0.5)
+
+    def jump(self):
+        """
+        Dinor3x Mission 02 Challenge: make it jump
+        """
+        ...

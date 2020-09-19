@@ -10,6 +10,14 @@ from time import sleep
 
 
 class Dinor3x(EV3Brick):
+    """
+    Challenges:
+    - Can you make DINOR3X remote controlled with the IR-Beacon?
+    - Can you attach a colorsensor to DINOR3X, and make it behave differently
+        depending on which color is in front of the sensor
+        (red = walk fast, white = walk slow, etc.)?
+    """
+
     def __init__(
             self,
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
@@ -103,3 +111,9 @@ class Dinor3x(EV3Brick):
             rotation_angle=3 * 360,
             then=Stop.BRAKE,
             wait=True)
+
+    def jump(self):
+        """
+        Dinor3x Mission 02 Challenge: make it jump
+        """
+        ...
