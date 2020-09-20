@@ -75,6 +75,9 @@ class Dinor3x(EV3Brick):
             then=Stop.HOLD,
             wait=True)
 
+        self.left_motor.reset_angle(angle=0)
+        self.right_motor.reset_angle(angle=0)
+
     def roar(self):
         self.speaker.play_file(file=SoundFile.T_REX_ROAR)
 
@@ -150,9 +153,28 @@ class Dinor3x(EV3Brick):
     def leg_to_pos(
             self,
             speed: float = 400,
-            b_position: float = 0,
-            c_position: float = 0):
-        ...
+            left_position: float = 0,
+            right_position: float = 0):
+        self.left_motor.brake()
+        self.right_motor.brake()
+
+        self.left_motor.run_angle(
+            speed=speed,
+            rotation_angle=left_position -
+                            cyclic_position_offset(
+                                rotation_sensor=self.left_motor.angle(),
+                                cyclic_degrees=360),
+            then=Stop.BRAKE,
+            wait=True)
+
+        self.right_motor.run_to_rel_pos(
+            speed=speed,
+            rotation_angle=right_position -
+                            cyclic_position_offset(
+                                rotation_sensor=self.right_motor.angle(),
+                                cyclic_degrees=360),
+            then=Stop.BRAKE,
+            wait=True)
 
     def turn(self, speed: float = 400, n_steps: int = 1):
         ...

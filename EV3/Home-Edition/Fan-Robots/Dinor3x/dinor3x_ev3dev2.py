@@ -161,9 +161,27 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     def leg_to_pos(
             self,
             speed: float = 400,
-            b_position: float = 0,
-            c_position: float = 0):
-        ...
+            left_position: float = 0,
+            right_position: float = 0):
+        self.tank_driver.stop(brake=True)
+
+        self.left_motor.on_for_degrees(
+            speed=speed,
+            degrees=left_position -
+                    cyclic_position_offset(
+                        rotation_sensor=self.left_motor.position,
+                        cyclic_degrees=360),
+            brake=True,
+            block=True)
+
+        self.right_motor.on_for_degrees(
+            speed=speed,
+            degrees=right_position -
+                    cyclic_position_offset(
+                        rotation_sensor=self.right_motor.position,
+                        cyclic_degrees=360),
+            brake=True,
+            block=True)
 
     def turn(self, speed: float = 400, n_steps: int = 1):
         ...
