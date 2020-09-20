@@ -21,7 +21,7 @@ class Ev3rstorm(RemoteControlledTank):
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
             left_motor=left_foot_motor_port, right_motor=right_foot_motor_port,
-            polarity='normal')
+            polarity=Motor.POLARITY_NORMAL)
         
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 

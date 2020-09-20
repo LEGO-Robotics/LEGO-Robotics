@@ -2,7 +2,9 @@
 # (Display not yet working in MicroPython as of 2020)
 
 
-from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import \
+    Motor, LargeMotor, MediumMotor, MoveTank, \
+    OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor
 from ev3dev2.control.rc_tank import RemoteControlledTank
@@ -21,7 +23,7 @@ class Ev3rstorm(RemoteControlledTank):
             ir_beacon_channel: int = 1):
         super().__init__(
             left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port,
-            polarity='normal',
+            polarity=Motor.POLARITY_NORMAL,
             speed=1000,
             channel=ir_beacon_channel)
 

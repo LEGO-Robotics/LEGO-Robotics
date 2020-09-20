@@ -20,7 +20,7 @@ class Ev3rstorm(RemoteControlledTank):
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3):
         super().__init__(
             left_motor=left_foot_motor_port, right_motor=right_foot_motor_port,
-            polarity='normal')
+            polarity=Motor.POLARITY_NORMAL)
         
         self.bazooka_blast_motor = MediumMotor(address=bazooka_blast_motor_port)
 

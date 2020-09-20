@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 
-from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import \
+    Motor, LargeMotor, MediumMotor, MoveTank, \
+    OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.sound import Sound
@@ -20,7 +22,7 @@ class Catapult(RemoteControlledTank):
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
-            polarity='normal',
+            polarity=Motor.POLARITY_NORMAL,
             speed=1000,
             channel=ir_beacon_channel)
         

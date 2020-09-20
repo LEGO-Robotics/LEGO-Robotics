@@ -20,7 +20,7 @@ class Gripp3r(RemoteControlledTank):
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
             left_motor=left_motor_port, right_motor=right_motor_port,
-            polarity='normal')
+            polarity=Motor.POLARITY_NORMAL)
 
         self.grip_motor = MediumMotor(address=grip_motor_port)
 

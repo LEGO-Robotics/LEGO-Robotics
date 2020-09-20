@@ -9,11 +9,12 @@
 # AttributeError: 'InfraredSensor' object has no attribute '_state'
 
 
-from ev3dev2.motor import OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import Motor, OUTPUT_B, OUTPUT_C
 from ev3dev2.control.rc_tank import RemoteControlledTank
 
 
-RC_TANK = RemoteControlledTank(left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C,
-                               polarity='normal', speed=1000, channel=1)
+RC_TANK = RemoteControlledTank(
+            left_motor_port=OUTPUT_B, right_motor_port=OUTPUT_C,
+            polarity=Motor.POLARITY_NORMAL, speed=1000, channel=1)
 
 RC_TANK.main()
