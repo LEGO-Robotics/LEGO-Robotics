@@ -14,10 +14,7 @@ DINOR3X = Dinor3x()
 
 DINOR3X.calibrate_legs()
 
-DINOR3X.jaw_motor.run_forever(
-    speed_sp=DINOR3X.MEDIUM_MOTOR_POWER_FACTOR * 200)
-sleep(1)
-DINOR3X.jaw_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+DINOR3X.close_mouth()
 
 while True:
     # recalibrate legs so that the legs don't get too tired

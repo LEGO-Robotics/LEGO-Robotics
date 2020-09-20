@@ -25,7 +25,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         depending on which color is in front of the sensor
         (red = walk fast, white = walk slow, etc.)?
     """
-    
+
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -81,6 +81,14 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.left_motor.reset()
         self.right_motor.reset()
+
+    def close_mouth(self):
+        self.jaw_motor.on(
+            speed=20,
+            block=False,
+            brake=False)
+        sleep(1)
+        self.jaw_motor.off(brake=True)
 
     def roar(self):
         self.speaker.play_file(

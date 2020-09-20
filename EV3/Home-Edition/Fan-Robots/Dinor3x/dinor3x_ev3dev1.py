@@ -89,6 +89,12 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.left_motor.reset()
         self.right_motor.reset()
 
+    def close_mouth(self):
+        self.jaw_motor.run_forever(
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
+        sleep(1)
+        self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
 

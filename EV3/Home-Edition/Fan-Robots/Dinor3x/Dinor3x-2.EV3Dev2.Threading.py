@@ -12,14 +12,7 @@ DINOR3X = Dinor3x()
 
 DINOR3X.calibrate_legs()
 
-DINOR3X.jaw_motor.on(
-    speed=20,
-    block=False,
-    brake=False)
-
-sleep(1)
-
-DINOR3X.jaw_motor.off(brake=True)
+DINOR3X.close_mouth()
 
 while True:
     # recalibrate legs so that the legs don't get too tired
