@@ -122,6 +122,24 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         sleep(0.5)
 
+    def walk_until_blocked(self):
+        self.steer_driver.on(
+            steering=0,
+            speed=-40)
+
+        while self.ir_sensor.proximity >= 25:
+            pass
+
+        self.steer_driver.off(brake=True)
+
+    def run_away(self):
+        self.steer_driver.on_for_rotations(
+            speed=75,
+            steering=0,
+            rotations=3,
+            brake=True,
+            block=True)
+
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump

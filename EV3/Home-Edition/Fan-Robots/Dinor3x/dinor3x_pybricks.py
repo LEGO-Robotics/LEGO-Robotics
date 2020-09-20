@@ -107,6 +107,16 @@ class Dinor3x(EV3Brick):
         sleep(1)
         self.jaw_motor.stop()
 
+    def walk_until_blocked(self):
+        self.left_motor.run(speed=-400)
+        self.right_motor.run(speed=-400)
+
+        while self.ir_sensor.distance() >= 25:
+            pass
+
+        self.left_motor.stop()
+        self.right_motor.stop()
+
     def run_away(self):
         self.left_motor.run_angle(
             speed=750,

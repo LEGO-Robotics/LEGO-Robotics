@@ -2,7 +2,6 @@
 
 
 from threading import Thread
-from time import sleep
 
 from dinor3x_ev3dev2 import Dinor3x
 
@@ -18,20 +17,8 @@ while True:
     # recalibrate legs so that the legs don't get too tired
     DINOR3X.calibrate_legs()
 
-    DINOR3X.steer_driver.on(
-        steering=0,
-        speed=-40)
-
-    while DINOR3X.ir_sensor.proximity >= 25:
-        pass
-
-    DINOR3X.steer_driver.off(brake=True)
+    DINOR3X.walk_until_blocked()
 
     Thread(target=DINOR3X.roar).start()
 
-    DINOR3X.steer_driver.on_for_rotations(
-        speed=75,
-        steering=0,
-        rotations=3,
-        brake=True,
-        block=True)
+    DINOR3X.run_away()
