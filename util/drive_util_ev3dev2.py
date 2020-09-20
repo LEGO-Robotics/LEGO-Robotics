@@ -5,7 +5,7 @@ __all__ = 'IRBeaconRemoteControlledTank',
 
 
 from ev3dev2.motor import \
-    LargeMotor, MoveSteering, MoveTank, \
+    Motor, LargeMotor, MoveSteering, MoveTank, \
     OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
@@ -15,7 +15,7 @@ class IRBeaconRemoteControlledTank:
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
-            motor_class=LargeMotor,
+            motor_class=LargeMotor, polarity: str = Motor.POLARITY_NORMAL,
             ir_sensor_port: str = INPUT_4,
             # sites.google.com/site/ev3devpython/learn_ev3_python/using-sensors
             ir_beacon_channel: int = 1):
@@ -28,14 +28,17 @@ class IRBeaconRemoteControlledTank:
                 right_motor_port=right_motor_port,
                 motor_class=motor_class)
 
-        # self.left_motor = self.tank_driver.left_motor
-        # self.right_motor = self.tank_driver.right_motor
-
         self.steer_driver = \
             MoveSteering(
                 left_motor_port=left_motor_port,
                 right_motor_port=right_motor_port,
                 motor_class=motor_class)
+
+        self.left_motor.polarity = self.right_motor.polarity = \
+            self.tank_driver.left_motor.polarity = \
+            self.tank_driver.right_motor.polarity = \
+            self.steer_driver.left_motor.polarity = \
+            self.steer_driver.right_motor.polarity = polarity
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.tank_drive_ir_beacon_channel = ir_beacon_channel
