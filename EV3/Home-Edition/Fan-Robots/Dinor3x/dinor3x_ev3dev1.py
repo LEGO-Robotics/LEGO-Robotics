@@ -14,7 +14,7 @@ from time import sleep
 # sys.path.append(os.path.expanduser('~'))
 from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
-from util import cyclic_position_offset
+from dinor3x_util import cyclic_position_offset
 
 
 class Dinor3x(IRBeaconRemoteControlledTank):

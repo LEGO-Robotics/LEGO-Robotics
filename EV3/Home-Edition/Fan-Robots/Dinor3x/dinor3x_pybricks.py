@@ -8,7 +8,7 @@ from pybricks.parameters import Button, Direction, Port, Stop
 
 from time import sleep
 
-from util import cyclic_position_offset
+from dinor3x_util import cyclic_position_offset
 
 
 class Dinor3x(EV3Brick):
