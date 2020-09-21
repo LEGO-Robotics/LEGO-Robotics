@@ -165,7 +165,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def leg_to_pos(
             self,
-            speed: float = 400,
+            speed: float = 1000,
             left_position: float = 0,
             right_position: float = 0):
         self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
