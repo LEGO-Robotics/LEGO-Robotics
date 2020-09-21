@@ -144,7 +144,7 @@ class Dinor3x(EV3Brick):
     def leg_adjust(
             self,
             cyclic_degrees: float,
-            speed: float = 400,
+            speed: float = 1000,
             leg_offset_percent: float = 0,
             mirrored_adjust: bool = False,
             brake: bool = True):
@@ -176,11 +176,11 @@ class Dinor3x(EV3Brick):
             then=Stop.BRAKE,
             wait=True)
 
-    def turn(self, speed: float = 400, n_steps: int = 1):
+    def turn(self, speed: float = 1000, n_steps: int = 1):
         ...
 
-    def walk(self, speed: float = 400):
+    def walk(self, speed: float = 1000):
         ...
 
-    def walk_steps(self, speed: float = 400, n_steps: int = 1):
+    def walk_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
