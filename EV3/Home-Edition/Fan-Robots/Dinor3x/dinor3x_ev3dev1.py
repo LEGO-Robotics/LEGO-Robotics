@@ -178,7 +178,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                             rotation_sensor=self.left_motor.position,
                             cyclic_degrees=360),
             stop_action=Motor.STOP_ACTION_BRAKE)
-        self.left_motor.wait_while(Motor.STATE_RUNNING)
+        self.left_motor.wait_while(Motor.STOP_ACTION_BRAKE)
 
         self.right_motor.run_to_rel_pos(
             speed_sp=speed,
@@ -187,7 +187,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                             rotation_sensor=self.right_motor.position,
                             cyclic_degrees=360),
             stop_action=Motor.STOP_ACTION_BRAKE)
-        self.right_motor.wait_while(Motor.STATE_RUNNING)
+        self.right_motor.wait_while(Motor.STOP_ACTION_BRAKE)
 
     def turn(self, speed: float = 400, n_steps: int = 1):
         ...

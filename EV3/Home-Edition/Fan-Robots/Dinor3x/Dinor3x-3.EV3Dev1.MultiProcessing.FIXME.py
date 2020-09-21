@@ -3,8 +3,8 @@
 
 from ev3dev.ev3 import Motor
 
+from multiprocessing import Process
 from random import choice, randint
-from threading import Thread
 
 from dinor3x_ev3dev1 import Dinor3x
 
@@ -17,6 +17,7 @@ DINOR3X.calibrate_legs()
 DINOR3X.close_mouth()
 
 while True:
+    # FIXME: .leg_to_pos(...) hangs
     DINOR3X.leg_to_pos(
         speed=1000,
         left_position=0,
@@ -24,7 +25,7 @@ while True:
 
     DINOR3X.walk_until_blocked()
 
-    Thread(target=DINOR3X.roar).start()
+    Process(target=DINOR3X.roar).start()
 
     DINOR3X.run_away()
 
