@@ -152,7 +152,7 @@ class Dinor3x(EV3Brick):
 
     def leg_to_pos(
             self,
-            speed: float = 400,
+            speed: float = 1000,
             left_position: float = 0,
             right_position: float = 0):
         self.left_motor.brake()
@@ -167,7 +167,7 @@ class Dinor3x(EV3Brick):
             then=Stop.BRAKE,
             wait=True)
 
-        self.right_motor.run_to_rel_pos(
+        self.right_motor.run_angle(
             speed=speed,
             rotation_angle=right_position -
                             cyclic_position_offset(
