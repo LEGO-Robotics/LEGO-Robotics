@@ -19,6 +19,7 @@ Python-EV3Dev >= 1.2.0
 
 # Simulators
 EV3Sim >= 1.4.0
+PyGame >= 2.0.0.dev12
 
 # misc
 EV3-Python >= 0.0.1
