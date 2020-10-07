@@ -19,7 +19,8 @@
 
 [PyBricks Code IDE](https://github.com/pybricks/pybricks-code)
 
-[PyBricks Dev](https://github.com/pybricks/pybricksdev)
+[PyBricks Developer Tools](https://github.com/pybricks/pybricksdev)
+- [PyBricks Dev Demo](https://github.com/pybricks/pybricksdev-demo)
 
 [PyBricks MicroPython](https://github.com/pybricks/pybricks-micropython)
 
@@ -35,7 +36,9 @@
   - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
-  [PyBricks Technical Info](https://github.com/pybricks/technical-info)
+[PyBricks Technical Info](https://github.com/pybricks/technical-info)
+
+[LEGO Draw](https://github.com/pybricks/ldraw)
 
 
 ### [EV3Dev](https://github.com/ev3dev)
@@ -271,14 +274,17 @@ Wiki
 
 [A Posteriori Website](https://www.aposteriori.com.sg)
 
-[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
-- https://www.aposteriori.com.sg/Ev3devSim/index.html
-
 [Generic Educational Robotics Simulator (GEARS)](https://github.com/QuirkyCort/gears)
 - https://gears.aposteriori.com.sg
 - [Latest Bleeding-Edge Build](https://quirkycort.github.io/gears/public)
+- [Wiki](https://github.com/QuirkyCort/gears/wiki)
+
+[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
+- https://www.aposteriori.com.sg/Ev3devSim/index.html
 
 [EV3Dev Lang Python Fast](https://github.com/QuirkyCort/ev3dev-lang-python-fast)
+
+[YouTube Channel](https://www.youtube.com/channel/UCPMqSjdcAAkUa-qNf6m79Kg)
 
 
 ### [Ian T. Daniher](https://github.com/itdaniher)
