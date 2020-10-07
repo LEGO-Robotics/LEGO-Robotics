@@ -1,3 +1,8 @@
+# base
+PIP >= 20.2.3
+Poetry >= 1.1.2
+
+
 # EV3
 # ---
 PyBricks >= 2.0.0

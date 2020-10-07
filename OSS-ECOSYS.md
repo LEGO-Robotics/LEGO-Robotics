@@ -19,7 +19,7 @@
 
 [PyBricks Code IDE](https://github.com/pybricks/pybricks-code)
 
-[PyBricks Dev](https://github.com/pybricks/pybricksdev)
+[PyBricks Developer Tools](https://github.com/pybricks/pybricksdev)
 
 [PyBricks MicroPython](https://github.com/pybricks/pybricks-micropython)
 
