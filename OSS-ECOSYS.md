@@ -271,14 +271,17 @@ Wiki
 
 [A Posteriori Website](https://www.aposteriori.com.sg)
 
-[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
-- https://www.aposteriori.com.sg/Ev3devSim/index.html
-
 [Generic Educational Robotics Simulator (GEARS)](https://github.com/QuirkyCort/gears)
 - https://gears.aposteriori.com.sg
 - [Latest Bleeding-Edge Build](https://quirkycort.github.io/gears/public)
+- [Wiki](https://github.com/QuirkyCort/gears/wiki)
+
+[EV3DevSim Simulator](https://github.com/QuirkyCort/ev3dev-sim)
+- https://www.aposteriori.com.sg/Ev3devSim/index.html
 
 [EV3Dev Lang Python Fast](https://github.com/QuirkyCort/ev3dev-lang-python-fast)
+
+[YouTube Channel](https://www.youtube.com/channel/UCPMqSjdcAAkUa-qNf6m79Kg)
 
 
 ### [Ian T. Daniher](https://github.com/itdaniher)
