@@ -20,6 +20,7 @@
 [PyBricks Code IDE](https://github.com/pybricks/pybricks-code)
 
 [PyBricks Developer Tools](https://github.com/pybricks/pybricksdev)
+- [PyBricks Dev Demo](https://github.com/pybricks/pybricksdev-demo)
 
 [PyBricks MicroPython](https://github.com/pybricks/pybricks-micropython)
 
@@ -35,7 +36,7 @@
   - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
 
-  [PyBricks Technical Info](https://github.com/pybricks/technical-info)
+[PyBricks Technical Info](https://github.com/pybricks/technical-info)
 
 
 ### [EV3Dev](https://github.com/ev3dev)
