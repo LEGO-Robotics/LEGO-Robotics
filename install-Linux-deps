@@ -2,7 +2,7 @@
 
 
 apt update
-apt install --yes libbluetooth-dev
+apt install --yes llibasound2-dev ibbluetooth-dev
 
 python3 -m pip install pip --upgrade --user
 
