@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
- 
+
 from ev3dev.ev3 import (
-    Motor, MediumMotor, OUTPUT_A, 
+    Motor, MediumMotor, OUTPUT_A,
     InfraredSensor, RemoteControl, INPUT_4,
     Sound
 )
@@ -22,9 +22,9 @@ is_gripping = False
 while True:
     if BEACON_CONTROL.beacon:
         if is_gripping:
-            MEDIUM_MOTOR.run_to_rel_pos(
+            MEDIUM_MOTOR.run_timed(
                 speed_sp=1000,
-                position_sp=4 * 360,
+                time_sp=2000,
                 stop_action=Motor.STOP_ACTION_BRAKE)
             MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
 
@@ -33,9 +33,9 @@ while True:
             is_gripping = False
 
         else:
-            MEDIUM_MOTOR.run_to_rel_pos(
-                speed_sp=1000,
-                position_sp=-4 * 360,
+            MEDIUM_MOTOR.run_timed(
+                speed_sp=-1000,
+                time_sp=2000,
                 stop_action=Motor.STOP_ACTION_BRAKE)
             MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
 
@@ -43,5 +43,5 @@ while True:
 
             is_gripping = True
 
-            while BEACON_CONTROL.beacon:
-                pass
+        while BEACON_CONTROL.beacon:
+            pass
