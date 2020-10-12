@@ -1,3 +1,3 @@
 [submodule "EV3/fast"]
-	path = EV3/fast
+	path = util/ev3dev_fast
 	url = https://github.com/QuirkyCort/ev3dev-lang-python-fast

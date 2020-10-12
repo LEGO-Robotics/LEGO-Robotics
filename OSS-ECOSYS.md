@@ -161,6 +161,11 @@ Wiki
 ### [SparkFun](https://github.com/sparkfun)
 
 
+### [STEAM for Vietnam](https://github.com/steamforvietnam)
+
+[Comparison of Robotics Simulators](https://docs.google.com/spreadsheets/d/1qk2a0GMsV9xthZXG95NiNXcb3yxjLB_B-nY1hyu04C0)
+
+
 ## Persons and Small Organizations
 
 
