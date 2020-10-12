@@ -1,9 +1,9 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import Motor, MediumMotor, OUTPUT_A
-from ev3dev2.sensor import INPUT_4 
-from ev3dev2.sensor.lego import InfraredSensor,
+from ev3dev2.motor import MediumMotor, OUTPUT_A
+from ev3dev2.sensor import INPUT_4
+from ev3dev2.sensor.lego import InfraredSensor
 from ev3dev2.sound import Sound
 
 
@@ -22,15 +22,16 @@ MEDIUM_MOTOR.on_for_seconds(
     brake=True,
     block=True)
 
+
 while True:
     if IR_SENSOR.beacon(channel=1):
         if is_gripping:
-            MEDIUM_MOTOR.on_for_rotations(
+            MEDIUM_MOTOR.on_for_seconds(
                 speed=100,
-                rotations=4,
+                seconds=2,
                 brake=True,
                 block=True)
-            
+
             SPEAKER.play_file(
                 wav_file='/home/robot/sound/Air release.wav',
                 volume=100,
@@ -39,9 +40,9 @@ while True:
             is_gripping = False
 
         else:
-            MEDIUM_MOTOR.on_for_rotations(
-                speed=100,
-                rotations=-4,
+            MEDIUM_MOTOR.on_for_seconds(
+                speed=-100,
+                seconds=2,
                 brake=True,
                 block=True)
 
@@ -52,6 +53,5 @@ while True:
 
             is_gripping = True
 
-            while IR_SENSOR.beacon(channel=1):
-                pass
-                
+        while IR_SENSOR.beacon(channel=1):
+            pass

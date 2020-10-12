@@ -16,7 +16,14 @@ BEACON_CONTROL = RemoteControl(sensor=IR_SENSOR,
 
 SPEAKER = Sound()
 
+
 is_gripping = False
+
+MEDIUM_MOTOR.run_timed(
+    speed_sp=500,
+    time_sp=1000,
+    stop_action=Motor.STOP_ACTION_BRAKE)
+MEDIUM_MOTOR.wait_while(Motor.STATE_RUNNING)
 
 
 while True:
