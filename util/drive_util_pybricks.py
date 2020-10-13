@@ -22,7 +22,7 @@ class IRBeaconRemoteControlledTank:
                                     if polarity == 'normal'
                                     else Direction.COUNTERCLOCKWISE)
 
-        self.right_motor = Motor(port=left_motor_port,
+        self.right_motor = Motor(port=right_motor_port,
                                  positive_direction=
                                     Direction.CLOCKWISE
                                     if polarity == 'normal'
