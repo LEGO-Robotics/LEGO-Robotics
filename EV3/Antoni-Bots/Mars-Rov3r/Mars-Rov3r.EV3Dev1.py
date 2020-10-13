@@ -7,8 +7,6 @@ from ev3dev.ev3 import (
     Sound, RemoteControl, InfraredSensor
 )
 
-from threading import Thread
-
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -43,34 +41,33 @@ class MarsRov3r(IRBeaconRemoteControlledTank):
     is_gripping = False
 
     def grip_or_release_claw_by_ir_beacon(self):
-        while True:
-            if self.beacon.beacon:
-                if self.is_gripping:
-                    self.grip_motor.run_timed(
-                        speed_sp=1000,
-                        time_sp=2000,
-                        stop_action=Motor.STOP_ACTION_BRAKE)
-                    self.grip_motor.wait_while(Motor.STATE_RUNNING)
+        if self.beacon.beacon:
+            if self.is_gripping:
+                self.grip_motor.run_timed(
+                    speed_sp=1000,
+                    time_sp=2000,
+                    stop_action=Motor.STOP_ACTION_BRAKE)
+                self.grip_motor.wait_while(Motor.STATE_RUNNING)
 
-                    self.speaker.play(
-                        wav_file='/home/robot/sound/Air release.wav').wait()
+                self.speaker.play(
+                    wav_file='/home/robot/sound/Air release.wav').wait()
 
-                    self.is_gripping = False
+                self.is_gripping = False
 
-                else:
-                    self.grip_motor.run_timed(
-                        speed_sp=-1000,
-                        time_sp=2000,
-                        stop_action=Motor.STOP_ACTION_BRAKE)
-                    self.grip_motor.wait_while(Motor.STATE_RUNNING)
+            else:
+                self.grip_motor.run_timed(
+                    speed_sp=-1000,
+                    time_sp=2000,
+                    stop_action=Motor.STOP_ACTION_BRAKE)
+                self.grip_motor.wait_while(Motor.STATE_RUNNING)
 
-                    self.speaker.play(
-                        wav_file='/home/robot/sound/Airbrake.wav').wait()
+                self.speaker.play(
+                    wav_file='/home/robot/sound/Airbrake.wav').wait()
 
-                    self.is_gripping = True
+                self.is_gripping = True
 
-                while self.beacon.beacon:
-                    pass
+            while self.beacon.beacon:
+                pass
 
     def main(self, speed: float = 1000):
         self.grip_motor.run_timed(
@@ -79,10 +76,9 @@ class MarsRov3r(IRBeaconRemoteControlledTank):
             stop_action=Motor.STOP_ACTION_BRAKE)
         self.grip_motor.wait_while(Motor.STATE_RUNNING)
 
-        Thread(target=self.grip_or_release_claw_by_ir_beacon,
-               daemon=True).start()
-
-        self.keep_driving_by_ir_beacon(speed=speed)
+        while True:
+            self.grip_or_release_claw_by_ir_beacon()
+            self.drive_once_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
