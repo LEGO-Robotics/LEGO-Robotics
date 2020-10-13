@@ -18,14 +18,14 @@ from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 class MarsRov3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B,
-            right_foot_motor_port: str = OUTPUT_C,
+            left_motor_port: str = OUTPUT_B,
+            right_motor_port: str = OUTPUT_C,
             grip_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
-            left_motor_port=left_foot_motor_port,
-            right_motor_port=right_foot_motor_port,
+            left_motor_port=left_motor_port,
+            right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.grip_motor = MediumMotor(address=grip_motor_port)
