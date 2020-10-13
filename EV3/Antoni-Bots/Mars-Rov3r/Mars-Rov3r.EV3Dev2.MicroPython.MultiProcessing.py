@@ -17,32 +17,33 @@ from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 class MarsRov3r(IRBeaconRemoteControlledTank):
     def __init__(
             self,
-            left_foot_motor_port: str = OUTPUT_B, right_foot_motor_port: str = OUTPUT_C,
+            left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             grip_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         super().__init__(
-            left_motor_port=left_foot_motor_port, right_motor_port=right_foot_motor_port,
+            left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.grip_motor = MediumMotor(address=grip_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
         self.color_sensor = ColorSensor(address=color_sensor_port)
+
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
 
         self.is_gripping = False
-    
+
     def grip_or_release_claw_by_ir_beacon(self):
         while True:
-            if self.ir_sensor.beacon(channel=1):
+            if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                 if self.is_gripping:
-                    self.grip_motor.on_for_rotations(
+                    self.grip_motor.on_for_seconds(
                         speed=100,
-                        rotations=4,
+                        seconds=2,
                         brake=True,
                         block=True)
 
@@ -54,9 +55,9 @@ class MarsRov3r(IRBeaconRemoteControlledTank):
                     self.is_gripping = False
 
                 else:
-                    self.grip_motor.on_for_rotations(
-                        speed=100,
-                        rotations=-4,
+                    self.grip_motor.on_for_seconds(
+                        speed=-100,
+                        seconds=2,
                         brake=True,
                         block=True)
 
@@ -67,7 +68,7 @@ class MarsRov3r(IRBeaconRemoteControlledTank):
 
                     self.is_gripping = True
 
-                while self.ir_sensor.beacon:
+                while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                     pass
 
     def main(self):
@@ -76,13 +77,13 @@ class MarsRov3r(IRBeaconRemoteControlledTank):
             seconds=1,
             brake=True,
             block=True)
-        
-        Process(target=self.grip_or_release_claw_by_ir_beacon).start()   
-        
+
+        Process(target=self.grip_or_release_claw_by_ir_beacon).start()
+
         self.keep_driving_by_ir_beacon(speed=100)
 
 
 if __name__ == '__main__':
-    MARSROV3R = MarsRov3r()
+    MARS_ROV3R = MarsRov3r()
 
-    MARSROV3R.main()
+    MARS_ROV3R.main()
