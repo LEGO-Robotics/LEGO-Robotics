@@ -14,7 +14,7 @@ EV3DevContext >= 0.36
 EV3DevCmd >= 1.0.2
 EV3DevLogging >= 1.0.1
 EV3DevRPyC >= 1.0.1
-EV3Dev2Simulator >= 2.0.0
+EV3Dev2Simulator >= 2.0.1
 Thonny-EV3Dev >= 1.0.4
 
 # deprecated
@@ -23,8 +23,8 @@ Thonny-EV3Dev >= 1.0.4
 Python-EV3Dev >= 1.2.0
 
 # Simulators
-EV3Sim >= 1.6.2
-PyGame >= 2.0.0.dev12
+EV3Sim >= 1.6.3
+PyGame >= 2.0.0.dev14
 
 # misc
 EV3-Python >= 0.0.1
