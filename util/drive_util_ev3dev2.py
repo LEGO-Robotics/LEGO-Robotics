@@ -10,6 +10,10 @@ from ev3dev2.motor import \
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
 
+from .ev3dev_fast.ev3fast import \
+    LargeMotor as FastLargeMotor, \
+    MoveTank as FastMoveTank, MoveSteering as FastMoveSteering
+
 
 class IRBeaconRemoteControlledTank:
     def __init__(
@@ -18,21 +22,39 @@ class IRBeaconRemoteControlledTank:
             motor_class=LargeMotor, polarity: str = Motor.POLARITY_NORMAL,
             ir_sensor_port: str = INPUT_4,
             # sites.google.com/site/ev3devpython/learn_ev3_python/using-sensors
-            ir_beacon_channel: int = 1):
-        self.left_motor = LargeMotor(address=left_motor_port)
-        self.right_motor = LargeMotor(address=right_motor_port)
+            ir_beacon_channel: int = 1,
+            fast=False):
+        if fast:
+            self.left_motor = FastLargeMotor(address=left_motor_port)
+            self.right_motor = FastLargeMotor(address=right_motor_port)
 
-        self.tank_driver = \
-            MoveTank(
-                left_motor_port=left_motor_port,
-                right_motor_port=right_motor_port,
-                motor_class=motor_class)
+            self.tank_driver = \
+                FastMoveTank(
+                    left_motor_port=left_motor_port,
+                    right_motor_port=right_motor_port,
+                    motor_class=motor_class)
 
-        self.steer_driver = \
-            MoveSteering(
-                left_motor_port=left_motor_port,
-                right_motor_port=right_motor_port,
-                motor_class=motor_class)
+            self.steer_driver = \
+                FastMoveSteering(
+                    left_motor_port=left_motor_port,
+                    right_motor_port=right_motor_port,
+                    motor_class=motor_class)
+                
+        else:
+            self.left_motor = LargeMotor(address=left_motor_port)
+            self.right_motor = LargeMotor(address=right_motor_port)
+
+            self.tank_driver = \
+                MoveTank(
+                    left_motor_port=left_motor_port,
+                    right_motor_port=right_motor_port,
+                    motor_class=motor_class)
+
+            self.steer_driver = \
+                MoveSteering(
+                    left_motor_port=left_motor_port,
+                    right_motor_port=right_motor_port,
+                    motor_class=motor_class)
 
         self.left_motor.polarity = self.right_motor.polarity = \
             self.tank_driver.left_motor.polarity = \
