@@ -10,13 +10,7 @@ from ev3dev.ev3 import (
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
-from util.ev3dev_fast.ev3fast import (   
-    Motor, LargeMotor, MediumMotor,
-    MotorSet, MoveTank, MoveSteering,
-    SpeedValue, SpeedPercent, SpeedNativeUnits,
-    SpeedRPS, SpeedRPM, SpeedDPS, SpeedDPM,
-    Sensor, TouchSensor, ColorSensor, UltrasonicSensor, GyroSensor
-)
+from util.ev3dev_fast.ev3fast import Motor, MediumMotor
 
 
 MEDIUM_MOTOR = MediumMotor(address=OUTPUT_A)
