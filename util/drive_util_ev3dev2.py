@@ -39,7 +39,7 @@ class IRBeaconRemoteControlledTank:
                     left_motor_port=left_motor_port,
                     right_motor_port=right_motor_port,
                     motor_class=motor_class)
-                
+
         else:
             self.left_motor = LargeMotor(address=left_motor_port)
             self.right_motor = LargeMotor(address=right_motor_port)

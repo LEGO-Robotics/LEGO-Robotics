@@ -24,7 +24,7 @@ class IRBeaconRemoteControlledTank:
         else:
             self.left_motor = LargeMotor(address=left_motor_port)
             self.right_motor = LargeMotor(address=right_motor_port)
-        
+
         self.left_motor.polarity = self.right_motor.polarity = polarity
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
