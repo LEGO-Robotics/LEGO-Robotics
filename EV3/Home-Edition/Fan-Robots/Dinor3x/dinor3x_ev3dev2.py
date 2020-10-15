@@ -12,6 +12,10 @@ from time import sleep
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
+from util.ev3dev_fast.ev3fast import (
+    MediumMotor as FastMediumMotor,
+    TouchSensor as FastTouchSensor
+)
 from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 from dinor3x_util import cyclic_position_offset
@@ -38,9 +42,15 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel,
             fast=fast)
 
-        self.jaw_motor = MediumMotor(address=jaw_motor_port)
+        if fast:
+            self.jaw_motor = MediumMotor(address=jaw_motor_port)
 
-        self.touch_sensor = TouchSensor(address=touch_sensor_port)
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
+
+        else:
+            self.jaw_motor = FastMediumMotor(address=jaw_motor_port)
+
+            self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
