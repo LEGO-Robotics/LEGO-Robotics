@@ -166,15 +166,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.left_motor.reset()
         self.right_motor.reset()
 
-    def leg_adjust(
-            self,
-            cyclic_degrees: float,
-            speed: float = 1000,
-            leg_offset_percent: float = 0,
-            mirrored_adjust: bool = False,
-            brake: bool = True):
-        ...
-
     def leg_to_pos(
             self,
             speed: float = 1000,
@@ -200,6 +191,75 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                             cyclic_degrees=360),
             stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+    def leg_adjust(
+            self,
+            cyclic_degrees: float,
+            speed: float = 1000,
+            leg_offset_percent: float = 0,
+            mirrored_adjust: bool = False,
+            brake: bool = True):
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        diff = cyclic_position_offset(
+                rotation_sensor=self.left_motor.position,
+                cyclic_degrees=cyclic_degrees) \
+            - cyclic_position_offset(
+                rotation_sensor=self.right_motor.position,
+                cyclic_degrees=cyclic_degrees)
+
+        if diff > (cyclic_degrees / 2):
+            diff -= cyclic_degrees
+
+        if diff < -180:
+            diff += cyclic_degrees
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.run_to_rel_pos(
+                    position_sp=-diff,
+                    speed_sp=speed,
+                    # EV3Dev2 equivalent:
+                    # speed=-speed,
+                    # degrees=diff,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+            else:
+                self.right_motor.on_for_degrees(
+                    position_sp=diff,
+                    speed_sp=speed,
+                    # EV3Dev2 equivalent:
+                    # speed=-speed,
+                    # degrees=abs(diff),
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            if diff >= 0:
+                self.right_motor.on_for_degrees(
+                    position_sp=diff,
+                    speed_sp=-speed,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+            else:
+                self.left_motor.on_for_degrees(
+                    position_sp=abs(diff),
+                    speed_sp=-speed,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+            # TODO: print to screen
 
     def turn(self, speed: float = 1000, n_steps: int = 1):
         ...
