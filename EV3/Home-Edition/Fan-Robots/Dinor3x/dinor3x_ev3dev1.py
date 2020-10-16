@@ -162,10 +162,13 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.turn(speed=-speed)
 
         # stop
-        elif self.tank_drive_remote_control.red_down or \
-                self.tank_drive_remote_control.blue_down:
+        elif self.tank_drive_remote_control.red_down:
             self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
             self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+
+        # calibrate legs
+        elif self.tank_drive_remote_control.blue_down:
+            self.calibrate_legs()
 
     def keep_walking_by_ir_beacon(self, speed: float):
         while True:
