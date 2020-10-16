@@ -62,6 +62,38 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
+    def walk_once_by_ir_beacon(
+            self,
+            speed: float = 1000   # degrees per second
+            ):
+        # forward
+        if self.tank_drive_remote_control.red_up and \
+                self.tank_drive_remote_control.blue_up:
+            self.walk(speed=speed)
+
+        # backward
+        elif self.tank_drive_remote_control.red_down and \
+                self.tank_drive_remote_control.blue_down:
+            self.walk(speed=-speed)
+
+        # turn left on the spot
+        elif self.tank_drive_remote_control.red_up:
+            self.turn(speed=speed)
+
+        # turn right on the spot
+        elif self.tank_drive_remote_control.blue_up:
+            self.turn(speed=-speed)
+
+        # stop
+        elif self.tank_drive_remote_control.red_down or \
+                self.tank_drive_remote_control.blue_down:
+            self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+            self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+
+    def keep_walking_by_ir_beacon(self, speed: float):
+        while True:
+            self.walk_once_by_ir_beacon(speed=speed)
+
     def close_mouth(self):
         self.jaw_motor.run_forever(
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
@@ -262,6 +294,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             # TODO: print to screen
 
     def turn(self, speed: float = 1000, n_steps: int = 1):
+        self.calibrate_legs()
+
         self.leg_adjust(
             cyclic_degrees=360,
             speed=speed,
@@ -287,6 +321,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.right_motor.run_forever(speed_sp=-speed)
 
     def walk(self, speed: float = 1000):
+        self.calibrate_legs()
+
         self.leg_adjust(
             cyclic_degrees=360,
             speed=speed,
@@ -299,3 +335,15 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def walk_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
+
+    def main(self, speed: float = 400):
+        self.calibrate_legs()
+
+        while True:
+            self.walk_once_by_ir_beacon(speed=speed)
+
+
+if __name__ == '__main__':
+    DINOR3X = Dinor3x()
+
+    DINOR3X.main()
