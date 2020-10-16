@@ -141,15 +141,6 @@ class Dinor3x(EV3Brick):
         self.left_motor.reset_angle(angle=0)
         self.right_motor.reset_angle(angle=0)
 
-    def leg_adjust(
-            self,
-            cyclic_degrees: float,
-            speed: float = 1000,
-            leg_offset_percent: float = 0,
-            mirrored_adjust: bool = False,
-            brake: bool = True):
-        ...
-
     def leg_to_pos(
             self,
             speed: float = 1000,
@@ -161,7 +152,7 @@ class Dinor3x(EV3Brick):
         self.left_motor.run_angle(
             speed=speed,
             rotation_angle=left_position -
-                            cyclic_position_offset(
+                           cyclic_position_offset(
                                 rotation_sensor=self.left_motor.angle(),
                                 cyclic_degrees=360),
             then=Stop.HOLD,
@@ -170,11 +161,66 @@ class Dinor3x(EV3Brick):
         self.right_motor.run_angle(
             speed=speed,
             rotation_angle=right_position -
-                            cyclic_position_offset(
+                           cyclic_position_offset(
                                 rotation_sensor=self.right_motor.angle(),
                                 cyclic_degrees=360),
             then=Stop.HOLD,
             wait=True)
+
+    def leg_adjust(
+            self,
+            cyclic_degrees: float,
+            speed: float = 1000,
+            leg_offset_percent: float = 0,
+            mirrored_adjust: bool = False,
+            brake: bool = True):
+        self.left_motor.hold()
+        self.right_motor.hold()
+
+        diff = cyclic_position_offset(
+                rotation_sensor=self.left_motor.angle(),
+                cyclic_degrees=cyclic_degrees) \
+            - cyclic_position_offset(
+                rotation_sensor=self.right_motor.angle(),
+                cyclic_degrees=cyclic_degrees)
+
+        if diff > (cyclic_degrees / 2):
+            diff -= cyclic_degrees
+
+        if diff < -180:
+            diff += cyclic_degrees
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=diff,
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+            else:
+                self.right_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=abs(diff),
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+        else:
+            if diff >= 0:
+                self.right_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=diff,
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+            else:
+                self.left_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=abs(diff),
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+            # TODO: print to screen
 
     def turn(self, speed: float = 1000, n_steps: int = 1):
         ...
