@@ -97,7 +97,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
-    def close_mouth(self):
+    def open_mouth(self):
         self.jaw_motor.run_forever(
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
         sleep(1)

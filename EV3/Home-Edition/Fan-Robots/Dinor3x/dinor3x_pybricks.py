@@ -103,7 +103,7 @@ class Dinor3x(EV3Brick):
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
-    def close_mouth(self):
+    def open_mouth(self):
         self.jaw_motor.run(speed=200)
         sleep(1)
         self.jaw_motor.stop()

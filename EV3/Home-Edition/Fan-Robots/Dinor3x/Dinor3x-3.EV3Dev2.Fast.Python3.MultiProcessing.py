@@ -12,7 +12,7 @@ DINOR3X = Dinor3x(fast=True)
 
 DINOR3X.calibrate_legs()
 
-DINOR3X.close_mouth()
+DINOR3X.open_mouth()
 
 while True:
     DINOR3X.leg_to_pos(
