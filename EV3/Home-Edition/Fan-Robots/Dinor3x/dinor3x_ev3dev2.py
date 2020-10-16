@@ -58,66 +58,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
-    def position_legs(
-            self,
-            speed: float = 100,
-            left_position: float = 0,
-            right_position: float = 0):
-        self.tank_driver.stop(brake=True)
-
-        self.left_motor.on_for_degrees(
-            speed=speed,
-            degrees=left_position - self.left_motor.position % 360,
-            brake=True,
-            block=True)
-
-        self.right_motor.on_for_degrees(
-            speed=speed,
-            degrees=right_position - self.right_motor.position % 360,
-            brake=True,
-            block=True)
-
-    def adjust_legs(self, speed: float = 100, brake: bool = True):
-        self.tank_driver.stop(brake=True)
-
-        diff = (self.left_motor.position % 360) \
-            - (self.right_motor.position % 360)
-
-        if diff > 180:
-            diff -= 360
-        elif diff < -180:
-            diff += 360
-
-        if speed >= 0:
-            if diff >= 0:
-                self.left_motor.on_for_degrees(
-                    speed=-speed,
-                    degrees=diff,
-                    brake=brake,
-                    block=True)
-
-            else:
-                self.right_motor.on_for_degrees(
-                    speed=-speed,
-                    degrees=abs(diff),
-                    brake=brake,
-                    block=True)
-
-        else:
-            if diff >= 0:
-                self.right_motor.on_for_degrees(
-                    speed=-speed,
-                    degrees=diff,
-                    brake=brake,
-                    block=True)
-
-            else:
-                self.left_motor.on_for_degrees(
-                    speed=-speed,
-                    degrees=abs(diff),
-                    brake=brake,
-                    block=True)
-
     def walk_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
@@ -278,6 +218,25 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             brake=True,
             block=True)
 
+    def position_legs(
+            self,
+            speed: float = 100,
+            left_position: float = 0,
+            right_position: float = 0):
+        self.tank_driver.stop(brake=True)
+
+        self.left_motor.on_for_degrees(
+            speed=speed,
+            degrees=left_position - self.left_motor.position % 360,
+            brake=True,
+            block=True)
+
+        self.right_motor.on_for_degrees(
+            speed=speed,
+            degrees=right_position - self.right_motor.position % 360,
+            brake=True,
+            block=True)
+
     def leg_adjust(
             self,
             cyclic_degrees: float = 360,
@@ -331,6 +290,47 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                     block=True)
 
             # TODO: print to screen
+
+    def adjust_legs(self, speed: float = 100, brake: bool = True):
+        self.tank_driver.stop(brake=True)
+
+        diff = (self.left_motor.position % 360) \
+            - (self.right_motor.position % 360)
+
+        if diff > 180:
+            diff -= 360
+        elif diff < -180:
+            diff += 360
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=diff,
+                    brake=brake,
+                    block=True)
+
+            else:
+                self.right_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=abs(diff),
+                    brake=brake,
+                    block=True)
+
+        else:
+            if diff >= 0:
+                self.right_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=diff,
+                    brake=brake,
+                    block=True)
+
+            else:
+                self.left_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=abs(diff),
+                    brake=brake,
+                    block=True)
 
     def walk(self, speed: float = 100):
         # to make legs ready to walk properly

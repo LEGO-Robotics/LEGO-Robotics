@@ -39,68 +39,6 @@ class Dinor3x(EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def position_legs(
-            self,
-            speed: float = 1000,
-            left_position: float = 0,
-            right_position: float = 0):
-        self.left_motor.hold()
-        self.right_motor.hold()
-
-        self.left_motor.run_angle(
-            speed=speed,
-            rotation_angle=left_position - self.left_motor.angle() % 360,
-            then=Stop.HOLD,
-            wait=True)
-
-        self.right_motor.run_angle(
-            speed=speed,
-            rotation_angle=right_position - self.right_motor.angle() % 360,
-            then=Stop.HOLD,
-            wait=True)
-
-    def adjust_legs(self, speed: float = 1000, brake: bool = True):
-        self.left_motor.hold()
-        self.right_motor.hold()
-
-        diff = (self.left_motor.angle() % 360) \
-            - (self.right_motor.angle() % 360)
-
-        if diff > 180:
-            diff -= 360
-        elif diff < -180:
-            diff += 360
-
-        if speed >= 0:
-            if diff >= 0:
-                self.left_motor.run_angle(
-                    speed=-speed,
-                    rotation_angle=diff,
-                    then=Stop.HOLD if brake else Stop.COAST,
-                    wait=True)
-
-            else:
-                self.right_motor.run_angle(
-                    speed=-speed,
-                    rotation_angle=abs(diff),
-                    then=Stop.HOLD if brake else Stop.COAST,
-                    wait=True)
-
-        else:
-            if diff >= 0:
-                self.right_motor.run_angle(
-                    speed=-speed,
-                    rotation_angle=diff,
-                    then=Stop.HOLD if brake else Stop.COAST,
-                    wait=True)
-
-            else:
-                self.left_motor.run_angle(
-                    speed=-speed,
-                    rotation_angle=abs(diff),
-                    then=Stop.HOLD if brake else Stop.COAST,
-                    wait=True)
-
     def roar(self):
         self.speaker.play_file(file=SoundFile.T_REX_ROAR)
 
@@ -266,6 +204,26 @@ class Dinor3x(EV3Brick):
             then=Stop.HOLD,
             wait=True)
 
+    def position_legs(
+            self,
+            speed: float = 1000,
+            left_position: float = 0,
+            right_position: float = 0):
+        self.left_motor.hold()
+        self.right_motor.hold()
+
+        self.left_motor.run_angle(
+            speed=speed,
+            rotation_angle=left_position - self.left_motor.angle() % 360,
+            then=Stop.HOLD,
+            wait=True)
+
+        self.right_motor.run_angle(
+            speed=speed,
+            rotation_angle=right_position - self.right_motor.angle() % 360,
+            then=Stop.HOLD,
+            wait=True)
+
     def leg_adjust(
             self,
             cyclic_degrees: float = 360,
@@ -320,6 +278,48 @@ class Dinor3x(EV3Brick):
                     wait=True)
 
             # TODO: print to screen
+
+    def adjust_legs(self, speed: float = 1000, brake: bool = True):
+        self.left_motor.hold()
+        self.right_motor.hold()
+
+        diff = (self.left_motor.angle() % 360) \
+            - (self.right_motor.angle() % 360)
+
+        if diff > 180:
+            diff -= 360
+        elif diff < -180:
+            diff += 360
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=diff,
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+            else:
+                self.right_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=abs(diff),
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+        else:
+            if diff >= 0:
+                self.right_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=diff,
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
+
+            else:
+                self.left_motor.run_angle(
+                    speed=-speed,
+                    rotation_angle=abs(diff),
+                    then=Stop.HOLD if brake else Stop.COAST,
+                    wait=True)
 
     def walk(self, speed: float = 1000):
         # to make legs ready to walk properly
