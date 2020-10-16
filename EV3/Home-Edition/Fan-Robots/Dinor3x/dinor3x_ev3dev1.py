@@ -371,14 +371,15 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             # TODO: print to screen
 
     def walk(self, speed: float = 1000):
-        self.calibrate_legs()
-
-        self.leg_adjust(
-            cyclic_degrees=360,
+        self.adjust_legs(
             speed=speed,
-            leg_offset_percent=0,
-            mirrored_adjust=False,
             brake=False)
+        # self.leg_adjust(
+        #     cyclic_degrees=360,
+        #     speed=speed,
+        #     leg_offset_percent=0,
+        #     mirrored_adjust=False,
+        #     brake=False)
 
         self.left_motor.run_forever(speed_sp=-speed)
         self.right_motor.run_forever(speed_sp=-speed)
@@ -387,14 +388,15 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         ...
 
     def turn(self, speed: float = 1000):
-        self.calibrate_legs()
-
-        self.leg_adjust(
-            cyclic_degrees=360,
+        self.adjust_legs(
             speed=speed,
-            leg_offset_percent=0,
-            mirrored_adjust=False,
             brake=False)
+        # self.leg_adjust(
+        #     cyclic_degrees=360,
+        #     speed=speed,
+        #     leg_offset_percent=0,
+        #     mirrored_adjust=False,
+        #     brake=False)
 
         if speed >= 0:
             self.left_motor.run_to_rel_pos(
