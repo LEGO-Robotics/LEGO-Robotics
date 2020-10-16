@@ -8,6 +8,7 @@ DINOR3X = Dinor3x(fast=True)
 
 
 while not DINOR3X.button.any():
+    # FIXME: FastTouchSensor doesn't seem to detect press/release
     # recalibrate legs every 5 seconds so that the legs don't get too tired
     DINOR3X.calibrate_legs()
 
