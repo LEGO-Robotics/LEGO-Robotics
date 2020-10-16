@@ -155,8 +155,8 @@ class Dinor3x(EV3Brick):
             speed: float = 1000,
             left_position: float = 0,
             right_position: float = 0):
-        self.left_motor.brake()
-        self.right_motor.brake()
+        self.left_motor.hold()
+        self.right_motor.hold()
 
         self.left_motor.run_angle(
             speed=speed,
@@ -164,7 +164,7 @@ class Dinor3x(EV3Brick):
                             cyclic_position_offset(
                                 rotation_sensor=self.left_motor.angle(),
                                 cyclic_degrees=360),
-            then=Stop.BRAKE,
+            then=Stop.HOLD,
             wait=True)
 
         self.right_motor.run_angle(
@@ -173,7 +173,7 @@ class Dinor3x(EV3Brick):
                             cyclic_position_offset(
                                 rotation_sensor=self.right_motor.angle(),
                                 cyclic_degrees=360),
-            then=Stop.BRAKE,
+            then=Stop.HOLD,
             wait=True)
 
     def turn(self, speed: float = 1000, n_steps: int = 1):
