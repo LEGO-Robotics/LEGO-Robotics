@@ -62,6 +62,83 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
+    def position_legs(
+            self,
+            speed: float = 1000,
+            left_position: float = 0,
+            right_position: float = 0):
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        self.left_motor.run_to_rel_pos(
+            speed_sp=speed,
+            position_sp=left_position - self.left_motor.position % 360,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.right_motor.run_to_rel_pos(
+            speed_sp=speed,
+            position_sp=right_position - self.right_motor.position % 360,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+    def adjust_legs(self, speed: float = 1000, brake: bool = True):
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        diff = (self.left_motor.position % 360) \
+            - (self.right_motor.position % 360)
+
+        if diff > 180:
+            diff -= 360
+
+        if diff < -180:
+            diff += 360
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.run_to_rel_pos(
+                    position_sp=-diff,
+                    speed_sp=speed,
+                    # EV3Dev2 equivalent:
+                    # speed=-speed,
+                    # degrees=diff,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+            else:
+                self.right_motor.run_to_rel_pos(
+                    position_sp=diff,
+                    speed_sp=speed,
+                    # EV3Dev2 equivalent:
+                    # speed=-speed,
+                    # degrees=abs(diff),
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            if diff >= 0:
+                self.right_motor.run_to_rel_pos(
+                    position_sp=diff,
+                    speed_sp=-speed,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+            else:
+                self.left_motor.run_to_rel_pos(
+                    position_sp=abs(diff),
+                    speed_sp=-speed,
+                    stop_action=Motor.STOP_ACTION_HOLD
+                                if brake
+                                else Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+
     def walk_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
