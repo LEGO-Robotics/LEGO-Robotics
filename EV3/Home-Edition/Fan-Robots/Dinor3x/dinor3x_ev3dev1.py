@@ -46,14 +46,14 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             fast=fast)
 
         if fast:
-            self.jaw_motor = MediumMotor(address=jaw_motor_port)
-
-            self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
-        else:
             self.jaw_motor = FastMediumMotor(address=jaw_motor_port)
 
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
+
+        else:
+            self.jaw_motor = MediumMotor(address=jaw_motor_port)
+
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
