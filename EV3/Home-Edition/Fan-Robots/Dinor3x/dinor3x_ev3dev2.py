@@ -346,9 +346,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         #     mirrored_adjust=False,
         #     brake=False)
 
-        self.tank_driver.on(
-            left_speed=-speed,
-            right_speed=-speed)
+        self.steer_driver.on(
+            steering=0,
+            speed=-speed)
 
     def walk_n_steps(self, speed: float = 100, n_steps: int = 1):
         ...
