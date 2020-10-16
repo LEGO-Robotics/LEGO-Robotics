@@ -69,20 +69,20 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while self.touch_sensor.is_pressed:
             pass
 
-        self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
-        self.right_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.left_motor.run_forever(speed_sp=400)
 
         while not self.touch_sensor.is_pressed:
             pass
 
-        self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.left_motor.run_to_rel_pos(
             position_sp=-0.2 * 360,
             speed_sp=500,
-            stop_action=Motor.STOP_ACTION_BRAKE)
+            stop_action=Motor.STOP_ACTION_HOLD)
         self.left_motor.wait_while(Motor.STATE_RUNNING)
 
         self.right_motor.run_forever(speed_sp=400)
@@ -90,12 +90,12 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while not self.touch_sensor.is_pressed:
             pass
 
-        self.right_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.right_motor.run_to_rel_pos(
             position_sp=-0.2 * 360,
             speed_sp=500,
-            stop_action=Motor.STOP_ACTION_BRAKE)
+            stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.wait_while(Motor.STATE_RUNNING)
 
         self.left_motor.reset()
