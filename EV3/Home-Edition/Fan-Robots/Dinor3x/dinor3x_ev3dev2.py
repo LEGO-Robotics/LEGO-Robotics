@@ -161,15 +161,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.left_motor.reset()
         self.right_motor.reset()
 
-    def leg_adjust(
-            self,
-            cyclic_degrees: float,
-            speed: float = 100,
-            leg_offset_percent: float = 0,
-            mirrored_adjust: bool = False,
-            brake: bool = True):
-        ...
-
     def leg_to_pos(
             self,
             speed: float = 100,
@@ -194,6 +185,60 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                         cyclic_degrees=360),
             brake=True,
             block=True)
+
+    def leg_adjust(
+            self,
+            cyclic_degrees: float,
+            speed: float = 100,
+            leg_offset_percent: float = 0,
+            mirrored_adjust: bool = False,
+            brake: bool = True):
+        self.tank_driver.stop(brake=True)
+
+        diff = cyclic_position_offset(
+                rotation_sensor=self.left_motor.position,
+                cyclic_degrees=cyclic_degrees) \
+            - cyclic_position_offset(
+                rotation_sensor=self.right_motor.position,
+                cyclic_degrees=cyclic_degrees)
+
+        if diff > (cyclic_degrees / 2):
+            diff -= cyclic_degrees
+
+        if diff < -180:
+            diff += cyclic_degrees
+
+        if speed >= 0:
+            if diff >= 0:
+                self.left_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=diff,
+                    brake=brake,
+                    block=True)
+
+            else:
+                self.right_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=abs(diff),
+                    brake=brake,
+                    block=True)
+
+        else:
+            if diff >= 0:
+                self.right_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=diff,
+                    brake=brake,
+                    block=True)
+
+            else:
+                self.left_motor.on_for_degrees(
+                    speed=-speed,
+                    degrees=abs(diff),
+                    brake=brake,
+                    block=True)
+
+            # TODO: print to screen
 
     def turn(self, speed: float = 100, n_steps: int = 1):
         ...
