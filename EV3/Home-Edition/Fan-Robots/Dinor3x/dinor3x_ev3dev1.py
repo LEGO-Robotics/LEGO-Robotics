@@ -262,10 +262,40 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             # TODO: print to screen
 
     def turn(self, speed: float = 1000, n_steps: int = 1):
-        ...
+        self.leg_adjust(
+            cyclic_degrees=360,
+            speed=speed,
+            leg_offset_percent=0,
+            mirrored_adjust=False,
+            brake=False)
+
+        if speed >= 0:
+            self.left_motor.run_to_rel_pos(
+                position_sp=180,
+                speed_sp=speed,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.left_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            self.right_motor.run_to_rel_pos(
+                position_sp=180,
+                speed_sp=-speed,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.right_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.left_motor.run_forever(speed_sp=speed)
+        self.right_motor.run_forever(speed_sp=-speed)
 
     def walk(self, speed: float = 1000):
-        ...
+        self.leg_adjust(
+            cyclic_degrees=360,
+            speed=speed,
+            leg_offset_percent=0,
+            mirrored_adjust=False,
+            brake=False)
+
+        self.left_motor.run_forever(speed_sp=-speed)
+        self.right_motor.run_forever(speed_sp=-speed)
 
     def walk_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
