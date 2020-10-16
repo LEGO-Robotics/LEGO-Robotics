@@ -66,7 +66,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.jaw_motor.run_forever(
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
         sleep(1)
-        self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
@@ -74,7 +74,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.jaw_motor.run_to_rel_pos(
             position_sp=-60,
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
-            stop_action=Motor.STOP_ACTION_BRAKE)
+            stop_action=Motor.STOP_ACTION_HOLD)
         self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
         # FIXME: jaw keeps opening wider and wider and doesn't close
@@ -82,13 +82,13 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.jaw_motor.run_timed(
                 speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
                 time_sp=0.05 * 1000,
-                stop_action=Motor.STOP_ACTION_BRAKE)
+                stop_action=Motor.STOP_ACTION_HOLD)
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
             self.jaw_motor.run_timed(
                 speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
                 time_sp=0.05 * 1000,
-                stop_action=Motor.STOP_ACTION_BRAKE)
+                stop_action=Motor.STOP_ACTION_HOLD)
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
         self.jaw_motor.run_forever(
@@ -103,18 +103,18 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while self.ir_sensor.proximity >= 25:
             pass
 
-        self.left_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
-        self.right_motor.stop(stop_action=Motor.STOP_ACTION_BRAKE)
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def run_away(self):
         self.left_motor.run_to_rel_pos(
             speed_sp=750,
             position_sp=3 * 360,
-            stop_action=Motor.STOP_ACTION_BRAKE)
+            stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.run_to_rel_pos(
             speed_sp=750,
             position_sp=3 * 360,
-            stop_action=Motor.STOP_ACTION_BRAKE)
+            stop_action=Motor.STOP_ACTION_HOLD)
         self.left_motor.wait_while(Motor.STATE_RUNNING)
         self.right_motor.wait_while(Motor.STATE_RUNNING)
 
