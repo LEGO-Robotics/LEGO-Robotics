@@ -229,7 +229,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                 self.left_motor.wait_while(Motor.STATE_RUNNING)
 
             else:
-                self.right_motor.on_for_degrees(
+                self.right_motor.run_to_rel_pos(
                     position_sp=diff,
                     speed_sp=speed,
                     # EV3Dev2 equivalent:
@@ -242,7 +242,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         else:
             if diff >= 0:
-                self.right_motor.on_for_degrees(
+                self.right_motor.run_to_rel_pos(
                     position_sp=diff,
                     speed_sp=-speed,
                     stop_action=Motor.STOP_ACTION_HOLD
@@ -251,7 +251,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                 self.right_motor.wait_while(Motor.STATE_RUNNING)
 
             else:
-                self.left_motor.on_for_degrees(
+                self.left_motor.run_to_rel_pos(
                     position_sp=abs(diff),
                     speed_sp=-speed,
                     stop_action=Motor.STOP_ACTION_HOLD
