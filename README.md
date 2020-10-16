@@ -40,7 +40,7 @@
 - [Python for EV3](https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3)
   - [Getting started with LEGO® MINDSTORMS® Education EV3 MicroPython Version 2.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
      - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
-  - [microSD Image](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
+  - [microSD Image](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv200sdcardimage-2c980f58ab30715f0659568970baf494.zip)
     - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
   - [Documentation](https://pybricks.github.io/ev3-micropython)
 
