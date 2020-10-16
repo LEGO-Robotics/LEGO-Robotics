@@ -68,8 +68,7 @@ class Dinor3x(EV3Brick):
 
         if diff > 180:
             diff -= 360
-
-        if diff < -180:
+        elif diff < -180:
             diff += 360
 
         if speed >= 0:
