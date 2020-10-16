@@ -128,6 +128,43 @@ class Dinor3x(EV3Brick):
 
         sleep(0.5)
 
+    def walk_once_by_ir_beacon(
+            self,
+            speed: float = 1000   # degrees per second
+            ):
+        ir_beacon_buttons_pressed = \
+            set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
+
+        # forward
+        if ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
+            self.walk(speed=speed)
+
+        # backward
+        elif ir_beacon_buttons_pressed == \
+                {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
+            self.walk(speed=-speed)
+
+        # turn left on the spot
+        elif ir_beacon_buttons_pressed == {Button.LEFT_UP}:
+            self.turn(speed=speed)
+
+        # turn right on the spot
+        elif ir_beacon_buttons_pressed == {Button.RIGHT_UP}:
+            self.turn(speed=-speed)
+
+        # stop
+        elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN}:
+            self.left_motor.hold()
+            self.right_motor.hold()
+
+        # turn right backward
+        elif ir_beacon_buttons_pressed == {Button.RIGHT_DOWN}:
+            self.calibrate_legs()
+
+    def keep_walking_by_ir_beacon(self, speed: float):
+        while True:
+            self.walk_once_by_ir_beacon(speed=speed)
+
     def close_mouth(self):
         self.jaw_motor.run(speed=200)
         sleep(1)

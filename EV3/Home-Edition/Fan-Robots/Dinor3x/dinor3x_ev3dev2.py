@@ -118,6 +118,38 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                     brake=brake,
                     block=True)
 
+    def walk_once_by_ir_beacon(
+            self,
+            speed: float = 1000   # degrees per second
+            ):
+        # forward
+        if self.ir_sensor.top_left and self.ir_sensor.top_right:
+            self.walk(speed=speed)
+
+        # backward
+        elif self.ir_sensor.bottom_left and self.ir_sensor.bottom_right:
+            self.walk(speed=-speed)
+
+        # turn left on the spot
+        elif self.ir_sensor.top_left:
+            self.turn(speed=speed)
+
+        # turn right on the spot
+        elif self.ir_sensor.top_right:
+            self.turn(speed=-speed)
+
+        # stop
+        elif self.ir_sensor.bottom_left:
+            self.tank_driver.off(brake=True)
+
+        # calibrate legs
+        elif self.ir_sensor.bottom_right:
+            self.calibrate_legs()
+
+    def keep_walking_by_ir_beacon(self, speed: float):
+        while True:
+            self.walk_once_by_ir_beacon(speed=speed)
+
     def close_mouth(self):
         self.jaw_motor.on(
             speed=20,
@@ -313,7 +345,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         #     leg_offset_percent=0,
         #     mirrored_adjust=False,
         #     brake=False)
-        
+
         self.tank_driver.on(
             left_speed=-speed,
             right_speed=-speed)
