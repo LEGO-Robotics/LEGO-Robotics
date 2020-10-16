@@ -188,7 +188,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def leg_adjust(
             self,
-            cyclic_degrees: float,
+            cyclic_degrees: float = 360,
             speed: float = 100,
             leg_offset_percent: float = 0,
             mirrored_adjust: bool = False,
