@@ -39,45 +39,6 @@ class Dinor3x(EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def calibrate_legs(self):
-        self.left_motor.run(speed=100)
-        self.right_motor.run(speed=200)
-
-        while self.touch_sensor.pressed():
-            pass
-
-        self.left_motor.hold()
-        self.right_motor.hold()
-
-        self.left_motor.run(speed=400)
-
-        while not self.touch_sensor.pressed():
-            pass
-
-        self.left_motor.hold()
-
-        self.left_motor.run_angle(
-            rotation_angle=-0.2 * 360,
-            speed=500,
-            then=Stop.HOLD,
-            wait=True)
-
-        self.right_motor.run(speed=400)
-
-        while not self.touch_sensor.pressed():
-            pass
-
-        self.right_motor.hold()
-
-        self.right_motor.run_angle(
-            rotation_angle=-0.2 * 360,
-            speed=500,
-            then=Stop.HOLD,
-            wait=True)
-
-        self.left_motor.reset_angle(angle=0)
-        self.right_motor.reset_angle(angle=0)
-
     def roar(self):
         self.speaker.play_file(file=SoundFile.T_REX_ROAR)
 
@@ -140,6 +101,45 @@ class Dinor3x(EV3Brick):
 
     # TRANSLATED FROM EV3-G MY BLOCKS
     # -------------------------------
+
+    def calibrate_legs(self):
+        self.left_motor.run(speed=100)
+        self.right_motor.run(speed=200)
+
+        while self.touch_sensor.pressed():
+            pass
+
+        self.left_motor.hold()
+        self.right_motor.hold()
+
+        self.left_motor.run(speed=400)
+
+        while not self.touch_sensor.pressed():
+            pass
+
+        self.left_motor.hold()
+
+        self.left_motor.run_angle(
+            rotation_angle=-0.2 * 360,
+            speed=500,
+            then=Stop.HOLD,
+            wait=True)
+
+        self.right_motor.run(speed=400)
+
+        while not self.touch_sensor.pressed():
+            pass
+
+        self.right_motor.hold()
+
+        self.right_motor.run_angle(
+            rotation_angle=-0.2 * 360,
+            speed=500,
+            then=Stop.HOLD,
+            wait=True)
+
+        self.left_motor.reset_angle(angle=0)
+        self.right_motor.reset_angle(angle=0)
 
     def leg_adjust(
             self,

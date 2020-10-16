@@ -58,42 +58,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
-    def calibrate_legs(self):
-        self.tank_driver.on(
-            left_speed=10,
-            right_speed=20)
-
-        self.touch_sensor.wait_for_released()
-
-        self.tank_driver.off(brake=True)
-
-        self.left_motor.on(speed=40)
-
-        self.touch_sensor.wait_for_pressed()
-
-        self.left_motor.off(brake=True)
-
-        self.left_motor.on_for_rotations(
-            rotations=-0.2,
-            speed=50,
-            brake=True,
-            block=True)
-
-        self.right_motor.on(speed=40)
-
-        self.touch_sensor.wait_for_pressed()
-
-        self.right_motor.off(brake=True)
-
-        self.right_motor.on_for_rotations(
-            rotations=-0.2,
-            speed=50,
-            brake=True,
-            block=True)
-
-        self.left_motor.reset()
-        self.right_motor.reset()
-
     def close_mouth(self):
         self.jaw_motor.on(
             speed=20,
@@ -160,6 +124,42 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     # TRANSLATED FROM EV3-G MY BLOCKS
     # -------------------------------
+
+    def calibrate_legs(self):
+        self.tank_driver.on(
+            left_speed=10,
+            right_speed=20)
+
+        self.touch_sensor.wait_for_released()
+
+        self.tank_driver.off(brake=True)
+
+        self.left_motor.on(speed=40)
+
+        self.touch_sensor.wait_for_pressed()
+
+        self.left_motor.off(brake=True)
+
+        self.left_motor.on_for_rotations(
+            rotations=-0.2,
+            speed=50,
+            brake=True,
+            block=True)
+
+        self.right_motor.on(speed=40)
+
+        self.touch_sensor.wait_for_pressed()
+
+        self.right_motor.off(brake=True)
+
+        self.right_motor.on_for_rotations(
+            rotations=-0.2,
+            speed=50,
+            brake=True,
+            block=True)
+
+        self.left_motor.reset()
+        self.right_motor.reset()
 
     def leg_adjust(
             self,
