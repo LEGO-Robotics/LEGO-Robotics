@@ -374,6 +374,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             # TODO: print to screen
 
     def walk(self, speed: float = 1000):
+        # to make legs ready to walk properly
+        self.calibrate_legs()
+
         self.adjust_legs(
             speed=speed,
             brake=False)
@@ -391,6 +394,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         ...
 
     def turn(self, speed: float = 1000):
+        # to make legs ready to walk properly
+        self.calibrate_legs()
+
         self.adjust_legs(
             speed=speed,
             brake=False)
@@ -422,8 +428,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         ...
 
     def main(self, speed: float = 400):
-        self.calibrate_legs()
-
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
