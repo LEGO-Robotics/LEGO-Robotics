@@ -376,9 +376,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         # to make legs ready to walk properly
         self.calibrate_legs()
 
-        self.adjust_legs(
-            speed=speed,
-            brake=False)
+        # self.adjust_legs(
+        #     speed=speed,
+        #     brake=False)
         # self.leg_adjust(
         #     cyclic_degrees=360,
         #     speed=speed,
@@ -396,9 +396,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         # to make legs ready to walk properly
         self.calibrate_legs()
 
-        self.adjust_legs(
-            speed=speed,
-            brake=False)
+        # self.adjust_legs(
+        #     speed=speed,
+        #     brake=False)
         # self.leg_adjust(
         #     cyclic_degrees=360,
         #     speed=speed,
