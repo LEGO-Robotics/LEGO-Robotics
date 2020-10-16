@@ -85,12 +85,12 @@ class Dinor3x(EV3Brick):
         self.left_motor.run_angle(
             speed=750,
             rotation_angle=3 * 360,
-            then=Stop.BRAKE,
+            then=Stop.HOLD,
             wait=False)
         self.right_motor.run_angle(
             speed=750,
             rotation_angle=3 * 360,
-            then=Stop.BRAKE,
+            then=Stop.HOLD,
             wait=True)
 
     def jump(self):
