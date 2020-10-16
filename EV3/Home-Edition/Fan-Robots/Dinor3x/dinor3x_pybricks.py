@@ -285,7 +285,21 @@ class Dinor3x(EV3Brick):
 
             # TODO: print to screen
 
-    def turn(self, speed: float = 1000, n_steps: int = 1):
+    def walk(self, speed: float = 1000):
+        self.leg_adjust(
+            cyclic_degrees=360,
+            speed=speed,
+            leg_offset_percent=0,
+            mirrored_adjust=False,
+            brake=False)
+
+        self.left_motor.run(speed=-speed)
+        self.right_motor.run(speed=-speed)
+
+    def walk_n_steps(self, speed: float = 1000, n_steps: int = 1):
+        ...
+
+    def turn(self, speed: float = 1000):
         self.leg_adjust(
             cyclic_degrees=360,
             speed=speed,
@@ -310,16 +324,5 @@ class Dinor3x(EV3Brick):
         self.left_motor.run(speed=speed)
         self.right_motor.run(speed=-speed)
 
-    def walk(self, speed: float = 1000):
-        self.leg_adjust(
-            cyclic_degrees=360,
-            speed=speed,
-            leg_offset_percent=0,
-            mirrored_adjust=False,
-            brake=False)
-
-        self.left_motor.run(speed=-speed)
-        self.right_motor.run(speed=-speed)
-
-    def walk_steps(self, speed: float = 1000, n_steps: int = 1):
+    def turn_n_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
