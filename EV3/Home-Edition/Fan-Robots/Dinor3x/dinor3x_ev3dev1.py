@@ -440,24 +440,31 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
 
-        self.jaw_motor.run_to_rel_pos(
-            position_sp=-60,
-            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
-            stop_action=Motor.STOP_ACTION_HOLD)
+        # *** SKIPPING BELOW BLOCK, WHICH SEEMS TO HANG
+        # self.jaw_motor.run_to_rel_pos(
+        #     position_sp=-60,
+        #     speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
+        #     stop_action=Motor.STOP_ACTION_HOLD)
+        # self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.jaw_motor.run_timed(
+            speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 200,
+            time_sp=0.5 * 1000,
+            stop_action=Motor.STOP_ACTION_COAST)
         self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
-        for i in range(12):
-            self.jaw_motor.run_timed(
-                speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
-                time_sp=0.05 * 1000,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.jaw_motor.wait_while(Motor.STATE_RUNNING)
-
-            self.jaw_motor.run_timed(
-                speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
-                time_sp=0.05 * 1000,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+        # SKIPPING BELOW BLOCK, WHICH SEEMS TO HANG
+        # for i in range(12):
+        #     self.jaw_motor.run_timed(
+        #         speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
+        #         time_sp=0.05 * 1000,
+        #         stop_action=Motor.STOP_ACTION_HOLD)
+        #     self.jaw_motor.wait_while(Motor.STATE_RUNNING)
+        #     self.jaw_motor.run_timed(
+        #         speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 400,
+        #         time_sp=0.05 * 1000,
+        #         stop_action=Motor.STOP_ACTION_HOLD)
+        #     self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
         self.jaw_motor.run_timed(
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200,
