@@ -2,9 +2,9 @@
 
 
 from pybricks.hubs import EV3Brick
-from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
+from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor, ColorSensor
 from pybricks.media.ev3dev import SoundFile
-from pybricks.parameters import Button, Direction, Port, Stop
+from pybricks.parameters import Button, Color, Direction, Port, Stop
 
 from time import sleep
 
@@ -25,6 +25,7 @@ class Dinor3x(EV3Brick):
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             jaw_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1,
+            color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=Direction.CLOCKWISE)
@@ -36,32 +37,33 @@ class Dinor3x(EV3Brick):
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
 
+        self.color_sensor = ColorSensor(port=color_sensor_port)
+
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def walk_once_by_ir_beacon(
-            self,
-            speed: float = 1000   # degrees per second
-            ):
+        self.walk_speed = 400
+
+    def walk_by_ir_beacon(self):
         ir_beacon_buttons_pressed = \
             set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
         # forward
         if ir_beacon_buttons_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
-            self.walk(speed=speed)
+            self.walk(speed=self.walk_speed)
 
         # backward
         elif ir_beacon_buttons_pressed == \
                 {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
-            self.walk(speed=-speed)
+            self.walk(speed=-self.walk_speed)
 
         # turn left on the spot
         elif ir_beacon_buttons_pressed == {Button.LEFT_UP}:
-            self.turn(speed=speed)
+            self.turn(speed=self.walk_speed)
 
         # turn right on the spot
         elif ir_beacon_buttons_pressed == {Button.RIGHT_UP}:
-            self.turn(speed=-speed)
+            self.turn(speed=-self.walk_speed)
 
         # stop
         elif ir_beacon_buttons_pressed == {Button.LEFT_DOWN}:
@@ -72,9 +74,29 @@ class Dinor3x(EV3Brick):
         elif ir_beacon_buttons_pressed == {Button.RIGHT_DOWN}:
             self.calibrate_legs()
 
-    def keep_walking_by_ir_beacon(self, speed: float):
+    def keep_walking_by_ir_beacon(self):
         while True:
-            self.walk_once_by_ir_beacon(speed=speed)
+            self.walk_by_ir_beacon()
+
+    def change_speed_by_color(self):
+        # Challenge:
+        # Can you attach a colorsensor to DINOR3X, and make it behave
+        # differently depending on which color is in front of the sensor
+        # (red = walk fast, white = walk slow, etc.)?
+        if self.color_sensor.color() == Color.RED:
+            self.speaker.say(text='FAST!')
+
+            self.walk_speed = 800
+
+        elif self.color_sensor.color() == Color.GREEN:
+            self.speaker.say(text='NORMAL?')
+
+            self.walk_speed = 400
+
+        elif self.color_sensor.color() == Color.WHITE:
+            self.speaker.say(text='SLOW...')
+
+            self.walk_speed = 200
 
     def jump(self):
         """
@@ -377,3 +399,14 @@ class Dinor3x(EV3Brick):
 
     # MAIN
     # ----
+
+    def main(self):
+        while True:
+            self.change_speed_by_color()
+            self.walk_by_ir_beacon()
+
+
+if __name__ == '__main__':
+    DINOR3X = Dinor3x()
+
+    DINOR3X.main()

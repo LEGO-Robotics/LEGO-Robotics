@@ -3,7 +3,8 @@
 
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, InfraredSensor, RemoteControl, INPUT_1, INPUT_4,
+    TouchSensor, ColorSensor, InfraredSensor, RemoteControl,
+    INPUT_1, INPUT_3, INPUT_4,
     Button, Sound
 )
 
@@ -14,7 +15,8 @@ from time import sleep
 # sys.path.append(os.path.expanduser('~'))
 from util.ev3dev_fast.ev3fast import (
     MediumMotor as FastMediumMotor,
-    TouchSensor as FastTouchSensor
+    TouchSensor as FastTouchSensor,
+    ColorSensor as FastColorSensor
 )
 from util.drive_util_ev3dev1 import IRBeaconRemoteControlledTank
 
@@ -22,12 +24,6 @@ from dinor3x_util import cyclic_position_offset
 
 
 class Dinor3x(IRBeaconRemoteControlledTank):
-    """
-    - Can you attach a colorsensor to DINOR3X, and make it behave differently
-        depending on which color is in front of the sensor
-        (red = walk fast, white = walk slow, etc.)?
-    """
-
     # https://sites.google.com/site/ev3python/learn_ev3_python/using-motors
     MEDIUM_MOTOR_POWER_FACTOR = 1.4
 
@@ -35,7 +31,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             jaw_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1,
+            touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             fast=False):
         super().__init__(
@@ -48,10 +44,14 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
+            self.color_sensor = FastColorSensor(address=color_sensor_port)
+
         else:
             self.jaw_motor = MediumMotor(address=jaw_motor_port)
 
             self.touch_sensor = TouchSensor(address=touch_sensor_port)
+
+            self.color_sensor = ColorSensor(address=color_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
@@ -60,28 +60,28 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
-    # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
-    def walk_by_ir_beacon(
-            self,
-            speed: float = 1000   # degrees per second
-            ):
+        self.walk_speed = 400
+
+    def walk_by_ir_beacon(self):
+        # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
+
         # forward
         if self.tank_drive_remote_control.red_up and \
                 self.tank_drive_remote_control.blue_up:
-            self.walk(speed=speed)
+            self.walk(speed=self.walk_speed)
 
         # backward
         elif self.tank_drive_remote_control.red_down and \
                 self.tank_drive_remote_control.blue_down:
-            self.walk(speed=-speed)
+            self.walk(speed=-self.walk_speed)
 
         # turn left on the spot
         elif self.tank_drive_remote_control.red_up:
-            self.turn(speed=speed)
+            self.turn(speed=self.walk_speed)
 
         # turn right on the spot
         elif self.tank_drive_remote_control.blue_up:
-            self.turn(speed=-speed)
+            self.turn(speed=-self.walk_speed)
 
         # stop
         elif self.tank_drive_remote_control.red_down:
@@ -92,9 +92,29 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         elif self.tank_drive_remote_control.blue_down:
             self.calibrate_legs()
 
-    def keep_walking_by_ir_beacon(self, speed: float):
+    def keep_walking_by_ir_beacon(self):
         while True:
-            self.walk_by_ir_beacon(speed=speed)
+            self.walk_by_ir_beacon()
+
+    def change_speed_by_color(self):
+        # Challenge:
+        # Can you attach a colorsensor to DINOR3X, and make it behave
+        # differently depending on which color is in front of the sensor
+        # (red = walk fast, white = walk slow, etc.)?
+        if self.color_sensor.color == ColorSensor.COLOR_RED:
+            self.speaker.speak(text='FAST!').wait()
+
+            self.walk_speed = 800
+
+        elif self.color_sensor.color == ColorSensor.COLOR_GREEN:
+            self.speaker.speak(text='NORMAL?').wait()
+
+            self.walk_speed = 400
+
+        elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
+            self.speaker.speak(text='SLOW...').wait()
+
+            self.walk_speed = 200
 
     def jump(self):
         """
@@ -428,9 +448,10 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     # MAIN
     # ----
 
-    def main(self, speed: float = 400):
+    def main(self):
         while True:
-            self.walk_by_ir_beacon(speed=speed)
+            self.change_speed_by_color()
+            self.walk_by_ir_beacon()
 
 
 if __name__ == '__main__':
