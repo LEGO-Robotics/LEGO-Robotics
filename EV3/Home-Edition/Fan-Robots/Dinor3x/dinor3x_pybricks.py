@@ -12,6 +12,10 @@ from dinor3x_util import cyclic_position_offset
 
 
 class Dinor3x(EV3Brick):
+    FAST_WALK_SPEED = 800
+    NORMAL_WALK_SPEED = 400
+    SLOW_WALK_SPEED = 200
+
     def __init__(
             self,
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
@@ -34,40 +38,55 @@ class Dinor3x(EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-        self.walk_speed = 400
+        self.roaring = False
+        self.walk_speed = self.NORMAL_WALK_SPEED
 
     def roar_by_ir_beacon(self):
+        """
+        Dinor3x roars when the Beacon button is pressed
+        """
         if Button.BEACON in \
                 self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            self.roaring = True
             self.open_mouth()
             self.roar()
 
-        else:
+        elif self.roaring:
+            self.roaring = False
             self.close_mouth()
 
     def change_speed_by_color(self):
-        # Challenge:
-        # Can you attach a colorsensor to DINOR3X, and make it behave
-        # differently depending on which color is in front of the sensor
-        # (red = walk fast, white = walk slow, etc.)?
+        """
+        Dinor3x changes its speed when detecting some colors
+        - Red: walk fast
+        - Green: walk normally
+        - White: walk slowly
+        """
         if self.color_sensor.color() == Color.RED:
-            self.speaker.say(text='FAST!')
-
-            self.walk_speed = 800
+            self.speaker.say(text='RUN!')
+            self.walk_speed = self.FAST_WALK_SPEED
+            self.walk(speed=self.walk_speed)
 
         elif self.color_sensor.color() == Color.GREEN:
-            self.speaker.say(text='NORMAL?')
-
-            self.walk_speed = 400
+            self.speaker.say(text='Normal')
+            self.walk_speed = self.NORMAL_WALK_SPEED
+            self.walk(speed=self.walk_speed)
 
         elif self.color_sensor.color() == Color.WHITE:
-            self.speaker.say(text='SLOW...')
-
-            self.walk_speed = 200
+            self.speaker.say(text='slow......')
+            self.walk_speed = self.SLOW_WALK_SPEED
+            self.walk(speed=self.walk_speed)
 
     def walk_by_ir_beacon(self):
-        # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
-
+        """
+        Dinor3x walks or turns according to instructions from the IR Beacon
+        - 2 top/up buttons together: walk forward
+        - 2 bottom/down buttons together: walk backward
+        - Top Left / Red Up: turn left on the spot
+        - Top Right / Blue Up: turn right on the spot
+        - Bottom Left / Red Down: stop
+        - Bottom Right / Blue Down: calibrate to make the legs straight
+        """
         ir_beacon_buttons_pressed = \
             set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
@@ -419,6 +438,8 @@ class Dinor3x(EV3Brick):
     # ----
 
     def main(self):
+        self.close_mouth()
+
         while True:
             self.roar_by_ir_beacon()
             self.change_speed_by_color()
