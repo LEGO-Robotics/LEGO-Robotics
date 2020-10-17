@@ -1,12 +1,12 @@
 # LEGO Mindstorms
 
-This repository is maintained by a father-and-son team based in Silicon Valley
--—Lương Thế Vinh (@TheVinhLuong102, an Industrial IoT AI Scientist) and
-Antoni Lương Phạm Anh Quân (@AntoniLuongPham, born 2014)--
-and contains programming code (mostly in Python, some in other languages)
-for numerous LEGO Mindstorms robots. Generally, @TheVinhLuong102 takes care
+This repository is maintained by a father-and-son team based in Silicon Valley—
+Lương Thế Vinh (__@TheVinhLuong102__, an Industrial IoT AI Scientist) and
+Antoni Lương Phạm Anh Quân (__@AntoniLuongPham__, born 2014)—
+and contains programming code—mostly in Python, some in other languages—
+for numerous LEGO Mindstorms robots. Generally, __@TheVinhLuong102__ takes care
 of the overall organization, documentation and maintenance,
-while @AntoniLuongPham codes the majority of the original programs.
+while __@AntoniLuongPham__ codes the majority of the original programs.
 
 For each robot, we experiment extensively with various ways to program it.
 For the most performant Python programs, we leverage MicroPython by using
@@ -16,8 +16,16 @@ As "collectibles", we have also implemented programs using the
 `NXT-Python` library for NXT robots too. We also try out parallel processing
 using `MultiProcessing`, `Threading` and other means,
 to see whether such mechanisms work well with the various libraries.
+Occasionally, we take copies of other developers' old programs on GitHub
+(with credits/references) and modify those with the latest modern libraries.
 Hence, this repository should be considered a collection of
 programming experiments based on LEGO Mindstorms.
+
+From time to time, we extract and clean up a subset of our work and contribute
+back to the wider LEGO Mindstorms developer & enthusiast community through the
+[PyBricks-Projects](https://GitHub.com/PyBricks/PyBricks-Projects) and
+[EV3Dev-Lang-Python-Demo](https://GitHub.com/EV3Dev/EV3Dev-Lang-Python-Demo)
+repositories.
 
 
 ## [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
