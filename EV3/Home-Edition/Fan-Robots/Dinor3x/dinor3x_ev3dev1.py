@@ -62,6 +62,31 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.walk_speed = 400
 
+    def roar_by_ir_beacon(self):
+        if self.beacon.beacon:
+            self.open_mouth()
+            self.roar()
+
+    def change_speed_by_color(self):
+        # Challenge:
+        # Can you attach a colorsensor to DINOR3X, and make it behave
+        # differently depending on which color is in front of the sensor
+        # (red = walk fast, white = walk slow, etc.)?
+        if self.color_sensor.color == ColorSensor.COLOR_RED:
+            self.speaker.speak(text='FAST!').wait()
+
+            self.walk_speed = 800
+
+        elif self.color_sensor.color == ColorSensor.COLOR_GREEN:
+            self.speaker.speak(text='NORMAL?').wait()
+
+            self.walk_speed = 400
+
+        elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
+            self.speaker.speak(text='SLOW...').wait()
+
+            self.walk_speed = 200
+
     def walk_by_ir_beacon(self):
         # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
 
@@ -95,31 +120,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     def keep_walking_by_ir_beacon(self):
         while True:
             self.walk_by_ir_beacon()
-
-    def change_speed_by_color(self):
-        # Challenge:
-        # Can you attach a colorsensor to DINOR3X, and make it behave
-        # differently depending on which color is in front of the sensor
-        # (red = walk fast, white = walk slow, etc.)?
-        if self.color_sensor.color == ColorSensor.COLOR_RED:
-            self.speaker.speak(text='FAST!').wait()
-
-            self.walk_speed = 800
-
-        elif self.color_sensor.color == ColorSensor.COLOR_GREEN:
-            self.speaker.speak(text='NORMAL?').wait()
-
-            self.walk_speed = 400
-
-        elif self.color_sensor.color == ColorSensor.COLOR_WHITE:
-            self.speaker.speak(text='SLOW...').wait()
-
-            self.walk_speed = 200
-
-    def roar_by_ir_beacon(self):
-        if self.beacon.beacon:
-            self.open_mouth()
-            self.roar()
 
     def jump(self):
         """
