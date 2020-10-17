@@ -26,7 +26,7 @@ while True:
 
     Process(target=DINOR3X.roar).start()
 
-    DINOR3X.run_away()
+    DINOR3X.back_away()
 
     DINOR3X.leg_to_pos(
         speed=1000,

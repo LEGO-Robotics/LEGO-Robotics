@@ -22,4 +22,4 @@ while True:
     # FIXME: TypeError: unsupported type for __hash__: 'bound_method'
     run_parallel(
         DINOR3X.roar,
-        DINOR3X.run_away)
+        DINOR3X.back_away)

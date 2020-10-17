@@ -125,18 +125,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         sleep(0.5)
 
-    def run_away(self):
-        self.left_motor.run_to_rel_pos(
-            speed_sp=750,
-            position_sp=3 * 360,
-            stop_action=Motor.STOP_ACTION_HOLD)
-        self.right_motor.run_to_rel_pos(
-            speed_sp=750,
-            position_sp=3 * 360,
-            stop_action=Motor.STOP_ACTION_HOLD)
-        self.left_motor.wait_while(Motor.STATE_RUNNING)
-        self.right_motor.wait_while(Motor.STATE_RUNNING)
-
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump
@@ -425,6 +413,18 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+    def back_away(self):
+        self.left_motor.run_to_rel_pos(
+            speed_sp=750,
+            position_sp=3 * 360,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.run_to_rel_pos(
+            speed_sp=750,
+            position_sp=3 * 360,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.left_motor.wait_while(Motor.STATE_RUNNING)
+        self.right_motor.wait_while(Motor.STATE_RUNNING)
 
     # MAIN
     # ----

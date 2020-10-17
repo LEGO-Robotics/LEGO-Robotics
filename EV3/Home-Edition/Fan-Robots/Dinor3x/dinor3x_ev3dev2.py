@@ -122,14 +122,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         sleep(0.5)
 
-    def run_away(self):
-        self.steer_driver.on_for_rotations(
-            speed=75,
-            steering=0,
-            rotations=3,
-            brake=True,
-            block=True)
-
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump
@@ -387,3 +379,11 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             pass
 
         self.steer_driver.off(brake=True)
+
+    def back_away(self):
+        self.steer_driver.on_for_rotations(
+            speed=75,
+            steering=0,
+            rotations=3,
+            brake=True,
+            block=True)

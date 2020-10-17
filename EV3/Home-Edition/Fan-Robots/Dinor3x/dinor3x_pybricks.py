@@ -103,18 +103,6 @@ class Dinor3x(EV3Brick):
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
-    def run_away(self):
-        self.left_motor.run_angle(
-            speed=750,
-            rotation_angle=3 * 360,
-            then=Stop.HOLD,
-            wait=False)
-        self.right_motor.run_angle(
-            speed=750,
-            rotation_angle=3 * 360,
-            then=Stop.HOLD,
-            wait=True)
-
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump
@@ -374,3 +362,15 @@ class Dinor3x(EV3Brick):
 
         self.left_motor.hold()
         self.right_motor.hold()
+
+    def back_away(self):
+        self.left_motor.run_angle(
+            speed=750,
+            rotation_angle=3 * 360,
+            then=Stop.HOLD,
+            wait=False)
+        self.right_motor.run_angle(
+            speed=750,
+            rotation_angle=3 * 360,
+            then=Stop.HOLD,
+            wait=True)
