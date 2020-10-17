@@ -113,8 +113,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         # stop
         elif self.tank_drive_remote_control.red_down:
-            self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
-            self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+            self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+            self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         # calibrate legs
         elif self.tank_drive_remote_control.blue_down:
