@@ -97,12 +97,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
-    def open_mouth(self):
-        self.jaw_motor.run_forever(
-            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
-        sleep(1)
-        self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-
     def roar(self):
         self.speaker.play(wav_file='/home/robot/sound/T-rex roar.wav')
 
@@ -425,6 +419,12 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def turn_n_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
+
+    def open_mouth(self):
+        self.jaw_motor.run_forever(
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
+        sleep(1)
+        self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
 
     def main(self, speed: float = 400):
         while True:
