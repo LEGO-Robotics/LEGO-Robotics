@@ -42,6 +42,9 @@ class Dinor3x(EV3Brick):
             self.open_mouth()
             self.roar()
 
+        else:
+            self.close_mouth()
+
     def change_speed_by_color(self):
         # Challenge:
         # Can you attach a colorsensor to DINOR3X, and make it behave
@@ -343,7 +346,21 @@ class Dinor3x(EV3Brick):
     def turn_n_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
 
+    def close_mouth(self):
+        self.jaw_motor.run_time(
+            speed=-200,
+            time=1000,
+            then=Stop.COAST,
+            wait=False)
+
     def open_mouth(self):
+        self.jaw_motor.run_time(
+            speed=200,
+            time=1000,
+            then=Stop.COAST,
+            wait=False)
+
+    def _open_mouth(self):
         self.jaw_motor.run(speed=200)
         sleep(1)
         self.jaw_motor.stop()
@@ -379,7 +396,6 @@ class Dinor3x(EV3Brick):
             then=Stop.HOLD,
             wait=True)
 
-        # FIXME: jaw doesn't close
         for i in range(12):
             self.jaw_motor.run_time(
                 speed=-400,
@@ -393,9 +409,11 @@ class Dinor3x(EV3Brick):
                 then=Stop.HOLD,
                 wait=True)
 
-        self.jaw_motor.run(speed=200)
-
-        sleep(0.5)
+        self.jaw_motor.run_time(
+            speed=200,
+            time=0.5 * 1000,
+            then=Stop.COAST,
+            wait=True)
 
     # MAIN
     # ----

@@ -67,6 +67,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.open_mouth()
             self.roar()
 
+        else:
+            self.close_mouth()
+
     def change_speed_by_color(self):
         # Challenge:
         # Can you attach a colorsensor to DINOR3X, and make it behave
@@ -394,7 +397,19 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     def turn_n_steps(self, speed: float = 1000, n_steps: int = 1):
         ...
 
+    def close_mouth(self):
+        self.jaw_motor.run_timed(
+            speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 200,
+            time_sp=1000,
+            stop_action=Motor.STOP_ACTION_COAST)
+
     def open_mouth(self):
+        self.jaw_motor.run_timed(
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200,
+            time_sp=1000,
+            stop_action=Motor.STOP_ACTION_COAST)
+
+    def _open_mouth(self):
         self.jaw_motor.run_forever(
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
         sleep(1)
@@ -431,7 +446,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             stop_action=Motor.STOP_ACTION_HOLD)
         self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
-        # FIXME: jaw keeps opening wider and wider and doesn't close
         for i in range(12):
             self.jaw_motor.run_timed(
                 speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
@@ -445,10 +459,11 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                 stop_action=Motor.STOP_ACTION_HOLD)
             self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
-        self.jaw_motor.run_forever(
-            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
-
-        sleep(0.5)
+        self.jaw_motor.run_timed(
+            speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200,
+            time_sp=0.5 * 1000,
+            stop_action=Motor.STOP_ACTION_COAST)
+        self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
     # MAIN
     # ----
