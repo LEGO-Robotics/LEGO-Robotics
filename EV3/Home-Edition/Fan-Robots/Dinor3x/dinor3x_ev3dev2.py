@@ -62,6 +62,9 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.open_mouth()
             self.roar()
 
+        else:
+            self.close_mouth()
+
     def change_speed_by_color(self):
         # Challenge:
         # Can you attach a colorsensor to DINOR3X, and make it behave
@@ -364,7 +367,21 @@ class Dinor3x(IRBeaconRemoteControlledTank):
     def turn_n_steps(self, speed: float = 100, n_steps: int = 1):
         ...
 
+    def close_mouth(self):
+        self.jaw_motor.on_for_seconds(
+            speed=-20,
+            seconds=1,
+            brake=False,
+            block=False)
+
     def open_mouth(self):
+        self.jaw_motor.on_for_seconds(
+            speed=20,
+            seconds=1,
+            block=False,
+            brake=False)
+
+    def _open_mouth(self):
         self.jaw_motor.on(
             speed=20,
             block=False,
@@ -415,12 +432,11 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                 block=True,
                 brake=True)
 
-        self.jaw_motor.on(
+        self.jaw_motor.on_for_seconds(
             speed=20,
+            seconds=0.5,
             brake=False,
-            block=False)
-
-        sleep(0.5)
+            block=True)
 
     # MAIN
     # ----
