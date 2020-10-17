@@ -39,33 +39,6 @@ class Dinor3x(EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def roar(self):
-        self.speaker.play_file(file=SoundFile.T_REX_ROAR)
-
-        self.jaw_motor.run_angle(
-            speed=400,
-            rotation_angle=-60,
-            then=Stop.HOLD,
-            wait=True)
-
-        # FIXME: jaw doesn't close
-        for i in range(12):
-            self.jaw_motor.run_time(
-                speed=-400,
-                time=0.05 * 1000,
-                then=Stop.HOLD,
-                wait=True)
-
-            self.jaw_motor.run_time(
-                speed=400,
-                time=0.05 * 1000,
-                then=Stop.HOLD,
-                wait=True)
-
-        self.jaw_motor.run(speed=200)
-
-        sleep(0.5)
-
     def walk_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
@@ -374,3 +347,33 @@ class Dinor3x(EV3Brick):
             rotation_angle=3 * 360,
             then=Stop.HOLD,
             wait=True)
+
+    def roar(self):
+        self.speaker.play_file(file=SoundFile.T_REX_ROAR)
+
+        self.jaw_motor.run_angle(
+            speed=400,
+            rotation_angle=-60,
+            then=Stop.HOLD,
+            wait=True)
+
+        # FIXME: jaw doesn't close
+        for i in range(12):
+            self.jaw_motor.run_time(
+                speed=-400,
+                time=0.05 * 1000,
+                then=Stop.HOLD,
+                wait=True)
+
+            self.jaw_motor.run_time(
+                speed=400,
+                time=0.05 * 1000,
+                then=Stop.HOLD,
+                wait=True)
+
+        self.jaw_motor.run(speed=200)
+
+        sleep(0.5)
+
+    # MAIN
+    # ----

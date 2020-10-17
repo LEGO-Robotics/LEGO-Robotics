@@ -90,38 +90,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         while True:
             self.walk_once_by_ir_beacon(speed=speed)
 
-    def roar(self):
-        self.speaker.play_file(
-            wav_file='/home/robot/sound/T-rex roar.wav',
-            volume=100,
-            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
-
-        self.jaw_motor.on_for_degrees(
-            speed=40,
-            degrees=-60,
-            block=True,
-            brake=True)
-
-        for i in range(12):
-            self.jaw_motor.on_for_seconds(
-                speed=-40,
-                seconds=0.05,
-                block=True,
-                brake=True)
-
-            self.jaw_motor.on_for_seconds(
-                speed=40,
-                seconds=0.05,
-                block=True,
-                brake=True)
-
-        self.jaw_motor.on(
-            speed=20,
-            brake=False,
-            block=False)
-
-        sleep(0.5)
-
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump
@@ -387,3 +355,38 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             rotations=3,
             brake=True,
             block=True)
+
+    def roar(self):
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/T-rex roar.wav',
+            volume=100,
+            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+        self.jaw_motor.on_for_degrees(
+            speed=40,
+            degrees=-60,
+            block=True,
+            brake=True)
+
+        for i in range(12):
+            self.jaw_motor.on_for_seconds(
+                speed=-40,
+                seconds=0.05,
+                block=True,
+                brake=True)
+
+            self.jaw_motor.on_for_seconds(
+                speed=40,
+                seconds=0.05,
+                block=True,
+                brake=True)
+
+        self.jaw_motor.on(
+            speed=20,
+            brake=False,
+            block=False)
+
+        sleep(0.5)
+
+    # MAIN
+    # ----
