@@ -12,14 +12,6 @@ from dinor3x_util import cyclic_position_offset
 
 
 class Dinor3x(EV3Brick):
-    """
-    Challenges:
-    - Can you make DINOR3X remote controlled with the IR-Beacon?
-    - Can you attach a colorsensor to DINOR3X, and make it behave differently
-        depending on which color is in front of the sensor
-        (red = walk fast, white = walk slow, etc.)?
-    """
-
     def __init__(
             self,
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
@@ -45,6 +37,8 @@ class Dinor3x(EV3Brick):
         self.walk_speed = 400
 
     def walk_by_ir_beacon(self):
+        # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
+
         ir_beacon_buttons_pressed = \
             set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
@@ -97,6 +91,12 @@ class Dinor3x(EV3Brick):
             self.speaker.say(text='SLOW...')
 
             self.walk_speed = 200
+
+    def roar_by_ir_beacon(self):
+        if Button.BEACON in \
+                self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            self.open_mouth()
+            self.roar()
 
     def jump(self):
         """
@@ -402,6 +402,7 @@ class Dinor3x(EV3Brick):
 
     def main(self):
         while True:
+            self.roar_by_ir_beacon()
             self.change_speed_by_color()
             self.walk_by_ir_beacon()
 

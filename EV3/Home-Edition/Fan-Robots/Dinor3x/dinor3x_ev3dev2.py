@@ -119,6 +119,11 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
             self.walk_speed = 20
 
+    def roar_by_ir_beacon(self):
+        if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            self.open_mouth()
+            self.roar()
+
     def jump(self):
         """
         Dinor3x Mission 02 Challenge: make it jump
@@ -422,6 +427,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def main(self):
         while True:
+            self.roar_by_ir_beacon()
             self.change_speed_by_color()
             self.walk_by_ir_beacon()
 
