@@ -3,7 +3,7 @@
 This repository is maintained by a father-and-son team based in Silicon Valley—
 Lương Thế Vinh (__@TheVinhLuong102__, an Industrial IoT AI Scientist) and
 Antoni Lương Phạm Anh Quân (__@AntoniLuongPham__, born 2014)—
-and contains programming code—mostly in Python, some in other languages—
+and contains programming code (mostly in Python, some in other languages)
 for numerous LEGO Mindstorms robots. Generally, __@TheVinhLuong102__ takes care
 of the overall organization, documentation and maintenance,
 while __@AntoniLuongPham__ codes the majority of the original programs.
