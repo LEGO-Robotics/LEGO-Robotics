@@ -122,16 +122,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         sleep(0.5)
 
-    def walk_until_blocked(self):
-        self.steer_driver.on(
-            steering=0,
-            speed=-40)
-
-        while self.ir_sensor.proximity >= 25:
-            pass
-
-        self.steer_driver.off(brake=True)
-
     def run_away(self):
         self.steer_driver.on_for_rotations(
             speed=75,
@@ -387,3 +377,13 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             brake=False)
         sleep(1)
         self.jaw_motor.off(brake=False)
+
+    def walk_until_blocked(self):
+        self.steer_driver.on(
+            steering=0,
+            speed=-40)
+
+        while self.ir_sensor.proximity >= 25:
+            pass
+
+        self.steer_driver.off(brake=True)

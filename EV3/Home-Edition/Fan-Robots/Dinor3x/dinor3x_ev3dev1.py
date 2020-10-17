@@ -125,16 +125,6 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
         sleep(0.5)
 
-    def walk_until_blocked(self):
-        self.left_motor.run_forever(speed_sp=-400)
-        self.right_motor.run_forever(speed_sp=-400)
-
-        while self.ir_sensor.proximity >= 25:
-            pass
-
-        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-
     def run_away(self):
         self.left_motor.run_to_rel_pos(
             speed_sp=750,
@@ -425,6 +415,19 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             speed_sp=self.MEDIUM_MOTOR_POWER_FACTOR * 200)
         sleep(1)
         self.jaw_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+
+    def walk_until_blocked(self):
+        self.left_motor.run_forever(speed_sp=-400)
+        self.right_motor.run_forever(speed_sp=-400)
+
+        while self.ir_sensor.proximity >= 25:
+            pass
+
+        self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+    # MAIN
+    # ----
 
     def main(self, speed: float = 400):
         while True:
