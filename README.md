@@ -1,5 +1,24 @@
 # LEGO Mindstorms
 
+This repository is maintained by a father-and-son team based in Silicon Valley
+-—Lương Thế Vinh (@TheVinhLuong102, an Industrial IoT AI Scientist) and
+Antoni Lương Phạm Anh Quân (@AntoniLuongPham, born 2014)--
+and contains programming code (mostly in Python, some in other languages)
+for numerous LEGO Mindstorms robots. Generally, @TheVinhLuong102 takes care
+of the overall organization, documentation and maintenance,
+while @AntoniLuongPham codes the majority of the original programs.
+
+For each robot, we experiment extensively with various ways to program it.
+For the most performant Python programs, we leverage MicroPython by using
+`EV3Dev2` (the 2nd-generation `EV3Dev` library) and the newer `PyBricks` library.
+As "collectibles", we have also implemented programs using the
+1st-generation `EV3Dev` library, and are planning to add programs using the
+`NXT-Python` library for NXT robots too. We also try out parallel processing
+using `MultiProcessing`, `Threading` and other means,
+to see whether such mechanisms work well with the various libraries.
+Hence, this repository should be considered a collection of
+programming experiments based on LEGO Mindstorms.
+
 
 ## [Open-Source Software Community/Ecosystem](OSS-ECOSYS.md)
 
