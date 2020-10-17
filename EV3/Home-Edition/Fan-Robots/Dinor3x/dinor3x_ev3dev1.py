@@ -23,8 +23,6 @@ from dinor3x_util import cyclic_position_offset
 
 class Dinor3x(IRBeaconRemoteControlledTank):
     """
-    Challenges:
-    - Can you make DINOR3X remote controlled with the IR-Beacon?
     - Can you attach a colorsensor to DINOR3X, and make it behave differently
         depending on which color is in front of the sensor
         (red = walk fast, white = walk slow, etc.)?
@@ -62,7 +60,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.button = Button()
         self.speaker = Sound()
 
-    def walk_once_by_ir_beacon(
+    # Challenge: Can you make DINOR3X remote controlled with the IR-Beacon?
+    def walk_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
             ):
@@ -95,7 +94,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def keep_walking_by_ir_beacon(self, speed: float):
         while True:
-            self.walk_once_by_ir_beacon(speed=speed)
+            self.walk_by_ir_beacon(speed=speed)
 
     def jump(self):
         """
@@ -431,7 +430,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
 
     def main(self, speed: float = 400):
         while True:
-            self.walk_once_by_ir_beacon(speed=speed)
+            self.walk_by_ir_beacon(speed=speed)
 
 
 if __name__ == '__main__':
