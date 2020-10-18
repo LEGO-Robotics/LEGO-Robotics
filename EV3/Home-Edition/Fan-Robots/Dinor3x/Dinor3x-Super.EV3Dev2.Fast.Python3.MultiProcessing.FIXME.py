@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 
-from dinor3x_ev3dev1 import Dinor3x
+from dinor3x_ev3dev2 import Dinor3x
 
 from multiprocessing import Process
 
 
-DINOR3X = Dinor3x()
+DINOR3X = Dinor3x(fast=True)
 
 DINOR3X.close_mouth()
 
+# FIXME: FastTouchSensor doesn't seem to detect press/release
 Process(target=DINOR3X.keep_changing_speed_by_color,
         daemon=True).start()
 

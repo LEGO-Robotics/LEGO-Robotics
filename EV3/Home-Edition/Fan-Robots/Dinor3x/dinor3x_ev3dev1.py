@@ -80,6 +80,10 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.roaring = False
             self.close_mouth()
 
+    def keep_roaring_by_ir_beacon(self):
+        while True:
+            self.roar_by_ir_beacon()
+
     def change_speed_by_color(self):
         """
         Dinor3x changes its speed when detecting some colors
@@ -101,6 +105,10 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             self.speaker.speak(text='slow.......')
             self.walk_speed = self.SLOW_WALK_SPEED
             self.walk(speed=self.walk_speed)
+
+    def keep_changing_speed_by_color(self):
+        while True:
+            self.change_speed_by_color()
 
     def walk_by_ir_beacon(self):
         """
