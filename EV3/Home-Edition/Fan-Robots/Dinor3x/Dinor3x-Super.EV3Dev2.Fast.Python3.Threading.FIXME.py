@@ -8,6 +8,8 @@ from threading import Thread
 
 DINOR3X = Dinor3x(fast=True)
 
+DINOR3X.close_mouth()
+
 # FIXME: ValueError: invalid syntax for integer with base 10: ''
 Thread(target=DINOR3X.keep_changing_speed_by_color,
        daemon=True).start()

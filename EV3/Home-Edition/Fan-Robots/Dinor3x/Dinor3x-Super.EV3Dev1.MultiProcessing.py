@@ -8,6 +8,8 @@ from multiprocessing import Process
 
 DINOR3X = Dinor3x()
 
+DINOR3X.close_mouth()
+
 Process(target=DINOR3X.keep_changing_speed_by_color,
         daemon=True).start()
 

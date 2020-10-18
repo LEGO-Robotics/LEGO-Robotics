@@ -8,6 +8,8 @@ from threading import Thread
 
 DINOR3X = Dinor3x()
 
+DINOR3X.close_mouth()
+
 Thread(target=DINOR3X.keep_changing_speed_by_color).start()
 
 Thread(target=DINOR3X.keep_roaring_by_ir_beacon).start()
