@@ -57,3 +57,12 @@ class El3ctricGuitar:
         sleep(0.1)
 
         self.lever_motor.reset()
+
+    def read_lever(self):
+        self.lever = 0 \
+            if -4 <= self.lever_motor.position <= 4 \
+            else self.lever_motor.position
+
+    def keep_reading_lever(self):
+        while True:
+            self.read_lever()

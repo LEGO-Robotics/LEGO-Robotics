@@ -41,3 +41,12 @@ class El3ctricGuitar(EV3Brick):
         sleep(0.1)
 
         self.lever_motor.reset_angle(angle=0)
+
+    def read_lever(self):
+        self.lever = 0 \
+            if -4 <= self.lever_motor.angle() <= 4 \
+            else self.lever_motor.angle()
+
+    def keep_reading_lever(self):
+        while True:
+            self.read_lever()
