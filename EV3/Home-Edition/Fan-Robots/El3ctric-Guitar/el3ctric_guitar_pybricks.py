@@ -1,9 +1,9 @@
 #!/usr/bin/env pybricks-micropython
 
 
+from pybricks.media.ev3dev import ImageFile
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
-from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Direction, Port, Stop
 
 from time import sleep
@@ -11,6 +11,7 @@ from time import sleep
 
 class El3ctricGuitar(EV3Brick):
     NOTES = [1318, 1174, 987, 880, 783, 659, 587, 493, 440, 392, 329, 293]
+    N_NOTES = len(NOTES)
 
     def __init__(
             self,
@@ -50,3 +51,33 @@ class El3ctricGuitar(EV3Brick):
     def keep_reading_lever(self):
         while True:
             self.read_lever()
+
+    def play_music(self):
+        fret = 0
+
+        raw = sum(self.ir_sensor.distance() for i in range(4)) / 4
+
+        for i in range(self.N_NOTES):
+            if 5 * i - 1 <= raw <= 5 * (i + 1):
+                fret = i
+
+        if fret >= self.N_NOTES:
+            fret = self.N_NOTES - 1
+
+        if not self.touch_sensor.pressed():
+            self.speaker.beep(
+                frequency=self.NOTES[fret] - 11 * self.lever,
+                duration=100)
+
+    def main(self):
+        self.screen.load_image(ImageFile.EV3)
+
+        while True:
+            self.read_lever()
+            self.play_music()
+
+
+if __name__ == '__main__':
+    EL3CTRIC_GUITAR = El3ctricGuitar()
+
+    EL3CTRIC_GUITAR.main()
