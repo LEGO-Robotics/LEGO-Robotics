@@ -1,12 +1,11 @@
 #!/usr/bin/env pybricks-micropython
 
 
-from pybricks.media.ev3dev import ImageFile
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
-from pybricks.parameters import Direction, Port, Stop
-
-from time import sleep
+from pybricks.media.ev3dev import ImageFile
+from pybricks.parameters import Color, Direction, Port, Stop
+from pybricks.tools import wait
 
 
 class El3ctricGuitar(EV3Brick):
@@ -14,18 +13,14 @@ class El3ctricGuitar(EV3Brick):
     N_NOTES = len(NOTES)
 
     def __init__(
-            self,
-            lever_motor_port: Port = Port.D,
-            touch_sensor_port: Port = Port.S1,
-            ir_sensor_port: Port = Port.S4):
+            self, lever_motor_port: Port = Port.D,
+            touch_sensor_port: Port = Port.S1, ir_sensor_port: Port = Port.S4):
         self.lever_motor = Motor(port=lever_motor_port,
                                  positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
-
-        self.lever = 0
 
         self.lever_motor.run_time(
             speed=50,
@@ -36,41 +31,45 @@ class El3ctricGuitar(EV3Brick):
         self.lever_motor.run_angle(
             speed=50,
             rotation_angle=-30,
-            then=Stop.HOLD,
+            then=Stop.BRAKE,
             wait=True)
 
-        sleep(0.1)
+        wait(100)
 
         self.lever_motor.reset_angle(angle=0)
 
     def read_lever(self):
-        self.lever = 0 \
-            if -4 <= self.lever_motor.angle() <= 4 \
-            else self.lever_motor.angle()
+        self.lever = self.lever_motor.angle()
+
+        if abs(self.lever) <= 4:
+            self.lever = 0
 
     def keep_reading_lever(self):
         while True:
             self.read_lever()
 
     def play_music(self):
-        fret = 0
+        # fret = 0
 
-        raw = sum(self.ir_sensor.distance() for i in range(4)) / 4
+        raw = sum(self.ir_sensor.distance() for _ in range(4)) / 4
 
-        for i in range(self.N_NOTES):
-            if 5 * i - 1 <= raw <= 5 * (i + 1):
-                fret = i
+        # for i in range(self.N_NOTES):
+        #     if 5 * i - 1 <= raw <= 5 * (i + 1):
+        #         fret = i
 
-        if fret >= self.N_NOTES:
-            fret = self.N_NOTES - 1
+        # if fret >= self.N_NOTES:
+        #     fret = self.N_NOTES - 1
 
         if not self.touch_sensor.pressed():
             self.speaker.beep(
-                frequency=self.NOTES[fret] - 11 * self.lever,
+                frequency=self.NOTES[min(int(raw / 5), self.N_NOTES - 1)]
+                          - 11 * self.lever,
                 duration=100)
 
     def main(self):
         self.screen.load_image(ImageFile.EV3)
+
+        self.light.on(color=Color.ORANGE)
 
         while True:
             self.read_lever()
