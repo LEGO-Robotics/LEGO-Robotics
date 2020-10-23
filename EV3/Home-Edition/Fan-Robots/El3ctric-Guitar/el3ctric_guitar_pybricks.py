@@ -54,9 +54,9 @@ class El3ctricGuitar(EV3Brick):
             self.read_lever()
 
     def play_music(self):
-        raw = sum(self.ir_sensor.distance() for _ in range(4)) / 4
-
         if not self.touch_sensor.pressed():
+            raw = sum(self.ir_sensor.distance() for _ in range(4)) / 4
+
             self.speaker.beep(
                 frequency=self.NOTES[min(int(raw / 5), self.N_NOTES - 1)]
                           - 11 * self.lever,

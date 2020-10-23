@@ -86,11 +86,13 @@ class El3ctricGuitar:
             self.read_lever()
 
     def play_music(self):
-        raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
-
         if not self.touch_sensor.is_pressed:
+            raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
+
             self.speaker.tone(
-                self.NOTES[-min(int(raw / 5), self.N_NOTES - 1) - 1]
+                # proximity ranges from 15 to 50 in this El3ctricGuitar case
+                self.NOTES[round(min((raw - 15) / (50 - 15), 1) *
+                                 (self.N_NOTES - 1))]
                 - 11 * self.lever,
                 100)
 
