@@ -71,7 +71,7 @@ class El3ctricGuitar(EV3Brick):
 
         while True:
             self.read_lever()
-            
+
             self.play_music()
 
 
