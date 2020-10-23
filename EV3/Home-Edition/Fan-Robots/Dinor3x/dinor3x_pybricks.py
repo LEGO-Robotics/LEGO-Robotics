@@ -275,7 +275,12 @@ class Dinor3x(EV3Brick):
                     then=Stop.HOLD if brake else Stop.COAST,
                     wait=True)
 
-            # TODO: print to screen
+            self.screen.clear()
+            self.screen.draw_text(
+                x=2, y=5,
+                text='{}, {}'.format(speed, diff),
+                text_color=Color.BLACK,
+                background_color=None)
 
     def adjust_legs(self, speed: float = 1000, brake: bool = True):
         self.left_motor.hold()
