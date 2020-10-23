@@ -41,20 +41,20 @@ class El3ctricGuitar:
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
 
-        self.light = Leds()
-        self.dis = Screen()
+        self.leds = Leds()
+        self.screen = Screen()
         self.speaker = Sound()
 
     def start(self):
-        self.dis.image.paste(
+        self.screen.image.paste(
             im=Image.open('/home/robot/image/LEGO.bmp'))
-        self.dis.update()
+        self.screen.update()
 
-        self.light.set_color(
+        self.leds.set_color(
             group=Leds.LEFT,
             color=Leds.ORANGE,
             pct=1)
-        self.light.set_color(
+        self.leds.set_color(
             group=Leds.RIGHT,
             color=Leds.ORANGE,
             pct=1)
@@ -85,15 +85,62 @@ class El3ctricGuitar:
         while True:
             self.read_lever()
 
-    def play_music(self):
+    def play_music(self, debug=False):
         if not self.touch_sensor.is_pressed:
             raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
 
+            # raw distance typically ranges 0-50 (but sometimes greater)
+            fret = min(round(raw / 5, ndigits=None), self.N_NOTES - 1)
+
+            if debug:
+                self.screen.clear()
+
+                self.screen.draw.text(
+                    xy=(17, 0),
+                    text='b={}'.format(self.lever),
+                    fill=None,
+                    font=None,
+                    anchor=None,
+                    spacing=4,
+                    align='left',
+                    direction=None,
+                    features=None,
+                    language=None,
+                    stroke_width=0,
+                    stroke_fill=None)
+
+                self.screen.draw.text(
+                    xy=(17, 11),
+                    text='f={}'.format(fret),
+                    fill=None,
+                    font=None,
+                    anchor=None,
+                    spacing=4,
+                    align='left',
+                    direction=None,
+                    features=None,
+                    language=None,
+                    stroke_width=0,
+                    stroke_fill=None)
+
+                self.screen.draw.text(
+                    xy=(17, 22),
+                    text='raw={:.0f}'.format(raw),
+                    fill=None,
+                    font=None,
+                    anchor=None,
+                    spacing=4,
+                    align='left',
+                    direction=None,
+                    features=None,
+                    language=None,
+                    stroke_width=0,
+                    stroke_fill=None)
+
+                self.screen.update()
+
             self.speaker.tone(
-                # proximity ranges from 15 to 50 in this El3ctricGuitar case
-                self.NOTES[round(min((raw - 15) / (50 - 15), 1) *
-                                 (self.N_NOTES - 1))]
-                - 11 * self.lever,
+                self.NOTES[fret] - 11 * self.lever,
                 100)
 
     def keep_playing_music(self):

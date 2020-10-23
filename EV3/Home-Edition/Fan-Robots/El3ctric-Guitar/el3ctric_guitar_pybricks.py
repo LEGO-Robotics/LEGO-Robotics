@@ -57,9 +57,31 @@ class El3ctricGuitar(EV3Brick):
         if not self.touch_sensor.pressed():
             raw = sum(self.ir_sensor.distance() for _ in range(4)) / 4
 
+            # raw distance typically ranges 0-50 (but sometimes greater)
+            fret = min(round(raw / 5, ndigits=None), self.N_NOTES - 1)
+
+            self.screen.clear()
+
+            self.screen.draw_text(
+                x=17, y=0,
+                text='b={}'.format(self.lever),
+                text_color=Color.BLACK,
+                background_color=None)
+
+            self.screen.draw_text(
+                x=17, y=11,
+                text='f={}'.format(fret),
+                text_color=Color.BLACK,
+                background_color=None)
+
+            self.screen.draw_text(
+                x=17, y=22,
+                text='raw={:.0f}'.format(raw),
+                text_color=Color.BLACK,
+                background_color=None)
+
             self.speaker.beep(
-                frequency=self.NOTES[min(int(raw / 5), self.N_NOTES - 1)]
-                          - 11 * self.lever,
+                frequency=self.NOTES[fret] - 11 * self.lever,
                 duration=100)
 
     def keep_playing_music(self):

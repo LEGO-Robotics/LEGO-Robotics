@@ -79,11 +79,11 @@ class El3ctricGuitar:
         if self.touch_sensor.is_released:
             raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
 
+            # raw distance typically ranges 0-50 (but sometimes greater)
+            fret = min(round(raw / 5, ndigits=None), self.N_NOTES - 1)
+
             self.speaker.tone(
-                # proximity ranges from 15 to 50 in this El3ctricGuitar case
-                self.NOTES[round(min((raw - 15) / (50 - 15), 1) *
-                                 (self.N_NOTES - 1))]
-                - 11 * self.lever,
+                self.NOTES[fret] - 11 * self.lever,
                 100,
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
