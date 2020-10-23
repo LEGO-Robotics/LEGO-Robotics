@@ -41,9 +41,9 @@ class El3ctricGuitar:
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
 
-        self.speaker = Sound()
         self.light = Leds()
         self.dis = Screen()
+        self.speaker = Sound()
 
     def start(self):
         self.dis.image.paste(
