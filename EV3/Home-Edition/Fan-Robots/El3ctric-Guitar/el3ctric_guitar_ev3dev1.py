@@ -4,7 +4,7 @@
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_D,
     TouchSensor, InfraredSensor, INPUT_1, INPUT_4,
-    Sound, Screen, Leds
+    Leds, Screen, Sound
 )
 
 from PIL import Image
