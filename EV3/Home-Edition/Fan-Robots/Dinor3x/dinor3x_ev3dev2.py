@@ -5,6 +5,7 @@ from ev3dev2.motor import MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
 from ev3dev2.button import Button
+from ev3dev2.console import Console
 from ev3dev2.sound import Sound
 
 from time import sleep
@@ -57,6 +58,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.ir_beacon_channel = ir_beacon_channel
 
         self.button = Button()
+        self.console = Console()
         self.speaker = Sound()
 
         self.roaring = False
@@ -295,7 +297,13 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                     brake=brake,
                     block=True)
 
-            # TODO: print to screen
+            self.console.text_at(
+                text='{}, {}'.format(speed, diff),
+                column=2,
+                row=5,
+                reset_console=True,
+                inverse=False,
+                alignment='L')
 
     def adjust_legs(self, speed: float = 100, brake: bool = True):
         self.tank_driver.stop(brake=True)

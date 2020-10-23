@@ -251,7 +251,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             speed: float = 1000,
             leg_offset_percent: float = 0,
             mirrored_adjust: bool = False,
-            brake: bool = True):
+            brake: bool = True,
+            debug=False):
         self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
@@ -312,7 +313,21 @@ class Dinor3x(IRBeaconRemoteControlledTank):
                                 else Motor.STOP_ACTION_COAST)
                 self.left_motor.wait_while(Motor.STATE_RUNNING)
 
-            # TODO: print to screen
+            if debug:
+                self.screen.clear()
+                self.screen.draw.text(
+                    xy=(2, 5),
+                    text='{}, {}'.format(speed, diff),
+                    fill=None,
+                    font=None,
+                    anchor=None,
+                    spacing=4,
+                    align='left',
+                    direction=None,
+                    features=None,
+                    language=None,
+                    stroke_width=0,
+                    stroke_fill=None)
 
     def adjust_legs(self, speed: float = 1000, brake: bool = True):
         self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
