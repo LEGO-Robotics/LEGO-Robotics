@@ -4,6 +4,7 @@
 from ev3dev2.motor import MediumMotor, OUTPUT_D
 from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
+from ev3dev2.console import Console
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
@@ -38,11 +39,12 @@ class El3ctricGuitar:
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_sensor_channel = ir_sensor_channel
 
+        self.console = Console()
+        self.leds = Leds()
         self.speaker = Sound()
-        self.light = Leds()
 
     def start(self):
-        self.light.animate_flash(
+        self.leds.animate_flash(
             color='ORANGE',   # Leds.ORANGE
             groups=('LEFT', 'RIGHT'),   # (Leds.LEFT, Leds.RIGHT)
             sleeptime=0.5,
@@ -80,12 +82,36 @@ class El3ctricGuitar:
             raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
 
             # raw distance typically ranges 0-50 (but sometimes greater)
-            fret = min(round(raw / 5, ndigits=None), self.N_NOTES - 1)
+            fret = min(round(raw / 5), self.N_NOTES - 1)
+
+            self.console.text_at(
+                text='b={}'.format(self.lever),
+                column=1,
+                row=1,
+                reset_console=True,
+                inverse=False,
+                alignment='L')
+
+            self.console.text_at(
+                text='f={}'.format(fret),
+                column=1,
+                row=2,
+                reset_console=False,
+                inverse=False,
+                alignment='L')
+
+            self.console.text_at(
+                text='raw={:.0f}'.format(raw),
+                column=1,
+                row=3,
+                reset_console=False,
+                inverse=False,
+                alignment='L')
 
             self.speaker.tone(
                 self.NOTES[fret] - 11 * self.lever,
                 100,
-                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+                play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
     def keep_playing_music(self):
         while True:
