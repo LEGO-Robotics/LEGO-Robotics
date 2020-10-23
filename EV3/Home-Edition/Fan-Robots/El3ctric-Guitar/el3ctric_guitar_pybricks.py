@@ -22,6 +22,11 @@ class El3ctricGuitar(EV3Brick):
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
 
+    def start(self):
+        self.screen.load_image(ImageFile.EV3)
+
+        self.light.on(color=Color.ORANGE)
+
         self.lever_motor.run_time(
             speed=50,
             time=1000,
@@ -49,16 +54,7 @@ class El3ctricGuitar(EV3Brick):
             self.read_lever()
 
     def play_music(self):
-        # fret = 0
-
         raw = sum(self.ir_sensor.distance() for _ in range(4)) / 4
-
-        # for i in range(self.N_NOTES):
-        #     if 5 * i - 1 <= raw <= 5 * (i + 1):
-        #         fret = i
-
-        # if fret >= self.N_NOTES:
-        #     fret = self.N_NOTES - 1
 
         if not self.touch_sensor.pressed():
             self.speaker.beep(
@@ -66,13 +62,16 @@ class El3ctricGuitar(EV3Brick):
                           - 11 * self.lever,
                 duration=100)
 
-    def main(self):
-        self.screen.load_image(ImageFile.EV3)
+    def keep_playing_music(self):
+        while True:
+            self.play_music()
 
-        self.light.on(color=Color.ORANGE)
+    def main(self):
+        self.start()
 
         while True:
             self.read_lever()
+            
             self.play_music()
 
 
