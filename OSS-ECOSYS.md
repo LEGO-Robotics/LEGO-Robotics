@@ -8,6 +8,8 @@
 
 [LEGO BLE Wireless Protocol Documentation](https://github.com/LEGO/lego-ble-wireless-protocol-docs)
 
+[LEGO Mindstorms Facebook](https://www.facebook.com/legomindstorms)
+
 
 ### [PyBricks](https://github.com/pybricks)
 
@@ -138,6 +140,8 @@
 ### [MindSensors](https://github.com/mindsensors)
 
 [Website](http://www.mindsensors.com)
+
+[Facebook](https://www.facebook.com/mindsensors)
 
 [NXT Cam 5](https://github.com/mindsensors/NXTCam5)
 - [NXT Cam View 5](https://github.com/mindsensors/NXTCamView5)
@@ -303,6 +307,8 @@ Wiki
 ### [Anton van Houcke](https://github.com/antonvh)
 
 [Anton's Mindstorms Website](https://antonsmindstorms.com)
+
+[Facebook](https://www.facebook.com/antonsmindstorms)
 
 [3nsor Plotter](https://github.com/antonvh/3nsor-plotter)
 
@@ -579,11 +585,6 @@ NXT_Python (2007)
 NXT-Python (work ended in 2013)
 
 
-### [Martin Wendt](https://github.com/mar10)
-
-[NXTurtle](https://github.com/mar10/nxturtle)
-
-
 ### Nigel Ward
 
 [EV3Dev Python Website](https://sites.google.com/site/ev3devpython) based on EV3Dev2
@@ -599,11 +600,21 @@ NXT-Python (work ended in 2013)
 [Brick Python](https://github.com/charlesweir/BrickPython)
 
 
+### [Martin Wendt](https://github.com/mar10)
+
+[NXTurtle](https://github.com/mar10/nxturtle)
+
+
 ### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
 
 [PyBricks Stubs](https://github.com/drewwhis/pybricks-stubs)
 
 [Alabama FIRST LEGO League](https://github.com/drewwhis/alabama-first-lego-league)
+
+
+### [XilefTech](https://github.com/XilefTech)
+
+[Charlie OSX](https://github.com/XilefTech/CharlieOSX)
 
 
 ### [Mustafa Yumurtaci]
