@@ -344,6 +344,11 @@ Wiki
 NXT_Python (2007)
 
 
+### [David Lechner](https://github.com/dlech)
+
+[EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
+
+
 ### [Richard Lewis](https://github.com/richrd)
 
 [NXT Python](https://github.com/richrd/nxt-python)
@@ -396,6 +401,43 @@ NXT_Python (2007)
 ### [Brian Peek](https://github.com/BrianPeek)
 
 [LEGO EV3](https://github.com/BrianPeek/legoev3)
+
+
+### [Jorge Pereira](https://github.com/JorgePe)
+
+[EV3 Barcode](https://github.com/JorgePe/ev3-barcode)
+
+[EV3 IoT Train](https://github.com/JorgePe/EV3-IoT-Train)
+
+[EV3 MQTT MicroPython](https://github.com/JorgePe/ev3-mqtt-micropython)
+
+[EV3Dev XBox Adaptive Controller](https://github.com/JorgePe/ev3dev-xac)
+
+[MicroBit EV3](https://github.com/JorgePe/microbit)
+
+[Mindstorms-VLL](https://github.com/JorgePe/mindstorms-vll)
+
+[Multi-Cast MIDI EV3](https://github.com/JorgePe/multicastMIDI-EV3)
+
+[Boost Reverse Engineering](https://github.com/JorgePe/BOOSTreveng)
+
+[PyBoost](https://github.com/JorgePe/pyb00st)
+
+[Interactive Motor Reverse Engineering](https://github.com/JorgePe/re_interactivemotor)
+
+[Powered-Up (PUPPy)](https://github.com/JorgePe/Puppy)
+
+[UniBrick: Universal Controller for LEGO Devices](https://github.com/JorgePe/UniBrick)
+
+[IR Spybotics](https://github.com/JorgePe/ir-spybotics)
+
+[Snap Boost](https://github.com/JorgePe/SnapBOOST)
+
+[LEGO InterfaceA](https://github.com/JorgePe/InterfaceA)
+
+[Snap WeDo](https://github.com/JorgePe/SnapWeDo1)
+
+[CodatexRFID EV3Dev](https://github.com/JorgePe/CodatexRFID-ev3dev)
 
 
 ### [Janno Peterson](https://github.com/jannopet)
