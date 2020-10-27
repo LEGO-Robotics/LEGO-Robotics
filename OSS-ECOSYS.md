@@ -32,6 +32,7 @@
 [PyBricks Support](https://github.com/pybricks/support/issues)
 - [Roadmap](https://github.com/pybricks/support/issues/29)
 - Interesting Discussion Threads
+  - [List of cool Pybricks Projects](https://github.com/pybricks/support/issues/157)
   - [PyBricks: Data Logging & Analysis](https://github.com/pybricks/support/issues/7)
   - [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16): lots of perspective from FIRST LEGO League / Robotics Challenge / Tech Challenge
   - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
