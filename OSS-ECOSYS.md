@@ -8,6 +8,8 @@
 
 [LEGO BLE Wireless Protocol Documentation](https://github.com/LEGO/lego-ble-wireless-protocol-docs)
 
+[LEGO Mindstorms Facebook](https://www.facebook.com/legomindstorms)
+
 
 ### [PyBricks](https://github.com/pybricks)
 
@@ -30,6 +32,7 @@
 [PyBricks Support](https://github.com/pybricks/support/issues)
 - [Roadmap](https://github.com/pybricks/support/issues/29)
 - Interesting Discussion Threads
+  - [List of cool Pybricks Projects](https://github.com/pybricks/support/issues/157)
   - [PyBricks: Data Logging & Analysis](https://github.com/pybricks/support/issues/7)
   - [PyBricks: Some Initial Thoughts on DriveBase from an FLL Coach](https://github.com/pybricks/support/issues/16): lots of perspective from FIRST LEGO League / Robotics Challenge / Tech Challenge
   - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
@@ -138,6 +141,8 @@
 ### [MindSensors](https://github.com/mindsensors)
 
 [Website](http://www.mindsensors.com)
+
+[Facebook](https://www.facebook.com/mindsensors)
 
 [NXT Cam 5](https://github.com/mindsensors/NXTCam5)
 - [NXT Cam View 5](https://github.com/mindsensors/NXTCamView5)
@@ -304,6 +309,8 @@ Wiki
 
 [Anton's Mindstorms Website](https://antonsmindstorms.com)
 
+[Facebook](https://www.facebook.com/antonsmindstorms)
+
 [3nsor Plotter](https://github.com/antonvh/3nsor-plotter)
 
 [BrickPi FPV](https://github.com/antonvh/brickpi_fpv)
@@ -342,6 +349,11 @@ Wiki
 ### Douglas "Doug" P. Lau (DPLau@Comcast.net)
 
 NXT_Python (2007)
+
+
+### [David Lechner](https://github.com/dlech)
+
+[EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
 
 
 ### [Richard Lewis](https://github.com/richrd)
@@ -396,6 +408,43 @@ NXT_Python (2007)
 ### [Brian Peek](https://github.com/BrianPeek)
 
 [LEGO EV3](https://github.com/BrianPeek/legoev3)
+
+
+### [Jorge Pereira](https://github.com/JorgePe)
+
+[EV3 Barcode](https://github.com/JorgePe/ev3-barcode)
+
+[EV3 IoT Train](https://github.com/JorgePe/EV3-IoT-Train)
+
+[EV3 MQTT MicroPython](https://github.com/JorgePe/ev3-mqtt-micropython)
+
+[EV3Dev XBox Adaptive Controller](https://github.com/JorgePe/ev3dev-xac)
+
+[MicroBit EV3](https://github.com/JorgePe/microbit)
+
+[Mindstorms-VLL](https://github.com/JorgePe/mindstorms-vll)
+
+[Multi-Cast MIDI EV3](https://github.com/JorgePe/multicastMIDI-EV3)
+
+[Boost Reverse Engineering](https://github.com/JorgePe/BOOSTreveng)
+
+[PyBoost](https://github.com/JorgePe/pyb00st)
+
+[Interactive Motor Reverse Engineering](https://github.com/JorgePe/re_interactivemotor)
+
+[Powered-Up (PUPPy)](https://github.com/JorgePe/Puppy)
+
+[UniBrick: Universal Controller for LEGO Devices](https://github.com/JorgePe/UniBrick)
+
+[IR Spybotics](https://github.com/JorgePe/ir-spybotics)
+
+[Snap Boost](https://github.com/JorgePe/SnapBOOST)
+
+[LEGO InterfaceA](https://github.com/JorgePe/InterfaceA)
+
+[Snap WeDo](https://github.com/JorgePe/SnapWeDo1)
+
+[CodatexRFID EV3Dev](https://github.com/JorgePe/CodatexRFID-ev3dev)
 
 
 ### [Janno Peterson](https://github.com/jannopet)
@@ -537,11 +586,6 @@ NXT_Python (2007)
 NXT-Python (work ended in 2013)
 
 
-### [Martin Wendt](https://github.com/mar10)
-
-[NXTurtle](https://github.com/mar10/nxturtle)
-
-
 ### Nigel Ward
 
 [EV3Dev Python Website](https://sites.google.com/site/ev3devpython) based on EV3Dev2
@@ -557,11 +601,21 @@ NXT-Python (work ended in 2013)
 [Brick Python](https://github.com/charlesweir/BrickPython)
 
 
+### [Martin Wendt](https://github.com/mar10)
+
+[NXTurtle](https://github.com/mar10/nxturtle)
+
+
 ### [Lawrence "Drew" Whisenant](https://github.com/drewwhis)
 
 [PyBricks Stubs](https://github.com/drewwhis/pybricks-stubs)
 
 [Alabama FIRST LEGO League](https://github.com/drewwhis/alabama-first-lego-league)
+
+
+### [XilefTech](https://github.com/XilefTech)
+
+[Charlie OSX](https://github.com/XilefTech/CharlieOSX)
 
 
 ### [Mustafa Yumurtaci]

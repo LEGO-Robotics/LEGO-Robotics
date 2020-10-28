@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"lego-education.ev3-micropython"
+	],
+	
+	"unwantedRecommendations": [
+		"ms-python.python"
+	]
+}
