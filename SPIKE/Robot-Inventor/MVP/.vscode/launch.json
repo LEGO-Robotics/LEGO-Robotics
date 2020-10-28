@@ -6,7 +6,7 @@
 			"name": "Download and Run",
 			"type": "ev3devBrowser",
 			"request": "launch",
-			"program": "/home/robot/${workspaceRootFolderName}/ev3rstorm.py",
+			"program": "/home/robot/${workspaceRootFolderName}/mvp_spike_pybricks.py",
 			"interactiveTerminal": false
 		}
 	]
