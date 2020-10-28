@@ -1,7 +1,7 @@
 {
   "editor.rulers": [79, 88, 100, 120],
   
-  "ev3devBrowser.download.exclude": "{**/__pycache__/**,**/README*}",
+  "ev3devBrowser.download.exclude": "{**/__pycache__/**,**/Scratch/**,**/README*}",
   "ev3devBrowser.download.include": "**/*.py",
   
   "python.linting.enabled": true,
