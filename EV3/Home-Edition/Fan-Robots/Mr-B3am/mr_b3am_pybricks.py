@@ -18,7 +18,7 @@ class MrB3am(EV3Brick):
 
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
-    def hello_text(self):
+    def header_text(self):
         self.screen.clear()
         self.screen.draw_text(
             x=2, y=0,
@@ -33,7 +33,7 @@ class MrB3am(EV3Brick):
         above or equal to the value 3.
         When a B3am is inserted the motor stops and the EV3 says "Thank you".
         """
-        self.hello_text()
+        self.header_text()
 
         self.screen.draw_text(
             x=0, y=18,
@@ -51,7 +51,7 @@ class MrB3am(EV3Brick):
         that the wheels has turned.
         This value will later be converted to the actual B3am length.
         """
-        self.hello_text()
+        self.header_text()
 
         self.screen.draw_text(
             x=0, y=18,
@@ -70,7 +70,7 @@ class MrB3am(EV3Brick):
         Note the saved value is the color ID and this will later be converted
         to the actual color name.
         """
-        self.hello_text()
+        self.header_text()
 
         self.screen.draw_text(
             x=0, y=18,
@@ -84,7 +84,7 @@ class MrB3am(EV3Brick):
         required to move the wheels,
         such that the B3am is ejected from the machine.
         """
-        self.hello_text()
+        self.header_text()
 
         self.screen.draw_text(
             x=0, y=18,

@@ -36,7 +36,7 @@ class MrB3am:
         self.console = Console()
         self.speaker = Sound()
 
-    def hello_text(self):
+    def header_text(self):
         self.console.text_at(
             column=1, row=1,
             text='Mr. B3am!',
@@ -51,7 +51,7 @@ class MrB3am:
         above or equal to the value 3.
         When a B3am is inserted the motor stops and the EV3 says "Thank you".
         """
-        self.hello_text()
+        self.header_text()
 
         self.console.text_at(
             column=1, row=2,
@@ -70,7 +70,7 @@ class MrB3am:
         that the wheels has turned.
         This value will later be converted to the actual B3am length.
         """
-        self.hello_text()
+        self.header_text()
 
         self.console.text_at(
             column=1, row=2,
@@ -90,7 +90,7 @@ class MrB3am:
         Note the saved value is the color ID and this will later be converted
         to the actual color name.
         """
-        self.hello_text()
+        self.header_text()
 
         self.console.text_at(
             column=1, row=2,
@@ -105,7 +105,7 @@ class MrB3am:
         required to move the wheels,
         such that the B3am is ejected from the machine.
         """
-        self.hello_text()
+        self.header_text()
 
         self.console.text_at(
             column=1, row=2,
