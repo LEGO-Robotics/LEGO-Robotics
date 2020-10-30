@@ -68,6 +68,17 @@ class MrB3am(EV3Brick):
             text_color=Color.BLACK,
             background_color=None)
 
+        self.gear_motor.reset_angle(angle=0)
+
+        self.gear_motor.run(speed=-150)
+
+        while self.color_sensor.reflection() > 1:
+            pass
+
+        self.gear_motor.hold()
+
+        self.current_b3am_length = abs(self.gear_motor.angle())
+
     def detect_color(self):
         """
         After having found the length of the B3am, the length is saved
@@ -87,6 +98,16 @@ class MrB3am(EV3Brick):
             text_color=Color.BLACK,
             background_color=None)
 
+        self.gear_motor.run_angle(
+            speed=150,
+            rotation_angle=self.current_b3am_length / 2,
+            then=Stop.HOLD,
+            wait=True)
+
+        self.current_b3am_color = self.color_sensor.color()
+
+        self.speaker.play_file(SoundFile.DETECTED)
+
     def eject_b3am(self):
         """
         After the color is found, the EV3 calculates the number of degrees
@@ -100,6 +121,12 @@ class MrB3am(EV3Brick):
             text='Ejecting B3am!',
             text_color=Color.BLACK,
             background_color=None)
+
+        self.gear_motor.run_angle(
+            speed=150,
+            rotation_angle=self.current_b3am_length / 2 + 700,
+            then=Stop.HOLD,
+            wait=True)
 
     def process_b3am(self):
         self.insert_b3am()

@@ -59,7 +59,7 @@ class MrB3am:
             inverse=False,
             alignment='L')
 
-        self.color_sensor.calibrate_white()
+        # self.color_sensor.calibrate_white()   # this leads to wrong detection
 
         self.gear_motor.on(
             speed=-15,
@@ -95,6 +95,20 @@ class MrB3am:
             inverse=False,
             alignment='L')
 
+        self.gear_motor.reset()
+
+        self.gear_motor.on(
+            speed=-15,
+            brake=False,
+            block=False)
+
+        while self.color_sensor.reflected_light_intensity > 1:
+            pass
+
+        self.gear_motor.off(brake=True)
+
+        self.current_b3am_length = abs(self.gear_motor.position)
+
     def detect_color(self):
         """
         After having found the length of the B3am, the length is saved
@@ -115,6 +129,19 @@ class MrB3am:
             inverse=False,
             alignment='L')
 
+        self.gear_motor.on_for_degrees(
+            speed=15,
+            degrees=self.current_b3am_length / 2,
+            block=True,
+            brake=True)
+
+        self.current_b3am_color = self.color_sensor.color
+
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Detected.wav',
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
     def eject_b3am(self):
         """
         After the color is found, the EV3 calculates the number of degrees
@@ -129,6 +156,12 @@ class MrB3am:
             reset_console=False,
             inverse=False,
             alignment='L')
+
+        self.gear_motor.on_for_degrees(
+            speed=15,
+            degrees=self.current_b3am_length / 2 + 700,
+            block=True,
+            brake=True)
 
     def process_b3am(self):
         self.insert_b3am()

@@ -115,6 +115,17 @@ class MrB3am:
 
         self.screen.update()
 
+        self.gear_motor.reset()
+
+        self.gear_motor.run_forever(speed_sp=-150)
+
+        while self.color_sensor.reflected_light_intensity > 1:
+            pass
+
+        self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        self.current_b3am_length = abs(self.gear_motor.position)
+
     def detect_color(self):
         """
         After having found the length of the B3am, the length is saved
@@ -144,6 +155,16 @@ class MrB3am:
 
         self.screen.update()
 
+        self.gear_motor.run_to_rel_pos(
+            speed_sp=150,
+            position_sp=self.current_b3am_length / 2,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.gear_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.current_b3am_color = self.color_sensor.color
+
+        self.speaker.play(wav_file='/home/robot/sound/Detected.wav').wait()
+
     def eject_b3am(self):
         """
         After the color is found, the EV3 calculates the number of degrees
@@ -167,6 +188,12 @@ class MrB3am:
             stroke_fill=None)
 
         self.screen.update()
+
+        self.gear_motor.run_to_rel_pos(
+            speed_sp=150,
+            position_sp=self.current_b3am_length / 2 + 700,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.gear_motor.wait_while(Motor.STATE_RUNNING)
 
     def process_b3am(self):
         self.insert_b3am()
