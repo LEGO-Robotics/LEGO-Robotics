@@ -59,6 +59,23 @@ class MrB3am:
             inverse=False,
             alignment='L')
 
+        self.color_sensor.calibrate_white()
+
+        self.gear_motor.on(
+            speed=-15,
+            brake=False,
+            block=False)
+
+        while self.color_sensor.reflected_light_intensity < 3:
+            pass
+
+        self.gear_motor.off(brake=True)
+
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Thank you.wav',
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
     def measure_b3am(self):
         """
         The next sequence of blocks measures the length of the B3am,

@@ -41,6 +41,15 @@ class MrB3am(EV3Brick):
             text_color=Color.BLACK,
             background_color=None)
 
+        self.gear_motor.run(speed=-150)
+
+        while self.color_sensor.reflection() < 3:
+            pass
+
+        self.gear_motor.hold()
+
+        self.speaker.play_file(SoundFile.THANK_YOU)
+
     def measure_b3am(self):
         """
         The next sequence of blocks measures the length of the B3am,
