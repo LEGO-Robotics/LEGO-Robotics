@@ -27,7 +27,6 @@ class MrB3am:
         if fast:
             self.gear_motor = FastMediumMotor(address=gear_motor_port)
             self.color_sensor = FastColorSensor(address=color_sensor_port)
-
         else:
             self.gear_motor = MediumMotor(address=gear_motor_port)
             self.color_sensor = ColorSensor(address=color_sensor_port)
@@ -46,7 +45,7 @@ class MrB3am:
 
     def insert_b3am(self):
         """
-        This first sequence of blocks waits for a B3am to be inserted. 
+        This first sequence of blocks waits for a B3am to be inserted.
         A B3am is detected when the ambient light level is
         above or equal to the value 3.
         When a B3am is inserted the motor stops and the EV3 says "Thank you".
@@ -64,7 +63,7 @@ class MrB3am:
         """
         The next sequence of blocks measures the length of the B3am,
         by first reseting the motor counter and then moves the B3am
-        until the other end is found. 
+        until the other end is found.
         This is detected when the ambient light level is below the value 1.
         Note that the length measured is the number of degrees
         that the wheels has turned.
