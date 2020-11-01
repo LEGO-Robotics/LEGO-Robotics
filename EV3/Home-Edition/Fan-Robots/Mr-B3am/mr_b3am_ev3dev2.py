@@ -107,7 +107,7 @@ class MrB3am:
 
         self.gear_motor.off(brake=True)
 
-        self.current_b3am_length = abs(self.gear_motor.position)
+        self.current_b3am_length_in_degrees = abs(self.gear_motor.position)
 
     def detect_color(self):
         """
@@ -131,11 +131,11 @@ class MrB3am:
 
         self.gear_motor.on_for_degrees(
             speed=15,
-            degrees=self.current_b3am_length / 2,
+            degrees=self.current_b3am_length_in_degrees / 2,
             block=True,
             brake=True)
 
-        self.current_b3am_color = self.color_sensor.color
+        self.current_b3am_color_code = self.color_sensor.color
 
         self.speaker.play_file(
             wav_file='/home/robot/sound/Detected.wav',
@@ -159,7 +159,7 @@ class MrB3am:
 
         self.gear_motor.on_for_degrees(
             speed=15,
-            degrees=self.current_b3am_length / 2 + 700,
+            degrees=self.current_b3am_length_in_degrees / 2 + 700,
             block=True,
             brake=True)
 
@@ -172,8 +172,74 @@ class MrB3am:
 
         self.eject_b3am()
 
-    def print_result(self):
-        ...
+    def report_result(self):
+        self.header_text()
+
+        if self.current_b3am_color_code == ColorSensor.COLOR_BLACK:
+            self.current_b3am_color = 'BLACK'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 600:
+                self.current_b3am_length = 5
+
+            elif 601 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 7
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1000:
+                self.current_b3am_length = 9
+
+            elif 1001 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 11
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 13
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 15
+
+        elif self.current_b3am_color_code == ColorSensor.COLOR_RED:
+            self.current_b3am_color = 'RED'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 5
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1050:
+                self.current_b3am_length = 7
+
+            elif 1051 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 9
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 11
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 13
+
+            elif 1701 <= self.current_b3am_length_in_degrees <= 1900:
+                self.current_b3am_length = 15
+
+        else:
+            self.current_b3am_color = 'UNKNOWN'
+            self.current_b3am_length = 'UNKNOWN'
+
+        self.console.text_at(
+            column=1, row=3,
+            text='Color: {}'.format(self.current_b3am_color),
+            reset_console=False,
+            inverse=False,
+            alignment='L')
+
+        self.console.text_at(
+            column=1, row=4,
+            text='Length: {}'.format(self.current_b3am_length),
+            reset_console=False,
+            inverse=False)
+
+        self.speaker.speak(
+            text='{} {}'.format(
+                self.current_b3am_color,
+                self.current_b3am_length),
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
     def debug(self):
         ...
@@ -182,10 +248,10 @@ class MrB3am:
         while True:
             self.process_b3am()
 
-            self.print_result()
+            self.report_result()
 
             self.console.text_at(
-                column=1, row=3,
+                column=1, row=5,
                 text='Press Enter...',
                 reset_console=False,
                 inverse=False,

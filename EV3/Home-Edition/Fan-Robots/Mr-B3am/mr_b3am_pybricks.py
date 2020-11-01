@@ -77,7 +77,7 @@ class MrB3am(EV3Brick):
 
         self.gear_motor.hold()
 
-        self.current_b3am_length = abs(self.gear_motor.angle())
+        self.current_b3am_length_in_degrees = abs(self.gear_motor.angle())
 
     def detect_color(self):
         """
@@ -100,11 +100,11 @@ class MrB3am(EV3Brick):
 
         self.gear_motor.run_angle(
             speed=150,
-            rotation_angle=self.current_b3am_length / 2,
+            rotation_angle=self.current_b3am_length_in_degrees / 2,
             then=Stop.HOLD,
             wait=True)
 
-        self.current_b3am_color = self.color_sensor.color()
+        self.current_b3am_color_code = self.color_sensor.color()
 
         self.speaker.play_file(SoundFile.DETECTED)
 
@@ -124,7 +124,7 @@ class MrB3am(EV3Brick):
 
         self.gear_motor.run_angle(
             speed=150,
-            rotation_angle=self.current_b3am_length / 2 + 700,
+            rotation_angle=self.current_b3am_length_in_degrees / 2 + 700,
             then=Stop.HOLD,
             wait=True)
 
@@ -137,8 +137,71 @@ class MrB3am(EV3Brick):
 
         self.eject_b3am()
 
-    def print_result(self):
-        ...
+    def report_result(self):
+        self.header_text()
+
+        if self.current_b3am_color_code == Color.BLACK:
+            self.current_b3am_color = 'BLACK'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 600:
+                self.current_b3am_length = 5
+
+            elif 601 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 7
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1000:
+                self.current_b3am_length = 9
+
+            elif 1001 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 11
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 13
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 15
+
+        elif self.current_b3am_color_code == Color.RED:
+            self.current_b3am_color = 'RED'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 5
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1050:
+                self.current_b3am_length = 7
+
+            elif 1051 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 9
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 11
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 13
+
+            elif 1701 <= self.current_b3am_length_in_degrees <= 1900:
+                self.current_b3am_length = 15
+
+        else:
+            self.current_b3am_color = 'UNKNOWN'
+            self.current_b3am_length = 'UNKNOWN'
+
+        self.screen.draw_text(
+            x=0, y=18,
+            text='Color: {}'.format(self.current_b3am_color),
+            text_color=Color.BLACK,
+            background_color=None)
+
+        self.screen.draw_text(
+            x=0, y=36,
+            text='Length: {}'.format(self.current_b3am_length),
+            text_color=Color.BLACK,
+            background_color=None)
+
+        self.speaker.say(
+            text='{} {}'.format(
+                self.current_b3am_color,
+                self.current_b3am_length))
 
     def debug(self):
         ...
@@ -147,10 +210,10 @@ class MrB3am(EV3Brick):
         while True:
             self.process_b3am()
 
-            self.print_result()
+            self.report_result()
 
             self.screen.draw_text(
-                x=0, y=36,
+                x=0, y=54,
                 text='Press Enter...',
                 text_color=Color.BLACK,
                 background_color=None)
