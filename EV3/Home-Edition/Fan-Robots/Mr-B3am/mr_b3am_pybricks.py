@@ -5,7 +5,6 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, ColorSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
-from pybricks.tools import wait
 
 
 class MrB3am(EV3Brick):
@@ -21,8 +20,8 @@ class MrB3am(EV3Brick):
     def header_text(self):
         self.screen.clear()
         self.screen.draw_text(
-            x=2, y=0,
-            text='Mr. B3am!',
+            x=0, y=0,
+            text='MR. B3AM',
             text_color=Color.BLACK,
             background_color=None)
 
@@ -36,7 +35,7 @@ class MrB3am(EV3Brick):
         self.header_text()
 
         self.screen.draw_text(
-            x=0, y=18,
+            x=0, y=15,
             text='Insert B3am!',
             text_color=Color.BLACK,
             background_color=None)
@@ -63,8 +62,8 @@ class MrB3am(EV3Brick):
         self.header_text()
 
         self.screen.draw_text(
-            x=0, y=18,
-            text='Measuring B3am!',
+            x=0, y=15,
+            text='Measuring B3am...',
             text_color=Color.BLACK,
             background_color=None)
 
@@ -93,8 +92,8 @@ class MrB3am(EV3Brick):
         self.header_text()
 
         self.screen.draw_text(
-            x=0, y=18,
-            text='Detecting Color!',
+            x=0, y=15,
+            text='Detecting Color...',
             text_color=Color.BLACK,
             background_color=None)
 
@@ -117,8 +116,8 @@ class MrB3am(EV3Brick):
         self.header_text()
 
         self.screen.draw_text(
-            x=0, y=18,
-            text='Ejecting B3am!',
+            x=0, y=15,
+            text='Ejecting B3am...',
             text_color=Color.BLACK,
             background_color=None)
 
@@ -137,7 +136,7 @@ class MrB3am(EV3Brick):
 
         self.eject_b3am()
 
-    def report_result(self):
+    def report_result(self, debug=False):
         """
         Report the result of the measurement.
         The switch to the right has a case for each color
@@ -147,7 +146,7 @@ class MrB3am(EV3Brick):
         self.header_text()
 
         if self.current_b3am_color_code == Color.BLACK:
-            self.current_b3am_color = 'BLACK'
+            self.current_b3am_color = 'black'
 
             if 400 <= self.current_b3am_length_in_degrees <= 600:
                 self.current_b3am_length = 5
@@ -168,7 +167,7 @@ class MrB3am(EV3Brick):
                 self.current_b3am_length = 15
 
         elif self.current_b3am_color_code == Color.RED:
-            self.current_b3am_color = 'RED'
+            self.current_b3am_color = 'red'
 
             if 400 <= self.current_b3am_length_in_degrees <= 800:
                 self.current_b3am_length = 5
@@ -193,33 +192,48 @@ class MrB3am(EV3Brick):
             self.current_b3am_length = 'UNKNOWN'
 
         self.screen.draw_text(
-            x=0, y=18,
-            text='Color: {}'.format(self.current_b3am_color),
+            x=0, y=15,
+            text='Color: {}'.format(self.current_b3am_color.upper()),
             text_color=Color.BLACK,
             background_color=None)
 
         self.screen.draw_text(
-            x=0, y=36,
+            x=0, y=30,
             text='Length: {}'.format(self.current_b3am_length),
             text_color=Color.BLACK,
             background_color=None)
 
+        if debug:
+            self.screen.draw_text(
+                x=0, y=45,
+                text='{}'.format(self.current_b3am_color_code),
+                text_color=Color.BLACK,
+                background_color=None)
+
+            self.screen.draw_text(
+                x=0, y=60,
+                text='Degrees: {:,}'.format(
+                        self.current_b3am_length_in_degrees),
+                text_color=Color.BLACK,
+                background_color=None)
+
         self.speaker.say(
-            text='{} {}'.format(
-                self.current_b3am_color,
-                self.current_b3am_length))
+            text='{color} {length}{n_degrees}'.format(
+                    color=self.current_b3am_color,
+                    length=self.current_b3am_length,
+                    n_degrees=' ({} Degrees)'.format(
+                                self.current_b3am_length_in_degrees)
+                            if debug
+                            else ''))
 
-    def debug(self):
-        ...
-
-    def main(self):
+    def main(self, debug=False):
         while True:
             self.process_b3am()
 
-            self.report_result()
+            self.report_result(debug=debug)
 
             self.screen.draw_text(
-                x=0, y=54,
+                x=0, y=75,
                 text='Press Enter...',
                 text_color=Color.BLACK,
                 background_color=None)
@@ -231,4 +245,4 @@ class MrB3am(EV3Brick):
 if __name__ == '__main__':
     MR_B3AM = MrB3am()
 
-    MR_B3AM.main()
+    MR_B3AM.main(debug=True)
