@@ -124,7 +124,7 @@ class MrB3am:
 
         self.gear_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
-        self.current_b3am_length = abs(self.gear_motor.position)
+        self.current_b3am_length_in_degrees = abs(self.gear_motor.position)
 
     def detect_color(self):
         """
@@ -157,11 +157,11 @@ class MrB3am:
 
         self.gear_motor.run_to_rel_pos(
             speed_sp=150,
-            position_sp=self.current_b3am_length / 2,
+            position_sp=self.current_b3am_length_in_degrees / 2,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.gear_motor.wait_while(Motor.STATE_RUNNING)
 
-        self.current_b3am_color = self.color_sensor.color
+        self.current_b3am_color_code = self.color_sensor.color
 
         self.speaker.play(wav_file='/home/robot/sound/Detected.wav').wait()
 
@@ -191,7 +191,7 @@ class MrB3am:
 
         self.gear_motor.run_to_rel_pos(
             speed_sp=150,
-            position_sp=self.current_b3am_length / 2 + 700,
+            position_sp=self.current_b3am_length_in_degrees / 2 + 700,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.gear_motor.wait_while(Motor.STATE_RUNNING)
 
@@ -204,8 +204,87 @@ class MrB3am:
 
         self.eject_b3am()
 
-    def print_result(self):
-        ...
+    def report_result(self):
+        self.header_text()
+
+        if self.current_b3am_color_code == ColorSensor.COLOR_BLACK:
+            self.current_b3am_color = 'BLACK'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 600:
+                self.current_b3am_length = 5
+
+            elif 601 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 7
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1000:
+                self.current_b3am_length = 9
+
+            elif 1001 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 11
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 13
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 15
+
+        elif self.current_b3am_color_code == ColorSensor.COLOR_RED:
+            self.current_b3am_color = 'RED'
+
+            if 400 <= self.current_b3am_length_in_degrees <= 800:
+                self.current_b3am_length = 5
+
+            elif 801 <= self.current_b3am_length_in_degrees <= 1050:
+                self.current_b3am_length = 7
+
+            elif 1051 <= self.current_b3am_length_in_degrees <= 1300:
+                self.current_b3am_length = 9
+
+            elif 1301 <= self.current_b3am_length_in_degrees <= 1500:
+                self.current_b3am_length = 11
+
+            elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
+                self.current_b3am_length = 13
+
+            elif 1701 <= self.current_b3am_length_in_degrees <= 1900:
+                self.current_b3am_length = 15
+
+        else:
+            self.current_b3am_color = 'UNKNOWN'
+            self.current_b3am_length = 'UNKNOWN'
+
+        self.screen.draw.text(
+            xy=(0, 18),
+            text='Color: {}'.format(self.current_b3am_color),
+            fill=None,
+            font=None,
+            anchor=None,
+            spacing=4,
+            align='left',
+            direction=None,
+            features=None,
+            language=None,
+            stroke_width=0,
+            stroke_fill=None)
+
+        self.screen.draw.text(
+            xy=(0, 24),
+            text='Length: {}'.format(self.current_b3am_length),
+            fill=None,
+            font=None,
+            anchor=None,
+            spacing=4,
+            align='left',
+            direction=None,
+            features=None,
+            language=None,
+            stroke_width=0,
+            stroke_fill=None)
+
+        self.speaker.speak(
+            text='{} {}'.format(
+                self.current_b3am_color,
+                self.current_b3am_length)).wait()
 
     def debug(self):
         ...
@@ -214,7 +293,7 @@ class MrB3am:
         while True:
             self.process_b3am()
 
-            self.print_result()
+            self.report_result()
 
             self.screen.draw.text(
                 xy=(0, 11),
