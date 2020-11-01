@@ -10,6 +10,6 @@
   "python.linting.mypyEnabled": true,
   "python.linting.pydocstyleEnabled": false,
   "python.linting.pycodestyleEnabled": true,
-  "python.linting.pylamaEnabled": true,
+  "python.linting.pylamaEnabled": false,
   "python.linting.banditEnabled": false
 }
