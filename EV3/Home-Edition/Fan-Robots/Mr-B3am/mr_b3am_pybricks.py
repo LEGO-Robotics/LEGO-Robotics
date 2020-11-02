@@ -166,6 +166,9 @@ class MrB3am(EV3Brick):
             elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
                 self.current_b3am_length = 15
 
+            else:
+                self.current_b3am_length = 'UNKNOWN'
+
         elif self.current_b3am_color_code == Color.RED:
             self.current_b3am_color = 'red'
 
@@ -186,6 +189,9 @@ class MrB3am(EV3Brick):
 
             elif 1701 <= self.current_b3am_length_in_degrees <= 1900:
                 self.current_b3am_length = 15
+
+            else:
+                self.current_b3am_length = 'UNKNOWN'
 
         else:
             self.current_b3am_color = 'UNKNOWN'
