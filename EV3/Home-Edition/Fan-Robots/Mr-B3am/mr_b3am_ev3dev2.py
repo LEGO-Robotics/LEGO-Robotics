@@ -8,8 +8,6 @@ from ev3dev2.button import Button
 from ev3dev2.console import Console
 from ev3dev2.sound import Sound
 
-from time import sleep
-
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -38,14 +36,14 @@ class MrB3am:
     def header_text(self):
         self.console.text_at(
             column=1, row=1,
-            text='Mr. B3am!',
+            text='MR. B3AM',
             reset_console=True,
             inverse=False,
             alignment='L')
 
     def insert_b3am(self):
         """
-        This first sequence of blocks waits for a B3am to be inserted.
+        This waits for a B3am to be inserted.
         A B3am is detected when the ambient light level is
         above or equal to the value 3.
         When a B3am is inserted the motor stops and the EV3 says "Thank you".
@@ -78,19 +76,21 @@ class MrB3am:
 
     def measure_b3am(self):
         """
-        The next sequence of blocks measures the length of the B3am,
-        by first reseting the motor counter and then moves the B3am
+        This measures the length of the B3am,
+        by first resetting the motor counter and then moves the B3am
         until the other end is found.
         This is detected when the ambient light level is below the value 1.
         Note that the length measured is the number of degrees
         that the wheels has turned.
         This value will later be converted to the actual B3am length.
+        After having found the length of the B3am, the length is saved
+        in a variable, named "current_b3am_length_in_degrees".
         """
         self.header_text()
 
         self.console.text_at(
             column=1, row=2,
-            text='Measuring B3am!',
+            text='Measuring B3am...',
             reset_console=False,
             inverse=False,
             alignment='L')
@@ -111,12 +111,10 @@ class MrB3am:
 
     def detect_color(self):
         """
-        After having found the length of the B3am, the length is saved
-        in a variable, named "Length".
         Afterwards the B3am is moved half way thorugh the machine
         so its color can be measured.
         When the color is found it is saved in a variable,
-        named "Color" and the EV3 says "Detected".
+        named "current_b3am_color_code" and the EV3 says "Detected".
         Note the saved value is the color ID and this will later be converted
         to the actual color name.
         """
@@ -124,7 +122,7 @@ class MrB3am:
 
         self.console.text_at(
             column=1, row=2,
-            text='Detecting Color!',
+            text='Detecting Color...',
             reset_console=False,
             inverse=False,
             alignment='L')
@@ -152,7 +150,7 @@ class MrB3am:
 
         self.console.text_at(
             column=1, row=2,
-            text='Ejecting B3am!',
+            text='Ejecting B3am...',
             reset_console=False,
             inverse=False,
             alignment='L')
@@ -172,11 +170,11 @@ class MrB3am:
 
         self.eject_b3am()
 
-    def report_result(self):
+    def report_result(self, debug=False):
         self.header_text()
 
         if self.current_b3am_color_code == ColorSensor.COLOR_BLACK:
-            self.current_b3am_color = 'BLACK'
+            self.current_b3am_color = 'black'
 
             if 400 <= self.current_b3am_length_in_degrees <= 600:
                 self.current_b3am_length = 5
@@ -196,8 +194,11 @@ class MrB3am:
             elif 1501 <= self.current_b3am_length_in_degrees <= 1700:
                 self.current_b3am_length = 15
 
+            else:
+                self.current_b3am_length = 'UNKNOWN'
+
         elif self.current_b3am_color_code == ColorSensor.COLOR_RED:
-            self.current_b3am_color = 'RED'
+            self.current_b3am_color = 'red'
 
             if 400 <= self.current_b3am_length_in_degrees <= 800:
                 self.current_b3am_length = 5
@@ -217,22 +218,34 @@ class MrB3am:
             elif 1701 <= self.current_b3am_length_in_degrees <= 1900:
                 self.current_b3am_length = 15
 
+            else:
+                self.current_b3am_length = 'UNKNOWN'
+
         else:
             self.current_b3am_color = 'UNKNOWN'
             self.current_b3am_length = 'UNKNOWN'
 
         self.console.text_at(
-            column=1, row=3,
-            text='Color: {}'.format(self.current_b3am_color),
+            column=1, row=2,
+            text='Color: {}'.format(self.current_b3am_color.upper()),
             reset_console=False,
             inverse=False,
             alignment='L')
 
         self.console.text_at(
-            column=1, row=4,
+            column=1, row=3,
             text='Length: {}'.format(self.current_b3am_length),
             reset_console=False,
             inverse=False)
+
+        if debug:
+            self.console.text_at(
+                column=1, row=4,
+                text='({} Col | {:,} Deg)'.format(
+                        self.current_b3am_color_code,
+                        self.current_b3am_length_in_degrees),
+                reset_console=False,
+                inverse=False)
 
         self.speaker.speak(
             text='{} {}'.format(
@@ -241,14 +254,11 @@ class MrB3am:
             volume=100,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-    def debug(self):
-        ...
-
-    def main(self):
+    def main(self, debug=False):
         while True:
             self.process_b3am()
 
-            self.report_result()
+            self.report_result(debug=debug)
 
             self.console.text_at(
                 column=1, row=5,
@@ -264,4 +274,4 @@ class MrB3am:
 if __name__ == '__main__':
     MR_B3AM = MrB3am()
 
-    MR_B3AM.main()
+    MR_B3AM.main(debug=True)
