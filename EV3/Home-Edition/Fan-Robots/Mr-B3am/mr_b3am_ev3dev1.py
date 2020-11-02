@@ -36,7 +36,7 @@ class MrB3am:
         self.screen.clear()
 
         self.screen.draw.text(
-            xy=(2, 0),
+            xy=(0, 0),
             text='MR. B3AM',
             fill=None,
             font=None,
@@ -59,7 +59,7 @@ class MrB3am:
         self.header_text()
 
         self.screen.draw.text(
-            xy=(0, 6),
+            xy=(0, 10),
             text='Insert B3am!',
             fill=None,
             font=None,
@@ -98,7 +98,7 @@ class MrB3am:
         self.header_text()
 
         self.screen.draw.text(
-            xy=(0, 6),
+            xy=(0, 10),
             text='Measuring B3am...',
             fill=None,
             font=None,
@@ -136,7 +136,7 @@ class MrB3am:
         self.header_text()
 
         self.screen.draw.text(
-            xy=(0, 6),
+            xy=(0, 10),
             text='Detecting Color...',
             fill=None,
             font=None,
@@ -170,7 +170,7 @@ class MrB3am:
         self.header_text()
 
         self.screen.draw.text(
-            xy=(0, 6),
+            xy=(0, 10),
             text='Ejecting B3am...',
             fill=None,
             font=None,
@@ -256,7 +256,7 @@ class MrB3am:
             self.current_b3am_length = 'UNKNOWN'
 
         self.screen.draw.text(
-            xy=(0, 18),
+            xy=(0, 20),
             text='Color: {}'.format(self.current_b3am_color.upper()),
             fill=None,
             font=None,
@@ -270,7 +270,7 @@ class MrB3am:
             stroke_fill=None)
 
         self.screen.draw.text(
-            xy=(0, 24),
+            xy=(0, 30),
             text='Length: {}'.format(self.current_b3am_length),
             fill=None,
             font=None,
@@ -285,7 +285,7 @@ class MrB3am:
 
         if debug:
             self.screen.draw.text(
-                xy=(0, 30),
+                xy=(0, 50),
                 text='Color Code: {}'.format(self.current_b3am_color_code),
                 fill=None,
                 font=None,
@@ -299,7 +299,7 @@ class MrB3am:
                 stroke_fill=None)
 
             self.screen.draw.text(
-                xy=(0, 36),
+                xy=(0, 60),
                 text='Degrees: {:,}'.format(
                         self.current_b3am_length_in_degrees),
                 fill=None,
@@ -325,7 +325,7 @@ class MrB3am:
             self.report_result(debug=debug)
 
             self.screen.draw.text(
-                xy=(0, 42),
+                xy=(0, 80),
                 text='Press Enter...',
                 fill=None,
                 font=None,
