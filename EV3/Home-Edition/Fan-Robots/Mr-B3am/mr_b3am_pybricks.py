@@ -205,13 +205,13 @@ class MrB3am(EV3Brick):
 
         if debug:
             self.screen.draw_text(
-                x=0, y=45,
+                x=0, y=60,
                 text='{}'.format(self.current_b3am_color_code),
                 text_color=Color.BLACK,
                 background_color=None)
 
             self.screen.draw_text(
-                x=0, y=60,
+                x=0, y=75,
                 text='Degrees: {:,}'.format(
                         self.current_b3am_length_in_degrees),
                 text_color=Color.BLACK,
@@ -223,8 +223,8 @@ class MrB3am(EV3Brick):
                     length=self.current_b3am_length,
                     n_degrees=' ({} Degrees)'.format(
                                 self.current_b3am_length_in_degrees)
-                            if debug
-                            else ''))
+                              if debug
+                              else ''))
 
     def main(self, debug=False):
         while True:
@@ -233,7 +233,7 @@ class MrB3am(EV3Brick):
             self.report_result(debug=debug)
 
             self.screen.draw_text(
-                x=0, y=75,
+                x=0, y=105,
                 text='Press Enter...',
                 text_color=Color.BLACK,
                 background_color=None)
