@@ -9,21 +9,12 @@ from pybricks.robotics import DriveBase
 
 
 class Gripp3r(EV3Brick):
-    WHEEL_DIAMETER = 26
-    AXLE_TRACK = 115
-
     def __init__(
             self,
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             grip_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-        self.drive_base = DriveBase(left_motor=Motor(port=left_motor_port,
-                                                     positive_direction=Direction.CLOCKWISE),
-                                    right_motor=Motor(port=right_motor_port,
-                                                      positive_direction=Direction.CLOCKWISE),
-                                    wheel_diameter=self.WHEEL_DIAMETER,
-                                    axle_track=self.AXLE_TRACK)
             
         self.drive_base.settings(
             straight_speed=750,   # milimeters per second
