@@ -7,17 +7,15 @@ from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port, Stop
 
 
-class Gripp3r(EV3Brick):
+class EV3Game(EV3Brick):
     def __init__(
             self,
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             grip_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
-
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=Direction.CLOCKWISE)
-
         self.right_motor = Motor(port=right_motor_port,
                                  positive_direction=Direction.CLOCKWISE)
 

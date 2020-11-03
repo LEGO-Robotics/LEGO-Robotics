@@ -6,9 +6,9 @@ from ev3dev2.motor import (
 )
 from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
-from ev3dev2.sound import Sound
 from ev3dev2.console import Console
 from ev3dev2.display import Display
+from ev3dev2.sound import Sound
 
 
 class EV3Game:
@@ -30,5 +30,5 @@ class EV3Game:
         self.ir_beacon_channel = ir_beacon_channel
 
         self.console = Console()
-        self.speaker = Sound()
         self.dis = Display()
+        self.speaker = Sound()

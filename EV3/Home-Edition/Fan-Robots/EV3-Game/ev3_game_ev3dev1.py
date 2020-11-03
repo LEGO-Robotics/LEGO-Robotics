@@ -17,6 +17,7 @@ class EV3Game:
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
         self.left_motor = LargeMotor(address=left_motor_port)
         self.right_motor = LargeMotor(address=right_motor_port)
+
         self.grip_motor = MediumMotor(address=grip_motor_port)
 
         self.touch_sensor = TouchSensor(address=touch_sensor_port)
@@ -26,5 +27,5 @@ class EV3Game:
         self.beacon = RemoteControl(sensor=self.ir_sensor,
                                     channel=ir_beacon_channel)
 
-        self.speaker = Sound()
         self.dis = Screen()
+        self.speaker = Sound()
