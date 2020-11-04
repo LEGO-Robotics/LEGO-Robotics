@@ -24,7 +24,7 @@ Thonny-EV3Dev >= 1.0.4
 Python-EV3Dev >= 1.2.0
 
 # Simulators
-EV3Sim >= 1.6.4
+EV3Sim >= 1.6.5
 PyGame >= 2.0.0
 
 # misc
