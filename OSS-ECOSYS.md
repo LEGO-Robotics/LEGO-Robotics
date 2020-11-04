@@ -353,6 +353,8 @@ NXT_Python (2007)
 
 ### [David Lechner](https://github.com/dlech)
 
+[YouTube Channel](https://www.youtube.com/channel/UC9t81ufD1yeMes9YGpKb7bA/videos)
+
 [EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
 
 
