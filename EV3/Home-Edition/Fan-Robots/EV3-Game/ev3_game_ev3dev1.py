@@ -7,6 +7,15 @@ from ev3dev.ev3 import (
     Sound, Screen
 )
 
+# import os
+# import sys
+# sys.path.append(os.path.expanduser('~'))
+from util.ev3dev_fast.ev3fast import (
+    LargeMotor as FastLargeMotor,
+    MediumMotor as FastMediumMotor,
+    TouchSensor as FastTouchSensor
+)
+
 from time import sleep
 
 
@@ -16,13 +25,23 @@ class EV3Game:
             b_motor_port: str = OUTPUT_B, c_motor_port: str = OUTPUT_C,
             grip_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1,
-            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1):
-        self.b_motor = LargeMotor(address=b_motor_port)
-        self.c_motor = LargeMotor(address=c_motor_port)
+            ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
+            fast=False):
+        if fast:
+            self.b_motor = LargeMotor(address=b_motor_port)
+            self.c_motor = LargeMotor(address=c_motor_port)
 
-        self.grip_motor = MediumMotor(address=grip_motor_port)
+            self.grip_motor = MediumMotor(address=grip_motor_port)
 
-        self.touch_sensor = TouchSensor(address=touch_sensor_port)
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
+
+        else:
+            self.b_motor = FastLargeMotor(address=b_motor_port)
+            self.c_motor = FastLargeMotor(address=c_motor_port)
+
+            self.grip_motor = FastMediumMotor(address=grip_motor_port)
+
+            self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
