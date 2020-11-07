@@ -1,4 +1,4 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
 
 
 from ev3dev2.motor import (
@@ -9,6 +9,8 @@ from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
 from ev3dev2.console import Console
 from ev3dev2.display import Display
 from ev3dev2.sound import Sound
+
+from time import sleep
 
 
 class EV3Game:
@@ -34,6 +36,22 @@ class EV3Game:
 
         self.offset_holdcup = 60
         self.current_b = self.current_c = 1
+
+    def calibrate_grip(self):
+        self.grip_motor.on(
+            speed=-10,
+            block=False,
+            brake=False)
+
+        sleep(0.5)
+
+        self.grip_motor.wait_until_not_moving()
+
+        self.grip_motor.on_for_degrees(
+            speed=10,
+            degrees=30,
+            brake=True,
+            block=True)
 
     def move_1_rotate_b(self):
         if self.current_b == 1:

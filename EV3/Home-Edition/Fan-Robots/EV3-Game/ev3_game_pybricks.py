@@ -6,6 +6,8 @@ from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port, Stop
 
+from time import sleep
+
 
 class EV3Game(EV3Brick):
     def __init__(
@@ -29,6 +31,22 @@ class EV3Game(EV3Brick):
 
         self.offset_holdcup = 60
         self.current_b = self.current_c = 1
+
+    def calibrate_grip(self):
+        self.grip_motor.run(speed=-100)
+
+        sleep(0.5)
+
+        self.grip_motor.run_until_stalled(
+            speed=-100,
+            then=Stop.HOLD,
+            duty_limit=None)
+
+        self.grip_motor.run_angle(
+            speed=100,
+            rotation_angle=30,
+            then=Stop.HOLD,
+            wait=True)
 
     def move_1_rotate_b(self):
         if self.current_b == 1:

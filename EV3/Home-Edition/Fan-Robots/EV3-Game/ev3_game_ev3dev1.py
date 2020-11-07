@@ -7,6 +7,8 @@ from ev3dev.ev3 import (
     Sound, Screen
 )
 
+from time import sleep
+
 
 class EV3Game:
     def __init__(
@@ -32,6 +34,19 @@ class EV3Game:
 
         self.offset_holdcup = 60
         self.current_b = self.current_c = 1
+
+    def calibrate_grip(self):
+        self.grip_motor.run_forever(speed_sp=-100)
+
+        sleep(0.5)
+
+        self.grip_motor.wait_until_not_moving()
+
+        self.grip_motor.run_to_rel_pos(
+            speed_sp=100,
+            position_sp=30,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.grip_motor.wait_while(Motor.STATE_RUNNING)
 
     def move_1_rotate_b(self):
         if self.current_b == 1:
