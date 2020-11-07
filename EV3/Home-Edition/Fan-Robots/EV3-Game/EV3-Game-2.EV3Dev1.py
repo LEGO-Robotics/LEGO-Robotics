@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from ev3dev import Motor
+from ev3dev.ev3 import Motor
 
 from time import sleep
 
