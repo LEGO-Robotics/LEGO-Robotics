@@ -289,15 +289,25 @@ class EV3Game:
                 self.choice = 3
 
     def reset_motor_positions(self):
+        """
+        Resetting motors' positions like it is done when the moves finish
+        """
+        # Resetting Motor A to Position 1,
+        # which, for Motor A corresponds to Move 3
         self.move_3_rotate_b()
 
         self.move_1_rotate_c()
 
         self.current_b = self.current_c = 1
 
+        # Executing the reset for both motors
+        self.execute_move()
+
     def cup_to_center(self):
+        # Saving a copy of the current Level
         self.level_copy = self.level
 
+        # Using Level 1 to rotate the chosen cup to the center
         self.level = 1
 
         if self.choice == 1:
@@ -326,8 +336,7 @@ class EV3Game:
 
         self.reset_motor_positions()
 
-        self.execute_move()
-
+        # Restoring previous value of Level
         self.level = self.level_copy
 
     def main(self):
@@ -351,8 +360,6 @@ class EV3Game:
 
             self.reset_motor_positions()
 
-            self.execute_move()
-
             self.leds.all_off()
 
             correct_choice = False
@@ -361,6 +368,8 @@ class EV3Game:
                 self.select_choice()
 
                 self.cup_to_center()
+
+                # The choice will be now in the middle, Position 2
 
                 self.grip_motor.on_for_degrees(
                     speed=10,
