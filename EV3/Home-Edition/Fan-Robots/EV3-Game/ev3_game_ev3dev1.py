@@ -272,7 +272,17 @@ class EV3Game:
             self.update_ball_cup()
 
     def select_choice(self):
-        ...
+        self.choice = None
+
+        while not self.choice:
+            if self.beacon.red_up:
+                self.choice = 1
+
+            elif self.ir_sensor.beacon:
+                self.choice = 2
+
+            elif self.beacon.blue_up:
+                self.choice = 3
 
     def reset_motor_positions(self):
         self.move_3_rotate_b()
