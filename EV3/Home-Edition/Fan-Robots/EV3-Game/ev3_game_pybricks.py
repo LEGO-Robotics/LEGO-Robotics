@@ -159,6 +159,42 @@ class EV3Game(EV3Brick):
     def update_ballcup(self):
         ...
 
+    def shuffle(self):
+        for _ in range(15):
+            move = randint(1, 4)
+
+            if move == 1:
+                self.move_1_rotate_b()
+                self.move_1_rotate_c()
+
+                self.current_b = 3
+                self.current_c = 1
+
+            elif move == 2:
+                self.move_2_rotate_b()
+                self.move_2_rotate_c()
+
+                self.current_b = 2
+                self.current_c = 1
+
+            elif move == 3:
+                self.move_3_rotate_b()
+                self.move_3_rotate_c()
+
+                self.current_b = 1
+                self.current_c = 2
+
+            elif move == 4:
+                self.move_4_rotate_b()
+                self.move_4_rotate_c()
+
+                self.current_b = 1
+                self.current_c = 3
+
+            self.execute_move()
+
+            self.update_ballcup()
+
     def select_choice(self):
         ...
 
@@ -175,40 +211,7 @@ class EV3Game(EV3Brick):
 
             self.light.on(color=Color.GREEN)
 
-            for i in range(15):
-                move = randint(1, 4)
-
-                if move == 1:
-                    self.move_1_rotate_b()
-                    self.move_1_rotate_c()
-
-                    self.current_b = 3
-                    self.current_c = 1
-
-                elif move == 2:
-                    self.move_2_rotate_b()
-                    self.move_2_rotate_c()
-
-                    self.current_b = 2
-                    self.current_c = 1
-
-                elif move == 3:
-                    self.move_3_rotate_b()
-                    self.move_3_rotate_c()
-
-                    self.current_b = 1
-                    self.current_c = 2
-
-                elif move == 4:
-                    self.move_4_rotate_b()
-                    self.move_4_rotate_c()
-
-                    self.current_b = 1
-                    self.current_c = 3
-
-                self.execute_move()
-
-                self.update_ballcup()
+            self.shuffle()
 
             self.move_3_rotate_b()
 
