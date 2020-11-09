@@ -154,7 +154,45 @@ class EV3Game(EV3Brick):
             self.rotate_c = -180
 
     def execute_move(self):
-        ...
+        speed = 10 * self.level
+
+        if self.rotate_b * self.rotate_c > 0:
+            self.b_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_b,
+                then=Stop.HOLD,
+                wait=False)
+            self.c_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_c,
+                then=Stop.HOLD,
+                wait=True)
+
+        elif self.current_b == 1:
+            self.b_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_b,
+                then=Stop.HOLD,
+                wait=True)
+
+            self.c_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_c,
+                then=Stop.HOLD,
+                wait=True)
+
+        else:
+            self.c_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_c,
+                then=Stop.HOLD,
+                wait=True)
+
+            self.b_motor.run_angle(
+                speed=speed,
+                rotation_angle=self.rotate_b,
+                then=Stop.HOLD,
+                wait=True)
 
     def update_ballcup(self):
         ...

@@ -185,7 +185,45 @@ class EV3Game:
             self.rotate_c = -180
 
     def execute_move(self):
-        ...
+        speed = 10 * self.level
+
+        if self.rotate_b * self.rotate_c > 0:
+            self.b_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_b,
+                brake=True,
+                block=False)
+            self.c_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_c,
+                brake=True,
+                block=True)
+
+        elif self.current_b == 1:
+            self.b_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_b,
+                brake=True,
+                block=True)
+
+            self.c_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_c,
+                brake=True,
+                block=True)
+
+        else:
+            self.c_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_c,
+                brake=True,
+                block=True)
+
+            self.b_motor.on_for_degrees(
+                speed=speed,
+                degrees=self.rotate_b,
+                brake=True,
+                block=True)
 
     def update_ballcup(self):
         ...
