@@ -273,14 +273,52 @@ class EV3Game:
                 self.current_c = 3
 
             self.execute_move()
-
             self.update_ball_cup()
 
     def select_choice(self):
         ...
 
+    def reset_motor_positions(self):
+        self.move_3_rotate_b()
+
+        self.move_1_rotate_c()
+
+        self.current_b = self.current_c = 1
+
     def cup_to_center(self):
-        ...
+        self.level_copy = self.level
+
+        self.level = 1
+
+        if self.choice == 1:
+            self.move = 1
+
+            self.move_1_rotate_b()
+            self.move_1_rotate_c()
+
+            self.current_b = 3
+            self.current_c = 1
+
+            self.execute_move()
+            self.update_ball_cup()
+
+        elif self.choice == 3:
+            self.move == 3
+
+            self.move_3_rotate_b()
+            self.move_3_rotate_c()
+
+            self.current_b = 1
+            self.current_c = 2
+
+            self.execute_move()
+            self.update_ball_cup()
+
+        self.reset_motor_positions()
+
+        self.execute_move()
+
+        self.level = self.level_copy
 
     def main(self):
         self.start_up()
@@ -301,11 +339,7 @@ class EV3Game:
 
             self.shuffle()
 
-            self.move_3_rotate_b()
-
-            self.move_1_rotate_c()
-
-            self.current_b = self.current_c = 1
+            self.reset_motor_positions()
 
             self.execute_move()
 
