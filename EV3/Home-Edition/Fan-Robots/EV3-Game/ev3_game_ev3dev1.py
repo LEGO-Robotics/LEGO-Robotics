@@ -181,7 +181,7 @@ class EV3Game:
             self.rotate_c = -180
 
     def execute_move(self):
-        speed = 10 * self.level
+        speed = 100 * self.level
 
         if self.rotate_b * self.rotate_c > 0:
             self.b_motor.run_to_rel_pos(
