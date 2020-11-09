@@ -225,35 +225,47 @@ class EV3Game:
                 brake=True,
                 block=True)
 
-    def update_ballcup(self):
-        ...
+    def update_ball_cup(self):
+        if self.move in {1, 2}:
+            if self.cup_with_ball == 1:
+                self.cup_with_ball = 2
+
+            elif self.cup_with_ball == 2:
+                self.cup_with_ball = 1
+
+        else:
+            if self.cup_with_ball == 2:
+                self.cup_with_ball = 3
+
+            elif self.cup_with_ball == 3:
+                self.cup_with_ball = 2
 
     def shuffle(self):
         for _ in range(15):
-            move = randint(1, 4)
+            self.move = randint(1, 4)
 
-            if move == 1:
+            if self.move == 1:
                 self.move_1_rotate_b()
                 self.move_1_rotate_c()
 
                 self.current_b = 3
                 self.current_c = 1
 
-            elif move == 2:
+            elif self.move == 2:
                 self.move_2_rotate_b()
                 self.move_2_rotate_c()
 
                 self.current_b = 2
                 self.current_c = 1
 
-            elif move == 3:
+            elif self.move == 3:
                 self.move_3_rotate_b()
                 self.move_3_rotate_c()
 
                 self.current_b = 1
                 self.current_c = 2
 
-            elif move == 4:
+            elif self.move == 4:
                 self.move_4_rotate_b()
                 self.move_4_rotate_c()
 
@@ -262,7 +274,7 @@ class EV3Game:
 
             self.execute_move()
 
-            self.update_ballcup()
+            self.update_ball_cup()
 
     def select_choice(self):
         ...
