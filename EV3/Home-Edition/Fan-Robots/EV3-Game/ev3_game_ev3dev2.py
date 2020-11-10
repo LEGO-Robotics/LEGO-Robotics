@@ -77,6 +77,7 @@ class EV3Game:
         self.display_cup_number()
 
         self.offset_holdcup = 60
+
         self.current_b = self.current_c = 1
 
     def calibrate_grip(self):
