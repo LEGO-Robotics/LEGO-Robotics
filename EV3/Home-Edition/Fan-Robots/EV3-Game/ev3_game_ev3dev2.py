@@ -177,10 +177,10 @@ class EV3Game:
 
     def move_4_rotate_c(self):
         if self.current_c == 1:
-            self.rotate_c = self.offset_holdcup + 180
+            self.rotate_c = -self.offset_holdcup - 180
 
         elif self.current_c == 2:
-            self.rotate_c = 2 * self.offset_holdcup + 180
+            self.rotate_c = -2 * self.offset_holdcup - 180
 
         elif self.current_c == 3:
             self.rotate_c = -180
