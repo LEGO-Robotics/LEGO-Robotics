@@ -1,4 +1,6 @@
 {
+  "editor.rulers": [79, 88, 100, 120],
+  
   "ev3devBrowser.download.exclude": "**/__pycache__/**",
   "ev3devBrowser.download.include": "**/*.py",
   
