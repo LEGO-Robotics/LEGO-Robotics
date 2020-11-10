@@ -19,7 +19,7 @@ from util.ev3dev_fast.ev3fast import (
 )
 
 from random import randint
-from time import sleep
+from time import sleep, time
 
 
 class EV3Game:
@@ -54,6 +54,28 @@ class EV3Game:
         self.screen = Display()
         self.speaker = Sound()
 
+    def calibrate_grip(self):
+        self.grip_motor.on(
+            speed=-10,
+            block=False,
+            brake=False)
+
+        # sleep(0.5)
+
+        self.grip_motor.wait_until_not_moving()
+
+        self.grip_motor.on_for_degrees(
+            speed=10,
+            degrees=30,
+            brake=True,
+            block=True)
+
+    def display_level(self):
+        ...
+
+    def display_cup_number(self):
+        ...
+
     def start_up(self):
         self.leds.set_color(
             group='LEFT',
@@ -77,29 +99,8 @@ class EV3Game:
         self.display_cup_number()
 
         self.offset_holdcup = 60
+
         self.current_b = self.current_c = 1
-
-    def calibrate_grip(self):
-        self.grip_motor.on(
-            speed=-10,
-            block=False,
-            brake=False)
-
-        sleep(0.5)
-
-        self.grip_motor.wait_until_not_moving()
-
-        self.grip_motor.on_for_degrees(
-            speed=10,
-            degrees=30,
-            brake=True,
-            block=True)
-
-    def display_level(self):
-        ...
-
-    def display_cup_number(self):
-        ...
 
     def select_level(self):
         ...
@@ -126,13 +127,13 @@ class EV3Game:
 
     def move_2_rotate_b(self):
         if self.current_b == 1:
-            self.rotate_b = self.offset_holdcup + 180
+            self.rotate_b = -self.offset_holdcup - 180
 
         elif self.current_b == 2:
             self.rotate_b = -180
 
         elif self.current_b == 3:
-            self.rotate_b = 2 * self.offset_holdcup + 180
+            self.rotate_b = -2 * self.offset_holdcup - 180
 
     def move_2_rotate_c(self):
         if self.current_c == 1:
@@ -176,10 +177,10 @@ class EV3Game:
 
     def move_4_rotate_c(self):
         if self.current_c == 1:
-            self.rotate_c = self.offset_holdcup + 180
+            self.rotate_c = -self.offset_holdcup - 180
 
         elif self.current_c == 2:
-            self.rotate_c = 2 * self.offset_holdcup + 180
+            self.rotate_c = -2 * self.offset_holdcup - 180
 
         elif self.current_c == 3:
             self.rotate_c = -180
@@ -241,7 +242,9 @@ class EV3Game:
                 self.cup_with_ball = 2
 
     def shuffle(self):
-        for _ in range(15):
+        shuffle_start_time = time()
+
+        while time() - shuffle_start_time < 15:
             self.move = randint(1, 4)
 
             if self.move == 1:
@@ -275,6 +278,23 @@ class EV3Game:
             self.execute_move()
             self.update_ball_cup()
 
+    def reset_motor_positions(self):
+        """
+        Resetting motors' positions like it is done when the moves finish
+        """
+        # Resetting Motor A to Position 1,
+        # which, for Motor A corresponds to Move 3
+        self.move_3_rotate_b()
+
+        # Reseting Motor D to Position 1,
+        # which, for Motor D corresponds to Move 1
+        self.move_1_rotate_c()
+
+        self.current_b = self.current_c = 1
+
+        # Executing the reset for both motors
+        self.execute_move()
+
     def select_choice(self):
         self.choice = None
 
@@ -287,21 +307,6 @@ class EV3Game:
 
             elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
                 self.choice = 3
-
-    def reset_motor_positions(self):
-        """
-        Resetting motors' positions like it is done when the moves finish
-        """
-        # Resetting Motor A to Position 1,
-        # which, for Motor A corresponds to Move 3
-        self.move_3_rotate_b()
-
-        self.move_1_rotate_c()
-
-        self.current_b = self.current_c = 1
-
-        # Executing the reset for both motors
-        self.execute_move()
 
     def cup_to_center(self):
         # Saving a copy of the current Level
