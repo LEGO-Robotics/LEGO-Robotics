@@ -281,7 +281,7 @@ class EV3Game(EV3Brick):
 
         while not self.choice:
             ir_buttons_pressed = \
-                self.ir_sensor.buttons(channel=self.ir_beacon_channel)
+                set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
             if ir_buttons_pressed == {Button.LEFT_UP}:
                 self.choice = 1
