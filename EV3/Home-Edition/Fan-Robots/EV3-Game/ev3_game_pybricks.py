@@ -7,7 +7,7 @@ from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 
 from random import randint
-from time import sleep
+from time import sleep, time
 
 
 class EV3Game(EV3Brick):
@@ -211,7 +211,9 @@ class EV3Game(EV3Brick):
                 self.cup_with_ball = 2
 
     def shuffle(self):
-        for _ in range(15):
+        shuffle_start_time = time()
+
+        while time() - shuffle_start_time < 15:
             self.move = randint(1, 4)
 
             if self.move == 1:
