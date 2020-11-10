@@ -274,19 +274,6 @@ class EV3Game:
             self.execute_move()
             self.update_ball_cup()
 
-    def select_choice(self):
-        self.choice = None
-
-        while not self.choice:
-            if self.beacon.red_up:
-                self.choice = 1
-
-            elif self.ir_sensor.beacon:
-                self.choice = 2
-
-            elif self.beacon.blue_up:
-                self.choice = 3
-
     def reset_motor_positions(self):
         """
         Resetting motors' positions like it is done when the moves finish
@@ -303,6 +290,19 @@ class EV3Game:
 
         # Executing the reset for both motors
         self.execute_move()
+
+    def select_choice(self):
+        self.choice = None
+
+        while not self.choice:
+            if self.beacon.red_up:
+                self.choice = 1
+
+            elif self.ir_sensor.beacon:
+                self.choice = 2
+
+            elif self.beacon.blue_up:
+                self.choice = 3
 
     def cup_to_center(self):
         # Saving a copy of the current Level
