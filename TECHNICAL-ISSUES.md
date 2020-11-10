@@ -19,6 +19,11 @@ MicroPython
 - [Multiple-Inheritance Issues](https://github.com/micropython/micropython/search?q=%22multiple+inheritance%22&state=open&type=Issues)
   - [Differences vs. CPython](https://docs.micropython.org/en/latest/genrst/core_language.html#classes)
 
+Other
+- Broken EV3 Motors:
+  - https://www.youtube.com/watch?v=bsA2N7a34cY
+  - https://www.youtube.com/watch?v=vU3SU9yoXnA
+
 
 ## Resolved
 
