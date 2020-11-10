@@ -29,14 +29,6 @@ class EV3Game:
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             fast=False):
         if fast:
-            self.b_motor = LargeMotor(address=b_motor_port)
-            self.c_motor = LargeMotor(address=c_motor_port)
-
-            self.grip_motor = MediumMotor(address=grip_motor_port)
-
-            self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
-        else:
             self.b_motor = FastLargeMotor(address=b_motor_port)
             self.c_motor = FastLargeMotor(address=c_motor_port)
 
@@ -44,6 +36,14 @@ class EV3Game:
 
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
+        else:
+            self.b_motor = LargeMotor(address=b_motor_port)
+            self.c_motor = LargeMotor(address=c_motor_port)
+
+            self.grip_motor = MediumMotor(address=grip_motor_port)
+
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
+            
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
         self.beacon = RemoteControl(sensor=self.ir_sensor,

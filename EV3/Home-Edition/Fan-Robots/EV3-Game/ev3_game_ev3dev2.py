@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env micropython
 
 
 from ev3dev2.motor import LargeMotor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, InfraredSensor
 from ev3dev2.console import Console
-from ev3dev2.display import Display
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
@@ -31,14 +30,6 @@ class EV3Game:
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             fast=False):
         if fast:
-            self.b_motor = LargeMotor(address=b_motor_port)
-            self.c_motor = LargeMotor(address=c_motor_port)
-
-            self.grip_motor = MediumMotor(address=grip_motor_port)
-
-            self.touch_sensor = TouchSensor(address=touch_sensor_port)
-
-        else:
             self.b_motor = FastLargeMotor(address=b_motor_port)
             self.c_motor = FastLargeMotor(address=c_motor_port)
 
@@ -46,12 +37,20 @@ class EV3Game:
 
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
+        else:
+            self.b_motor = LargeMotor(address=b_motor_port)
+            self.c_motor = LargeMotor(address=c_motor_port)
+
+            self.grip_motor = MediumMotor(address=grip_motor_port)
+
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
+
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
         self.console = Console()
         self.leds = Leds()
-        self.screen = Display()
+        # self.screen = Display()
         self.speaker = Sound()
 
     def calibrate_grip(self):
@@ -88,7 +87,7 @@ class EV3Game:
 
         self.calibrate_grip()
 
-        self.screen.clear()
+        # self.screen.clear()
 
         self.level = 1
 
