@@ -121,6 +121,13 @@ class EV3Game:
         elif self.current_c == 3:
             self.rotate_c = self.offset_holdcup
 
+    def move_1(self):
+        self.move_1_rotate_b()
+        self.move_1_rotate_c()
+
+        self.current_b = 3
+        self.current_c = 1
+
     def move_2_rotate_b(self):
         if self.current_b == 1:
             self.rotate_b = -self.offset_holdcup - 180
@@ -140,6 +147,13 @@ class EV3Game:
 
         elif self.current_c == 3:
             self.rotate_c = self.offset_holdcup
+
+    def move_2(self):
+        self.move_2_rotate_b()
+        self.move_2_rotate_c()
+
+        self.current_b = 2
+        self.current_c = 1
 
     def move_3_rotate_b(self):
         if self.current_b == 1:
@@ -161,6 +175,13 @@ class EV3Game:
         elif self.current_c == 3:
             self.rotate_c = 2 * self.offset_holdcup + 180
 
+    def move_3(self):
+        self.move_3_rotate_b()
+        self.move_3_rotate_c()
+
+        self.current_b = 1
+        self.current_c = 2
+
     def move_4_rotate_b(self):
         if self.current_b == 1:
             self.rotate_b = 0
@@ -180,6 +201,13 @@ class EV3Game:
 
         elif self.current_c == 3:
             self.rotate_c = -180
+
+    def move_4(self):
+        self.move_4_rotate_b()
+        self.move_4_rotate_c()
+
+        self.current_b = 1
+        self.current_c = 3
 
     def execute_move(self):
         speed = 100 * self.level
@@ -244,32 +272,16 @@ class EV3Game:
             self.move = randint(1, 4)
 
             if self.move == 1:
-                self.move_1_rotate_b()
-                self.move_1_rotate_c()
-
-                self.current_b = 3
-                self.current_c = 1
+                self.move_1()
 
             elif self.move == 2:
-                self.move_2_rotate_b()
-                self.move_2_rotate_c()
-
-                self.current_b = 2
-                self.current_c = 1
+                self.move_2()
 
             elif self.move == 3:
-                self.move_3_rotate_b()
-                self.move_3_rotate_c()
-
-                self.current_b = 1
-                self.current_c = 2
+                self.move_3()
 
             elif self.move == 4:
-                self.move_4_rotate_b()
-                self.move_4_rotate_c()
-
-                self.current_b = 1
-                self.current_c = 3
+                self.move_4()
 
             self.execute_move()
             self.update_ball_cup()
@@ -313,24 +325,14 @@ class EV3Game:
 
         if self.choice == 1:
             self.move = 1
-
-            self.move_1_rotate_b()
-            self.move_1_rotate_c()
-
-            self.current_b = 3
-            self.current_c = 1
+            self.move_1()
 
             self.execute_move()
             self.update_ball_cup()
 
         elif self.choice == 3:
-            self.move == 3
-
-            self.move_3_rotate_b()
-            self.move_3_rotate_c()
-
-            self.current_b = 1
-            self.current_c = 2
+            self.move = 3
+            self.move_3()
 
             self.execute_move()
             self.update_ball_cup()
