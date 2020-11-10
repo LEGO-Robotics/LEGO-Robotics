@@ -22,7 +22,9 @@ MicroPython
 Other
 - Broken EV3 Motors:
   - https://www.youtube.com/watch?v=bsA2N7a34cY
-  - https://www.youtube.com/watch?v=vU3SU9yoXnA
+  - Mr. Hino:
+    - https://www.youtube.com/watch?v=vU3SU9yoXnA
+    - https://www.youtube.com/watch?v=jwBy7mDSYEo
 
 
 ## Resolved
