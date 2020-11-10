@@ -21,10 +21,11 @@ MicroPython
 
 Other
 - Broken EV3 Motors:
-  - https://www.youtube.com/watch?v=bsA2N7a34cY
+  - [Lego EV3 Motor Issue](https://www.youtube.com/watch?v=bsA2N7a34cY)
   - Mr. Hino:
-    - https://www.youtube.com/watch?v=vU3SU9yoXnA
-    - https://www.youtube.com/watch?v=jwBy7mDSYEo
+    - [Solving the Broken LEGO Mindstorms EV3 Motor Issue](https://www.youtube.com/watch?v=vU3SU9yoXnA)
+    - [The Continued Mystery of the Broken Motor Port](https://www.youtube.com/watch?v=jwBy7mDSYEo)
+      - Elias Malak: Thank you for the video Mr. Hino. This cleared a lot of things up. If you change the brick, the same problem will occur. If you change the motor that was slow, the same problem will occur. If you switch the ports between b and c, the problem will still occur. However, if you change the motor that is fast, the problem will be fixed. What's happening is that your motor that is going fast has a broken encoder which is why in port view, it does not read anything. When the makers of the ev3 programming programmed the software, they made it so that the brick keeps adding power to the motor that does not show any rotations or degrees so that it can try to "move", because in the brick, it thinks the motor isn't moving at all since the encoder(tracker) is broken, therefore if you change the motor that is going fast, your problem will be resolved. Let me know if this fixes your problem? Thanks, Eli.
 
 
 ## Resolved
