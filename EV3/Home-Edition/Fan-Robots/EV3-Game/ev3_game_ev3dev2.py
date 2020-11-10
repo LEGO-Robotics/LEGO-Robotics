@@ -297,6 +297,8 @@ class EV3Game:
         # which, for Motor A corresponds to Move 3
         self.move_3_rotate_b()
 
+        # Reseting Motor D to Position 1,
+        # which, for Motor D corresponds to Move 1
         self.move_1_rotate_c()
 
         self.current_b = self.current_c = 1
