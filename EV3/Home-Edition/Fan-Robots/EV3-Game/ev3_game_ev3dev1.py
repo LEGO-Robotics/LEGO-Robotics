@@ -342,6 +342,13 @@ class EV3Game:
         # Restoring previous value of level
         self.level = self.level_copy
 
+    def lift_cup(self):
+        self.grip_motor.run_to_rel_pos(
+            speed_sp=100,
+            position_sp=220,
+            stop_action=Motor.STOP_ACTION_HOLD)
+        self.grip_motor.wait_while(Motor.STATE_RUNNING)
+
     def main(self):
         self.start_up()
 
@@ -374,11 +381,7 @@ class EV3Game:
 
                 # The choice will be now in the middle, Position 2
 
-                EV3_GAME.grip_motor.run_to_rel_pos(
-                    speed_sp=100,
-                    position_sp=220,
-                    stop_action=Motor.STOP_ACTION_HOLD)
-                EV3_GAME.grip_motor.wait_while(Motor.STATE_RUNNING)
+                self.lift_cup()
 
                 correct_choice = (self.cup_with_ball == 2)
 

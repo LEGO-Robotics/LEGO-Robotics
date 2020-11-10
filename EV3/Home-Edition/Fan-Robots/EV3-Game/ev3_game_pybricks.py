@@ -318,6 +318,13 @@ class EV3Game(EV3Brick):
         # Restoring previous value of Level
         self.level = self.level_copy
 
+    def lift_cup(self):
+        self.grip_motor.run_angle(
+            speed=100,
+            rotation_angle=220,
+            then=Stop.HOLD,
+            wait=True)
+
     def main(self):
         self.start_up()
 
@@ -343,11 +350,7 @@ class EV3Game(EV3Brick):
 
                 # The choice will be now in the middle, Position 2
 
-                self.grip_motor.run_angle(
-                    speed=100,
-                    rotation_angle=220,
-                    then=Stop.HOLD,
-                    wait=True)
+                self.lift_cup()
 
                 correct_choice = (self.cup_with_ball == 2)
 

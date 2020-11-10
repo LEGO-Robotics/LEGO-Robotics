@@ -14,11 +14,7 @@ EV3_GAME.calibrate_grip()
 
 sleep(1)
 
-EV3_GAME.grip_motor.run_angle(
-    speed=100,
-    rotation_angle=220,
-    then=Stop.HOLD,
-    wait=True)
+EV3_GAME.lift_cup()
 
 sleep(1)
 

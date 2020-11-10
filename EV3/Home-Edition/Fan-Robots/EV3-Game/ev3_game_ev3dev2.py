@@ -346,6 +346,13 @@ class EV3Game:
         # Restoring previous value of Level
         self.level = self.level_copy
 
+    def lift_cup(self):
+        self.grip_motor.on_for_degrees(
+            speed=10,
+            degrees=220,
+            brake=True,
+            block=True)
+
     def main(self):
         self.start_up()
 
@@ -378,11 +385,7 @@ class EV3Game:
 
                 # The choice will be now in the middle, Position 2
 
-                self.grip_motor.on_for_degrees(
-                    speed=10,
-                    degrees=220,
-                    brake=True,
-                    block=True)
+                self.lift_cup()
 
                 correct_choice = (self.cup_with_ball == 2)
 

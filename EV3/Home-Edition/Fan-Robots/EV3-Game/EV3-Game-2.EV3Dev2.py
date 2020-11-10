@@ -12,11 +12,7 @@ EV3_GAME.calibrate_grip()
 
 sleep(1)
 
-EV3_GAME.grip_motor.on_for_degrees(
-    speed=10,
-    degrees=220,
-    brake=True,
-    block=True)
+EV3_GAME.lift_cup()
 
 sleep(1)
 

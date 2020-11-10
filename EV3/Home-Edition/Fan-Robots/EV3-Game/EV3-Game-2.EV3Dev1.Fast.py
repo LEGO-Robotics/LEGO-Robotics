@@ -14,11 +14,7 @@ EV3_GAME.calibrate_grip()
 
 sleep(1)
 
-EV3_GAME.grip_motor.run_to_rel_pos(
-    speed_sp=100,
-    position_sp=220,
-    stop_action=Motor.STOP_ACTION_HOLD)
-EV3_GAME.grip_motor.wait_while(Motor.STATE_RUNNING)
+EV3_GAME.lift_cup()
 
 sleep(1)
 
