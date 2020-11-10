@@ -364,9 +364,9 @@ class EV3Game(EV3Brick):
 
                     self.speaker.play_file(file=SoundFile.BOO)
 
-            sleep(2)
+                sleep(2)
 
-            self.calibrate_grip()
+                self.calibrate_grip()
 
 
 if __name__ == '__main__':

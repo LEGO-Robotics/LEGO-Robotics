@@ -414,9 +414,9 @@ class EV3Game:
                         volume=100,
                         play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
-            sleep(2)
+                sleep(2)
 
-            self.calibrate_grip()
+                self.calibrate_grip()
 
 
 if __name__ == '__main__':
