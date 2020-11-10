@@ -310,7 +310,7 @@ class EV3Game:
             if self.beacon.red_up:
                 self.choice = 1
 
-            elif self.ir_sensor.beacon:
+            elif self.beacon.beacon:
                 self.choice = 2
 
             elif self.beacon.blue_up:
