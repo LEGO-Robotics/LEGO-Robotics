@@ -30,25 +30,6 @@ class EV3Game(EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def start_up(self):
-        self.light.on(color=Color.RED)
-
-        self.calibrate_grip()
-
-        self.screen.clear()
-
-        self.level = 1
-
-        self.display_level()
-
-        self.choice = 2
-
-        self.display_cup_number()
-
-        self.offset_holdcup = 60
-
-        self.current_b = self.current_c = 1
-
     def calibrate_grip(self):
         # self.grip_motor.run(speed=-100)
 
@@ -70,6 +51,25 @@ class EV3Game(EV3Brick):
 
     def display_cup_number(self):
         ...
+
+    def start_up(self):
+        self.light.on(color=Color.RED)
+
+        self.calibrate_grip()
+
+        self.screen.clear()
+
+        self.level = 1
+
+        self.display_level()
+
+        self.choice = 2
+
+        self.display_cup_number()
+
+        self.offset_holdcup = 60
+
+        self.current_b = self.current_c = 1
 
     def select_level(self):
         ...

@@ -54,6 +54,28 @@ class EV3Game:
         self.screen = Display()
         self.speaker = Sound()
 
+    def calibrate_grip(self):
+        self.grip_motor.on(
+            speed=-10,
+            block=False,
+            brake=False)
+
+        # sleep(0.5)
+
+        self.grip_motor.wait_until_not_moving()
+
+        self.grip_motor.on_for_degrees(
+            speed=10,
+            degrees=30,
+            brake=True,
+            block=True)
+
+    def display_level(self):
+        ...
+
+    def display_cup_number(self):
+        ...
+
     def start_up(self):
         self.leds.set_color(
             group='LEFT',
@@ -79,28 +101,6 @@ class EV3Game:
         self.offset_holdcup = 60
 
         self.current_b = self.current_c = 1
-
-    def calibrate_grip(self):
-        self.grip_motor.on(
-            speed=-10,
-            block=False,
-            brake=False)
-
-        # sleep(0.5)
-
-        self.grip_motor.wait_until_not_moving()
-
-        self.grip_motor.on_for_degrees(
-            speed=10,
-            degrees=30,
-            brake=True,
-            block=True)
-
-    def display_level(self):
-        ...
-
-    def display_cup_number(self):
-        ...
 
     def select_level(self):
         ...
