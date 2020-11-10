@@ -43,7 +43,7 @@ class EV3Game:
             self.grip_motor = MediumMotor(address=grip_motor_port)
 
             self.touch_sensor = TouchSensor(address=touch_sensor_port)
-            
+
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
         self.beacon = RemoteControl(sensor=self.ir_sensor,
