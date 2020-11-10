@@ -50,9 +50,9 @@ class EV3Game(EV3Brick):
         self.current_b = self.current_c = 1
 
     def calibrate_grip(self):
-        self.grip_motor.run(speed=-100)
+        # self.grip_motor.run(speed=-100)
 
-        sleep(0.5)
+        # sleep(0.5)
 
         self.grip_motor.run_until_stalled(
             speed=-100,

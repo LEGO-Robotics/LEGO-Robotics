@@ -86,7 +86,7 @@ class EV3Game:
             block=False,
             brake=False)
 
-        sleep(0.5)
+        # sleep(0.5)
 
         self.grip_motor.wait_until_not_moving()
 

@@ -82,7 +82,7 @@ class EV3Game:
     def calibrate_grip(self):
         self.grip_motor.run_forever(speed_sp=-100)
 
-        sleep(0.5)
+        # sleep(0.5)
 
         self.grip_motor.wait_until_not_moving()
 
