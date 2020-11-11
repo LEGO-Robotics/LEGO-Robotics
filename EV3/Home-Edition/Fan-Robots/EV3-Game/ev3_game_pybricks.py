@@ -289,6 +289,12 @@ class EV3Game(EV3Brick):
             elif ir_buttons_pressed == {Button.BEACON}:
                 self.choice = 2
 
+                # wait for BEACON button to turn off
+                while set(self.ir_sensor.buttons(
+                            channel=self.ir_beacon_channel)) \
+                        == {Button.BEACON}:
+                    pass
+
             elif ir_buttons_pressed == {Button.RIGHT_UP}:
                 self.choice = 3
 

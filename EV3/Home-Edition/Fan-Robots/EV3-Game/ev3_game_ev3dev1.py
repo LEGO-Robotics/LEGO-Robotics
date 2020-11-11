@@ -313,6 +313,10 @@ class EV3Game:
             elif self.beacon.beacon:
                 self.choice = 2
 
+                # wait for BEACON button to turn off
+                while self.beacon.beacon:
+                    pass
+
             elif self.beacon.blue_up:
                 self.choice = 3
 
