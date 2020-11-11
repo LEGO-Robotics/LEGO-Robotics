@@ -36,7 +36,7 @@ repositories.
 
 ### Robot Inventor
 
-- Desktop Software: [Mac](https://apps.apple.com/us/app/lego-mindstorms-inventor/id1515448947) | [PC](https://www.microsoft.com/en-us/p/lego-mindstorms-robot-inventor/9mtq0n7w1d6x)
+[Software](https://www.lego.com/en-us/service/device-guide/mindstorms-robot-inventor/): [Mac OSX / iOS](https://apps.apple.com/us/app/lego-mindstorms-inventor/id1515448947) | [Android](https://play.google.com/store/apps/details?id=com.lego.retail.mindstorms) | [PC](https://www.microsoft.com/p/lego-mindstorms-robot-inventor/9mtq0n7w1d6x)
 
 
 ### SPIKE Prime
