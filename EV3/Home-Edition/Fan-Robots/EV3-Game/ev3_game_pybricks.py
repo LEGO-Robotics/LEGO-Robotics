@@ -47,7 +47,15 @@ class EV3Game(EV3Brick):
             wait=True)
 
     def display_level(self):
-        ...
+        self.screen.clear()
+
+        self.screen.draw_text(
+            x=0, y=0,
+            text='Level {}'.format(self.level),
+            text_color=Color.BLACK,
+            background_color=None)
+
+        sleep(1)
 
     def display_cup_number(self):
         ...
@@ -72,7 +80,25 @@ class EV3Game(EV3Brick):
         self.current_b = self.current_c = 1
 
     def select_level(self):
-        ...
+        while not self.touch_sensor.pressed():
+            ir_buttons_pressed = \
+                set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
+
+            if ir_buttons_pressed.intersection(
+                    {Button.LEFT_UP, Button.RIGHT_UP}) and \
+                    (self.level < 9):
+                self.level += 1
+
+                self.display_level()
+
+            elif ir_buttons_pressed.intersection(
+                    {Button.LEFT_DOWN, Button.RIGHT_DOWN}) and \
+                    (self.level > 1):
+                self.level -= 1
+
+                self.display_level()
+
+        self.speaker.play_file(file=SoundFile.GO)
 
     def move_1_rotate_b(self):
         if self.current_b == 1:
