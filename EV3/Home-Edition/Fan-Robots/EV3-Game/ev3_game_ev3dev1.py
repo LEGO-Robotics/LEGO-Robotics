@@ -410,9 +410,9 @@ class EV3Game:
 
                     self.speaker.play(wav_file='/home/robot/sound/Boo.wav')
 
-            sleep(2)
+                sleep(2)
 
-            self.calibrate_grip()
+                self.calibrate_grip()
 
 
 if __name__ == '__main__':
