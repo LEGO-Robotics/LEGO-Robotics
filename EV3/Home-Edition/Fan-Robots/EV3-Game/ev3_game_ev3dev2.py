@@ -81,6 +81,8 @@ class EV3Game:
             inverse=False,
             alignment='L')
 
+        sleep(1)
+
     def display_cup_number(self):
         ...
 
