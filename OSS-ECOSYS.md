@@ -203,6 +203,13 @@ Wiki
 [EV3 Print3rBot](https://github.com/cavenel/ev3-print3rbot)
 
 
+### Marc-Andre Bazergui
+
+[Website](http://bazmarc.ca)
+
+[YouTube Channel](https://www.youtube.com/c/bazmarc)
+
+
 ### [Guillaume Binet](https://github.com/gbin)
 
 [WeDo](https://github.com/gbin/WeDoMore)
