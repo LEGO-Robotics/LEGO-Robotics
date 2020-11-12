@@ -278,12 +278,12 @@ class EV3Game(EV3Brick):
         """
         Resetting motors' positions like it is done when the moves finish
         """
-        # Resetting Motor A to Position 1,
-        # which, for Motor A corresponds to Move 3
+        # Resetting Motor B to Position 1,
+        # which, for Motor B corresponds to Move 3
         self.move_3_rotate_b()
 
-        # Reseting Motor D to Position 1,
-        # which, for Motor D corresponds to Move 1
+        # Reseting Motor C to Position 1,
+        # which, for Motor C corresponds to Move 1
         self.move_1_rotate_c()
 
         self.current_b = self.current_c = 1
