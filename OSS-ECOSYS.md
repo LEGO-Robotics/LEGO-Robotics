@@ -203,7 +203,7 @@ Wiki
 [EV3 Print3rBot](https://github.com/cavenel/ev3-print3rbot)
 
 
-### Marc-Andre Bazergui
+### [Marc-Andre Bazergui](https://github.com/bazmarc)
 
 [Website](http://bazmarc.ca)
 
