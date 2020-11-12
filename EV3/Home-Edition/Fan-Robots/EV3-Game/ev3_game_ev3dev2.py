@@ -226,19 +226,20 @@ class EV3Game:
     def execute_move(self):
         speed = 10 * self.level
 
-        if self.rotate_b * self.rotate_c > 0:
-            self.b_motor.on_for_degrees(
-                speed=speed,
-                degrees=self.rotate_b,
-                brake=True,
-                block=False)
-            self.c_motor.on_for_degrees(
-                speed=speed,
-                degrees=self.rotate_c,
-                brake=True,
-                block=True)
-
-        elif self.current_b == 1:
+        # DISABLING BELOW ORIGINAL BLOCK, WHICH CAUSES CLASHES
+        # if self.rotate_b * self.rotate_c > 0:
+        #     self.b_motor.on_for_degrees(
+        #         speed=speed,
+        #         degrees=self.rotate_b,
+        #         brake=True,
+        #         block=False)
+        #     self.c_motor.on_for_degrees(
+        #         speed=speed,
+        #         degrees=self.rotate_c,
+        #         brake=True,
+        #         block=True)
+        # elif ...
+        if self.current_b == 1:
             self.b_motor.on_for_degrees(
                 speed=speed,
                 degrees=self.rotate_b,
@@ -252,6 +253,8 @@ class EV3Game:
                 block=True)
 
         else:
+            assert self.current_c == 1
+
             self.c_motor.on_for_degrees(
                 speed=speed,
                 degrees=self.rotate_c,

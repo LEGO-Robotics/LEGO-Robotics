@@ -227,19 +227,20 @@ class EV3Game:
     def execute_move(self):
         speed = 100 * self.level
 
-        if self.rotate_b * self.rotate_c > 0:
-            self.b_motor.run_to_rel_pos(
-                speed_sp=speed,
-                position_sp=self.rotate_b,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.c_motor.run_to_rel_pos(
-                speed_sp=speed,
-                position_sp=self.rotate_c,
-                stop_action=Motor.STOP_ACTION_HOLD)
-            self.b_motor.wait_while(Motor.STATE_RUNNING)
-            self.c_motor.wait_while(Motor.STATE_RUNNING)
-
-        elif self.current_b == 1:
+        # DISABLING BELOW ORIGINAL BLOCK, WHICH CAUSES CLASHES
+        # if self.rotate_b * self.rotate_c > 0:
+        #     self.b_motor.run_to_rel_pos(
+        #         speed_sp=speed,
+        #         position_sp=self.rotate_b,
+        #         stop_action=Motor.STOP_ACTION_HOLD)
+        #     self.c_motor.run_to_rel_pos(
+        #         speed_sp=speed,
+        #         position_sp=self.rotate_c,
+        #         stop_action=Motor.STOP_ACTION_HOLD)
+        #     self.b_motor.wait_while(Motor.STATE_RUNNING)
+        #     self.c_motor.wait_while(Motor.STATE_RUNNING)
+        # elif ...
+        if self.current_b == 1:
             self.b_motor.run_to_rel_pos(
                 speed_sp=speed,
                 position_sp=self.rotate_b,
@@ -253,6 +254,8 @@ class EV3Game:
             self.c_motor.wait_while(Motor.STATE_RUNNING)
 
         else:
+            assert self.current_c == 1
+
             self.c_motor.run_to_rel_pos(
                 speed_sp=speed,
                 position_sp=self.rotate_c,
