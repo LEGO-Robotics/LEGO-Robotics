@@ -169,15 +169,7 @@ class EV3Game:
         elif self.current_b == 3:
             self.rotate_b = -2 * self.OFFSET_HOLDCUP - 180
 
-    def move_2_rotate_c(self):
-        if self.current_c == 1:
-            self.rotate_c = 0
-
-        elif self.current_c == 2:
-            self.rotate_c = -self.OFFSET_HOLDCUP
-
-        elif self.current_c == 3:
-            self.rotate_c = self.OFFSET_HOLDCUP
+    move_2_rotate_c = move_1_rotate_c
 
     def move_2(self):
         self.move_2_rotate_b()
@@ -213,15 +205,7 @@ class EV3Game:
         self.current_b = 1
         self.current_c = 2
 
-    def move_4_rotate_b(self):
-        if self.current_b == 1:
-            self.rotate_b = 0
-
-        elif self.current_b == 2:
-            self.rotate_b = self.OFFSET_HOLDCUP
-
-        elif self.current_b == 3:
-            self.rotate_b = -self.OFFSET_HOLDCUP
+    move_4_rotate_b = move_3_rotate_b
 
     def move_4_rotate_c(self):
         if self.current_c == 1:
