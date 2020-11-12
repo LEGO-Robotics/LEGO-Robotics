@@ -11,7 +11,7 @@ from time import sleep, time
 
 
 class EV3Game(EV3Brick):
-    N_LEVELS = 9
+    N_LEVELS = 4   # motors moving too fast would cause clashes
     N_SHUFFLE_SECONDS = 15
     OFFSET_HOLDCUP = 60
 
@@ -53,11 +53,7 @@ class EV3Game(EV3Brick):
     def display_level(self):
         self.screen.clear()
 
-        self.screen.draw_text(
-            x=0, y=0,
-            text='Level {}'.format(self.level),
-            text_color=Color.BLACK,
-            background_color=None)
+        self.screen.print('Level {}'.format(self.level))
 
         sleep(1)
 

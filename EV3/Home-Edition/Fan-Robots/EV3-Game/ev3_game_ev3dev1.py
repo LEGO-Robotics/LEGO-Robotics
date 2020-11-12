@@ -21,7 +21,7 @@ from time import sleep, time
 
 
 class EV3Game:
-    N_LEVELS = 9
+    N_LEVELS = 4   # motors moving faster would cause clashes
     N_SHUFFLE_SECONDS = 15
     OFFSET_HOLDCUP = 60
 
