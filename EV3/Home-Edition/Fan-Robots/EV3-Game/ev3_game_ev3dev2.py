@@ -316,6 +316,10 @@ class EV3Game:
             elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
                 self.choice = 2
 
+                # wait for BEACON button to turn off
+                while self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                    pass
+
             elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
                 self.choice = 3
 
