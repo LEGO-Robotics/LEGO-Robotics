@@ -70,7 +70,12 @@ class EV3Game:
             block=True)
 
     def display_level(self):
-        ...
+        self.console.text_at(
+            column=1, row=1,
+            text='Level {}'.format(self.level),
+            reset_console=True,
+            inverse=False,
+            alignment='L')
 
     def display_cup_number(self):
         ...
@@ -102,7 +107,25 @@ class EV3Game:
         self.current_b = self.current_c = 1
 
     def select_level(self):
-        ...
+        while self.touch_sensor.is_released:
+            if (self.ir_sensor.top_left(channel=self.ir_beacon_channel) or
+                    self.ir_sensor.top_right(channel=self.ir_beacon_channel)) \
+                    and (self.level < 9):
+                self.level += 1
+
+                self.display_level()
+
+            elif (self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) or
+                  self.ir_sensor.bottom_right(channel=self.ir_beacon_channel))\
+                    and (self.level > 1):
+                self.level += 1
+
+                self.display_level()
+
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Go.wav',
+            volume=100,
+            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
 
     def move_1_rotate_b(self):
         if self.current_b == 1:
