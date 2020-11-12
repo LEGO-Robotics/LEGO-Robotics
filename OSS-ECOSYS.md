@@ -305,6 +305,11 @@ Wiki
 ### [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
 
+### Mr. Hino
+
+[YouTube Channel](https://www.youtube.com/channel/UCvuw_UluXNRPKhqK5GU8SrQ)
+
+
 ### [Anton van Houcke](https://github.com/antonvh)
 
 [Anton's Mindstorms Website](https://antonsmindstorms.com)

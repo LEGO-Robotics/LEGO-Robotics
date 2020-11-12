@@ -168,15 +168,7 @@ class EV3Game:
         elif self.current_b == 3:
             self.rotate_b = -2 * self.OFFSET_HOLDCUP - 180
 
-    def move_2_rotate_c(self):
-        if self.current_c == 1:
-            self.rotate_c = 0
-
-        elif self.current_c == 2:
-            self.rotate_c = -self.OFFSET_HOLDCUP
-
-        elif self.current_c == 3:
-            self.rotate_c = self.OFFSET_HOLDCUP
+    move_2_rotate_c = move_1_rotate_c
 
     def move_2(self):
         self.move_2_rotate_b()
@@ -212,15 +204,7 @@ class EV3Game:
         self.current_b = 1
         self.current_c = 2
 
-    def move_4_rotate_b(self):
-        if self.current_b == 1:
-            self.rotate_b = 0
-
-        elif self.current_b == 2:
-            self.rotate_b = self.OFFSET_HOLDCUP
-
-        elif self.current_b == 3:
-            self.rotate_b = -self.OFFSET_HOLDCUP
+    move_4_rotate_b = move_3_rotate_b
 
     def move_4_rotate_c(self):
         if self.current_c == 1:
@@ -242,19 +226,20 @@ class EV3Game:
     def execute_move(self):
         speed = 10 * self.level
 
-        if self.rotate_b * self.rotate_c > 0:
-            self.b_motor.on_for_degrees(
-                speed=speed,
-                degrees=self.rotate_b,
-                brake=True,
-                block=False)
-            self.c_motor.on_for_degrees(
-                speed=speed,
-                degrees=self.rotate_c,
-                brake=True,
-                block=True)
-
-        elif self.current_b == 1:
+        # DISABLING BELOW ORIGINAL BLOCK, WHICH CAUSES CLASHES
+        # if self.rotate_b * self.rotate_c > 0:
+        #     self.b_motor.on_for_degrees(
+        #         speed=speed,
+        #         degrees=self.rotate_b,
+        #         brake=True,
+        #         block=False)
+        #     self.c_motor.on_for_degrees(
+        #         speed=speed,
+        #         degrees=self.rotate_c,
+        #         brake=True,
+        #         block=True)
+        # elif ...
+        if self.current_b == 1:
             self.b_motor.on_for_degrees(
                 speed=speed,
                 degrees=self.rotate_b,
@@ -268,6 +253,8 @@ class EV3Game:
                 block=True)
 
         else:
+            assert self.current_c == 1
+
             self.c_motor.on_for_degrees(
                 speed=speed,
                 degrees=self.rotate_c,
@@ -320,12 +307,12 @@ class EV3Game:
         """
         Resetting motors' positions like it is done when the moves finish
         """
-        # Resetting Motor A to Position 1,
-        # which, for Motor A corresponds to Move 3
+        # Resetting Motor B to Position 1,
+        # which, for Motor B corresponds to Move 3
         self.move_3_rotate_b()
 
-        # Reseting Motor D to Position 1,
-        # which, for Motor D corresponds to Move 1
+        # Reseting Motor C to Position 1,
+        # which, for Motor C corresponds to Move 1
         self.move_1_rotate_c()
 
         self.current_b = self.current_c = 1
