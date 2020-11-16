@@ -414,6 +414,11 @@ NXT_Python (2007)
 [2016 RoboCup CI CAD Files](https://github.com/MelbourneHighSchoolRobotics/2016-RoboCup-CI-CAD-Files)
 
 
+### Michal Ossowski
+
+[Tech Bricks YouTube Channel](https://www.youtube.com/user/MrOssa1994)
+
+
 ### [David "Dave" Parker]
 
 [NXT Programs](http://nxtprograms.com)
