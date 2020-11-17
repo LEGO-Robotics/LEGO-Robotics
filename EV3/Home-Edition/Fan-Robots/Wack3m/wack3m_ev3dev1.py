@@ -7,6 +7,7 @@ from ev3dev.ev3 import (
     Leds, Screen, Sound
 )
 
+from PIL import Image
 from random import randint
 from time import sleep, time
 
