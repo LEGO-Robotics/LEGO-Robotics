@@ -8,7 +8,16 @@ from ev3dev2.console import Console
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
-from random import randint
+# import os
+# import sys
+# sys.path.append(os.path.expanduser('~'))
+from util.ev3dev_fast.ev3fast import (
+    LargeMotor as FastLargeMotor,
+    MediumMotor as FastMediumMotor,
+    TouchSensor as FastTouchSensor
+)
+
+from random import randint, uniform
 from time import sleep, time
 
 
@@ -17,12 +26,21 @@ class Wack3m:
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             middle_motor_port: str = OUTPUT_A,
-            touch_sensor_port: str = INPUT_1, ir_sensor_port: str = INPUT_4):
-        self.left_motor = LargeMotor(address=left_motor_port)
-        self.right_motor = LargeMotor(address=right_motor_port)
-        self.middle_motor = MediumMotor(address=middle_motor_port)
+            touch_sensor_port: str = INPUT_1, ir_sensor_port: str = INPUT_4,
+            fast=False):
+        if fast:
+            self.left_motor = FastLargeMotor(address=left_motor_port)
+            self.right_motor = FastLargeMotor(address=right_motor_port)
+            self.middle_motor = FastMediumMotor(address=middle_motor_port)
 
-        self.touch_sensor = TouchSensor(address=touch_sensor_port)
+            self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
+
+        else:
+            self.left_motor = LargeMotor(address=left_motor_port)
+            self.right_motor = LargeMotor(address=right_motor_port)
+            self.middle_motor = MediumMotor(address=middle_motor_port)
+
+            self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
 
