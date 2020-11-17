@@ -8,7 +8,7 @@ from ev3dev.ev3 import (
 )
 
 from random import randint
-from time import sleep
+from time import sleep, time
 
 
 class Wack3m:
@@ -39,6 +39,7 @@ class Wack3m:
             color=Leds.RED,
             pct=1)
 
+        self.screen.clear()
         self.screen.draw.text(
             xy=(5, 2),
             text='WACK3M',
@@ -52,6 +53,7 @@ class Wack3m:
             language=None,
             stroke_width=0,
             stroke_fill=None)
+        self.screen.update()
 
         self.left_motor.run_timed(
             speed_sp=-300,
