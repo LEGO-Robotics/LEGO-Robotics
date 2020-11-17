@@ -17,7 +17,7 @@ from util.ev3dev_fast.ev3fast import (
     TouchSensor as FastTouchSensor
 )
 
-from random import randint, uniform
+from random import randint
 from time import sleep, time
 
 
