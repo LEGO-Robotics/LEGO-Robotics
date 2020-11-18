@@ -101,6 +101,7 @@ class Wack3m:
         self.right_motor.reset()
 
     def main(self):
+        # reset disks
         self.start_up()
 
         while True:
@@ -120,6 +121,7 @@ class Wack3m:
                 color=Leds.ORANGE,
                 pct=1)
 
+            # wait for touch
             while not self.touch_sensor.is_pressed:
                 pass
 
@@ -153,6 +155,7 @@ class Wack3m:
                     im=Image.open('/home/robot/image/EV3 icon.bmp'))
                 self.screen.update()
 
+                # wait for 0.1 to 3 seconds for the next disk to pop up
                 sleep(uniform(0.1, 3))
 
                 which_motor = randint(1, 3)
@@ -259,6 +262,7 @@ class Wack3m:
 
                 total_response_time += response_time
 
+            # calculate average time
             average_response_time = total_response_time / self.N_WHACK_TIMES
 
             self.screen.clear()

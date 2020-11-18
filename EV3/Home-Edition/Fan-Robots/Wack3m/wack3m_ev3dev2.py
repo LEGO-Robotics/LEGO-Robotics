@@ -96,6 +96,7 @@ class Wack3m:
         self.right_motor.reset()
 
     def main(self):
+        # reset disks
         self.start_up()
 
         while True:
@@ -117,6 +118,7 @@ class Wack3m:
                 duration=1,
                 block=True)
 
+            # wait for touch
             self.touch_sensor.wait_for_pressed()
 
             self.speaker.play_file(
@@ -149,6 +151,7 @@ class Wack3m:
                         clear_screen=True)
                     self.screen.update()
 
+                # wait for 0.1 to 3 seconds for the next disk to pop up
                 sleep(0.1 + (3 - 0.1) * randint(1, 10) / 10)
 
                 which_motor = randint(1, 3)
@@ -257,6 +260,7 @@ class Wack3m:
 
                 total_response_time += response_time
 
+            # calculate average time
             average_response_time = total_response_time / self.N_WHACK_TIMES
 
             if self.screen:
