@@ -12,7 +12,7 @@ from time import sleep
 
 WACK3M = Wack3m(fast=True)
 
-WACK3M.screen.image.paste(im=Image.open('/home/robot/image/EV3.bmp'))
+WACK3M.screen.image.paste(im=Image.open('/home/robot/image/EV3 icon.bmp'))
 WACK3M.screen.update()
 
 WACK3M.left_motor.run_timed(
@@ -34,7 +34,7 @@ while True:
 
     WACK3M.left_motor.run_timed(
         speed_sp=-400,
-        time_sp=1000 * 0.5,
+        time_sp=500,
         stop_action=Motor.STOP_ACTION_HOLD)
     WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
 
