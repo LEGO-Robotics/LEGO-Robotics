@@ -7,8 +7,7 @@ from random import uniform
 from time import sleep
 
 
-WACK3M = Wack3m(fast=True,
-                use_screen=True)
+WACK3M = Wack3m(use_screen=True)
 
 WACK3M.screen.image_filename(
     filename='/home/robot/image/EV3 icon.bmp',
