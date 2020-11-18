@@ -172,13 +172,13 @@ class Wack3m:
                         pass
 
                 else:
-                    self.left_motor.on_for_degrees(
+                    self.right_motor.on_for_degrees(
                         speed=100,
                         degrees=60,
                         brake=False,
                         block=True)
 
-                    self.left_motor.on_for_seconds(
+                    self.right_motor.on_for_seconds(
                         speed=-40,
                         seconds=0.5,
                         brake=True,
