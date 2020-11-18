@@ -179,7 +179,7 @@ class Wack3m:
 
                 elif which_motor == 2:
                     self.middle_motor.on_for_degrees(
-                        speed=50,
+                        speed=100,
                         degrees=170,
                         brake=False,
                         block=True)

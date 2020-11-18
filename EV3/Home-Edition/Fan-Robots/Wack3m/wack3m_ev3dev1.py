@@ -183,7 +183,7 @@ class Wack3m:
 
                 elif which_motor == 2:
                     self.middle_motor.run_to_rel_pos(
-                        speed_sp=500,
+                        speed_sp=1000,
                         position_sp=170,
                         stop_action=Motor.STOP_ACTION_COAST)
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
