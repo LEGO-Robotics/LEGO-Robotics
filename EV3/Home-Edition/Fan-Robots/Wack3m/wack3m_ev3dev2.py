@@ -29,7 +29,7 @@ class Wack3m:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             middle_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, ir_sensor_port: str = INPUT_4,
-            fast=False):
+            fast=False, use_screen=False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)
@@ -49,6 +49,12 @@ class Wack3m:
         self.console = Console()
         self.leds = Leds()
         self.speaker = Sound()
+
+        if use_screen:
+            from ev3dev2.display import Display
+            self.screen = Display()
+        else:
+            self.screen = None
 
     def start_up(self):
         self.leds.animate_flash(
