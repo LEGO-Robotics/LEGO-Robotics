@@ -22,14 +22,14 @@ from time import sleep, time
 
 
 class Wack3m:
-    N_WACK_TIMES = 10
+    N_WHACK_TIMES = 10
 
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             middle_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, ir_sensor_port: str = INPUT_4,
-            fast=False):
+            fast=False, use_screen=False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)
@@ -49,6 +49,12 @@ class Wack3m:
         self.console = Console()
         self.leds = Leds()
         self.speaker = Sound()
+
+        if use_screen:
+            from ev3dev2.display import Display
+            self.screen = Display()
+        else:
+            self.screen = None
 
     def start_up(self):
         self.leds.animate_flash(
@@ -98,6 +104,12 @@ class Wack3m:
                 volume=100,
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
+            if self.screen:
+                self.screen.image_filename(
+                    filename='/home/robot/image/Touch sensor.bmp',
+                    clear_screen=True)
+                self.screen.update()
+
             self.leds.animate_flash(
                 color='ORANGE',
                 groups=('LEFT', 'RIGHT'),
@@ -123,13 +135,19 @@ class Wack3m:
 
             sleep(1)
 
-            for _ in range(self.N_WACK_TIMES):
+            for _ in range(self.N_WHACK_TIMES):
                 self.leds.animate_flash(
                     color='GREEN',
                     groups=('LEFT', 'RIGHT'),
                     sleeptime=0.5,
                     duration=1,
                     block=True)
+
+                if self.screen:
+                    self.screen.image_filename(
+                        filename='/home/robot/image/EV3 icon.bmp',
+                        clear_screen=True)
+                    self.screen.update()
 
                 sleep(0.1 + (3 - 0.1) * randint(1, 10) / 10)
 
@@ -141,6 +159,12 @@ class Wack3m:
                         degrees=60,
                         brake=False,
                         block=True)
+
+                    if self.screen:
+                        self.screen.image_filename(
+                            filename='/home/robot/image/Middle left.bmp',
+                            clear_screen=True)
+                        self.screen.update()
 
                     self.left_motor.on_for_seconds(
                         speed=-40,
@@ -160,10 +184,16 @@ class Wack3m:
                         brake=False,
                         block=True)
 
+                    if self.screen:
+                        self.screen.image_filename(
+                            filename='/home/robot/image/Neutral.bmp',
+                            clear_screen=True)
+                        self.screen.update()
+
                     self.middle_motor.on_for_seconds(
                         speed=-40,
                         seconds=0.4,
-                        brake=True,
+                        brake=False,
                         block=True)
 
                     proximity = self.ir_sensor.proximity
@@ -178,6 +208,12 @@ class Wack3m:
                         brake=False,
                         block=True)
 
+                    if self.screen:
+                        self.screen.image_filename(
+                            filename='/home/robot/image/Middle right.bmp',
+                            clear_screen=True)
+                        self.screen.update()
+
                     self.right_motor.on_for_seconds(
                         speed=-40,
                         seconds=0.5,
@@ -190,6 +226,12 @@ class Wack3m:
                         pass
 
                 response_time = time() - start_time
+
+                if self.screen:
+                    self.screen.image_filename(
+                        filename='/home/robot/image/Dizzy.bmp',
+                        clear_screen=True)
+                    self.screen.update()
 
                 self.console.text_at(
                     column=1, row=1,
@@ -212,7 +254,7 @@ class Wack3m:
 
                 total_response_time += response_time
 
-            average_response_time = total_response_time / self.N_WACK_TIMES
+            average_response_time = total_response_time / self.N_WHACK_TIMES
 
             self.console.text_at(
                 column=1, row=1,

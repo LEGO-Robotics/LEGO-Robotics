@@ -22,7 +22,7 @@ from time import sleep, time
 
 
 class Wack3m:
-    N_WACK_TIMES = 10
+    N_WHACK_TIMES = 10
 
     def __init__(
             self,
@@ -138,7 +138,7 @@ class Wack3m:
 
             sleep(1)
 
-            for _ in range(self.N_WACK_TIMES):
+            for _ in range(self.N_WHACK_TIMES):
                 self.leds.set_color(
                     group=Leds.LEFT,
                     color=Leds.GREEN,
@@ -172,9 +172,9 @@ class Wack3m:
 
                     self.left_motor.run_timed(
                         speed_sp=-400,
-                        time_sp=1000 * 0.5,
+                        time_sp=500,
                         stop_action=Motor.STOP_ACTION_HOLD)
-                    self.right_motor.wait_while(Motor.STATE_RUNNING)
+                    self.left_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity
                     start_time = time()
@@ -194,8 +194,8 @@ class Wack3m:
 
                     self.middle_motor.run_timed(
                         speed_sp=-400,
-                        time_sp=1000 * 0.4,
-                        stop_action=Motor.STOP_ACTION_HOLD)
+                        time_sp=400,
+                        stop_action=Motor.STOP_ACTION_COAST)
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity
@@ -216,7 +216,7 @@ class Wack3m:
 
                     self.right_motor.run_timed(
                         speed_sp=-400,
-                        time_sp=1000 * 0.5,
+                        time_sp=500,
                         stop_action=Motor.STOP_ACTION_HOLD)
                     self.right_motor.wait_while(Motor.STATE_RUNNING)
 
@@ -259,7 +259,7 @@ class Wack3m:
 
                 total_response_time += response_time
 
-            average_response_time = total_response_time / self.N_WACK_TIMES
+            average_response_time = total_response_time / self.N_WHACK_TIMES
 
             self.screen.clear()
             self.screen.draw.text(
@@ -283,7 +283,8 @@ class Wack3m:
                          if average_response_time <= 1
                          else '/home/robot/sound/Good job.wav').wait()
 
-            self.speaker.play(wav_file='/home/robot/sound/Good job.wav').wait()
+            self.speaker.play(
+                wav_file='/home/robot/sound/Game over.wav').wait()
 
             self.leds.set_color(
                 group=Leds.LEFT,

@@ -11,7 +11,7 @@ from random import randint, uniform
 
 
 class Wack3m(EV3Brick):
-    N_WACK_TIMES = 10
+    N_WHACK_TIMES = 10
 
     def __init__(
             self,
@@ -80,7 +80,7 @@ class Wack3m(EV3Brick):
 
             sleep(1)
 
-            for _ in range(self.N_WACK_TIMES):
+            for _ in range(self.N_WHACK_TIMES):
                 self.light.on(color=Color.GREEN)
 
                 self.screen.load_image(ImageFile.EV3_ICON)
@@ -100,7 +100,7 @@ class Wack3m(EV3Brick):
 
                     self.left_motor.run_time(
                         speed=-400,
-                        time=1000 * 0.5,
+                        time=500,
                         then=Stop.HOLD,
                         wait=True)
 
@@ -120,8 +120,8 @@ class Wack3m(EV3Brick):
 
                     self.middle_motor.run_time(
                         speed=-400,
-                        time=1000 * 0.4,
-                        then=Stop.HOLD,
+                        time=400,
+                        then=Stop.COAST,
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
@@ -140,7 +140,7 @@ class Wack3m(EV3Brick):
 
                     self.right_motor.run_time(
                         speed=-400,
-                        time=1000 * 0.5,
+                        time=500,
                         then=Stop.HOLD,
                         wait=True)
 
@@ -161,7 +161,7 @@ class Wack3m(EV3Brick):
 
                 total_response_time += response_time
 
-            average_response_time = total_response_time / self.N_WACK_TIMES
+            average_response_time = total_response_time / self.N_WHACK_TIMES
 
             self.screen.clear()
             self.screen.print(
