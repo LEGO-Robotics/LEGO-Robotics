@@ -256,6 +256,8 @@ class Wack3m:
 
             average_response_time = total_response_time / self.N_WHACK_TIMES
 
+            if self.screen:
+                self.screen.clear()
             self.console.text_at(
                 column=1, row=1,
                 text='Avg Time: {:.1f}s'.format(average_response_time),
