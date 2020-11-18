@@ -33,11 +33,7 @@ class Wack3m(EV3Brick):
         self.light.on(color=Color.RED)
 
         self.screen.clear()
-        self.screen.draw_text(
-            x=5, y=2,
-            text='WACK3M',
-            text_color=Color.BLACK,
-            background_color=None)
+        self.screen.print('WACK3M')
 
         self.left_motor.run_time(
             speed=-300,
