@@ -33,7 +33,7 @@ while True:
 
     WACK3M.left_motor.run_time(
         speed=-400,
-        time=1000 * 0.5,
+        time=500,
         then=Stop.HOLD,
         wait=True)
 
