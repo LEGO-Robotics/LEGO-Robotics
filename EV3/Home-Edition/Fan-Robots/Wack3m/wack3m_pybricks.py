@@ -92,7 +92,7 @@ class Wack3m(EV3Brick):
                 if which_motor == 1:
                     self.left_motor.run_angle(
                         speed=1000,
-                        rotation_angle=60,
+                        rotation_angle=90,   # 60 too weak
                         then=Stop.COAST,
                         wait=True)
 
@@ -132,7 +132,7 @@ class Wack3m(EV3Brick):
                 else:
                     self.right_motor.run_angle(
                         speed=1000,
-                        rotation_angle=60,
+                        rotation_angle=90,   # 60 too weak
                         then=Stop.COAST,
                         wait=True)
 

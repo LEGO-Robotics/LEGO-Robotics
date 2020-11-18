@@ -27,7 +27,7 @@ while True:
 
     WACK3M.left_motor.run_angle(
         speed=1000,
-        rotation_angle=60,
+        rotation_angle=90,   # 60 too weak
         then=Stop.COAST,
         wait=True)
 
