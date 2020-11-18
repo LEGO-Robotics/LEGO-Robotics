@@ -209,7 +209,7 @@ class Wack3m:
                         degrees=60,
                         brake=False,
                         block=True)
-                    
+
                     start_time = time()
 
                     if self.screen:
