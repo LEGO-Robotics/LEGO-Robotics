@@ -160,6 +160,8 @@ class Wack3m:
                         brake=False,
                         block=True)
 
+                    start_time = time()
+
                     if self.screen:
                         self.screen.image_filename(
                             filename='/home/robot/image/Middle left.bmp',
@@ -173,7 +175,6 @@ class Wack3m:
                         block=True)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 2:
                         pass
 
@@ -183,6 +184,8 @@ class Wack3m:
                         degrees=170,
                         brake=False,
                         block=True)
+
+                    start_time = time()
 
                     if self.screen:
                         self.screen.image_filename(
@@ -197,7 +200,6 @@ class Wack3m:
                         block=True)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 3:
                         pass
 
@@ -207,6 +209,8 @@ class Wack3m:
                         degrees=60,
                         brake=False,
                         block=True)
+                    
+                    start_time = time()
 
                     if self.screen:
                         self.screen.image_filename(
@@ -221,7 +225,6 @@ class Wack3m:
                         block=True)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 3:
                         pass
 

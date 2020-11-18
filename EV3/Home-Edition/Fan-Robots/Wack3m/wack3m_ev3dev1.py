@@ -164,6 +164,7 @@ class Wack3m:
                         speed_sp=1000,
                         position_sp=60,
                         stop_action=Motor.STOP_ACTION_COAST)
+                    start_time = time()
                     self.left_motor.wait_while(Motor.STATE_RUNNING)
 
                     self.screen.image.paste(
@@ -177,7 +178,6 @@ class Wack3m:
                     self.left_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 2:
                         pass
 
@@ -186,6 +186,7 @@ class Wack3m:
                         speed_sp=1000,
                         position_sp=170,
                         stop_action=Motor.STOP_ACTION_COAST)
+                    start_time = time()
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
 
                     self.screen.image.paste(
@@ -199,7 +200,6 @@ class Wack3m:
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 3:
                         pass
 
@@ -208,6 +208,7 @@ class Wack3m:
                         speed_sp=1000,
                         position_sp=60,
                         stop_action=Motor.STOP_ACTION_COAST)
+                    start_time = time()
                     self.right_motor.wait_while(Motor.STATE_RUNNING)
 
                     self.screen.image.paste(
@@ -221,7 +222,6 @@ class Wack3m:
                     self.right_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity
-                    start_time = time()
                     while abs(self.ir_sensor.proximity - proximity) <= 3:
                         pass
 
