@@ -195,7 +195,7 @@ class Wack3m:
                     self.middle_motor.run_timed(
                         speed_sp=-400,
                         time_sp=400,
-                        stop_action=Motor.STOP_ACTION_HOLD)
+                        stop_action=Motor.STOP_ACTION_COAST)
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
 
                     proximity = self.ir_sensor.proximity

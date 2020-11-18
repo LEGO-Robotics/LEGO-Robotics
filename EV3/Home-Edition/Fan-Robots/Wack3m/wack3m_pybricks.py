@@ -121,7 +121,7 @@ class Wack3m(EV3Brick):
                     self.middle_motor.run_time(
                         speed=-400,
                         time=400,
-                        then=Stop.HOLD,
+                        then=Stop.COAST,
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
