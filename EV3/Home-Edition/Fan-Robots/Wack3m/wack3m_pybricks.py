@@ -36,7 +36,7 @@ class Wack3m(EV3Brick):
         self.screen.print('WACK3M')
 
         self.left_motor.run_time(
-            speed=-300,
+            speed=-1000,   # orig: -300
             time=1000,
             then=Stop.HOLD,
             wait=True)
@@ -44,15 +44,15 @@ class Wack3m(EV3Brick):
         self.left_motor.reset_angle(angle=0)
 
         self.middle_motor.run_time(
-            speed=-50,
-            time=2000,
+            speed=-1000,   # orig: -50
+            time=1000,   # orig: 2000
             then=Stop.HOLD,
             wait=True)
 
         self.middle_motor.reset_angle(angle=0)
 
         self.right_motor.run_time(
-            speed=-300,
+            speed=-1000,   # orig: -300
             time=1000,
             then=Stop.HOLD,
             wait=True)

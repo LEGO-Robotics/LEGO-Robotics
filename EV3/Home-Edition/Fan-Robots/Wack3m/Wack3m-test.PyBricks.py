@@ -33,7 +33,7 @@ while True:
 
     WACK3M.middle_motor.run_angle(
         speed=1000,
-        rotation_angle=170,
+        rotation_angle=210,   # orig: 170
         then=Stop.COAST,
         wait=True)
 
