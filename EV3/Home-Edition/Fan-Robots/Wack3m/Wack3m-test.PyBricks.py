@@ -14,13 +14,7 @@ WACK3M = Wack3m()
 
 WACK3M.screen.load_image(ImageFile.EV3_ICON)
 
-WACK3M.left_motor.run_time(
-    speed=-300,
-    time=1000,
-    then=Stop.HOLD,
-    wait=True)
-
-WACK3M.left_motor.reset_angle(angle=0)
+WACK3M.start_up()
 
 while True:
     sleep(uniform(0.1, 3))
@@ -32,6 +26,30 @@ while True:
         wait=True)
 
     WACK3M.left_motor.run_time(
+        speed=-400,
+        time=500,
+        then=Stop.HOLD,
+        wait=True)
+
+    WACK3M.middle_motor.run_angle(
+        speed=1000,
+        rotation_angle=170,
+        then=Stop.COAST,
+        wait=True)
+
+    WACK3M.middle_motor.run_time(
+        speed=-400,
+        time=400,
+        then=Stop.COAST,
+        wait=True)
+
+    WACK3M.right_motor.run_angle(
+        speed=1000,
+        rotation_angle=90,   # 60 too weak
+        then=Stop.COAST,
+        wait=True)
+
+    WACK3M.right_motor.run_time(
         speed=-400,
         time=500,
         then=Stop.HOLD,

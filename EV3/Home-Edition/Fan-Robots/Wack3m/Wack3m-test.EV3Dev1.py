@@ -15,13 +15,7 @@ WACK3M = Wack3m()
 WACK3M.screen.image.paste(im=Image.open('/home/robot/image/EV3 icon.bmp'))
 WACK3M.screen.update()
 
-WACK3M.left_motor.run_timed(
-    speed_sp=-300,
-    time_sp=1000,
-    stop_action=Motor.STOP_ACTION_HOLD)
-WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
-
-WACK3M.left_motor.reset()
+WACK3M.start_up()
 
 while True:
     sleep(uniform(0.1, 3))
