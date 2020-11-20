@@ -14,13 +14,7 @@ WACK3M.screen.image_filename(
     clear_screen=True)
 WACK3M.screen.update()
 
-WACK3M.left_motor.on_for_seconds(
-    speed=-30,
-    seconds=1,
-    brake=True,
-    block=True)
-
-WACK3M.left_motor.reset()
+WACK3M.start_up()
 
 while True:
     sleep(uniform(0.1, 3))
@@ -32,6 +26,30 @@ while True:
         block=True)
 
     WACK3M.left_motor.on_for_seconds(
+        speed=-40,
+        seconds=0.5,
+        brake=True,
+        block=True)
+
+    WACK3M.middle_motor.on_for_degrees(
+        speed=100,
+        degrees=170,
+        brake=False,
+        block=True)
+
+    WACK3M.middle_motor.on_for_seconds(
+        speed=-40,
+        seconds=0.4,
+        brake=False,
+        block=True)
+
+    WACK3M.right_motor.on_for_degrees(
+        speed=100,
+        degrees=60,
+        brake=False,
+        block=True)
+
+    WACK3M.right_motor.on_for_seconds(
         speed=-40,
         seconds=0.5,
         brake=True,
