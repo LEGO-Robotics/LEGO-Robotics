@@ -185,7 +185,7 @@ class Wack3m:
                         self.screen.update()
 
                     self.left_motor.on_for_seconds(
-                        speed=-40,
+                        speed=-100,   # orig: -40
                         seconds=0.5,
                         brake=True,
                         block=True)
@@ -210,8 +210,8 @@ class Wack3m:
                         self.screen.update()
 
                     self.middle_motor.on_for_seconds(
-                        speed=-40,
-                        seconds=0.4,
+                        speed=-100,   # orig: -40
+                        seconds=0.5,   # orig: 0.4
                         brake=False,
                         block=True)
 
@@ -235,7 +235,7 @@ class Wack3m:
                         self.screen.update()
 
                     self.right_motor.on_for_seconds(
-                        speed=-40,
+                        speed=-100,   # orig: -40
                         seconds=0.5,
                         brake=True,
                         block=True)

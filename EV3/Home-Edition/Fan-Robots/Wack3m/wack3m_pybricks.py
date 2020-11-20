@@ -92,7 +92,7 @@ class Wack3m(EV3Brick):
                 if which_motor == 1:
                     self.left_motor.run_angle(
                         speed=1000,
-                        rotation_angle=90,   # 60 too weak
+                        rotation_angle=90,   # orig: 60
                         then=Stop.COAST,
                         wait=True)
 
@@ -101,7 +101,7 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.MIDDLE_LEFT)
 
                     self.left_motor.run_time(
-                        speed=-400,
+                        speed=-1000,   # orig: -400
                         time=500,
                         then=Stop.HOLD,
                         wait=True)
@@ -122,8 +122,8 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.NEUTRAL)
 
                     self.middle_motor.run_time(
-                        speed=-400,
-                        time=400,
+                        speed=-1000,   # orig: -400
+                        time=500,   # orig: 400
                         then=Stop.COAST,
                         wait=True)
 
@@ -134,7 +134,7 @@ class Wack3m(EV3Brick):
                 else:
                     self.right_motor.run_angle(
                         speed=1000,
-                        rotation_angle=90,   # 60 too weak
+                        rotation_angle=90,   # orig: 60
                         then=Stop.COAST,
                         wait=True)
 
@@ -143,7 +143,7 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.MIDDLE_RIGHT)
 
                     self.right_motor.run_time(
-                        speed=-400,
+                        speed=-1000,   # orig: -400
                         time=500,
                         then=Stop.HOLD,
                         wait=True)
