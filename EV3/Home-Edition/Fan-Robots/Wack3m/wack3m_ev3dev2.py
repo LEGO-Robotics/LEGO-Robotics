@@ -71,11 +71,19 @@ class Wack3m:
             inverse=False,
             alignment='L')
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.left_motor.on_for_seconds(
             speed=-30,
             seconds=1,
             brake=True,
             block=True)
+        # SAME PROBLEMATIC OUTCOME
+        # self.left_motor.on(
+        #     speed=-30,
+        #     brake=False,
+        #     block=False)
+        # self.left_motor.wait_until_not_moving()
+        # self.left_motor.off(brake=True)
 
         self.left_motor.reset()
 
@@ -87,11 +95,19 @@ class Wack3m:
 
         self.middle_motor.reset()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.right_motor.on_for_seconds(
             speed=-30,
             seconds=1,
             brake=True,
             block=True)
+        # SAME PROBLEMATIC OUTCOME
+        # self.right_motor.on(
+        #     speed=-30,
+        #     brake=False,
+        #     block=False)
+        # self.right_motor.wait_until_not_moving()
+        # self.right_motor.off(brake=True)
 
         self.right_motor.reset()
 
@@ -172,7 +188,7 @@ class Wack3m:
                         self.screen.update()
 
                     self.left_motor.on_for_seconds(
-                        speed=-40,
+                        speed=-100,   # orig: -40
                         seconds=0.5,
                         brake=True,
                         block=True)
@@ -197,8 +213,8 @@ class Wack3m:
                         self.screen.update()
 
                     self.middle_motor.on_for_seconds(
-                        speed=-40,
-                        seconds=0.4,
+                        speed=-100,   # orig: -40
+                        seconds=0.5,   # orig: 0.4
                         brake=False,
                         block=True)
 
@@ -222,7 +238,7 @@ class Wack3m:
                         self.screen.update()
 
                     self.right_motor.on_for_seconds(
-                        speed=-40,
+                        speed=-100,   # orig: -40
                         seconds=0.5,
                         brake=True,
                         block=True)

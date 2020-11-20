@@ -76,11 +76,16 @@ class Wack3m:
             stroke_fill=None)
         self.screen.update()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.left_motor.run_timed(
             speed_sp=-300,
             time_sp=1000,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.left_motor.wait_while(Motor.STATE_RUNNING)
+        # SAME PROBLEMATIC OUTCOME
+        # self.left_motor.run_forever(speed_sp=-300)
+        # self.left_motor.wait_until_not_moving()
+        # self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.left_motor.reset()
 
@@ -92,11 +97,16 @@ class Wack3m:
 
         self.middle_motor.reset()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.right_motor.run_timed(
             speed_sp=-300,
             time_sp=1000,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.wait_while(Motor.STATE_RUNNING)
+        # SAME PROBLEMATIC OUTCOME
+        # self.right_motor.run_forever(speed_sp=-300)
+        # self.right_motor.wait_until_not_moving()
+        # self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.right_motor.reset()
 
@@ -175,7 +185,7 @@ class Wack3m:
                     self.screen.update()
 
                     self.left_motor.run_timed(
-                        speed_sp=-400,
+                        speed_sp=-1000,   # orig: -400
                         time_sp=500,
                         stop_action=Motor.STOP_ACTION_HOLD)
                     self.left_motor.wait_while(Motor.STATE_RUNNING)
@@ -197,8 +207,8 @@ class Wack3m:
                     self.screen.update()
 
                     self.middle_motor.run_timed(
-                        speed_sp=-400,
-                        time_sp=400,
+                        speed_sp=-1000,   # orig: -400
+                        time_sp=500,   # orig: 400
                         stop_action=Motor.STOP_ACTION_COAST)
                     self.middle_motor.wait_while(Motor.STATE_RUNNING)
 
@@ -219,7 +229,7 @@ class Wack3m:
                     self.screen.update()
 
                     self.right_motor.run_timed(
-                        speed_sp=-400,
+                        speed_sp=-1000,   # orig: -400
                         time_sp=500,
                         stop_action=Motor.STOP_ACTION_HOLD)
                     self.right_motor.wait_while(Motor.STATE_RUNNING)

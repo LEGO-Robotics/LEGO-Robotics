@@ -15,13 +15,7 @@ WACK3M = Wack3m()
 WACK3M.screen.image.paste(im=Image.open('/home/robot/image/EV3 icon.bmp'))
 WACK3M.screen.update()
 
-WACK3M.left_motor.run_timed(
-    speed_sp=-300,
-    time_sp=1000,
-    stop_action=Motor.STOP_ACTION_HOLD)
-WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
-
-WACK3M.left_motor.reset()
+WACK3M.start_up()
 
 while True:
     sleep(uniform(0.1, 3))
@@ -33,7 +27,31 @@ while True:
     WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
 
     WACK3M.left_motor.run_timed(
-        speed_sp=-400,
+        speed_sp=-1000,   # orig: -400
+        time_sp=500,
+        stop_action=Motor.STOP_ACTION_HOLD)
+    WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.middle_motor.run_to_rel_pos(
+        speed_sp=1000,
+        position_sp=170,
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.middle_motor.run_timed(
+        speed_sp=-1000,   # orig: -400
+        time_sp=500,   # orig: 400
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.right_motor.run_to_rel_pos(
+        speed_sp=1000,
+        position_sp=60,
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.right_motor.run_timed(
+        speed_sp=-1000,   # orig: -400
         time_sp=500,
         stop_action=Motor.STOP_ACTION_HOLD)
     WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)

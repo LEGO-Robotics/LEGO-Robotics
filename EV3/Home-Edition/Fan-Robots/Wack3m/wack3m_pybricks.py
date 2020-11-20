@@ -36,7 +36,7 @@ class Wack3m(EV3Brick):
         self.screen.print('WACK3M')
 
         self.left_motor.run_time(
-            speed=-300,
+            speed=-1000,   # orig: -300
             time=1000,
             then=Stop.HOLD,
             wait=True)
@@ -44,15 +44,15 @@ class Wack3m(EV3Brick):
         self.left_motor.reset_angle(angle=0)
 
         self.middle_motor.run_time(
-            speed=-50,
-            time=2000,
+            speed=-1000,   # orig: -50
+            time=1000,   # orig: 2000
             then=Stop.HOLD,
             wait=True)
 
         self.middle_motor.reset_angle(angle=0)
 
         self.right_motor.run_time(
-            speed=-300,
+            speed=-1000,   # orig: -300
             time=1000,
             then=Stop.HOLD,
             wait=True)
@@ -95,7 +95,7 @@ class Wack3m(EV3Brick):
                 if which_motor == 1:
                     self.left_motor.run_angle(
                         speed=1000,
-                        rotation_angle=90,   # 60 too weak
+                        rotation_angle=90,   # orig: 60
                         then=Stop.COAST,
                         wait=True)
 
@@ -104,19 +104,19 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.MIDDLE_LEFT)
 
                     self.left_motor.run_time(
-                        speed=-400,
+                        speed=-1000,   # orig: -400
                         time=500,
                         then=Stop.HOLD,
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 2:
+                    while abs(self.ir_sensor.distance() - proximity) <= 4:  # 2
                         pass
 
                 elif which_motor == 2:
                     self.middle_motor.run_angle(
                         speed=1000,
-                        rotation_angle=170,
+                        rotation_angle=210,   # orig: 170
                         then=Stop.COAST,
                         wait=True)
 
@@ -125,19 +125,19 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.NEUTRAL)
 
                     self.middle_motor.run_time(
-                        speed=-400,
-                        time=400,
+                        speed=-1000,   # orig: -400
+                        time=500,   # orig: 400
                         then=Stop.COAST,
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 3:
+                    while abs(self.ir_sensor.distance() - proximity) <= 5:  # 3
                         pass
 
                 else:
                     self.right_motor.run_angle(
                         speed=1000,
-                        rotation_angle=90,   # 60 too weak
+                        rotation_angle=90,   # orig: 60
                         then=Stop.COAST,
                         wait=True)
 
@@ -146,13 +146,13 @@ class Wack3m(EV3Brick):
                     self.screen.load_image(ImageFile.MIDDLE_RIGHT)
 
                     self.right_motor.run_time(
-                        speed=-400,
+                        speed=-1000,   # orig: -400
                         time=500,
                         then=Stop.HOLD,
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 3:
+                    while abs(self.ir_sensor.distance() - proximity) <= 5:  # 3
                         pass
 
                 response_time = time() - start_time
