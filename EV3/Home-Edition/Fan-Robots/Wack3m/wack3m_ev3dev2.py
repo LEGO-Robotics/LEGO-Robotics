@@ -71,6 +71,7 @@ class Wack3m:
             inverse=False,
             alignment='L')
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.left_motor.on_for_seconds(
             speed=-30,
             seconds=1,
@@ -87,6 +88,7 @@ class Wack3m:
 
         self.middle_motor.reset()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.right_motor.on_for_seconds(
             speed=-30,
             seconds=1,

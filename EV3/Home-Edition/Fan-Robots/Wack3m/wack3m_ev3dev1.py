@@ -76,6 +76,7 @@ class Wack3m:
             stroke_fill=None)
         self.screen.update()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.left_motor.run_timed(
             speed_sp=-300,
             time_sp=1000,
@@ -92,6 +93,7 @@ class Wack3m:
 
         self.middle_motor.reset()
 
+        # FIXME: Large Motor rebounds too hard when using EV3Dev
         self.right_motor.run_timed(
             speed_sp=-300,
             time_sp=1000,
