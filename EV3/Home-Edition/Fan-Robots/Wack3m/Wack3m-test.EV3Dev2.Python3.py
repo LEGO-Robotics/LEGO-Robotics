@@ -26,7 +26,7 @@ while True:
         block=True)
 
     WACK3M.left_motor.on_for_seconds(
-        speed=-40,
+        speed=-100,   # orig: -40
         seconds=0.5,
         brake=True,
         block=True)
@@ -38,8 +38,8 @@ while True:
         block=True)
 
     WACK3M.middle_motor.on_for_seconds(
-        speed=-40,
-        seconds=0.4,
+        speed=-100,   # orig: -40
+        seconds=0.5,   # orig: 0.4
         brake=False,
         block=True)
 
@@ -50,7 +50,7 @@ while True:
         block=True)
 
     WACK3M.right_motor.on_for_seconds(
-        speed=-40,
+        speed=-100,   # orig: -40
         seconds=0.5,
         brake=True,
         block=True)

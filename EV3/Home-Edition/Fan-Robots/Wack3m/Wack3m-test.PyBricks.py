@@ -26,7 +26,7 @@ while True:
         wait=True)
 
     WACK3M.left_motor.run_time(
-        speed=-400,
+        speed=-1000,   # orig: -400
         time=500,
         then=Stop.HOLD,
         wait=True)
@@ -38,8 +38,8 @@ while True:
         wait=True)
 
     WACK3M.middle_motor.run_time(
-        speed=-400,
-        time=400,
+        speed=-1000,   # orig: -400
+        time=500,   # orig: 400
         then=Stop.COAST,
         wait=True)
 
@@ -50,7 +50,7 @@ while True:
         wait=True)
 
     WACK3M.right_motor.run_time(
-        speed=-400,
+        speed=-1000,   # orig: -400
         time=500,
         then=Stop.HOLD,
         wait=True)

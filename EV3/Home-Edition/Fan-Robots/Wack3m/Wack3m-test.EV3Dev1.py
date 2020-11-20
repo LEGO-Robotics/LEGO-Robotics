@@ -27,7 +27,7 @@ while True:
     WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
 
     WACK3M.left_motor.run_timed(
-        speed_sp=-400,
+        speed_sp=-1000,   # orig: -400
         time_sp=500,
         stop_action=Motor.STOP_ACTION_HOLD)
     WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
@@ -39,8 +39,8 @@ while True:
     WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
 
     WACK3M.middle_motor.run_timed(
-        speed_sp=-400,
-        time_sp=400,
+        speed_sp=-1000,   # orig: -400
+        time_sp=500,   # orig: 400
         stop_action=Motor.STOP_ACTION_COAST)
     WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
 
@@ -51,7 +51,7 @@ while True:
     WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
 
     WACK3M.right_motor.run_timed(
-        speed_sp=-400,
+        speed_sp=-1000,   # orig: -400
         time_sp=500,
         stop_action=Motor.STOP_ACTION_HOLD)
     WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
