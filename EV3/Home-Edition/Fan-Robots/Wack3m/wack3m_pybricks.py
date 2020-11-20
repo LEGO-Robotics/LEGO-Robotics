@@ -107,7 +107,7 @@ class Wack3m(EV3Brick):
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 2:
+                    while abs(self.ir_sensor.distance() - proximity) <= 4:  # 2
                         pass
 
                 elif which_motor == 2:
@@ -128,7 +128,7 @@ class Wack3m(EV3Brick):
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 3:
+                    while abs(self.ir_sensor.distance() - proximity) <= 5:  # 3
                         pass
 
                 else:
@@ -149,7 +149,7 @@ class Wack3m(EV3Brick):
                         wait=True)
 
                     proximity = self.ir_sensor.distance()
-                    while abs(self.ir_sensor.distance() - proximity) <= 3:
+                    while abs(self.ir_sensor.distance() - proximity) <= 5:  # 3
                         pass
 
                 response_time = time() - start_time
