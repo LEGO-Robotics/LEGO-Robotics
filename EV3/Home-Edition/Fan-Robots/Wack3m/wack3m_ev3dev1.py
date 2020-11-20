@@ -82,6 +82,10 @@ class Wack3m:
             time_sp=1000,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.left_motor.wait_while(Motor.STATE_RUNNING)
+        # SAME PROBLEMATIC OUTCOME
+        # self.left_motor.run_forever(speed_sp=-300)
+        # self.left_motor.wait_until_not_moving()
+        # self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.left_motor.reset()
 
@@ -99,6 +103,10 @@ class Wack3m:
             time_sp=1000,
             stop_action=Motor.STOP_ACTION_HOLD)
         self.right_motor.wait_while(Motor.STATE_RUNNING)
+        # SAME PROBLEMATIC OUTCOME
+        # self.right_motor.run_forever(speed_sp=-300)
+        # self.right_motor.wait_until_not_moving()
+        # self.right_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         self.right_motor.reset()
 

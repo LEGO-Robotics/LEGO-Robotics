@@ -77,6 +77,13 @@ class Wack3m:
             seconds=1,
             brake=True,
             block=True)
+        # SAME PROBLEMATIC OUTCOME
+        # self.left_motor.on(
+        #     speed=-30,
+        #     brake=False,
+        #     block=False)
+        # self.left_motor.wait_until_not_moving()
+        # self.left_motor.off(brake=True)
 
         self.left_motor.reset()
 
@@ -94,6 +101,13 @@ class Wack3m:
             seconds=1,
             brake=True,
             block=True)
+        # SAME PROBLEMATIC OUTCOME
+        # self.right_motor.on(
+        #     speed=-30,
+        #     brake=False,
+        #     block=False)
+        # self.right_motor.wait_until_not_moving()
+        # self.right_motor.off(brake=True)
 
         self.right_motor.reset()
 
