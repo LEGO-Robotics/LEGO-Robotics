@@ -36,6 +36,30 @@ while True:
         speed_sp=-400,
         time_sp=500,
         stop_action=Motor.STOP_ACTION_HOLD)
+    WACK3M.left_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.middle_motor.run_to_rel_pos(
+        speed_sp=1000,
+        position_sp=170,
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.middle_motor.run_timed(
+        speed_sp=-400,
+        time_sp=400,
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.middle_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.right_motor.run_to_rel_pos(
+        speed_sp=1000,
+        position_sp=60,
+        stop_action=Motor.STOP_ACTION_COAST)
+    WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
+
+    WACK3M.right_motor.run_timed(
+        speed_sp=-400,
+        time_sp=500,
+        stop_action=Motor.STOP_ACTION_HOLD)
     WACK3M.right_motor.wait_while(Motor.STATE_RUNNING)
 
     sleep(1)
