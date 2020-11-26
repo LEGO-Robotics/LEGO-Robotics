@@ -41,7 +41,6 @@ class Bobb3e:
     detect and drive towards. Can you make him automatically find the Beacon
     and lift it, when BOBB3E comes close enough to it?
     """
-    
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
