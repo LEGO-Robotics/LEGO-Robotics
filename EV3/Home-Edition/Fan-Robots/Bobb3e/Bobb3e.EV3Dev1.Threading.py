@@ -23,6 +23,7 @@ BOBB3E.screen.draw.text(
     stroke_fill=None)
 BOBB3E.screen.update()
 
-Thread(target=BOBB3E.sound_alarm_whenever_reversing).start()
+Thread(target=BOBB3E.sound_alarm_whenever_reversing,
+       daemon=True).start()
 
 BOBB3E.keep_driving_or_operating_lift_by_ir_beacon(speed=1000)
