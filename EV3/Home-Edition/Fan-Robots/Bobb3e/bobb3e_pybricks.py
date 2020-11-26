@@ -4,7 +4,7 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
-from pybricks.parameters import Button, Direction, Port, Stop
+from pybricks.parameters import Button, Direction, Port
 from pybricks.robotics import DriveBase
 
 from time import sleep
