@@ -70,6 +70,12 @@ class Bobb3e:
         self.reversing = False
         self.playing_sound = False
 
+    """
+    BOBB3E takes advantage of running multiple subprograms;
+    one for receiving the commands from the remote control and
+    one for handling the reversing alarm.
+    """
+
     def drive_or_operate_lift_once_by_ir_beacon(self, speed: float = 100):
         """
         Read the commands from the remote control and convert them into actions
