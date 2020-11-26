@@ -54,7 +54,7 @@ class Bobb3e(EV3Brick):
             self.lift_motor.run(speed=100)
 
         # raise the lift
-        if ir_beacon_button_pressed == {Button.RIGHT_UP, Button.RIGHT_DOWN}:
+        elif ir_beacon_button_pressed == {Button.RIGHT_UP, Button.RIGHT_DOWN}:
             self.reversing = False
 
             self.drive_base.stop()
@@ -62,7 +62,7 @@ class Bobb3e(EV3Brick):
             self.lift_motor.run(speed=-100)
 
         # forward
-        if ir_beacon_button_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
+        elif ir_beacon_button_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
             self.reversing = False
 
             self.drive_base.drive(

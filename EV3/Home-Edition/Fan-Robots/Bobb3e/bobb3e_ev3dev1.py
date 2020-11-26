@@ -64,7 +64,7 @@ class Bobb3e:
             self.lift_motor.run_forever(speed_sp=100)
 
         # raise the lift
-        if self.remote_control.blue_up and self.remote_control.blue_down:
+        elif self.remote_control.blue_up and self.remote_control.blue_down:
             self.reversing = False
 
             self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
@@ -73,7 +73,7 @@ class Bobb3e:
             self.lift_motor.run_forever(speed_sp=-100)
 
         # forward
-        if self.remote_control.red_up and self.remote_control.blue_up:
+        elif self.remote_control.red_up and self.remote_control.blue_up:
             self.reversing = False
 
             self.left_motor.run_forever(speed_sp=speed)

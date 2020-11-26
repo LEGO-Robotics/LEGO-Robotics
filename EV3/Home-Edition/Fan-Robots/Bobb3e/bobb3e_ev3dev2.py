@@ -84,7 +84,7 @@ class Bobb3e:
                 block=False)
 
         # raise the lift
-        if self.ir_sensor.top_right(channel=self.ir_beacon_channel) and \
+        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel) and \
                 self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
             self.reversing = False
 
@@ -96,7 +96,7 @@ class Bobb3e:
                 block=False)
 
         # forward
-        if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
+        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
                 self.ir_sensor.top_right(channel=self.ir_beacon_channel):
             self.reversing = False
 
