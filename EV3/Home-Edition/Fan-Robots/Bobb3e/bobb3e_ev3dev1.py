@@ -19,6 +19,25 @@ from time import sleep
 
 
 class Bobb3e:
+    """
+    CHALLENGES:
+    
+    Here are some challenges you can try to do in order to make BOBB3E better:
+    
+    - Can you make BOBB3E say sounds when he is lifting/lowering his forks?
+    
+    - BOBB3E does by default drive rather slow - try to see if you can
+    make him go faster!
+    
+    - You could utilise that the remote has 4 channels and use that as
+    different gears. Say, for instance, that when using Channel 1 is the same
+    as driving in 1st gear; very slow. Channel 2 could make him go a little
+    faster and using channel 4 would make him go very fast!
+    
+    - The remote control can also be used as a Beacon, which BOBB3E is able to
+    detect and drive towards. Can you make him automatically find the Beacon
+    and lift it, when BOBB3E comes close enough to it?
+    """
     def __init__(
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
@@ -50,6 +69,12 @@ class Bobb3e:
         self.reversing = False
         self.playing_sound = False
 
+    """
+    BOBB3E takes advantage of running multiple subprograms;
+    one for receiving the commands from the remote control and
+    one for handling the reversing alarm.
+    """
+
     def drive_or_operate_lift_once_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
@@ -58,7 +83,7 @@ class Bobb3e:
         Read the commands from the remote control and convert them into actions
         such as go forward, lift and turn.
         """
-        # lower the lift
+        # lower the forks
         if self.remote_control.red_up and self.remote_control.red_down:
             self.reversing = False
 
@@ -67,7 +92,7 @@ class Bobb3e:
 
             self.lift_motor.run_forever(speed_sp=100)
 
-        # raise the lift
+        # raise the forks
         elif self.remote_control.blue_up and self.remote_control.blue_down:
             self.reversing = False
 
