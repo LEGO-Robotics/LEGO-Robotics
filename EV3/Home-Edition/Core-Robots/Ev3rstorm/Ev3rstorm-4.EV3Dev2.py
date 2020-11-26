@@ -25,7 +25,7 @@ SPEAKER = Sound()
 
 
 while True:
-    if IR_SENSOR.proximity < 25: 
+    if IR_SENSOR.proximity < 25:
         TANK_DRIVER.off(brake=True)
 
         LEDS.animate_police_lights(
@@ -36,7 +36,7 @@ while True:
             sleeptime=0.5,
             duration=5,
             block=True)
-        
+
         SPEAKER.play_file(
             wav_file='/home/robot/sound/Object.wav',
             volume=100,
@@ -101,7 +101,7 @@ while True:
             sleeptime=0.5,
             duration=5,
             block=True)
-           
+
         if time() % 3 < 1.5:
             TANK_DRIVER.on(
                 left_speed=50,
