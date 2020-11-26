@@ -54,6 +54,10 @@ class Bobb3e:
             self,
             speed: float = 1000   # degrees per second
             ):
+        """
+        Read the commands from the remote control and convert them into actions
+        such as go forward, lift and turn.
+        """
         # lower the lift
         if self.remote_control.red_up and self.remote_control.red_down:
             self.reversing = False
@@ -157,6 +161,12 @@ class Bobb3e:
             self.drive_or_operate_lift_once_by_ir_beacon(speed=speed)
 
     def sound_alarm_if_reversing(self):
+        """
+        Whenever the Reversing variable is changed to True
+        the alarm starts to play.
+        When the value of the Reversing variable is set to False
+        the alarm stops.
+        """
         if self.reversing:
             if not self.playing_sound:
                 self.playing_sound = True

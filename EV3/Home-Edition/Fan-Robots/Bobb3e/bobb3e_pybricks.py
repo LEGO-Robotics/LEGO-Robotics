@@ -42,6 +42,10 @@ class Bobb3e(EV3Brick):
             speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
             ):
+        """
+        Read the commands from the remote control and convert them into actions
+        such as go forward, lift and turn.
+        """    
         ir_beacon_button_pressed = \
             set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
@@ -157,6 +161,12 @@ class Bobb3e(EV3Brick):
             self.drive_or_operate_lift_once_by_ir_beacon(speed=speed)
 
     def sound_alarm_if_reversing(self):
+        """
+        Whenever the Reversing variable is changed to True
+        the alarm starts to play.
+        When the value of the Reversing variable is set to False
+        the alarm stops.
+        """
         if self.reversing:
             if not self.playing_sound:
                 self.playing_sound = True
