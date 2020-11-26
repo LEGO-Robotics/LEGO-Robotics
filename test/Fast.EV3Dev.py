@@ -4,7 +4,7 @@
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
-from util.ev3dev_fast.ev3fast import (   
+from util.ev3dev_fast.ev3fast import (
     Motor, LargeMotor, MediumMotor,
     MotorSet, MoveTank, MoveSteering,
     SpeedValue, SpeedPercent, SpeedNativeUnits,
