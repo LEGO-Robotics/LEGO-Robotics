@@ -26,4 +26,4 @@ BOBB3E.screen.update()
 Thread(target=BOBB3E.sound_alarm_whenever_reversing,
        daemon=True).start()
 
-BOBB3E.keep_driving_or_operating_lift_by_ir_beacon(speed=1000)
+BOBB3E.keep_driving_or_operating_forks_by_ir_beacon(speed=1000)

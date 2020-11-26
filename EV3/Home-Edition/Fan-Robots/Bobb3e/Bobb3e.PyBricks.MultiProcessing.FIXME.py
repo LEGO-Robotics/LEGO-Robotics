@@ -12,7 +12,7 @@ BOBB3E.screen.print('BOBB3E')
 
 Process(target=BOBB3E.sound_alarm_whenever_reversing).start()
 
-BOBB3E.keep_driving_or_operating_lift_by_ir_beacon(speed=1000)
+BOBB3E.keep_driving_or_operating_forks_by_ir_beacon(speed=1000)
 
 # FIXME: OSError: [Errno 5] EIO: 
 #  Unexpected hardware input/output error with a motor or sensor:

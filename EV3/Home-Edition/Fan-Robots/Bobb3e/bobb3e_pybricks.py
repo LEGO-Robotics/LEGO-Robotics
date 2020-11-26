@@ -13,19 +13,19 @@ from time import sleep
 class Bobb3e(EV3Brick):
     """
     CHALLENGES:
-    
+
     Here are some challenges you can try to do in order to make BOBB3E better:
-    
+
     - Can you make BOBB3E say sounds when he is lifting/lowering his forks?
-    
+
     - BOBB3E does by default drive rather slow - try to see if you can
     make him go faster!
-    
+
     - You could utilise that the remote has 4 channels and use that as
     different gears. Say, for instance, that when using Channel 1 is the same
     as driving in 1st gear; very slow. Channel 2 could make him go a little
     faster and using channel 4 would make him go very fast!
-    
+
     - The remote control can also be used as a Beacon, which BOBB3E is able to
     detect and drive towards. Can you make him automatically find the Beacon
     and lift it, when BOBB3E comes close enough to it?
@@ -63,7 +63,7 @@ class Bobb3e(EV3Brick):
     one for handling the reversing alarm.
     """
 
-    def drive_or_operate_lift_once_by_ir_beacon(
+    def drive_or_operate_forks_once_by_ir_beacon(
             self,
             speed: float = 1000,    # mm/s
             turn_rate: float = 90   # rotational speed deg/s
@@ -179,12 +179,12 @@ class Bobb3e(EV3Brick):
 
             self.lift_motor.hold()
 
-    def keep_driving_or_operating_lift_by_ir_beacon(
+    def keep_driving_or_operating_forks_by_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
             ):
         while True:
-            self.drive_or_operate_lift_once_by_ir_beacon(speed=speed)
+            self.drive_or_operate_forks_once_by_ir_beacon(speed=speed)
 
     def sound_alarm_if_reversing(self):
         """

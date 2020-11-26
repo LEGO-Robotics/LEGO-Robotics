@@ -11,5 +11,5 @@ BOBB3E = Bobb3e()
 BOBB3E.screen.print('BOBB3E')
 
 run_parallel(
-    BOBB3E.keep_driving_or_operating_lift_by_ir_beacon,
+    BOBB3E.keep_driving_or_operating_forks_by_ir_beacon,
     BOBB3E.sound_alarm_whenever_reversing)
