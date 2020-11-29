@@ -82,7 +82,11 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
     def main(self,
              driving_speed: float = 1000   # deg/s
              ):
-
+        """
+        This is the main control program for the RoboDoz3r.
+        It uses two methods to get commands from the IR remote
+        and to raise or lower the shovel.
+        """
         self.screen.draw.text(
             xy=(2, 2),
             text='ROBODOZ3R',
@@ -100,12 +104,15 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
 
         self.speaker.play(wav_file='/home/robot/sound/Motor start.wav').wait()
 
+        # Let the engine sound idle for 2 seconds
         motor_idle_start_time = time()
         while time() - motor_idle_start_time <= 2:
             self.speaker.play(
                 wav_file='/home/robot/sound/Motor idle.wav').wait()
 
         while True:
+            # Manual mode where the movement of the RoboDoz3r is controlled
+            # by the IR remote
             while not self.touch_sensor.is_pressed:
                 self.raise_or_lower_shovel_once_by_ir_beacon()
 
@@ -122,6 +129,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
 
             self.speaker.play(wav_file='/home/robot/sound/Airbrake.wav').wait()
 
+            # In autonomous mode the RoboDoz3r uses the IR sensor
+            # in proximity mode to detect nearby obstacles in its path
             while not self.touch_sensor.is_pressed:
                 if self.ir_sensor.proximity < 50:
                     self.left_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
@@ -138,7 +147,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                         time_sp=1000,
                         stop_action=Motor.STOP_ACTION_HOLD)
                     self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
-                    self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
+                    self.right_motor.wait_while(Motor.STOP_ACTION_HOLD)
 
                     self.left_motor.run_timed(
                         speed_sp=500,
@@ -149,7 +158,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                         time_sp=1000,
                         stop_action=Motor.STOP_ACTION_HOLD)
                     self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
-                    self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
+                    self.right_motor.wait_while(Motor.STOP_ACTION_HOLD)
 
                 else:
                     self.left_motor.run_forever(speed_sp=500)

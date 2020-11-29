@@ -89,7 +89,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
 
         while True:
             # Manual mode where the movement of the RoboDoz3r is controlled
-            # by the IR remote.
+            # by the IR remote
             while not self.touch_sensor.pressed():
                 self.raise_or_lower_shovel_once_by_ir_beacon()
 
@@ -107,7 +107,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
             self.speaker.play_file(SoundFile.AIRBRAKE)
 
             # In autonomous mode the RoboDoz3r uses the IR sensor
-            # in proximity mode to detect nearby obstacles in its path.
+            # in proximity mode to detect nearby obstacles in its path
             while not self.touch_sensor.pressed():
                 if self.ir_sensor.distance() < 50:
                     self.drive_base.stop()
