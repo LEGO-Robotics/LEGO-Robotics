@@ -73,15 +73,23 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
     def main(self,
              driving_speed: float = 1000   # mm/s
              ):
+        """
+        This is the main control program for the RoboDoz3r.
+        It uses two methods to get commands from the IR remote
+        and to raise or lower the shovel.
+        """
         self.screen.print('ROBODOZ3R')
 
         self.speaker.play_file(SoundFile.MOTOR_START)
 
+        # Let the engine sound idle for 2 seconds
         motor_idle_start_time = time()
         while time() - motor_idle_start_time <= 2:
             self.speaker.play_file(SoundFile.MOTOR_IDLE)
 
         while True:
+            # Manual mode where the movement of the RoboDoz3r is controlled
+            # by the IR remote.
             while not self.touch_sensor.pressed():
                 self.raise_or_lower_shovel_once_by_ir_beacon()
 
@@ -98,6 +106,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
 
             self.speaker.play_file(SoundFile.AIRBRAKE)
 
+            # In autonomous mode the RoboDoz3r uses the IR sensor
+            # in proximity mode to detect nearby obstacles in its path.
             while not self.touch_sensor.pressed():
                 if self.ir_sensor.distance() < 50:
                     self.drive_base.stop()
