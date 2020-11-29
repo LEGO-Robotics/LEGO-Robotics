@@ -7,6 +7,8 @@ from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port
 from pybricks.tools import wait
 
+from time import time
+
 # import os
 # import sys
 # sys.path.append(os.path.expanduser('~'))
@@ -71,20 +73,47 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
     def main(self,
              driving_speed: float = 1000   # mm/s
              ):
+        self.screen.print('ROBODOZ3R')
+
+        self.speaker.play_file(SoundFile.MOTOR_START)
+
+        motor_idle_start_time = time()
+        while time() - motor_idle_start_time <= 2:
+            self.speaker.play_file(SoundFile.MOTOR_IDLE)
 
         while True:
-            # Determine which motor to drive
-            # from the value sent by the IR remote.
-            # Use a large switch block to convert each code from the remote
-            # into a motor movement.
-            # Use the IR sensor in Remote mode to accept commands
-            # from the IR beacon.
-            # Each key press combination on the IR beacon corresponds to
-            # a numeric value from 0 to 9.
-            # Each value is handled in a case in the switch statement.
-            self.drive_once_by_ir_beacon(speed=driving_speed)
+            while not self.touch_sensor.pressed():
+                self.raise_or_lower_shovel_once_by_ir_beacon()
 
-            self.raise_or_lower_shovel_once_by_ir_beacon()
+                # Determine which motor to drive
+                # from the value sent by the IR remote.
+                # Use a large switch block to convert each code from the remote
+                # into a motor movement.
+                # Use the IR sensor in Remote mode to accept commands
+                # from the IR beacon.
+                # Each key press combination on the IR beacon corresponds to
+                # a numeric value from 0 to 9.
+                # Each value is handled in a case in the switch statement.
+                self.drive_once_by_ir_beacon(speed=driving_speed)
+
+            self.speaker.play_file(SoundFile.AIRBRAKE)
+
+            while not self.touch_sensor.pressed():
+                if self.ir_sensor.distance() < 50:
+                    self.drive_base.stop()
+
+                    wait(1000)
+
+                    self.drive_base.straight(distance=-100)
+
+                    self.drive_base.turn(angle=90)
+
+                else:
+                    self.drive_base.drive(
+                        speed=500,
+                        turn_rate=0)
+
+            self.speaker.play_file(SoundFile.AIRBRAKE)
 
 
 if __name__ == '__main__':
