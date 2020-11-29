@@ -59,6 +59,15 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
              ):
 
         while True:
+            # Determine which motor to drive
+            # from the value sent by the IR remote.
+            # Use a large switch block to convert each code from the remote
+            # into a motor movement.
+            # Use the IR sensor in Remote mode to accept commands
+            # from the IR beacon.
+            # Each key press combination on the IR beacon corresponds to
+            # a numeric value from 0 to 9.
+            # Each value is handled in a case in the switch statement.
             self.drive_once_by_ir_beacon(speed=driving_speed)
 
 

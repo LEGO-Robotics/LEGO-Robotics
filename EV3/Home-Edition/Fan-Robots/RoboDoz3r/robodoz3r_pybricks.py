@@ -41,6 +41,14 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
             shovel_control_ir_beacon_channel
 
     def raise_or_lower_shovel_once_by_ir_beacon(self):
+        """
+        If the channel 4 is selected on the IR remote
+        then you can control raising and lowering the shovel on the RoboDoz3r.
+
+        Use the IR sensor in Remote mode.
+        Each button press on the IR beacon is converted into a numeric value
+        which is checked using the switch block.
+        """
         ir_beacon_button_pressed = \
             set(self.ir_sensor.buttons(
                     channel=self.shovel_control_ir_beacon_channel))
@@ -65,6 +73,15 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
              ):
 
         while True:
+            # Determine which motor to drive
+            # from the value sent by the IR remote.
+            # Use a large switch block to convert each code from the remote
+            # into a motor movement.
+            # Use the IR sensor in Remote mode to accept commands
+            # from the IR beacon.
+            # Each key press combination on the IR beacon corresponds to
+            # a numeric value from 0 to 9.
+            # Each value is handled in a case in the switch statement.
             self.drive_once_by_ir_beacon(speed=driving_speed)
 
             self.raise_or_lower_shovel_once_by_ir_beacon()
