@@ -71,7 +71,7 @@ class Bobb3e(EV3Brick):
         """
         Read the commands from the remote control and convert them into actions
         such as go forward, lift and turn.
-        """    
+        """
         ir_beacon_button_pressed = \
             set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
 
