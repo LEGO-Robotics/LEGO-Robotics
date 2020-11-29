@@ -18,7 +18,7 @@ from util.ev3dev_fast.ev3fast import (
     TouchSensor as FastTouchSensor
 )
 
-from time import sleep
+from time import sleep, time
 
 
 class RoboDoz3r(IRBeaconRemoteControlledTank):
@@ -54,19 +54,109 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
         self.console = Console()
         self.speaker = Sound()
 
+    def raise_or_lower_shovel_once_by_ir_beacon(self):
+        """
+        If the channel 4 is selected on the IR remote
+        then you can control raising and lowering the shovel on the RoboDoz3r.
+
+        Use the IR sensor in Remote mode.
+        Each button press on the IR beacon is converted into a numeric value
+        which is checked using the switch block.
+        """
+
+        # raise the shovel
+        if self.ir_sensor.top_left(
+                    channel=self.shovel_control_ir_beacon_channel) or \
+                self.ir_sensor.top_right(
+                    channel=self.shovel_control_ir_beacon_channel):
+            self.shovel_motor.on(
+                speed=10,
+                brake=False,
+                block=False)
+
+        # lower the shovel
+        elif self.ir_sensor.bottom_left(
+                    channel=self.shovel_control_ir_beacon_channel) or \
+                self.ir_sensor.bottom_right(
+                    channel=self.shovel_control_ir_beacon_channel):
+            self.shovel_motor.on(
+                speed=-10,
+                brake=False,
+                block=False)
+
+        else:
+            self.shovel_motor.off(brake=True)
+
     def main(self, driving_speed: float = 100):
+        self.console.text_at(
+            text='ROBODOZ3R',
+            column=2,
+            row=2,
+            reset_console=False,
+            inverse=False,
+            alignment='L')
+
+        self.speaker.play_file(
+            wav_file='/home/robot/sound/Motor start.wav',
+            volume=56,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+        motor_idle_start_time = time()
+        while time() - motor_idle_start_time <= 2:
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Motor idle.wav',
+                volume=51,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
         while True:
-            # Determine which motor to drive
-            # from the value sent by the IR remote.
-            # Use a large switch block to convert each code from the remote
-            # into a motor movement.
-            # Use the IR sensor in Remote mode to accept commands
-            # from the IR beacon.
-            # Each key press combination on the IR beacon corresponds to
-            # a numeric value from 0 to 9.
-            # Each value is handled in a case in the switch statement.
-            self.drive_once_by_ir_beacon(speed=driving_speed)
+            while self.touch_sensor.is_released:
+                self.raise_or_lower_shovel_once_by_ir_beacon()
+
+                # Determine which motor to drive
+                # from the value sent by the IR remote.
+                # Use a large switch block to convert each code from the remote
+                # into a motor movement.
+                # Use the IR sensor in Remote mode to accept commands
+                # from the IR beacon.
+                # Each key press combination on the IR beacon corresponds to
+                # a numeric value from 0 to 9.
+                # Each value is handled in a case in the switch statement.
+                self.drive_once_by_ir_beacon(speed=driving_speed)
+
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Airbrake.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+            while self.touch_sensor.is_released:
+                if self.ir_sensor.proximity < 50:
+                    self.tank_driver.off(brake=True)
+
+                    sleep(1)
+
+                    self.tank_driver.on_for_seconds(
+                        left_speed=-30,
+                        right_speed=-30,
+                        seconds=1,
+                        brake=True,
+                        block=True)
+
+                    self.tank_driver.on_for_seconds(
+                        left_speed=50,
+                        right_speed=-50,
+                        seconds=1,
+                        brake=True,
+                        block=True)
+
+                else:
+                    self.tank_driver.on(
+                        left_speed=50,
+                        right_speed=50)
+
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Airbrake.wav',
+                volume=100,
+                play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
 
 if __name__ == '__main__':
