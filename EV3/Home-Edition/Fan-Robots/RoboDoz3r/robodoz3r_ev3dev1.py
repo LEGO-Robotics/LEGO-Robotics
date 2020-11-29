@@ -2,7 +2,7 @@
 
 
 from ev3dev.ev3 import (
-    Motor, MediumMotor, LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
+    Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, RemoteControl, INPUT_1, INPUT_4,
     Screen, Sound
 )

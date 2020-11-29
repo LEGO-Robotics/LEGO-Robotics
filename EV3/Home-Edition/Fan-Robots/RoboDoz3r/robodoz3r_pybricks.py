@@ -5,7 +5,6 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port
-from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
 # import os
