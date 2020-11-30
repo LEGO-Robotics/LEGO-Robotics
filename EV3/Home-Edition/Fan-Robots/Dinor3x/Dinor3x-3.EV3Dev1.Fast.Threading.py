@@ -16,6 +16,7 @@ DINOR3X.calibrate_legs()
 
 DINOR3X.open_mouth()
 
+# main loop
 while True:
     # FIXME: .leg_to_pos(...) hangs
     DINOR3X.leg_to_pos(

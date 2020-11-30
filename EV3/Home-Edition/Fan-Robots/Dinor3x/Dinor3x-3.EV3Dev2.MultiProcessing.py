@@ -14,6 +14,7 @@ DINOR3X.calibrate_legs()
 
 DINOR3X.open_mouth()
 
+# main loop
 while True:
     DINOR3X.leg_to_pos(
         speed=100,
