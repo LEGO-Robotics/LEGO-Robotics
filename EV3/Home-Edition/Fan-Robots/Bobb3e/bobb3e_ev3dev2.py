@@ -217,6 +217,9 @@ class Bobb3e:
             self.lift_motor.off(brake=True)
 
     def keep_driving_or_operating_forks_by_ir_beacon(self, speed: float = 100):
+        """
+        Main Loop
+        """
         while True:
             self.drive_or_operate_forks_once_by_ir_beacon(speed=speed)
 

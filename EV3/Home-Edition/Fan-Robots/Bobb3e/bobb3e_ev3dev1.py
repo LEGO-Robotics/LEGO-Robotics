@@ -182,6 +182,9 @@ class Bobb3e:
             self,
             speed: float = 1000   # degrees per second
             ):
+        """
+        Main Loop
+        """
         while True:
             self.drive_or_operate_forks_once_by_ir_beacon(speed=speed)
 
