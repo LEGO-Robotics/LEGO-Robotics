@@ -187,7 +187,7 @@ class Bobb3e:
 
     def sound_alarm_if_reversing(self):
         """
-        The alarm sound:
+        Reversing alarm sound:
         - Whenever the Reversing variable is changed to True
         the alarm starts to play.
         - When the value of the Reversing variable is set to False
