@@ -63,7 +63,6 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
         Each button press on the IR beacon is converted into a numeric value
         which is checked using the switch block.
         """
-
         # raise the shovel
         if self.ir_sensor.top_left(
                     channel=self.shovel_control_ir_beacon_channel) or \
@@ -88,6 +87,11 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
             self.shovel_motor.off(brake=True)
 
     def main(self, driving_speed: float = 100):
+        """
+        This is the main control program for the RoboDoz3r.
+        It uses two methods to get commands from the IR remote
+        and to raise or lower the shovel.
+        """
         self.console.text_at(
             text='ROBODOZ3R',
             column=2,
@@ -101,6 +105,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
             volume=56,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
+        # Let the engine sound idle for 2 seconds
         motor_idle_start_time = time()
         while time() - motor_idle_start_time <= 2:
             self.speaker.play_file(
@@ -109,6 +114,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
         while True:
+            # Manual mode where the movement of the RoboDoz3r is controlled
+            # by the IR remote
             while self.touch_sensor.is_released:
                 self.raise_or_lower_shovel_once_by_ir_beacon()
 
@@ -128,6 +135,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                 volume=100,
                 play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
+            # In autonomous mode the RoboDoz3r uses the IR sensor
+            # in proximity mode to detect nearby obstacles in its path
             while self.touch_sensor.is_released:
                 if self.ir_sensor.proximity < 50:
                     self.tank_driver.off(brake=True)
