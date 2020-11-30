@@ -139,7 +139,7 @@ class MrB3am(EV3Brick):
     def report_result(self, debug=False):
         """
         Report the result of the measurement.
-        The switch to the right has a case for each color
+        The switch has a case for each color
         the Color Sensor is able to detect.
         MR-B3AM converts from the number of rotation degrees to B3am lengths.
         """
@@ -209,6 +209,7 @@ class MrB3am(EV3Brick):
             text_color=Color.BLACK,
             background_color=None)
 
+        # make Mr. B3am print more information about the B3ams
         if debug:
             self.screen.draw_text(
                 x=0, y=60,
@@ -233,6 +234,9 @@ class MrB3am(EV3Brick):
                               else ''))
 
     def main(self, debug=False):
+        """
+        Main Loop
+        """
         while True:
             self.process_b3am()
 
