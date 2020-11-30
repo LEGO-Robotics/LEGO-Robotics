@@ -54,6 +54,13 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
         self.screen = Screen()
         self.speaker = Sound()
 
+    def drive_by_ir_beacon_until_touched(
+            self,
+            speed: float = 1000   # deg/s
+            ):
+        while not self.touch_sensor.is_pressed:
+            self.drive_once_by_ir_beacon(speed=speed)
+
     def raise_or_lower_shovel_once_by_ir_beacon(self):
         """
         If the channel 4 is selected on the IR remote
@@ -63,7 +70,6 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
         Each button press on the IR beacon is converted into a numeric value
         which is checked using the switch block.
         """
-
         # raise the shovel
         if self.shovel_control_remote_control.red_up or \
                 self.shovel_control_remote_control.blue_up:
@@ -78,6 +84,10 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
 
         else:
             self.shovel_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+    def raise_or_lower_shovel_by_ir_beacon_until_touched(self):
+        while not self.touch_sensor.is_pressed:
+            self.raise_or_lower_shovel_once_by_ir_beacon()
 
     def main(self,
              driving_speed: float = 1000   # deg/s

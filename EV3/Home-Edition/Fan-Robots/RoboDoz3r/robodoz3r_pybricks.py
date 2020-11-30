@@ -42,6 +42,13 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
         self.shovel_control_ir_beacon_channel = \
             shovel_control_ir_beacon_channel
 
+    def drive_by_ir_beacon_until_touched(
+            self,
+            speed: float = 1000   # mm/s
+            ):
+        while not self.touch_sensor.pressed():
+            self.drive_once_by_ir_beacon(speed=speed)
+
     def raise_or_lower_shovel_once_by_ir_beacon(self):
         """
         If the channel 4 is selected on the IR remote
@@ -58,17 +65,19 @@ class RoboDoz3r(IRBeaconRemoteControlledTank, EV3Brick):
         # raise the shovel
         if ir_beacon_button_pressed.intersection(
                 {Button.LEFT_UP, Button.RIGHT_UP}):
-
             self.shovel_motor.run(speed=100)
 
         # lower the shovel
         elif ir_beacon_button_pressed.intersection(
                 {Button.LEFT_DOWN, Button.RIGHT_DOWN}):
-
             self.shovel_motor.run(speed=-100)
 
         else:
             self.shovel_motor.hold()
+
+    def raise_or_lower_shovel_by_ir_beacon_until_touched(self):
+        while not self.touch_sensor.pressed():
+            self.raise_or_lower_shovel_once_by_ir_beacon()
 
     def main(self,
              driving_speed: float = 1000   # mm/s
