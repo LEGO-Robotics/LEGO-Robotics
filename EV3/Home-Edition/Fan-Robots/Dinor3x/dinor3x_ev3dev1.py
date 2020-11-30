@@ -496,7 +496,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
         self.jaw_motor.wait_while(Motor.STATE_RUNNING)
 
         # SKIPPING BELOW BLOCK, WHICH SEEMS TO HANG
-        # for i in range(12):
+        # jaw loop
+        # for _ in range(12):
         #     self.jaw_motor.run_timed(
         #         speed_sp=-self.MEDIUM_MOTOR_POWER_FACTOR * 400,
         #         time_sp=0.05 * 1000,

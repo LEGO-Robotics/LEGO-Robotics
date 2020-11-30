@@ -454,7 +454,8 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             block=True,
             brake=True)
 
-        for i in range(12):
+        # jaw loop
+        for _ in range(12):
             self.jaw_motor.on_for_seconds(
                 speed=-40,
                 seconds=0.05,
