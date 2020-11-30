@@ -201,6 +201,12 @@ class MrB3am:
         self.eject_b3am()
 
     def report_result(self, debug=False):
+        """
+        Report the result of the measurement.
+        The switch has a case for each color
+        the Color Sensor is able to detect.
+        MR-B3AM converts from the number of rotation degrees to B3am lengths.
+        """
         self.header_text()
 
         if self.current_b3am_color_code == ColorSensor.COLOR_BLACK:
@@ -283,6 +289,7 @@ class MrB3am:
             stroke_width=0,
             stroke_fill=None)
 
+        # make Mr. B3am print more information about the B3ams
         if debug:
             self.screen.draw.text(
                 xy=(0, 50),
@@ -319,6 +326,9 @@ class MrB3am:
                 self.current_b3am_length)).wait()
 
     def main(self, debug=False):
+        """
+        Main Loop
+        """
         while True:
             self.process_b3am()
 

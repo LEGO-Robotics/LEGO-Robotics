@@ -114,6 +114,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
 
         self.speaker.play(wav_file='/home/robot/sound/Motor start.wav').wait()
 
+        # Engine Idle:
         # Let the engine sound idle for 2 seconds
         motor_idle_start_time = time()
         while time() - motor_idle_start_time <= 2:
@@ -121,6 +122,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                 wav_file='/home/robot/sound/Motor idle.wav').wait()
 
         while True:
+            # Driving Mode:
             # Manual mode where the movement of the RoboDoz3r is controlled
             # by the IR remote
             while not self.touch_sensor.is_pressed:
@@ -139,6 +141,7 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
 
             self.speaker.play(wav_file='/home/robot/sound/Airbrake.wav').wait()
 
+            # Auto Mode:
             # In autonomous mode the RoboDoz3r uses the IR sensor
             # in proximity mode to detect nearby obstacles in its path
             while not self.touch_sensor.is_pressed:

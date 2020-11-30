@@ -9,8 +9,6 @@ MR-B3AM eats TECHNIC B3ams and tells your their lengths and colors!
 
 ## <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="16" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><b>Programming Instructions</b></p></ActivityCopyPaste>
 
-<?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="14" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p><u>MR-B3AM is very smart!</u></p><p>He eats TECHNIC B3ams and tell you the length and color of them.</p><p>But he doesn't like the B3ams so he will spit them out again!</p></ActivityCopyPaste>
-
 <?xml version="1.0" encoding="utf-8"?><ActivityCopyPaste fontsize="12" fontfamily="Verdana" xmlns="http://www.ni.com/ActivityRichTextDocument.xsd"><p>MR-B3AM doesn't know yet how to eat B3ams, so he needs your help!</p><p /><p>Luckily, this project contains everything you need to help him!</p><p /><p>Connect MR-B3AM to your computer and press the Play-icon in the program to the left.</p><p /><p>When the wheels spins, try to feed him a straight TECHNIC B3am, with the holes pointing upwards!</p><p /><p>But don't feed him with a B3am that is 3 holes long or shorter! He will choke and you'll never get that B3am back again!</p><p /><p>After feeding him with a few B3ams, you can go ahead and investigate the <font color="#337CBB"><u><a action="NavigateActivity-GoToNextSlide">Program</a></u></font> to see how MR-B3AM eat his B3ams.</p></ActivityCopyPaste>
 
 

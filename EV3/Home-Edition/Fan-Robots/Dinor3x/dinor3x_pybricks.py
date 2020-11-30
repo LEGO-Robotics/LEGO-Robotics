@@ -428,7 +428,8 @@ class Dinor3x(EV3Brick):
             then=Stop.HOLD,
             wait=True)
 
-        for i in range(12):
+        # jaw loop
+        for _ in range(12):
             self.jaw_motor.run_time(
                 speed=-400,
                 time=0.05 * 1000,

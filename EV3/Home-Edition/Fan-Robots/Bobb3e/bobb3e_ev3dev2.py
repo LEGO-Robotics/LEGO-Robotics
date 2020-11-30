@@ -217,14 +217,18 @@ class Bobb3e:
             self.lift_motor.off(brake=True)
 
     def keep_driving_or_operating_forks_by_ir_beacon(self, speed: float = 100):
+        """
+        Main Loop
+        """
         while True:
             self.drive_or_operate_forks_once_by_ir_beacon(speed=speed)
 
     def sound_alarm_if_reversing(self):
         """
-        Whenever the Reversing variable is changed to True
+        Reversing alarm sound:
+        - Whenever the Reversing variable is changed to True
         the alarm starts to play.
-        When the value of the Reversing variable is set to False
+        - When the value of the Reversing variable is set to False
         the alarm stops.
         """
         if self.reversing:
@@ -242,5 +246,8 @@ class Bobb3e:
         sleep(0.01)
 
     def sound_alarm_whenever_reversing(self):
+        """
+        Backing Sound Loop
+        """
         while True:
             self.sound_alarm_if_reversing()
