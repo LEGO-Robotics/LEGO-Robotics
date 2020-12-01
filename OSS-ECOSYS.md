@@ -241,6 +241,9 @@ Wiki
 [BlockExt Mindstorms NXT](https://github.com/blockext/mindstorms-nxt)
 
 
+### [Martyn Boogaarts](https://github.com/martynboogaarts)
+
+
 ### [Klutzy Bubbles](https://github.com/KlutzyBubbles)
 
 [LEGO MicroPython Extension](https://github.com/KlutzyBubbles/lego-micropython-extension)
@@ -392,6 +395,9 @@ NXT_Python (2007)
 [NXT Python Examples](https://github.com/Eelviny/nxt-python-examples)
 
 [Motor Control](https://github.com/Eelviny/MotorControl)
+
+
+### [Kenneth R. Madsen](https://github.com/icemadsen)
 
 
 ### Kyle Markland
