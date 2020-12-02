@@ -90,6 +90,8 @@
 
 [VSCode EV3Dev Browser](https://github.com/ev3dev/vscode-ev3dev-browser)
 
+[EV3 SystemD](https://github.com/ev3dev/ev3-systemd)
+
 
 #### [MindBoards](https://github.com/mindboards)
 
@@ -266,6 +268,8 @@ Wiki
 
 [EV3 API](https://github.com/c4ev3/EV3-API)
 
+[EV3duder Downloader/Uploader Utility](https://github.com/c4ev3/ev3duder)
+
 
 ### [GianCann](https://github.com/GianCann)
 
@@ -371,6 +375,8 @@ NXT_Python (2007)
 [YouTube Channel](https://www.youtube.com/channel/UC9t81ufD1yeMes9YGpKb7bA/videos)
 
 [EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
+
+[NXT Firmware](https://github.com/dlech/nxt-firmware)
 
 
 ### [Richard Lewis](https://github.com/richrd)
@@ -594,6 +600,11 @@ NXT_Python (2007)
 - [Examples](https://github.com/laurensvalk/ev3devlight-examples)
 
 [Ball Bot](https://github.com/laurensvalk/ballbot)
+
+
+### [Jakub Vaněk](https://github.com/JakubVanek)
+
+[EV3 Sources: Assembly](https://github.com/JakubVanek/ev3sources-asm)
 
 
 ### [Virantha](https://github.com/virantha)
