@@ -4,7 +4,7 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
-from pybricks.parameters import Button, Direction, Port
+from pybricks.parameters import Button, Direction, Port, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
@@ -39,3 +39,40 @@ class Rac3Truck(EV3Brick):
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
+
+    def reset(self):
+        self.turn_motor.run(speed=300)
+
+        wait(1500)
+
+        self.turn_motor.run_angle(
+            speed=-500,
+            rotation_angle=120,
+            then=Stop.HOLD,
+            wait=True)
+
+        self.turn_motor.reset_angle(angle=0)
+
+    def left(self):
+        if self.turn_motor.angle() > -65:
+            self.turn_motor.run(speed=-200)
+
+            while self.turn_motor.angle() > -65:
+                pass
+
+            self.turn_motor.hold()
+
+        else:
+            self.turn_motor.hold()
+
+    def right(self):
+        if self.turn_motor.angle() < 65:
+            self.turn_motor.run(speed=200)
+
+            while self.turn_motor.angle() < 65:
+                pass
+
+            self.turn_motor.hold()
+
+        else:
+            self.turn_motor.hold()

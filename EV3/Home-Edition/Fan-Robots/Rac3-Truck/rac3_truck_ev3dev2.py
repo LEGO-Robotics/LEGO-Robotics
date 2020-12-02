@@ -65,3 +65,49 @@ class Rac3Truck:
         self.ir_beacon_channel = ir_beacon_channel
 
         self.speaker = Sound()
+
+    def reset(self):
+        self.turn_motor.on(
+            speed=30,
+            brake=False,
+            block=False)
+
+        sleep(1.5)
+
+        self.turn_motor.on_for_degrees(
+            speed=-50,
+            position_sp=120,
+            brake=True,
+            block=True)
+
+        self.turn_motor.reset()
+
+    def left(self):
+        if self.turn_motor.position > -65:
+            self.turn_motor.on(
+                speed=-20,
+                brake=False,
+                block=False)
+
+            while self.turn_motor.position > -65:
+                pass
+
+            self.turn_motor.off(brake=True)
+
+        else:
+            self.turn_motor.off(brake=True)
+
+    def right(self):
+        if self.turn_motor.position < 65:
+            self.turn_motor.on(
+                speed=20,
+                brake=False,
+                block=False)
+
+            while self.turn_motor.position < 65:
+                pass
+
+            self.turn_motor.off(brake=True)
+
+        else:
+            self.turn_motor.off(brake=True)
