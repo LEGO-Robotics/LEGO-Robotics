@@ -46,9 +46,11 @@ class Rac3Truck(EV3Brick):
         This puts the steering wheel centred in the middle.
         Then you can drive with MoveTank. Mind the speed settings!
         """
-        self.turn_motor.run(speed=300)
-
-        wait(1500)
+        self.turn_motor.run_time(
+            speed=300,
+            time=1500,
+            then=Stop.COAST,
+            wait=True)
 
         self.turn_motor.run_angle(
             speed=-500,
@@ -69,10 +71,7 @@ class Rac3Truck(EV3Brick):
             while self.turn_motor.angle() > -65:
                 pass
 
-            self.turn_motor.hold()
-
-        else:
-            self.turn_motor.hold()
+        self.turn_motor.hold()
 
     def right(self):
         """
@@ -85,10 +84,7 @@ class Rac3Truck(EV3Brick):
             while self.turn_motor.angle() < 65:
                 pass
 
-            self.turn_motor.hold()
-
-        else:
-            self.turn_motor.hold()
+        self.turn_motor.hold()
 
     def center(self):
         """

@@ -52,15 +52,17 @@ class Rac3Truck:
         This puts the steering wheel centred in the middle.
         Then you can drive with MoveTank. Mind the speed settings!
         """
-        self.turn_motor.run_forever(speed=300)
-
-        sleep(1.5)
+        self.turn_motor.run_timed(
+            speed_sp=300,
+            time_sp=1500,
+            stop_action=Motor.STOP_ACTION_COAST)
+        self.turn_motor.wait_while(Motor.STATE_RUNNING)
 
         self.turn_motor.run_to_rel_pos(
-            speed_sp=-500,
-            position_sp=120,
+            speed_sp=500,
+            position_sp=-120,
             stop_action=Motor.STOP_ACTION_HOLD)
-        self.turn_motor.wait_while(Motor.STOP_ACTION_HOLD)
+        self.turn_motor.wait_while(Motor.STATE_RUNNING)
 
         self.turn_motor.reset()
 
@@ -75,10 +77,7 @@ class Rac3Truck:
             while self.turn_motor.position > -65:
                 pass
 
-            self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-
-        else:
-            self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def right(self):
         """
@@ -91,10 +90,7 @@ class Rac3Truck:
             while self.turn_motor.position < 65:
                 pass
 
-            self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
-
-        else:
-            self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def center(self):
         """
