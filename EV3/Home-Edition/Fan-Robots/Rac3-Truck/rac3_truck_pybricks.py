@@ -73,6 +73,17 @@ class Rac3Truck(EV3Brick):
 
         self.steer_motor.hold()
 
+    def steer_left(self):
+        if self.steer_motor.angle() > -65:
+            self.steer_motor.run_target(
+                speed=-200,
+                target_angle=-65,
+                then=Stop.HOLD,
+                wait=True)
+
+        else:
+            self.steer_motor.hold()
+
     def right(self):
         """
         Steer to the Right. This only turns the steering wheel.
@@ -85,6 +96,17 @@ class Rac3Truck(EV3Brick):
                 pass
 
         self.steer_motor.hold()
+
+    def steer_right(self):
+        if self.steer_motor.angle() > 65:
+            self.steer_motor.run_target(
+                speed=200,
+                target_angle=65,
+                then=Stop.HOLD,
+                wait=True)
+
+        else:
+            self.steer_motor.hold()
 
     def center(self):
         """

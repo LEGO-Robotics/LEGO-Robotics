@@ -79,6 +79,17 @@ class Rac3Truck:
 
         self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
+    def steer_left(self):
+        if self.steer_motor.position > -65:
+            self.steer_motor.run_to_abs_pos(
+                speed_sp=-200,
+                position_sp=-65,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.steer_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
     def right(self):
         """
         Steer to the Right. This only turns the steering wheel.
@@ -91,6 +102,17 @@ class Rac3Truck:
                 pass
 
         self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+    def steer_right(self):
+        if self.steer_motor.position < 65:
+            self.steer_motor.run_to_abs_pos(
+                speed_sp=200,
+                position_sp=65,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.steer_motor.wait_while(Motor.STATE_RUNNING)
+
+        else:
+            self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def center(self):
         """

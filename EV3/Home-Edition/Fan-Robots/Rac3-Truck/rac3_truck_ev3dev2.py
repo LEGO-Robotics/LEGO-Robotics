@@ -102,6 +102,17 @@ class Rac3Truck:
 
         self.steer_motor.off(brake=True)
 
+    def steer_left(self):
+        if self.steer_motor.position > -65:
+            self.steer_motor.on_to_position(
+                speed=-20,
+                position=-65,
+                brake=True,
+                block=True)
+
+        else:
+            self.steer_motor.off(brake=True)
+
     def right(self):
         """
         Steer to the Right. This only turns the steering wheel.
@@ -117,6 +128,17 @@ class Rac3Truck:
                 pass
 
         self.steer_motor.off(brake=True)
+
+    def steer_right(self):
+        if self.steer_motor.position < 65:
+            self.steer_motor.on_to_position(
+                speed=20,
+                position=65,
+                brake=True,
+                block=True)
+
+        else:
+            self.steer_motor.off(brake=True)
 
     def center(self):
         """
