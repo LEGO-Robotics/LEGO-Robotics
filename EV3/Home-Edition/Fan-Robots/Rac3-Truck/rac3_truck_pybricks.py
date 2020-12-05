@@ -76,3 +76,6 @@ class Rac3Truck(EV3Brick):
 
         else:
             self.turn_motor.hold()
+
+    def center(self):
+        ...

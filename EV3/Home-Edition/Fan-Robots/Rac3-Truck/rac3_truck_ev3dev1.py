@@ -82,3 +82,6 @@ class Rac3Truck:
 
         else:
             self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+    def center(self):
+        ...

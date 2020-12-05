@@ -111,3 +111,6 @@ class Rac3Truck:
 
         else:
             self.turn_motor.off(brake=True)
+
+    def center(self):
+        ...
