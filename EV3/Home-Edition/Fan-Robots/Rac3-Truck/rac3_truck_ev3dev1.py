@@ -118,4 +118,37 @@ class Rac3Truck:
         """
         When you want to go forwards again, use Center.
         """
-        ...
+        if self.steer_motor.position < -7:
+            self.steer_motor.run_forever(speed_sp=200)
+
+            while self.steer_motor.position < 4:
+                pass
+
+        elif self.steer_motor.position > 7:
+            self.steer_motor.run_forever(speed_sp=-200)
+
+            while self.steer_motor.position > -4:
+                pass
+
+        self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        sleep(0.1)
+
+    def steer_center(self):
+        if self.steer_motor.position < -7:
+            self.steer_motor.run_to_abs_pos(
+                speed_sp=200,
+                position_sp=4,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.steer_motor.wait_while(Motor.STATE_RUNNING)
+
+        elif self.steer_motor.position > 7:
+            self.steer_motor.run_to_abs_pos(
+                speed_sp=-200,
+                position_sp=-4,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.steer_motor.wait_while(Motor.STATE_RUNNING)
+
+        self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+
+        sleep(0.1)

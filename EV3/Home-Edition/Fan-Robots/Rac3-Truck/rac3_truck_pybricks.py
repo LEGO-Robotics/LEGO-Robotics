@@ -112,4 +112,37 @@ class Rac3Truck(EV3Brick):
         """
         When you want to go forwards again, use Center.
         """
-        ...
+        if self.steer_motor.angle() < -7:
+            self.steer_motor.run(speed=200)
+
+            while self.steer_motor.angle() < 4:
+                pass
+
+        elif self.steer_motor.angle() > 7:
+            self.steer_motor.run(speed=-200)
+
+            while self.steer_motor.angle() > -4:
+                pass
+
+        self.steer_motor.hold()
+
+        wait(100)
+
+    def steer_center(self):
+        if self.steer_motor.angle() < -7:
+            self.steer_motor.run_target(
+                speed=200,
+                target_angle=4,
+                then=Stop.HOLD,
+                wait=True)
+
+        elif self.steer_motor.angle() > 7:
+            self.steer_motor.run_target(
+                speed=-200,
+                target_angle=-4,
+                then=Stop.HOLD,
+                wait=True)
+
+        self.steer_motor.hold()
+
+        wait(100)
