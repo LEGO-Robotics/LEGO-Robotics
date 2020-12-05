@@ -73,13 +73,11 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
         # raise the shovel
         if self.shovel_control_remote_control.red_up or \
                 self.shovel_control_remote_control.blue_up:
-
             self.shovel_motor.run_forever(speed_sp=100)
 
         # lower the shovel
         elif self.shovel_control_remote_control.red_down or \
                 self.shovel_control_remote_control.blue_down:
-
             self.shovel_motor.run_forever(speed_sp=-100)
 
         else:
@@ -159,8 +157,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                         speed_sp=-300,
                         time_sp=1000,
                         stop_action=Motor.STOP_ACTION_HOLD)
-                    self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
-                    self.right_motor.wait_while(Motor.STOP_ACTION_HOLD)
+                    self.left_motor.wait_while(Motor.STATE_RUNNING)
+                    self.right_motor.wait_while(Motor.STATE_RUNNING)
 
                     self.left_motor.run_timed(
                         speed_sp=500,
@@ -170,8 +168,8 @@ class RoboDoz3r(IRBeaconRemoteControlledTank):
                         speed_sp=-500,
                         time_sp=1000,
                         stop_action=Motor.STOP_ACTION_HOLD)
-                    self.left_motor.wait_while(Motor.STOP_ACTION_HOLD)
-                    self.right_motor.wait_while(Motor.STOP_ACTION_HOLD)
+                    self.left_motor.wait_while(Motor.STATE_RUNNING)
+                    self.right_motor.wait_while(Motor.STATE_RUNNING)
 
                 else:
                     self.left_motor.run_forever(speed_sp=500)
