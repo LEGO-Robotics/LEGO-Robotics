@@ -67,6 +67,11 @@ class Rac3Truck:
         self.speaker = Sound()
 
     def reset(self):
+        """
+        Always begin with Reset.
+        This puts the steering wheel centred in the middle.
+        Then you can drive with MoveTank. Mind the speed settings!
+        """
         self.turn_motor.on(
             speed=30,
             brake=False,
@@ -83,6 +88,10 @@ class Rac3Truck:
         self.turn_motor.reset()
 
     def left(self):
+        """
+        Steer to the Left. This only turns the steering wheel.
+        So after steering, use MoveTank to drive. Mind the speed settings!
+        """
         if self.turn_motor.position > -65:
             self.turn_motor.on(
                 speed=-20,
@@ -98,6 +107,10 @@ class Rac3Truck:
             self.turn_motor.off(brake=True)
 
     def right(self):
+        """
+        Steer to the Right. This only turns the steering wheel.
+        So after steering, use MoveTank to drive. Mind the speed settings!
+        """
         if self.turn_motor.position < 65:
             self.turn_motor.on(
                 speed=20,
@@ -113,4 +126,7 @@ class Rac3Truck:
             self.turn_motor.off(brake=True)
 
     def center(self):
+        """
+        When you want to go forwards again, use Center.
+        """
         ...

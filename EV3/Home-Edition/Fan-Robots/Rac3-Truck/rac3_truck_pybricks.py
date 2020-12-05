@@ -41,6 +41,11 @@ class Rac3Truck(EV3Brick):
         self.ir_beacon_channel = ir_beacon_channel
 
     def reset(self):
+        """
+        Always begin with Reset.
+        This puts the steering wheel centred in the middle.
+        Then you can drive with MoveTank. Mind the speed settings!
+        """
         self.turn_motor.run(speed=300)
 
         wait(1500)
@@ -54,6 +59,10 @@ class Rac3Truck(EV3Brick):
         self.turn_motor.reset_angle(angle=0)
 
     def left(self):
+        """
+        Steer to the Left. This only turns the steering wheel.
+        So after steering, use MoveTank to drive. Mind the speed settings!
+        """
         if self.turn_motor.angle() > -65:
             self.turn_motor.run(speed=-200)
 
@@ -66,6 +75,10 @@ class Rac3Truck(EV3Brick):
             self.turn_motor.hold()
 
     def right(self):
+        """
+        Steer to the Right. This only turns the steering wheel.
+        So after steering, use MoveTank to drive. Mind the speed settings!
+        """
         if self.turn_motor.angle() < 65:
             self.turn_motor.run(speed=200)
 
@@ -78,4 +91,7 @@ class Rac3Truck(EV3Brick):
             self.turn_motor.hold()
 
     def center(self):
+        """
+        When you want to go forwards again, use Center.
+        """
         ...
