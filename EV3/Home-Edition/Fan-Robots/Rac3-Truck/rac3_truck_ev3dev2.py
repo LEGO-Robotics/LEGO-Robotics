@@ -184,3 +184,80 @@ class Rac3Truck:
         self.steer_motor.off(brake=True)
 
         sleep(0.1)
+
+    def drive_once_by_ir_beacon(self, speed: float = 80):
+        """
+        Remote-control your Rac3 Truck with the IR Beacon
+        """
+        # forward
+        if self.ir_sensor.top_left(channel=self.ir_beacon_channel) and \
+                self.ir_sensor.top_right(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=speed,
+                right_speed=speed)
+
+            self.steer_center()
+
+        # backward
+        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel) and \
+                self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=-speed,
+                right_speed=-speed)
+
+            self.steer_center()
+
+        # turn left forward
+        elif self.ir_sensor.top_left(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=60,
+                right_speed=100)
+
+            self.steer_left()
+
+        # turn right forward
+        elif self.ir_sensor.top_right(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=100,
+                right_speed=60)
+
+            self.steer_right()
+
+        # turn left backward
+        elif self.ir_sensor.bottom_left(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=-60,
+                right_speed=-100)
+
+            self.steer_left()
+
+        # turn right backward
+        elif self.ir_sensor.bottom_right(channel=self.ir_beacon_channel):
+            self.tank_driver.on(
+                left_speed=-100,
+                right_speed=-60)
+
+            self.steer_right()
+
+        # otherwise stop
+        else:
+            self.tank_driver.off(brake=False)
+
+            self.steer_center()
+
+    def keep_driving_by_ir_beacon(self, speed: float = 80):
+        while True:
+            self.drive_once_by_ir_beacon(speed=speed)
+
+    def main(self):
+        self.reset()
+
+        sleep(1)
+
+        self.keep_driving_by_ir_beacon()
+
+
+if __name__ == '__main__':
+    RAC3_TRUCK = Rac3Truck()
+
+    RAC3_TRUCK.main()
