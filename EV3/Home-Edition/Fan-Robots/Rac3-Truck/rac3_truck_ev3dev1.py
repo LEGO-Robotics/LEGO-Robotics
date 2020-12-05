@@ -23,20 +23,20 @@ class Rac3Truck:
             self,
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             polarity: str = Motor.POLARITY_INVERSED,
-            turn_motor_port: str = OUTPUT_A,
+            steer_motor_port: str = OUTPUT_A,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             fast=False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)
 
-            self.turn_motor = FastMediumMotor(address=turn_motor_port)
+            self.steer_motor = FastMediumMotor(address=steer_motor_port)
 
         else:
             self.left_motor = LargeMotor(address=left_motor_port)
             self.right_motor = LargeMotor(address=right_motor_port)
 
-            self.turn_motor = MediumMotor(address=turn_motor_port)
+            self.steer_motor = MediumMotor(address=steer_motor_port)
 
         self.left_motor.polarity = self.right_motor.polarity = polarity
 
@@ -52,45 +52,45 @@ class Rac3Truck:
         This puts the steering wheel centred in the middle.
         Then you can drive with MoveTank. Mind the speed settings!
         """
-        self.turn_motor.run_timed(
+        self.steer_motor.run_timed(
             speed_sp=300,
             time_sp=1500,
             stop_action=Motor.STOP_ACTION_COAST)
-        self.turn_motor.wait_while(Motor.STATE_RUNNING)
+        self.steer_motor.wait_while(Motor.STATE_RUNNING)
 
-        self.turn_motor.run_to_rel_pos(
+        self.steer_motor.run_to_rel_pos(
             speed_sp=500,
             position_sp=-120,
             stop_action=Motor.STOP_ACTION_HOLD)
-        self.turn_motor.wait_while(Motor.STATE_RUNNING)
+        self.steer_motor.wait_while(Motor.STATE_RUNNING)
 
-        self.turn_motor.reset()
+        self.steer_motor.reset()
 
     def left(self):
         """
         Steer to the Left. This only turns the steering wheel.
         So after steering, use MoveTank to drive. Mind the speed settings!
         """
-        if self.turn_motor.position > -65:
-            self.turn_motor.run_forever(speed_sp=-200)
+        if self.steer_motor.position > -65:
+            self.steer_motor.run_forever(speed_sp=-200)
 
-            while self.turn_motor.position > -65:
+            while self.steer_motor.position > -65:
                 pass
 
-        self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def right(self):
         """
         Steer to the Right. This only turns the steering wheel.
         So after steering, use MoveTank to drive. Mind the speed settings!
         """
-        if self.turn_motor.position < 65:
-            self.turn_motor.run_forever(speed_sp=200)
+        if self.steer_motor.position < 65:
+            self.steer_motor.run_forever(speed_sp=200)
 
-            while self.turn_motor.position < 65:
+            while self.steer_motor.position < 65:
                 pass
 
-        self.turn_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
+        self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
     def center(self):
         """
