@@ -146,3 +146,77 @@ class Rac3Truck(EV3Brick):
         self.steer_motor.hold()
 
         wait(100)
+
+    def drive_once_by_ir_beacon(self, speed: float = 800):
+        """
+        Remote-control your Rac3 Truck with the IR Beacon
+        """
+        ir_beacon_button_pressed = \
+            set(self.ir_sensor.buttons(channel=self.ir_beacon_channel))
+
+        # forward
+        if ir_beacon_button_pressed == {Button.LEFT_UP, Button.RIGHT_UP}:
+            self.drive_base.drive(
+                speed=speed,
+                turn_rate=0)
+
+            self.steer_center()
+
+        # backward
+        elif ir_beacon_button_pressed == {Button.LEFT_DOWN, Button.RIGHT_DOWN}:
+            self.drive_base.drive(
+                speed=-speed,
+                turn_rate=0)
+
+            self.steer_center()
+
+        # turn left forward
+        elif ir_beacon_button_pressed == {Button.LEFT_UP}:
+            self.left_motor.run(speed=600)
+            self.right_motor.run(speed=1000)
+
+            self.steer_left()
+
+        # turn right forward
+        elif ir_beacon_button_pressed == {Button.RIGHT_UP}:
+            self.left_motor.run(speed=1000)
+            self.right_motor.run(speed=600)
+
+            self.steer_right()
+
+        # turn left backward
+        elif ir_beacon_button_pressed == {Button.LEFT_DOWN}:
+            self.left_motor.run(speed=-600)
+            self.right_motor.run(speed=-1000)
+
+            self.steer_left()
+
+        # turn right backward
+        elif ir_beacon_button_pressed == {Button.RIGHT_DOWN}:
+            self.left_motor.run(speed=-1000)
+            self.right_motor.run(speed=-600)
+
+            self.steer_right()
+
+        # otherwise stop
+        else:
+            self.drive_base.stop()
+
+            self.steer_center()
+
+    def keep_driving_by_ir_beacon(self, speed: float = 800):
+        while True:
+            self.drive_once_by_ir_beacon(speed=speed)
+
+    def main(self):
+        self.reset()
+
+        wait(1000)
+
+        self.keep_driving_by_ir_beacon()
+
+
+if __name__ == '__main__':
+    RAC3_TRUCK = Rac3Truck()
+
+    RAC3_TRUCK.main()
