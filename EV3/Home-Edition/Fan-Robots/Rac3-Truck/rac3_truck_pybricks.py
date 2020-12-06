@@ -3,7 +3,6 @@
 
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, InfraredSensor
-from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
@@ -209,6 +208,9 @@ class Rac3Truck(EV3Brick):
             self.drive_once_by_ir_beacon(speed=speed)
 
     def main(self):
+        """
+        You can control your truck with the IR Beacon
+        """
         self.reset()
 
         wait(1000)

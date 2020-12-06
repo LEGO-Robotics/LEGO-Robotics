@@ -4,7 +4,7 @@
 from ev3dev.ev3 import (
     Motor, MediumMotor, LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     InfraredSensor, RemoteControl, INPUT_4,
-    Screen, Sound
+    Sound
 )
 
 # import os
@@ -211,6 +211,9 @@ class Rac3Truck:
             self.drive_once_by_ir_beacon(speed=speed)
 
     def main(self):
+        """
+        You can control your truck with the IR Beacon
+        """
         self.reset()
 
         sleep(1)
