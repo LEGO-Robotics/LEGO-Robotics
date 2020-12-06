@@ -152,3 +152,73 @@ class Rac3Truck:
         self.steer_motor.stop(stop_action=Motor.STOP_ACTION_HOLD)
 
         sleep(0.1)
+
+    def drive_once_by_ir_beacon(self, speed: float = 800):
+        """
+        Remote-control your Rac3 Truck with the IR Beacon
+        """
+        # forward
+        if self.remote_control.red_up and self.remote_control.blue_up:
+            self.left_motor.run_forever(speed_sp=speed)
+            self.right_motor.run_forever(speed_sp=speed)
+
+            self.steer_center()
+
+        # backward
+        elif self.remote_control.red_down and self.remote_control.blue_down:
+            self.left_motor.run_forever(speed_sp=-speed)
+            self.right_motor.run_forever(speed_sp=-speed)
+
+            self.steer_center()
+
+        # turn left forward
+        elif self.remote_control.red_up:
+            self.left_motor.run_forever(speed_sp=600)
+            self.right_motor.run_forever(speed_sp=1000)
+
+            self.steer_left()
+
+        # turn right forward
+        elif self.remote_control.blue_up:
+            self.left_motor.run_forever(speed_sp=1000)
+            self.right_motor.run_forever(speed_sp=600)
+
+            self.steer_right()
+
+        # turn left backward
+        elif self.remote_control.red_down:
+            self.left_motor.run_forever(speed_sp=-600)
+            self.right_motor.run_forever(speed_sp=-1000)
+
+            self.steer_left()
+
+        # turn right backward
+        elif self.remote_control.blue_down:
+            self.left_motor.run_forever(speed_sp=-1000)
+            self.right_motor.run_forever(speed_sp=-600)
+
+            self.steer_right()
+
+        # otherwise stop
+        else:
+            self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+            self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
+
+            self.center()
+
+    def keep_driving_by_ir_beacon(self, speed: float = 800):
+        while True:
+            self.drive_once_by_ir_beacon(speed=speed)
+
+    def main(self):
+        self.reset()
+
+        sleep(1)
+
+        self.keep_driving_by_ir_beacon()
+
+
+if __name__ == '__main__':
+    RAC3_TRUCK = Rac3Truck()
+
+    RAC3_TRUCK.main()
