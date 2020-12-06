@@ -72,6 +72,7 @@ class Rac3Truck:
         This puts the steering wheel centred in the middle.
         Then you can drive with MoveTank. Mind the speed settings!
         """
+        # *** FIXME: this sometimes causes a motor jam ***
         self.steer_motor.on(
             speed=30,
             brake=False,
