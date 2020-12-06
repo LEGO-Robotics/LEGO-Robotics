@@ -204,7 +204,7 @@ class Rac3Truck:
             self.left_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
             self.right_motor.stop(stop_action=Motor.STOP_ACTION_COAST)
 
-            self.center()
+            self.steer_center()
 
     def keep_driving_by_ir_beacon(self, speed: float = 800):
         while True:
