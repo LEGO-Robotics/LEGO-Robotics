@@ -43,6 +43,8 @@
 
 [LEGO Draw](https://github.com/pybricks/ldraw)
 
+[NXT Firmware Drivers](https://github.com/pybricks/nxt-firmware-drivers)
+
 
 ### [EV3Dev](https://github.com/ev3dev)
 
