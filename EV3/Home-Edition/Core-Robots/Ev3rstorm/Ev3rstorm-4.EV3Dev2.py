@@ -1,7 +1,9 @@
 #!/usr/bin/env micropython
 
 
-from ev3dev2.motor import LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import (
+    LargeMotor, MediumMotor, MoveTank, OUTPUT_A, OUTPUT_B, OUTPUT_C
+)
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import ColorSensor, InfraredSensor, TouchSensor
 from ev3dev2.led import Leds
@@ -42,7 +44,7 @@ while True:
             volume=100,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-        SPEAKER.play_file(                                  
+        SPEAKER.play_file(
             wav_file='/home/robot/sound/Detected.wav',
             volume=100,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
