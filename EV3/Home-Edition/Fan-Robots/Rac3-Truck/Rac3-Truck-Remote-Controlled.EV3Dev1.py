@@ -2,6 +2,9 @@
 
 """
 When you run this program, you can control your truck with the IR Beacon!
+
+Run this program if you want to remote-control your Rac3 Truck
+with the IR Beacon.
 """
 
 from rac3_truck_ev3dev1 import Rac3Truck
