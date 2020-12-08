@@ -30,7 +30,6 @@ while True:
     RAC3_TRUCK.steer_left()
 
     RAC3_TRUCK.speaker.play_file(file=SoundFile.OBJECT)
-
     RAC3_TRUCK.speaker.play_file(file=SoundFile.DETECTED)
 
     RAC3_TRUCK.left_motor.run_time(
