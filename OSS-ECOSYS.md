@@ -43,6 +43,8 @@
 
 [LEGO Draw](https://github.com/pybricks/ldraw)
 
+[NXT Firmware Drivers](https://github.com/pybricks/nxt-firmware-drivers)
+
 
 ### [EV3Dev](https://github.com/ev3dev)
 
@@ -89,6 +91,8 @@
 [LEGO Linux Drivers](https://github.com/ev3dev/lego-linux-drivers)
 
 [VSCode EV3Dev Browser](https://github.com/ev3dev/vscode-ev3dev-browser)
+
+[EV3 SystemD](https://github.com/ev3dev/ev3-systemd)
 
 
 #### [MindBoards](https://github.com/mindboards)
@@ -241,6 +245,9 @@ Wiki
 [BlockExt Mindstorms NXT](https://github.com/blockext/mindstorms-nxt)
 
 
+### [Martyn Boogaarts](https://github.com/martynboogaarts)
+
+
 ### [Klutzy Bubbles](https://github.com/KlutzyBubbles)
 
 [LEGO MicroPython Extension](https://github.com/KlutzyBubbles/lego-micropython-extension)
@@ -262,6 +269,8 @@ Wiki
 ### [C4EV3](https://github.com/c4ev3)
 
 [EV3 API](https://github.com/c4ev3/EV3-API)
+
+[EV3duder Downloader/Uploader Utility](https://github.com/c4ev3/ev3duder)
 
 
 ### [GianCann](https://github.com/GianCann)
@@ -369,6 +378,8 @@ NXT_Python (2007)
 
 [EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
 
+[NXT Firmware](https://github.com/dlech/nxt-firmware)
+
 
 ### [Richard Lewis](https://github.com/richrd)
 
@@ -392,6 +403,9 @@ NXT_Python (2007)
 [NXT Python Examples](https://github.com/Eelviny/nxt-python-examples)
 
 [Motor Control](https://github.com/Eelviny/MotorControl)
+
+
+### [Kenneth R. Madsen](https://github.com/icemadsen)
 
 
 ### Kyle Markland
@@ -588,6 +602,11 @@ NXT_Python (2007)
 - [Examples](https://github.com/laurensvalk/ev3devlight-examples)
 
 [Ball Bot](https://github.com/laurensvalk/ballbot)
+
+
+### [Jakub Vaněk](https://github.com/JakubVanek)
+
+[EV3 Sources: Assembly](https://github.com/JakubVanek/ev3sources-asm)
 
 
 ### [Virantha](https://github.com/virantha)
