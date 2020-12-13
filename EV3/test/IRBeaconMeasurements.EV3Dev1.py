@@ -14,14 +14,13 @@ SCREEN = Screen()
 
 while True:
     heading, distance = BEACON_SEEKER.heading_and_distance
-    reliable = ir_beacon_measurements_reliable(heading_angle=heading,
-                                               distance=distance)
 
     SCREEN.clear()
     SCREEN.draw.text(
         xy=(0, 0),
         text='HA={}, D={}'.format(heading, distance)
-             if reliable
+             if ir_beacon_measurements_reliable(heading_angle=heading,
+                                                distance=distance)
              else 'x HA={}, D={}'.format(heading, distance),
         fill=None,
         font=None,

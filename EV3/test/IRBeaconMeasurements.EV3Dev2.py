@@ -15,12 +15,11 @@ CONSOLE = Console()
 
 while True:
     heading, distance = IR_SENSOR.heading_and_distance(channel=1)
-    reliable = ir_beacon_measurements_reliable(heading_angle=heading,
-                                               distance=distance)
 
     CONSOLE.text_at(
         text='HA={}, D={}'.format(heading, distance)
-             if reliable
+             if ir_beacon_measurements_reliable(heading_angle=heading,
+                                                distance=distance)
              else 'x HA={}, D={}'.format(heading, distance),
         column=1, row=1,
         reset_console=True,

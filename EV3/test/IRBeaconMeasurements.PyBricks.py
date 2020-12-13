@@ -14,13 +14,12 @@ IR_SENSOR = InfraredSensor(port=Port.S4)
 
 while True:
     distance, angle = IR_SENSOR.beacon(channel=1)
-    reliable = ir_beacon_measurements_reliable(heading_angle=angle,
-                                               distance=distance)
 
     EV3_BRICK.screen.clear()
     EV3_BRICK.screen.print(
         'HA={}, D={}'.format(angle, distance)
-        if reliable
+        if ir_beacon_measurements_reliable(heading_angle=angle,
+                                           distance=distance)
         else 'x HA={}, D={}'.format(angle, distance))
 
     wait(300)
