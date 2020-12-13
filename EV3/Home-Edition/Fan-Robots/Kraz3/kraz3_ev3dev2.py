@@ -55,6 +55,35 @@ class Kraz3(IRBeaconRemoteControlledTank):
         self.console = Console()
         self.speaker = Sound()
 
+    def kungfu_maneouver_if_touched_or_remote_controlled(self):
+        """
+        Kung-Fu Maneouver voa Touch Sensor and Remote Control of head and arms
+        """
+        if self.touch_sensor.is_pressed:
+            self.speaker.play_file(
+                wav_file='/home/robot/sound/Kung fu.wav',
+                volume=100,
+                play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+            self.wiggle_motor.on_for_rotations(
+                speed=50,
+                rotations=1,
+                brake=True,
+                block=True)
+
+        elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            self.wiggle_motor.on(
+                speed=11,
+                brake=False,
+                block=False)
+
+        else:
+            self.wiggle_motor.off(brake=True)
+
+    def kungfu_maneouver_whenever_touched_or_remote_controlled(self):
+        while True:
+            self.kungfu_maneouver_if_touched_or_remote_controlled()
+
     def main(self):
         while True:
             self.drive_once_by_ir_beacon()
