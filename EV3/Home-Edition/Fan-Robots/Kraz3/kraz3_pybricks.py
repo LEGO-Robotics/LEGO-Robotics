@@ -39,7 +39,6 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
 
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
-        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
     def kungfu_manoeuvre_if_touched_or_remote_controlled(self):

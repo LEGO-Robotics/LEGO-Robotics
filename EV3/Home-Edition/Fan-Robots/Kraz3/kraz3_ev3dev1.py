@@ -49,8 +49,8 @@ class Kraz3(IRBeaconRemoteControlledTank):
 
             self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.beacon = RemoteControl(sensor=self.ir_sensor,
-                                    channel=ir_beacon_channel)
+        self.remote_control = RemoteControl(sensor=self.ir_sensor,
+                                            channel=ir_beacon_channel)
 
         self.leds = Leds()
         self.speaker = Sound()
@@ -68,7 +68,7 @@ class Kraz3(IRBeaconRemoteControlledTank):
                 stop_action=Motor.STOP_ACTION_HOLD)
             self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
 
-        elif self.beacon.beacon:
+        elif self.remote_control.beacon:
             self.wiggle_motor.run_forever(speed_sp=111)
 
         else:
