@@ -4,10 +4,11 @@
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
     TouchSensor, ColorSensor, INPUT_1, INPUT_3,
-    Sound, Screen
+    Leds, Sound
 )
 from ev3dev.helper import RemoteControlledTank
 
+from random import randint
 from time import sleep
 
 # import os
@@ -45,8 +46,8 @@ class Kraz3(RemoteControlledTank):
 
             self.color_sensor = ColorSensor(address=color_sensor_port)
 
+        self.leds = Leds()
         self.speaker = Sound()
-        self.screen = Screen()
 
     def kungfu_manoeuvre_if_touched_or_remote_controlled(self):
         """
@@ -59,6 +60,7 @@ class Kraz3(RemoteControlledTank):
                 speed_sp=500,   # degrees per second
                 position_sp=360,   # degrees
                 stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
 
         elif self.remote.beacon:
             self.wiggle_motor.run_forever(speed_sp=111)
@@ -69,3 +71,98 @@ class Kraz3(RemoteControlledTank):
     def kungfu_manoeuvre_whenever_touched_or_remote_controlled(self):
         while True:
             self.kungfu_manoeuvre_if_touched_or_remote_controlled()
+
+    def react_to_color(self):
+        detected_color = self.color_sensor.color
+
+        if detected_color == ColorSensor.COLOR_YELLOW:
+            self.speaker.play(wav_file='/home/robot/sound/Yellow.wav')
+
+            self.wiggle_motor.run_to_rel_pos(
+                speed_sp=860,
+                position_sp=-360,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.speaker.play(wav_file='/home/robot/sound/Uh-oh.wav').wait()
+
+            sleep(0.5)
+
+            self.speaker.play(wav_file='/home/robot/sound/Sneezing.wav').wait()
+
+            sleep(0.5)
+
+        elif detected_color == ColorSensor.COLOR_RED:
+            self.speaker.play(wav_file='/home/robot/sound/Shouting.wav').wait()
+
+            for _ in range(randint(1, 6)):
+                self.speaker.play(
+                    wav_file='/home/robot/sound/Smack.wav').wait()
+
+            self.leds.set_color(
+                group=Leds.LEFT,
+                color=Leds.RED,
+                pct=1)
+            self.leds.set_color(
+                group=Leds.RIGHT,
+                color=Leds.RED,
+                pct=1)
+
+            self.wiggle_motor.run_to_rel_pos(
+                speed_sp=170,
+                position_sp=360,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.speaker.play(wav_file='/home/robot/sound/LEGO.wav').wait()
+            self.speaker.play(
+                wav_file='/home/robot/sound/MINDSTORMS.wav').wait()
+
+            self.leds.all_off()
+
+        elif detected_color == ColorSensor.COLOR_BROWN:
+            self.speaker.play(wav_file='/home/robot/sound/Brown.wav').wait()
+
+            sleep(1)
+
+            self.wiggle_motor.run_to_rel_pos(
+                speed_sp=200,
+                position_sp=-360,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.speaker.play(wav_file='/home/robot/sound/Crying.wav').wait()
+
+        elif detected_color == ColorSensor.COLOR_GREEN:
+            self.speaker.play(wav_file='/home/robot/sound/Green.wav').wait()
+
+            self.wiggle_motor.run_to_rel_pos(
+                speed_sp=400,
+                position_sp=-360,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.speaker.play(wav_file='/home/robot/sound/Yes.wav').wait()
+
+            sleep(1)
+
+        elif detected_color == ColorSensor.COLOR_BLUE:
+            self.speaker.play(wav_file='/home/robot/sound/Blue.wav').wait()
+
+            self.speaker.play(
+                wav_file='/home/robot/sound/Fantastic.wav').wait()
+
+            self.speaker.play(wav_file='/home/robot/sound/Good job.wav')
+
+            self.wiggle_motor.run_to_rel_pos(
+                speed_sp=750,
+                position_sp=360,
+                stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
+
+            self.speaker.play(
+                wav_file='/home/robot/sound/Magic wand.wav').wait()
+
+    def keep_reacting_to_colors(self):
+        while True:
+            self.react_to_color()
