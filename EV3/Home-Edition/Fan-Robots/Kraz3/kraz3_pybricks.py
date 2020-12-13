@@ -4,7 +4,7 @@
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor, ColorSensor
 from pybricks.media.ev3dev import SoundFile
-from pybricks.parameters import Color, Direction, Port, Stop
+from pybricks.parameters import Button, Color, Direction, Port, Stop
 from pybricks.tools import wait
 
 # import sys
@@ -39,6 +39,30 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
 
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
+
+    def kungfu_maneouver_if_touched_or_remote_controlled(self):
+        """
+        Kung-Fu Maneouver voa Touch Sensor and Remote Control of head and arms
+        """
+        if self.touch_sensor.pressed():
+            self.speaker.play_file(file=SoundFile.KUNG_FU)
+
+            self.wiggle_motor.run_angle(
+                speed=500,
+                rotation_angle=360,
+                then=Stop.HOLD,
+                wait=True)
+
+        elif Button.BEACON in \
+                self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            self.wiggle_motor.run(speed=111)
+
+        else:
+            self.wiggle_motor.stop()
+
+    def kungfu_maneouver_whenever_touched_or_remote_controlled(self):
+        while True:
+            self.kungfu_maneouver_if_touched_or_remote_controlled()
 
     def main(self):
         while True:
