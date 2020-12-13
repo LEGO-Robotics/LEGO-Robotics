@@ -5,9 +5,9 @@ Add the Kung-Fu manoeuvre
 via the Touch Sensor and Remote Control of head and arms
 """
 
-from kraz3_rctank_ev3dev2 import Kraz3
-
 from multiprocessing import Process
+
+from kraz3_rctank_ev3dev2 import Kraz3
 
 
 KRAZ3 = Kraz3()
