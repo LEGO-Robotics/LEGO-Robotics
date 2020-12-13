@@ -83,6 +83,17 @@ class Kraz3(IRBeaconRemoteControlledTank):
         while True:
             self.kungfu_maneouver_if_touched_or_remote_controlled()
 
+    def follow_beacon(self):
+        """
+        Simple "Follow Me" method
+        (built by NeXTSTORM and first used in EV3-D4 project)
+        """
+        ...
+
+    def keep_following_beacon(self):
+        while True:
+            self.follow_beacon()
+
     def main(self):
         while True:
             self.drive_once_by_ir_beacon()

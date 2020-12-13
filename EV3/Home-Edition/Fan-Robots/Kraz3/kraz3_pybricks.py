@@ -75,14 +75,21 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
             self.drive_base.turn(angle=angle)
 
             if distance > 50:
+                self.light.on(color=Color.RED)
+
                 self.drive_base.drive(
-                    speed=100,   # drive slowly
+                    speed=1000,
                     turn_rate=0)
 
             elif distance < 20:
+                self.light.on(color=Color.ORANGE)
+
                 self.drive_base.drive(
-                    speed=-100,   # drive slowly
+                    speed=-1000,
                     turn_rate=0)
+
+            else:
+                self.light.on(color=Color.GREEN)
 
     def keep_following_beacon(self):
         while True:
