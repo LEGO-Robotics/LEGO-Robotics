@@ -1,7 +1,7 @@
 #!/usr/bin/env micropython
 
 """
-Add the Kung-Fu Maneouver
+Add the Kung-Fu manoeuvre
 via the Touch Sensor and Remote Control of head and arms
 """
 
@@ -13,7 +13,7 @@ from multiprocessing import Process
 KRAZ3 = Kraz3(fast=True)
 
 
-Process(target=KRAZ3.kungfu_maneouver_whenever_touched_or_remote_controlled) \
+Process(target=KRAZ3.kungfu_manoeuvre_whenever_touched_or_remote_controlled) \
     .start()
 
 KRAZ3.keep_driving_by_ir_beacon()

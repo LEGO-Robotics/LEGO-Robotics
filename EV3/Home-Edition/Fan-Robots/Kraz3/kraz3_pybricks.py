@@ -42,9 +42,9 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-    def kungfu_maneouver_if_touched_or_remote_controlled(self):
+    def kungfu_manoeuvre_if_touched_or_remote_controlled(self):
         """
-        Kung-Fu Maneouver voa Touch Sensor and Remote Control of head and arms
+        Kung-Fu manoeuvre voa Touch Sensor and Remote Control of head and arms
         """
         if self.touch_sensor.pressed():
             self.speaker.play_file(file=SoundFile.KUNG_FU)
@@ -62,9 +62,9 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
         else:
             self.wiggle_motor.stop()
 
-    def kungfu_maneouver_whenever_touched_or_remote_controlled(self):
+    def kungfu_manoeuvre_whenever_touched_or_remote_controlled(self):
         while True:
-            self.kungfu_maneouver_if_touched_or_remote_controlled()
+            self.kungfu_manoeuvre_if_touched_or_remote_controlled()
 
     def react_to_color(self):
         detected_color = self.color_sensor.color()
@@ -185,7 +185,7 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
         while True:
             self.drive_once_by_ir_beacon()
 
-            self.kungfu_maneouver_if_touched_or_remote_controlled()
+            self.kungfu_manoeuvre_if_touched_or_remote_controlled()
 
             self.react_to_color()
 

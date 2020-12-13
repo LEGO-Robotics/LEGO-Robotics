@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Add the Kung-Fu Maneouver
+Add the Kung-Fu manoeuvre
 via the Touch Sensor and Remote Control of head and arms
 """
 
@@ -14,7 +14,7 @@ KRAZ3 = Kraz3(fast=True)
 
 
 Process(
-    target=KRAZ3.kungfu_maneouver_whenever_touched_or_remote_controlled,
+    target=KRAZ3.kungfu_manoeuvre_whenever_touched_or_remote_controlled,
     daemon=True).start()
 
 KRAZ3.keep_driving_by_ir_beacon()
