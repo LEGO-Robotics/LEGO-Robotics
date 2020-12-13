@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Add the Kung-Fu Maneouver
+via the Touch Sensor and Remote Control of head and arms
+"""
 
 from kraz3_ev3dev2 import Kraz3
 

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+"""
+Control the left and right tracks using the Remote Control
+"""
 
 from kraz3_rctank_ev3dev2 import Kraz3
 

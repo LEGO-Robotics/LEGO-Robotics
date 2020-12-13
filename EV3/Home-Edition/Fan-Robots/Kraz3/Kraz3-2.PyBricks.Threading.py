@@ -1,5 +1,9 @@
 #!/usr/bin/env pybricks-micropython
 
+"""
+Add the Kung-Fu Maneouver
+via the Touch Sensor and Remote Control of head and arms
+"""
 
 from kraz3_pybricks import Kraz3
 
