@@ -3,7 +3,7 @@
 
 from ev3dev2.motor import MediumMotor, Motor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
-from ev3dev2.sensor.lego import TouchSensor, ColorSensor, InfraredSensor
+from ev3dev2.sensor.lego import TouchSensor, ColorSensor
 from ev3dev2.button import Button
 from ev3dev2.console import Console
 from ev3dev2.sound import Sound
@@ -49,7 +49,6 @@ class Kraz3(IRBeaconRemoteControlledTank):
 
             self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
         self.console = Console()

@@ -3,8 +3,7 @@
 
 from ev3dev.ev3 import (
     Motor, MediumMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C,
-    TouchSensor, ColorSensor, InfraredSensor, RemoteControl,
-    INPUT_1, INPUT_3, INPUT_4,
+    TouchSensor, ColorSensor, RemoteControl, INPUT_1, INPUT_3, INPUT_4,
     Sound, Screen
 )
 
@@ -49,7 +48,6 @@ class Kraz3(IRBeaconRemoteControlledTank):
 
             self.color_sensor = ColorSensor(address=color_sensor_port)
 
-        self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.beacon = RemoteControl(sensor=self.ir_sensor,
                                     channel=ir_beacon_channel)
 
