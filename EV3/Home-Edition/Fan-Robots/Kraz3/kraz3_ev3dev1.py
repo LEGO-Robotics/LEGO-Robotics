@@ -57,7 +57,7 @@ class Kraz3(IRBeaconRemoteControlledTank):
 
     def kungfu_manoeuvre_if_touched_or_remote_controlled(self):
         """
-        Kung-Fu manoeuvre voa Touch Sensor and Remote Control of head and arms
+        Kung-Fu manoeuvre via Touch Sensor and Remote Control of head and arms
         """
         if self.touch_sensor.is_pressed:
             self.speaker.play(wav_file='/home/robot/sound/Kung fu.wav')
@@ -66,6 +66,7 @@ class Kraz3(IRBeaconRemoteControlledTank):
                 speed_sp=500,   # degrees per second
                 position_sp=360,   # degrees
                 stop_action=Motor.STOP_ACTION_HOLD)
+            self.wiggle_motor.wait_while(Motor.STATE_RUNNING)
 
         elif self.beacon.beacon:
             self.wiggle_motor.run_forever(speed_sp=111)
@@ -123,6 +124,8 @@ class Kraz3(IRBeaconRemoteControlledTank):
             self.speaker.play(
                 wav_file='/home/robot/sound/MINDSTORMS.wav').wait()
 
+            self.leds.all_off()
+
         elif detected_color == ColorSensor.COLOR_BROWN:
             self.speaker.play(wav_file='/home/robot/sound/Brown.wav').wait()
 
@@ -165,8 +168,6 @@ class Kraz3(IRBeaconRemoteControlledTank):
 
             self.speaker.play(
                 wav_file='/home/robot/sound/Magic wand.wav').wait()
-
-        self.leds.all_off()
 
     def keep_reacting_to_colors(self):
         while True:

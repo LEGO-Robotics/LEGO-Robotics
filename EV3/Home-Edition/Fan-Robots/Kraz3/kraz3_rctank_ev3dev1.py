@@ -50,7 +50,7 @@ class Kraz3(RemoteControlledTank):
 
     def kungfu_manoeuvre_if_touched_or_remote_controlled(self):
         """
-        Kung-Fu manoeuvre voa Touch Sensor and Remote Control of head and arms
+        Kung-Fu manoeuvre via Touch Sensor and Remote Control of head and arms
         """
         if self.touch_sensor.is_pressed:
             self.speaker.play(wav_file='/home/robot/sound/Kung fu.wav')
