@@ -91,6 +91,19 @@ class IRBeaconRemoteControlledTank:
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
+    def follow_ir_beacon_once(
+            self,
+            speed: float = 1000   # degrees per second
+            ):
+        ...
+
+    def keep_following_ir_beacon(
+            self,
+            speed: float = 1000   # degrees per second
+            ):
+        while True:
+            self.follow_ir_beacon_once(speed=speed)
+
 
 if __name__ == '__main__':
     IR_BEACON_REMOTE_CONTROLLED_TANK = IRBeaconRemoteControlledTank()

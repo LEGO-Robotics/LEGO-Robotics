@@ -8,6 +8,8 @@ from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Direction, Port
 
+from .ir_beacon_util_pybricks import ir_beacon_measurements_reliable
+
 
 class IRBeaconRemoteControlledTank:
     def __init__(
@@ -108,6 +110,30 @@ class IRBeaconRemoteControlledTank:
             self.drive_once_by_ir_beacon(
                 speed=speed,
                 turn_rate=turn_rate)
+
+    def follow_ir_beacon(self):
+        distance, angle = \
+            self.ir_sensor.beacon(channel=self.tank_drive_ir_beacon_channel)
+
+        if ir_beacon_measurements_reliable(heading_angle=angle,
+                                           distance=distance):
+            self.drive_base.drive(
+                speed=0,
+                turn_rate=angle)
+
+            if distance > 50:
+                self.drive_base.drive(
+                    speed=100,
+                    turn_rate=0)
+
+            elif distance < 20:
+                self.drive_base.drive(
+                    speed=-100,
+                    turn_rate=0)
+
+    def keep_following_ir_beacon(self):
+        while True:
+            self.follow_ir_beacon()
 
 
 if __name__ == '__main__':
