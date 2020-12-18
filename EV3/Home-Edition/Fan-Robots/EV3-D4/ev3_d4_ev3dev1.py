@@ -150,7 +150,7 @@ class EV3D4(IRBeaconRemoteControlledTank):
                 self.state = 0
 
             else:
-                self.drive_once_by_ir_beacon()
+                self.drive_once_by_ir_beacon(speed=driving_speed)
 
     def color_sensor_loop(self):
         """
