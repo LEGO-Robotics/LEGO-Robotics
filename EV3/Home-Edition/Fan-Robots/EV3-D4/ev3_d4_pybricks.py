@@ -41,9 +41,68 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
 
         self.ir_beacon_channel = ir_beacon_channel
 
-    def main(self):
+        self.state = 0
+
+    def main_switch_loop(self, driving_speed: float = 750):
+        """
+        This is the Main Switch Loop that allows you to control EV3-D4 using
+        the Remote and at the same time it helps EV3-D4 to utilise its B+C
+        motors when these are not used when driving EV3-D4 with Remote Control.
+
+        The logic is simple:
+        If buttons of Remote Control are pressed then EV3-D4 goes (B+C motors)
+        wherever you command it, else it moves according to the behavioural
+        state that is changed upon interacting with its Touch Sensor, else stop
+        B+C motors.
+        """
         while True:
-            self.drive_once_by_ir_beacon()
+            if Button.BEACON in \
+                    self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                self.drive_base.stop()
+
+                if self.state == 0:
+                    self.drive_base.stop()
+
+                elif self.state == 1:
+                    self.drive_base.turn(
+                        speed=driving_speed,
+                        angle=-90)
+
+                    self.drive_base.turn(
+                        speed=driving_speed,
+                        angle=90)
+
+                elif self.state == 2:
+                    self.drive_base.straight(distance=-50)
+
+                    self.drive_base.straight(distance=50)
+
+                elif self.state == 3:
+                    self.drive_base.straight(distance=50)
+
+                    self.drive_base.straight(distance=-50)
+
+                self.state = 0
+
+            else:
+                self.drive_once_by_ir_beacon()
+
+    def color_sensor_loop(self):
+        """
+        This is the Color Sensor Loop that supports 4 different behaviors that
+        are triggered RANDOMLY!!!
+        """
+        ...
+
+    def touch_sensor_loop(self):
+        """
+        This is the Touch Sensor Loop that supports 6 different behaviors that
+        are triggered RANDOMLY!!!
+        """
+        ...
+
+    def main(self, driving_speed: float = 750):
+        self.main_switch_loop(driving_speed=driving_speed)
 
 
 if __name__ == '__main__':
