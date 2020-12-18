@@ -21,11 +21,11 @@ from util.ev3dev_fast.ev3fast import (
 from util.drive_util_ev3dev2 import IRBeaconRemoteControlledTank
 
 
-class Ev3d4(IRBeaconRemoteControlledTank):
+class EV3D4(IRBeaconRemoteControlledTank):
     def __init__(
             self,
             left_motor_port: str = OUTPUT_C, right_motor_port: str = OUTPUT_B,
-            turn_head_motor_port: str = OUTPUT_A,
+            head_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
             fast=False):
@@ -36,14 +36,14 @@ class Ev3d4(IRBeaconRemoteControlledTank):
             fast=fast)
 
         if fast:
-            self.turn_head_motor = FastMediumMotor(address=turn_head_motor_port)
+            self.head_motor = FastMediumMotor(address=head_motor_port)
 
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)
 
             self.color_sensor = FastColorSensor(address=color_sensor_port)
 
         else:
-            self.turn_head_motor = MediumMotor(address=turn_head_motor_port)
+            self.head_motor = MediumMotor(address=head_motor_port)
 
             self.touch_sensor = TouchSensor(address=touch_sensor_port)
 
@@ -60,6 +60,6 @@ class Ev3d4(IRBeaconRemoteControlledTank):
 
 
 if __name__ == '__main__':
-    EV3D4 = Ev3d4()
+    ev3_d4 = EV3D4()
 
-    EV3D4.main()
+    ev3_d4.main()

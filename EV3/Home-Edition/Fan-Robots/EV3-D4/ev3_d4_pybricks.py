@@ -14,14 +14,14 @@ from random import randint
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 
-class Ev3d4(IRBeaconRemoteControlledTank, EV3Brick):
+class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
     WHEEL_DIAMETER = 20
     AXLE_TRACK = 110
 
     def __init__(
             self,
             left_motor_port: Port = Port.C, right_motor_port: Port = Port.B,
-            wiggle_motor_port: Port = Port.A,
+            head_motor_port: Port = Port.A,
             polarity: str = 'inversed',
             touch_sensor_port: Port = Port.S1,
             color_sensor_port: Port = Port.S3,
@@ -32,8 +32,8 @@ class Ev3d4(IRBeaconRemoteControlledTank, EV3Brick):
             polarity=polarity,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
-        self.turn_head_motor = Motor(port=wiggle_motor_port,
-                                     positive_direction=Direction.CLOCKWISE)
+        self.head_motor = Motor(port=head_motor_port,
+                                positive_direction=Direction.CLOCKWISE)
 
         self.touch_sensor = TouchSensor(port=touch_sensor_port)
 
@@ -47,6 +47,6 @@ class Ev3d4(IRBeaconRemoteControlledTank, EV3Brick):
 
 
 if __name__ == '__main__':
-    EV3D4 = Ev3d4()
+    ev3_d4 = EV3D4()
 
-    EV3D4.main()
+    ev3_d4.main()

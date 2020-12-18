@@ -1,3 +1,3 @@
-﻿#!/usr/bin/env pybricks-micropython
+#!/usr/bin/env pybricks-micropython
 
 
