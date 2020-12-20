@@ -3,11 +3,13 @@
 
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, ColorSensor
-from pybricks.media.ev3dev import SoundFile
+from pybricks.media.ev3dev import ImageFile, SoundFile
 from pybricks.parameters import Button, Color, Direction, Port, Stop
 from pybricks.tools import wait
 
-from random import randint
+from pybricks.experimental import run_parallel
+
+from random import choice, randint
 
 # import sys
 # sys.path.append('/home/robot')
@@ -22,14 +24,13 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
             self,
             left_motor_port: Port = Port.C, right_motor_port: Port = Port.B,
             head_motor_port: Port = Port.A,
-            polarity: str = 'inversed',
             touch_sensor_port: Port = Port.S1,
             color_sensor_port: Port = Port.S3,
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
         super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
-            polarity=polarity,
+            polarity='inversed',
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
 
         self.head_motor = Motor(port=head_motor_port,
@@ -42,6 +43,28 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
         self.ir_beacon_channel = ir_beacon_channel
 
         self.state = 0
+
+    def shake_head(self, left_first: bool = True, n_times: int = 1):
+        speed_sign = 1 if left_first else -1
+
+        for _ in range(n_times):
+            self.head_motor.run_angle(
+                speed=speed_sign * 500,
+                rotation_angle=100,
+                then=Stop.HOLD,
+                wait=True)
+
+            self.head_motor.run_angle(
+                speed=-speed_sign * 500,
+                rotation_angle=200,
+                then=Stop.HOLD,
+                wait=True)
+
+            self.head_motor.run_angle(
+                speed=speed_sign * 500,
+                rotation_angle=100,
+                then=Stop.HOLD,
+                wait=True)
 
     def main_switch_loop(self, driving_speed: float = 750):
         """
@@ -56,14 +79,13 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
         B+C motors.
         """
         while True:
-            if Button.BEACON in \
-                    self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            if not (self.ir_sensor.buttons(channel=1) or
+                    self.ir_sensor.buttons(channel=2) or
+                    self.ir_sensor.buttons(channel=3) or
+                    self.ir_sensor.buttons(channel=4)):
                 self.drive_base.stop()
 
-                if self.state == 0:
-                    self.drive_base.stop()
-
-                elif self.state == 1:
+                if self.state == 1:
                     self.drive_base.turn(
                         speed=driving_speed,
                         angle=-90)
@@ -84,6 +106,10 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
 
                 self.state = 0
 
+            elif Button.BEACON in \
+                    self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+                self.shake_head(left_first=choice((False, True)))
+
             else:
                 self.drive_once_by_ir_beacon(speed=driving_speed)
 
@@ -92,7 +118,46 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
         This is the Color Sensor Loop that supports 4 different behaviors that
         are triggered RANDOMLY!!!
         """
-        ...
+        while True:
+            if self.color_sensor.color == Color.RED:
+                random_number = randint(1, 4)
+
+                if random_number == 1:
+                    for _ in range(2):
+                        self.light.on(color=Color.ORANGE)
+
+                        wait(100)
+
+                        self.light.on(color=Color.GREEN)
+
+                        wait(100)
+
+                        self.light.on(color=Color.RED)
+
+                        wait(100)
+
+                elif random_number == 2:
+                    self.speaker.play_file(file=SoundFile.CONFIRM)
+
+                    self.speaker.play_file(file=SoundFile.SMACK)
+
+                    self.shake_head(left_first=True)
+
+                    self.light.on(color=Color.RED)
+
+                elif random_number == 3:
+                    self.speaker.play_file(file=SoundFile.OVERPOWER)
+
+                    self.shake_head(
+                        left_first=False,
+                        n_times=3)
+
+                elif random_number == 4:
+                    self.shake_head(
+                        left_first=True,
+                        n_times=2)
+
+                    self.speaker.play_file(file=SoundFile.READY)
 
     def touch_sensor_loop(self):
         """
@@ -101,8 +166,10 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
         """
         ...
 
-    def main(self, driving_speed: float = 750):
-        self.main_switch_loop(driving_speed=driving_speed)
+    def main(self):
+        run_parallel(
+            self.main_switch_loop,
+            self.color_sensor_loop)
 
 
 if __name__ == '__main__':
