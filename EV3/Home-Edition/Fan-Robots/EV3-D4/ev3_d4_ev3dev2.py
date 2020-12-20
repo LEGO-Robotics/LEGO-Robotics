@@ -9,9 +9,8 @@ from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
 from random import choice, randint
-from time import sleep
-
 from threading import Thread
+from time import sleep
 
 # import os
 # import sys
