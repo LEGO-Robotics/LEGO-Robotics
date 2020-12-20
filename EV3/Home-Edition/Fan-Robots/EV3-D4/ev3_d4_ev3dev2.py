@@ -1,14 +1,17 @@
-#!/usr/bin/env micropython
+#!/usr/bin/env python3
 
 
 from ev3dev2.motor import MediumMotor, Motor, OUTPUT_A, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_1, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, ColorSensor
+from ev3dev2.display import Display
 from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
-from random import randint
+from random import choice, randint
 from time import sleep
+
+from threading import Thread
 
 # import os
 # import sys
@@ -52,9 +55,32 @@ class EV3D4(IRBeaconRemoteControlledTank):
         self.ir_beacon_channel = ir_beacon_channel
 
         self.leds = Leds()
+        self.screen = Display()
         self.speaker = Sound()
 
         self.state = 0
+
+    def shake_head(self, left_first: bool = True, n_times: int = 1):
+        speed_sign = 1 if left_first else -1
+
+        for _ in range(n_times):
+            self.head_motor.on_for_degrees(
+                speed=speed_sign * 50,
+                degrees=100,
+                brake=True,
+                block=True)
+
+            self.head_motor.on_for_degrees(
+                speed=-speed_sign * 50,
+                degrees=200,
+                brake=True,
+                block=True)
+
+            self.head_motor.on_for_degrees(
+                speed=speed_sign * 50,
+                degrees=100,
+                brake=True,
+                block=True)
 
     def main_switch_loop(self, driving_speed: float = 75):
         """
@@ -69,13 +95,13 @@ class EV3D4(IRBeaconRemoteControlledTank):
         B+C motors.
         """
         while True:
-            if self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+            if not (self.ir_sensor.buttons_pressed(channel=1) or
+                    self.ir_sensor.buttons_pressed(channel=2) or
+                    self.ir_sensor.buttons_pressed(channel=3) or
+                    self.ir_sensor.buttons_pressed(channel=4)):
                 self.steer_driver.stop(brake=True)
 
-                if self.state == 0:
-                    self.steer_driver.stop(brake=True)
-
-                elif self.state == 1:
+                if self.state == 1:
                     self.steer_driver.on_for_rotations(
                         steering=-100,
                         speed=driving_speed,
@@ -122,6 +148,9 @@ class EV3D4(IRBeaconRemoteControlledTank):
 
                 self.state = 0
 
+            elif self.ir_sensor.beacon(channel=self.ir_beacon_channel):
+                self.shake_head(left_first=choice((False, True)))
+
             else:
                 self.drive_once_by_ir_beacon(speed=driving_speed)
 
@@ -130,7 +159,147 @@ class EV3D4(IRBeaconRemoteControlledTank):
         This is the Color Sensor Loop that supports 4 different behaviors that
         are triggered RANDOMLY!!!
         """
-        ...
+        while True:
+            if self.color_sensor.color == ColorSensor.COLOR_RED:
+                random_number = randint(1, 4)
+
+                if random_number == 1:
+                    self.state = 1
+
+                    for _ in range(2):
+                        self.screen.image_filename(
+                            filename='/home/robot/image/Dial 0.bmp',
+                            clear_screen=True)
+                        self.screen.update()
+
+                        self.speaker.play_file(
+                            wav_file='/home/robot/sound/Blip 2.wav',
+                            volume=100,
+                            play_type=Sound.PLAY_NO_WAIT_FOR_COMPLETE)
+
+                        self.leds.animate_flash(
+                            color='ORANGE',
+                            groups=('LEFT', 'RIGHT'),
+                            sleeptime=0.5,
+                            duration=2,
+                            block=True)
+
+                        sleep(0.1)
+
+                        self.leds.animate_flash(
+                            color='GREEN',
+                            groups=('LEFT', 'RIGHT'),
+                            sleeptime=0.5,
+                            duration=2,
+                            block=True)
+
+                        sleep(0.1)
+
+                        self.leds.animate_flash(
+                            color='RED',
+                            groups=('LEFT', 'RIGHT'),
+                            sleeptime=0.5,
+                            duration=2,
+                            block=True)
+
+                        sleep(0.1)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Blip 3.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                elif random_number == 2:
+                    self.screen.image_filename(
+                        filename='/home/robot/image/Dial 1.bmp',
+                        clear_screen=True)
+                    self.screen.update()
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Confirm.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Walk.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.shake_head(left_first=True)
+
+                    self.leds.set_color(
+                        group='LEFT',
+                        color='RED',
+                        pct=1)
+                    self.leds.set_color(
+                        group='RIGHT',
+                        color='RED',
+                        pct=1)
+
+                elif random_number == 3:
+                    self.screen.image_filename(
+                        filename='/home/robot/image/Dial 3.bmp',
+                        clear_screen=True)
+                    self.screen.update()
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Overpower.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Arm 1.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Servo 2.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.shake_head(
+                        left_first=False,
+                        n_times=3)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Blip 3.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                elif random_number == 4:
+                    self.screen.image_filename(
+                        filename='/home/robot/image/Dial 4.bmp',
+                        clear_screen=True)
+                    self.screen.update()
+
+                    self.shake_head(
+                        left_first=True,
+                        n_times=2)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Power down.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Ready.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Blip 2.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Blip 1.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+                    self.speaker.play_file(
+                        wav_file='/home/robot/sound/Blip 3.wav',
+                        volume=100,
+                        play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
     def touch_sensor_loop(self):
         """
@@ -140,7 +309,10 @@ class EV3D4(IRBeaconRemoteControlledTank):
         ...
 
     def main(self, driving_speed: float = 75):
+        Thread(target=self.color_sensor_loop).start()
+
         self.main_switch_loop(driving_speed=driving_speed)
+
 
 if __name__ == '__main__':
     ev3_d4 = EV3D4()
