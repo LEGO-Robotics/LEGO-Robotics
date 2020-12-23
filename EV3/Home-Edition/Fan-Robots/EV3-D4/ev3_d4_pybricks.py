@@ -44,6 +44,55 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
 
         self.state = 0
 
+    def action_1(self):
+        self.state = 1
+
+        for _ in range(2):
+            self.light.on(color=Color.ORANGE)
+
+            wait(100)
+
+            self.light.on(color=Color.GREEN)
+
+            wait(100)
+
+            self.light.on(color=Color.RED)
+
+            wait(100)
+
+    def action_2(self):
+        self.speaker.play_file(file=SoundFile.CONFIRM)
+
+        self.speaker.play_file(file=SoundFile.SMACK)
+
+        self.shake_head(left_first=True)
+
+        self.light.on(color=Color.RED)
+
+    def action_3(self):
+        self.speaker.play_file(file=SoundFile.OVERPOWER)
+
+        self.shake_head(
+            left_first=False,
+            n_times=3)
+
+    def action_4(self):
+        self.shake_head(
+            left_first=True,
+            n_times=2)
+
+        self.speaker.play_file(file=SoundFile.READY)
+
+    def action_5(self):
+        for _ in range(3):
+            self.screen.load_image(ImageFile.EV3)
+
+            self.light.on(color=Color.ORANGE)
+
+            self.light.on(color=Color.RED)
+
+            self.light.on(color=Color.GREEN)
+
     def shake_head(self, left_first: bool = True, n_times: int = 1):
         speed_sign = 1 if left_first else -1
 
@@ -123,53 +172,50 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
                 random_number = randint(1, 4)
 
                 if random_number == 1:
-                    for _ in range(2):
-                        self.light.on(color=Color.ORANGE)
-
-                        wait(100)
-
-                        self.light.on(color=Color.GREEN)
-
-                        wait(100)
-
-                        self.light.on(color=Color.RED)
-
-                        wait(100)
+                    self.action_1()
 
                 elif random_number == 2:
-                    self.speaker.play_file(file=SoundFile.CONFIRM)
-
-                    self.speaker.play_file(file=SoundFile.SMACK)
-
-                    self.shake_head(left_first=True)
-
-                    self.light.on(color=Color.RED)
+                    self.action_2()
 
                 elif random_number == 3:
-                    self.speaker.play_file(file=SoundFile.OVERPOWER)
-
-                    self.shake_head(
-                        left_first=False,
-                        n_times=3)
+                    self.action_3()
 
                 elif random_number == 4:
-                    self.shake_head(
-                        left_first=True,
-                        n_times=2)
-
-                    self.speaker.play_file(file=SoundFile.READY)
+                    self.action_4()
 
     def touch_sensor_loop(self):
         """
-        This is the Touch Sensor Loop that supports 6 different behaviors that
+        This is the Touch Sensor Loop that supports 5 different behaviors that
         are triggered RANDOMLY!!!
         """
-        ...
+        while True:
+            if self.touch_sensor.pressed():
+                random_number = randint(1, 5)
+
+                if random_number == 1:
+                    self.action_1()
+
+                elif random_number == 2:
+                    self.state = 2
+                    self.action_2()
+
+                elif random_number == 3:
+                    self.state = 3
+                    self.action_3()
+
+                elif random_number == 4:
+                    self.state = 2
+                    self.action_4()
+
+                elif random_number == 5:
+                    self.state = 3
+                    self.action_5()
 
     def main(self):
         run_parallel(
             self.main_switch_loop,
-            self.color_sensor_loop)
+            self.color_sensor_loop,
+            self.touch_sensor_loop)
 
 
 if __name__ == '__main__':
