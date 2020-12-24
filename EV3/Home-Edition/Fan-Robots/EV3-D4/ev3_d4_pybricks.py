@@ -135,13 +135,9 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
                 self.drive_base.stop()
 
                 if self.state == 1:
-                    self.drive_base.turn(
-                        speed=driving_speed,
-                        angle=-90)
+                    self.drive_base.turn(angle=-90)
 
-                    self.drive_base.turn(
-                        speed=driving_speed,
-                        angle=90)
+                    self.drive_base.turn(angle=90)
 
                 elif self.state == 2:
                     self.drive_base.straight(distance=-50)
