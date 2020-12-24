@@ -4,11 +4,12 @@
 __all__ = 'IRBeaconRemoteControlledTank',
 
 
+from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Direction, Port
 
-from .ir_beacon_util_pybricks import ir_beacon_measurements_reliable
+from ir_beacon_util_pybricks import ir_beacon_measurements_reliable
 
 
 class IRBeaconRemoteControlledTank:
@@ -17,7 +18,12 @@ class IRBeaconRemoteControlledTank:
             wheel_diameter: float, axle_track: float,   # both in milimeters
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             polarity: str = 'normal',
-            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1,
+            debug=False):
+        self.debug = debug
+        if debug:
+            self.ev3_brick = EV3Brick()
+
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=
                                     Direction.CLOCKWISE
@@ -118,22 +124,26 @@ class IRBeaconRemoteControlledTank:
             ):
         distance, angle = \
             self.ir_sensor.beacon(channel=self.tank_drive_ir_beacon_channel)
+        _ir_beacon_measurements_reliable = \
+            ir_beacon_measurements_reliable(
+                heading_angle=angle,
+                distance=distance)
 
-        if ir_beacon_measurements_reliable(heading_angle=angle,
-                                           distance=distance):
-            self.drive_base.drive(
-                speed=0,
-                turn_rate=angle)
+        if self.debug:
+            self.ev3_brick.screen.clear()
+            self.ev3_brick.screen.print(
+                'HA={}, D={}'.format(angle, distance)
+                if _ir_beacon_measurements_reliable
+                else 'x HA={}, D={}'.format(angle, distance))
+
+        if _ir_beacon_measurements_reliable:
+            self.drive_base.turn(angle=angle)
 
             if distance > 50:
-                self.drive_base.drive(
-                    speed=100,
-                    turn_rate=0)
+                self.drive_base.straight(distance=30)
 
             elif distance < 20:
-                self.drive_base.drive(
-                    speed=-100,
-                    turn_rate=0)
+                self.drive_base.straight(distance=-30)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
@@ -152,6 +162,8 @@ if __name__ == '__main__':
     IR_BEACON_REMOTE_CONTROLLED_TANK = \
         IRBeaconRemoteControlledTank(
             wheel_diameter=33,
-            axle_track=99)
+            axle_track=99,
+            polarity='normal',   # 'inversed'
+            debug=True)
 
-    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
+    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_following_ir_beacon()
