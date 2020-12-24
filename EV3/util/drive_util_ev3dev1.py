@@ -10,6 +10,7 @@ from ev3dev.ev3 import \
     Screen
 
 from .ev3dev_fast.ev3fast import LargeMotor as FastLargeMotor
+
 from .ir_beacon_util_ev3dev1 import ir_beacon_measurements_reliable
 
 
@@ -152,10 +153,12 @@ class IRBeaconRemoteControlledTank:
     # in order not to block other operations
     def keep_following_ir_beacon(
             self,
-            speed: float = 1000   # degrees per second
-            ):
+            speed: float = 1000,   # degrees per second
+            target_distance: float = 10):
         while True:
-            self.follow_ir_beacon_once(speed=speed)
+            self.follow_ir_beacon_once(
+                speed=speed,
+                target_distance=target_distance)
 
 
 if __name__ == '__main__':
