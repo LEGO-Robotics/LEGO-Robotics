@@ -158,6 +158,6 @@ if __name__ == '__main__':
             polarity='normal',   # OR: 'inversed'
             debug=True)
 
-    # IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
+    # IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon(speed=1000)
     # OR:
     IR_BEACON_REMOTE_CONTROLLED_TANK.keep_following_ir_beacon()
