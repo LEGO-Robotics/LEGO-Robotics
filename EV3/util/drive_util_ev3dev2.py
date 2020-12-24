@@ -9,10 +9,13 @@ from ev3dev2.motor import \
     OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import InfraredSensor
+from ev3dev2.console import Console
 
 from .ev3dev_fast.ev3fast import \
     LargeMotor as FastLargeMotor, \
     MoveTank as FastMoveTank, MoveSteering as FastMoveSteering
+
+from .ir_beacon_util_ev3dev2 import ir_beacon_measurements_reliable
 
 
 class IRBeaconRemoteControlledTank:
@@ -23,7 +26,12 @@ class IRBeaconRemoteControlledTank:
             ir_sensor_port: str = INPUT_4,
             # sites.google.com/site/ev3devpython/learn_ev3_python/using-sensors
             ir_beacon_channel: int = 1,
-            fast=False):
+            fast=False,
+            debug=False):
+        self.debug = debug
+        if debug:
+            self.console = Console()
+
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)
@@ -140,14 +148,57 @@ class IRBeaconRemoteControlledTank:
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
-    def follow_ir_beacon_once(self, speed: float = 100):
-        ...
+    def follow_ir_beacon_once(
+            self,
+            speed: float = 100,
+            target_distance: float = 10):
+        heading, distance = self.ir_sensor.heading_and_distance(channel=1)
+        _ir_beacon_measurements_reliable = \
+            ir_beacon_measurements_reliable(
+                heading_angle=heading,
+                distance=distance)
+
+        if self.debug:
+            self.console.text_at(
+                text='HA={}, D={}'.format(heading, distance)
+                     if _ir_beacon_measurements_reliable
+                     else 'x HA={}, D={}'.format(heading, distance),
+                column=1, row=1,
+                reset_console=True,
+                inverse=False,
+                alignment='L')
+
+        if _ir_beacon_measurements_reliable:
+            if heading < -3:
+                self.steer_driver.on(
+                    steering=-100,
+                    speed=speed)
+
+            elif heading > 3:
+                self.steer_driver.on(
+                    steering=100,
+                    speed=speed)
+
+            if distance > target_distance:
+                self.steer_driver.on(
+                    steering=0,
+                    speed=speed)
+
+            else:
+                self.steer_driver.on(
+                    steering=0,
+                    speed=-speed)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
-    def keep_following_ir_beacon(self, speed: float = 100):
+    def keep_following_ir_beacon(
+            self,
+            speed: float = 100,
+            target_distance: float = 10):
         while True:
-            self.follow_ir_beacon_once(speed=speed)
+            self.follow_ir_beacon_once(
+                speed=speed,
+                target_distance=target_distance)
 
 
 if __name__ == '__main__':
