@@ -6,9 +6,11 @@ __all__ = 'IRBeaconRemoteControlledTank',
 
 from ev3dev.ev3 import \
     Motor, LargeMotor, OUTPUT_B, OUTPUT_C, \
-    InfraredSensor, RemoteControl, INPUT_4
+    InfraredSensor, RemoteControl, BeaconSeeker, INPUT_4, \
+    Screen
 
 from .ev3dev_fast.ev3fast import LargeMotor as FastLargeMotor
+from .ir_beacon_util_ev3dev1 import ir_beacon_measurements_reliable
 
 
 class IRBeaconRemoteControlledTank:
@@ -17,7 +19,12 @@ class IRBeaconRemoteControlledTank:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             polarity: str = Motor.POLARITY_NORMAL,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast=False,
+            debug=False):
+        self.debug = debug
+        if debug:
+            self.screen = Screen()
+
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)
@@ -30,6 +37,10 @@ class IRBeaconRemoteControlledTank:
         self.ir_sensor = InfraredSensor(address=ir_sensor_port)
         self.tank_drive_remote_control = \
             RemoteControl(
+                sensor=self.ir_sensor,
+                channel=ir_beacon_channel)
+        self.beacon_seeker = \
+            BeaconSeeker(
                 sensor=self.ir_sensor,
                 channel=ir_beacon_channel)
 
@@ -93,9 +104,49 @@ class IRBeaconRemoteControlledTank:
 
     def follow_ir_beacon_once(
             self,
-            speed: float = 1000   # degrees per second
-            ):
-        ...
+            speed: float = 1000,   # degrees per second
+            target_distance: float = 10):
+        heading, distance = self.beacon_seeker.heading_and_distance
+        _ir_beacon_measurements_reliable = \
+            ir_beacon_measurements_reliable(
+                heading_angle=heading,
+                distance=distance)
+
+        if self.debug:
+            self.screen.clear()
+            self.screen.draw.text(
+                xy=(0, 0),
+                text='HA={}, D={}'.format(heading, distance)
+                     if _ir_beacon_measurements_reliable
+                     else 'x HA={}, D={}'.format(heading, distance),
+                fill=None,
+                font=None,
+                anchor=None,
+                spacing=4,
+                align='center',
+                direction=None,
+                features=None,
+                language=None,
+                stroke_width=0,
+                stroke_fill=None)
+            self.screen.update()
+
+        if _ir_beacon_measurements_reliable:
+            if heading < -3:
+                self.left_motor.run_forever(speed_sp=-speed)
+                self.right_motor.run_forever(speed_sp=speed)
+
+            elif heading > 3:
+                self.left_motor.run_forever(speed_sp=speed)
+                self.right_motor.run_forever(speed_sp=-speed)
+
+            if distance > target_distance:
+                self.left_motor.run_forever(speed_sp=speed)
+                self.right_motor.run_forever(speed_sp=speed)
+
+            else:
+                self.left_motor.run_forever(speed_sp=-speed)
+                self.right_motor.run_forever(speed_sp=-speed)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
@@ -108,6 +159,13 @@ class IRBeaconRemoteControlledTank:
 
 
 if __name__ == '__main__':
-    IR_BEACON_REMOTE_CONTROLLED_TANK = IRBeaconRemoteControlledTank()
+    IR_BEACON_REMOTE_CONTROLLED_TANK = \
+        IRBeaconRemoteControlledTank(
+            left_motor_port=OUTPUT_B,   # OR: OUTPUT_C
+            right_motor_port=OUTPUT_C,    # OR: OUTPUT_B
+            polarity=Motor.POLARITY_NORMAL,   # OR: Motor.POLARITY_INVERSED
+            debug=True)
 
-    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
+    # IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon(speed=1000)
+    # OR:
+    IR_BEACON_REMOTE_CONTROLLED_TANK.keep_following_ir_beacon(speed=1000)
