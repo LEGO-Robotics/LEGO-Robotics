@@ -9,7 +9,7 @@ from pybricks.ev3devices import Motor, InfraredSensor
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Direction, Port
 
-from ir_beacon_util_pybricks import ir_beacon_measurements_reliable
+from .ir_beacon_util_pybricks import ir_beacon_measurements_reliable
 
 
 class IRBeaconRemoteControlledTank:
