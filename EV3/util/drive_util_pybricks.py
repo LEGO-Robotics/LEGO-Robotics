@@ -111,7 +111,11 @@ class IRBeaconRemoteControlledTank:
                 speed=speed,
                 turn_rate=turn_rate)
 
-    def follow_ir_beacon(self):
+    def follow_ir_beacon_once(
+            self,
+            speed: float = 1000,    # mm/s
+            turn_rate: float = 90   # rotational speed deg/s
+            ):
         distance, angle = \
             self.ir_sensor.beacon(channel=self.tank_drive_ir_beacon_channel)
 
@@ -131,9 +135,17 @@ class IRBeaconRemoteControlledTank:
                     speed=-100,
                     turn_rate=0)
 
-    def keep_following_ir_beacon(self):
+    # this method must be used in a parallel process/thread
+    # in order not to block other operations
+    def keep_following_ir_beacon(
+            self,
+            speed: float = 1000,    # mm/s
+            turn_rate: float = 90   # rotational speed deg/s
+            ):
         while True:
-            self.follow_ir_beacon()
+            self.follow_ir_beacon_once(
+                speed=speed,
+                turn_rate=turn_rate)
 
 
 if __name__ == '__main__':

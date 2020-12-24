@@ -97,6 +97,8 @@ class IRBeaconRemoteControlledTank:
             ):
         ...
 
+    # this method must be used in a parallel process/thread
+    # in order not to block other operations
     def keep_following_ir_beacon(
             self,
             speed: float = 1000   # degrees per second
