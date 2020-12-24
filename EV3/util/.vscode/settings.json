@@ -1,6 +1,15 @@
 {
+  "editor.rulers": [79, 88, 100, 120],
+
   "ev3devBrowser.download.exclude": "{**/__pycache__/**,**/*.swift}",
   "ev3devBrowser.download.include": "**/*.py",
 
-  "python.linting.enabled": false
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pydocstyleEnabled": false,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylamaEnabled": true,
+  "python.linting.banditEnabled": false
 }
