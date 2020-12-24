@@ -26,12 +26,14 @@ class EV3D4(IRBeaconRemoteControlledTank, EV3Brick):
             head_motor_port: Port = Port.A,
             touch_sensor_port: Port = Port.S1,
             color_sensor_port: Port = Port.S3,
-            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1,
+            debug=False):
         super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             polarity='inversed',
-            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel,
+            debug=debug)
 
         self.head_motor = Motor(port=head_motor_port,
                                 positive_direction=Direction.CLOCKWISE)
