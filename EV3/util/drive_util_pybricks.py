@@ -119,9 +119,9 @@ class IRBeaconRemoteControlledTank:
 
     def follow_ir_beacon_once(
             self,
-            speed: float = 1000,    # mm/s
-            turn_rate: float = 90   # rotational speed deg/s
-            ):
+            speed: float = 1000,     # mm/s
+            turn_rate: float = 90,   # rotational speed deg/s
+            target_distance: float = 10):
         distance, angle = \
             self.ir_sensor.beacon(channel=self.tank_drive_ir_beacon_channel)
         _ir_beacon_measurements_reliable = \
@@ -139,23 +139,24 @@ class IRBeaconRemoteControlledTank:
         if _ir_beacon_measurements_reliable:
             self.drive_base.turn(angle=angle)
 
-            if distance > 50:
-                self.drive_base.straight(distance=30)
+            if distance > target_distance:
+                self.drive_base.straight(distance=100)
 
-            elif distance < 20:
-                self.drive_base.straight(distance=-30)
+            else:
+                self.drive_base.straight(distance=-100)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
     def keep_following_ir_beacon(
             self,
-            speed: float = 1000,    # mm/s
-            turn_rate: float = 90   # rotational speed deg/s
-            ):
+            speed: float = 1000,     # mm/s
+            turn_rate: float = 90,   # rotational speed deg/s
+            target_distance: float = 10):
         while True:
             self.follow_ir_beacon_once(
                 speed=speed,
-                turn_rate=turn_rate)
+                turn_rate=turn_rate,
+                target_distance=target_distance)
 
 
 if __name__ == '__main__':
@@ -163,7 +164,11 @@ if __name__ == '__main__':
         IRBeaconRemoteControlledTank(
             wheel_diameter=33,
             axle_track=99,
-            polarity='normal',   # 'inversed'
+            left_motor_port=Port.B,   # OR: Port.C
+            right_motor_port=Port.C,    # OR: Port.B
+            polarity='normal',   # OR: 'inversed'
             debug=True)
 
+    # IR_BEACON_REMOTE_CONTROLLED_TANK.keep_driving_by_ir_beacon()
+    # OR:
     IR_BEACON_REMOTE_CONTROLLED_TANK.keep_following_ir_beacon()
