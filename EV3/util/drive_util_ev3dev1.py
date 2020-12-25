@@ -20,8 +20,8 @@ class IRBeaconRemoteControlledTank:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             polarity: str = Motor.POLARITY_NORMAL,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False,
-            debug=False):
+            fast: bool = False,
+            debug: bool = False):
         self.debug = debug
         if debug:
             self.screen = Screen()

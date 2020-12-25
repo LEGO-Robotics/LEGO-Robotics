@@ -19,7 +19,7 @@ class IRBeaconRemoteControlledTank:
             left_motor_port: Port = Port.B, right_motor_port: Port = Port.C,
             polarity: str = 'normal',
             ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1,
-            debug=False):
+            debug: bool = False):
         self.debug = debug
         if debug:
             self.ev3_brick = EV3Brick()

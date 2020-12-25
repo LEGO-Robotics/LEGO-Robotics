@@ -21,7 +21,7 @@ class MrB3am:
     def __init__(
             self,
             gear_motor_port: str = OUTPUT_A, color_sensor_port: str = INPUT_3,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.gear_motor = FastMediumMotor(address=gear_motor_port)
             self.color_sensor = FastColorSensor(address=color_sensor_port)
@@ -170,7 +170,7 @@ class MrB3am:
 
         self.eject_b3am()
 
-    def report_result(self, debug=False):
+    def report_result(self, debug: bool = False):
         """
         Report the result of the measurement.
         The switch has a case for each color
@@ -261,7 +261,7 @@ class MrB3am:
             volume=100,
             play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
 
-    def main(self, debug=False):
+    def main(self, debug: bool = False):
         """
         Main Loop
         """

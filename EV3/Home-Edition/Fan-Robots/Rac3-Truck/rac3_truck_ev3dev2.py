@@ -27,7 +27,7 @@ class Rac3Truck:
             polarity: str = Motor.POLARITY_INVERSED,
             steer_motor_port: str = OUTPUT_A,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.tank_driver = \
                 FastMoveTank(

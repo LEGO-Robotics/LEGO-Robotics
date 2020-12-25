@@ -29,7 +29,7 @@ class RoboDoz3r(RemoteControlledTank):
             ir_sensor_port: str = INPUT_4,
             tank_drive_ir_beacon_channel: int = 1,
             shovel_control_ir_beacon_channel: int = 4,
-            fast=False):
+            fast: bool = False):
         super().__init__(
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             polarity='inversed',

@@ -34,7 +34,7 @@ class Dinor3x(IRBeaconRemoteControlledTank):
             jaw_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         super().__init__(
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel,

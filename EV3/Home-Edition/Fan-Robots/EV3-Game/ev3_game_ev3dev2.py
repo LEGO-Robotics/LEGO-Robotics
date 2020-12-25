@@ -32,7 +32,7 @@ class EV3Game:
             grip_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.b_motor = FastLargeMotor(address=b_motor_port)
             self.c_motor = FastLargeMotor(address=c_motor_port)

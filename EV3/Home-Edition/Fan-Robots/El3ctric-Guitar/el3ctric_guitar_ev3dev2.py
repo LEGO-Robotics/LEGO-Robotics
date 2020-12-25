@@ -27,7 +27,7 @@ class El3ctricGuitar:
             self,
             lever_motor_port: str = OUTPUT_D, touch_sensor_port: str = INPUT_1,
             ir_sensor_port: str = INPUT_4, ir_sensor_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.lever_motor = FastMediumMotor(address=lever_motor_port)
             self.touch_sensor = FastTouchSensor(address=touch_sensor_port)

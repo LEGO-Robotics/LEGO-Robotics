@@ -29,7 +29,7 @@ class Wack3m:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             middle_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, ir_sensor_port: str = INPUT_4,
-            fast=False, use_screen=False):
+            fast: bool = False, use_screen: bool = False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)

@@ -136,7 +136,7 @@ class MrB3am(EV3Brick):
 
         self.eject_b3am()
 
-    def report_result(self, debug=False):
+    def report_result(self, debug: bool = False):
         """
         Report the result of the measurement.
         The switch has a case for each color
@@ -233,7 +233,7 @@ class MrB3am(EV3Brick):
                               if debug
                               else ''))
 
-    def main(self, debug=False):
+    def main(self, debug: bool = False):
         """
         Main Loop
         """

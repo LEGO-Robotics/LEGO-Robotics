@@ -25,7 +25,7 @@ class Rac3Truck:
             polarity: str = Motor.POLARITY_INVERSED,
             steer_motor_port: str = OUTPUT_A,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)

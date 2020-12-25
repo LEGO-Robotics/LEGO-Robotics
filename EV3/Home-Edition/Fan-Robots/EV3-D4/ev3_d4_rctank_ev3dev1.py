@@ -30,7 +30,7 @@ class EV3D4(RemoteControlledTank):
             left_motor_port: str = OUTPUT_C, right_motor_port: str = OUTPUT_B,
             head_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
-            fast=False):
+            fast: bool = False):
         super().__init__(
             left_motor=left_motor_port, right_motor=right_motor_port,
             polarity='inversed')

@@ -28,7 +28,7 @@ class El3ctricGuitar:
             lever_motor_port: str = OUTPUT_D,
             touch_sensor_port: str = INPUT_1,
             ir_sensor_port: str = INPUT_4,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.lever_motor = FastMediumMotor(address=lever_motor_port)
 
@@ -85,7 +85,7 @@ class El3ctricGuitar:
         while True:
             self.read_lever()
 
-    def play_music(self, debug=False):
+    def play_music(self, debug: bool = False):
         if not self.touch_sensor.is_pressed:
             raw = sum(self.ir_sensor.proximity for _ in range(4)) / 4
 

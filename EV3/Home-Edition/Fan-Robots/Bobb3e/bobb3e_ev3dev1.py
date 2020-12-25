@@ -43,7 +43,7 @@ class Bobb3e:
             left_motor_port: str = OUTPUT_B, right_motor_port: str = OUTPUT_C,
             lift_motor_port: str = OUTPUT_A,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast: bool = False):
         if fast:
             self.left_motor = FastLargeMotor(address=left_motor_port)
             self.right_motor = FastLargeMotor(address=right_motor_port)

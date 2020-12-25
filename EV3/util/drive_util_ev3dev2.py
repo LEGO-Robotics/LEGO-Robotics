@@ -26,8 +26,8 @@ class IRBeaconRemoteControlledTank:
             ir_sensor_port: str = INPUT_4,
             # sites.google.com/site/ev3devpython/learn_ev3_python/using-sensors
             ir_beacon_channel: int = 1,
-            fast=False,
-            debug=False):
+            fast: bool = False,
+            debug: bool = False):
         self.debug = debug
         if debug:
             self.console = Console()
