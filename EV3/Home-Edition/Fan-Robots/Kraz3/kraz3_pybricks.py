@@ -25,12 +25,14 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
             polarity: str = 'inversed',
             touch_sensor_port: Port = Port.S1,
             color_sensor_port: Port = Port.S3,
-            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1):
+            ir_sensor_port: Port = Port.S4, ir_beacon_channel: int = 1,
+            debug: bool = False):
         super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             polarity=polarity,
-            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
+            ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel,
+            debug=debug)
 
         self.wiggle_motor = Motor(port=wiggle_motor_port,
                                   positive_direction=Direction.CLOCKWISE)
@@ -148,37 +150,6 @@ class Kraz3(IRBeaconRemoteControlledTank, EV3Brick):
     def keep_reacting_to_colors(self):
         while True:
             self.react_to_color()
-
-    def follow_beacon(self):
-        """
-        Simple "Follow Me" method
-        (built by NeXTSTORM and first used in EV3-D4 project)
-        """
-        distance, angle = self.ir_sensor.beacon(channel=self.ir_beacon_channel)
-
-        if not ((distance is None) or (angle is None)):
-            self.drive_base.turn(angle=angle)
-
-            if distance > 50:
-                self.light.on(color=Color.RED)
-
-                self.drive_base.drive(
-                    speed=1000,
-                    turn_rate=0)
-
-            elif distance < 20:
-                self.light.on(color=Color.ORANGE)
-
-                self.drive_base.drive(
-                    speed=-1000,
-                    turn_rate=0)
-
-            else:
-                self.light.on(color=Color.GREEN)
-
-    def keep_following_beacon(self):
-        while True:
-            self.follow_beacon()
 
     def main(self):
         while True:

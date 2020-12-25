@@ -28,12 +28,14 @@ class Kraz3(IRBeaconRemoteControlledTank):
             wiggle_motor_port: str = OUTPUT_A,
             touch_sensor_port: str = INPUT_1, color_sensor_port: str = INPUT_3,
             ir_sensor_port: str = INPUT_4, ir_beacon_channel: int = 1,
-            fast=False):
+            fast=False,
+            debug: bool = False):
         super().__init__(
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel,
             polarity=Motor.POLARITY_INVERSED,
-            fast=fast)
+            fast=fast,
+            debug=debug)
 
         if fast:
             self.wiggle_motor = FastMediumMotor(address=wiggle_motor_port)
@@ -172,17 +174,6 @@ class Kraz3(IRBeaconRemoteControlledTank):
     def keep_reacting_to_colors(self):
         while True:
             self.react_to_color()
-
-    def follow_beacon(self):
-        """
-        Simple "Follow Me" method
-        (built by NeXTSTORM and first used in EV3-D4 project)
-        """
-        ...
-
-    def keep_following_beacon(self):
-        while True:
-            self.follow_beacon()
 
     def main(self):
         while True:
