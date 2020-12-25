@@ -134,20 +134,52 @@ class IRBeaconRemoteControlledTank:
 
         if _ir_beacon_measurements_reliable:
             if heading < -3:
-                self.left_motor.run_forever(speed_sp=-speed)
-                self.right_motor.run_forever(speed_sp=speed)
+                self.left_motor.run_timed(
+                    speed_sp=-speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.right_motor.run_timed(
+                    speed_sp=speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
 
             elif heading > 3:
-                self.left_motor.run_forever(speed_sp=speed)
-                self.right_motor.run_forever(speed_sp=-speed)
+                self.left_motor.run_timed(
+                    speed_sp=speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.right_motor.run_timed(
+                    speed_sp=-speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
 
             if distance > target_distance:
-                self.left_motor.run_forever(speed_sp=speed)
-                self.right_motor.run_forever(speed_sp=speed)
+                self.left_motor.run_timed(
+                    speed_sp=speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.right_motor.run_timed(
+                    speed_sp=speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
 
             else:
-                self.left_motor.run_forever(speed_sp=-speed)
-                self.right_motor.run_forever(speed_sp=-speed)
+                self.left_motor.run_timed(
+                    speed_sp=-speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.right_motor.run_forever(
+                    speed_sp=-speed,
+                    time_sp=1000,
+                    stop_action=Motor.STOP_ACTION_COAST)
+                self.left_motor.wait_while(Motor.STATE_RUNNING)
+                self.right_motor.wait_while(Motor.STATE_RUNNING)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
