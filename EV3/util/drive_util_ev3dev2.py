@@ -170,24 +170,36 @@ class IRBeaconRemoteControlledTank:
 
         if _ir_beacon_measurements_reliable:
             if heading < -3:
-                self.steer_driver.on(
+                self.steer_driver.on_for_seconds(
                     steering=-100,
-                    speed=speed)
+                    speed=speed,
+                    seconds=1,
+                    brake=False,
+                    block=True)
 
             elif heading > 3:
-                self.steer_driver.on(
+                self.steer_driver.on_for_seconds(
                     steering=100,
-                    speed=speed)
+                    speed=speed,
+                    seconds=1,
+                    brake=False,
+                    block=True)
 
             if distance > target_distance:
-                self.steer_driver.on(
+                self.steer_driver.on_for_seconds(
                     steering=0,
-                    speed=speed)
+                    speed=speed,
+                    seconds=1,
+                    brake=False,
+                    block=True)
 
             else:
-                self.steer_driver.on(
+                self.steer_driver.on_for_seconds(
                     steering=0,
-                    speed=-speed)
+                    speed=-speed,
+                    seconds=1,
+                    brake=False,
+                    block=True)
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
