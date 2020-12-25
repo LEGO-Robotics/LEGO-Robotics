@@ -313,6 +313,11 @@ Wiki
 [YouTube Channel](https://www.youtube.com/channel/UCPMqSjdcAAkUa-qNf6m79Kg)
 
 
+### [Geoffrey P. Daniels](https://github.com/gpdaniels)
+
+[SPIKE Prime](https://github.com/gpdaniels/spike-prime)
+
+
 ### [Ian T. Daniher](https://github.com/itdaniher)
 
 [WeDo](https://github.com/itdaniher/WeDoMore)
