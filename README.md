@@ -41,7 +41,7 @@ repositories.
 
 ### SPIKE Prime
 
-- Desktop Software: [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software)
+- Desktop Software: [SPIKE](https://education.lego.com/en-us/downloads/spike-prime/software): [Mac](https://education.lego.com/_/downloads/SPIKE-PRIME_macOS_1.3.3_Global.dmg) | [PC](https://education.lego.com/_/downloads/SPIKE-PRIME_Win10_1.3.3_Global.exe) | [iPad](https://apps.apple.com/app/spike-lego-education/id1469183033?ls=1) | [Android](https://play.google.com/store/apps/details?id=com.lego.education.spike) | [Chromebook](https://play.google.com/store/apps/details?id=com.lego.education.spike)
 
 
 ### EV3
