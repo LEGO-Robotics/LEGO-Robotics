@@ -1,24 +1,22 @@
-from mindstorms import MSHub, Motor, MotorPair, DistanceSensor
+from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor
 
 
 class Tricky:
     def __init__(
             self,
-            left_motor_port: str = 'A', right_motor_port: str = 'B',
-            catapult_motor_port: str = 'C',
-            distance_sensor_port: str = 'D'):
+            left_wheel_motor_port: str = 'A', right_wheel_motor_port: str = 'B',
+            sport_motor_port: str = 'C',
+            distance_sensor_port: str = 'D',
+            color_sensor_port: str = 'E'):
         self.hub = MSHub()
 
-        self.motor_pair = MotorPair(left_motor_port, right_motor_port)
+        self.driving_motor_pair = MotorPair(left_wheel_motor_port, right_wheel_motor_port)
 
-        self.catapult_motor = Motor(catapult_motor_port)
+        self.sport_motor = Motor(sport_motor_port)
+
+        self.color_sensor = ColorSensor(color_sensor_port)
 
         self.distance_sensor = DistanceSensor(distance_sensor_port)
-
-    def lower_catapult(self):
-        self.catapult_motor.run_for_seconds(
-            seconds=1,
-            speed=25)
 
 
 # EOF
@@ -44,5 +42,5 @@ with open(TARGET_FILE_NAME, 'w') as f:
 
 # list projects/ directory and print file content before exiting
 print(os.listdir())
-print('{} SAVED:\n```\n{}\n```'.format(TARGET_FILE_NAME, file_content))
+print('{} SAVED!'.format(TARGET_FILE_NAME))
 sys.exit()
