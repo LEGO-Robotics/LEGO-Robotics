@@ -1,23 +1,23 @@
 from mindstorms.control import wait_for_seconds, wait_until
 from mindstorms.operator import less_than
 
-from tricky_ms import Tricky
+from tricky_basketball_ms import TrickyPlayingBasketball
 
 
-TRICKY = Tricky()
+TRICKY = TrickyPlayingBasketball()
 
 
 TRICKY.hub.light_matrix.show_image(
     image='TARGET',
     brightness=100)
 
-TRICKY.lower_catapult()
+TRICKY.lower_arm()
 
-# TRICKY.motor_pair.move_tank(
+# TRICKY.driving_motor_pair.move(
 #    amount=100,
 #    unit='cm',
-#    left_speed=100,
-#    right_speed=100)
+#    steering=0,
+#    speed=None)
 
 wait_for_seconds(seconds=1)
 
@@ -31,17 +31,17 @@ distance_to_object = TRICKY.distance_sensor.get_distance_cm(short_range=False)
 while (distance_to_object is None) or (distance_to_object >= 8):
     distance_to_object = TRICKY.distance_sensor.get_distance_cm(short_range=False)
 
-TRICKY.catapult_motor.run_for_degrees(
+TRICKY.arm_motor.run_for_degrees(
     degrees=-110,
     speed=25)
 
-TRICKY.motor_pair.move(
+TRICKY.driving_motor_pair.move(
     amount=36,
     unit='cm',
     steering=100,
-    speed=100)
+    speed=None)
 
-TRICKY.catapult_motor.run_for_seconds(
+TRICKY.arm_motor.run_for_seconds(
     seconds=0.4,
     speed=-75)
 
@@ -53,4 +53,4 @@ TRICKY.hub.speaker.beep(
     note=60,
     seconds=1)
 
-TRICKY.lower_catapult()
+TRICKY.lower_arm()
