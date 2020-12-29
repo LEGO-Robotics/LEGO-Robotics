@@ -20,6 +20,6 @@ with open(TARGET_FILE_NAME, 'w') as f:
     f.write(file_content)
 
 # list projects/ directory and print file content before exiting
-print(os.listdir('projects'))
+print(os.listdir())
 print('{} SAVED:\n```\n{}\n```'.format(TARGET_FILE_NAME, file_content))
 sys.exit()
