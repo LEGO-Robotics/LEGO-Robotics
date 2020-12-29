@@ -2,10 +2,10 @@ import os
 import sys
 
 
-TARGET_FILE_NAME = '___.py'
+TARGET_MODULE_NAME = '___'
 
 
-target_file_path = 'projects/{}'.format(TARGET_FILE_NAME)
+target_file_path = 'projects/{}.py'.format(TARGET_MODULE_NAME)
 print('SAVING {} AS {}...'.format(__file__, target_file_path))
 
 # remove target file if it already exists
@@ -28,5 +28,5 @@ with open(target_file_path, 'w') as f:
 
 # list projects/ directory before exiting
 print(os.listdir('projects'))
-print('{} SAVED!'.format(target_file_path))
+print('{} SAVED:\n```\n{}\n```'.format(target_file_path, file_content))
 sys.exit()
