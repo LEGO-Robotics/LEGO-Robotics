@@ -12,14 +12,14 @@ while True:
     # Tricky will begin when
     # the Distance Sensor detects something closer than 10 cm
     if (distance_in_cm is not None) and (distance_in_cm < 10):
-        TRICKY.motor_pair.move_tank(
+        TRICKY.driving_motor_pair.move(
             amount=71,
             unit='cm',
-            left_speed=100,
-            right_speed=100)
+            steering=100,
+            speed=None)
 
-        TRICKY.motor_pair.move_tank(
-            amount=-71,
+        TRICKY.driving_motor_pair.move(
+            amount=71,
             unit='cm',
-            left_speed=100,
-            right_speed=100)
+            steering=-100,
+            speed=None)
