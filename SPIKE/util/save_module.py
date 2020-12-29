@@ -5,23 +5,21 @@ import os
 import sys
 
 
-TARGET_MODULE_NAME = '___'
+TARGET_FILE_NAME = '___.py'
 
-# set target file path in projects/ directory
-target_file_path = 'projects/{}.py'.format(TARGET_MODULE_NAME)
 
 # save current file to target file
-print('SAVING {} AS {}...'.format(__file__, target_file_path))
-os.rename(__file__, target_file_path)
+print('SAVING {} AS {}...'.format(__file__, TARGET_FILE_NAME))
+os.rename(__file__, TARGET_FILE_NAME)
 
 # remove file content after "# EOF"
-with open(target_file_path, 'r') as f:
+with open(TARGET_FILE_NAME, 'r') as f:
     file_content = f.read()
 file_content = file_content.split('# EOF')[0]
-with open(target_file_path, 'w') as f:
+with open(TARGET_FILE_NAME, 'w') as f:
     f.write(file_content)
 
 # list projects/ directory and print file content before exiting
 print(os.listdir('projects'))
-print('{} SAVED:\n```\n{}\n```'.format(target_file_path, file_content))
+print('{} SAVED:\n```\n{}\n```'.format(TARGET_FILE_NAME, file_content))
 sys.exit()
