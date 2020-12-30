@@ -4,13 +4,17 @@ from mindstorms import MSHub, Motor, MotorPair, ColorSensor, DistanceSensor
 class Tricky:
     def __init__(
             self,
-            left_wheel_motor_port: str = 'A', right_wheel_motor_port: str = 'B',
+            left_wheel_motor_port: str = 'A',
+            right_wheel_motor_port: str = 'B',
             sport_motor_port: str = 'C',
             distance_sensor_port: str = 'D',
             color_sensor_port: str = 'E'):
         self.hub = MSHub()
 
-        self.driving_motor_pair = MotorPair(left_wheel_motor_port, right_wheel_motor_port)
+        self.driving_motor_pair = \
+            MotorPair(
+                left_wheel_motor_port,
+                right_wheel_motor_port)
 
         self.sport_motor = Motor(sport_motor_port)
 
