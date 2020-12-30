@@ -352,6 +352,11 @@ Wiki
 [BrickPi PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
 
 
+### Yoshihito Isogawa
+
+[YouTube Channel](https://www.youtube.com/user/ISOGAWAYoshihito)
+
+
 ### [Gus Jansson](https://github.com/GusJansson)
 
 [SteerBot: a 51515 Robot Inventor car that edge tracks a line](https://github.com/pybricks/support/discussions/166)
