@@ -219,6 +219,14 @@ Wiki
 [WeDo](https://github.com/gbin/WeDoMore)
 
 
+### [Daniele "Danny" Benedettelli]()
+
+[Website](https://robotics.benedettelli.com)
+- [Projects](https://robotics.benedettelli.com/blog)
+
+[YouTube Channel](https://www.youtube.com/c/DanieleBenedettelli)
+
+
 ### [Bits Dream](https://github.com/BitsDream)
 
 [EV3 Swift Playground](https://github.com/BitsDream/EV3-Playground)
@@ -343,6 +351,13 @@ Wiki
 
 [BrickPi PyRemote](https://github.com/antonvh/BrickPi_PyRemote)
 
+
+### [Gus Jansson](https://github.com/GusJansson)
+
+[SteerBot: a 51515 Robot Inventor car that edge tracks a line](https://github.com/pybricks/support/discussions/166)
+- [YouTube video](https://www.youtube.com/watch?v=i4WPa-rtFB8)
+
+[YouTube Channel](https://www.youtube.com/user/GusJanss)
 
 ### [Stavros Korokithakis](https://github.com/skorokithakis)
 
