@@ -38,6 +38,7 @@
   - [Pybricks, MicroPython, and Garbage Collection](https://github.com/pybricks/support/issues/21)
   - [PyBricks: Multi-Task Support](https://github.com/pybricks/support/issues/23)
   - [PyBricks: parallel code execution](https://github.com/pybricks/support/issues/27)
+  - [PyBricks: Getting Started Documentation for Robot Inventor](https://github.com/pybricks/support/issues/167)
 
 [PyBricks Technical Info](https://github.com/pybricks/technical-info)
 
@@ -529,6 +530,15 @@ NXT_Python (2007)
 ### [Agnese Salutari](https://github.com/agnsal)
 
 [Blocks Bot](https://github.com/agnsal/BlocksBot)
+
+
+### [John Scarangello](https://github.com/johnscary-ev3)
+
+[Ev3rstorm](https://github.com/johnscary-ev3/EV3RSTORM)
+
+[Ev3rscan](https://github.com/johnscary-ev3/EV3R_SCAN)
+
+[Roboscan](https://github.com/johnscary-ev3/ROBO_SCAN)
 
 
 ### [Seshan Brothers](https://github.com/seshanbrothers) (Sanjay & Arvind Seshan)
