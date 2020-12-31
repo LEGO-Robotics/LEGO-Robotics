@@ -420,6 +420,9 @@ NXT_Python (2007)
 [EV3 Swift Playground APIs](https://github.com/iceboundrock/ev3-switf-playground-apis/tree/master/EV3)
 
 
+### [Bert Lindeman](https://github.com/BertLindeman)
+
+
 ### [Elvin Luff](https://github.com/Eelviny)
 
 [Website](https://eelviny.me)
