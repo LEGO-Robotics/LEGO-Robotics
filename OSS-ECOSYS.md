@@ -176,12 +176,24 @@ Wiki
 [Comparison of Robotics Simulators](https://docs.google.com/spreadsheets/d/1qk2a0GMsV9xthZXG95NiNXcb3yxjLB_B-nY1hyu04C0)
 
 
+### [Advanced Robotics at the University of Washington](https://github.com/uw-advanced-robotics)
+
+[Vision Platform](https://github.com/uw-advanced-robotics/aruw-vision-platform-2019)
+
+
 ## Persons and Small Organizations
 
 
 ### [Artificial Agents and Artificial Intelligence Research Group @ DISIM.UnivAQ](https://github.com/AAAI-DISIM-UnivAQ)
 
 [ROS2 EV3Dev](https://github.com/AAAI-DISIM-UnivAQ/ros2-ev3dev)
+
+
+### Hans Andersson ("Tilted Twister")
+
+[Website](https://tiltedtwister.com)
+
+[YouTube Channel](https://www.youtube.com/c/tiltedtwister)
 
 
 ### [Hazimi "Jimmy" Asyraf](https://github.com/jimmyasyraf)
@@ -332,6 +344,11 @@ Wiki
 [WeDo](https://github.com/itdaniher/WeDoMore)
 
 
+### Dimitri Dekyvere
+
+[YouTube Channel](https://www.youtube.com/user/DimitriDekyvere)
+
+
 ### [FatCatLab EVB](https://www.kickstarter.com/projects/fatcatlab/evb-replace-the-brain-of-your-lego-ev3-with-beagle)
 
 
@@ -399,6 +416,13 @@ Wiki
 NXT_Python (2007)
 
 
+### [Kaelin Laundry](https://github.com/WasabiFan)
+
+[EV3Dev NodeJS](https://github.com/WasabiFan/ev3dev-NodeJS)
+
+[Snap! EV3Dev](https://github.com/WasabiFan/snap-ev3dev)
+
+
 ### [David Lechner](https://github.com/dlech)
 
 [YouTube Channel](https://www.youtube.com/channel/UC9t81ufD1yeMes9YGpKb7bA/videos)
@@ -421,6 +445,8 @@ NXT_Python (2007)
 
 
 ### [Bert Lindeman](https://github.com/BertLindeman)
+
+[EV3Dev Examples](https://github.com/BertLindeman/bert-ev3dev-examples)
 
 
 ### [Elvin Luff](https://github.com/Eelviny)
@@ -599,6 +625,11 @@ NXT_Python (2007)
 [EV3 Projects](https://github.com/sanjayseshan/ev3-projects)
 
 [SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
+
+
+### Coder Shah
+
+[YouTube Channel](https://www.youtube.com/c/CoderShah)
 
 
 ### [Xander Soldaat](https://github.com/botbench)
