@@ -1,6 +1,3 @@
-#!/usr/bin/env pybricks-micropython
-
-
 from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.parameters import Direction, Port

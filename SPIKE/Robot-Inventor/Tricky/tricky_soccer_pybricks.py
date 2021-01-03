@@ -20,24 +20,30 @@ class TrickyPlayingSoccer:
     WHEEL_DIAMETER = 44
     AXLE_TRACK = 88
 
-    def __init__(self):
+    def __init__(
+            self,
+            left_wheel_motor_port: Port = Port.B,
+            right_wheel_motor_port: Port = Port.A,
+            kicker_motor_port: Port = Port.C,
+            distance_sensor_port: Port = Port.D,
+            color_sensor_port: Port = Port.E):
         self.hub = InventorHub()
 
-        left_motor = Motor(port=Port.B,
+        left_motor = Motor(port=left_wheel_motor_port,
                            positive_direction=Direction.COUNTERCLOCKWISE)
-        right_motor = Motor(port=Port.A,
+        right_motor = Motor(port=right_wheel_motor_port,
                             positive_direction=Direction.CLOCKWISE)
         self.drive_base = DriveBase(left_motor=left_motor,
                                     right_motor=right_motor,
                                     wheel_diameter=self.WHEEL_DIAMETER,
                                     axle_track=self.AXLE_TRACK)
 
-        self.kicker_motor = Motor(port=Port.C,
+        self.kicker_motor = Motor(port=kicker_motor_port,
                                   positive_direction=Direction.CLOCKWISE)
 
-        self.distance_sensor = UltrasonicSensor(port=Port.D)
+        self.distance_sensor = UltrasonicSensor(port=distance_sensor_port)
 
-        self.color_sensor = ColorSensor(port=Port.E)
+        self.color_sensor = ColorSensor(port=color_sensor_port)
 
     def reset_kicker_motor(self):
         self.hub.light.on(color=Color.BLACK)
