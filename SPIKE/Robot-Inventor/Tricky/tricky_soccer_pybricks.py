@@ -93,7 +93,7 @@ class TrickyPlayingSoccer:
 
     def celebrate(self):
         """
-        This runs the celebration
+        This runs Tricky's celebration
         """
         self.hub.display.image(
             image=[[00, 11, 33, 11, 00],
@@ -106,15 +106,28 @@ class TrickyPlayingSoccer:
             frequency=1000,
             duration=1000)
 
-        self.hub.display.off()
-
         self.hub.light.animate(
             colors=[Color.CYAN, Color.GREEN, Color.MAGENTA],
             interval=100)
 
+        # FIXME: below blocks cause Inventor Hub to loop forever
+        # self.drive_base.drive(
+        #     speed=0,
+        #     turn_rate=360)
+
+        # self.kicker_motor.run_angle(
+        #     speed=1000,
+        #     rotation_angle=5 * 360,
+        #     then=Stop.COAST,
+        #     wait=True)
+
         wait(1000)
 
+        self.hub.display.off()
+
         self.hub.light.on(color=Color.BLACK)
+
+        self.drive_base.stop()
 
 
 if __name__ == '__main__':
