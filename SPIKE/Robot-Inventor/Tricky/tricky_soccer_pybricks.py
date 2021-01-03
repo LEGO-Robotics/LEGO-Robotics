@@ -54,6 +54,9 @@ class TrickyPlayingSoccer:
             wait=True)
 
     def kick(self):
+        """
+        This controls the kick
+        """
         self.kicker_motor.run_angle(
             speed=1000,
             rotation_angle=360,
@@ -95,17 +98,20 @@ class TrickyPlayingSoccer:
         self.hub.display.off()
 
 
-TRICKY = TrickyPlayingSoccer()
+if __name__ == '__main__':
+    TRICKY = TrickyPlayingSoccer()
 
-TRICKY.reset_kicker_motor()
+    TRICKY.reset_kicker_motor()
 
-# keep practicing penalty kicks
-while True:
-    # wait until the player puts an object near the Distance Sensor
-    # to trigger Tricky to start running towards the ball and the goal
-    while TRICKY.distance_sensor.distance() >= 100:
-        pass
+    # FIXME: the following causes Inventor Hub to hang
+    # TRICKY.distance_sensor.lights.on(100)
 
-    TRICKY.run_to_and_kick_ball()
+    # keep practicing penalty kicks
+    while True:
+        # When the Distance Sensor is triggered, Tricky's goal run starts
+        while TRICKY.distance_sensor.distance() >= 100:
+            pass
 
-    TRICKY.celebrate()
+        TRICKY.run_to_and_kick_ball()
+
+        TRICKY.celebrate()
