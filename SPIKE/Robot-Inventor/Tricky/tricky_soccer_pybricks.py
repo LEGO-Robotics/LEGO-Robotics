@@ -13,6 +13,7 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.parameters import Color, Direction, Port, Stop
 from pybricks.robotics import DriveBase
+from pybricks.tools import wait
 
 
 class TrickyPlayingSoccer:
@@ -55,7 +56,7 @@ class TrickyPlayingSoccer:
 
     def kick(self):
         """
-        This controls the kick
+        This controls the kick. It takes one rotation to kick the ball.
         """
         self.kicker_motor.run_angle(
             speed=1000,
@@ -68,6 +69,7 @@ class TrickyPlayingSoccer:
             speed=1000,
             turn_rate=0)
 
+        # wait until Tricky sees the ball
         while self.color_sensor.color(surface=True) != Color.RED:
             pass
 
@@ -84,6 +86,9 @@ class TrickyPlayingSoccer:
         self.hub.light.on(color=Color.BLACK)
 
     def celebrate(self):
+        """
+        This runs the celebration
+        """
         self.hub.display.image(
             image=[[00, 11, 33, 11, 00],
                    [11, 33, 66, 33, 11],
@@ -96,6 +101,14 @@ class TrickyPlayingSoccer:
             duration=1000)
 
         self.hub.display.off()
+
+        self.hub.light.animate(
+            colors=[Color.CYAN, Color.GREEN, Color.MAGENTA],
+            interval=100)
+
+        wait(1000)
+
+        self.hub.light.on(color=Color.BLACK)
 
 
 if __name__ == '__main__':
