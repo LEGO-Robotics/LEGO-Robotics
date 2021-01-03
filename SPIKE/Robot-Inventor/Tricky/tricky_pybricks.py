@@ -21,10 +21,10 @@ class Tricky:
                            positive_direction=Direction.COUNTERCLOCKWISE)
         right_motor = Motor(port=right_wheel_motor_port,
                             positive_direction=Direction.CLOCKWISE)
-        self.driving_base = DriveBase(left_motor=left_motor,
-                                      right_motor=right_motor,
-                                      wheel_diameter=self.WHEEL_DIAMETER,
-                                      axle_track=self.AXLE_TRACK)
+        self.drive_base = DriveBase(left_motor=left_motor,
+                                    right_motor=right_motor,
+                                    wheel_diameter=self.WHEEL_DIAMETER,
+                                    axle_track=self.AXLE_TRACK)
 
         self.sport_motor = Motor(port=sport_motor_port,
                                  positive_direction=Direction.CLOCKWISE)
