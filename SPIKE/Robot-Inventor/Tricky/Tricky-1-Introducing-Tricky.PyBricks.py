@@ -2,7 +2,7 @@
 
 
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
+from pybricks.pupdevices import Motor, UltrasonicSensor
 from pybricks.parameters import Direction, Port
 from pybricks.robotics import DriveBase
 
@@ -15,24 +15,17 @@ class Tricky:
             self,
             left_wheel_motor_port: Port = Port.A,
             right_wheel_motor_port: Port = Port.B,
-            sport_motor_port: Port = Port.C,
-            distance_sensor_port: Port = Port.D,
-            color_sensor_port: Port = Port.E):
+            distance_sensor_port: Port = Port.D):
         self.hub = InventorHub()
 
-        self.driving_base = \
-            DriveBase(
-                left_motor=Motor(port=left_wheel_motor_port,
-                                 positive_direction=Direction.CLOCKWISE),
-                right_motor=Motor(port=right_wheel_motor_port,
-                                  positive_direction=Direction.CLOCKWISE),
-                wheel_diameter=self.WHEEL_DIAMETER,
-                axle_track=self.AXLE_TRACK)
-
-        self.sport_motor = Motor(port=sport_motor_port,
-                                 positive_direction=Direction.CLOCKWISE)
-
-        self.color_sensor = ColorSensor(port=color_sensor_port)
+        left_motor = Motor(port=left_wheel_motor_port,
+                           positive_direction=Direction.COUNTERCLOCKWISE)
+        right_motor = Motor(port=right_wheel_motor_port,
+                            positive_direction=Direction.CLOCKWISE)
+        self.drive_base = DriveBase(left_motor=left_motor,
+                                    right_motor=right_motor,
+                                    wheel_diameter=self.WHEEL_DIAMETER,
+                                    axle_track=self.AXLE_TRACK)
 
         self.distance_sensor = UltrasonicSensor(port=distance_sensor_port)
 
@@ -40,7 +33,10 @@ class Tricky:
 if __name__ == '__main__':
     TRICKY = Tricky()
 
-    TRICKY.distance_sensor.lights.on(100)
+    # FIXME: below causes Inventor Hub to hang
+    # TRICKY.distance_sensor.lights.on(100)
 
-    TRICKY.distance_sensor.lights.off()
-
+    while True:
+        if TRICKY.distance_sensor.distance() < 100:
+            TRICKY.drive_base.turn(angle=360)
+            TRICKY.drive_base.turn(angle=-360)
