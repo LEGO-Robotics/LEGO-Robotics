@@ -34,6 +34,8 @@ if __name__ == '__main__':
     # TRICKY.distance_sensor.lights.on(100)
 
     while True:
+        # Tricky will begin when
+        # the Distance Sensor detects something closer than 10 cm.
         if TRICKY.distance_sensor.distance() < 100:
             TRICKY.drive_base.turn(angle=360)
             TRICKY.drive_base.turn(angle=-360)
