@@ -17,14 +17,14 @@ class Tricky:
             color_sensor_port: Port = Port.E):
         self.hub = InventorHub()
 
-        self.driving_base = \
-            DriveBase(
-                left_motor=Motor(port=left_wheel_motor_port,
-                                 positive_direction=Direction.CLOCKWISE),
-                right_motor=Motor(port=right_wheel_motor_port,
-                                  positive_direction=Direction.CLOCKWISE),
-                wheel_diameter=self.WHEEL_DIAMETER,
-                axle_track=self.AXLE_TRACK)
+        left_motor = Motor(port=left_wheel_motor_port,
+                           positive_direction=Direction.COUNTERCLOCKWISE)
+        right_motor = Motor(port=right_wheel_motor_port,
+                            positive_direction=Direction.CLOCKWISE)
+        self.driving_base = DriveBase(left_motor=left_motor,
+                                      right_motor=right_motor,
+                                      wheel_diameter=self.WHEEL_DIAMETER,
+                                      axle_track=self.AXLE_TRACK)
 
         self.sport_motor = Motor(port=sport_motor_port,
                                  positive_direction=Direction.CLOCKWISE)
