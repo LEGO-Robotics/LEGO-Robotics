@@ -110,11 +110,11 @@ class TrickyPlayingSoccer:
             colors=[Color.CYAN, Color.GREEN, Color.MAGENTA],
             interval=100)
 
-        # FIXME: below blocks cause Inventor Hub to loop forever
-        # self.drive_base.drive(
-        #     speed=0,
-        #     turn_rate=360)
+        self.drive_base.drive(
+            speed=0,
+            turn_rate=360)
 
+        # FIXME: below block causes Inventor Hub to loop forever
         # self.kicker_motor.run_angle(
         #     speed=1000,
         #     rotation_angle=5 * 360,
