@@ -133,10 +133,12 @@ class TrickyPlayingSoccer:
 if __name__ == '__main__':
     TRICKY = TrickyPlayingSoccer()
 
+    TRICKY.distance_sensor.lights.off()
+
     TRICKY.reset_kicker_motor()
 
-    # FIXME: the following causes Inventor Hub to hang
-    # TRICKY.distance_sensor.lights.on(100)
+    TRICKY.distance_sensor.lights.on(100)
+    wait(1)
 
     # keep practicing penalty kicks
     while True:
