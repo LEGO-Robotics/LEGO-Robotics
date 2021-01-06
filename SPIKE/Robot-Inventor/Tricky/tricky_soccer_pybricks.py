@@ -114,14 +114,11 @@ class TrickyPlayingSoccer:
             speed=0,
             turn_rate=360)
 
-        # FIXME: below block causes Inventor Hub to loop forever
-        # self.kicker_motor.run_angle(
-        #     speed=1000,
-        #     rotation_angle=5 * 360,
-        #     then=Stop.COAST,
-        #     wait=True)
-
-        wait(1000)
+        self.kicker_motor.run_angle(
+            speed=1000,
+            rotation_angle=5 * 360,
+            then=Stop.COAST,
+            wait=True)
 
         self.hub.display.off()
 
