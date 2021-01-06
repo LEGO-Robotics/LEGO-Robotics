@@ -13,7 +13,6 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.parameters import Color, Direction, Port, Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait
 
 
 class TrickyPlayingSoccer:
@@ -135,14 +134,10 @@ if __name__ == '__main__':
     TRICKY.reset_kicker_motor()
 
     TRICKY.distance_sensor.lights.on(100)
-    wait(1)
 
     # keep practicing penalty kicks
     while True:
         # When the Distance Sensor is triggered, Tricky's goal run starts
-        while TRICKY.distance_sensor.distance() >= 100:
-            pass
-
-        TRICKY.run_to_and_kick_ball()
-
-        TRICKY.celebrate()
+        if TRICKY.distance_sensor.distance() < 100:
+            TRICKY.run_to_and_kick_ball()
+            TRICKY.celebrate()

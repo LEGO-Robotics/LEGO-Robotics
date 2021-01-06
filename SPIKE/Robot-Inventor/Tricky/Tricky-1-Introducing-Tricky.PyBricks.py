@@ -2,6 +2,7 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, UltrasonicSensor
 from pybricks.parameters import Direction, Port
 from pybricks.robotics import DriveBase
+from pybricks.tools import wait
 
 
 class Tricky:
@@ -30,8 +31,10 @@ class Tricky:
 if __name__ == '__main__':
     TRICKY = Tricky()
 
-    # FIXME: below causes Inventor Hub to hang
-    # TRICKY.distance_sensor.lights.on(100)
+    TRICKY.distance_sensor.lights.off()
+    wait(1000)
+
+    TRICKY.distance_sensor.lights.on(100)
 
     while True:
         # Tricky will begin when
