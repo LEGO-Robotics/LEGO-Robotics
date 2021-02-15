@@ -1,3 +1,1 @@
-#!/usr/bin/env pybricks-micropython
-
-
+# NOTE: no program
