@@ -1,6 +1,6 @@
 from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Color, Direction, Port, Stop
+from pybricks.parameters import Color, Direction, Port, Side, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
@@ -46,7 +46,9 @@ class Blast:
             wait=True)
 
     def setup(self):
-        for _ in range(10):
+        self.hub.display.orientation(up=Side.RIGHT)
+
+        for _ in range(12):
             self.hub.display.image(
                 image=[[00, 11, 33, 11, 00],
                        [11, 33, 66, 33, 11],
