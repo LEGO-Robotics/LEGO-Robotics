@@ -5,11 +5,10 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
 from pybricks.media.ev3dev import SoundFile
 from pybricks.parameters import Button, Direction, Port, Stop
-from pybricks.robotics import DriveBase
 
-import os
-import sys
-sys.path.append('/home/robot')
+# import os
+# import sys
+# sys.path.append('/home/robot')
 from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 
 
@@ -27,13 +26,13 @@ class Gripp3r(IRBeaconRemoteControlledTank, EV3Brick):
             wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
             left_motor_port=left_motor_port, right_motor_port=right_motor_port,
             ir_sensor_port=ir_sensor_port, ir_beacon_channel=ir_beacon_channel)
-            
+
         self.drive_base.settings(
             straight_speed=750,   # milimeters per second
             straight_acceleration=750,
             turn_rate=90,   # degrees per second
             turn_acceleration=90)
-                
+
         self.grip_motor = Motor(port=grip_motor_port,
                                 positive_direction=Direction.CLOCKWISE)
 
@@ -42,9 +41,9 @@ class Gripp3r(IRBeaconRemoteControlledTank, EV3Brick):
         self.ir_sensor = InfraredSensor(port=ir_sensor_port)
         self.ir_beacon_channel = ir_beacon_channel
 
-
     def grip_or_release_by_ir_beacon(self, speed: float = 500):
-        if Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+        if Button.BEACON in \
+                self.ir_sensor.buttons(channel=self.ir_beacon_channel):
             if self.touch_sensor.pressed():
                 self.speaker.play_file(file=SoundFile.AIR_RELEASE)
 
@@ -64,9 +63,9 @@ class Gripp3r(IRBeaconRemoteControlledTank, EV3Brick):
 
                 self.grip_motor.stop()
 
-            while Button.BEACON in self.ir_sensor.buttons(channel=self.ir_beacon_channel):
+            while Button.BEACON in \
+                    self.ir_sensor.buttons(channel=self.ir_beacon_channel):
                 pass
-
 
     def main(self, speed: float = 1000):
         self.grip_motor.run_time(
@@ -74,12 +73,12 @@ class Gripp3r(IRBeaconRemoteControlledTank, EV3Brick):
             time=1000,
             then=Stop.BRAKE,
             wait=True)
-    
+
         while True:
             self.drive_once_by_ir_beacon(speed=speed)
 
             self.grip_or_release_by_ir_beacon()
-            
+
 
 if __name__ == '__main__':
     GRIPP3R = Gripp3r()

@@ -1,3 +1,1 @@
-#!/usr/bin/env micropython
-
-
+# NOTE: no program

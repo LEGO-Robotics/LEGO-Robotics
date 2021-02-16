@@ -1,5 +1,5 @@
 # base
-PIP >= 20.3.3
+PIP >= 21.0.1
 # Poetry >= 1.1.4
     # use default installer instead:
     # curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
@@ -26,7 +26,7 @@ Thonny-EV3Dev >= 1.0.4
 Python-EV3Dev >= 1.2.0
 
 # Simulators
-EV3Sim >= 1.6.5
+EV3Sim >= 2.0.2
 PyGame >= 2.0.1
 
 # misc
@@ -48,13 +48,13 @@ git+https://GitHub.com/EV3Dev/NXT-Python
     # invalid old syntax
 
 git+http://git.ni.fr.eu.org/pyfantom.git
-PyUSB >= 1.1.0
+PyUSB >= 1.1.1
 
 BlockExt-Mindstorms-NXT >= 0.2
 # BrickPython >= 0.4
     # installation error
 KLego >= 0.98.2.6
-JaRaCo.NXT >= 2.0
+JaRaCo.NXT >= 2.1.0
 
 # NXTurtle >= 1.0.4.dev-20110105
     # invalid old syntax
@@ -72,14 +72,14 @@ WeDo2 >= 1.1.1
 BrickPi-Python >= 1.0
 
 # Networking
-AdaFruit-AMPy >= 1.0.7
+AdaFruit-AMPy >= 1.1.0
 RPyC
     # required by EV3Dev Python Tools
 
 # Linting & Refactoring
 PyLint >= 2.6.0
 Flake8 >= 3.8.4
-MyPy >= 0.790
+MyPy >= 0.800
 PyDocStyle >= 5.1.1
 PyCodeStyle >= 2.6.0
 # Prospector >= 1.3.0
