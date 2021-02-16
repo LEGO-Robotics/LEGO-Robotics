@@ -10,12 +10,12 @@
 
   "git.ignoreLimitWarning": true,
 
-  "python.linting.enabled": false,
-  // "python.linting.pylintEnabled": true,
-  // "python.linting.flake8Enabled": true,
-  // "python.linting.mypyEnabled": true,
-  // "python.linting.pydocstyleEnabled": false,
-  // "python.linting.pycodestyleEnabled": true,
-  // "python.linting.pylamaEnabled": true,
-  // "python.linting.banditEnabled": false
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pydocstyleEnabled": false,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylamaEnabled": true,
+  "python.linting.banditEnabled": true
 }
