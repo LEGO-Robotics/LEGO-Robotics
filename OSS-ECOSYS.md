@@ -628,6 +628,8 @@ NXT_Python (2007)
 
 [SPIKE Prime Examples](https://github.com/sanjayseshan/spikeprime-samples)
 
+[SPIKE Prime on Visual Studio Code](https://github.com/sanjayseshan/spikeprime-vscode)
+
 
 ### Coder Shah
 
