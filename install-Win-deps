@@ -4,4 +4,4 @@
 python -m pip install pip --upgrade --user
 
 python -m pip install -r requirements.txt --upgrade --user
-python -m pip install -r requirements-Win.txt --upgrade
+python -m pip install -r requirements-Win.txt --upgrade --user

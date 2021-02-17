@@ -6,4 +6,4 @@ brew install SDL
 python3 -m pip install pip --upgrade --user
 
 python3 -m pip install -r requirements.txt --upgrade --user
-python3 -m pip install -r requirements-Mac.txt --upgrade
+python3 -m pip install -r requirements-Mac.txt --upgrade --user
