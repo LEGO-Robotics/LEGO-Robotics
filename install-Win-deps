@@ -3,5 +3,5 @@
 
 python -m pip install pip --upgrade --user
 
-python -m pip install -r requirements.txt --upgrade --user --use-feature=2020-resolver
-python -m pip install -r requirements-Win.txt --upgrade --user --use-feature=2020-resolver
+python -m pip install -r requirements.txt --upgrade --user
+python -m pip install -r requirements-Win.txt --upgrade
