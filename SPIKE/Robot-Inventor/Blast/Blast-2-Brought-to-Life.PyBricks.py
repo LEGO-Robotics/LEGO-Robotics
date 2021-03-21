@@ -38,13 +38,6 @@ class Blast:
 
         self.distance_sensor = UltrasonicSensor(port=distance_sensor_port)
 
-    def calibrate(self):
-        self.arm_movement_motor.run_target(
-            speed=1000,
-            target_angle=0,
-            then=Stop.HOLD,
-            wait=True)
-
     def setup(self):
         self.hub.display.orientation(up=Side.RIGHT)
 
