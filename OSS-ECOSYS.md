@@ -375,6 +375,9 @@ Wiki
 [YouTube Channel](https://www.youtube.com/user/ISOGAWAYoshihito)
 
 
+### [Jiri Janata](https://github.com/jirijanata)
+
+
 ### [Gus Jansson](https://github.com/GusJansson)
 
 [SteerBot: a 51515 Robot Inventor car that edge tracks a line](https://github.com/pybricks/support/discussions/166)
@@ -430,6 +433,9 @@ NXT_Python (2007)
 [EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
 
 [NXT Firmware](https://github.com/dlech/nxt-firmware)
+
+
+### [Frederik Leonhardt](https://github.com/fkleon)
 
 
 ### [Richard Lewis](https://github.com/richrd)
