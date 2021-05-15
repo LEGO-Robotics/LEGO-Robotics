@@ -1,6 +1,6 @@
 from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Color, Direction, Port, Side, Stop
+from pybricks.parameters import Color, Direction, Port, Side
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
@@ -37,13 +37,6 @@ class Blast:
         self.color_sensor = ColorSensor(port=color_sensor_port)
 
         self.distance_sensor = UltrasonicSensor(port=distance_sensor_port)
-
-    def calibrate(self):
-        self.arm_movement_motor.run_target(
-            speed=1000,
-            target_angle=0,
-            then=Stop.HOLD,
-            wait=True)
 
     def setup(self):
         self.hub.display.orientation(up=Side.RIGHT)
