@@ -73,6 +73,7 @@ repositories.
   - [Getting started with LEGO® MINDSTORMS® Education EV3 MicroPython Version 2.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/getting-started-with-micropython-v2_enus-810818c6f91786794e324d3e9606b7d2.pdf)
      - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100-71d3f28c59a1e766e92a59ff8500818e.pdf)
   - [microSD Image](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv200sdcardimage-2c980f58ab30715f0659568970baf494.zip)
+    - [Latest Download Link](https://education.lego.com/v3/assets/blt293eea581807678a/blt9df409c9a182ab9c/5f88191a6ffd1b42dc42b8af/ev3micropythonv200sdcardimage.zip)
     - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
   - [Documentation](https://pybricks.github.io/ev3-micropython)
 
