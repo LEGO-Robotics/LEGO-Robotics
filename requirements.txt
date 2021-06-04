@@ -11,6 +11,8 @@ https://GitHub.com/PyBricks/PyBricks-API/archive/master.zip
 # PyBricks >= 3.0.0
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
 PyBricksDev >= 1.0.0.a9; python_version < '3.9'
+Tqdm >= 4.61.0
+    # required by PyBricksDev
 Python-EV3Dev2 >= 2.1.0.post1
 
 # EV3Dev Python Tools
