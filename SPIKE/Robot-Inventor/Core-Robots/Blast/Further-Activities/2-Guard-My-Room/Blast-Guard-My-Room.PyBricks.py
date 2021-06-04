@@ -55,11 +55,11 @@ class Blast:
 
         for _ in range(12):
             self.hub.display.image(
-                image=[[10, 21, 23, 21, 10],
-                       [21, 23, 56, 23, 21],
-                       [23, 56, 89, 66, 33],
-                       [11, 33, 56, 23, 21],
-                       [10, 21, 56, 11, 10]])
+                image=[[00, 11, 33, 11, 00],
+                       [11, 33, 66, 33, 11],
+                       [33, 66, 99, 66, 33],
+                       [11, 33, 66, 33, 11],
+                       [00, 11, 33, 11, 00]])
 
             self.hub.light.on(color=Color.RED)
 
@@ -78,21 +78,14 @@ if __name__ == '__main__':
 
     BLAST.calibrate()
 
+    BLAST.action_motor.run_target(
+        speed=1000,
+        target_angle=0,
+        then=Stop.HOLD,
+        wait=True)
+
     BLAST.arm_movement_motor.run_angle(
         speed=1000,
         rotation_angle=1.8 * 360,
         then=Stop.HOLD,
         wait=True)
-
-    BLAST.distance_sensor.lights.on(100)
-
-    while BLAST.distance_sensor.distance() > 100:
-        wait(10)
-
-    BLAST.distance_sensor.lights.off()
-
-    BLAST.arm_movement_motor.run_angle(
-       speed=1000,
-       rotation_angle=-1.8 * 360,
-       then=Stop.HOLD,
-       wait=True)
