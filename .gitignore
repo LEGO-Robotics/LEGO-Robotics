@@ -129,6 +129,5 @@ dmypy.json
 .pyre/
 
 
-# IntelliJ IDEA / PyCharm
-.idea/
-*.iml
+# Visual Studio Code
+*.code-workspace
