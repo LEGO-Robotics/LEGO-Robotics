@@ -1,7 +1,12 @@
 #!/usr/bin/env micropython
 
 
+import json
+
 from ev3dev2.sound import Sound
+
+
+HAPPY_BIRTHDAY_SONG = json.load(open('Happy-Birthday-Song.json'))
 
 
 class BirthdayBot:
@@ -9,10 +14,10 @@ class BirthdayBot:
         self.speaker = Sound()
 
     def play_happy_birthday(self):
-        self.speaker.speak(
-            text='Happy Birthday to You!',
-            volume=100,
-            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+        self.speaker.play_song(
+            song=HAPPY_BIRTHDAY_SONG,
+            tempo=120,
+            delay=0.05)
 
     def main(self):
         while True:
