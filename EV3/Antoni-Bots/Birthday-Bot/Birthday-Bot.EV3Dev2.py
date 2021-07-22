@@ -17,7 +17,7 @@ class BirthdayBot:
         self.speaker.play_song(
             song=HAPPY_BIRTHDAY_SONG,
             tempo=120,
-            delay=0.05)
+            delay=0)
 
     def main(self):
         while True:
