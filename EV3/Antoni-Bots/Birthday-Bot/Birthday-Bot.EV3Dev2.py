@@ -13,15 +13,22 @@ class BirthdayBot:
     def __init__(self):
         self.speaker = Sound()
 
-    def play_happy_birthday(self):
+    def say_happy_birthday(self):
+        self.speaker.speak(
+            text='Happy Birthday to Mommy!',
+            volume=100,
+            play_type=Sound.PLAY_WAIT_FOR_COMPLETE)
+
+    def sing_happy_birthday(self):
         self.speaker.play_song(
             song=HAPPY_BIRTHDAY_SONG,
             tempo=120,
             delay=0)
 
     def main(self):
-        while True:
-            self.play_happy_birthday()
+        self.say_happy_birthday()
+
+        self.sing_happy_birthday()
 
 
 if __name__ == '__main__':
