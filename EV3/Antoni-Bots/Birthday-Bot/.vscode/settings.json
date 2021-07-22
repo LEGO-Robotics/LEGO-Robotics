@@ -5,7 +5,7 @@
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": true,
-  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pydocstyleEnabled": false,
   "python.linting.pycodestyleEnabled": true,
   "python.linting.prospectorEnabled": true,
   "python.linting.pylamaEnabled": true,
