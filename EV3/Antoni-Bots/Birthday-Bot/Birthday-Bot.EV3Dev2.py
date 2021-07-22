@@ -6,7 +6,7 @@ import json
 from ev3dev2.sound import Sound
 
 
-HAPPY_BIRTHDAY_SONG = json.load(open('Happy-Birthday-Song.json'))
+HAPPY_BIRTHDAY_SONG = json.load(open('Happy-Birthday-Song.EV3Dev.json'))
 
 
 class BirthdayBot:
