@@ -47,56 +47,78 @@ class RemoteControlledDriveBase:
 
         # forward
         if remote_button_pressed == {Button.LEFT_PLUS, Button.RIGHT_PLUS}:
-            self.drive_base.drive(
-                speed=speed,
-                turn_rate=0)
+            self.left_motor.run(speed=speed)
+            self.right_motor.run(speed=speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=speed,
+            #     turn_rate=0)
 
         # backward
         elif remote_button_pressed == {Button.LEFT_MINUS, Button.RIGHT_MINUS}:
-            self.drive_base.drive(
-                speed=-speed,
-                turn_rate=0)
+            self.left_motor.run(speed=-speed)
+            self.right_motor.run(speed=-speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=-speed,
+            #     turn_rate=0)
 
         # turn left on the spot
         elif remote_button_pressed == {Button.LEFT_PLUS, Button.RIGHT_MINUS}:
-            self.drive_base.drive(
-                speed=0,
-                turn_rate=-turn_rate)
+            self.left_motor.run(speed=-speed)
+            self.right_motor.run(speed=speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=0,
+            #     turn_rate=-turn_rate)
 
         # turn right on the spot
         elif remote_button_pressed == {Button.RIGHT_PLUS, Button.LEFT_MINUS}:
-            self.drive_base.drive(
-                speed=0,
-                turn_rate=turn_rate)
+            self.left_motor.run(speed=speed)
+            self.right_motor.run(speed=-speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=0,
+            #     turn_rate=turn_rate)
 
         # turn left forward
         elif remote_button_pressed == {Button.LEFT_PLUS}:
-            self.drive_base.drive(
-                speed=speed,
-                turn_rate=-turn_rate)
+            self.right_motor.run(speed=speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=speed,
+            #     turn_rate=-turn_rate)
 
         # turn right forward
         elif remote_button_pressed == {Button.RIGHT_PLUS}:
-            self.drive_base.drive(
-                speed=speed,
-                turn_rate=turn_rate)
+            self.left_motor.run(speed=speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=speed,
+            #     turn_rate=turn_rate)
 
         # turn left backward
         elif remote_button_pressed == {Button.LEFT_MINUS}:
-            self.drive_base.drive(
-                speed=-speed,
-                turn_rate=turn_rate)
+            self.right_motor.run(speed=-speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=-speed,
+            #     turn_rate=turn_rate)
 
         # turn right backward
         elif remote_button_pressed == {Button.RIGHT_MINUS}:
-            self.drive_base.drive(
-                speed=-speed,
-                turn_rate=-turn_rate)
+            self.left_motor.run(speed=-speed)
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.drive(
+            #     speed=-speed,
+            #     turn_rate=-turn_rate)
 
         # otherwise stop
         else:
-            print(self)
-            self.drive_base.stop()
+            self.left_motor.hold()
+            self.right_motor.hold()
+            # *** BELOW NOT WORKING ***
+            # self.drive_base.stop()
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
