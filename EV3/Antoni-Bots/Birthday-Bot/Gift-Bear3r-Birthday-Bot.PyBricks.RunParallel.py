@@ -1,0 +1,60 @@
+#!/usr/bin/env pybricks-micropython
+
+
+from pybricks.hubs import EV3Brick
+from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
+from pybricks.media.ev3dev import ImageFile, SoundFile
+from pybricks.parameters import Button, Direction, Port, Stop
+
+from pybricks.experimental import run_parallel
+
+# import sys
+# sys.path.append('/home/robot')
+from util.drive_util_pybricks import IRBeaconRemoteControlledTank
+
+
+class GiftBear3rBirthdayBot(IRBeaconRemoteControlledTank, EV3Brick):
+    WHEEL_DIAMETER = 44   # milimeters
+    AXLE_TRACK = 88       # milimeters
+
+    def __init__(
+            self,
+            left_motor_port: Port = Port.C, right_motor_port: Port = Port.B,
+            medium_motor_port: Port = Port.A,
+            touch_sensor_port: Port = Port.S1,
+            ir_sensor_port: Port = Port.S4,
+            driving_ir_beacon_channel: int = 1,
+            arm_control_ir_beacon_channel: int = 2):
+        super().__init__(
+            wheel_diameter=self.WHEEL_DIAMETER, axle_track=self.AXLE_TRACK,
+            left_motor_port=left_motor_port, right_motor_port=right_motor_port,
+            polarity='inversed',
+            ir_sensor_port=ir_sensor_port,
+            ir_beacon_channel=driving_ir_beacon_channel)
+
+        self.arm_control_motor = Motor(port=medium_motor_port,
+                                       positive_direction=Direction.CLOCKWISE)
+
+        self.touch_sensor = TouchSensor(port=touch_sensor_port)
+
+        self.ir_sensor = InfraredSensor(port=ir_sensor_port)
+        self.arm_control_ir_beacon_channel = arm_control_ir_beacon_channel
+
+    def start_up(self):
+        self.screen.load_image(source=ImageFile.WINKING)
+
+    def say_happy_birthday(self):
+        while True:
+            pass
+            
+    def main(self):
+        self.start_up()
+        self.keep_driving_by_ir_beacon
+        # run_parallel(
+        #     self.keep_driving_by_ir_beacon)
+            
+
+if __name__ == '__main__':
+    GIFT_BEAR3R_BIRTHDAY_BOT = GiftBear3rBirthdayBot()
+
+    GIFT_BEAR3R_BIRTHDAY_BOT.main()

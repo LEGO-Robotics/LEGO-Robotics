@@ -9,7 +9,7 @@
       "name": "Download and Run",
       "type": "ev3devBrowser",
       "request": "launch",
-      "program": "/home/robot/${workspaceRootFolderName}/Birthday-Bot.EV3Dev2.py",
+      "program": "/home/robot/${workspaceRootFolderName}/Gift-Bear3r-Birthday-Bot.PyBricks.RunParallel.py",
       "interactiveTerminal": false
     }
   ]
