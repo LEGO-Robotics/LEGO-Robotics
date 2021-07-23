@@ -43,10 +43,9 @@ class RemoteControlledDriveBase:
             turn_rate: float = 90   # rotational speed deg/s
             ):
         remote_button_pressed = self.remote.buttons.pressed()
-        print(remote_button_pressed)
 
         # forward
-        if remote_button_pressed == {Button.LEFT_PLUS, Button.RIGHT_PLUS}:
+        if remote_button_pressed == (Button.LEFT_PLUS, Button.RIGHT_PLUS):
             self.left_motor.run(speed=speed)
             self.right_motor.run(speed=speed)
             # *** BELOW NOT WORKING ***
@@ -55,7 +54,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=0)
 
         # backward
-        elif remote_button_pressed == {Button.LEFT_MINUS, Button.RIGHT_MINUS}:
+        elif remote_button_pressed == (Button.LEFT_MINUS, Button.RIGHT_MINUS):
             self.left_motor.run(speed=-speed)
             self.right_motor.run(speed=-speed)
             # *** BELOW NOT WORKING ***
@@ -64,7 +63,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=0)
 
         # turn left on the spot
-        elif remote_button_pressed == {Button.LEFT_PLUS, Button.RIGHT_MINUS}:
+        elif remote_button_pressed == (Button.RIGHT_MINUS, Button.LEFT_PLUS):
             self.left_motor.run(speed=-speed)
             self.right_motor.run(speed=speed)
             # *** BELOW NOT WORKING ***
@@ -73,7 +72,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=-turn_rate)
 
         # turn right on the spot
-        elif remote_button_pressed == {Button.RIGHT_PLUS, Button.LEFT_MINUS}:
+        elif remote_button_pressed == (Button.LEFT_MINUS, Button.RIGHT_PLUS):
             self.left_motor.run(speed=speed)
             self.right_motor.run(speed=-speed)
             # *** BELOW NOT WORKING ***
@@ -82,7 +81,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=turn_rate)
 
         # turn left forward
-        elif remote_button_pressed == {Button.LEFT_PLUS}:
+        elif remote_button_pressed == (Button.LEFT_PLUS,):
             self.right_motor.run(speed=speed)
             # *** BELOW NOT WORKING ***
             # self.drive_base.drive(
@@ -90,7 +89,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=-turn_rate)
 
         # turn right forward
-        elif remote_button_pressed == {Button.RIGHT_PLUS}:
+        elif remote_button_pressed == (Button.RIGHT_PLUS,):
             self.left_motor.run(speed=speed)
             # *** BELOW NOT WORKING ***
             # self.drive_base.drive(
@@ -98,7 +97,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=turn_rate)
 
         # turn left backward
-        elif remote_button_pressed == {Button.LEFT_MINUS}:
+        elif remote_button_pressed == (Button.LEFT_MINUS,):
             self.right_motor.run(speed=-speed)
             # *** BELOW NOT WORKING ***
             # self.drive_base.drive(
@@ -106,7 +105,7 @@ class RemoteControlledDriveBase:
             #     turn_rate=turn_rate)
 
         # turn right backward
-        elif remote_button_pressed == {Button.RIGHT_MINUS}:
+        elif remote_button_pressed == (Button.RIGHT_MINUS,):
             self.left_motor.run(speed=-speed)
             # *** BELOW NOT WORKING ***
             # self.drive_base.drive(
@@ -153,15 +152,26 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
                                front_side=Axis.Z)
 
         self.fan_motor = Motor(port=fan_motor_port,
-                               positive_direction=Direction.COUNTERCLOCKWISE)
+                               positive_direction=Direction.CLOCKWISE)
 
-    def sing_happy_birthday(self):
-        self.hub.speaker.play_notes(
-            notes=HAPPY_BIRTHDAY_SONG,
-            tempo=120)
+    def sing_happy_birthday_by_remote_left_red_button(self):
+        if self.remote.buttons.pressed() == (Button.LEFT,):
+            self.hub.speaker.play_notes(
+                notes=HAPPY_BIRTHDAY_SONG,
+                tempo=120)
+
+    def spin_fan_by_remote_right_red_button(self):
+        if self.remote.buttons.pressed() == (Button.RIGHT,):
+            self.fan_motor.run(speed=1000)
+
+        else:
+            self.fan_motor.stop()
 
     def main(self):
-        self.keep_driving_by_remote()
+        while True:
+            self.drive_once_by_remote()
+            self.sing_happy_birthday_by_remote_left_red_button()
+            self.spin_fan_by_remote_right_red_button()
 
 
 if __name__ == '__main__':
