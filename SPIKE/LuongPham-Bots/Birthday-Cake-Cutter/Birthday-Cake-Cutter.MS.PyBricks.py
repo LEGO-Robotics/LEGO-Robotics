@@ -2,7 +2,7 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, Remote
 from pybricks.robotics import DriveBase
 from pybricks.geometry import Axis
-from pybricks.parameters import Button, Direction, Icon, Port, Stop
+from pybricks.parameters import Button, Color, Direction, Icon, Port
 
 # from pybricks.experimental import run_parallel
 
@@ -115,9 +115,9 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
 
     def __init__(
             self,
-            left_motor_port: Port = Port.B, right_motor_port: Port = Port.A,
-            first_cutter_motor_port: Port = Port.C,
-            second_cutter_motor_port: Port = Port.D):
+            left_motor_port: Port = Port.D, right_motor_port: Port = Port.C,
+            arm_control_motor_port: Port = Port.A,
+            knife_control_motor_port: Port = Port.B):
         super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER,
             axle_track=self.AXLE_TRACK,
@@ -129,65 +129,59 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
         self.hub = InventorHub(top_side=Axis.X,
                                front_side=Axis.Z)
 
+        self.arm_control_motor = \
+            Motor(port=arm_control_motor_port,
+                  positive_direction=Direction.CLOCKWISE)
+
+        self.knife_control_cutter_motor = \
+            Motor(port=knife_control_motor_port,
+                  positive_direction=Direction.CLOCKWISE)
+
+        self.switch_to_driving_mode()
+
+    def switch_to_driving_mode(self):
         self.cake_cutting_mode = False
 
-        self.first_cutter_motor = \
-            Motor(port=first_cutter_motor_port,
-                  positive_direction=Direction.CLOCKWISE)
+        self.hub.light.on(color=Color.GREEN)
 
-        self.second_cutter_motor = \
-            Motor(port=second_cutter_motor_port,
-                  positive_direction=Direction.CLOCKWISE)
+    def switch_to_cake_cutting_mode(self):
+        self.cake_cutting_mode = True
 
-    def switch_mode_by_remote(self):
+        self.hub.light.on(color=Color.ORANGE)
+
+    def switch_mode_by_remote_red_buttons(self):
         remote_button_pressed = self.remote.buttons.pressed()
 
         if remote_button_pressed == (Button.LEFT,):
             if self.cake_cutting_mode:
-                self.cake_cutting_mode = False
-                print('Mode: Driving')
+                self.switch_to_driving_mode()
 
         elif remote_button_pressed == (Button.RIGHT,):
             if not self.cake_cutting_mode:
-                self.cake_cutting_mode = True
-                print('Mode: Cake-Cutting')
+                self.switch_to_cake_cutting_mode()
 
     def smile(self):
         self.hub.display.image(image=Icon.HAPPY)
 
-    def sing_happy_birthday_by_remote_left_red_button(self):
-        if self.remote.buttons.pressed() == (Button.LEFT,):
+    def sing_happy_birthday_by_remote_center_button(self):
+        if self.remote.buttons.pressed() == (Button.CENTER,):
             self.hub.speaker.play_notes(
                 notes=HAPPY_BIRTHDAY_SONG,
                 tempo=120)
-
-    def cut_piece_if_right_red_button_pressed(self):
-        if self.remote.buttons.pressed() == (Button.RIGHT,):
-            self.first_cutter_motor.run_until_stalled(
-                speed=50,
-                then=Stop.HOLD
-            )
-            self.second_cutter_motor.run_until_stalled(
-                speed=50,
-                then=Stop.HOLD
-            )
 
     def main(self):
         self.smile()
 
         while True:
-            self.switch_mode_by_remote()
+            self.switch_mode_by_remote_red_buttons()
+
+            self.sing_happy_birthday_by_remote_center_button()
 
             if self.cake_cutting_mode:
                 ...
 
             else:
                 self.drive_once_by_remote()
-            #    self.cut_piece_if_right_red_button_pressed()
-            #if self.cake_cutting_mode == False:
-            #    
-            #    self.sing_happy_birthday_by_remote_left_red_button()
-            #el
 
 
 if __name__ == '__main__':
