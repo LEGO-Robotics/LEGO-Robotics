@@ -4,9 +4,9 @@
 import json
 
 from pybricks.hubs import EV3Brick
-from pybricks.ev3devices import Motor, TouchSensor, ColorSensor, InfraredSensor
+from pybricks.ev3devices import Motor, TouchSensor, InfraredSensor
 from pybricks.media.ev3dev import ImageFile
-from pybricks.parameters import Button, Direction, Port, Stop
+from pybricks.parameters import Button, Direction, Port
 
 from pybricks.experimental import run_parallel
 
@@ -18,7 +18,7 @@ from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 HAPPY_BIRTHDAY_SONG = json.load(open('Happy-Birthday-Song.PyBricks.json'))
 
 
-class GiftBear3rBirthdayBot(IRBeaconRemoteControlledTank, EV3Brick):
+class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
     WHEEL_DIAMETER = 44   # milimeters
     AXLE_TRACK = 88       # milimeters
 
@@ -68,6 +68,6 @@ class GiftBear3rBirthdayBot(IRBeaconRemoteControlledTank, EV3Brick):
 
 
 if __name__ == '__main__':
-    GIFT_BEAR3R_BIRTHDAY_BOT = GiftBear3rBirthdayBot()
+    BIRTHDAY_GIFT_BEAR3R = BirthdayGiftBear3r()
 
-    GIFT_BEAR3R_BIRTHDAY_BOT.main()
+    BIRTHDAY_GIFT_BEAR3R.main()
