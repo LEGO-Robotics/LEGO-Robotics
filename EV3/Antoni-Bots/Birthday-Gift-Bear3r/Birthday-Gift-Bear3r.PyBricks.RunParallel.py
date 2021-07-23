@@ -51,6 +51,16 @@ class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
     def start_up(self):
         self.screen.load_image(ImageFile.NEUTRAL)
 
+        self.speaker.set_speech_options(
+            language='en',
+            voice='m3',
+            speed=None,
+            pitch=None)
+
+        self.speaker.set_volume(
+            volume=100,
+            which='_all_')
+
     def lower_or_raise_arm_by_ir_beacon(self):
         non_driving_ir_beacon_button_pressed = \
             self.ir_sensor.buttons(channel=self.non_driving_ir_beacon_channel)
@@ -74,6 +84,14 @@ class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
         while True:
             self.lower_or_raise_arm_by_ir_beacon()
 
+    def say_happy_birthday_if_touch_sensor_pressed(self):
+        if self.touch_sensor.pressed():
+            self.speaker.say(text='Happy Birthday, My Love!')
+
+    def say_happy_birthday_whenever_touch_sensor_pressed(self):
+        while True:
+            self.say_happy_birthday_if_touch_sensor_pressed()
+
     def sing_happy_birthday_if_ir_beacon_button_pressed(self):
         if Button.BEACON in (self.ir_sensor.buttons(channel=1) +
                              self.ir_sensor.buttons(channel=2) +
@@ -93,6 +111,7 @@ class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
         run_parallel(
             self.keep_driving_by_ir_beacon,
             self.keep_controlling_arm_by_ir_beacon,
+            self.say_happy_birthday_whenever_touch_sensor_pressed,
             self.sing_happy_birthday_whenever_ir_beacon_button_pressed)
 
 
