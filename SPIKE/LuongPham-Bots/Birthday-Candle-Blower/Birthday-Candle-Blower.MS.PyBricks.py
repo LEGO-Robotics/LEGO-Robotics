@@ -2,7 +2,7 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, Remote
 from pybricks.robotics import DriveBase
 from pybricks.geometry import Axis
-from pybricks.parameters import Button, Direction, Port
+from pybricks.parameters import Button, Direction, Icon, Port
 
 # from pybricks.experimental import run_parallel
 
@@ -154,6 +154,9 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
         self.fan_motor = Motor(port=fan_motor_port,
                                positive_direction=Direction.CLOCKWISE)
 
+    def smile(self):
+        self.hub.display.image(image=Icon.HAPPY)
+
     def sing_happy_birthday_by_remote_left_red_button(self):
         if self.remote.buttons.pressed() == (Button.LEFT,):
             self.hub.speaker.play_notes(
@@ -168,6 +171,8 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
             self.fan_motor.stop()
 
     def main(self):
+        self.smile()
+
         while True:
             self.drive_once_by_remote()
             self.sing_happy_birthday_by_remote_left_red_button()
