@@ -133,7 +133,7 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
             Motor(port=arm_control_motor_port,
                   positive_direction=Direction.CLOCKWISE)
 
-        self.knife_control_cutter_motor = \
+        self.knife_control_motor = \
             Motor(port=knife_control_motor_port,
                   positive_direction=Direction.CLOCKWISE)
 
@@ -169,6 +169,30 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
                 notes=HAPPY_BIRTHDAY_SONG,
                 tempo=120)
 
+    def control_arm_by_remote_left_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.LEFT_MINUS,):
+            self.arm_control_motor.run(speed=-1000)
+
+        elif remote_button_pressed == (Button.LEFT_PLUS,):
+            self.arm_control_motor.run(speed=1000)
+
+        else:
+            self.arm_control_motor.hold()
+
+    def control_knife_by_remote_right_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.RIGHT_MINUS,):
+            self.knife_control_motor.run(speed=-1000)
+
+        elif remote_button_pressed == (Button.RIGHT_PLUS,):
+            self.knife_control_motor.run(speed=1000)
+
+        else:
+            self.knife_control_motor.hold()
+
     def main(self):
         self.smile()
 
@@ -178,7 +202,8 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
             self.sing_happy_birthday_by_remote_center_button()
 
             if self.cake_cutting_mode:
-                ...
+                self.control_arm_by_remote_left_buttons()
+                self.control_knife_by_remote_right_buttons()
 
             else:
                 self.drive_once_by_remote()
