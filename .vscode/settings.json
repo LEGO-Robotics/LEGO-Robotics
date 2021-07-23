@@ -14,6 +14,8 @@
 
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
+    "--disable", "assignment-from-no-return",
+    "--disable", "import-error",
     "--disable", "invalid-name",
     "--disable", "missing-class-docstring",
     "--disable", "missing-function-docstring",
