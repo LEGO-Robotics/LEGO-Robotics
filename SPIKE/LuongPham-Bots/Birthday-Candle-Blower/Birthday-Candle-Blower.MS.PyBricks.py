@@ -111,7 +111,7 @@ class RemoteControlledDriveBase:
 
 class BirthdayCandleBlower(RemoteControlledDriveBase):
     WHEEL_DIAMETER = 44   # milimeters
-    AXLE_TRACK = 99       # milimeters
+    AXLE_TRACK = 100      # milimeters
 
     def __init__(
             self,
