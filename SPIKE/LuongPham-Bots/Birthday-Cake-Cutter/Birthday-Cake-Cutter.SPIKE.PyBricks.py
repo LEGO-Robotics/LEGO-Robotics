@@ -1,4 +1,4 @@
-from pybricks.hubs import InventorHub
+from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, Remote
 from pybricks.robotics import DriveBase
 from pybricks.geometry import Axis
@@ -109,7 +109,7 @@ class RemoteControlledDriveBase:
                 turn_rate=turn_rate)
 
 
-class BirthdayCandleBlower(RemoteControlledDriveBase):
+class BirthdayCakeCutter(RemoteControlledDriveBase):
     WHEEL_DIAMETER = 44   # milimeters
     AXLE_TRACK = 100      # milimeters
 
@@ -125,8 +125,8 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
             right_motor_port=right_motor_port,
             right_motor_pos_dir=Direction.CLOCKWISE)
 
-        self.hub = InventorHub(top_side=Axis.X,
-                               front_side=Axis.Z)
+        self.hub = PrimeHub(top_side=Axis.X,
+                            front_side=Axis.Z)
 
         self.fan_motor = Motor(port=fan_motor_port,
                                positive_direction=Direction.CLOCKWISE)
@@ -140,23 +140,15 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
                 notes=HAPPY_BIRTHDAY_SONG,
                 tempo=120)
 
-    def spin_fan_by_remote_right_red_button(self):
-        if self.remote.buttons.pressed() == (Button.RIGHT,):
-            self.fan_motor.run(speed=1000)
-
-        else:
-            self.fan_motor.stop()
-
     def main(self):
         self.smile()
 
         while True:
             self.drive_once_by_remote()
             self.sing_happy_birthday_by_remote_left_red_button()
-            self.spin_fan_by_remote_right_red_button()
 
 
 if __name__ == '__main__':
-    BIRTHDAY_CANDLE_BLOWER = BirthdayCandleBlower()
+    BIRTHDAY_CAKE_CUTTER = BirthdayCakeCutter()
 
-    BIRTHDAY_CANDLE_BLOWER.main()
+    BIRTHDAY_CAKE_CUTTER.main()

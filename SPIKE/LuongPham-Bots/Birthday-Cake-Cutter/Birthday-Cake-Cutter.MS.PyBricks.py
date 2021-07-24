@@ -2,7 +2,7 @@ from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, Remote
 from pybricks.robotics import DriveBase
 from pybricks.geometry import Axis
-from pybricks.parameters import Button, Direction, Icon, Port
+from pybricks.parameters import Button, Color, Direction, Icon, Port
 
 # from pybricks.experimental import run_parallel
 
@@ -109,14 +109,15 @@ class RemoteControlledDriveBase:
                 turn_rate=turn_rate)
 
 
-class BirthdayCandleBlower(RemoteControlledDriveBase):
+class BirthdayCakeCutter(RemoteControlledDriveBase):
     WHEEL_DIAMETER = 44   # milimeters
-    AXLE_TRACK = 100      # milimeters
+    AXLE_TRACK = 75       # milimeters
 
     def __init__(
             self,
             left_motor_port: Port = Port.D, right_motor_port: Port = Port.C,
-            fan_motor_port: Port = Port.A):
+            arm_control_motor_port: Port = Port.A,
+            knife_control_motor_port: Port = Port.B):
         super().__init__(
             wheel_diameter=self.WHEEL_DIAMETER,
             axle_track=self.AXLE_TRACK,
@@ -128,35 +129,87 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
         self.hub = InventorHub(top_side=Axis.X,
                                front_side=Axis.Z)
 
-        self.fan_motor = Motor(port=fan_motor_port,
-                               positive_direction=Direction.CLOCKWISE)
+        self.arm_control_motor = \
+            Motor(port=arm_control_motor_port,
+                  positive_direction=Direction.CLOCKWISE)
+
+        self.knife_control_motor = \
+            Motor(port=knife_control_motor_port,
+                  positive_direction=Direction.CLOCKWISE)
+
+        self.switch_to_driving_mode()
+
+    def switch_to_driving_mode(self):
+        self.cake_cutting_mode = False
+
+        self.hub.light.on(color=Color.GREEN)
+
+    def switch_to_cake_cutting_mode(self):
+        self.cake_cutting_mode = True
+
+        self.hub.light.on(color=Color.ORANGE)
+
+    def switch_mode_by_remote_red_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.LEFT,):
+            if self.cake_cutting_mode:
+                self.switch_to_driving_mode()
+
+        elif remote_button_pressed == (Button.RIGHT,):
+            if not self.cake_cutting_mode:
+                self.switch_to_cake_cutting_mode()
 
     def smile(self):
         self.hub.display.image(image=Icon.HAPPY)
 
-    def sing_happy_birthday_by_remote_left_red_button(self):
-        if self.remote.buttons.pressed() == (Button.LEFT,):
+    def sing_happy_birthday_by_remote_center_button(self):
+        if self.remote.buttons.pressed() == (Button.CENTER,):
             self.hub.speaker.play_notes(
                 notes=HAPPY_BIRTHDAY_SONG,
                 tempo=120)
 
-    def spin_fan_by_remote_right_red_button(self):
-        if self.remote.buttons.pressed() == (Button.RIGHT,):
-            self.fan_motor.run(speed=1000)
+    def control_arm_by_remote_left_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.LEFT_MINUS,):
+            self.arm_control_motor.run(speed=-1000)
+
+        elif remote_button_pressed == (Button.LEFT_PLUS,):
+            self.arm_control_motor.run(speed=1000)
 
         else:
-            self.fan_motor.stop()
+            self.arm_control_motor.hold()
+
+    def control_knife_by_remote_right_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.RIGHT_MINUS,):
+            self.knife_control_motor.run(speed=-1000)
+
+        elif remote_button_pressed == (Button.RIGHT_PLUS,):
+            self.knife_control_motor.run(speed=1000)
+
+        else:
+            self.knife_control_motor.hold()
 
     def main(self):
         self.smile()
 
         while True:
-            self.drive_once_by_remote()
-            self.sing_happy_birthday_by_remote_left_red_button()
-            self.spin_fan_by_remote_right_red_button()
+            self.switch_mode_by_remote_red_buttons()
+
+            self.sing_happy_birthday_by_remote_center_button()
+
+            if self.cake_cutting_mode:
+                self.control_arm_by_remote_left_buttons()
+                self.control_knife_by_remote_right_buttons()
+
+            else:
+                self.drive_once_by_remote()
 
 
 if __name__ == '__main__':
-    BIRTHDAY_CANDLE_BLOWER = BirthdayCandleBlower()
+    BIRTHDAY_CAKE_CUTTER = BirthdayCakeCutter()
 
-    BIRTHDAY_CANDLE_BLOWER.main()
+    BIRTHDAY_CAKE_CUTTER.main()
