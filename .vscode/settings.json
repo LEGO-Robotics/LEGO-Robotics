@@ -8,6 +8,13 @@
   
   "files.eol": "\n",
 
+  "files.exclude": {
+    "**/*.pyc": {"when": "$(basename).py"}, 
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.git": true
+  },
+
   "git.ignoreLimitWarning": true,
 
   "python.linting.enabled": true,

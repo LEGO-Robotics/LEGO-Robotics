@@ -584,6 +584,8 @@ NXT_Python (2007)
 
 [Projects](https://github.com/seshanbrothers/projects)
 
+[YouTube Channel](https://www.youtube.com/c/SeshanBrothers/videos)
+
 
 #### [EV3 Lessons](https://github.com/ev3lessons)
 
