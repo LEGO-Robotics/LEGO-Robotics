@@ -151,7 +151,7 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
         self.smile()
 
         while True:
-            self.drive_once_by_remote()
+            self.drive_once_by_remote(speed=68)
             self.sing_happy_birthday_by_remote_left_red_button()
             self.spin_fan_by_remote_right_red_button()
 

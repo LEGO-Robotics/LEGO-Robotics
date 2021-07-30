@@ -173,10 +173,10 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
         remote_button_pressed = self.remote.buttons.pressed()
 
         if remote_button_pressed == (Button.LEFT_MINUS,):
-            self.arm_control_motor.run(speed=-1000)
+            self.arm_control_motor.run(speed=-100)
 
         elif remote_button_pressed == (Button.LEFT_PLUS,):
-            self.arm_control_motor.run(speed=1000)
+            self.arm_control_motor.run(speed=100)
 
         else:
             self.arm_control_motor.hold()
@@ -185,10 +185,10 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
         remote_button_pressed = self.remote.buttons.pressed()
 
         if remote_button_pressed == (Button.RIGHT_MINUS,):
-            self.knife_control_motor.run(speed=-1000)
+            self.knife_control_motor.run(speed=-100)
 
         elif remote_button_pressed == (Button.RIGHT_PLUS,):
-            self.knife_control_motor.run(speed=1000)
+            self.knife_control_motor.run(speed=100)
 
         else:
             self.knife_control_motor.hold()
@@ -206,7 +206,7 @@ class BirthdayCakeCutter(RemoteControlledDriveBase):
                 self.control_knife_by_remote_right_buttons()
 
             else:
-                self.drive_once_by_remote()
+                self.drive_once_by_remote(speed=68)
 
 
 if __name__ == '__main__':
