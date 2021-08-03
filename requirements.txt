@@ -61,6 +61,7 @@ JaRaCo.NXT >= 2.1.0
 BrickNil >= 0.9.3
 PyLGBst >= 1.2.2
 WeDo2 >= 1.1.1
+# https://GitHub.com/JannoPet/LEGO-WeDo-2.0-Python-SDK/archive/master.zip
 # WeDo >= 1.1.0
     # installation error
 
