@@ -1,3 +1,6 @@
+#!/usr/bin/env pybricks-micropython
+
+
 import json
 
 from pybricks.hubs import EV3Brick
@@ -99,3 +102,16 @@ class BirthdayGiftPresent3r(IRBeaconRemoteControlledTank, EV3Brick):
     def sing_happy_birthday_whenever_ir_beacon_button_pressed(self):
         while True:
             self.sing_happy_birthday_if_ir_beacon_button_pressed()
+
+
+if __name__ == '__main__':
+    GIFT_PRESENT3R = BirthdayGiftPresent3r()
+
+    while True:
+        GIFT_PRESENT3R.drive_once_by_ir_beacon()
+
+        GIFT_PRESENT3R.lower_or_raise_arm_by_ir_beacon()
+
+        GIFT_PRESENT3R.say_happy_birthday_if_touch_sensor_pressed()
+
+        GIFT_PRESENT3R.sing_happy_birthday_if_ir_beacon_button_pressed()
