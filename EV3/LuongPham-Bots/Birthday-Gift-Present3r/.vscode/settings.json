@@ -4,6 +4,13 @@
   "ev3devBrowser.download.exclude": "{**/.mypy_cache/**,**/__pycache__/**,**/.vscode/**,**/README*}",
   "ev3devBrowser.download.include": "{**/*.py,**/*.json}",
 
+  "files.exclude": {
+    "**/.mypy_cache": true,
+    "**/*.pyc": {"when": "$(basename).py"}, 
+    "**/__pycache__": true,
+    "**/.ropeproject": true,
+  },
+
   "python.linting.enabled": true,
 
   "python.linting.pylintEnabled": true,
