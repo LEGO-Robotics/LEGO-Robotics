@@ -1,12 +1,16 @@
 # EV3
-# ---
+# ===
+
+# PyBricks
 https://GitHub.com/PyBricks/PyBricks-API/archive/master.zip
 # PyBricks >= 3.0.0
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
-PyBricksDev >= 1.0.0.a12
-Python-EV3Dev2 >= 2.1.0.post1
+PyBricksDev >= 1.0.0.a13
 
-# EV3Dev Python Tools
+# EV3Dev Python
+Python-EV3Dev2 >= 2.1.0.post1
+Python-EV3Dev >= 1.2.0
+
 EV3DevContext >= 0.36
 EV3DevCmd >= 1.0.2
 EV3DevLogging >= 1.0.1
@@ -19,7 +23,6 @@ Thonny-EV3Dev >= 1.0.4
 # deprecated
 # EV3DevLight >= 0.1.5
     # installation error
-Python-EV3Dev >= 1.2.0
 
 # Simulators
 EV3Sim >= 2.2.2
