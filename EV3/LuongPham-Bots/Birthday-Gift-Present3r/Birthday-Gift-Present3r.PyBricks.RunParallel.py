@@ -8,6 +8,8 @@ from birthday_gift_present3r_pybricks import BirthdayGiftPresent3r
 
 GIFT_PRESENT3R = BirthdayGiftPresent3r()
 
+GIFT_PRESENT3R.start_up()
+
 run_parallel(
     GIFT_PRESENT3R.keep_driving_by_ir_beacon,
     GIFT_PRESENT3R.keep_controlling_arm_by_ir_beacon,
