@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-__all__ = 'IRBeaconRemoteControlledTank',
+__all__ = ('IRBeaconRemoteControlledTank',)
 
 
 from ev3dev.ev3 import \

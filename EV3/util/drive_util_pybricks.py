@@ -1,7 +1,7 @@
 #!/usr/bin/env pybricks-micropython
 
 
-__all__ = 'IRBeaconRemoteControlledTank',
+__all__ = ('IRBeaconRemoteControlledTank',)
 
 
 from pybricks.hubs import EV3Brick
@@ -24,17 +24,16 @@ class IRBeaconRemoteControlledTank:
         if debug:
             self.ev3_brick = EV3Brick()
 
+        motor_positive_direction = \
+            Direction.CLOCKWISE \
+            if polarity == 'normal' \
+            else Direction.COUNTERCLOCKWISE
+
         self.left_motor = Motor(port=left_motor_port,
-                                positive_direction=
-                                    Direction.CLOCKWISE
-                                    if polarity == 'normal'
-                                    else Direction.COUNTERCLOCKWISE)
+                                positive_direction=motor_positive_direction)
 
         self.right_motor = Motor(port=right_motor_port,
-                                 positive_direction=
-                                    Direction.CLOCKWISE
-                                    if polarity == 'normal'
-                                    else Direction.COUNTERCLOCKWISE)
+                                 positive_direction=motor_positive_direction)
 
         self.drive_base = DriveBase(left_motor=self.left_motor,
                                     right_motor=self.right_motor,

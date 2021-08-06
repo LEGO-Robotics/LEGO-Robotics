@@ -1,7 +1,7 @@
 #!/usr/bin/env micropython
 
 
-__all__ = 'IRBeaconRemoteControlledTank',
+__all__ = ('IRBeaconRemoteControlledTank',)
 
 
 from ev3dev2.motor import \
