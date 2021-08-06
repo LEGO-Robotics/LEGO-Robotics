@@ -34,6 +34,7 @@
     "--disable", "missing-function-docstring",
     "--disable", "missing-module-docstring",
     "--disable", "no-name-in-module",
+    "--disable", "relative-beyond-top-level",
     "--disable", "too-many-arguments",
   ],
 
