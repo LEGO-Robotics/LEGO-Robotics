@@ -5,7 +5,7 @@
 THIS_DIR_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 
-PY_FILE_NAME="Birthday-Cake-Cutter.MS.PyBricks.py"
+PY_FILE_NAME="Birthday-Cake-Cutter.PyBricks.py"
 
 
 pybricksdev run ble --name "Pybricks Hub" $THIS_DIR_PATH/$PY_FILE_NAME
