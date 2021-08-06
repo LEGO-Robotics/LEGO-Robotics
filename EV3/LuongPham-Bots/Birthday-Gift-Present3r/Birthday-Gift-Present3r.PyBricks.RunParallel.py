@@ -18,7 +18,7 @@ from util.drive_util_pybricks import IRBeaconRemoteControlledTank
 HAPPY_BIRTHDAY_SONG = json.load(open('Happy-Birthday-Song.PyBricks.json'))
 
 
-class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
+class BirthdayGiftPresent3r(IRBeaconRemoteControlledTank, EV3Brick):
     WHEEL_DIAMETER = 44   # milimeters
     AXLE_TRACK = 88       # milimeters
 
@@ -116,6 +116,6 @@ class BirthdayGiftBear3r(IRBeaconRemoteControlledTank, EV3Brick):
 
 
 if __name__ == '__main__':
-    BIRTHDAY_GIFT_BEAR3R = BirthdayGiftBear3r()
+    BIRTHDAY_GIFT_PRESENT3R = BirthdayGiftPresent3r()
 
-    BIRTHDAY_GIFT_BEAR3R.main()
+    BIRTHDAY_GIFT_PRESENT3R.main()
