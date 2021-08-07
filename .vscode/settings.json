@@ -29,6 +29,7 @@
     "--disable", "assignment-from-no-return",
     "--disable", "attribute-defined-outside-init",
     "--disable", "import-error",
+    "--disable", "import-outside-toplevel",
     "--disable", "invalid-name",
     "--disable", "missing-class-docstring",
     "--disable", "missing-function-docstring",
