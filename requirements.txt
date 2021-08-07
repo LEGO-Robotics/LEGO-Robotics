@@ -76,3 +76,17 @@ AdaFruit-AMPy >= 1.1.0
 RPyC
     # required by EV3Dev Python Tools
     # ev3devcontext 0.36 depends on rpyc==4.1.2
+
+
+# PYTHON LINTING & REFACTORING
+# ============================
+PyLint >= 2.9.6
+Flake8 >= 3.9.2
+MyPy >= 0.910
+PyDocStyle >= 6.1.1
+PyCodeStyle >= 2.7.0
+Prospector
+    # specifying Prospector version leads to long PyPI resolution time
+PyLama >= 7.7.1
+Bandit >= 1.7.0
+Rope >= 0.19.0
