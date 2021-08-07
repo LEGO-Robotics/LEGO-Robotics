@@ -2,4 +2,5 @@ pylint:
   disable:
     - assignment-from-no-return
     - import-error
+    - import-outside-toplevel
     - too-many-arguments

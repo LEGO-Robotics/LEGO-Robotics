@@ -21,6 +21,7 @@
   "python.linting.pylintArgs": [
     "--disable", "assignment-from-no-return",
     "--disable", "import-error",
+    "--disable", "import-outside-toplevel",
     "--disable", "invalid-name",
     "--disable", "missing-class-docstring",
     "--disable", "missing-function-docstring",
