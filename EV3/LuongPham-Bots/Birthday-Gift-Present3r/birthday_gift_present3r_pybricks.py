@@ -107,6 +107,8 @@ class BirthdayGiftPresent3r(IRBeaconRemoteControlledTank, EV3Brick):
 if __name__ == '__main__':
     GIFT_PRESENT3R = BirthdayGiftPresent3r()
 
+    GIFT_PRESENT3R.start_up()
+
     while True:
         GIFT_PRESENT3R.drive_once_by_ir_beacon()
 
