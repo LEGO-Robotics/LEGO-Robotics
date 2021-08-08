@@ -6,5 +6,5 @@ apt install --yes libasound2-dev libbluetooth-dev
 
 python3 -m pip install PIP SetUpTools --upgrade
 
-python3 -m pip install -r requirements.txt --no-cache-dir --upgrade --user
-python3 -m pip install -r requirements-Linux.txt --no-cache-dir --upgrade --user
+python3 -m pip install -r requirements.txt --upgrade --user
+python3 -m pip install -r requirements-Linux.txt --upgrade --user
