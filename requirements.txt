@@ -44,8 +44,8 @@ EV3-Python >= 0.0.2
 # NXT
 # ---
 https://GitHub.com/EV3Dev/NXT-Python/archive/ev3dev-stretch.zip
-NXT-Python >= 2.2.2
-NXT-Python2 >= 2.2.2
+# NXT-Python >= 2.2.2
+# NXT-Python2 >= 2.2.2
 # NXT-Python-Tools >= 1.0.1
     # invalid old syntax
 
