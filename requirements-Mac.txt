@@ -1,2 +1,4 @@
 https://GitHub.com/0-1-0/LightBlue-0.4/archive/master.zip
 Scratch-NXT-Extension >= 0.0.5
+
+BrickNil >= 0.9.3
