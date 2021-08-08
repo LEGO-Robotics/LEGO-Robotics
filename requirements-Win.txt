@@ -1,5 +1,3 @@
 # PyBluez >= 0.23
     # Microsoft Visual C++ 14.0 or greater is required.
     # Get it with Microsoft C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools
-
-Prospector >= 1.3.1
