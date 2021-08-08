@@ -37,11 +37,10 @@ class RemoteControlledDriveBase:
         self.remote = Remote()
         print('Remote Connected!')
 
-    def drive_once_by_remote(
-            self,
-            speed: float = 1000,    # mm/s
-            turn_rate: float = 90   # rotational speed deg/s
-            ):
+    def drive_once_by_remote(self,
+                             speed: float = 1000,    # mm/s
+                             turn_rate: float = 90   # rotational speed deg/s
+                             ):
         remote_button_pressed = self.remote.buttons.pressed()
 
         # forward
@@ -98,11 +97,10 @@ class RemoteControlledDriveBase:
 
     # this method must be used in a parallel process/thread
     # in order not to block other operations
-    def keep_driving_by_remote(
-            self,
-            speed: float = 1000,    # mm/s
-            turn_rate: float = 90   # rotational speed deg/s
-            ):
+    def keep_driving_by_remote(self,
+                               speed: float = 1000,    # mm/s
+                               turn_rate: float = 90   # rotational speed deg/s
+                               ):
         while True:
             self.drive_once_by_remote(
                 speed=speed,
@@ -134,14 +132,19 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
     def smile(self):
         self.hub.display.image(image=Icon.HAPPY)
 
-    def sing_happy_birthday_by_remote_left_red_button(self):
-        if self.remote.buttons.pressed() == (Button.LEFT,):
+    def sing_happy_birthday_by_remote_center_green_button(self):
+        if self.remote.buttons.pressed() == (Button.CENTER,):
             self.hub.speaker.play_notes(
                 notes=HAPPY_BIRTHDAY_SONG,
                 tempo=120)
 
-    def spin_fan_by_remote_right_red_button(self):
-        if self.remote.buttons.pressed() == (Button.RIGHT,):
+    def spin_fan_by_remote_red_buttons(self):
+        remote_button_pressed = self.remote.buttons.pressed()
+
+        if remote_button_pressed == (Button.LEFT,):
+            self.fan_motor.run(speed=-1000)
+
+        elif remote_button_pressed == (Button.RIGHT,):
             self.fan_motor.run(speed=1000)
 
         else:
@@ -152,8 +155,8 @@ class BirthdayCandleBlower(RemoteControlledDriveBase):
 
         while True:
             self.drive_once_by_remote()
-            self.sing_happy_birthday_by_remote_left_red_button()
-            self.spin_fan_by_remote_right_red_button()
+            self.sing_happy_birthday_by_remote_center_green_button()
+            self.spin_fan_by_remote_red_buttons()
 
 
 if __name__ == '__main__':
