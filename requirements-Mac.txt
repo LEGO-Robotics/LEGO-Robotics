@@ -1,4 +1,2 @@
-git+https://GitHub.com/0-1-0/LightBlue-0.4
+https://GitHub.com/0-1-0/LightBlue-0.4/archive/master.zip
 Scratch-NXT-Extension >= 0.0.5
-
-Prospector >= 1.3.1
