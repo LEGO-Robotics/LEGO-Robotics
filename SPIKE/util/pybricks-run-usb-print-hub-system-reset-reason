@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+# https://stackoverflow.com/questions/59895/how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itsel
+THIS_DIR_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+
+PY_FILE_NAME="Print-Hub-System-Reset-Reason.py"
+
+
+pybricksdev run usb --name "Pybricks Hub" $THIS_DIR_PATH/$PY_FILE_NAME
