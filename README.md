@@ -1,4 +1,4 @@
-# LEGO Mindstorms
+# LEGO Robotics
 
 This repository is maintained by a father-and-son team based in Silicon Valley—
 Lương Thế Vinh (__@TheVinhLuong102__, an Industrial IoT AI Scientist) and
