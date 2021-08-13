@@ -1,3 +1,9 @@
 {
-
+  "Name": "Drop and Rescue",
+  "Id": "62b05627-fd6a-47ff-9a5a-53c7e8479e82",
+  "CreationDate": "2021-08-11T13:34:11.229284-07:00",
+  "LastOpenDate": "2021-08-11T19:39:25.974504-07:00",
+  "CanvasJson": "{\"Strips\":[{\"Strip\":{\"Strip Position X\":-33.7765427,\"Strip Position Y\":11.0264359,\"Strip Instructions\":[{\"Instruction\":{\"InstructionType\":1,\"Mode\":\"\"}},{\"Instruction\":{\"InstructionType\":2,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"8\"}}},{\"Instruction\":{\"InstructionType\":6,\"Mode\":\"MotorClockwise\"}},{\"Instruction\":{\"InstructionType\":3,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"2\"}}}]}},{\"Strip\":{\"Strip Position X\":-497.6148,\"Strip Position Y\":12.5539627,\"Strip Instructions\":[{\"Instruction\":{\"InstructionType\":1,\"Mode\":\"\"}},{\"Instruction\":{\"InstructionType\":2,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"8\"}}},{\"Instruction\":{\"InstructionType\":5,\"Mode\":\"MotorCounterClockwise\"}},{\"Instruction\":{\"InstructionType\":3,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"2\"}}}]}}],\"DetachedParameters\":[],\"Comments\":[]}",
+  "StudentDocumentationToolProject": "",
+  "SDTLockedState": false
 }
