@@ -67,7 +67,8 @@ JaRaCo.NXT >= 2.1.0
 # BrickNil >= 0.9.3
     # Windows: PythonNet dep installation fails
 PyLGBst >= 1.2.2
-https://GitHub.com/JannoPet/LEGO-WeDo-2.0-Python-SDK/archive/master.zip
+https://github.com/AntoniLuongPham/LEGO-WeDo-2.0-Python-SDK/archive/main.zip
+# https://GitHub.com/JannoPet/LEGO-WeDo-2.0-Python-SDK/archive/master.zip
 # WeDo2 >= 1.1.1
 # WeDo >= 1.1.0
     # installation error
