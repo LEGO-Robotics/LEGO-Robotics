@@ -1,3 +1,3 @@
-# [FIRST LEGO League](https://www.firstlegoleague.org)
+# [FIRST LEGO League (FLL)](https://www.firstlegoleague.org)
 
 [Past Challenges](https://www.firstlegoleague.org/past-challenges)
