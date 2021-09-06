@@ -341,3 +341,128 @@ __Video__: ["Teamwork Makes the Dream Work" with FIRST LEGO League](https://www.
 
 
 ### 2. Best Practices
+
+
+#### 2.1. Storage and Material Management
+
+Before you get started with the FIRST® LEGO® League Explore program content, you might want to play a game where the teams identify pieces in their WeDo 2.0 sets. It is recommended that students organize their LEGO® sets to help in taking ownership of materials. This would allow you to start processes and procedures for keeping the sets organized. 
+
+After you have gathered or purchased all of the materials your students will need, you could use plastic storage tubs or other containers to create a kit for each team in your class. You could store the Engineering Notebooks and WeDo 2.0 sets inside the kit for each team, ensuring that each team is responsible for their materials and they won’t get mixed up with others in the classroom.
+
+Alternatively, you could also assign and label each WeDo 2.0 set and Explore set with the team name and/or number, so the students know what materials to grab each time. Be sure to check the battery levels of your hardware devices and charge them as needed between sessions. You will need batteries for the Smarthubs for each of the WeDo 2.0 sets also. 
+
+After you have all the kits assembled, you will need a place to store them. In Session 8, each team may need a sturdy board or container (such as a large plastic container, a cardboard box, a wooden board, etc.) to protect, store, and potentially transport their team models. Beginning with Session 10, each team will need a poster board to create a team poster. You will also need to identify a place to store the posters.
+
+
+__Material Management Tips__
+
+- Place any extra or found LEGO pieces in a cup. Have the children who are missing pieces come to the cup to look for them.
+
+- Wait to dismiss your team until you look over their LEGO set.
+
+- The lid of the LEGO set can be used as a tray to keep pieces from rolling away.
+
+- Use plastic bags or containers to store any unfinished builds and their associated pieces or assembled models.
+
+- Designate a storage space for the built models, Explore set, and LEGO container.
+
+- The role of the Material Manager is to help in the process of clearing away and storing materials.
+
+
+#### 2.2. Managing Student Teams
+
+
+__ Facilitator Role__
+
+The facilitator's role should include developing holistic skills, building STEM confidence, embracing challenging activities, and using play, discovery, and exploration.
+
+Important things to consider when using the facilitator mindset is to:
+
+- Reinforce FIRST Core Values and habits of learning.
+
+- Ask open-ended questions that make students reflect on their thinking; guiding questions.
+
+- Be comfortable with not having all the answers.
+
+- Let students learn for themselves through problem-solving.
+
+- Create opportunities for students to have ownership of the learning process and outcomes.
+
+- Reflect on student and team goals and how they are working to achieve them.
+Guide students to the resources to help them achieve their goals.
+
+- Celebrate mistakes and see learning opportunities.
+
+
+__Student Growth Mindset__
+
+As you guide students through their experience, having the right mindset is important. Creating student ownership of learning can assist with this. Ownership can be achieved by allowing students to focus on the skills they are developing and what they want to achieve and to use their problem-solving skills.
+There are no right or wrong solutions, just different ways of solving problems. There is plenty of opportunities for students to enjoy their successes and learn from their mistakes.
+
+As a facilitator, if you can establish perseverance and resilience as traits to celebrate and be grateful for, students will be more likely to strive for them. Students need to be challenged just enough that it stretches their minds and creativity without overwhelming them.
+
+
+#### 2.3. Implementation
+
+
+__Flexible Implementation__
+
+First and foremost, use your professional judgment to augment this program to meet the needs of your students, class or meeting space, class timing and additional curricular requirements. Set student expectations for participation in the program based on the student growth mindset of holistic and STEM skills.
+
+
+__Teaming as Designed__
+
+The sessions in the guidebooks have guided tasks for teams of students to complete.
+
+Here are the reasons behind this design:
+
+- Ensures equitable experience for every student in all aspects of the program.
+
+- Additional opportunity for collaboration and communication.
+
+- Small groups promote deeper learning of content and build holistic skills to share out learning with other team members.
+
+- Having smaller groups allows for students to get hands-on time with building, coding, and exploration.
+
+
+__How to Run Differentiated Groups__
+
+- Physically split space to facilitate working in small groups (teams).
+
+- Establish norms for movement and talking in small groups.
+
+- Be comfortable with talking and movement within groups.
+
+- Orient students to daily goals for learning using the student outcomes for each session listed in the Team Meeting Guide.
+
+- Have individual check-ins with each team at the start of class.
+
+- Determine the length of time for daily tasks ahead of class and share with students.
+
+- End each class with whole group sharing using the guiding questions outlined in the Team Meeting Guide as inspiration.
+
+
+__Implementation Timing__
+
+You will need to adjust how each session is completed by your students if your designated class time to complete each session is different than the allotted 60 minutes per session outlined in the guides. The length this program will take to complete will depend on time within the day you have available to do FIRST® LEGO® League and how often you will teach this program (daily, weekly, etc.).
+
+Following is a daily lesson planning example for how to adjust the session content to meet a different class time frame. This example is from Session 1 and uses a 30-minute class time.
+
+
+#### 2.4. Team Roles
+
+Here are sample team roles to use during the sessions. Everyone on the team could experience each role multiple times throughout their FIRST® LEGO® League Explore experience. Using roles helps the team function more efficiently and ensures that everyone on the team is engaged. Multiple children will fill some roles during a session. For example, the builder and coder roles can be duplicated where the experience is designed for a pair of children.
+
+- __Facilitator__: Guides the team through the session and their learning to achieve session outcomes.
+
+- __Journey Recorder__: Captures the team's journey by taking pictures or video. This media can be used for the team poster.
+
+- __Team Captain__: Shares team progress with Facilitator. Ensures session tasks are completed.
+
+- __LEGO Element Finder__: Locates the specific LEGO elements needed for each build step.
+
+- __Material Manager__: Gathers materials needed for the session and returns materials at end of session.
+
+- __Builder__: Assembles the LEGO builds following the building instructions.
+
+- __Coder__: Operates the device and creates the programs in the app.
