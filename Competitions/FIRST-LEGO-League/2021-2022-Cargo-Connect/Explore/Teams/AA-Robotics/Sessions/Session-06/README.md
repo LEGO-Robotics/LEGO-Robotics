@@ -1,1 +1,1 @@
-# Session 6: Let's Be Safe
+# AA Robotics Team Session 6

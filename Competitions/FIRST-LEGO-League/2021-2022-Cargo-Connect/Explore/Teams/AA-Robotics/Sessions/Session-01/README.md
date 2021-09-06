@@ -1,1 +1,1 @@
-# Session 1: Let's Explore
+# AA Robotics Team Session 1
