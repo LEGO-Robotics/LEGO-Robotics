@@ -1,2 +1,1 @@
-# WRO 2019 Regular Junior
-
+# World Robot Olympiad 2019: Smart Cities

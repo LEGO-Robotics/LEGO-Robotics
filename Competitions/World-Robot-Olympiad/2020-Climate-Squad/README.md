@@ -1,2 +1,1 @@
-# WRO 2020 Regular Junior
-
+# World Robot Olympiad 2020: Climate Squad
