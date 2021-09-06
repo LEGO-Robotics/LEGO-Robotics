@@ -52,8 +52,23 @@ Getting Started with FIRST LEGO League Explore-Festival: [Getting Started with F
 
 ### 2. Related Web Resources
 
+[Physical activity links to higher academic performances](https://abcnews.go.com/GMA/video/research-links-physical-activity-children-higher-academic-performances-48124311)
+
+Want Smarter, Healthier Kids? Try Physical Education! [Want Smarter, Healthier Kids? Try Physical Education! | Paul Zientarski | TEDxBend](https://www.youtube.com/watch?v=V81cO8xyMaI)
+
 
 ### 3. Inspirational Season Resources
+
+
+[The Cooling Fan](https://www.youtube.com/watch?v=PGTAlu9hE-c)
+
+[Moving Satellite](https://www.youtube.com/watch?v=XDkCPIdddas)
+
+[Spy Robot](https://www.youtube.com/watch?v=g_Qvf1VTaDY)
+
+[Game Changers Inspirational Season Resources](https://firstinspiresst01.blob.core.windows.net/first-game-changers/game-changers-inspirational-season-resources.pdf)
+
+[Multimedia Connections](https://info.firstinspires.org/hubfs/Education_Resources/thinkscape/FIRST_LEGO_League_Explore-Multimedia_Connections_RePlay_2020.pdf)
 
 
 ### Report
