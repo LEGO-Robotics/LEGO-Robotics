@@ -237,7 +237,6 @@ Use this checkpoint to help you get started and guide you toward success. Many o
 - Discuss vocabulary related to the season theme with the children.
 
 
-
 #### 1.3. Explore Materials
 
 Look over the following list for what materials and space you will need in your classroom or meeting space. It is recommended that students work in teams of four if implementing in a classroom. Each team will need space to design, build, and code with their WeDo 2.0 set as well as to participate in teamwork activities. Access to an electronic device is important for each team to have for a successful program implementation. 
@@ -257,7 +256,7 @@ Classroom or Meeting Space:
 - Internet access (optional)
 - Electrical support
 
-Inventory:
+Team materials:
 - Explore Set
 - Prototyping Pieces
 - Explore Model
@@ -271,7 +270,7 @@ Inventory:
 
 #### 1.4. General Management Tips
 
-__FACILITATOR TIPS__
+__FACILITATOR TIPS__: Role of Facilitator:
 
 - Determine your timeline. How often will you meet and for how long? How many meetings will you have before your festival?
 
@@ -312,6 +311,7 @@ Celebrate at an event
 
 The FIRST® Core Values are the cornerstones of the program. They are among the fundamental elements of FIRST® LEGO® League. By embracing the Core Values, children use discovery and exploration of the theme in each session and learn that helping one another is the foundation of teamwork. It is important that the children have fun. The more playful the sessions are, the more motivated the children will be.
 
+Core Values:
 - __Teamwork__: We found we were stronger when we worked together
 - __Inclusion__: We respected each other and embraced our differences
 - __Innovation__: We used creative and persistence to solve problems
@@ -397,18 +397,35 @@ If you have registered an official Explore team through FIRST, here are addition
 __Links__
 
 Facebook
+- [Official FIRST](http://www.facebook.com/FIRSTOfficial)
+- [FIRST LEGO League](https://www.facebook.com/FLLteams)
+- [LEGO Education](http://www.facebook.com/LEGOeducationOfficial)
+- [Explore Share & Learn Group](https://www.facebook.com/groups/FLLJrShareandLearn) (community page)
 
 Twitter
+- [FIRST LEGO League](https://twitter.com/firstlegoleague)
+- [FIRST](https://www.youtube.com/c/OfficialFIRST)
+- LEGO Education
 
 YouTube
+- [FIRST LEGO League](https://www.youtube.com/user/FLLGlobal)
+- [Official FIRST](https://www.youtube.com/c/OfficialFIRST)
+- [LEGO Education](https://www.youtube.com/user/LEGOeducationUS)
 
 Pinterest
+- [FIRST LEGO League Explore Board](https://www.pinterest.com/firstinspires/first-lego-league-explore)
+- [FIRST](https://www.pinterest.com/firstinspires)
 
 Instagram
+- [Official FIRST](https://www.instagram.com/first_official_)
 
 Twitch
+- [FIRST Inspires](https://www.twitch.tv/firstinspires)
 
 Blog
+- [FIRST LEGO League](https://fllblog.wordpress.com)
+- [Inspire](https://www.firstinspires.org/community/inspire)
+- [Community](https://community.firstinspires.org)
 
 
 __Video__: ["Teamwork Makes the Dream Work" with FIRST LEGO League](https://www.youtube.com/watch?v=9XtUlQULRvA)
@@ -446,7 +463,7 @@ __Material Management Tips__
 #### 2.2. Managing Student Teams
 
 
-__ Facilitator Role__
+__ Facilitator Role__: Explore teacher:
 
 The facilitator's role should include developing holistic skills, building STEM confidence, embracing challenging activities, and using play, discovery, and exploration.
 
@@ -468,7 +485,7 @@ Guide students to the resources to help them achieve their goals.
 - Celebrate mistakes and see learning opportunities.
 
 
-__Student Growth Mindset__
+__Student Growth Mindset__: Student growth:
 
 As you guide students through their experience, having the right mindset is important. Creating student ownership of learning can assist with this. Ownership can be achieved by allowing students to focus on the skills they are developing and what they want to achieve and to use their problem-solving skills.
 There are no right or wrong solutions, just different ways of solving problems. There is plenty of opportunities for students to enjoy their successes and learn from their mistakes.
