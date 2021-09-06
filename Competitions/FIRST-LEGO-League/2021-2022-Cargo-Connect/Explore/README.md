@@ -463,7 +463,7 @@ __Material Management Tips__
 #### 2.2. Managing Student Teams
 
 
-__ Facilitator Role__: Explore teacher:
+__Facilitator Role__: Explore teacher:
 
 The facilitator's role should include developing holistic skills, building STEM confidence, embracing challenging activities, and using play, discovery, and exploration.
 
