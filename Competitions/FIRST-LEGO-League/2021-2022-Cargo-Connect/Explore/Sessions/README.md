@@ -191,3 +191,8 @@ Educator Resources: info.firstinspires.org/curriculum (Find additional digital r
 Hybrid Learning:
 - education.lego.com/en-us/managing-todays-classroom#covid-19-resources
 - firstinspires.org/covid-19
+
+
+## Session Layout
+
+Every session starts with an introduction and ends with a share activity. Details for these activities are given in the session pages that follow, along with notes and tips to help you run the session.
