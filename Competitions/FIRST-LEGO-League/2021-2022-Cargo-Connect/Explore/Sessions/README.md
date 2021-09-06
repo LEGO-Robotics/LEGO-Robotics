@@ -18,6 +18,13 @@ Challenge is called CARGO CONNECTSM. Children will learn about how cargo is __tr
 During each session, they will experience the __engineering design process__. There is no set order for this process, and they may go through each part several times in a single session. This means that during a session, children will be __exploring the theme and ideas__, __creating solutions__, __testing__ them __iterating__ and __changing__ them, and then __sharing__ what they’ve learned with others.
 
 
+__Engineering Design Process__
+- __Explore__
+- __Create__
+- __Test__, and iteratively change/improve
+- __Share__
+
+
 ### Working in Teams
 
 Children work together in __teams of (up to) six__ using pieces from the LEGO® Education WeDo 2.0 or SPIKE™ Essential set, and a CARGO CONNECT Explore set. They will __collaborate__ and __communicate__ to __build__, __learn__, and __play__ together.
@@ -90,3 +97,51 @@ Each team will get one CARGO CONNECT Explore Set. Leave the LEGO® elements in t
 - The prototyping pieces are used throughout the sessions to build solutions to the design challenges.
 
 - There are baseplates provided. These can be used for each individual student to create his or her own build ideas or can be combined to create their team model.
+
+
+## General Management Tips
+
+
+### FACILITATOR TIPS
+
+- Determine your timeline. How often will you meet and for how long? How many meetings will you have before your festival?
+
+- Set team guidelines, procedures,and behaviors for your meetings.
+
+- Get into the mindset that the team should be doing most of the work and learning. You are there to facilitate their journey and remove any major obstacles.
+
+- Lead your team through the Introduction and Share activities provided in each session.
+
+- Use the guiding questions in the sessions to provide focus and direction on what the team will do.
+
+- Jobs are listed in some sessions that connect to the Career Connections pages in the back of the Engineering Notebook. Additional enrichment activities are also provided on these pages.
+
+
+### MATERIAL MANAGEMENT
+
+- Place any extra or found LEGO® pieces in a cup.
+
+- Have the children who are missing pieces come to the cup to look for them.
+
+- Wait to dismiss your team until you look over their LEGO set.
+
+- The lid of the LEGO set can be used as a tray to keep pieces from rolling away.
+
+- Use plastic bags or containers to store any unfinished builds and their associated pieces or assembled models.
+
+- Designate a storage space for the built models, Explore set, and LEGO container.
+
+- The role of the Material Manager is to help in the process of clearing away and storing materials.
+
+
+### ENGINEERING NOTEBOOK TIPS
+
+- Read the Engineering Notebook carefully. Each team member should have one.
+
+- It contains all the information the team needs, and it guides them through the sessions.
+
+- The tips in this Team Meeting Guide will direct you how to support each session.
+
+- As facilitator, help guide the team members in the performance of their roles during each session.
+
+- The sessions contain individual and team tasks to help the team perform their roles independently.
