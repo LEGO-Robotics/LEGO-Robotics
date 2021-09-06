@@ -145,3 +145,49 @@ Each team will get one CARGO CONNECT Explore Set. Leave the LEGO® elements in t
 - As facilitator, help guide the team members in the performance of their roles during each session.
 
 - The sessions contain individual and team tasks to help the team perform their roles independently.
+
+
+## Pre-Session Checkpoint
+
+Please read the student Engineering Notebook and this Team Meeting Guide before starting the sessions. They are full of very useful information to guide you through the program.
+
+Use this checkpoint to help you get started and guide you toward success.
+
+- Make sure you have a Bluetooth-enabled device with the WeDo 2.0 or SPIKE™ Essential app installed.
+
+- Unpack the WeDo 2.0 or SPIKE™ Essential set (if not already done) and sort the LEGO® elements into the tray.
+
+- Make sure the hub is fully charged or has batteries in it.
+
+- Familiarize yourself with the contents of the Explore set.
+
+- Explore the FIRST® Core Values. These are the essential foundation for your team.
+
+- Watch the FIRST LEGO League Explore Season video and other videos on the FIRST LEGO League You Tube channel.
+
+- The team could complete the Introduction and some Getting Started activities in the app so that they gain experience in building and coding before starting the sessions.
+
+- Discuss transportation-related vocabulary with the team. Words could include product, package, cargo, efficiency, access, safety, and connections.
+
+
+### Helpful Resources
+
+LEGO® Education Support:
+- education.lego.com/en-us/support
+- Phone: (800) 422-5346
+
+Main Website: firstlegoleague.org
+
+General Support Questions: fllexplore@firstinspires.org
+
+Equity, Diversity, & Inclusion Training: firstinspires.org/about/diversityinclusion
+
+LEGO Education Teacher Community: community.lego.education.com
+
+CARGO CONNECT Resources: firstlegoleague.org/season
+
+Educator Resources: info.firstinspires.org/curriculum (Find additional digital resources here!)
+
+Hybrid Learning:
+- education.lego.com/en-us/managing-todays-classroom#covid-19-resources
+- firstinspires.org/covid-19
