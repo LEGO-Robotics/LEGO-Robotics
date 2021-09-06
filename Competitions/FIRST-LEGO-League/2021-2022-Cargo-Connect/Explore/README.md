@@ -195,4 +195,149 @@ Inventory:
 - Class Pack Implementation Guide
 
 
+#### 1.4. General Management Tips
+
+__FACILITATOR TIPS__
+
+- Determine your timeline. How often will you meet and for how long? How many meetings will you have before your festival?
+
+- Set team guidelines, procedures, and behaviors for your meetings.
+
+- Get into the mindset that the team should be doing most of the work and learning. You are there to facilitate their journey and remove any major obstacles.
+Lead your team through the Introduction and Share activities provided in each session.
+
+- Use the guiding questions in the sessions to provide focus and direction on what the team will do.
+
+- Read the Engineering Notebook carefully. Each team member should have one.
+The Engineering Notebook contains all the information the team needs, and it guides them through the sessions.
+
+- The tips in this Team Meeting Guide will direct you how to support each session.
+As facilitator, help guide the team members in the performance of their roles during each session.
+
+- The sessions contain individual and team tasks to help the team perform their roles independently.
+
+
+#### 1.5. Team Journey
+
+Explore the challenge
+
+Learn about Core Values
+
+Explore, create, test, and share as you go through the sessions
+
+Create team model
+
+Design team poster
+
+Share your team model and team poster
+
+Celebrate at an event
+
+
+#### 1.6. Playful Learning in Action
+
+The FIRST® Core Values are the cornerstones of the program. They are among the fundamental elements of FIRST® LEGO® League. By embracing the Core Values, children use discovery and exploration of the theme in each session and learn that helping one another is the foundation of teamwork. It is important that the children have fun. The more playful the sessions are, the more motivated the children will be.
+
+- __Teamwork__: We found we were stronger when we worked together
+- __Inclusion__: We respected each other and embraced our differences
+- __Innovation__: We used creative and persistence to solve problems
+- __Fun__: We enjoyed and celebrated what we did!
+- __Discovery__: We explored new skills and ideas
+- __Impact__: We applied what we learned to improve our world
+
+
+#### 1.7. Explore Resources
+
+
+__Educator Resources__
+
+The [FIRST LEGO League website](https://www.firstlegoleague.org) contains an overview of the program as well as specific Explore resources. The [Class Pack webpage](https://info.firstinspires.org/class-pack/firstlegoleaguediscover) provides an overview of the Explore offering. The FIRST® Education team has created standards alignments, learning progressions, and scope and sequence options for FIRST® LEGO® League Explore. FIRST LEGO League follows this [education philosophy](https://bit.ly/310sQWI). Check out the Educators page for these resources under [Curriculum](https://info.firstinspires.org/curriculum).
+
+
+__Professional Development__
+
+FIRST® offers an immersive learning experience for teachers that will help them acquire or strengthen their facilitation skills for project-based learning and building holistic skills. [FIRST professional development](https://www.firstinspires.org/community/educators/professional-development) available (in-person/remote) for Explore. As part of our commitment to creating a diverse, inclusive, and equitable community for all our participants, FIRST has [trainings](https://www.firstinspires.org/about/diversityinclusion) on how you can inspire the youth voice, create a sense of belonging, and more. 
+
+LEGO® Education offers comprehensive professional development for educators. [LEGO Education Professional Development](https://education.lego.com/en-us/professional-development) is a personalized, competency-based learning program that inspires and actively engages teachers in facilitating playful and hands-on STEAM learning.
+
+
+__Getting Started Video__
+
+Here is a great video resource that show you how to get started with FIRST LEGO League Explore. These videos feature the GAME CHANGERSSM powered by Star Wars: Force for Change season materials for the PLAYMAKERSSM challenge but the same principles covered in this video can be applied to the current season's materials.
+
+[Getting Started with FIRST LEGO League Explore](https://www.youtube.com/watch?v=pUONOiVSqTs)
+
+
+__Explore Festival Video__
+
+This video provides you with more information about the Explore festival.
+
+[Getting Started with FIRST LEGO League Explore - the Festival experience](https://www.youtube.com/watch?v=ViOtnNCcUjk)
+
+
+__Coding Resources__
+
+Here are some resources to support you in using the LEGO Education WeDo 2.0 set.
+
+- [Getting Started with WeDo 2.0 Video Playlist](https://www.youtube.com/watch?v=qOVecuj1RAo&list=PLXNn7QnqlNpgQnRyuPLvlA0vTqrLZwG1j&index=10&t=0s)
+- [WeDo 2.0 Support](https://www.youtube.com/watch?v=3xvWTK8qb3A)
+- [Building Instructions](https://education.lego.com/en-us/product-resources/wedo-2/downloads/building-instructions)
+- [Getting Started](https://education.lego.com/en-us/start/wedo-2)
+- [WeDo 2.0 Lessons](https://education.lego.com/en-us/lessons?Products=LEGO%20Education%20WeDo%202.0%20Core%20Set&pagesize=48)
+
+
+__LEGO Education Resources__
+
+Websites
+
+- [Managing Today’s Classroom](https://education.lego.com/en-us/support/managing-todays-classroom)
+- [LEGO Education Software download](https://education.lego.com/en-us/downloads)
+- [LEGO Education Community](https://community.legoeducation.com/home)
+- [LEGO Education Lessons](https://education.lego.com/en-us/lessons)
+- [The LEGO Foundation](https://www.legofoundation.com/en)
+
+Documents:
+- [Learning Through Play](https://le-www-live-s.legocdn.com/sc/media/files/research%20papers/le_learning_through_play_whitepaper_digital_pdf-424d4ea17bebcd465ac981ae25c08bfa.pdf)
+
+
+__FIRST Resources__
+
+- [FIRST at Home](https://www.firstinspires.org/community/home-learning)
+- [FIRST Merchandise](https://first.corpmerchandise.com)
+- [FIRST Resource Library](https://www.firstinspires.org/resource-library)
+- [FIRST Impact](https://www.firstinspires.org/about/impact)
+- [FIRST Brand and Logo Files](https://www.firstinspires.org/brand)
+- [FIRST Equity, Diversity, and Inclusion Playlist](https://www.youtube.com/playlist?list=PLumXeb1tOUyRBqF8US5BkU_dLazg8WByb)
+- Support Email: fllexplore@firstinspires.org
+
+
+__Team Resources__
+
+If you have registered an official Explore team through FIRST, here are additional team resources.
+
+- Team Management Resources
+- [Find Local Support](https://www.firstinspires.org/find-local-support)
+- [Team and Event Search](https://www.firstinspires.org/team-event-search#type=teams&sort=name&programs=FLL)
+
+
+__Links__
+
+Facebook
+
+Twitter
+
+YouTube
+
+Pinterest
+
+Instagram
+
+Twitch
+
+Blog
+
+
+__Video__: ["Teamwork Makes the Dream Work" with FIRST LEGO League](https://www.youtube.com/watch?v=9XtUlQULRvA)
+
+
 ### 2. Best Practices
