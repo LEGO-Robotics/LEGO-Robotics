@@ -5,23 +5,53 @@
 
 ### 1. Digital Guidebooks
 
-[Engineering Notebook](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20EN%20updated%20regular.pdf)
-- [interactive](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20EN%20updated%20interactive.pdf)
+CARGO CONNECT Guidebooks
 
-[Team Meeting Guide](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20TMG%20updated.pdf)
+Click on the links to download the PDF files of the guidebooks. 
+
+Download PDF of the [Engineering Notebook](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20EN%20updated%20regular.pdf)
+
+Download PDF of the [Interactive Engineering Notebook](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20EN%20updated%20interactive.pdf)
+
+Download PDF of the [Team Meeting Guide](https://info.firstinspires.org/hubfs/Education_Resources/CARGO%20CONNECT/CARGO%20CONNECT%20Explore%20TMG%20updated.pdf)
 
 
 ### 2. Introductory Resources
 
+
+__Explore Overview__
+
+This document provides an overview of FIRST® LEGO® League Explore and this year's challenge, CARGO CONNECT.
+
 [Challenge Story](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-challenge-story.pdf)
+
+
+__Explore Introduction__
+
+You can use this Introduction page to explain what to expect at a festival. This can be shared with families, visitors, and volunteers.
 
 [Event Introduction](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-event-introduction.pdf)
 
+
+__Welcome Letter__
+
+You can provide this welcome to the parents and guardians of the students on your team.
+
 [Welcome Letter](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-welcome-letter.pdf)
 
-Building Instruction Booklets:
+
+__Building Instruction Booklets__ 
 - [Booklet 1](http://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-building-instruction-bk1-bi-45817.pdf)
 - [Booklet 2](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-building-instruction-bk2-bi-45817.pdf)
+
+
+__Multimedia Resources__
+
+The Multimedia Resources provides introductory resources, season-specific resources, and resources for every session. These resources are supplementary and complement the content within the guidebooks. You can use these resources for more background information, support, and extension activities. 
+
+Click below to download this resource.
+
+[Explore CARGO CONNECT Multimedia Resources](https://protected.mythinkscape.com/html_package/explore-season-resources-tincan-nDsPqPuI_1630001778044/assets/t6-xdb5n2aQK6ned_zbBGvzuHcNa46aRV-Explore%20CARGO%20CONNECT%20Multimedia%20Resources.pdf)
 
 
 ### 3. Season Informational Videos
@@ -40,18 +70,47 @@ Cargo Connect Explore Set: [FIRST LEGO League Explore - CARGO CONNECT Explore Se
 
 #### CARGO CONNECT Explore Informational Videos
 
-CARGO CONNECT Explore Materials and Guidebooks Introduction: [CARGO CONNECT Explore Introduction Materials and Guidebooks](https://www.youtube.com/watch?v=yRPR_2SKqx4)
 
-Unboxing the CARGO CONNECT Explore Set: [CARGO CONNECT Explore Set Unboxing Explore Set](https://www.youtube.com/watch?v=OsrHH5CebLA)
+__CARGO CONNECT Explore Materials and Guidebooks Introduction__
 
-CARGO CONNECT Explore Set: Mat (Part 1): [CARGO CONNECT Explore Set Mat Part 1](https://www.youtube.com/watch?v=_ujdvnPHhA4)
+Learn more about the materials you will use with your Explore registration for the CARGO CONNECT challenge.
 
-CARGO CONNECT Explore Set: Mat (Part 2): [CARGO CONNECT Explore Set Mat Part 2](https://www.youtube.com/watch?v=o8IkqqkimOE)
+[CARGO CONNECT Explore Introduction Materials and Guidebooks](https://www.youtube.com/watch?v=yRPR_2SKqx4)
 
-CARGO CONNECT Explore Set: Explore Model: [CARGO CONNECT Explore Set Explaining Explore Model](https://www.youtube.com/watch?v=3p0DDLM9tgs)
+
+__Unboxing the CARGO CONNECT Explore Set__
+
+See what comes inside the CARGO CONNECT Explore Set.
+
+[CARGO CONNECT Explore Set Unboxing Explore Set](https://www.youtube.com/watch?v=OsrHH5CebLA)
+
+
+__CARGO CONNECT Explore Set: Mat (Part 1)__
+
+Learn more about the mat in the CARGO CONNECT Explore Set.
+
+[CARGO CONNECT Explore Set Mat Part 1](https://www.youtube.com/watch?v=_ujdvnPHhA4)
+
+
+__CARGO CONNECT Explore Set: Mat (Part 2)__
+
+Learn more about the mat in the CARGO CONNECT Explore Set.
+
+[CARGO CONNECT Explore Set Mat Part 2](https://www.youtube.com/watch?v=o8IkqqkimOE)
+
+
+__CARGO CONNECT Explore Set: Explore Model__
+
+Learn more about the different parts of the Explore model in the CARGO CONNECT Explore Set.
+
+[CARGO CONNECT Explore Set Explaining Explore Model](https://www.youtube.com/watch?v=3p0DDLM9tgs)
 
 
 ### 4. [Individual Session Slides](https://drive.google.com/drive/folders/13Dnl9VrOAl_RtDvDkb_XmhOuPicxB4pA)
+
+Linked below is session-by-session series of slides that contain real-world connections such as videos, images, and helpful questions to guide students through each session. Each session slide complements the content contained within the Team Meeting Guide and Engineering Notebook.
+
+Click on the links to download the individual session PowerPoints or you can download the .zip file by clicking on "All Sessions" or open the Google Slides versions in Google Drive.
 
 [Introduction](https://docs.google.com/presentation/d/119bLlqOlmze50WALFoV1P-UovcR3XlD7gY6rTOmMXgw)
 
@@ -80,14 +139,29 @@ CARGO CONNECT Explore Set: Explore Model: [CARGO CONNECT Explore Set Explaining 
 
 ### 5. Judging and Event Resources
 
-Reviewing Documents: [Reviewing Sheet](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-reviewing-documents.pdf)
 
-Awards: [Awards List](http://firstinspiresst01.blob.core.windows.net/first-game-changers/fll-explore/explore-awards-list.pdf)
+__Reviewing Documents__
 
-Certificates
+These reviewing documents are used during the reviewing session at a festival.
+
+[Reviewing Sheet](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-reviewing-documents.pdf)
+
+
+__Awards__
+
+This document contains a list of the different awards that are given out at a Festival.
+
+[Awards List](http://firstinspiresst01.blob.core.windows.net/first-game-changers/fll-explore/explore-awards-list.pdf)
+
+
+__Certificates__
+
+It is always important to end your experience by celebrating the team's achievements. You can use their certificates to recognize what the team has accomplished.
 
 
 ### 6. Season Assets
+
+Download and enjoy free content from FIRST to help you move full speed ahead in the FIRST FORWARD 2021-2022 season of FIRST Robotics Competition, FIRST Tech Challenge, and FIRST LEGO League. Free content for download for the 2021-2022 season includes game logos, wallpapers, social graphics, style guides, posters, and more FIRST FORWARD content.
 
 [FIRST FORWARD Season Content](https://info.firstinspires.org/free-season-content)
 
