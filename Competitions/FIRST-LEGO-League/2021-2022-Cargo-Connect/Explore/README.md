@@ -76,3 +76,17 @@ CARGO CONNECT Explore Set: Explore Model: [CARGO CONNECT Explore Set Explaining 
 [Session 12](https://docs.google.com/presentation/d/1xljjtnvM-ynsnwxlJfZYaWxjGP51TjVH_zA8ixxjG9Q)
 
 [All Sessions](https://bit.ly/3ymOiV1)
+
+
+### 5. Judging and Event Resources
+
+Reviewing Documents: [Reviewing Sheet](https://firstinspiresst01.blob.core.windows.net/first-forward/fll-explore/fll-explore-cargo-connect-reviewing-documents.pdf)
+
+Awards: [Awards List](http://firstinspiresst01.blob.core.windows.net/first-game-changers/fll-explore/explore-awards-list.pdf)
+
+Certificates
+
+
+### 6. Season Assets
+
+[FIRST FORWARD Season Content](https://info.firstinspires.org/free-season-content)
