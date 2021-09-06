@@ -1,1 +1,1 @@
-# World Robotics Olympiad (WRO)
+# World Robot Olympiad (WRO)
