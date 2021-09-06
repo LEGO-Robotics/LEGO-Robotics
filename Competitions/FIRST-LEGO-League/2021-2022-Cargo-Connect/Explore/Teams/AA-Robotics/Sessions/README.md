@@ -38,4 +38,4 @@ Watch season videos.
 
 Work on [Session 2](Session-02).
 
-Illustrat the Engineering Design Process, especially the Testing and Iterating steps.
+Illustrate the Engineering Design Process, especially the Testing and Iterating steps.
