@@ -1,1 +1,1 @@
-# Session 12
+# Session 12: Prepare for Event

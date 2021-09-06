@@ -1,1 +1,1 @@
-# Session 8
+# Session 8: Build Team Model

@@ -1,1 +1,1 @@
-# Session 11
+# Session 11: Make Team Poster (continued)
