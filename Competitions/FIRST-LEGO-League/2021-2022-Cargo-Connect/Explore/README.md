@@ -1,7 +1,7 @@
 # FIRST LEGO League 2021-2022: Cargo Connect: Explore
 
 
-## Season Resources
+## [Season Resources](https://mythinkscape.com/labs/v2/189458)
 
 ### 1. Digital Guidebooks
 
@@ -166,7 +166,7 @@ Download and enjoy free content from FIRST to help you move full speed ahead in 
 [FIRST FORWARD Season Content](https://info.firstinspires.org/free-season-content)
 
 
-## Getting Started
+## [Getting Started](https://mythinkscape.com/labs/v2/173264)
 
 
 ### 1. Introduction
