@@ -23,3 +23,5 @@ __Builder__: @ArianaLuongPham
 
 __Coder__: @ArianaLuongPham
 - Operates the device and creates the programs in the app.
+
+Everyone on the team could experience each role multiple times throughout their FIRST® LEGO® League Explore experience. Using roles helps the team function more efficiently and ensures that everyone on the team is engaged. Some roles will be filled by multiple children during a session. For example, the builder and coder roles can be duplicated where the experience is designed for a pair of children.
