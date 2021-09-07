@@ -92,6 +92,14 @@ Watch season videos. Summary below:
 
 - Career Connections
 
+- Explore Mat:
+  - hot destination & cold destination
+  - river & ocean
+  - port & airport
+  - house icons: place to build houses
+  - roads & rail tracks
+  - sorting center
+
 Work on [Session 2](Session-02).
 
 Illustrate the Engineering Design Process, especially the Testing and Iterating steps.
