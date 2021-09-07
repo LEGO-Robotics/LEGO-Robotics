@@ -281,11 +281,9 @@ Lead your team through the Introduction and Share activities provided in each se
 
 - Use the guiding questions in the sessions to provide focus and direction on what the team will do.
 
-- Read the Engineering Notebook carefully. Each team member should have one.
-The Engineering Notebook contains all the information the team needs, and it guides them through the sessions.
+- Read the Engineering Notebook carefully. Each team member should have one. The Engineering Notebook contains all the information the team needs, and it guides them through the sessions.
 
-- The tips in this Team Meeting Guide will direct you how to support each session.
-As facilitator, help guide the team members in the performance of their roles during each session.
+- The tips in this Team Meeting Guide will direct you how to support each session. As facilitator, help guide the team members in the performance of their roles during each session.
 
 - The sessions contain individual and team tasks to help the team perform their roles independently.
 
