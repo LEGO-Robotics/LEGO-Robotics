@@ -61,7 +61,7 @@ Watch season videos. Summary below:
 - Dean Kamen (founder of FIRST): invented iBOT wheelchair & Segway
 
 - Cargo transportation considerations:
-  - transport, sort, deliver
+  - (un)loading, transporting, sorting, delivering
   - environmental friendliness
   - energy efficiency
   - cargo container arrangement efficiency
@@ -91,7 +91,6 @@ Watch season videos. Summary below:
 - Digital slides for each session
 
 - Career Connections
-
 
 Work on [Session 2](Session-02).
 
