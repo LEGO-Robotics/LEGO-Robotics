@@ -1,0 +1,9 @@
+{
+  "Name": "Cargo Connect: Truck: Basic",
+  "Id": "3d77727d-112d-40a0-9da4-fbf1113b8a93",
+  "CreationDate": "2021-09-06T10:37:00.550927-07:00",
+  "LastOpenDate": "2021-09-11T17:59:09.047623-07:00",
+  "CanvasJson": "{\"Strips\":[{\"Strip\":{\"Strip Position X\":-471.264,\"Strip Position Y\":25.25663,\"Strip Instructions\":[{\"Instruction\":{\"InstructionType\":1,\"Mode\":\"\"}},{\"Instruction\":{\"InstructionType\":8,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"14\"}}},{\"Instruction\":{\"InstructionType\":5,\"Mode\":\"MotorClockwise\"}},{\"Instruction\":{\"InstructionType\":3,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"5\"}}},{\"Instruction\":{\"InstructionType\":4,\"Mode\":\"\"}}]}}],\"DetachedParameters\":[],\"Comments\":[]}",
+  "StudentDocumentationToolProject": "",
+  "SDTLockedState": false
+}
