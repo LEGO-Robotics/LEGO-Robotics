@@ -555,3 +555,32 @@ Here are sample team roles to use during the sessions. Everyone on the team coul
 - __Builder__: Assembles the LEGO builds following the building instructions.
 
 - __Coder__: Operates the device and creates the programs in the app.
+
+
+## [Awarding](https://www.first-lego-league.org/en/explore/general/awarding.html)
+
+FIRST LEGO League Explore  is no tournament, therefore there is no ranking or the possibility to qualify for further events. Everybody is a winner and all the teams receive an honor certificate at the official exhibitions, after presenting their model and poster in front of reviewers. 
+
+Examples of possible honourings are:
+
+- __Amazing Movement Award__: This team worked together to incorporate amazing movement using LEGO motors into their model design.
+
+- __Gracious Professionalism Award__: For exemplifying Gracious ProfessionalismTM —a core FIRST LEGO League Explore value. This team was thoughtful, kind, and showed respect towards others.
+
+- __Against All Odds Award__: For overcoming incredible odds of an unforeseen nature.  This team was able to improvise, adapt and recover out of sheer determination.
+
+- __Effort and Learning Award__: For a strong effort and a willingness to learn and try new things. This team prepared for success.
+
+- __Complexity and Decoration Award__: For beautiful model construction, with great decorative touches.
+
+- __Explosive Ideas Award__: For flash, sizzle, and pizzazz based in solid research and innovative ideas. This team used their explosive ideas to design an eye-catching research poster and explosive team model.
+
+- __Robust Design Award__: The team whose understanding and application of construction knowledge allowed them to produce a very solid and sturdy design.
+
+- __Construction Innovation Award__: For demonstrating creative thinking. This team created excellent designs and built quality components without any instructions or outside assistance.
+
+- __Spirit Award__: Enthusiasm, spirit, excitement, and accomplishment. This team showed the ability to get other people excited about FIRST LEGO League Explore because of their enthusiasm, spirit, and excitement about what they accomplished.
+
+- __Outstanding Teamwork Award__: For hard work on teamwork, success as a team came first. Always first to a team solution, this team knows that together everyone achieves more.
+
+- __Journey Award__: This team was able to create an awesome poster that showed their FIRST LEGO League Explore journey from start to finish.
