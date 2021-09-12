@@ -1,5 +1,7 @@
 # AA Robotics Team Sessions
 
+_Note_: For programming, we've tried using Python by forking the [LEGO-WeDo-2.0-Python-SDK](https://github.com/AntoniLuongPham/LEGO-WeDo-2.0-Python-SDK) library but we've not been able to overcome the problems discussed [here](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK/issues/3) and [here](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK/issues/4). Hence, we've resorted to using the drag-and-drop visual WeDo programming interface.
+
 
 ## Sunday 2021-09-05
 
@@ -103,3 +105,15 @@ Watch season videos. Summary below:
 Work on [Session 2](Session-02).
 
 Illustrate the Engineering Design Process, especially the Testing and Iterating steps.
+
+
+## Saturday 2021-09-11
+
+Record video summarizing output from Sessions 1 & 2.
+
+
+## Sunday 2021-09-12
+
+Work on [Session 3](Session-03).
+
+Discuss job roles listed in Engineering Notebook's Career Connections section:
