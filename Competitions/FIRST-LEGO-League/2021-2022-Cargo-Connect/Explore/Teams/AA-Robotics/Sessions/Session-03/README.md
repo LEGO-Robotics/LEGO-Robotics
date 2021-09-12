@@ -21,9 +21,9 @@ Build & test the Cargo Connect Sorting Center, and discuss:
   - barcode-automated sorting
 
 Record a video of how the Sorting Center works:
-  - load cargo into the Sorting Center
-  - crank left/right to sort
-  - unload cargo from the Sorting Center
+- load cargo into the Sorting Center
+- crank left/right to sort
+- unload cargo from the Sorting Center
 
 
 Core values covered in this session:

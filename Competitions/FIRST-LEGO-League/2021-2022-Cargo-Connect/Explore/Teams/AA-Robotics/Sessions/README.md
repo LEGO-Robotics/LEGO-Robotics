@@ -114,6 +114,27 @@ Record video summarizing output from Sessions 1 & 2.
 
 ## Sunday 2021-09-12
 
-Work on [Session 3](Session-03).
+Work on [Session 3](Session-03) and [Session 4](Session-04).
 
 Discuss job roles listed in Engineering Notebook's Career Connections section:
+- __Cargo Engineer__: Designs ways to safely and efficiently transport cargo.
+- __Freight Driver__: Moves cargo from one location to another.
+- __Warehouse Worker__: Sorts products and place into boxes for shipping.
+- __Safety Specialist__: Employs safety practices and ensures compliance.
+- __Machine Operator__: Monitors and maintains warehouse sorting machines.
+- __Courier__: Transports and delivers packages to customers.
+
+Fields of Study:
+- Transportation & materials moving
+- Logistics and supply chain management
+- Manufacturing & service operations
+- Warehouse operations
+- Aviation maintenance
+
+Related Transportation Jobs:
+- __Automation engineer__
+- Last-mile manager
+- Delivery execution manager
+- __Machine learning specialist__
+- Transportation specialist
+- Transportation analyst
