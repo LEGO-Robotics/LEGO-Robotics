@@ -1,3 +1,9 @@
 {
-  
+  "Name": "Spy Robot",
+  "Id": "b4af584b-a94b-4686-a012-349b6c5b3e82",
+  "CreationDate": "2021-09-12T12:20:22.34175-07:00",
+  "LastOpenDate": "2021-09-12T13:04:41.077158-07:00",
+  "CanvasJson": "{\"Strips\":[{\"Strip\":{\"Strip Position X\":-183.680618,\"Strip Position Y\":79.6017761,\"Strip Instructions\":[{\"Instruction\":{\"InstructionType\":1,\"Mode\":\"\"}},{\"Instruction\":{\"InstructionType\":10,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":2,\"Mode\":\"DistanceSensorChange\",\"RawValue\":\"\"}}},{\"Instruction\":{\"InstructionType\":8,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"A\"}}}]}}],\"DetachedParameters\":[],\"Comments\":[]}",
+  "StudentDocumentationToolProject": "{\"sections\":[{\"type\":\"\",\"position\":0,\"pages\":[{\"GUID\":\"e2193099-121f-4a22-d4a1-616883a99a01\",\"template_id\":0,\"elements\":{}}],\"pageLimit\":10}],\"currentPageIndex\":0}",
+  "SDTLockedState": false
 }
