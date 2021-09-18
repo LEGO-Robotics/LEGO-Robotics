@@ -1,5 +1,7 @@
 # AA Robotics Team Sessions
 
+_Note_: For programming, we've tried using Python by forking the [LEGO-WeDo-2.0-Python-SDK](https://github.com/AntoniLuongPham/LEGO-WeDo-2.0-Python-SDK) library but we've not been able to overcome the problems discussed [here](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK/issues/3) and [here](https://github.com/jannopet/LEGO-WeDo-2.0-Python-SDK/issues/4). Hence, we've resorted to using the drag-and-drop visual WeDo programming interface.
+
 
 ## Sunday 2021-09-05
 
@@ -92,6 +94,47 @@ Watch season videos. Summary below:
 
 - Career Connections
 
+- Explore Mat:
+  - hot destination & cold destination
+  - river & ocean
+  - port & airport
+  - house icons: place to build houses
+  - roads & rail tracks
+  - sorting center
+
 Work on [Session 2](Session-02).
 
 Illustrate the Engineering Design Process, especially the Testing and Iterating steps.
+
+
+## Saturday 2021-09-11
+
+Record video summarizing output from Sessions 1 & 2.
+
+
+## Sunday 2021-09-12
+
+Work on [Session 3](Session-03) and [Session 4](Session-04).
+
+Discuss job roles listed in Engineering Notebook's Career Connections section:
+- __Cargo Engineer__: Designs ways to safely and efficiently transport cargo.
+- __Freight Driver__: Moves cargo from one location to another.
+- __Warehouse Worker__: Sorts products and place into boxes for shipping.
+- __Safety Specialist__: Employs safety practices and ensures compliance.
+- __Machine Operator__: Monitors and maintains warehouse sorting machines.
+- __Courier__: Transports and delivers packages to customers.
+
+Fields of Study:
+- Transportation & materials moving
+- Logistics and supply chain management
+- Manufacturing & service operations
+- Warehouse operations
+- Aviation maintenance
+
+Related Transportation Jobs:
+- __Automation engineer__
+- Last-mile manager
+- Delivery execution manager
+- __Machine learning specialist__
+- Transportation specialist
+- Transportation analyst

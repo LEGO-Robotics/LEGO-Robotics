@@ -32,7 +32,7 @@ Test the truck on the mat.
 Core values covered in this session:
 - Discovery
 
-`TODO`
-- summarize the discoveries
-- take photos and videos of the product from this session
-  - __decision: do this later, when the truck is motorized__
+
+## Saturday 2021-09-11
+
+Take a video to summarize about Discovery, together with the [Session 2](../Session-02) output.

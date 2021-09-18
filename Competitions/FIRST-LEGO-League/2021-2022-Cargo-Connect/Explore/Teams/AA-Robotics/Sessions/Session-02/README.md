@@ -18,10 +18,61 @@ Go through the Engineering Design Process:
   - _decide to improve the design by connecting the motor to the nearer wheels instead_
   - _test again_
 
-- __Share__: `TODO`
+- __Share__: done in video below
 
 Core values covered in this session:
 - Teamwork
 
-`TODO`:
-- take photos and videos of motorized cargo truck
+
+## Saturday 2021-09-11
+
+Take a video to summarize about Discovery, Teamwork and other output up to Session 2:
+
+- __Team Intro__ (by @AntoniLuongPham): 
+  - AA Robotics team: brother Antoni & sister Ariana
+  - From Belmont, CA
+
+- __Discovery__ (by @ArianaLuongPham): what cargo is transported to & from our homes:
+  - Receive:
+    - toys
+    - food
+    - clothes
+    - water
+    - mail
+    - packages
+    - vaccines
+  - Send:
+    - trash
+    - water
+    - mail
+    - food
+  
+- __Teamwork__ (by @AntoniLuongPham): work together to:
+  - design
+  - build
+  - test and improve the Truck
+  - also build a lot of tiny houses!
+
+- __Truck Design 1/2__ (by @ArianaLuongPham):
+  - big: spacious cargo hull with door
+  - colorful:  with many colors: white, blue, yellow
+
+- __Truck Design 2/2__ (by @AntoniLuongPham): motorizing the truck with:
+  - WeDo Hub
+  - motor
+  - pulley
+  - wheel
+
+- __Test and Change__ (by @AntoniLuongPham):
+  - test and observe that connecting the motor with the back wheels is not feasible because the rubber band is too short
+  - change to connecting the motor with the front wheels instead
+
+- __Code__ (by @ArianaLuongPham):
+  - show WeDo code:
+    - play a truck sound
+    - make the truck go forward
+    - make the truck go backward
+  - run the code and show how it works
+
+- __Demo__ (by @AntoniLuongPham):
+  - show the Truck working on the Cargo Connect mat
