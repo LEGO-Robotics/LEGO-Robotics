@@ -143,3 +143,8 @@ Related Transportation Jobs:
 ## Saturday 2021-09-18
 
 Work on [Session 5](Session-05) and [Session 6](Session-06).
+
+
+## Sunday 2021-09-19
+
+Work on [Session 6](Session-06) and [Session 7](Session-07).
