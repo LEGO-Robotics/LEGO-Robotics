@@ -138,3 +138,8 @@ Related Transportation Jobs:
 - __Machine learning specialist__
 - Transportation specialist
 - Transportation analyst
+
+
+## Saturday 2021-09-18
+
+Work on [Session 5](Session-05) and [Session 6](Session-06).
