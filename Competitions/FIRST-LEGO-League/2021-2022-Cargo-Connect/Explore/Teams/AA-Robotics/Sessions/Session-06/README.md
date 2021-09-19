@@ -15,11 +15,16 @@ Record a video of packages being sorted by the Sorting Center, then delivered by
 Implement safety feature for Sorting Center:
 - Flashing Light & Beeping Sound during sorting
 
+Discuss how a Safety Specialist would perform a safety check on the Sorting Center:
+- Make a 'beep beep' sound to make sure no one puts their hands in the sorting area
+- Make a flashing light to make sure it is the right package
+- They need to have a sensor to check if the packege is in the sorting area
+
 
 ## Sunday 2021-09-19
 
 
-Add Distance Sensor to Sorting Center to detect if there is a package to sort.
+Add Motion Sensor to Sorting Center to detect if there is a package to sort.
 Record a video to demo this new capability.
 
 
