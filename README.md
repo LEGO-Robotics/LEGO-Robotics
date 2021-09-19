@@ -6,8 +6,7 @@ __Community contributions through GitHub pull requests are highly welcome and ap
 
 This repository was created and is maintained by a father-and-children team
 based in Silicon Valley:
-- __Lương Thế Vinh__ (Vinh Luong @TheVinhLuong102), an Industrial IoT AI scientist and
-product manager;
+- __Lương Thế Vinh__ (Vinh Luong @TheVinhLuong102), an Industrial IoT AI scientist and product manager;
 - __Antoni Lương Phạm Anh Quân__ (Antoni Luong-Pham @AntoniLuongPham), born 2014; and
 - __Ariana Lương Phạm Hải An__ (Ariana Luong-Pham @ArianaLuongPham), born 2016.
 
