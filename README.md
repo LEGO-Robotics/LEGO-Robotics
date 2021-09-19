@@ -1,28 +1,40 @@
 # LEGO Robotics
 
-This repository is maintained by a father-and-son team based in Silicon Valley—
-Lương Thế Vinh (__@TheVinhLuong102__, an Industrial IoT AI Scientist) and
-Antoni Lương Phạm Anh Quân (__@AntoniLuongPham__, born 2014)—
-and contains programming code (mostly in Python, some in other languages)
-for numerous LEGO Mindstorms robots. Generally, __@TheVinhLuong102__ takes care
-of the overall organization, documentation and maintenance,
-while __@AntoniLuongPham__ codes the majority of the original programs.
+This repository was created and is maintained by a father-and-children team
+based in Silicon Valley:
+- __Lương Thế Vinh__ (@TheVinhLuong102), an Industrial IoT AI scientist and
+product manager;
+- __Antoni Lương Phạm Anh Quân__ (@AntoniLuongPham), born 2014; and
+- __Ariana Lương Phạm Hải An__ (@ArianaLuongPham), born 2016.
+
+We intend this repository to be a comprehensive and open-to-the-community
+collection of programming code—mostly in Python, some in other languages—and
+related design and demo materials for/on robots based on various generations of
+LEGO robotics platforms, such as:
+- Mindstorms NXT;
+- Mindstorms EV3;
+- SPIKE Prime, SPIKE Essential and Mindstorms Robot Inventor;
+- BOOST; and
+- WeDo.
+
+__Community contributions through GitHub pull requests are highly welcome and appreciated!!__
+
+Generally, __@TheVinhLuong102__ takes care of the overall organization, documentation and maintenance of the repository, while __@AntoniLuongPham__ and __@ArianaLuongPham__ code the majority of the original programs.
 
 For each robot, we experiment extensively with various ways to program it.
-For the most performant Python programs, we leverage MicroPython by using
-`EV3Dev2` (the 2nd-generation `EV3Dev` library) and the newer `PyBricks` library.
-As "collectibles", we have also implemented programs using the
-1st-generation `EV3Dev` library, and are planning to add programs using the
-`NXT-Python` library for NXT robots too. We also try out parallel processing
-using `MultiProcessing`, `Threading` and other means,
-to see whether such mechanisms work well with the various libraries.
-Occasionally, we take copies of other developers' old programs on GitHub
-(with credits/references) and modify those with the latest modern libraries.
-Hence, this repository should be considered a collection of
-programming experiments based on LEGO Mindstorms.
+For example, for EV3, we create and maintain multiple Python programs based on
+the 1st-generation `EV3Dev` library, the more performant 2nd-generation
+`EV3Dev2` (which is based on `MicroPython`) and the newer `Pybricks` library.
+We also try out parallel processing using `MultiProcessing`, `Threading` and
+other means, to see whether such mechanisms work well with various libraries.
+
+For the sake of comprehensiveness, we maintain references to interesting robots
+that community members have invented and shared about on Facebook, GitHub and
+YouTube. Occasionally, we take copies of other developers' old programs
+(with due credits) and modify those with the latest modern libraries.
 
 From time to time, we extract and clean up a subset of our work and contribute
-back to the wider LEGO Mindstorms developer & enthusiast community through the
+back to the wider LEGO robotics developer & enthusiast community through the
 [PyBricks-Projects](https://GitHub.com/PyBricks/PyBricks-Projects) and
 [EV3Dev-Lang-Python-Demo](https://GitHub.com/EV3Dev/EV3Dev-Lang-Python-Demo)
 repositories.
