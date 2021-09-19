@@ -35,7 +35,7 @@ YouTube. Occasionally, we take copies of other developers' old programs
 
 From time to time, we extract and clean up a subset of our work and contribute
 back to the wider LEGO robotics developer & enthusiast community through the
-[PyBricks-Projects](https://GitHub.com/PyBricks/PyBricks-Projects) and
+[Pybricks-Projects](https://GitHub.com/Pybricks/Pybricks-Projects) and
 [EV3Dev-Lang-Python-Demo](https://GitHub.com/EV3Dev/EV3Dev-Lang-Python-Demo)
 repositories.
 
@@ -87,7 +87,7 @@ repositories.
   - [microSD Image](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv200sdcardimage-2c980f58ab30715f0659568970baf494.zip)
     - [Latest Download Link](https://education.lego.com/v3/assets/blt293eea581807678a/blt9df409c9a182ab9c/5f88191a6ffd1b42dc42b8af/ev3micropythonv200sdcardimage.zip)
     - [Outdated Version 1.0.0](https://le-www-live-s.legocdn.com/sc/media/files/ev3-micropython/ev3micropythonv100sdcardimage-4b8c8333736fafa1977ee7accbd3338f.zip)
-  - [Documentation](https://pybricks.github.io/ev3-micropython)
+  - [Documentation](https://Pybricks.github.io/ev3-micropython)
 
 - [eLearning](https://elearning.legoeducation.com)
 
