@@ -1,5 +1,9 @@
 # LEGO Robotics
 
+__Community contributions through GitHub pull requests are highly welcome and appreciated!!__ — especially:
+- Personal robot inventions; and
+- Competition teams' design, code & demo materials over the years.
+
 This repository was created and is maintained by a father-and-children team
 based in Silicon Valley:
 - __Lương Thế Vinh__ (Vinh Luong @TheVinhLuong102), an Industrial IoT AI scientist and
@@ -16,8 +20,6 @@ LEGO robotics platforms, such as:
 - SPIKE Prime, SPIKE Essential and Mindstorms Robot Inventor;
 - BOOST; and
 - WeDo.
-
-__Community contributions through GitHub pull requests are highly welcome and appreciated!!__
 
 Generally, __@TheVinhLuong102__ takes care of the overall organization, documentation and maintenance of the repository, while __@AntoniLuongPham__ and __@ArianaLuongPham__ code the majority of the original programs.
 
