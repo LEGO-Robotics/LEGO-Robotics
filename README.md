@@ -1,14 +1,14 @@
 # LEGO Robotics
 
-__Community contributions through GitHub pull requests are highly welcome and appreciated!!__ — especially:
+__Community contributions through GitHub pull requests are highly welcome and appreciated!!__—especially:
 - Personal robot inventions; and
 - Competition teams' design, code & demo materials over the years.
 
 This repository was created and is maintained by a father-and-children team
-based in Silicon Valley:
-- __Lương Thế Vinh__ (Vinh Luong @TheVinhLuong102), an Industrial IoT AI scientist and product manager;
-- __Antoni Lương Phạm Anh Quân__ (Antoni Luong-Pham @AntoniLuongPham), born 2014; and
-- __Ariana Lương Phạm Hải An__ (Ariana Luong-Pham @ArianaLuongPham), born 2016.
+based in Silicon Valley, consisting of:
+- __Lương Thế Vinh__ (Vinh Luong __@TheVinhLuong102__), an Industrial IoT AI scientist and product manager;
+- __Antoni Lương Phạm Anh Quân__ (Antoni Luong-Pham __@AntoniLuongPham__), born 2014; and
+- __Ariana Lương Phạm Hải An__ (Ariana Luong-Pham __@ArianaLuongPham__), born 2016.
 
 We intend this repository to be a comprehensive and open-to-the-community
 collection of programming code—mostly in Python, some in other languages—and

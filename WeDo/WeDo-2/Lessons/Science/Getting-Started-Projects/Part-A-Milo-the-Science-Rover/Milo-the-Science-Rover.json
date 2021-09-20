@@ -1,3 +1,9 @@
 {
-
+  "Name": "Milo the Science Rover",
+  "Id": "8b223a2d-d57c-406f-8e2d-21a5b9ce6183",
+  "CreationDate": "2021-09-12T13:07:00.212954-07:00",
+  "LastOpenDate": "2021-09-12T14:21:25.479927-07:00",
+  "CanvasJson": "{\"Strips\":[{\"Strip\":{\"Strip Position X\":-257.987762,\"Strip Position Y\":27.4963684,\"Strip Instructions\":[{\"Instruction\":{\"InstructionType\":1,\"Mode\":\"\"}},{\"Instruction\":{\"InstructionType\":2,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"8\"}}},{\"Instruction\":{\"InstructionType\":6,\"Mode\":\"MotorClockwise\"}},{\"Instruction\":{\"InstructionType\":3,\"Mode\":\"\",\"Parameter\":{\"ParameterType\":3,\"Mode\":\"\",\"RawValue\":\"2\"}}},{\"Instruction\":{\"InstructionType\":4,\"Mode\":\"\"}}]}}],\"DetachedParameters\":[],\"Comments\":[]}",
+  "StudentDocumentationToolProject": "",
+  "SDTLockedState": false
 }
