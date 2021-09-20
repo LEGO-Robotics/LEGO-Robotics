@@ -149,7 +149,8 @@ Work on [Session 5](Session-05) and [Session 6](Session-06).
 
 Work on [Session 6](Session-06) and [Session 7](Session-07).
 
-Record a video summarizing Core Values: Teamwork, Inclusion, Innovation, Fun, Discovery & Impact:
+
+Record a video summarizing Core Values:
 
 - __Discovery__ (@ArianaLuongPham):
   - understand what products are transported from & to our community
