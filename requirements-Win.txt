@@ -3,3 +3,5 @@
     # Get it with Microsoft C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools
 
 PyBluez2 >= 0.41
+
+Flake8 >= 4.0.1

@@ -148,3 +148,40 @@ Work on [Session 5](Session-05) and [Session 6](Session-06).
 ## Sunday 2021-09-19
 
 Work on [Session 6](Session-06) and [Session 7](Session-07).
+
+
+Record a video summarizing Core Values:
+
+- __Discovery__ (@ArianaLuongPham):
+  - understand what products are transported from & to our community
+  - understand sorting & delivery steps
+  - explore different modes of transportation
+
+- __Teamwork__ (@AntoniLuongPham):
+  - work on different tasks in parallel
+  - work on some hard tasks together, combine individual work together
+    - brainstorm/discuss together
+    - design together
+    - build together
+    - have fun together
+
+- __Inclusion__ (@ArianaLuongPham): combine different people's ideas & contributions
+
+- __Innovation__ (@AntoniLuongPham): create new solutions through the Engineering Design Process:
+  - design, build, code, test, improve & share
+  - create a truck, an airplane and a boat
+  - add sensor to automate the Sorting Center
+
+- __Impact__ (@AntoniLuongPham): improve efficiency, productivity, safety, etc.
+  - improve efficiency of the Sorting Center by adding a Sensor
+  - improve safety of the Sorting Center by adding beeping sounds and flashing lights
+  - generate 10 ideas of improving access, including some wild ideas:
+    - autonomous aircraft and drones
+    - catapults!
+    - ziplines!
+
+- __Fun__ (@ArianaLuongPham):
+  - love building!
+  - love coding!
+  - love demoing!
+  - love working together!
