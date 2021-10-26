@@ -4,7 +4,7 @@
 https://GitHub.com/PyBricks/PyBricks-API/archive/master.zip
 # PyBricks >= 3.0.0
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
-PyBricksDev >= 1.0.0.a16
+PyBricksDev >= 1.0.0.a17
 
 
 # EV3
