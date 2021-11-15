@@ -93,5 +93,5 @@ PyDocStyle >= 6.1.1
 PyCodeStyle >= 2.8.0
 Prospector >= 1.5.1
 PyLama >= 7.7.1
-Bandit >= 1.7.0
-Rope >= 0.21.0
+Bandit >= 1.7.1
+Rope >= 0.21.1
