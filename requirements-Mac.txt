@@ -4,3 +4,4 @@ Scratch-NXT-Extension >= 0.0.5
 BrickNil >= 0.9.3
 
 Flake8 >= 4.0.1
+PyLama >= 8.3.6

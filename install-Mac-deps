@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 
-brew install BrickLink-Studio Bricksmith LeoCAD Python
+# brew install BrickLink-Studio Bricksmith LeoCAD Python
     # LEGO-Digital-Designer
         # Error: This cask does not run on macOS versions newer than Mojave.
     # MecaBricks
-brew upgrade BrickLink-Studio Bricksmith LeoCAD Python
+# brew upgrade BrickLink-Studio Bricksmith LeoCAD Python
 
-python3 -m pip install PIP SetUpTools --upgrade
+python3 -m pip install PEP517 PIP SetUpTools Wheel --upgrade --user
 
 python3 -m pip install -r requirements.txt --upgrade --user
 python3 -m pip install -r requirements-Mac.txt --upgrade --user
