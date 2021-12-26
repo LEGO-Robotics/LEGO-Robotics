@@ -2,9 +2,9 @@
 # ========
 
 https://GitHub.com/PyBricks/PyBricks-API/archive/master.zip
-# PyBricks >= 3.0.0
+# PyBricks >= 3.0.0   # use bleeding-edge development version above
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
-PyBricksDev >= 1.0.0.a17
+PyBricksDev >= 1.0.0.a19
 
 
 # EV3
@@ -28,8 +28,7 @@ Thonny-EV3Dev >= 1.0.4
     # installation error
 
 # Simulators
-EV3Sim >= 2.1.7; python_version < '3.10'   # Py3.9+: 2.2.2
-PyGame >= 2.1.0; python_version < '3.10'
+EV3Sim >= 2.2.2; python_version < '3.10'
 
 # misc
 EV3-Python >= 0.0.2
@@ -67,7 +66,7 @@ JaRaCo.NXT >= 2.1.0
 # BrickNil >= 0.9.3
     # Windows: PythonNet dep installation fails
 PyLGBst >= 1.2.2
-https://GitHub.com/AntoniLuongPham/LEGO-WeDo-2.0-Python-SDK/archive/main.zip
+https://GitHub.com/LEGO-Robotics/LEGO-WeDo-2.0-Python-SDK/archive/main.zip
 # https://GitHub.com/JannoPet/LEGO-WeDo-2.0-Python-SDK/archive/master.zip
 # WeDo2 >= 1.1.1
 # WeDo >= 1.1.0
@@ -85,13 +84,14 @@ RPyC
 
 # PYTHON LINTING & REFACTORING
 # ============================
-PyLint >= 2.11.1
+PyLint >= 2.12.2
 # Flake8 >= 4.0.1
     # included in Prospector
-MyPy >= 0.910
+MyPy >= 0.930
 PyDocStyle >= 6.1.1
 PyCodeStyle >= 2.8.0
-Prospector >= 1.5.1
-PyLama >= 7.7.1
+Prospector >= 1.5.3.1
+# PyLama >= 8.3.6
+    # conflicts w/ Prospector
 Bandit >= 1.7.1
-Rope >= 0.21.1
+Rope >= 0.22.0
