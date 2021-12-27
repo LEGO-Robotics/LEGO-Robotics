@@ -1,1 +1,1 @@
-# [NXT Firmware](https://GitHub.com/DLech/NXT-Firmware)
+# [NXT Firmware](https://GitHub.com/LEGO-Robotics/NXT-Firmware)

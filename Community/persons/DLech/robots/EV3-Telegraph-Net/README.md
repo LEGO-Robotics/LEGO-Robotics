@@ -1,1 +1,1 @@
-# [EV3 Telegraph Net](https://GitHub.com/DLech/EV3Dev-Telegraph-Net)
+# [EV3 Telegraph Net](https://GitHub.com/LEGO-Robotics/EV3Dev-Telegraph-Net)
