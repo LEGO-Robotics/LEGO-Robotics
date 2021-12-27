@@ -426,15 +426,6 @@ NXT_Python (2007)
 [Snap! EV3Dev](https://github.com/WasabiFan/snap-ev3dev)
 
 
-### [David Lechner](https://github.com/dlech)
-
-[YouTube Channel](https://www.youtube.com/channel/UC9t81ufD1yeMes9YGpKb7bA/videos)
-
-[EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
-
-[NXT Firmware](https://github.com/dlech/nxt-firmware)
-
-
 ### [Frederik Leonhardt](https://github.com/fkleon)
 
 [Website](https://fkleon.github.io)
