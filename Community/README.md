@@ -655,28 +655,6 @@ NXT_Python (2007)
 [YouTube](https://www.youtube.com/c/TomasTECHNIC)
 
 
-### [Laurens Valk](https://github.com/laurensvalk)
-
-[Robot Square](http://robotsquare.com)
-
-- [EV3 and NXT: Difference and Compatibility](http://robotsquare.com/2013/07/16/ev3-nxt-compatibility)
-
-- Tutorials
-  - EV3
-    - [General](http://robotsquare.com/category/tutorials/ev3-general)
-    - [Building](http://robotsquare.com/category/tutorials/ev3-building-tutorials)
-
-  - NXT
-    - [Building](http://robotsquare.com/category/tutorials/building-tutorials)
-    - [Programming](http://robotsquare.com/category/tutorials/programming-tutorials)
-
-
-[EV3Dev Light](https://github.com/laurensvalk/ev3devlight)
-- [Examples](https://github.com/laurensvalk/ev3devlight-examples)
-
-[Ball Bot](https://github.com/laurensvalk/ballbot)
-
-
 ### [Jakub Vaněk](https://github.com/JakubVanek)
 
 [EV3 Sources: Assembly](https://github.com/JakubVanek/ev3sources-asm)
