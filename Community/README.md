@@ -426,15 +426,6 @@ NXT_Python (2007)
 [Snap! EV3Dev](https://github.com/WasabiFan/snap-ev3dev)
 
 
-### [David Lechner](https://github.com/dlech)
-
-[YouTube Channel](https://www.youtube.com/channel/UC9t81ufD1yeMes9YGpKb7bA/videos)
-
-[EV3 Telegraph Net](https://github.com/dlech/ev3dev-telegraph-net)
-
-[NXT Firmware](https://github.com/dlech/nxt-firmware)
-
-
 ### [Frederik Leonhardt](https://github.com/fkleon)
 
 [Website](https://fkleon.github.io)
@@ -662,28 +653,6 @@ NXT_Python (2007)
 [Website](https://tomastechnic.com)
 
 [YouTube](https://www.youtube.com/c/TomasTECHNIC)
-
-
-### [Laurens Valk](https://github.com/laurensvalk)
-
-[Robot Square](http://robotsquare.com)
-
-- [EV3 and NXT: Difference and Compatibility](http://robotsquare.com/2013/07/16/ev3-nxt-compatibility)
-
-- Tutorials
-  - EV3
-    - [General](http://robotsquare.com/category/tutorials/ev3-general)
-    - [Building](http://robotsquare.com/category/tutorials/ev3-building-tutorials)
-
-  - NXT
-    - [Building](http://robotsquare.com/category/tutorials/building-tutorials)
-    - [Programming](http://robotsquare.com/category/tutorials/programming-tutorials)
-
-
-[EV3Dev Light](https://github.com/laurensvalk/ev3devlight)
-- [Examples](https://github.com/laurensvalk/ev3devlight-examples)
-
-[Ball Bot](https://github.com/laurensvalk/ballbot)
 
 
 ### [Jakub Vaněk](https://github.com/JakubVanek)
