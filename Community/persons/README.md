@@ -4,6 +4,6 @@
 
 [Daniele "Danny" Benedettelli](Daniele-Benedettelli)
 
-[Limor "LadyAda" Fried](LadyAda)
+[Limor Fried (`LadyAda`)](LadyAda)
 
 [David Lechner (`DLech`)](DLech)
