@@ -2,6 +2,6 @@
     # Microsoft Visual C++ 14.0 or greater is required.
     # Get it with Microsoft C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools
 
-PyBluez2 >= 0.41
+PyBluez2 >= 0.44
 
 Flake8 >= 4.0.1
