@@ -1,10 +1,10 @@
 # PYBRICKS
 # ========
 
-https://GitHub.com/PyBricks/PyBricks-API/archive/master.zip
+https://GitHub.com/PyBricks/Pybricks-API/archive/master.zip
 # PyBricks >= 3.0.0   # use bleeding-edge development version above
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
-PyBricksDev >= 1.0.0a25
+https://GitHub.com/PyBricks/PybricksDev/archive/master.zip
 
 
 # EV3
@@ -84,10 +84,10 @@ RPyC
 
 # PYTHON LINTING & REFACTORING
 # ============================
-PyLint >= 2.13.9
+PyLint >= 2.14.1
 # Flake8 >= 4.0.1
     # included in Prospector
-MyPy >= 0.960
+MyPy >= 0.961
 PyDocStyle >= 6.1.1
 PyCodeStyle >= 2.8.0
 Prospector >= 1.7.7
