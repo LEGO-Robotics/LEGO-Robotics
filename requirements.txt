@@ -89,7 +89,8 @@ PyLint >= 2.14.5
     # included in Prospector
 MyPy >= 0.971
 PyDocStyle >= 6.1.1
-PyCodeStyle >= 2.9.1
+# PyCodeStyle >= 2.9.1
+    # conflicts w/ Prospector
 Prospector >= 1.7.7
 # PyLama >= 8.4.1
     # conflicts w/ Prospector
