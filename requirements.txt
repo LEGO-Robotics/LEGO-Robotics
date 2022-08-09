@@ -1,10 +1,10 @@
 # PYBRICKS
 # ========
 
-https://GitHub.com/PyBricks/Pybricks-API/archive/master.zip
+https://GitHub.com/Pybricks/Pybricks-API/archive/master.zip
 # PyBricks >= 3.0.0   # use bleeding-edge development version above
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
-https://GitHub.com/PyBricks/PybricksDev/archive/master.zip
+https://GitHub.com/Pybricks/PybricksDev/archive/master.zip
 
 
 # EV3
@@ -28,7 +28,7 @@ Thonny-EV3Dev >= 1.0.4
     # installation error
 
 # Simulators
-EV3Sim >= 2.2.2; python_version < '3.10'
+EV3Sim >= 2.2.2
 
 # misc
 EV3-Python >= 0.0.2
@@ -51,10 +51,10 @@ https://GitHub.com/EV3Dev/NXT-Python/archive/ev3dev-stretch.zip
 git+http://git.ni.fr.eu.org/pyfantom.git
 PyUSB >= 1.2.1
 
-BlockExt-Mindstorms-NXT >= 0.2; python_version < '3.10'
+BlockExt-Mindstorms-NXT >= 0.2
 # BrickPython >= 0.4
     # installation error
-KLego >= 0.98.2.6; python_version < '3.10'
+KLego >= 0.98.2.6
 JaRaCo.NXT >= 2.1.0
 
 # NXTurtle >= 1.0.4.dev-20110105
@@ -84,14 +84,14 @@ RPyC
 
 # PYTHON LINTING & REFACTORING
 # ============================
-PyLint >= 2.14.1
-# Flake8 >= 4.0.1
+PyLint >= 2.14.5
+# Flake8 >= 5.0.4
     # included in Prospector
-MyPy >= 0.961
+MyPy >= 0.971
 PyDocStyle >= 6.1.1
-PyCodeStyle >= 2.8.0
+PyCodeStyle >= 2.9.1
 Prospector >= 1.7.7
-# PyLama >= 8.3.6
+# PyLama >= 8.4.1
     # conflicts w/ Prospector
 Bandit >= 1.7.4
-Rope >= 1.1.1
+Rope >= 1.3.0
