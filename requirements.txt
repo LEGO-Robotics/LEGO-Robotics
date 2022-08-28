@@ -18,9 +18,7 @@ EV3DevContext >= 0.36
 EV3DevCmd >= 1.0.2
 EV3DevLogging >= 1.0.1
 EV3DevRPyC >= 1.0.1
-EV3Dev2Simulator
-    # ev3dev2simulator 2.0.5 depends on pymunk==5.6.0
-    # ev3sim 2.2.2 depends on pymunk>=6.0.0
+EV3Dev2Simulator >= 2.0.5
 Thonny-EV3Dev >= 1.0.4
 
 # deprecated
@@ -28,7 +26,7 @@ Thonny-EV3Dev >= 1.0.4
     # installation error
 
 # Simulators
-EV3Sim >= 2.2.2
+# EV3Sim >= 2.2.2   # *** DEPENDS ON OUTDATED NUMPY ***
 
 # misc
 EV3-Python >= 0.0.2
