@@ -1,7 +1,7 @@
 # PYBRICKS
 # ========
 
-https://GitHub.com/Pybricks/Pybricks-API/archive/master.zip
+https://GitHub.com/LEGO-Robotics/Pybricks-API/archive/main.zip
 # PyBricks >= 3.0.0   # use bleeding-edge development version above
 # PyBricks-Stubs >= 2.0.2   # use official PyBricks above
 https://GitHub.com/Pybricks/PybricksDev/archive/master.zip
