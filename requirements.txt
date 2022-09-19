@@ -82,7 +82,7 @@ RPyC
 
 # PYTHON LINTING & REFACTORING
 # ============================
-PyLint >= 2.15.0
+PyLint >= 2.15.3
 # Flake8 >= 5.0.4
     # included in Prospector
 MyPy >= 0.971
