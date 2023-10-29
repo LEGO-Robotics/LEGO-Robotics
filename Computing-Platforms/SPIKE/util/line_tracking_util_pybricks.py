@@ -48,22 +48,18 @@ class DoubleLineTrackingDriveBase:
              if isinstance(right_line_color, Color)
              else right_line_color)
 
-    @property
     def left_color_sensor_detecting_left_line_color(self) -> bool:
         """Check if Left Color Sensor is detecting Left Line Color."""
         return self.left_color_sensor.color(surface=True) in self.left_line_colors  # noqa: E501
 
-    @property
     def left_color_sensor_detecting_right_line_color(self) -> bool:
         """Check if Left Color Sensor is detecting Right Line Color."""
         return self.left_color_sensor.color(surface=True) in self.right_line_colors  # noqa: E501
 
-    @property
     def right_color_sensor_detecting_left_line_color(self) -> bool:
         """Check if Right Color Sensor is detecting Left Line Color."""
         return self.right_color_sensor.color(surface=True) in self.left_line_colors  # noqa: E501
 
-    @property
     def right_color_sensor_detecting_right_line_color(self) -> bool:
         """Check if Right Color Sensor is detecting Right Line Color."""
         return self.right_color_sensor.color(surface=True) in self.right_line_colors  # noqa: E501
