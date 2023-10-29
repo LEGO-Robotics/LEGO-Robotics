@@ -6,9 +6,6 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Color, Direction, Port
 
 
-ColorOrColorCollection: type = Color | list[Color] | set[Color] | tuple[Color]
-
-
 class DoubleLineTrackingDriveBase:
     """Drive Base with 2 Color Sensors in front for tracking 2 lines."""
 
@@ -21,8 +18,10 @@ class DoubleLineTrackingDriveBase:
             right_motor_pos_dir: Direction = Direction.CLOCKWISE,
             left_color_sensor_port: Port = Port.C,
             right_color_sensor_port: Port = Port.D,
-            left_line_color: ColorOrColorCollection = {Color.NONE, Color.BLACK},  # noqa: E501
-            right_line_color: ColorOrColorCollection = Color.WHITE):
+            left_line_color: Color | list[Color] | set[Color] | tuple[Color]
+            = {Color.NONE, Color.BLACK},
+            right_line_color: Color | list[Color] | set[Color] | tuple[Color]
+            = Color.WHITE):
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=left_motor_pos_dir)
         self.right_motor = Motor(port=right_motor_port,
@@ -36,8 +35,8 @@ class DoubleLineTrackingDriveBase:
         self.left_color_sensor = ColorSensor(port=left_color_sensor_port)
         self.right_color_sensor = ColorSensor(port=right_color_sensor_port)
 
-        self.left_line_color: ColorOrColorCollection = left_line_color
-        self.right_line_color: ColorOrColorCollection = right_line_color
+        self.left_line_color: Color | list[Color] | set[Color] | tuple[Color] = left_line_color
+        self.right_line_color: Color | list[Color] | set[Color] | tuple[Color] = right_line_color
 
     def drive_forward(self):
         """Drive forward along 2 lines."""
@@ -53,9 +52,11 @@ if __name__ == '__main__':
             axle_track=88,
             left_motor_port=Port.D,
             left_motor_pos_dir=Direction.COUNTERCLOCKWISE,
-            right_motor_port=Port.D,
+            right_motor_port=Port.C,
             right_motor_pos_dir=Direction.CLOCKWISE,
             left_color_sensor_port=Port.F,
-            right_color_sensor_port=Port.E)
+            right_color_sensor_port=Port.E,
+            left_line_color={Color.NONE, Color.BLACK},
+            right_line_color=Color.WHITE)
 
     double_line_tracking_drive_base.drive_base.straight(distance=100)
