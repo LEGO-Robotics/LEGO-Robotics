@@ -39,14 +39,26 @@ class DoubleLineTrackingDriveBase:
         self.left_color_sensor = ColorSensor(port=left_color_sensor_port)
         self.right_color_sensor = ColorSensor(port=right_color_sensor_port)
 
-        self.left_line_colors: list[Color] | set[Color] | tuple[Color] = \
-            ({left_line_color}
-             if isinstance(left_line_color, Color)
-             else left_line_color)
-        self.right_line_colors: list[Color] | set[Color] | tuple[Color] = \
-            ({right_line_color}
-             if isinstance(right_line_color, Color)
-             else right_line_color)
+        self.left_line_colors: list[Color] | set[Color] | tuple[Color] = (
+            left_line_color
+            if isinstance(left_line_color, (list, set, tuple))
+            else {left_line_color}
+            # below gets TypeError:
+            # issubclass() arg 2 must be a class or a tuple of classes
+            # ({left_line_color}
+            #  if isinstance(left_line_color, Color)
+            #  else left_line_color)
+        )
+        self.right_line_colors: list[Color] | set[Color] | tuple[Color] = (
+            right_line_color
+            if isinstance(right_line_color, (list, set, tuple))
+            else {right_line_color}
+            # below gets TypeError:
+            # issubclass() arg 2 must be a class or a tuple of classes
+            # {right_line_color}
+            # if isinstance(right_line_color, Color)
+            # else right_line_color
+        )
 
     def left_color_sensor_detecting_left_line_color(self) -> bool:
         """Check if Left Color Sensor is detecting Left Line Color."""
