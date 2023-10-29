@@ -18,10 +18,14 @@ class DoubleLineTrackingDriveBase:
             right_motor_pos_dir: Direction = Direction.CLOCKWISE,
             left_color_sensor_port: Port = Port.C,
             right_color_sensor_port: Port = Port.D,
-            left_line_color: Color | list[Color] | set[Color] | tuple[Color]
-            = {Color.NONE, Color.BLACK},
-            right_line_color: Color | list[Color] | set[Color] | tuple[Color]
-            = Color.WHITE):
+            left_line_color: (Color |
+                              list[Color] |
+                              set[Color] |
+                              tuple[Color]) = {Color.NONE, Color.BLACK},
+            right_line_color: (Color |
+                               list[Color] |
+                               set[Color] |
+                               tuple[Color]) = Color.WHITE) -> None:
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=left_motor_pos_dir)
         self.right_motor = Motor(port=right_motor_port,
@@ -35,8 +39,34 @@ class DoubleLineTrackingDriveBase:
         self.left_color_sensor = ColorSensor(port=left_color_sensor_port)
         self.right_color_sensor = ColorSensor(port=right_color_sensor_port)
 
-        self.left_line_color: Color | list[Color] | set[Color] | tuple[Color] = left_line_color
-        self.right_line_color: Color | list[Color] | set[Color] | tuple[Color] = right_line_color
+        self.left_line_colors: list[Color] | set[Color] | tuple[Color] = \
+            ({left_line_color}
+             if isinstance(left_line_color, Color)
+             else left_line_color)
+        self.right_line_colors: list[Color] | set[Color] | tuple[Color] = \
+            ({right_line_color}
+             if isinstance(right_line_color, Color)
+             else right_line_color)
+
+    @property
+    def left_color_sensor_detecting_left_line_color(self) -> bool:
+        """Check if Left Color Sensor is detecting Left Line Color."""
+        return self.left_color_sensor.color(surface=True) in self.left_line_colors  # noqa: E501
+
+    @property
+    def left_color_sensor_detecting_right_line_color(self) -> bool:
+        """Check if Left Color Sensor is detecting Right Line Color."""
+        return self.left_color_sensor.color(surface=True) in self.right_line_colors  # noqa: E501
+
+    @property
+    def right_color_sensor_detecting_left_line_color(self) -> bool:
+        """Check if Right Color Sensor is detecting Left Line Color."""
+        return self.right_color_sensor.color(surface=True) in self.left_line_colors  # noqa: E501
+
+    @property
+    def right_color_sensor_detecting_right_line_color(self) -> bool:
+        """Check if Right Color Sensor is detecting Right Line Color."""
+        return self.right_color_sensor.color(surface=True) in self.right_line_colors  # noqa: E501
 
     def drive_forward(self):
         """Drive forward along 2 lines."""
