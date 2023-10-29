@@ -3,20 +3,26 @@
 
 from pybricks.pupdevices import Motor, ColorSensor
 from pybricks.robotics import DriveBase
-from pybricks.parameters import Direction, Port
+from pybricks.parameters import Color, Direction, Port
+
+
+ColorOrColorCollection: type = Color | list[Color] | set[Color] | tuple[Color]
 
 
 class DoubleLineTrackingDriveBase:
     """Drive Base with 2 Color Sensors in front for tracking 2 lines."""
 
-    def __init__(self,  # pylint: disable=too-many-arguments
-                 wheel_diameter: float, axle_track: float,  # both in mm
-                 left_motor_port: Port = Port.A,
-                 left_motor_pos_dir: Direction = Direction.COUNTERCLOCKWISE,
-                 right_motor_port: Port = Port.B,
-                 right_motor_pos_dir: Direction = Direction.CLOCKWISE,
-                 left_color_sensor_port: Port = Port.C,
-                 right_color_sensor_port: Port = Port.D):
+    def __init__(  # pylint: disable=dangerous-default-value,too-many-arguments
+            self,
+            wheel_diameter: float, axle_track: float,  # both in mm
+            left_motor_port: Port = Port.A,
+            left_motor_pos_dir: Direction = Direction.COUNTERCLOCKWISE,
+            right_motor_port: Port = Port.B,
+            right_motor_pos_dir: Direction = Direction.CLOCKWISE,
+            left_color_sensor_port: Port = Port.C,
+            right_color_sensor_port: Port = Port.D,
+            left_line_color: ColorOrColorCollection = {Color.NONE, Color.BLACK},  # noqa: E501
+            right_line_color: ColorOrColorCollection = Color.WHITE):
         self.left_motor = Motor(port=left_motor_port,
                                 positive_direction=left_motor_pos_dir)
         self.right_motor = Motor(port=right_motor_port,
@@ -29,6 +35,9 @@ class DoubleLineTrackingDriveBase:
 
         self.left_color_sensor = ColorSensor(port=left_color_sensor_port)
         self.right_color_sensor = ColorSensor(port=right_color_sensor_port)
+
+        self.left_line_color: ColorOrColorCollection = left_line_color
+        self.right_line_color: ColorOrColorCollection = right_line_color
 
     def drive_forward(self):
         """Drive forward along 2 lines."""
