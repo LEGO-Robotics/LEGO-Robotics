@@ -5,13 +5,13 @@
 
   "ev3devBrowser.download.exclude": "{**/Desktop*/**,**/*LabVIEW/**,**/__pycache__/**,**/README*,**/*.ev3*,**/*.swift}",
   "ev3devBrowser.download.include": "**/*.py",
-  
+
   "files.eol": "\n",
 
   "files.exclude": {
     "**/.git": true,
     "**/.mypy_cache": true,
-    "**/*.pyc": {"when": "$(basename).py"}, 
+    "**/*.pyc": {"when": "$(basename).py"},
     "**/__pycache__": true,
     "**/.ropeproject": true,
   },
@@ -41,7 +41,7 @@
 
   "python.linting.flake8Enabled": true,
 
-  "python.linting.mypyEnabled": true,
+  "python.linting.mypyEnabled": false,
 
   "python.linting.pydocstyleEnabled": false,
 
