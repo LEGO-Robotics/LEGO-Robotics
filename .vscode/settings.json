@@ -1,7 +1,7 @@
 {
   "debug.openDebug": "neverOpen",
 
-  "editor.rulers": [79, 88, 100, 120],
+  "editor.rulers": [79],
 
   "ev3devBrowser.download.exclude": "{**/Desktop*/**,**/*LabVIEW/**,**/__pycache__/**,**/README*,**/*.ev3*,**/*.swift}",
   "ev3devBrowser.download.include": "**/*.py",
